@@ -1,0 +1,450 @@
+[
+  {
+    "url": "https://dbpedia.org/data/Alien_%28film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:02.697930+00:00",
+    "sha256": "434da39b2ee00c238aca8cf88a51391913ad0af99cb7447840fbd4b91d1cd7cf",
+    "path": "data/raw/aa4de107ab895cce7db7b6cc.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Batman_Begins.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:54.798394+00:00",
+    "sha256": "dd68be11edb49634d61ecba820200022fe8c1de778d319d7f3c77a52e2295f9f",
+    "path": "data/raw/7509eb8c2c70bd55d503e7ca.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Blade_Runner.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:03.630986+00:00",
+    "sha256": "732753dcab1a96503b5489109a4b5d0f12446695416e281e46edfe62e1bccef2",
+    "path": "data/raw/52f1f94257b6c8e0aa1e69a8.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Dunkirk_%282017_film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:54.743755+00:00",
+    "sha256": "1baac09ed03ce36de65d716d822a7e3755256c1d3ca96eb60da40c7fa47cf8dc",
+    "path": "data/raw/aac0241a293e46475474a80e.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Fight_Club.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:59.039898+00:00",
+    "sha256": "c96843096ba6ca1de9f0ab22b48ec2bf565374bb4dbd7f2606dbcf0cc44d73e3",
+    "path": "data/raw/51e1f50053177c226d8f5554.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Forrest_Gump.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:57.935103+00:00",
+    "sha256": "5f45d5b12765005d781b993ddf3040b14b28224880f184526cd37dd1667331cd",
+    "path": "data/raw/3b9530f801c19945be6dba64.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Gladiator_%282000_film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:02.513358+00:00",
+    "sha256": "f141d420651d6814a6a72d858b252577ea958c9cf4418c36ffade35e98b3c01e",
+    "path": "data/raw/d874acd6428fbc03f35cba91.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Goodfellas.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:59.474211+00:00",
+    "sha256": "a4d0cf955f9ab00f6c81990a9dded7d59403eff21731b49e176a24104198e27d",
+    "path": "data/raw/37e9960d80a3f90ad13b804c.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Inception.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:52.952071+00:00",
+    "sha256": "514bd35dd455093667eb081f16532da02c5c89ca1d10f5197d1cfdd701434b68",
+    "path": "data/raw/cabf83fab4ab096c9d3721a7.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Interstellar_%28film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:52.812126+00:00",
+    "sha256": "3b78c4260ce558e6273b27999b84102d5cbcc34d7343300113055db337135e5c",
+    "path": "data/raw/2414a00bce0b6832f22687bc.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/La_La_Land.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:05.570287+00:00",
+    "sha256": "39bf11b99eaea7b3ce3926934598c6437531f13cf1b6c71a5a880b4fa344818a",
+    "path": "data/raw/70a29e18ecf71ae2742e207b.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Memento_%28film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:54.326665+00:00",
+    "sha256": "f6cf607b6ee77f974701558585b2307e961b201987b0ffa3feedca984a259483",
+    "path": "data/raw/2c4b95c0786076651725c0e3.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Parasite_%282019_film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:04.293893+00:00",
+    "sha256": "4a04da5402675c256ada934c074c5adb3f9a90b406be0c7274bb013213d30c8b",
+    "path": "data/raw/51e38cb484337f4a18ec847a.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Pulp_Fiction.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:57.536965+00:00",
+    "sha256": "918dad9e995eae829e9881e1bb1ebb7a36c9f14bb15a72a7c3b9bc1e55c9ee2e",
+    "path": "data/raw/8ec416f26e961f9f23c2df23.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Schindler%27s_List.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:00.972779+00:00",
+    "sha256": "27a4a609adeeb8f61665592b896403f98842e49daced7a49065a144e12cbe668",
+    "path": "data/raw/dcba0188466bcdc00b9841c5.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Seven_%281995_film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:47:40.433577+00:00",
+    "sha256": "4f6244fc2173e8322e60ac626a72b2635725a23e1a290f40267a873ce20b9a28",
+    "path": "data/raw/c8b3b1c29d95986fb1e00a1d.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Spirited_Away.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:04.664287+00:00",
+    "sha256": "55c92492ee66c9d5cf52464f0ba994b6a064b5ef15de17f442c072e419c826fe",
+    "path": "data/raw/9bf1892b5f457bf8234f24e7.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Tenet.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:47:40.144307+00:00",
+    "sha256": "57bf80cb4704118575aae7636ddec47a3730fc3bab2c09a1e47b469665781672",
+    "path": "data/raw/c68a7e4b85fbedc1bf4748ba.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Dark_Knight.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:53.005258+00:00",
+    "sha256": "01c22ef7d3be4b100d5dac26632343c7baa705458131b12dc2564249e9598c69",
+    "path": "data/raw/5cdc6ecf7dd9052398c21946.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Godfather.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:55.919646+00:00",
+    "sha256": "4bb48e073201b4e955b780ae4df67680363f0b8068dc0c70d85f7c73ffe3a51a",
+    "path": "data/raw/f8d0de9c6d908f6f9596faa6.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Godfather_Part_II.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:56.658618+00:00",
+    "sha256": "ceb513dddfb87c1cc7690b848fda0a61ace68a1b9f89df20cc351ef81626b402",
+    "path": "data/raw/b04d547bbfd7f6c75d6be4cd.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Green_Mile_%28film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:01.017577+00:00",
+    "sha256": "20fe8b45a0358744817c64b8926f8c1d5c92c8a5993f40f75fea990e39cd4fdc",
+    "path": "data/raw/c40c045e8c6a55bc4ccf8782.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Lord_of_the_Rings%3A_The_Fellowship_of_the_Ring.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:06.336113+00:00",
+    "sha256": "db3aa6ebce337e38917bd5c34b2efb9f77bc868a5549142d8286ad9d181389ae",
+    "path": "data/raw/755b5dcd429314801eb90927.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Lord_of_the_Rings%3A_The_Return_of_the_King.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:06.692268+00:00",
+    "sha256": "10558aa20ca8607275e5aa7a47c185f1e5c4f5a48d2001d35adbb7af0c81bfe9",
+    "path": "data/raw/ff60ef3329e6251470804e8f.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Matrix.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:58.309915+00:00",
+    "sha256": "146237842471bc5f929e09cf9c3012a523aa563a532031a510fe502c770f2f42",
+    "path": "data/raw/2031d274098b4bc93d6fbc3b.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Prestige.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:47:40.166798+00:00",
+    "sha256": "bd42f844610bf98c87075ba254f84e799df1770d7dcf66a81e2514c3754b9617",
+    "path": "data/raw/87c0d3a00b03a06158a3686f.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Shawshank_Redemption.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:56.313983+00:00",
+    "sha256": "29faa784a977498431b6fa25856946f334000dbd22da5cbdd00e18dc358d5dac",
+    "path": "data/raw/73cfc8ba5c66d1fdbd53a02e.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/The_Silence_of_the_Lambs_%28film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:41:59.923541+00:00",
+    "sha256": "c11540fa3bdf45d9df4248414bdae48bb0ad336d449594e918700cc1cc835d09",
+    "path": "data/raw/e5bc467251ad88aec34e8020.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Titanic_%281997_film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:01.900779+00:00",
+    "sha256": "66f865586a63256fe1fef0e214f600a7854106f42979d2afbb69dfd87c1fde69",
+    "path": "data/raw/b252a479c68091a736e81c51.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://dbpedia.org/data/Whiplash_%282014_film%29.json",
+    "provider": "DBpedia",
+    "retrieved_at": "2026-10-06T08:42:05.100399+00:00",
+    "sha256": "f95e7e29ea62942fd98edef57fa77e4fc6aec46acf311ca887a1cb19b6c1dfa9",
+    "path": "data/raw/40381ad71d66e21d97324523.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q1016897%7CQ102124%7CQ102260466%7CQ102429885%7CQ102642%7CQ102706436%7CQ10306924%7CQ103157%7CQ1033909%7CQ10390375%7CQ104061%7CQ104623124%7CQ104765957%7CQ1054574%7CQ105706491%7CQ1058562%7CQ1066037%7CQ10663882%7CQ106744%7CQ106775%7CQ108622%7CQ109232%7CQ109629396%7CQ109733304%7CQ109733630%7CQ110374%7CQ1108562%7CQ111278985%7CQ111472798%7CQ111549296%7CQ111549302%7CQ111549303%7CQ1123336%7CQ11304653%7CQ113485322%7CQ1139190%7CQ1139511%7CQ114179%7CQ1147417%7CQ1163293&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:43:33.650376+00:00",
+    "sha256": "119f21a4ba0afb794b754f0e936ba55309bffe2ddb4b66346e0769209ef4ec8a",
+    "path": "data/raw/7abe09b25cff7afea78cc37d.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q116456802%7CQ116514801%7CQ116854%7CQ116861%7CQ117415%7CQ1174454%7CQ1174630%7CQ1176208%7CQ1176556%7CQ1177114%7CQ118053%7CQ118612349%7CQ11893776%7CQ1189389%7CQ1200678%7CQ1203%7CQ12035731%7CQ1209753%7CQ121045%7CQ1225469%7CQ123351%7CQ1234673%7CQ1236595%7CQ125017%7CQ1254992%7CQ125904%7CQ1262715%7CQ12858652%7CQ1292214%7CQ1292876%7CQ129591%7CQ129817%7CQ130232%7CQ1313592%7CQ1319539%7CQ1320006%7CQ132430%7CQ1332872%7CQ1333793%7CQ1334725&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:43:46.023421+00:00",
+    "sha256": "3570237cbd471365a8abcfb6d722328e3057bbe611206abdd5111a2aae327c99",
+    "path": "data/raw/032b535e6bb3481bda5faa05.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q1341051%7CQ134133%7CQ1342372%7CQ134317151%7CQ1352034%7CQ1353691%7CQ1356584%7CQ1357803%7CQ1366460%7CQ1366768%7CQ1368141%7CQ1368224%7CQ1369720%7CQ1372703%7CQ1372770%7CQ1373450%7CQ1375689%7CQ1388258%7CQ1388769%7CQ1388807%7CQ139341%7CQ142%7CQ1421128%7CQ1433443%7CQ1440197%7CQ14446%7CQ145%7CQ1464037%7CQ147077%7CQ150%7CQ1502443%7CQ1502946%7CQ15040582%7CQ150482%7CQ1516734%7CQ1521335%7CQ152165%7CQ152542%7CQ15288220%7CQ152929&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:44:00.860852+00:00",
+    "sha256": "c73dd60ed8cb09cd5f6e88f7d6e286494c920c6ab2486ea2f3581b5eec39091f",
+    "path": "data/raw/2cc7fecc7ffd20ab7564962e.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q1535153%7CQ15637301%7CQ1563838%7CQ15665021%7CQ157394%7CQ157443%7CQ15762190%7CQ1577563%7CQ1577938%7CQ15790902%7CQ15808775%7CQ15819828%7CQ158558%7CQ1591382%7CQ16017365%7CQ1607467%7CQ16091645%7CQ16104953%7CQ16129016%7CQ16149374%7CQ16177322%7CQ16186952%7CQ1619100%7CQ16203767%7CQ1622732%7CQ16237544%7CQ16239443%7CQ16325426%7CQ1644834%7CQ164534%7CQ16455%7CQ16538713%7CQ1655613%7CQ16575211%7CQ16745067%7CQ1683873%7CQ1683907%7CQ16859123%7CQ168763%7CQ1691277&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:44:10.566909+00:00",
+    "sha256": "44516b67deebc43de879ec1183129bc91e48d8d995d0db649e32d9708a60db60",
+    "path": "data/raw/95c191c7b8005440363b7b96.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q1691318%7CQ1691628%7CQ1693866%7CQ17%7CQ17005758%7CQ17013749%7CQ170428%7CQ170510%7CQ171363%7CQ171736%7CQ172678%7CQ173158%7CQ173399%7CQ174346%7CQ1744181%7CQ174526%7CQ17490321%7CQ1750537%7CQ1750774%7CQ175535%7CQ17581458%7CQ177311%7CQ1776156%7CQ1779182%7CQ1788980%7CQ180272%7CQ180338%7CQ18219789%7CQ182870%7CQ183%7CQ18350026%7CQ18415482%7CQ184903%7CQ185051%7CQ185140%7CQ185867%7CQ1859256%7CQ1860%7CQ18700040%7CQ187033&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:44:44.493921+00:00",
+    "sha256": "879b10a396bf8eb81927d142e7f13079bcffba800b1114d39ef84b71e7df7a9e",
+    "path": "data/raw/0aa84a7387a946639a353759.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q18720063%7CQ187364%7CQ188%7CQ188473%7CQ188955%7CQ189351%7CQ189407%7CQ1894374%7CQ191104%7CQ191132%7CQ1919632%7CQ192643%7CQ192881%7CQ193048%7CQ193628%7CQ19367312%7CQ1937615%7CQ193815%7CQ1945936%7CQ195719%7CQ195871%7CQ19631403%7CQ19665276%7CQ19877770%7CQ19956031%7CQ19981241%7CQ200092%7CQ200355%7CQ200405%7CQ20090576%7CQ2012197%7CQ20178%7CQ201976%7CQ202381%7CQ202589%7CQ202765%7CQ203804%7CQ20442589%7CQ20443008%7CQ205435&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:44:54.032538+00:00",
+    "sha256": "256ca8f36e77c2edab1b53f349525f0e44f04fa05b4124586e3a7e595d46fe13",
+    "path": "data/raw/67883381b729277b8862bae6.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q2061535%7CQ20656232%7CQ206890%7CQ206922%7CQ2074570%7CQ20752286%7CQ207596%7CQ207969%7CQ208026%7CQ20974079%7CQ20993894%7CQ21002368%7CQ21074794%7CQ211144%7CQ211280%7CQ211322%7CQ211415%7CQ211553%7CQ2132927%7CQ213574%7CQ21401869%7CQ2143665%7CQ216123%7CQ2165590%7CQ21710318%7CQ217137%7CQ218605%7CQ21870719%7CQ218800%7CQ220335%7CQ223091%7CQ223745%7CQ22575750%7CQ225933%7CQ2263%7CQ2263306%7CQ22665449%7CQ22673621%7CQ22680663%7CQ228868&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:45:00.019510+00:00",
+    "sha256": "4377fc72ae62cab44aa543996ba35f9bb7f5c0da2510001a836e8a104f471cde",
+    "path": "data/raw/c1a42951e97cb2f4b42d2be0.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q22910218%7CQ229268%7CQ229313%7CQ229319%7CQ2297927%7CQ22985966%7CQ2300160%7CQ23001654%7CQ230534%7CQ230736%7CQ231807%7CQ231951%7CQ232868%7CQ23306199%7CQ235115%7CQ235635%7CQ235725%7CQ2357826%7CQ236702%7CQ236956%7CQ238483%7CQ2384946%7CQ2386386%7CQ238671%7CQ23926673%7CQ2397879%7CQ24023955%7CQ2405596%7CQ240774%7CQ2421031%7CQ2424724%7CQ242557%7CQ2426862%7CQ2434354%7CQ2434817%7CQ2442701%7CQ24444473%7CQ2445092%7CQ245808%7CQ245880&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:45:02.980645+00:00",
+    "sha256": "c07a9d6a1484c0ccf3cabbdc4f5f0edffd38eedcee0c7e92859f8ca2fa9b54f0",
+    "path": "data/raw/29cf263515b1fc1328c7e47b.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q2484376%7CQ24867395%7CQ248915%7CQ25144%7CQ25191%7CQ254431%7CQ25533274%7CQ2553986%7CQ256164%7CQ258604%7CQ2586583%7CQ2592908%7CQ2594868%7CQ2598175%7CQ2604240%7CQ260622%7CQ2616690%7CQ2635096%7CQ2636244%7CQ263964%7CQ2642437%7CQ2647961%7CQ2660468%7CQ266270%7CQ266313%7CQ266881%7CQ267330%7CQ2680%7CQ268181%7CQ26857959%7CQ26857960%7CQ26857961%7CQ26857962%7CQ26857964%7CQ26857972%7CQ26857974%7CQ26857976%7CQ26857979%7CQ26857995%7CQ26857997&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:45:18.254480+00:00",
+    "sha256": "f62cd905ce3fd506086b273b884e77388a54ab9c311061bbd1b9841465acf90f",
+    "path": "data/raw/19f0cb2453b381e0a24e1748.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q26857999%7CQ26858377%7CQ26858530%7CQ26858533%7CQ26858540%7CQ26858542%7CQ26858544%7CQ26858547%7CQ26858550%7CQ26858558%7CQ26858567%7CQ26858570%7CQ26858576%7CQ26858577%7CQ26858584%7CQ26858589%7CQ26858593%7CQ26858602%7CQ26858615%7CQ26858619%7CQ26858621%7CQ26858623%7CQ26858634%7CQ26858662%7CQ26858676%7CQ26858677%7CQ26858680%7CQ26858681%7CQ26858689%7CQ26858692%7CQ26858695%7CQ26858706%7CQ26858709%7CQ26858732%7CQ26858734%7CQ26858737%7CQ26858744%7CQ26858753%7CQ26858756%7CQ26858768&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:45:23.328538+00:00",
+    "sha256": "17dc4cacba03a61f881bcbdf8eda8697b3887a04409879dd1385ed9a5dd29e63",
+    "path": "data/raw/5f02a2487a70d39056e51bde.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q26858807%7CQ26858814%7CQ26858889%7CQ26859033%7CQ26859059%7CQ26859068%7CQ26859100%7CQ26859151%7CQ26859179%7CQ26859187%7CQ26859208%7CQ26859284%7CQ26859347%7CQ26859371%7CQ26859423%7CQ26859485%7CQ26859526%7CQ26859543%7CQ26859576%7CQ26859640%7CQ26859664%7CQ26859763%7CQ26859788%7CQ26859856%7CQ26859957%7CQ26859981%7CQ26860001%7CQ2690748%7CQ2691042%7CQ269309%7CQ269669%7CQ270622%7CQ270664%7CQ270730%7CQ270774%7CQ270878%7CQ272823%7CQ272952%7CQ272972%7CQ274836&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:45:30.309036+00:00",
+    "sha256": "3dbb08c8f1dc1780ea7c3c4cdce712f8f798b6633ac1524f20e27f67ea311d9d",
+    "path": "data/raw/b88b7cab9292194b18c25be3.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q275270%7CQ27535227%7CQ27535240%7CQ276165%7CQ276425%7CQ27758467%7CQ277978%7CQ280198%7CQ2825721%7CQ2826948%7CQ2835788%7CQ283872%7CQ28493%7CQ2850579%7CQ28542230%7CQ28915096%7CQ28974005%7CQ2903297%7CQ29109394%7CQ291141%7CQ2924399%7CQ2926038%7CQ294975%7CQ295445%7CQ29585307%7CQ295974%7CQ296177%7CQ296328%7CQ296370%7CQ2965857%7CQ2966611%7CQ296883%7CQ297945%7CQ2985403%7CQ298682%7CQ299314%7CQ299317%7CQ299483%7CQ30%7CQ3002029&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:45:46.359513+00:00",
+    "sha256": "067fff2c1302a4a1b7e271c7307c60eb822d21ecb05073a10ef5a009b06abada",
+    "path": "data/raw/e7f65fb7a886323f72cde93c.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q3017460%7CQ3046377%7CQ3047302%7CQ3054443%7CQ3056094%7CQ30717048%7CQ3072043%7CQ3082480%7CQ310190%7CQ310217%7CQ310315%7CQ310515%7CQ311169%7CQ311271%7CQ312399%7CQ313009%7CQ313040%7CQ313048%7CQ313588%7CQ314290%7CQ3143555%7CQ315118%7CQ315604%7CQ316032%7CQ316446%7CQ317358%7CQ3178961%7CQ3182047%7CQ318220%7CQ318267%7CQ318292%7CQ319221%7CQ3193117%7CQ320093%7CQ3208206%7CQ323166%7CQ323185%7CQ3241353%7CQ324572%7CQ325130&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:45:49.417653+00:00",
+    "sha256": "767c72dd3ab541ec61bcd70c005f76c4a9db31c58560fb64921a79f8b99b81c9",
+    "path": "data/raw/8beaf6c50c24b892c8bba1f8.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q325814%7CQ326323%7CQ326439%7CQ3275736%7CQ328409%7CQ3295501%7CQ329716%7CQ329734%7CQ329859%7CQ3303794%7CQ330801%7CQ33133445%7CQ3324448%7CQ3330820%7CQ3361195%7CQ3373190%7CQ3376545%7CQ3378785%7CQ338355%7CQ3388862%7CQ3390280%7CQ3390514%7CQ339083%7CQ3391203%7CQ33973%7CQ34012%7CQ3430805%7CQ34436%7CQ34460%7CQ3498519%7CQ3499384%7CQ3500828%7CQ35011%7CQ3507348%7CQ351171%7CQ352010%7CQ352012%7CQ352203%7CQ35332%7CQ3536506&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:46:03.837820+00:00",
+    "sha256": "94a13115f24b8cbd180bdd8a3465ab886d88711907c62609d3ea7338657cd868",
+    "path": "data/raw/92b1ab957effe09bff25dcae.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q353978%7CQ355209%7CQ3560613%7CQ356541%7CQ3573137%7CQ358990%7CQ360313%7CQ361215%7CQ362353%7CQ3626966%7CQ36301%7CQ363271%7CQ3645492%7CQ3660357%7CQ36767%7CQ368037%7CQ3694232%7CQ36949%7CQ369747%7CQ37269398%7CQ372788%7CQ374273%7CQ374447%7CQ3745429%7CQ3749387%7CQ375356%7CQ376131%7CQ376261%7CQ3764465%7CQ3772%7CQ3783517%7CQ3784932%7CQ379830%7CQ38%7CQ380872%7CQ3809461%7CQ38111%7CQ3811107%7CQ3827125%7CQ384004&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:46:15.593675+00:00",
+    "sha256": "e0eadfa4c16c886d17ae5833118833e1923bd103149c093f19d9355e2fdd5309",
+    "path": "data/raw/e31b6699cb4ea87cb2f0585d.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q3847733%7CQ3853048%7CQ3854240%7CQ3856171%7CQ386249%7CQ3885536%7CQ3898029%7CQ3898080%7CQ3946344%7CQ3973186%7CQ3990883%7CQ40572%7CQ408%7CQ41148%7CQ41163%7CQ4120019%7CQ41351%7CQ4204710%7CQ42204%7CQ4228271%7CQ42365%7CQ42574%7CQ430922%7CQ431356%7CQ432437%7CQ432873%7CQ433198%7CQ433520%7CQ43416%7CQ434291%7CQ435468%7CQ436828%7CQ440971%7CQ441713%7CQ442310%7CQ443343%7CQ44467%7CQ446493%7CQ4465%7CQ447892&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:46:36.885322+00:00",
+    "sha256": "5c12e20aaa3f290dac4f9e156f140b1a1a9268c8d277775cb6a9e27726777c66",
+    "path": "data/raw/f5b1b69159f92adc4450b23d.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q44857%7CQ4488%7CQ450279%7CQ450694%7CQ450720%7CQ450928%7CQ451880%7CQ452552%7CQ453501%7CQ453973%7CQ455234%7CQ456426%7CQ45772%7CQ457736%7CQ457991%7CQ459019%7CQ45923%7CQ459290%7CQ459933%7CQ460289%7CQ460688%7CQ461623%7CQ463407%7CQ464282%7CQ464714%7CQ465310%7CQ4653820%7CQ465981%7CQ46677%7CQ466789%7CQ467496%7CQ4682002%7CQ468241%7CQ468915%7CQ469179%7CQ4703990%7CQ471839%7CQ4722037%7CQ472419%7CQ4774498&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:46:39.833335+00:00",
+    "sha256": "7bb113eab1b780f41f1176a4a4fe2073ce0b7337b8e612640dd09595b01ed1dc",
+    "path": "data/raw/874fda8eac7322ea13b109e4.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q483148%7CQ48337%7CQ483771%7CQ484400%7CQ484523%7CQ4882899%7CQ489681%7CQ489856%7CQ48987%7CQ4908187%7CQ492701%7CQ4931077%7CQ4932564%7CQ494393%7CQ495980%7CQ4961428%7CQ4962360%7CQ496523%7CQ498420%7CQ498430%7CQ4984974%7CQ4993338%7CQ5015744%7CQ505689%7CQ505940%7CQ506778%7CQ509013%7CQ509442%7CQ5101571%7CQ5115321%7CQ5115597%7CQ5116234%7CQ512986%7CQ513981%7CQ514913%7CQ515044%7CQ51511%7CQ515592%7CQ516035%7CQ516692&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:46:54.277672+00:00",
+    "sha256": "571f2ba3033e9472a06f9c6d5147e12ce4ba973c65f7d1d4ea87c7a8a79fbf3b",
+    "path": "data/raw/5f244786b9d95554e0f28851.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q517379%7CQ519949%7CQ52162262%7CQ5219143%7CQ524930%7CQ526468%7CQ526864%7CQ5287%7CQ530578%7CQ53094%7CQ532169%7CQ5336101%7CQ535906%7CQ5362676%7CQ5363234%7CQ5363720%7CQ5364564%7CQ5365734%7CQ5368467%7CQ5383%7CQ53911753%7CQ542475%7CQ544038%7CQ544465%7CQ5450687%7CQ5486229%7CQ55%7CQ551558%7CQ55294%7CQ55389%7CQ55400%7CQ554430%7CQ55733858%7CQ558492%7CQ56005%7CQ560413%7CQ56094%7CQ561689%7CQ56333356%7CQ56383&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:47:09.144608+00:00",
+    "sha256": "eeefbd288963260b424e7a419470b56b7eeda0266c9dd7384d8816c4de1f42db",
+    "path": "data/raw/9817820dfef8e01662d56256.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q56437%7CQ56679144%7CQ56681515%7CQ573332%7CQ5778924%7CQ58444%7CQ586250%7CQ587641%7CQ589849%7CQ590103%7CQ5923349%7CQ603317%7CQ604485%7CQ6080465%7CQ61112%7CQ6113745%7CQ613029%7CQ614851%7CQ6212499%7CQ6219271%7CQ6239926%7CQ626347%7CQ62676%7CQ6306950%7CQ63214877%7CQ6379293%7CQ638495%7CQ6390767%7CQ640001%7CQ6425724%7CQ645928%7CQ652%7CQ652256%7CQ6539824%7CQ658614%7CQ65932%7CQ663106%7CQ664%7CQ673482%7CQ674451&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:47:16.222438+00:00",
+    "sha256": "7b4e82ff96c48f88f6db4ab70f0f1129f0739e407619cb77ad5c4d2f7ff8cce7",
+    "path": "data/raw/e1cc38d69db5ed5532b73f17.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q6829330%7CQ687234%7CQ687311%7CQ693301%7CQ696055%7CQ703611%7CQ704314%7CQ7050088%7CQ706513%7CQ706935%7CQ707734%7CQ707796%7CQ711054%7CQ711941%7CQ7149519%7CQ7168625%7CQ717194%7CQ7173458%7CQ718382%7CQ719256%7CQ7197001%7CQ721671%7CQ723101%7CQ723780%7CQ725757%7CQ726130%7CQ726201%7CQ7289526%7CQ729618%7CQ7298995%7CQ731560%7CQ733776%7CQ734043%7CQ735360%7CQ737369%7CQ737607%7CQ741555%7CQ7444356%7CQ752652%7CQ7609915&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:47:21.354507+00:00",
+    "sha256": "deafadb69f429d7a79b9c6a1094439c261f1ed6cd2470fb5c491e064ca990edd",
+    "path": "data/raw/6d03e5f048a5f747e545370c.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q764622%7CQ7647898%7CQ7670520%7CQ771165%7CQ7737%7CQ777260%7CQ780432%7CQ7815498%7CQ7817052%7CQ786720%7CQ7914705%7CQ8029127%7CQ809%7CQ809029%7CQ80938%7CQ80966%7CQ81328%7CQ813336%7CQ81911860%7CQ81968984%7CQ8338880%7CQ83492%7CQ83694%7CQ842256%7CQ842585%7CQ846544%7CQ849641%7CQ850004%7CQ859369%7CQ862314%7CQ862673%7CQ8641%7CQ8646%7CQ86767%7CQ869771%7CQ87676%7CQ8798%7CQ88303%7CQ884%7CQ88583&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:47:24.787838+00:00",
+    "sha256": "b3d64d05bda821b8d7d8114e56128f72e404c2852344deec248ee3c5835c9183",
+    "path": "data/raw/f2a97cb0286fe0c6caeb40ae.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&ids=Q8877%7CQ888617%7CQ8927%7CQ89552%7CQ9072%7CQ909704%7CQ910486%7CQ9176%7CQ9281760%7CQ933428%7CQ934484%7CQ9354107%7CQ937922%7CQ938230%7CQ938855%7CQ942932%7CQ943589%7CQ944529%7CQ946196%7CQ94913%7CQ950104%7CQ95043%7CQ95048%7CQ95316%7CQ953588%7CQ9544977%7CQ9545711%7CQ95580%7CQ957363%7CQ95788171%7CQ9582%7CQ959790%7CQ960676%7CQ964006%7CQ966678%7CQ967833%7CQ975161%7CQ97604&props=labels%7Cdescriptions%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:47:38.856113+00:00",
+    "sha256": "617eecb09ede43953537a6d5da347d7946d217ac8a6b78a7d7f51c15f3570856",
+    "path": "data/raw/7d6b392cb629cc9a0b06534c.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&sites=enwiki&titles=Inception%7CInterstellar+%28film%29%7CThe+Dark+Knight%7CMemento+%28film%29%7CDunkirk+%282017+film%29%7CThe+Prestige%7CBatman+Begins%7CTenet%7CThe+Godfather%7CThe+Godfather+Part+II&props=labels%7Cdescriptions%7Csitelinks%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:43:21.455429+00:00",
+    "sha256": "56d8b57c83cb1ad3dc2d2e0cf47035801fede896cc0dca296a6e8ff1e0c246e1",
+    "path": "data/raw/1db5b6a369cc85140c7afe5e.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&sites=enwiki&titles=The+Shawshank+Redemption%7CPulp+Fiction%7CForrest+Gump%7CThe+Matrix%7CFight+Club%7CGoodfellas%7CThe+Silence+of+the+Lambs+%28film%29%7CSchindler%27s+List%7CThe+Green+Mile+%28film%29%7CSeven+%281995+film%29&props=labels%7Cdescriptions%7Csitelinks%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:43:30.709402+00:00",
+    "sha256": "3e29244a71b9cd1900b290d926f72bdcf8bf9721a264248b79de559dd0e17f76",
+    "path": "data/raw/b54c85b4a378e4a3b3805493.json",
+    "http_status": 200
+  },
+  {
+    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&sites=enwiki&titles=Titanic+%281997+film%29%7CGladiator+%282000+film%29%7CAlien+%28film%29%7CBlade+Runner%7CSpirited+Away%7CParasite+%282019+film%29%7CWhiplash+%282014+film%29%7CLa+La+Land%7CThe+Lord+of+the+Rings%3A+The+Fellowship+of+the+Ring%7CThe+Lord+of+the+Rings%3A+The+Return+of+the+King&props=labels%7Cdescriptions%7Csitelinks%7Cclaims",
+    "provider": "Wikidata",
+    "retrieved_at": "2026-10-06T08:38:16.834612+00:00",
+    "sha256": "767abf09b55092603628beb7bdbba576aed8786e54de65fc0772cfe7b4cbd8a6",
+    "path": "data/raw/85420f1d9ccc0c048179b5b3.json",
+    "http_status": 200
+  }
+]

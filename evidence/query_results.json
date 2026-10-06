@@ -1,0 +1,2624 @@
+[
+  {
+    "file": "01_films.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q103569"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Alien"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1979",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "117.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q166262"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Batman Begins"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2005",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "140.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q184843"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Blade Runner"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1982",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "112.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q21935651"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Dunkirk"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2017",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "106.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q190050"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Fight Club"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1999",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "139.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q134773"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Forrest Gump"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1994",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "142.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q128518"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Gladiator"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2000",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "155.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q42047"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Goodfellas"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1990",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "146.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Inception"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2010",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "148.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q13417189"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Interstellar"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2014",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "169.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q20856802"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "La La Land"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2016",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "128.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q190525"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Memento"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2000",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "113.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q61448040"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Parasite"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2019",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "132.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q104123"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Pulp Fiction"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1994",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "154.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q483941"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Schindler's List"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1993",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "195.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q190908"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Seven"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1995",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "127.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q155653"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Spirited Away"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2001",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "125.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q63985561"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Tenet"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2020",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "150.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q163872"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Dark Knight"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2008",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "153.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q47703"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Godfather"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1972",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "175.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q184768"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Godfather Part II"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1974",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "202.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q208263"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Green Mile"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1999",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "189.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q127367"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Fellowship of the Ring"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2001",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "178.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q131074"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Return of the King"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2003",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "200.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q83495"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Matrix"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1999",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "136.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q46551"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Prestige"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2006",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "125.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q172241"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Shawshank Redemption"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1994",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "142.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q133654"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Silence of the Lambs"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1991",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "118.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q44578"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Titanic"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "1997",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "195.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          },
+          {
+            "phim": {
+              "type": "uri",
+              "value": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q15648198"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Whiplash"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2014",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "106.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "phim",
+          "ten",
+          "nam",
+          "phut"
+        ]
+      }
+    }
+  },
+  {
+    "file": "02_inception.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "ten": {
+              "type": "literal",
+              "value": "Inception"
+            },
+            "daoDien": {
+              "type": "literal",
+              "value": "Christopher Nolan",
+              "xml:lang": "en"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2010",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "phut": {
+              "type": "literal",
+              "value": "148.0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "ten",
+          "nam",
+          "phut",
+          "daoDien"
+        ]
+      }
+    }
+  },
+  {
+    "file": "03_nolan.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "ten": {
+              "type": "literal",
+              "value": "Memento"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2000",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "ten": {
+              "type": "literal",
+              "value": "Batman Begins"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2005",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "ten": {
+              "type": "literal",
+              "value": "The Prestige"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2006",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "ten": {
+              "type": "literal",
+              "value": "The Dark Knight"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2008",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "ten": {
+              "type": "literal",
+              "value": "Inception"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2010",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "ten": {
+              "type": "literal",
+              "value": "Interstellar"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2014",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "ten": {
+              "type": "literal",
+              "value": "Dunkirk"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2017",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "ten": {
+              "type": "literal",
+              "value": "Tenet"
+            },
+            "nam": {
+              "type": "literal",
+              "value": "2020",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "ten",
+          "nam"
+        ]
+      }
+    }
+  },
+  {
+    "file": "04_credits.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Christopher Nolan",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Biên kịch",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Cillian Murphy",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Claire Geare",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Dileep Rao",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Earl Cameron",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Elliot Page",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Joseph Gordon-Levitt",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Ken Watanabe",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Leonardo DiCaprio",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Lukas Haas",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Marion Cotillard",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Michael Caine",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Michael Gaston",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Pete Postlethwaite",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Silvie Laguna",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Talulah Riley",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Taylor Geare",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Tohoru Masamune",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Tom Berenger",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Tom Hardy",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Virgile Bramly",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Yuji Okumoto",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Diễn viên",
+              "xml:lang": "vi"
+            }
+          },
+          {
+            "tenNguoi": {
+              "type": "literal",
+              "value": "Christopher Nolan",
+              "xml:lang": "en"
+            },
+            "vaiTro": {
+              "type": "literal",
+              "value": "Đạo diễn",
+              "xml:lang": "vi"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "tenNguoi",
+          "vaiTro"
+        ]
+      }
+    }
+  },
+  {
+    "file": "05_external_links.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Alien_(film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Alien"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q103569"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Alien"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Batman_Begins"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Batman Begins"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q166262"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Batman Begins"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Blade_Runner"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Blade Runner"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q184843"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Blade Runner"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Dunkirk_(2017_film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Dunkirk"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q21935651"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Dunkirk"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Fight_Club"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Fight Club"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q190050"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Fight Club"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Forrest_Gump"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Forrest Gump"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q134773"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Forrest Gump"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Gladiator_(2000_film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Gladiator"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q128518"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Gladiator"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Goodfellas"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Goodfellas"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q42047"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Goodfellas"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Inception"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q25188"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Interstellar_(film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Interstellar"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q13417189"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Interstellar"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/La_La_Land"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "La La Land"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q20856802"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "La La Land"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Memento_(film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Memento"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q190525"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Memento"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Parasite_(2019_film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Parasite"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q61448040"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Parasite"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Pulp_Fiction"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Pulp Fiction"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q104123"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Pulp Fiction"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Schindler's_List"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Schindler's List"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q483941"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Schindler's List"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Seven_(1995_film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Seven"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q190908"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Seven"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Spirited_Away"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Spirited Away"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q155653"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Spirited Away"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q63985561"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Tenet"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/The_Dark_Knight"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Dark Knight"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q163872"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Dark Knight"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/The_Godfather"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q47703"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/The_Godfather_Part_II"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Godfather Part II"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q184768"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Godfather Part II"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/The_Green_Mile_(film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Green Mile"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q208263"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Green Mile"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Fellowship of the Ring"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q127367"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Fellowship of the Ring"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/The_Lord_of_the_Rings:_The_Return_of_the_King"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Return of the King"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q131074"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Return of the King"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/The_Matrix"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Matrix"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q83495"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Matrix"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q46551"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Prestige"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/The_Shawshank_Redemption"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Shawshank Redemption"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q172241"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Shawshank Redemption"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/The_Silence_of_the_Lambs_(film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Silence of the Lambs"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q133654"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "The Silence of the Lambs"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Titanic_(1997_film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Titanic"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q44578"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Titanic"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://dbpedia.org/resource/Whiplash_(2014_film)"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Whiplash"
+            }
+          },
+          {
+            "lienKet": {
+              "type": "uri",
+              "value": "http://www.wikidata.org/entity/Q15648198"
+            },
+            "ten": {
+              "type": "literal",
+              "value": "Whiplash"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "ten",
+          "lienKet"
+        ]
+      }
+    }
+  },
+  {
+    "file": "06_genres.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "drama film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "thriller film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "17",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "action film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "crime film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "11",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "crime thriller film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "9",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "adventure film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "7",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "crime drama film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "7",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "historical film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "7",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "fantasy film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "6",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "suspense film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "6",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "mystery film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "6",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "science fiction film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "6",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "flashback film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "6",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "neo-noir",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "6",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "police procedural film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "5",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "historical drama film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "5",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "epic film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "5",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "horror film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "4",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "gangster film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "4",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "film noir",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "3",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "comedy drama",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "3",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "comedy film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "3",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "dystopian film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "3",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "superhero film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "3",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "psychological drama film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "3",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "coming-of-age film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "science fiction action film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "romance film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "musical film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "cyberpunk",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "time-travel film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "action thriller",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "prison film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "psychological horror film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "psychological thriller film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "independent film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "magic realist film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "war film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "melodrama",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "biographical film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "supernatural anime",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "fantasy anime and manga",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "children's film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "isekai",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "body horror film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "science fiction horror film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "monster film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "girls with guns",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "film based on a literary work",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "black comedy",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "dance film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "tech noir",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "spy film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "post-apocalyptic film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "buddy film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "chase film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "detective film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "buddy cop film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "heist film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "hard science fiction",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "sword-and-sandal film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "LGBTQ-related film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "psychological thriller",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "high fantasy",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "ninja film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "crime comedy film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "black comedy film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "period drama film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "disaster film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "war drama",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "anti-war film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "American football film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "romantic comedy film",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "tragicomedy",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "theLoai": {
+              "type": "literal",
+              "value": "historical drama",
+              "xml:lang": "en"
+            },
+            "soPhim": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "theLoai",
+          "soPhim"
+        ]
+      }
+    }
+  },
+  {
+    "file": "07_source.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "ten": {
+              "type": "literal",
+              "value": "Inception"
+            },
+            "thoiDiem": {
+              "type": "literal",
+              "value": "2026-10-06T08:41:52.952071+00:00",
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+            },
+            "maBam": {
+              "type": "literal",
+              "value": "514bd35dd455093667eb081f16532da02c5c89ca1d10f5197d1cfdd701434b68"
+            },
+            "url": {
+              "type": "literal",
+              "value": "https://dbpedia.org/data/Inception.json",
+              "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          },
+          {
+            "ten": {
+              "type": "literal",
+              "value": "Inception"
+            },
+            "thoiDiem": {
+              "type": "literal",
+              "value": "2026-10-06T08:43:21.455429+00:00",
+              "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+            },
+            "maBam": {
+              "type": "literal",
+              "value": "56d8b57c83cb1ad3dc2d2e0cf47035801fede896cc0dca296a6e8ff1e0c246e1"
+            },
+            "url": {
+              "type": "literal",
+              "value": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&languages=en&sites=enwiki&titles=Inception%7CInterstellar+%28film%29%7CThe+Dark+Knight%7CMemento+%28film%29%7CDunkirk+%282017+film%29%7CThe+Prestige%7CBatman+Begins%7CTenet%7CThe+Godfather%7CThe+Godfather+Part+II&props=labels%7Cdescriptions%7Csitelinks%7Cclaims",
+              "datatype": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "ten",
+          "url",
+          "thoiDiem",
+          "maBam"
+        ]
+      }
+    }
+  },
+  {
+    "file": "08_ask.rq",
+    "result": {
+      "boolean": true
+    }
+  }
+]

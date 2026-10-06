@@ -1,0 +1,1 @@
+Bài làm này xây dựng Movie L O D, một ứng dụng dữ liệu phim liên kết. Mục tiêu là hoàn thành cả năm yêu cầu của đề, từ mô hình hóa, thu thập và chuyển đổi dữ liệu, đến liên kết ngoài và truy vấn. Thay vì mở rộng quá nhiều khái niệm, mô hình chỉ dùng chín lớp cần thiết. Chúng ta sẽ theo dõi một ví dụ quen thuộc: phim Inception và đạo diễn Christopher Nolan.

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/director">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#directed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="vi">Bộ dữ liệu</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne975f2c5ba8f4ff4833003b54de43caf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#participant"/>
+    <owl:onClass rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0e8713d92388440fa78a19b0fe1a0c5f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#role"/>
+    <owl:allValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="vi">Bản ghi nguồn</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="vi">Quốc gia sản xuất</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#releaseYear">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne964aa21e7504119b23a53e3a18a10c1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#role"/>
+    <owl:onClass rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#wrote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="vi">Đã viết kịch bản</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#inFilm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="vi">Thuộc phim</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasCredit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/writer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#wrote"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0ab618bddb6440be83e88fd907c84d36">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/Country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="vi">Quốc gia</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectorRole">
+    <rdf:type rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="vi">Đạo diễn</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="vi">Vai trò đóng góp</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#runtimeMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb5c63f77c644b5dafe7467cf3db2fdc">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdf:rest rdf:nodeID="Nb7ac9935a2484922b54598e6d5465ec4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WriterRole">
+    <rdf:type rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="vi">Biên kịch</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="vi">Ngôn ngữ gốc</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#role">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="vi">Vai trò</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb7ac9935a2484922b54598e6d5465ec4">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
+    <rdf:rest rdf:nodeID="N52a4c3c7538a48fdbc38c19395ea1f46"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="vi">Thể loại</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Genre"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/starring">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#actedIn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#actedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="vi">Đã diễn xuất</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec1bf6d9b3e34933aee0062f4e5d60d9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#inFilm"/>
+    <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="vi">MovieLOD — ontology điện ảnh tối giản</rdfs:label>
+    <owl:versionInfo>1.0.0</owl:versionInfo>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActorRole">
+    <rdf:type rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="vi">Diễn viên</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9226d049d1294f6e8c1bb68955ac14fd">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <rdf:rest rdf:nodeID="N5345cb6f2cc149e5a6dbc579e202eab8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasGenre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="vi">Có thể loại</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#retrievedAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#sha256">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasCredit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="vi">Có đóng góp</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#sourceSnapshot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="vi">Bản ghi nguồn</rdfs:label>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="vi">Bản ghi đóng góp</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="Na4335ba4b03c4c30b291c5be1cbbea20"/>
+    <rdfs:subClassOf rdf:nodeID="Nec1bf6d9b3e34933aee0062f4e5d60d9"/>
+    <rdfs:subClassOf rdf:nodeID="Ne975f2c5ba8f4ff4833003b54de43caf"/>
+    <rdfs:subClassOf rdf:nodeID="N37091d907ed1427e86e2adffd1cf9818"/>
+    <rdfs:subClassOf rdf:nodeID="Ne964aa21e7504119b23a53e3a18a10c1"/>
+    <rdfs:subClassOf rdf:nodeID="N0e8713d92388440fa78a19b0fe1a0c5f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd95bfe0388944a93865e8ad5047a95d0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <owl:distinctMembers rdf:nodeID="N54301e0bb81c4806a5c35851897dd6b8"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N68181c2e4f404636bbeb60e2df6bc50a">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActorRole"/>
+    <rdf:rest rdf:nodeID="N818624f0bf754164beecae84da8f2996"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N52a4c3c7538a48fdbc38c19395ea1f46">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Country"/>
+    <rdf:rest rdf:nodeID="N5043bf90f3e04be6b7ada12050f3f585"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N12f1fcb4160548b588659231e96113d5">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:rest rdf:nodeID="Nfb5c63f77c644b5dafe7467cf3db2fdc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/Film">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="vi">Phim</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="vi">Ngôn ngữ</rdfs:label>
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Language"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#directed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="vi">Đã đạo diễn</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na4335ba4b03c4c30b291c5be1cbbea20">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#inFilm"/>
+    <owl:onClass rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#sourceUrl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N37091d907ed1427e86e2adffd1cf9818">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#participant"/>
+    <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N818624f0bf754164beecae84da8f2996">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WriterRole"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1aa7a92889f744d28e616d1bf47840c2">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
+    <rdf:rest rdf:nodeID="N9226d049d1294f6e8c1bb68955ac14fd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#participant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="vi">Người tham gia</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5043bf90f3e04be6b7ada12050f3f585">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
+    <rdf:rest rdf:nodeID="N1aa7a92889f744d28e616d1bf47840c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="vi">Người</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5345cb6f2cc149e5a6dbc579e202eab8">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
+    <rdf:rest rdf:nodeID="N0ab618bddb6440be83e88fd907c84d36"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N54301e0bb81c4806a5c35851897dd6b8">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectorRole"/>
+    <rdf:rest rdf:nodeID="N68181c2e4f404636bbeb60e2df6bc50a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfbf018c2c9e640d59ca577c693b81eb2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N12f1fcb4160548b588659231e96113d5"/>
+  </rdf:Description>
+</rdf:RDF>

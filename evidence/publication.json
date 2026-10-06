@@ -1,0 +1,11 @@
+{
+  "audience": "public",
+  "status": "succeeded",
+  "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site",
+  "note": "Public access verified through Sites and unauthenticated HTTP on 2026-10-06. The live deployment predates the local direct DBpedia class reuse change; republish the updated web/dist to synchronize it.",
+  "project_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916",
+  "deployment_id": "appgdep_6ac4b923bf18819181c915f9cefb5023",
+  "version_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916~appgver_8f940fd786908191a9057831f3524cef",
+  "source_commit": "04aeb4d90f091fb99248d8e99ec155e6dc61761b",
+  "local_changes_pending_publication": true
+}

@@ -1,0 +1,11 @@
+{
+  "turtle_jsonld_same_graph": true,
+  "owl_combined_matches_data_and_schema": true,
+  "report_pages": 5,
+  "guide_pages": 4,
+  "slides": 8,
+  "video_seconds": 256.04644,
+  "tests_passed": 8,
+  "browser_checks_passed": 9,
+  "public_publication_complete": false
+}

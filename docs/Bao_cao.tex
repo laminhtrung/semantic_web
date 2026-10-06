@@ -1,0 +1,491 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[a4paper,margin=19mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Be Vietnam Pro}
+  \setmonofont[]{Menlo}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small MovieLOD · Bài làm hoàn chỉnh}
+\fancyfoot[C]{\small\thepage}\setlength{\headheight}{15pt}
+\renewcommand{\arraystretch}{1.14}\setlength{\extrarowheight}{1pt}
+\AtBeginEnvironment{longtable}{\small}
+\setlength{\emergencystretch}{3em}\setlength{\parskip}{4pt}
+\usepackage{titling}\setlength{\droptitle}{-1.5cm}
+\pretitle{\begin{center}\Large\bfseries\color{teal}}
+\posttitle{\par\end{center}\vspace{-0.5em}}
+\predate{\begin{center}\small}\postdate{\par\end{center}\vspace{-1em}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  pdftitle={MovieLOD: ứng dụng dữ liệu phim liên kết},
+  colorlinks=true,
+  linkcolor={teal},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={teal},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{MovieLOD: ứng dụng dữ liệu phim liên kết}
+\author{}
+\date{Báo cáo học phần Semantic Web • 06/10/2026}
+
+\begin{document}
+\maketitle
+
+\subsection{1. Mục tiêu và yêu cầu đề
+bài}\label{mux1ee5c-tiuxeau-vuxe0-yuxeau-cux1ea7u-ux111ux1ec1-buxe0i}
+
+\textbf{Mục tiêu:} xây dựng một ứng dụng Linked Open Data (LOD --- dữ
+liệu mở có liên kết) về điện ảnh. Người dùng xem phim, truy lại nguồn và
+đặt câu hỏi bằng SPARQL. Mô hình được giới hạn ở phần cần cho bài, gồm
+\textbf{9 lớp}.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Đề gốc
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Dịch và sản phẩm tương ứng
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Define an ontology for the selected domain & \textbf{YC1:} định nghĩa mô
+hình điện ảnh → ontology OWL, sơ đồ và quy tắc. \\
+Collect relevant data in this domain & \textbf{YC2:} thu thập dữ liệu →
+mã thu thập, phản hồi gốc, URL, thời điểm và mã băm. \\
+Transform collected data into 4* standard & \textbf{YC3:} biểu diễn theo
+chuẩn 4 sao → RDF, IRI, giấy phép mở và công bố dữ liệu. \\
+Find and establish links to other datasets to obtain 5* standard &
+\textbf{YC4:} nối dữ liệu với bộ dữ liệu khác → liên kết đúng danh tính
+tới Wikidata/DBpedia. \\
+Provide an interface via SPARQL endpoint/terminal to query data &
+\textbf{YC5:} có nơi chạy truy vấn → giao diện Web, endpoint và
+terminal. \\
+\end{longtable}
+}
+
+\textbf{Sản phẩm kèm theo:} báo cáo này; \texttt{Slide.pptx} và
+\texttt{Slide.pdf}; \texttt{Video\_\allowbreak{}demo.mp4} dài 3--5 phút;
+hướng dẫn chạy từ A đến Z.
+
+\subsection{2. Kiến trúc và quy
+trình}\label{kiux1ebfn-truxfac-vuxe0-quy-truxecnh}
+
+\textbf{Chọn phim → tải dữ liệu → kiểm tra danh tính → chuẩn hóa → tạo
+RDF → kiểm tra → truy vấn → xuất bản.}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Thành phần
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Việc thực hiện
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+File chính
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Thu thập & Tải API Wikidata và JSON DBpedia; lưu nguyên phản hồi. &
+\texttt{src/\allowbreak{}collect.py};
+\texttt{data/\allowbreak{}raw/\allowbreak{}} \\
+Chuyển đổi & Tạo định danh, lớp, quan hệ, credit và thông tin nguồn. &
+\texttt{src/\allowbreak{}build.py} \\
+Chất lượng & Kiểm tra dữ liệu bằng Python, mã băm, truy vấn và quy tắc
+suy luận. & \texttt{src/\allowbreak{}validate.py};
+\texttt{tests/\allowbreak{}} \\
+Ứng dụng & Giao diện Web; endpoint cục bộ dùng RDFLib; bản hosted dùng
+Comunica. & \texttt{src/\allowbreak{}server.py};
+\texttt{web/\allowbreak{}dist/\allowbreak{}} \\
+Minh chứng & Kết quả đo thực tế, ảnh giao diện, báo cáo và video. &
+\texttt{evidence/\allowbreak{}}; \texttt{docs/\allowbreak{}} \\
+\end{longtable}
+}
+
+\textbf{Trạng thái xuất bản:} Đã xuất bản công khai; người có URL truy
+cập được dữ liệu và giao diện. Bản hosted còn dùng kiểu lớp trước lần
+sửa; bản trong repo đã dùng trực tiếp dbo:Film, dbo:Person, dbo:Country
+và cần xuất bản lại để đồng bộ.
+
+\newpage
+
+\subsection{3. YC1 --- Ontology vừa đủ cho lĩnh vực
+phim}\label{yc1-ontology-vux1eeba-ux111ux1ee7-cho-lux129nh-vux1ef1c-phim}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Lớp / thuật ngữ
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Dịch
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Ý nghĩa
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+dbo:Film; dbo:Person & Phim; người & Tái sử dụng trực tiếp lớp DBpedia
+cho đối tượng trung tâm. \\
+ex:Genre; dbo:Country; ex:Language & Thể loại; quốc gia; ngôn ngữ &
+Country tái sử dụng DBpedia; Genre và Language thuộc mô hình của bài. \\
+Credit; ContributionRole & Bản ghi đóng góp; vai trò & Ai làm việc gì
+trong phim nào? \\
+SourceSnapshot; Dataset & Bản ghi nguồn; bộ dữ liệu & Thông tin lấy từ
+đâu, được công bố thế nào? \\
+\end{longtable}
+}
+
+Một \textbf{credit} nối đúng \textbf{1 phim, 1 người, 1 vai trò}. Ba vai
+trò được dùng là đạo diễn, diễn viên, biên kịch. Ví dụ: Inception →
+credit đạo diễn → Christopher Nolan, với role \texttt{DirectorRole}.
+
+Quan hệ đối tượng (\emph{object property}) nối hai thực thể:
+\texttt{dbo:\allowbreak{}director}, \texttt{ex:\allowbreak{}hasGenre},
+\texttt{ex:\allowbreak{}participant}. Thuộc tính giá trị (\emph{data
+property}) nối thực thể với giá trị: \texttt{ex:\allowbreak{}title},
+\texttt{ex:\allowbreak{}releaseYear},
+\texttt{ex:\allowbreak{}runtimeMinutes}.
+
+\textbf{Quy tắc OWL:} các lớp chính loại trừ nhau; một credit có số
+lượng giá trị cố định và loại giá trị được quy định. \texttt{director}
+là quan hệ ngược của \texttt{directed}: nếu phim có đạo diễn Nolan, có
+thể suy ra Nolan đã đạo diễn phim đó. Test xác nhận truy vấn trực tiếp
+các lớp DBpedia, rồi chạy OWL RL để kiểm tra quan hệ ngược và suy luận
+range \texttt{dbo:\allowbreak{}Person}; đây không phải tuyên bố đã chạy
+phân loại toàn bộ bằng reasoner OWL DL.
+
+\textbf{Tái sử dụng từ vựng:} dùng trực tiếp
+\texttt{dbo:\allowbreak{}Film}, \texttt{dbo:\allowbreak{}Person},
+\texttt{dbo:\allowbreak{}Country} trong kiểu thực thể, domain/range,
+cardinality và SPARQL. Mô hình gồm 3 lớp DBpedia và 6 lớp
+\texttt{ex:\allowbreak{}}. Dùng \texttt{owl:\allowbreak{}sameAs} để nối
+cá thể cùng danh tính, PROV cho nguồn, Dublin Core cho giấy phép và VoID
+cho bộ dữ liệu. Tái sử dụng lớp và liên kết cá thể là hai việc riêng.
+Các file OWL đều mở được bằng Protégé.
+
+\subsection{4. YC2 --- Thu thập dữ liệu thật, có thể kiểm tra
+lại}\label{yc2-thu-thux1eadp-dux1eef-liux1ec7u-thux1eadt-cuxf3-thux1ec3-kiux1ec3m-tra-lux1ea1i}
+
+Danh sách chọn có \textbf{30 phim}. Đây là mẫu có chủ đích để minh họa
+ứng dụng, không phải toàn bộ phim trên thế giới. API Wikidata được truy
+theo \textbf{sitelink Wikipedia tiếng Anh chính xác}, không đoán danh
+tính từ tên gần giống.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lr@{}}
+\toprule\noalign{}
+Chỉ số từ lần chạy & Kết quả \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Phim / người & 30 / 805 \\
+Credit & 936 \\
+Thể loại / quốc gia / ngôn ngữ & 75 / 11 / 15 \\
+Phản hồi nguồn đã lưu & 56 \\
+Phim có năm / thời lượng / đạo diễn & 30 / 30 / 30 \\
+\end{longtable}
+}
+
+Mỗi phản hồi có URL, thời điểm lấy, HTTP status và SHA-256. \textbf{Mã
+băm} là dấu vân tay của nội dung; dùng để kiểm tra phản hồi có bị đổi
+không. 56 phản hồi đã được kiểm tra khớp mã băm.
+
+\textbf{Chọn nguồn:} dùng nhãn và các phát biểu của Wikidata cho thông
+tin chính; không nhập nguyên các nhãn/\texttt{sameAs} bị trộn của
+DBpedia. Chỉ nối DBpedia khi chủ thể đúng tiêu đề Wikipedia và được khai
+báo \texttt{dbo:\allowbreak{}Film}.
+
+\newpage
+
+\subsection{5. YC3 --- Chuyển đổi RDF và điều kiện 4
+sao}\label{yc3-chuyux1ec3n-ux111ux1ed5i-rdf-vuxe0-ux111iux1ec1u-kiux1ec7n-4-sao}
+
+Một \textbf{triple} gồm chủ thể → quan hệ → đối tượng/giá trị. Dữ liệu
+có \textbf{12089 triple}, ontology có \textbf{166 triple}. Có bản
+Turtle, JSON-LD, CSV; có OWL chỉ chứa lược đồ và OWL chứa cả đồ thị.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Việc chuẩn hóa
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cách thực hiện
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Định danh ổn định & Dùng QID nguồn để tạo IRI, ví dụ
+\texttt{film-\allowbreak{}Q25188}; cùng thực thể được tái sử dụng. \\
+Năm phát hành & Năm sớm nhất trong các ngày nguồn có lịch Gregory và độ
+chính xác ít nhất đến năm. \\
+Thời lượng & Chuyển đơn vị phút/giây/giờ về phút; không tự điền giá trị
+thiếu. \\
+Nhiều giá trị nguồn & Ưu tiên phát biểu có rank preferred; ghi các thời
+lượng khác vào nhật ký chất lượng. \\
+Đóng góp & Tạo credit riêng theo bộ phim--người--vai trò, giữ nguồn của
+phát biểu. \\
+Nguồn dữ liệu & \texttt{sourceSnapshot} nối bản ghi với URL, thời điểm
+và SHA-256. \\
+\end{longtable}
+}
+
+\textbf{Giấy phép dữ liệu:} CC BY-SA 4.0, có ghi công Wikidata, DBpedia
+và Wikipedia contributors. Dữ liệu có ghi giấy phép trong RDF và trong
+\texttt{LICENSE-\allowbreak{}DATA.txt}. Mã ứng dụng có giấy phép MIT;
+thư viện giữ giấy phép của tác giả.
+
+\textbf{Định danh phim mẫu:}
+\href{https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188}{Inception}.
+Mở IRI sẽ thấy mô tả HTML, liên kết RDF và JSON-LD nhúng. Máy chủ cục bộ
+còn nhận \texttt{Accept:\allowbreak{} text/\allowbreak{}turtle}, chuyển
+hướng HTTP 303 và trả RDF riêng của thực thể.
+
+\textbf{Địa chỉ bộ dữ liệu:}
+\href{https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/dataset}{dataset},
+\href{https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.ttl}{RDF
+Turtle},
+\href{https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology}{ontology}.
+
+Theo \href{https://www.w3.org/DesignIssues/LinkedData.html}{thang sao
+Linked Data}, các mức sao cộng dồn; có RDF và IRI là phần kỹ thuật, còn
+Open Data cần công bố trên Web với giấy phép mở. \textbf{Trạng thái hiện
+tại:} Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao
+diện. Bản hosted còn dùng kiểu lớp trước lần sửa; bản trong repo đã dùng
+trực tiếp dbo:Film, dbo:Person, dbo:Country và cần xuất bản lại để đồng
+bộ.
+
+\subsection{6. YC4 --- Liên kết ngoài để tạo ngữ
+cảnh}\label{yc4-liuxean-kux1ebft-ngouxe0i-ux111ux1ec3-tux1ea1o-ngux1eef-cux1ea3nh}
+
+Có \textbf{964 liên kết \texttt{owl:\allowbreak{}sameAs}}: \textbf{936}
+tới Wikidata, \textbf{28} tới DBpedia. Liên kết bao phủ phim, người và
+các thuật ngữ được sử dụng. Mỗi phim có ít nhất một liên kết ngoài.
+
+\texttt{sameAs} dịch là \textbf{``hai định danh chỉ cùng một thực
+thể''}. Ví dụ: Inception cục bộ ↔ Wikidata Q25188 ↔ DBpedia Inception.
+\texttt{wasDerivedFrom} dịch là \textbf{``được lấy từ''}; quan hệ này
+nói về nguồn thông tin, không thay thế \texttt{sameAs}.
+
+\texttt{evidence/\allowbreak{}link\_\allowbreak{}audit.json} ghi cả hai
+IRI và phương pháp nối. 5 sao thêm liên kết ngoài trên nền điều kiện 4
+sao; không đánh đồng số lượng liên kết với điểm đánh giá.
+
+\newpage
+
+\subsection{7. YC5 --- Giao diện, endpoint và terminal chạy thực
+tế}\label{yc5-giao-diux1ec7n-endpoint-vuxe0-terminal-chux1ea1y-thux1ef1c-tux1ebf}
+
+\textbf{Giao diện Web:} có ô nhập SPARQL, câu hỏi mẫu, bảng kết quả, báo
+lỗi và tải kết quả. Có thể tìm phim và mở IRI để xem nguồn. Bản hosted
+chạy truy vấn RDF ngay trong trình duyệt bằng Comunica; bản cục bộ gửi
+truy vấn tới endpoint Python.
+
+\textbf{Endpoint cục bộ:}
+\texttt{http:\allowbreak{}/\allowbreak{}/\allowbreak{}127.0.0.1:\allowbreak{}8000/\allowbreak{}sparql}.
+Hỗ trợ GET, POST form và
+\texttt{application/\allowbreak{}sparql-\allowbreak{}query}; trả SPARQL
+Results JSON cho SELECT/ASK và Turtle cho CONSTRUCT/DESCRIBE. Chỉ truy
+vấn dataset của bài; không nhận SPARQL Update và không dùng SERVICE/FROM
+để tải dữ liệu ngoài.
+
+\textbf{Terminal:}
+\texttt{.venv/\allowbreak{}bin/\allowbreak{}python src/\allowbreak{}query.py queries/\allowbreak{}02\_\allowbreak{}inception.rq}.
+Tám file truy vấn bao gồm danh sách phim, Inception, phim của Nolan,
+credit, liên kết ngoài, thống kê thể loại, nguồn và ASK.
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?ten ?daoDien WHERE {
+  ?phim a dbo:Film ; ex:title "Inception" ;
+        ex:title ?ten ; dbo:director ?nguoi .
+  ?nguoi rdfs:label ?daoDien .
+}
+\end{verbatim}
+
+\textbf{Dịch:} tìm phim tên Inception, đi theo quan hệ đạo diễn, rồi lấy
+tên người đó. \textbf{Kết quả đã kiểm tra:} Inception --- Christopher
+Nolan. \texttt{SELECT} chọn cột; \texttt{WHERE} đưa mẫu dữ liệu;
+\texttt{?} đánh dấu biến cần tìm. Cú pháp đối chiếu
+\href{https://www.w3.org/TR/sparql11-query/}{W3C SPARQL 1.1}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio,alt={Giao diện thật với truy vấn Inception}]{../evidence/screenshots/01_app.png}
+\caption{Giao diện thật với truy vấn Inception}
+\end{figure}
+
+\newpage
+
+\subsection{8. Kiểm tra, giới hạn và cách chạy
+lại}\label{kiux1ec3m-tra-giux1edbi-hux1ea1n-vuxe0-cuxe1ch-chux1ea1y-lux1ea1i}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Kiểm tra
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Minh chứng
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Kiểm tra cơ bản bằng Python &
+\texttt{evidence/\allowbreak{}validation.json}; data\_checks\_passed =
+true. \\
+Toàn vẹn phản hồi gốc & \texttt{evidence/\allowbreak{}validation.json};
+56 mã băm khớp. \\
+Chạy các truy vấn mẫu &
+\texttt{evidence/\allowbreak{}query\_\allowbreak{}results.json}; 8 truy
+vấn đã chạy. \\
+Endpoint, nội dung RDF, lỗi đầu vào &
+\texttt{tests/\allowbreak{}test\_\allowbreak{}application.py}; biên bản
+\texttt{evidence/\allowbreak{}tests.txt}. \\
+Suy luận quan hệ ngược & Test thực thi OWL RL; không lưu kết quả suy
+luận lẫn vào graph gốc. \\
+Giao diện và trình duyệt &
+\texttt{evidence/\allowbreak{}browser\_\allowbreak{}checks.json}; ảnh
+desktop/mobile. \\
+Xuất bản & \texttt{evidence/\allowbreak{}publication.json} ghi URL,
+trạng thái và audience thực tế. \\
+\end{longtable}
+}
+
+\textbf{Giới hạn:} mẫu phim được chọn có chủ đích; không thu thập giải
+thưởng, streaming hoặc ngân sách. Thông tin có thể thay đổi sau ngày
+lấy. Dữ liệu thiếu giữ trạng thái chưa biết, không tự gán 0. Năm và thời
+lượng là giá trị tóm tắt, không mô tả từng quốc gia hoặc từng bản dựng.
+Kiểm tra Python xác nhận một số trường cơ bản; không chứng minh mọi phát
+biểu đúng ngoài đời hay mọi ràng buộc OWL đều thỏa mãn.
+
+\textbf{Chạy trên macOS/Linux:} vào thư mục
+\texttt{movie\_\allowbreak{}lod\_\allowbreak{}complete}, tạo virtual
+environment, cài \texttt{requirements.txt}, chạy \texttt{make all} để
+thu thập lại từ cache và kiểm tra, rồi \texttt{make serve}. Mở
+\texttt{http:\allowbreak{}/\allowbreak{}/\allowbreak{}127.0.0.1:\allowbreak{}8000}.
+Trên macOS có thể chạy \texttt{start.command}.
+
+\textbf{Chạy lại không cần tải nguồn mới:} dùng phản hồi đã lưu;
+\texttt{collect.py} kiểm tra hash trước khi dùng cache. Dùng
+\texttt{-\allowbreak{}-\allowbreak{}refresh} nếu muốn tải phiên bản mới
+từ Internet. Thư viện Python vẫn cần được cài trước khi chạy.
+
+\textbf{Đối chiếu cuối:} YC1 có ontology và quy tắc; YC2 có mã thu thập,
+dữ liệu gốc, nguồn; YC3 có RDF, IRI, giấy phép và bản xuất bản; YC4 có
+liên kết được kiểm tra; YC5 có giao diện, endpoint và terminal.
+\textbf{Điều kiện công khai của YC3--YC4 phụ thuộc audience của bản
+hosted nêu ở trên.} Báo cáo không tự gán điểm chính thức.
+
+Nguồn kỹ thuật:
+\href{https://www.w3.org/DesignIssues/LinkedData.html}{W3C Linked Data},
+\href{https://www.w3.org/TR/sparql11-query/}{W3C SPARQL},
+\href{https://www.wikidata.org/wiki/Wikidata:Licensing}{Wikidata
+licensing},
+\href{https://comunica.dev/docs/query/getting_started/query_browser_app/}{Comunica}.
+
+\end{document}

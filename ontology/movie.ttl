@@ -1,0 +1,180 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dbo:director a owl:ObjectProperty ;
+    rdfs:domain dbo:Film ;
+    rdfs:range dbo:Person ;
+    owl:inverseOf ex:directed .
+
+dbo:starring a owl:ObjectProperty ;
+    rdfs:domain dbo:Film ;
+    rdfs:range dbo:Person ;
+    owl:inverseOf ex:actedIn .
+
+dbo:writer a owl:ObjectProperty ;
+    rdfs:domain dbo:Film ;
+    rdfs:range dbo:Person ;
+    owl:inverseOf ex:wrote .
+
+<https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology> a owl:Ontology ;
+    rdfs:label "MovieLOD — ontology điện ảnh tối giản"@vi ;
+    dct:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
+    owl:versionInfo "1.0.0" .
+
+ex:country a owl:ObjectProperty ;
+    rdfs:label "Quốc gia sản xuất"@vi ;
+    rdfs:domain dbo:Film ;
+    rdfs:range dbo:Country .
+
+ex:hasGenre a owl:ObjectProperty ;
+    rdfs:label "Có thể loại"@vi ;
+    rdfs:domain dbo:Film ;
+    rdfs:range ex:Genre .
+
+ex:language a owl:ObjectProperty ;
+    rdfs:label "Ngôn ngữ gốc"@vi ;
+    rdfs:domain dbo:Film ;
+    rdfs:range ex:Language .
+
+ex:releaseYear a owl:DatatypeProperty ;
+    rdfs:domain dbo:Film ;
+    rdfs:range xsd:integer .
+
+ex:retrievedAt a owl:DatatypeProperty ;
+    rdfs:domain ex:SourceSnapshot ;
+    rdfs:range xsd:dateTime .
+
+ex:runtimeMinutes a owl:DatatypeProperty ;
+    rdfs:domain dbo:Film ;
+    rdfs:range xsd:decimal .
+
+ex:sha256 a owl:DatatypeProperty ;
+    rdfs:domain ex:SourceSnapshot ;
+    rdfs:range xsd:string .
+
+ex:sourceSnapshot a owl:ObjectProperty ;
+    rdfs:label "Bản ghi nguồn"@vi ;
+    rdfs:range ex:SourceSnapshot .
+
+ex:sourceUrl a owl:DatatypeProperty ;
+    rdfs:domain ex:SourceSnapshot ;
+    rdfs:range xsd:anyURI .
+
+ex:title a owl:DatatypeProperty ;
+    rdfs:domain dbo:Film ;
+    rdfs:range xsd:string .
+
+ex:ActorRole a owl:NamedIndividual,
+        ex:ContributionRole ;
+    rdfs:label "Diễn viên"@vi .
+
+ex:Dataset a owl:Class ;
+    rdfs:label "Bộ dữ liệu"@vi ;
+    owl:equivalentClass void:Dataset .
+
+ex:DirectorRole a owl:NamedIndividual,
+        ex:ContributionRole ;
+    rdfs:label "Đạo diễn"@vi .
+
+ex:WriterRole a owl:NamedIndividual,
+        ex:ContributionRole ;
+    rdfs:label "Biên kịch"@vi .
+
+ex:actedIn a owl:ObjectProperty ;
+    rdfs:label "Đã diễn xuất"@vi ;
+    rdfs:domain dbo:Person ;
+    rdfs:range dbo:Film .
+
+ex:directed a owl:ObjectProperty ;
+    rdfs:label "Đã đạo diễn"@vi ;
+    rdfs:domain dbo:Person ;
+    rdfs:range dbo:Film .
+
+ex:hasCredit a owl:ObjectProperty ;
+    rdfs:label "Có đóng góp"@vi ;
+    rdfs:domain dbo:Film ;
+    rdfs:range ex:Credit .
+
+ex:wrote a owl:ObjectProperty ;
+    rdfs:label "Đã viết kịch bản"@vi ;
+    rdfs:domain dbo:Person ;
+    rdfs:range dbo:Film .
+
+dbo:Country a owl:Class ;
+    rdfs:label "Quốc gia"@vi .
+
+ex:Genre a owl:Class ;
+    rdfs:label "Thể loại"@vi ;
+    owl:equivalentClass dbo:Genre .
+
+ex:Language a owl:Class ;
+    rdfs:label "Ngôn ngữ"@vi ;
+    owl:equivalentClass dbo:Language .
+
+ex:inFilm a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Thuộc phim"@vi ;
+    rdfs:domain ex:Credit ;
+    rdfs:range dbo:Film ;
+    owl:inverseOf ex:hasCredit .
+
+ex:participant a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Người tham gia"@vi ;
+    rdfs:domain ex:Credit ;
+    rdfs:range dbo:Person .
+
+ex:role a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Vai trò"@vi ;
+    rdfs:domain ex:Credit ;
+    rdfs:range ex:ContributionRole .
+
+ex:Credit a owl:Class ;
+    rdfs:label "Bản ghi đóng góp"@vi ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ex:ContributionRole ;
+            owl:onProperty ex:role ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dbo:Person ;
+            owl:onProperty ex:participant ],
+        [ a owl:Restriction ;
+            owl:onClass dbo:Film ;
+            owl:onProperty ex:inFilm ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass ex:ContributionRole ;
+            owl:onProperty ex:role ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass dbo:Person ;
+            owl:onProperty ex:participant ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dbo:Film ;
+            owl:onProperty ex:inFilm ] .
+
+ex:SourceSnapshot a owl:Class ;
+    rdfs:label "Bản ghi nguồn"@vi .
+
+ex:ContributionRole a owl:Class ;
+    rdfs:label "Vai trò đóng góp"@vi .
+
+dbo:Person a owl:Class ;
+    rdfs:label "Người"@vi .
+
+dbo:Film a owl:Class ;
+    rdfs:label "Phim"@vi .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( ex:DirectorRole ex:ActorRole ex:WriterRole ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( dbo:Film dbo:Person ex:Genre dbo:Country ex:Language ex:Credit ex:ContributionRole ex:SourceSnapshot ex:Dataset ) .
+

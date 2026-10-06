@@ -1,0 +1,24 @@
+{
+  "films": 30,
+  "persons": 805,
+  "credits": 936,
+  "genres": 75,
+  "countries": 11,
+  "languages": 15,
+  "snapshots": 56,
+  "data_triples": 12089,
+  "schema_triples": 166,
+  "classes": 9,
+  "reused_dbpedia_classes": [
+    "http://dbpedia.org/ontology/Film",
+    "http://dbpedia.org/ontology/Person",
+    "http://dbpedia.org/ontology/Country"
+  ],
+  "same_as": 964,
+  "dbpedia_links": 28,
+  "wikidata_links": 936,
+  "with_year": 30,
+  "with_runtime": 30,
+  "with_director": 30,
+  "base_url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site"
+}

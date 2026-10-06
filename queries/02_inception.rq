@@ -1,0 +1,9 @@
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?ten ?nam ?phut ?daoDien WHERE {
+  ?phim a dbo:Film ; ex:title "Inception" ; ex:title ?ten ; dbo:director ?nguoi .
+  ?nguoi rdfs:label ?daoDien .
+  OPTIONAL { ?phim ex:releaseYear ?nam }
+  OPTIONAL { ?phim ex:runtimeMinutes ?phut }
+}

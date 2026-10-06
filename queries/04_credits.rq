@@ -1,0 +1,7 @@
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?tenNguoi ?vaiTro WHERE {
+  ?phim ex:title "Inception" ; ex:hasCredit ?credit .
+  ?credit ex:participant ?nguoi ; ex:role ?role .
+  ?nguoi rdfs:label ?tenNguoi . ?role rdfs:label ?vaiTro .
+} ORDER BY ?vaiTro ?tenNguoi

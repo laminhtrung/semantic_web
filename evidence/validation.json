@@ -1,0 +1,9 @@
+{
+  "data_checks_passed": true,
+  "data_errors": [],
+  "source_hashes_match": true,
+  "snapshots_checked": 56,
+  "query_files_executed": 8,
+  "films_have_sources": true,
+  "films_have_external_links": true
+}

@@ -1,0 +1,48 @@
+{
+  "checked_on": "2026-10-06",
+  "access_mode": "public",
+  "checks": [
+    {
+      "path": "/data/movies.ttl",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.ttl",
+      "rdf_triples": 12089,
+      "direct_dbpedia_films": 0
+    },
+    {
+      "path": "/data/movies.jsonld",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.jsonld"
+    },
+    {
+      "path": "/resource/film-Q25188",
+      "http_status": 200,
+      "content_type": "text/html",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188/",
+      "has_jsonld": true
+    },
+    {
+      "path": "/resource/film-Q25188/index.ttl",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188/index.ttl",
+      "rdf_triples": 69
+    },
+    {
+      "path": "/ontology",
+      "http_status": 200,
+      "content_type": "text/html",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology/"
+    },
+    {
+      "path": "/LICENSE-DATA.txt",
+      "http_status": 200,
+      "content_type": "text/plain",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/LICENSE-DATA.txt"
+    }
+  ],
+  "live_uses_direct_dbpedia_film_class": false,
+  "local_changes_pending_publication": true
+}
