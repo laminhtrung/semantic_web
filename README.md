@@ -1,6 +1,8 @@
 # MovieLOD — bản bài làm độc lập từ A đến Z
 
-**Bắt đầu:** đọc [hướng dẫn A–Z](docs/Huong_dan_A_Z.pdf), rồi chạy ứng dụng. Bản này dùng mô hình **9 lớp**, dữ liệu thật của **30 phim**, có nguồn, chuyển đổi RDF, **964 liên kết ngoài**, giao diện SPARQL, endpoint và terminal.
+**Bắt đầu:** đọc [hướng dẫn A–Z](docs/Huong_dan_A_Z.pdf), rồi chạy ứng dụng. Bản này dùng mô hình **15 lớp**, dữ liệu thật của **30 phim**, có nguồn, chuyển đổi RDF, **964 liên kết ngoài**, giao diện SPARQL, endpoint và terminal.
+
+**Ngôn ngữ ứng dụng:** giao diện, truy vấn mẫu, tên biến SPARQL, nhãn ontology/vai trò và thông báo endpoint dùng tiếng Anh. Tài liệu hướng dẫn học phần được viết bằng tiếng Việt.
 
 ## Chạy ngay
 
@@ -14,7 +16,7 @@ python3 -m venv .venv
 
 Mở **http://127.0.0.1:8000**. Dữ liệu đã có sẵn. Trên macOS có thể chạy [start.command](start.command). Dừng server bằng Ctrl+C. Nếu cổng đã được dùng: `src/server.py --port 8001`.
 
-**Bản hosted:** [MovieLOD](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site). Trạng thái và audience thực tế nằm ở [publication.json](evidence/publication.json). Site đã công khai; bản sửa tái sử dụng trực tiếp lớp DBpedia hiện ở repo và cần xuất bản lại để đồng bộ dữ liệu hosted. Minh chứng truy cập nằm trong [publication_checks.json](evidence/publication_checks.json).
+**Bản hosted:** [MovieLOD](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site). Trạng thái và audience thực tế nằm ở [publication.json](evidence/publication.json). Site đã được cập nhật công khai với giao diện và truy vấn tiếng Anh, cùng dữ liệu dùng trực tiếp các lớp DBpedia. Trạng thái triển khai mới nằm trong `publication.json`; `publication_checks.json` ghi lại lần đối chiếu HTTP trước đó.
 
 ## Sản phẩm nộp
 
@@ -29,7 +31,7 @@ Mở **http://127.0.0.1:8000**. Dữ liệu đã có sẵn. Trên macOS có th�
 
 | Yêu cầu trong đề | Phần đã triển khai | Minh chứng |
 |:--|:--|:--|
-| YC1 — Define an ontology: định nghĩa mô hình | 9 lớp; tái sử dụng trực tiếp 3 lớp DBpedia; quan hệ, cardinality và inverse. | `ontology/Movie_Ontology.owl`; `src/build.py`; test truy vấn DBpedia và suy luận. |
+| YC1 — Define an ontology: định nghĩa mô hình | 15 lớp; tái sử dụng trực tiếp 3 lớp DBpedia; quan hệ, cardinality, inverse, disjointness và 6 defined class dùng giao/hợp. | `ontology/Movie_Ontology.owl`; `src/build.py`; test truy vấn DBpedia và suy luận. |
 | YC2 — Collect data: thu thập dữ liệu | Tải Wikidata/DBpedia, xác định danh tính chính xác, lưu phản hồi gốc và hash. | `src/collect.py`; `data/raw/snapshots.json`; `evidence/collection.json`. |
 | YC3 — Transform to 4*: RDF và công bố mở | Turtle, JSON-LD, HTTP IRI, giấy phép; trang mô tả từng thực thể và tải RDF. | `data/processed/`; `LICENSE-DATA.txt`; Web; `publication.json`. |
 | YC4 — Link to 5*: liên kết ngoài | 936 liên kết Wikidata và 28 DBpedia, ghi phương pháp nối. | `evidence/link_audit.json`; truy vấn 05. |
@@ -47,7 +49,13 @@ Mở **http://127.0.0.1:8000**. Dữ liệu đã có sẵn. Trên macOS có th�
 
 Các IRI lớp này được dùng trực tiếp trong `rdf:type`, domain/range, ràng buộc OWL và truy vấn mẫu. Ví dụ Inception có kiểu `dbo:Film`; Nolan có kiểu `dbo:Person`. Truy vấn `?film a dbo:Film` chạy được trên dữ liệu đã lưu mà không cần bật suy luận.
 
-Mô hình vẫn có 9 lớp: 3 lớp DBpedia và 6 lớp thuộc namespace của bài (`ex:Genre`, `ex:Language`, `ex:Credit`, `ex:ContributionRole`, `ex:SourceSnapshot`, `ex:Dataset`). Các truy vấn dùng kiểu phim cần viết `dbo:Film`; xem [truy vấn Inception](queries/02_inception.rq).
+Mô hình vẫn có 15 lớp: 3 lớp DBpedia và 12 lớp thuộc namespace của bài (`ex:Genre`, `ex:Language`, `ex:Credit`, `ex:ContributionRole`, `ex:SourceSnapshot`, `ex:Dataset` và 6 lớp suy luận). Các truy vấn dùng kiểu phim cần viết `dbo:Film`; xem [truy vấn Inception](queries/02_inception.rq).
+
+### Phân loại suy luận và ý nghĩa lớp
+
+Đã thêm `Director`, `Actor`, `Screenwriter`, `FilmContributor`, `DirectorWriter`, `CreditedFilm` bằng `equivalentClass`, `intersectionOf`, `unionOf` và `someValuesFrom`. Xem [mô tả ontology và câu hỏi bảo vệ](docs/Mo_ta_ontology.md). Kết quả chạy suy luận ở [ontology_reasoning.json](evidence/ontology_reasoning.json); các kiểu suy ra được lưu riêng trong `data/processed/inferred_classes.ttl`. Endpoint mặc định vẫn truy vấn dữ liệu khai báo.
+
+Bản hosted cần xuất bản lại để có ontology 1.1.0. PDF báo cáo và hướng dẫn đã cập nhật; slide và video hiện vẫn là bản trước khi bổ sung sáu lớp.
 
 ## Làm lại toàn bộ quy trình
 
@@ -56,6 +64,7 @@ Mô hình vẫn có 9 lớp: 3 lớp DBpedia và 6 lớp thuộc namespace của
 .venv/bin/python src/build.py
 .venv/bin/python src/prepare_web.py
 .venv/bin/python src/validate.py
+.venv/bin/python src/reason.py
 .venv/bin/python -m pytest -q
 ```
 

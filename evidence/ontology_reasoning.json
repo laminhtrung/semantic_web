@@ -1,0 +1,27 @@
+{
+  "method": "owlrl OWL RL/RDF rule closure; not a complete OWL DL consistency proof",
+  "asserted_counts": {
+    "Director": 0,
+    "Actor": 0,
+    "Screenwriter": 0,
+    "FilmContributor": 0,
+    "DirectorWriter": 0,
+    "CreditedFilm": 0
+  },
+  "inferred_counts": {
+    "Director": 16,
+    "Actor": 769,
+    "Screenwriter": 34,
+    "FilmContributor": 805,
+    "DirectorWriter": 10,
+    "CreditedFilm": 30
+  },
+  "count_scope": "Local resource IRIs only; external sameAs aliases excluded",
+  "nolan_inferred_classes": [
+    "Director",
+    "Screenwriter",
+    "FilmContributor",
+    "DirectorWriter"
+  ],
+  "detected_errors": []
+}

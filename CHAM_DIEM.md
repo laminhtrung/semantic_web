@@ -23,12 +23,12 @@ Ngày kiểm tra: **06/10/2026** (giờ Việt Nam).
 
 | Mục chấm | Tối đa | Đạt | Minh chứng cụ thể |
 |:--|--:|--:|:--|
-| Có các lớp phù hợp với lĩnh vực phim | 0,5 | 0,5 | `src/build.py`, hàm `schema()`, dòng 19: tạo 9 lớp `Film`, `Person`, `Genre`, `Country`, `Language`, `Credit`, `ContributionRole`, `SourceSnapshot`, `Dataset`. Đếm trực tiếp `owl:Class` trong [movie.ttl](ontology/movie.ttl) được 9 lớp. |
-| Có quan hệ và thuộc tính giá trị, domain/range | 0,5 | 0,5 | [movie.ttl](ontology/movie.ttl): `dbo:director` ở dòng 10; `ex:hasGenre` dòng 35; `ex:releaseYear` dòng 45; `ex:runtimeMinutes` dòng 53. Quan hệ phim–người và các giá trị năm/thời lượng được khai báo rõ. |
-| Có ngữ nghĩa OWL và ràng buộc mô hình | 0,5 | 0,5 | [movie.ttl](ontology/movie.ttl): `Credit` dòng 140 có cardinality đúng 1 người, 1 phim, 1 vai trò; quan hệ inverse ở dòng 10 và 121; `AllDisjointClasses` dòng 181. [validate.py](src/validate.py) bổ sung kiểm tra cơ bản bằng Python. |
-| Có ontology đọc được và minh chứng suy luận | 0,5 | 0,5 | [Movie_Ontology.owl](ontology/Movie_Ontology.owl) parse được và tương đương lược đồ Turtle. [test_application.py](tests/test_application.py), `test_owl_inverse_rule_and_domain_alignment()`, dòng 65: OWL RL suy ra Nolan `ex:directed` Inception và Inception thuộc `dbo:Film`; test chạy lại pass. |
+| Có các lớp phù hợp với lĩnh vực phim | 0,5 | 0,5 | `src/build.py`, hàm `schema()`, dòng 19: tạo 15 lớp `Film`, `Person`, `Genre`, `Country`, `Language`, `Credit`, `ContributionRole`, `SourceSnapshot`, `Dataset` và 6 defined class `Director`, `Actor`, `Screenwriter`, `FilmContributor`, `DirectorWriter`, `CreditedFilm`. Đếm các IRI có tên được khai báo `owl:Class` trong [movie.ttl](ontology/movie.ttl) được 15 lớp. |
+| Có quan hệ và thuộc tính giá trị, domain/range | 0,5 | 0,5 | [movie.ttl](ontology/movie.ttl): `dbo:director`; `ex:hasGenre`; `ex:releaseYear`; `ex:runtimeMinutes`. Quan hệ phim–người và các giá trị năm/thời lượng được khai báo rõ. |
+| Có ngữ nghĩa OWL và ràng buộc mô hình | 0,5 | 0,5 | [movie.ttl](ontology/movie.ttl): `Credit` có cardinality đúng 1 người, 1 phim, 1 vai trò; quan hệ inverse; `AllDisjointClasses`, 36 cặp `disjointWith` và defined class dùng `intersectionOf`/`unionOf`/`someValuesFrom`. [validate.py](src/validate.py) bổ sung kiểm tra cơ bản bằng Python. |
+| Có ontology đọc được và minh chứng suy luận | 0,5 | 0,5 | [Movie_Ontology.owl](ontology/Movie_Ontology.owl) parse được và tương đương lược đồ Turtle. [test_application.py](tests/test_application.py) và [test_ontology.py](tests/test_ontology.py): OWL RL suy ra quan hệ ngược và sáu lớp trên dữ liệu thật; kiểm tra ca Film/Country mâu thuẫn, chồng lấp vai trò và giả định thế giới mở. [Biên bản phân loại](evidence/ontology_reasoning.json). |
 
-**Giới hạn của kết luận:** đã kiểm tra parse, tính nhất quán giữa các bản xuất và một quy tắc suy luận thực tế. Chưa chạy phân loại toàn bộ ontology bằng reasoner OWL DL trong Protégé. Đề gốc không bắt buộc bước này nên không tự đặt thêm khoản trừ điểm.
+**Giới hạn của kết luận:** đã kiểm tra parse, tính nhất quán giữa các bản xuất và phân loại sáu defined class bằng luật OWL RL/RDF; chưa phát hiện lỗi trong lần chạy này. Chưa chạy phân loại toàn bộ ontology bằng reasoner OWL DL trong Protégé. Đề gốc không bắt buộc bước này nên không tự đặt thêm khoản trừ điểm.
 
 ## 3. YC2 — Thu thập dữ liệu: 2,0/2,0
 
@@ -145,9 +145,9 @@ Phần đánh giá này chỉ tạo file chấm điểm; không thay đổi quy�
 | `dbo:Person` | 805 người | Kiểu thực thể, domain/range và cardinality của `ex:participant`; kiểm tra credit bằng Python |
 | `dbo:Country` | 11 quốc gia | Kiểu thực thể và range của `ex:country` |
 
-Mô hình hiện có 3 lớp DBpedia và 6 lớp `ex:`. Ba lớp tái sử dụng xuất hiện trực tiếp trong `rdf:type`, domain/range, ràng buộc OWL và kiểm tra Python; các truy vấn phim dùng `dbo:Film`. Đây là việc tái sử dụng từ vựng ở YC1; các liên kết cá thể `owl:sameAs` ở YC4 vẫn có 964 liên kết.
+Mô hình hiện có 3 lớp DBpedia và 12 lớp `ex:`. Ba lớp tái sử dụng xuất hiện trực tiếp trong `rdf:type`, domain/range, ràng buộc OWL và kiểm tra Python; các truy vấn phim dùng `dbo:Film`. Đây là việc tái sử dụng từ vựng ở YC1; các liên kết cá thể `owl:sameAs` ở YC4 vẫn có 964 liên kết.
 
-Kết quả kiểm tra bản sửa: 12.089 triple dữ liệu, **166 triple lược đồ**, 8 test pass; kiểm tra Python đạt data_checks_passed = true; 8 truy vấn mẫu và 9 kiểm tra trình duyệt đều pass. `tests/test_application.py::test_dbpedia_class_queries_and_owl_inverse_rule()` xác nhận truy vấn trực tiếp các lớp DBpedia không cần suy luận, cùng quy tắc inverse và range.
+Kết quả kiểm tra bản sửa: 12.089 triple dữ liệu, **291 triple lược đồ**, 8 test pass; kiểm tra Python đạt data_checks_passed = true; 8 truy vấn mẫu và 9 kiểm tra trình duyệt đều pass. `tests/test_application.py::test_dbpedia_class_queries_and_owl_inverse_rule()` xác nhận truy vấn trực tiếp các lớp DBpedia không cần suy luận, cùng quy tắc inverse và range.
 
 Đã tạo lại báo cáo, hướng dẫn, slide, video và ảnh giao diện theo namespace mới. [statistics.json](evidence/statistics.json), [validation.json](evidence/validation.json), [tests.txt](evidence/tests.txt) và [browser_checks.json](evidence/browser_checks.json) chứa minh chứng cập nhật.
 
@@ -158,3 +158,7 @@ Kết quả kiểm tra bản sửa: 12.089 triple dữ liệu, **166 triple lư�
 Bản hiện tại dùng `src/validate.py::check_data()` để kiểm tra các trường cơ bản: phim có một tên, nguồn và liên kết ngoài; credit có một phim, một người và một vai trò; nguồn có URL, thời điểm và SHA-256. Vẫn kiểm tra hash phản hồi gốc, chạy 8 truy vấn và test ứng dụng. Ràng buộc cardinality, domain/range và inverse tiếp tục nằm trong ontology OWL.
 
 Đề gốc chỉ yêu cầu ontology, thu thập, mức 4–5 sao và giao diện truy vấn; công cụ kiểm tra ngoài 5 yêu cầu không được tự cộng điểm. Thay đổi này không làm mất một tiêu chí của đề.
+
+## 12. Cập nhật ngày 07/10/2026: ứng dụng và truy vấn tiếng Anh
+
+Giao diện Web, trang thực thể/dataset/ontology, câu hỏi mẫu, tên biến SPARQL, nhãn vai trò và thông báo endpoint đã chuyển sang tiếng Anh. Truy vấn Inception trả các cột `title`, `year`, `runtimeMinutes`, `director`; truy vấn đóng góp trả `personName`, `roleName` với các nhãn Actor, Director, Writer. Các IRI và cấu trúc dữ liệu giữ ổn định. Tài liệu học phần giải thích bằng tiếng Việt, kèm ví dụ và ảnh giao diện mới.

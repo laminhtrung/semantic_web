@@ -1,0 +1,3338 @@
+@prefix ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/> .
+
+res:film-Q103569 a ex:CreditedFilm ;
+    rdfs:label "Alien"@en .
+
+res:film-Q104123 a ex:CreditedFilm ;
+    rdfs:label "Pulp Fiction"@en .
+
+res:film-Q127367 a ex:CreditedFilm ;
+    rdfs:label "The Lord of the Rings: The Fellowship of the Ring"@en .
+
+res:film-Q128518 a ex:CreditedFilm ;
+    rdfs:label "Gladiator"@en .
+
+res:film-Q131074 a ex:CreditedFilm ;
+    rdfs:label "The Lord of the Rings: The Return of the King"@en .
+
+res:film-Q133654 a ex:CreditedFilm ;
+    rdfs:label "The Silence of the Lambs"@en .
+
+res:film-Q13417189 a ex:CreditedFilm ;
+    rdfs:label "Interstellar"@en .
+
+res:film-Q134773 a ex:CreditedFilm ;
+    rdfs:label "Forrest Gump"@en .
+
+res:film-Q155653 a ex:CreditedFilm ;
+    rdfs:label "Spirited Away"@en .
+
+res:film-Q15648198 a ex:CreditedFilm ;
+    rdfs:label "Whiplash"@en .
+
+res:film-Q163872 a ex:CreditedFilm ;
+    rdfs:label "The Dark Knight"@en .
+
+res:film-Q166262 a ex:CreditedFilm ;
+    rdfs:label "Batman Begins"@en .
+
+res:film-Q172241 a ex:CreditedFilm ;
+    rdfs:label "The Shawshank Redemption"@en .
+
+res:film-Q184768 a ex:CreditedFilm ;
+    rdfs:label "The Godfather Part II"@en .
+
+res:film-Q184843 a ex:CreditedFilm ;
+    rdfs:label "Blade Runner"@en .
+
+res:film-Q190050 a ex:CreditedFilm ;
+    rdfs:label "Fight Club"@en .
+
+res:film-Q190525 a ex:CreditedFilm ;
+    rdfs:label "Memento"@en .
+
+res:film-Q190908 a ex:CreditedFilm ;
+    rdfs:label "Seven"@en .
+
+res:film-Q208263 a ex:CreditedFilm ;
+    rdfs:label "The Green Mile"@en .
+
+res:film-Q20856802 a ex:CreditedFilm ;
+    rdfs:label "La La Land"@en .
+
+res:film-Q21935651 a ex:CreditedFilm ;
+    rdfs:label "Dunkirk"@en .
+
+res:film-Q25188 a ex:CreditedFilm ;
+    rdfs:label "Inception"@en .
+
+res:film-Q42047 a ex:CreditedFilm ;
+    rdfs:label "Goodfellas"@en .
+
+res:film-Q44578 a ex:CreditedFilm ;
+    rdfs:label "Titanic"@en .
+
+res:film-Q46551 a ex:CreditedFilm ;
+    rdfs:label "The Prestige"@en .
+
+res:film-Q47703 a ex:CreditedFilm ;
+    rdfs:label "The Godfather"@en .
+
+res:film-Q483941 a ex:CreditedFilm ;
+    rdfs:label "Schindler's List"@en .
+
+res:film-Q61448040 a ex:CreditedFilm ;
+    rdfs:label "Parasite"@en .
+
+res:film-Q63985561 a ex:CreditedFilm ;
+    rdfs:label "Tenet"@en .
+
+res:film-Q83495 a ex:CreditedFilm ;
+    rdfs:label "The Matrix"@en .
+
+res:person-Q1016897 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Burr Steers"@en .
+
+res:person-Q102124 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sigourney Weaver"@en .
+
+res:person-Q102642 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Diane Keaton"@en .
+
+res:person-Q10306924 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jim Piddock"@en .
+
+res:person-Q103157 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kurt Russell"@en .
+
+res:person-Q1033909 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mark Ivanir"@en .
+
+res:person-Q10390375 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Victor Rendina"@en .
+
+res:person-Q104061 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Steve Buscemi"@en .
+
+res:person-Q105706491 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jeong E-suh"@en .
+
+res:person-Q1058562 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tamer Hassan"@en .
+
+res:person-Q1066037 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Charles Scorsese"@en .
+
+res:person-Q106744 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joachim Paul Assböck"@en .
+
+res:person-Q106775 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Harris"@en .
+
+res:person-Q108622 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Talia Shire"@en .
+
+res:person-Q109232 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rosanna Arquette"@en .
+
+res:person-Q110374 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bill Paxton"@en .
+
+res:person-Q1108562 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Colin McFarlane"@en .
+
+res:person-Q111472798 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Grzegorz Kwas"@en .
+
+res:person-Q111549296 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Edward McDonald"@en .
+
+res:person-Q111549302 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Robbie Vinton"@en .
+
+res:person-Q111549303 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joseph Bono"@en .
+
+res:person-Q1123336 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ron Perkins"@en .
+
+res:person-Q1139190 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ned Bellamy"@en .
+
+res:person-Q1139511 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richmond Arquette"@en .
+
+res:person-Q114179 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Scott Glenn"@en .
+
+res:person-Q1147417 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Simonetta Stefanelli"@en .
+
+res:person-Q1163293 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Daniel von Bargen"@en .
+
+res:person-Q116854 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Philippa Boyens"@en .
+
+res:person-Q116861 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Fran Walsh"@en .
+
+res:person-Q117415 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Josh Stewart"@en .
+
+res:person-Q1174454 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "David Franzoni"@en .
+
+res:person-Q1174630 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Gyasi"@en .
+
+res:person-Q1176208 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Proval"@en .
+
+res:person-Q1176556 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Schofield"@en .
+
+res:person-Q1177114 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "David Peoples"@en .
+
+res:person-Q118053 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Wilhelm Manske"@en .
+
+res:person-Q11893776 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lewis Abernathy"@en .
+
+res:person-Q1189389 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Chris Mulkey"@en .
+
+res:person-Q1203 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Lennon"@en .
+
+res:person-Q12035731 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Martin Hub"@en .
+
+res:person-Q1209753 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dick Miller"@en .
+
+res:person-Q121045 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Norbert Weisser"@en .
+
+res:person-Q1225469 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dileep Rao"@en .
+
+res:person-Q123351 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Caine"@en .
+
+res:person-Q1234673 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ewan Stewart"@en .
+
+res:person-Q1236595 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marcus Chong"@en .
+
+res:person-Q125017 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Uma Thurman"@en .
+
+res:person-Q1254992 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Ensign"@en .
+
+res:person-Q125904 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Edward Norton"@en .
+
+res:person-Q1262715 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gus Lewis"@en .
+
+res:person-Q12858652 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Nolan"@en .
+
+res:person-Q1292214 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Edward Fletcher"@en .
+
+res:person-Q1292876 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Edward Linde-Lubaszenko"@en .
+
+res:person-Q129817 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Russell Crowe"@en .
+
+res:person-Q1313592 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jeremy Theobald"@en .
+
+res:person-Q1319539 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Thomas Lennon"@en .
+
+res:person-Q1320006 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Leland Orser"@en .
+
+res:person-Q132430 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Karl Urban"@en .
+
+res:person-Q1332872 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Greg Ellis"@en .
+
+res:person-Q1333793 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Haris Savides"@en .
+
+res:person-Q1334725 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kevin Corrigan"@en .
+
+res:person-Q134133 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tommy Flanagan"@en .
+
+res:person-Q134317151 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tere Livrano"@en .
+
+res:person-Q1352034 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lenny Montana"@en .
+
+res:person-Q1353691 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Morgan Paull"@en .
+
+res:person-Q1356584 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jonathan Sagall"@en .
+
+res:person-Q1357803 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Conner Humphreys"@en .
+
+res:person-Q1366460 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tracey Walter"@en .
+
+res:person-Q1366768 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tommy Lister Jr."@en .
+
+res:person-Q1368141 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Holt McCallany"@en .
+
+res:person-Q1368224 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joseph Pilato"@en .
+
+res:person-Q1369720 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frank Sivero"@en .
+
+res:person-Q1372703 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Hampton Fancher"@en .
+
+res:person-Q1372770 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "William Sanderson"@en .
+
+res:person-Q1373450 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mike Starr"@en .
+
+res:person-Q1375689 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Shrapnel"@en .
+
+res:person-Q1388258 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Keith Szarabajka"@en .
+
+res:person-Q1388769 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sven-Ole Thorsen"@en .
+
+res:person-Q1388807 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sala Baker"@en .
+
+res:person-Q139341 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Zach Grenier"@en .
+
+res:person-Q1421128 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ron Vawter"@en .
+
+res:person-Q1440197 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gregory Cooke"@en .
+
+res:person-Q14446 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Hanna R. Hall"@en .
+
+res:person-Q1464037 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Friedrich von Thun"@en .
+
+res:person-Q1502443 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Geno Lechner"@en .
+
+res:person-Q1502946 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Geoffrey Blake"@en .
+
+res:person-Q15040582 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frank Pellegrino"@en .
+
+res:person-Q150482 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "J. K. Simmons"@en .
+
+res:person-Q1516734 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ricky Jay"@en .
+
+res:person-Q1521335 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Alexander Strobele"@en .
+
+res:person-Q152165 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dominic Monaghan"@en .
+
+res:person-Q152542 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "William Sadler"@en .
+
+res:person-Q15288220 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tim de Zarn"@en .
+
+res:person-Q152929 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Meat Loaf"@en .
+
+res:person-Q1563838 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Emil Sitka"@en .
+
+res:person-Q15665021 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Don McManus"@en .
+
+res:person-Q15762190 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ezra Dagan"@en .
+
+res:person-Q1577563 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Hans-Jörg Assmann"@en .
+
+res:person-Q1577938 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Hans Michael Rehberg"@en .
+
+res:person-Q15790902 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Candice Coke"@en .
+
+res:person-Q15808775 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Eugenie Bondurant"@en .
+
+res:person-Q15819828 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ian Hughes"@en .
+
+res:person-Q158558 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dimple Kapadia"@en .
+
+res:person-Q1591382 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Dillane"@en .
+
+res:person-Q16017365 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Hallie D'Amore"@en .
+
+res:person-Q1607467 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Henryk Bista"@en .
+
+res:person-Q16091645 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Daniel C. Striepeke"@en .
+
+res:person-Q16104953 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tony Powers"@en .
+
+res:person-Q16129016 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Razia Israeli"@en .
+
+res:person-Q16149374 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Christine Adams"@en .
+
+res:person-Q16177322 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jung Ziso"@en .
+
+res:person-Q16186952 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Shamus Wiles"@en .
+
+res:person-Q1619100 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lucy Russell"@en .
+
+res:person-Q16203767 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Dastmalchian"@en .
+
+res:person-Q1622732 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gianni Russo"@en .
+
+res:person-Q16237544 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Hawthorne James"@en .
+
+res:person-Q16239443 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kevin Will"@en .
+
+res:person-Q16325426 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marcel Sabat"@en .
+
+res:person-Q1644834 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Scott G. Anderson"@en .
+
+res:person-Q164534 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Peter Greene"@en .
+
+res:person-Q16455 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Rhys-Davies"@en .
+
+res:person-Q1655613 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ian Mune"@en .
+
+res:person-Q16575211 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tony King"@en .
+
+res:person-Q16745067 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tony Giorgio"@en .
+
+res:person-Q1683873 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jason Barry"@en .
+
+res:person-Q1683907 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jason Fuchs"@en .
+
+res:person-Q16859123 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Edward Kamuda"@en .
+
+res:person-Q168763 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Liv Tyler"@en .
+
+res:person-Q1691277 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jodi Bianca Wise"@en .
+
+res:person-Q1691318 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joe Alaskey"@en .
+
+res:person-Q1691628 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joe Turkel"@en .
+
+res:person-Q1693866 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marianna Hill"@en .
+
+res:person-Q17005758 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Adam Long"@en .
+
+res:person-Q170428 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Helena Bonham Carter"@en .
+
+res:person-Q170510 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ian McKellen"@en .
+
+res:person-Q171363 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Viggo Mortensen"@en .
+
+res:person-Q171736 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Robert Duvall"@en .
+
+res:person-Q172678 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Samuel L. Jackson"@en .
+
+res:person-Q173158 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ben Kingsley"@en .
+
+res:person-Q173399 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Elliot Page"@en .
+
+res:person-Q174346 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Katie Holmes"@en .
+
+res:person-Q1744181 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Louis Eppolito"@en .
+
+res:person-Q17490321 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Christopher Serrone"@en .
+
+res:person-Q1750537 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Martin Jarvis"@en .
+
+res:person-Q1750774 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Roger Rees"@en .
+
+res:person-Q175535 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Matt Damon"@en .
+
+res:person-Q17581458 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Margo Winkler"@en .
+
+res:person-Q177311 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joseph Gordon-Levitt"@en .
+
+res:person-Q1779182 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Stephen Ure"@en .
+
+res:person-Q180272 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gary Sinise"@en .
+
+res:person-Q180338 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Christopher Lee"@en .
+
+res:person-Q18219789 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jeremy Ball"@en .
+
+res:person-Q182870 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Mario Puzo"@en .
+
+res:person-Q18350026 a ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Damien Chazelle"@en .
+
+res:person-Q18415482 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tohoru Masamune"@en .
+
+res:person-Q184903 a ex:Director,
+        ex:FilmContributor ;
+    rdfs:label "David Fincher"@en .
+
+res:person-Q185051 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Christopher Walken"@en .
+
+res:person-Q185140 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joaquin Phoenix"@en .
+
+res:person-Q1859256 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Brake"@en .
+
+res:person-Q18700040 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Park So-dam"@en .
+
+res:person-Q187033 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sally Field"@en .
+
+res:person-Q18720063 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Claire Geare"@en .
+
+res:person-Q187364 a ex:Director,
+        ex:FilmContributor ;
+    rdfs:label "Robert Zemeckis"@en .
+
+res:person-Q188955 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Matthew McConaughey"@en .
+
+res:person-Q189351 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sean Astin"@en .
+
+res:person-Q189407 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gloria Stuart"@en .
+
+res:person-Q191104 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sean Bean"@en .
+
+res:person-Q191132 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Harvey Keitel"@en .
+
+res:person-Q192643 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Aaron Eckhart"@en .
+
+res:person-Q193048 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Laurence Fishburne"@en .
+
+res:person-Q193628 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sofia Coppola"@en .
+
+res:person-Q1937615 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Olaf Lubaszenko"@en .
+
+res:person-Q193815 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ryan Gosling"@en .
+
+res:person-Q1945936 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jochum ten Haaf"@en .
+
+res:person-Q195871 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "G. D. Spradlin"@en .
+
+res:person-Q19631403 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Lazar"@en .
+
+res:person-Q19665276 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sonoya Mizuno"@en .
+
+res:person-Q19877770 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Timothée Chalamet"@en .
+
+res:person-Q19956031 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ron Gilbert"@en .
+
+res:person-Q19981241 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Francis X. McCarthy"@en .
+
+res:person-Q200355 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Olivia Wilde"@en .
+
+res:person-Q200405 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Hurt"@en .
+
+res:person-Q20090576 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Denzil Smith"@en .
+
+res:person-Q2012197 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Welker White"@en .
+
+res:person-Q20178 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joe Pesci"@en .
+
+res:person-Q201976 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Caroline Goodall"@en .
+
+res:person-Q202381 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Maggie Gyllenhaal"@en .
+
+res:person-Q202589 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Cillian Murphy"@en .
+
+res:person-Q202765 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kate Winslet"@en .
+
+res:person-Q203804 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tim Roth"@en .
+
+res:person-Q205435 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Billy Zane"@en .
+
+res:person-Q2061535 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Norell"@en .
+
+res:person-Q206890 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Carrie-Anne Moss"@en .
+
+res:person-Q206922 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Andy Serkis"@en .
+
+res:person-Q2074570 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Peter Donat"@en .
+
+res:person-Q20752286 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rochelle Rose"@en .
+
+res:person-Q207596 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Daryl Hannah"@en .
+
+res:person-Q207969 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Eric Roberts"@en .
+
+res:person-Q208026 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Hardy"@en .
+
+res:person-Q20974079 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Adam Levy"@en .
+
+res:person-Q20993894 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "E. A. Hanks"@en .
+
+res:person-Q21074794 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Carl Ciarfalio"@en .
+
+res:person-Q211144 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ellen Burstyn"@en .
+
+res:person-Q211280 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ray Liotta"@en .
+
+res:person-Q211322 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Wilkinson"@en .
+
+res:person-Q211415 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Edward James Olmos"@en .
+
+res:person-Q211553 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ken Watanabe"@en .
+
+res:person-Q2132927 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gerard Murphy"@en .
+
+res:person-Q213574 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rutger Hauer"@en .
+
+res:person-Q2165590 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Spencer Treat Clark"@en .
+
+res:person-Q21710318 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lee Jung-eun"@en .
+
+res:person-Q217137 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Pete Postlethwaite"@en .
+
+res:person-Q218605 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael V. Gazzo"@en .
+
+res:person-Q21870719 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rowan Witt"@en .
+
+res:person-Q218800 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Oyelowo"@en .
+
+res:person-Q220335 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "William Fichtner"@en .
+
+res:person-Q223091 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ian Holm"@en .
+
+res:person-Q223745 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Guy Pearce"@en .
+
+res:person-Q22575750 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Pat McNamara"@en .
+
+res:person-Q225933 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Nestor Carbonell"@en .
+
+res:person-Q2263 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Hanks"@en .
+
+res:person-Q2263306 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Duane Whitaker"@en .
+
+res:person-Q22665449 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "W. Benson Terry"@en .
+
+res:person-Q22673621 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kevin Davis"@en .
+
+res:person-Q22680663 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Quinn"@en .
+
+res:person-Q228868 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Piper Perabo"@en .
+
+res:person-Q22910218 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Will Attenborough"@en .
+
+res:person-Q229268 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Patricia Clarkson"@en .
+
+res:person-Q229313 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jessica Chastain"@en .
+
+res:person-Q229319 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lorraine Bracco"@en .
+
+res:person-Q22985966 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Burgess"@en .
+
+res:person-Q2300160 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Vito Scotti"@en .
+
+res:person-Q23001654 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rachel Singer"@en .
+
+res:person-Q230534 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rebecca Hall"@en .
+
+res:person-Q230736 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sean Young"@en .
+
+res:person-Q231807 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jorja Fox"@en .
+
+res:person-Q231951 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Connie Nielsen"@en .
+
+res:person-Q232868 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Clémence Poésy"@en .
+
+res:person-Q23306199 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tommy Lafitte"@en .
+
+res:person-Q235115 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Maria de Medeiros"@en .
+
+res:person-Q235635 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Suzy Amis Cameron"@en .
+
+res:person-Q235725 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brooke Smith"@en .
+
+res:person-Q2357826 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Stuart Blumberg"@en .
+
+res:person-Q236702 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joanna Cassidy"@en .
+
+res:person-Q236956 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rosemarie DeWitt"@en .
+
+res:person-Q238483 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Amanda Plummer"@en .
+
+res:person-Q2384946 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sonny Shroyer"@en .
+
+res:person-Q2386386 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jacqueline Lovell"@en .
+
+res:person-Q238671 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Debi Mazar"@en .
+
+res:person-Q23926673 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Don Fischer"@en .
+
+res:person-Q2397879 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Taylor Geare"@en .
+
+res:person-Q24023955 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Endre Hules"@en .
+
+res:person-Q2405596 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Terry Forrestal"@en .
+
+res:person-Q240774 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frank Whaley"@en .
+
+res:person-Q2424724 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Matt Doran"@en .
+
+res:person-Q242557 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Anne Fletcher"@en .
+
+res:person-Q2426862 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Thomas Robins"@en .
+
+res:person-Q2434354 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ritchie Coster"@en .
+
+res:person-Q2434817 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Calderón"@en .
+
+res:person-Q2442701 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tony Lip"@en .
+
+res:person-Q24444473 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Callie Hernandez"@en .
+
+res:person-Q2445092 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bruce Hopkins"@en .
+
+res:person-Q245808 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Roman Coppola"@en .
+
+res:person-Q245880 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Aneurin Barnard"@en .
+
+res:person-Q24867395 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Park Myung-hoon"@en .
+
+res:person-Q248915 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Jai White"@en .
+
+res:person-Q25144 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kevin Spacey"@en .
+
+res:person-Q25191 a ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Christopher Nolan"@en .
+
+res:person-Q254431 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Alexis Arquette"@en .
+
+res:person-Q2553986 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mark Lindsay Chapman"@en .
+
+res:person-Q256164 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Derek Jacobi"@en .
+
+res:person-Q258604 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Aston"@en .
+
+res:person-Q2586583 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Henny Youngman"@en .
+
+res:person-Q2594868 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Victor Colicchio"@en .
+
+res:person-Q2598175 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Weatherley"@en .
+
+res:person-Q2604240 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Collette Wolfe"@en .
+
+res:person-Q260622 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Embeth Davidtz"@en .
+
+res:person-Q2616690 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ada Nicodemou"@en .
+
+res:person-Q2635096 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Melinda McGraw"@en .
+
+res:person-Q2636244 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jeff Hephner"@en .
+
+res:person-Q263964 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jenette Goldstein"@en .
+
+res:person-Q2642437 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Wendee Lee"@en .
+
+res:person-Q2647961 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Allan Corduner"@en .
+
+res:person-Q2660468 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Isiah Whitlock Jr."@en .
+
+res:person-Q266270 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Yaphet Kotto"@en .
+
+res:person-Q266313 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Diane Baker"@en .
+
+res:person-Q266881 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Beatrice Rosen"@en .
+
+res:person-Q267330 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Miles Teller"@en .
+
+res:person-Q268181 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Chuck Palahniuk"@en .
+
+res:person-Q26857959 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rebecca Williams"@en .
+
+res:person-Q26857960 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Harold G. Herthum"@en .
+
+res:person-Q26857961 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "George Kelly"@en .
+
+res:person-Q26857962 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bob Penny"@en .
+
+res:person-Q26857964 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Randall"@en .
+
+res:person-Q26857972 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Margo Moorer"@en .
+
+res:person-Q26857974 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ione M. Telech"@en .
+
+res:person-Q26857976 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Christine Seabrook"@en .
+
+res:person-Q26857979 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Worsham"@en .
+
+res:person-Q26857995 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Alexander Zemeckis"@en .
+
+res:person-Q26857997 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Logan Livingston Gomez"@en .
+
+res:person-Q26857999 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ben Waddel"@en .
+
+res:person-Q26858377 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tyler Long"@en .
+
+res:person-Q26858530 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Grady Bowman"@en .
+
+res:person-Q26858533 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kevin Mangan"@en .
+
+res:person-Q26858540 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Fay Genens"@en .
+
+res:person-Q26858542 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frank Geyer"@en .
+
+res:person-Q26858544 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rob Landry"@en .
+
+res:person-Q26858547 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jason McGuire"@en .
+
+res:person-Q26858550 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Pete Auster"@en .
+
+res:person-Q26858558 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ed Davis"@en .
+
+res:person-Q26858567 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bruce Lucvia"@en .
+
+res:person-Q26858570 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kirk Ward"@en .
+
+res:person-Q26858576 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Angela Lomas"@en .
+
+res:person-Q26858577 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Timothy Record"@en .
+
+res:person-Q26858584 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Deborah McTeer"@en .
+
+res:person-Q26858589 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mark Matheisen"@en .
+
+res:person-Q26858593 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jed Gillin"@en .
+
+res:person-Q26858602 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bob Harks"@en .
+
+res:person-Q26858615 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kenneth Bevington"@en .
+
+res:person-Q26858619 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Flannery"@en .
+
+res:person-Q26858621 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gary Robinson"@en .
+
+res:person-Q26858623 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marlena Smalls"@en .
+
+res:person-Q26858634 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kitty K. Green"@en .
+
+res:person-Q26858662 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Matt Wallace"@en .
+
+res:person-Q26858676 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Danté McCarthy"@en .
+
+res:person-Q26858677 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paulie DiCocco"@en .
+
+res:person-Q26858680 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mike Jolly"@en .
+
+res:person-Q26858681 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Kemmerling"@en .
+
+res:person-Q26858689 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jeffrey Winner"@en .
+
+res:person-Q26858692 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Russ Wilson"@en .
+
+res:person-Q26858695 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Daniel J. Gillooly"@en .
+
+res:person-Q26858706 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Calvin Gadsden"@en .
+
+res:person-Q26858709 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Aaron Izbicki"@en .
+
+res:person-Q26858732 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Steven Griffith"@en .
+
+res:person-Q26858734 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "William Acy \"Billy\" Roberson Jr"@en .
+
+res:person-Q26858737 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael McFall"@en .
+
+res:person-Q26858744 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Eric Underwood"@en .
+
+res:person-Q26858753 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Steve DeRelian"@en .
+
+res:person-Q26858756 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Byron Minns"@en .
+
+res:person-Q26858768 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bonnie Ann Burgess"@en .
+
+res:person-Q26858807 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Scott Oliver"@en .
+
+res:person-Q26858814 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John William Galt"@en .
+
+res:person-Q26858889 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Hilary Chaplain"@en .
+
+res:person-Q26859033 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Isabel Rose"@en .
+
+res:person-Q26859059 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jay Ross"@en .
+
+res:person-Q26859068 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard D'Alessandro"@en .
+
+res:person-Q26859100 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dick Stilwell"@en .
+
+res:person-Q26859151 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tim Perry"@en .
+
+res:person-Q26859179 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Raczkowski"@en .
+
+res:person-Q26859187 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Valentine"@en .
+
+res:person-Q26859208 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tiffany Salerno"@en .
+
+res:person-Q26859284 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marla Sucharetza"@en .
+
+res:person-Q26859347 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Aloysius Gigl"@en .
+
+res:person-Q26859371 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jack Bowden"@en .
+
+res:person-Q26859423 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lazarus Jackson"@en .
+
+res:person-Q26859485 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Matt Rebenkoff"@en .
+
+res:person-Q26859526 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Peter Bannon"@en .
+
+res:person-Q26859543 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joe Washington"@en .
+
+res:person-Q26859576 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Natalie Hendrix"@en .
+
+res:person-Q26859640 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Chiffonye Cobb"@en .
+
+res:person-Q26859664 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Juan Singleton"@en .
+
+res:person-Q26859763 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Mattison"@en .
+
+res:person-Q26859788 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lenny Herb"@en .
+
+res:person-Q26859856 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Charles Boswell"@en .
+
+res:person-Q26859957 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Timothy McNeil"@en .
+
+res:person-Q26859981 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lonnie Hamilton"@en .
+
+res:person-Q26860001 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Teresa Denton"@en .
+
+res:person-Q2690748 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brian Delate"@en .
+
+res:person-Q2691042 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Voldstad"@en .
+
+res:person-Q269309 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Talulah Riley"@en .
+
+res:person-Q269669 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Illeana Douglas"@en .
+
+res:person-Q270622 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Harriet Sansom Harris"@en .
+
+res:person-Q270664 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Victor Garber"@en .
+
+res:person-Q270730 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Casey Affleck"@en .
+
+res:person-Q270774 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Julia Sweeney"@en .
+
+res:person-Q270878 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sarah McLeod"@en .
+
+res:person-Q272823 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dawn Upshaw"@en .
+
+res:person-Q272952 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bonnie Hunt"@en .
+
+res:person-Q272972 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Robin Wright"@en .
+
+res:person-Q274836 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Maria Peszek"@en .
+
+res:person-Q275270 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tricia O'Neil"@en .
+
+res:person-Q27535227 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Fionn Whitehead"@en .
+
+res:person-Q27535240 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Damien Bonnard"@en .
+
+res:person-Q276165 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rosalind Ayres"@en .
+
+res:person-Q276425 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Billy Boyd"@en .
+
+res:person-Q27758467 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brian Vernel"@en .
+
+res:person-Q277978 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Topher Grace"@en .
+
+res:person-Q280198 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Daniel Davis"@en .
+
+res:person-Q2825721 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Afemo Omilami"@en .
+
+res:person-Q2826948 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Agnieszka Wagner"@en .
+
+res:person-Q2835788 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Himesh Patel"@en .
+
+res:person-Q283872 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Veronica Cartwright"@en .
+
+res:person-Q28493 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ralph Fiennes"@en .
+
+res:person-Q2850579 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Anna Mucha"@en .
+
+res:person-Q28542230 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Barry Keoghan"@en .
+
+res:person-Q28915096 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Billy Howle"@en .
+
+res:person-Q28974005 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Charlie Dell"@en .
+
+res:person-Q2903297 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bill Miller"@en .
+
+res:person-Q29109394 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Suanne Spoke"@en .
+
+res:person-Q291141 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Steven Zaillian"@en .
+
+res:person-Q2924399 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brenda Hillhouse"@en .
+
+res:person-Q2926038 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bronagh Gallagher"@en .
+
+res:person-Q294975 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Miranda Otto"@en .
+
+res:person-Q295445 a ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Frank Darabont"@en .
+
+res:person-Q29585307 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Nick Vallelonga"@en .
+
+res:person-Q295974 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ioan Gruffudd"@en .
+
+res:person-Q296177 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Cazale"@en .
+
+res:person-Q296328 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Wenham"@en .
+
+res:person-Q296370 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Morse"@en .
+
+res:person-Q2965857 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Christina Cabot"@en .
+
+res:person-Q2966611 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Christopher Jones"@en .
+
+res:person-Q296883 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joe Pantoliano"@en .
+
+res:person-Q297945 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lee Strasberg"@en .
+
+res:person-Q2985403 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Steve Dodd"@en .
+
+res:person-Q298682 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Djimon Hounsou"@en .
+
+res:person-Q299314 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Danny Aiello"@en .
+
+res:person-Q299317 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Berenger"@en .
+
+res:person-Q299483 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "James Cromwell"@en .
+
+res:person-Q3002029 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Craig Kelly"@en .
+
+res:person-Q3017460 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Bailie"@en .
+
+res:person-Q3046377 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Earl Cameron"@en .
+
+res:person-Q3047302 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Eddie Powell"@en .
+
+res:person-Q3054443 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Enn Reitel"@en .
+
+res:person-Q3056094 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Ronald Shusett"@en .
+
+res:person-Q30717048 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bill Johnson"@en .
+
+res:person-Q3082480 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frank Adonis"@en .
+
+res:person-Q310190 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tobin Bell"@en .
+
+res:person-Q310217 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Hemmings"@en .
+
+res:person-Q310315 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ving Rhames"@en .
+
+res:person-Q310515 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bernard Hill"@en .
+
+res:person-Q311169 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Graham Greene"@en .
+
+res:person-Q311271 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Lithgow"@en .
+
+res:person-Q312399 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Noble"@en .
+
+res:person-Q313009 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Chris Isaak"@en .
+
+res:person-Q313040 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "James Whitmore"@en .
+
+res:person-Q313048 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Bob Kane"@en .
+
+res:person-Q313588 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Oliver Reed"@en .
+
+res:person-Q314290 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Harry Dean Stanton"@en .
+
+res:person-Q3143555 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Hy Pyke"@en .
+
+res:person-Q315118 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marton Csokas"@en .
+
+res:person-Q315604 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Barry Pepper"@en .
+
+res:person-Q316032 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John C. McGinley"@en .
+
+res:person-Q316446 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sam Rockwell"@en .
+
+res:person-Q317358 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Imperioli"@en .
+
+res:person-Q3178961 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Jim Uhls"@en .
+
+res:person-Q3182047 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Anatoly Sagalevich"@en .
+
+res:person-Q318220 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Abe Vigoda"@en .
+
+res:person-Q318267 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Eric Stoltz"@en .
+
+res:person-Q318292 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Roger Corman"@en .
+
+res:person-Q3193117 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Karen Maruyama"@en .
+
+res:person-Q320093 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Skerritt"@en .
+
+res:person-Q3208206 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jayson Blair"@en .
+
+res:person-Q323166 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sterling Hayden"@en .
+
+res:person-Q323185 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bolaji Badejo"@en .
+
+res:person-Q3241353 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Linda Kaye"@en .
+
+res:person-Q324572 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mark Rylance"@en .
+
+res:person-Q325130 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Matheson"@en .
+
+res:person-Q325814 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Matt Winston"@en .
+
+res:person-Q3275736 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Simon Crane"@en .
+
+res:person-Q328409 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Peter Onorati"@en .
+
+res:person-Q3295501 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Martin Laing"@en .
+
+res:person-Q329716 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Jeter"@en .
+
+res:person-Q329734 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brad Dourif"@en .
+
+res:person-Q329859 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Lee Smith"@en .
+
+res:person-Q3303794 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Meagen Fay"@en .
+
+res:person-Q330801 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Andrews"@en .
+
+res:person-Q33133445 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Glynn-Carney"@en .
+
+res:person-Q3324448 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Anthony Ray Parker"@en .
+
+res:person-Q3330820 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Harry Sinclair"@en .
+
+res:person-Q3361195 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Portnow"@en .
+
+res:person-Q3373190 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paweł Deląg"@en .
+
+res:person-Q3376545 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Peter Dobson"@en .
+
+res:person-Q3378785 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Phil Hawn"@en .
+
+res:person-Q338355 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "James Otis"@en .
+
+res:person-Q3388862 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "William Bowers"@en .
+
+res:person-Q3390280 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Peter McKenzie"@en .
+
+res:person-Q3390514 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mark Ferguson"@en .
+
+res:person-Q339083 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Alan Howard"@en .
+
+res:person-Q3391203 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Goddard"@en .
+
+res:person-Q34012 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marlon Brando"@en .
+
+res:person-Q3430805 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Graham"@en .
+
+res:person-Q34436 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Scarlett Johansson"@en .
+
+res:person-Q34460 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gwyneth Paltrow"@en .
+
+res:person-Q3498519 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Stephen Bridgewater"@en .
+
+res:person-Q3499384 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Andrew Howard"@en .
+
+res:person-Q3500828 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Stuart Rudin"@en .
+
+res:person-Q35011 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frances Fisher"@en .
+
+res:person-Q3507348 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Silvie Laguna"@en .
+
+res:person-Q351171 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Trevor Lissauer"@en .
+
+res:person-Q352010 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "David S. Goyer"@en .
+
+res:person-Q352012 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bob Stephenson"@en .
+
+res:person-Q352203 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bob Gunton"@en .
+
+res:person-Q35332 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brad Pitt"@en .
+
+res:person-Q3536506 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Brisbin"@en .
+
+res:person-Q353978 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "R. Lee Ermey"@en .
+
+res:person-Q355209 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Schiff"@en .
+
+res:person-Q3560613 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Virgile Bramly"@en .
+
+res:person-Q356541 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Phil LaMarr"@en .
+
+res:person-Q3573137 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Yuji Okumoto"@en .
+
+res:person-Q358990 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "James Hong"@en .
+
+res:person-Q360313 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gil Bellows"@en .
+
+res:person-Q361215 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Anthony Michael Hall"@en .
+
+res:person-Q362353 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Vincent Gallo"@en .
+
+res:person-Q3626966 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Harry Styles"@en .
+
+res:person-Q363271 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Warner"@en .
+
+res:person-Q3645492 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bruce Phillips"@en .
+
+res:person-Q3660357 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Carmine Caridi"@en .
+
+res:person-Q36767 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Robert Pattinson"@en .
+
+res:person-Q368037 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Wes Bentley"@en .
+
+res:person-Q3694232 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Corrado Gaipa"@en .
+
+res:person-Q36949 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Robert De Niro"@en .
+
+res:person-Q37269398 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jonathan Evans-Jones"@en .
+
+res:person-Q372788 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Jonathan Nolan"@en .
+
+res:person-Q374273 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Armie Hammer"@en .
+
+res:person-Q374447 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sam Anderson"@en .
+
+res:person-Q3749387 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Francesca De Sapio"@en .
+
+res:person-Q375356 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dick Cavett"@en .
+
+res:person-Q376131 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Stephen Tobolowsky"@en .
+
+res:person-Q376261 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Angelo Infanti"@en .
+
+res:person-Q3764465 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gina Mastrogiacomo"@en .
+
+res:person-Q3772 a ex:Actor,
+        ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Quentin Tarantino"@en .
+
+res:person-Q3783517 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Harry Northup"@en .
+
+res:person-Q3784932 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Henry G. Sanders"@en .
+
+res:person-Q379830 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Edison Chen"@en .
+
+res:person-Q380872 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Al Martino"@en .
+
+res:person-Q3809461 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Johnny Martino"@en .
+
+res:person-Q38111 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Leonardo DiCaprio"@en .
+
+res:person-Q3811107 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Julie Gregg"@en .
+
+res:person-Q3827125 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Larry Brandenburg"@en .
+
+res:person-Q384004 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "John Logan"@en .
+
+res:person-Q3847733 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marianne Leone Cooper"@en .
+
+res:person-Q3853048 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Max Kasch"@en .
+
+res:person-Q3854240 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Melissa Prophet"@en .
+
+res:person-Q3856171 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Gilden"@en .
+
+res:person-Q386249 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Gaston"@en .
+
+res:person-Q3885536 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Oreste Baldini"@en .
+
+res:person-Q3898029 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Carafotes"@en .
+
+res:person-Q3898080 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Herman"@en .
+
+res:person-Q3946344 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sam Menning"@en .
+
+res:person-Q3973186 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Stephen Hibbert"@en .
+
+res:person-Q40572 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Heath Ledger"@en .
+
+res:person-Q41148 a ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Martin Scorsese"@en .
+
+res:person-Q41163 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Al Pacino"@en .
+
+res:person-Q4120019 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John David Washington"@en .
+
+res:person-Q41351 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jodie Foster"@en .
+
+res:person-Q4204710 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Austin Stowell"@en .
+
+res:person-Q4228271 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Yuri Kolokolnikov"@en .
+
+res:person-Q42574 a ex:Actor,
+        ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "James Cameron"@en .
+
+res:person-Q430922 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Reiser"@en .
+
+res:person-Q431356 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Charles Napier"@en .
+
+res:person-Q432437 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kathy Griffin"@en .
+
+res:person-Q432873 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Fiona Dourif"@en .
+
+res:person-Q433198 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paula Malcomson"@en .
+
+res:person-Q433520 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ted Levine"@en .
+
+res:person-Q43416 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Keanu Reeves"@en .
+
+res:person-Q434291 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rade Šerbedžija"@en .
+
+res:person-Q435468 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jonathan Hyde"@en .
+
+res:person-Q436828 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joshua Harto"@en .
+
+res:person-Q440971 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Chao-Li Chi"@en .
+
+res:person-Q441713 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Catherine Scorsese"@en .
+
+res:person-Q442310 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mary Ellen Trainor"@en .
+
+res:person-Q443343 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jeffrey DeMunn"@en .
+
+res:person-Q44467 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Orlando Bloom"@en .
+
+res:person-Q446493 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Roundtree"@en .
+
+res:person-Q4465 a ex:Actor,
+        ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Peter Jackson"@en .
+
+res:person-Q447892 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Sorvino"@en .
+
+res:person-Q44857 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Legend"@en .
+
+res:person-Q4488 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Clancy Brown"@en .
+
+res:person-Q450279 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Nicholas Pileggi"@en .
+
+res:person-Q450694 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Elina Löwensohn"@en .
+
+res:person-Q450720 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Roger Avary"@en .
+
+res:person-Q450928 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Maja Ostaszewska"@en .
+
+res:person-Q451880 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "William Devane"@en .
+
+res:person-Q452552 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Grand L. Bush"@en .
+
+res:person-Q453501 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Erica Yohn"@en .
+
+res:person-Q453973 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Angela Jones"@en .
+
+res:person-Q455234 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gloria Foster"@en .
+
+res:person-Q456426 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Monique Gabriela Curnen"@en .
+
+res:person-Q45772 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Christian Bale"@en .
+
+res:person-Q457736 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Giannina Facio"@en .
+
+res:person-Q457991 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Siobhan Fallon Hogan"@en .
+
+res:person-Q459019 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Maria Carta"@en .
+
+res:person-Q45923 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Aaron Taylor-Johnson"@en .
+
+res:person-Q459933 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kasi Lemmons"@en .
+
+res:person-Q460289 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kathleen Beller"@en .
+
+res:person-Q460688 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dominic Chianese"@en .
+
+res:person-Q461623 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Leah Cairns"@en .
+
+res:person-Q463407 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frank Vincent"@en .
+
+res:person-Q464282 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Bill Finger"@en .
+
+res:person-Q464714 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard S. Castellano"@en .
+
+res:person-Q465310 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Eve Brent"@en .
+
+res:person-Q4653820 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Cynthia Ettinger"@en .
+
+res:person-Q465981 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Karen David"@en .
+
+res:person-Q46677 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Melissa Benoist"@en .
+
+res:person-Q466789 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Christopher Neame"@en .
+
+res:person-Q467496 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marianne Muellerleile"@en .
+
+res:person-Q4682002 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Adelle Lutz"@en .
+
+res:person-Q468241 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Omid Djalili"@en .
+
+res:person-Q468915 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Linus Roache"@en .
+
+res:person-Q469179 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Craig Parker"@en .
+
+res:person-Q4703990 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Al Harrington"@en .
+
+res:person-Q4722037 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Alfonso Freeman"@en .
+
+res:person-Q472419 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Leopoldo Trieste"@en .
+
+res:person-Q483148 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Clarke Duncan"@en .
+
+res:person-Q48337 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Morgan Freeman"@en .
+
+res:person-Q483771 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Elijah Wood"@en .
+
+res:person-Q484400 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Song Kang-ho"@en .
+
+res:person-Q484523 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jared Leto"@en .
+
+res:person-Q4882899 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Belinda McClory"@en .
+
+res:person-Q489681 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lee Sun-kyun"@en .
+
+res:person-Q489856 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Haley Joel Osment"@en .
+
+res:person-Q48987 a ex:Director,
+        ex:FilmContributor ;
+    rdfs:label "Jonathan Demme"@en .
+
+res:person-Q4908187 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bill Bolender"@en .
+
+res:person-Q492701 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Choi Woo-shik"@en .
+
+res:person-Q4931077 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bo Dietl"@en .
+
+res:person-Q4932564 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bob Golub"@en .
+
+res:person-Q494393 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Everett Scott"@en .
+
+res:person-Q495980 a ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Bong Joon-ho"@en .
+
+res:person-Q4961428 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brent Hinkley"@en .
+
+res:person-Q4962360 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brett Rice"@en .
+
+res:person-Q498420 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "M. Emmet Walsh"@en .
+
+res:person-Q498430 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Dan O'Bannon"@en .
+
+res:person-Q4993338 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ezra Buzzington"@en .
+
+res:person-Q5015744 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jan Jurewicz"@en .
+
+res:person-Q505689 a ex:Actor,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Andrew Kevin Walker"@en .
+
+res:person-Q505940 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Andrew Lesnie"@en .
+
+res:person-Q506778 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Doug Hutchison"@en .
+
+res:person-Q509013 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "April Grace"@en .
+
+res:person-Q509442 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Charlotte Chatton"@en .
+
+res:person-Q5101571 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tadeusz Huk"@en .
+
+res:person-Q5115321 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Chuck Aber"@en .
+
+res:person-Q5115597 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Chuck Low"@en .
+
+res:person-Q5116234 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Park Seo-joon"@en .
+
+res:person-Q513981 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ezio Flagello"@en .
+
+res:person-Q514913 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lawrence Bender"@en .
+
+res:person-Q515044 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sara Stewart"@en .
+
+res:person-Q51511 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "George A. Romero"@en .
+
+res:person-Q515592 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Andrzej Seweryn"@en .
+
+res:person-Q516035 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Troy Donahue"@en .
+
+res:person-Q516692 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Suzanne Shepherd"@en .
+
+res:person-Q517379 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bruno Kirby"@en .
+
+res:person-Q519949 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sarah Jayne Dunn"@en .
+
+res:person-Q5219143 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Daniel Zacapa"@en .
+
+res:person-Q524930 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Morgana King"@en .
+
+res:person-Q526468 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Massee"@en .
+
+res:person-Q526864 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Beatrice Macola"@en .
+
+res:person-Q530578 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Larry Holden"@en .
+
+res:person-Q532169 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lukas Haas"@en .
+
+res:person-Q5336101 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Eddie Hargitay"@en .
+
+res:person-Q535906 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Sho Kosugi"@en .
+
+res:person-Q5362676 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Elizabeth Debicki"@en .
+
+res:person-Q5363234 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Elizabeth Moody"@en .
+
+res:person-Q5363720 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Elizabeth Whitcraft"@en .
+
+res:person-Q5364564 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ella Scott Lynch"@en .
+
+res:person-Q5365734 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Elliott Tittensor"@en .
+
+res:person-Q5368467 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Elyes Gabel"@en .
+
+res:person-Q5383 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "David Bowie"@en .
+
+res:person-Q544038 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dave Legeno"@en .
+
+res:person-Q544465 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kathy Bates"@en .
+
+res:person-Q5450687 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Finn Wittrock"@en .
+
+res:person-Q5486229 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frank DiLeo"@en .
+
+res:person-Q551558 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Callum Keith Rennie"@en .
+
+res:person-Q55294 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kenneth Branagh"@en .
+
+res:person-Q55389 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Maciej Kozłowski"@en .
+
+res:person-Q55400 a ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Hayao Miyazaki"@en .
+
+res:person-Q554430 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Franco Citti"@en .
+
+res:person-Q55733858 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jang Hye-jin"@en .
+
+res:person-Q558492 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Al Lettieri"@en .
+
+res:person-Q56005 a ex:Director,
+        ex:FilmContributor ;
+    rdfs:label "Ridley Scott"@en .
+
+res:person-Q560413 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Edward Hibbert"@en .
+
+res:person-Q56094 a ex:Director,
+        ex:DirectorWriter,
+        ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Francis Ford Coppola"@en .
+
+res:person-Q561689 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dan Butler"@en .
+
+res:person-Q56333356 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Salvatore Corsitto"@en .
+
+res:person-Q56679144 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Martin East"@en .
+
+res:person-Q56681515 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "James Lancaster"@en .
+
+res:person-Q573332 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Anthony Heald"@en .
+
+res:person-Q58444 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Liam Neeson"@en .
+
+res:person-Q587641 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jamie Harris"@en .
+
+res:person-Q589849 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Scotty Leavenworth"@en .
+
+res:person-Q5923349 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ivonne Coll"@en .
+
+res:person-Q603317 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bill Irwin"@en .
+
+res:person-Q604485 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "W. Morgan Sheppard"@en .
+
+res:person-Q6080465 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Rosqui"@en .
+
+res:person-Q61112 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ralf Moeller"@en .
+
+res:person-Q6113745 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jack Lowden"@en .
+
+res:person-Q613029 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joey Ansah"@en .
+
+res:person-Q614851 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Eric Braeden"@en .
+
+res:person-Q6212499 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joe Stefanelli"@en .
+
+res:person-Q6219271 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Aprea"@en .
+
+res:person-Q6239926 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Horton"@en .
+
+res:person-Q626347 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Cho Yeo-jeong"@en .
+
+res:person-Q62676 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Götz Otto"@en .
+
+res:person-Q6306950 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Julian Arahanga"@en .
+
+res:person-Q6379293 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kavita Patil"@en .
+
+res:person-Q638495 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Fay Spain"@en .
+
+res:person-Q6390767 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kenneth Utt"@en .
+
+res:person-Q640001 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Dabbs Greer"@en .
+
+res:person-Q6425724 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Kofi Siriboe"@en .
+
+res:person-Q6539824 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Liam Tuohy"@en .
+
+res:person-Q658614 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Carmine Coppola"@en .
+
+res:person-Q65932 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Anthony Hopkins"@en .
+
+res:person-Q673482 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rudy Bond"@en .
+
+res:person-Q674451 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Shane Rimmer"@en .
+
+res:person-Q6829330 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Cohen"@en .
+
+res:person-Q687234 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Obba Babatundé"@en .
+
+res:person-Q687311 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frank Medrano"@en .
+
+res:person-Q693301 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mark Rolston"@en .
+
+res:person-Q696055 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gastone Moschin"@en .
+
+res:person-Q703611 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Branko Lustig"@en .
+
+res:person-Q704314 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bruce Spence"@en .
+
+res:person-Q7050088 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Nora Dunfee"@en .
+
+res:person-Q706513 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Charles S. Dutton"@en .
+
+res:person-Q706935 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "William Nicholson"@en .
+
+res:person-Q707734 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bernard Fox"@en .
+
+res:person-Q707796 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Christopher Priest"@en .
+
+res:person-Q711054 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tony Curran"@en .
+
+res:person-Q711941 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Seth Adkins"@en .
+
+res:person-Q7149519 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Brightwell"@en .
+
+res:person-Q717194 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "James D'Arcy"@en .
+
+res:person-Q7173458 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Peter Crombie"@en .
+
+res:person-Q718382 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mark Boone Junior"@en .
+
+res:person-Q719256 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul McCrane"@en .
+
+res:person-Q7197001 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Piotr Polk"@en .
+
+res:person-Q721671 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Ted Tally"@en .
+
+res:person-Q723101 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mark Ryan"@en .
+
+res:person-Q723780 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brion James"@en .
+
+res:person-Q726130 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Martin Donovan"@en .
+
+res:person-Q726201 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tony Sirico"@en .
+
+res:person-Q7289526 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Rami Heuberger"@en .
+
+res:person-Q729618 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Nicky Katt"@en .
+
+res:person-Q7298995 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Raymond Martino"@en .
+
+res:person-Q731560 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lew Palter"@en .
+
+res:person-Q733776 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jude Ciccolella"@en .
+
+res:person-Q734043 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Conte"@en .
+
+res:person-Q735360 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Giorgio Cantarini"@en .
+
+res:person-Q737369 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tomas Arana"@en .
+
+res:person-Q737607 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Lawrence Makoare"@en .
+
+res:person-Q741555 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mykelti Williamson"@en .
+
+res:person-Q752652 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Saro Urzì"@en .
+
+res:person-Q7609915 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Stephen Walters"@en .
+
+res:person-Q764622 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jerry Vale"@en .
+
+res:person-Q7647898 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Susan Griffiths"@en .
+
+res:person-Q7670520 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "TJ Ramini"@en .
+
+res:person-Q771165 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Małgorzata Gebel"@en .
+
+res:person-Q777260 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jack Gleeson"@en .
+
+res:person-Q780432 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Bach"@en .
+
+res:person-Q7815498 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Dahlgren"@en .
+
+res:person-Q7817052 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tom Nolan"@en .
+
+res:person-Q786720 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Richard Bright"@en .
+
+res:person-Q7914705 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Vanessa Roth"@en .
+
+res:person-Q8029127 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Wojciech Klata"@en .
+
+res:person-Q809029 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Barry Dennen"@en .
+
+res:person-Q80938 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Travolta"@en .
+
+res:person-Q80966 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Cate Blanchett"@en .
+
+res:person-Q81328 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Harrison Ford"@en .
+
+res:person-Q813336 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Beau Starr"@en .
+
+res:person-Q81911860 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Han Jin-won"@en .
+
+res:person-Q81968984 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Miri Fabian"@en .
+
+res:person-Q8338880 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jerzy Nowak"@en .
+
+res:person-Q83492 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gary Oldman"@en .
+
+res:person-Q83694 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Carmen Argenziano"@en .
+
+res:person-Q842585 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michelle Ruff"@en .
+
+res:person-Q849641 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brian Tochi"@en .
+
+res:person-Q850004 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bettina Kupfer"@en .
+
+res:person-Q862314 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bill McKinney"@en .
+
+res:person-Q862673 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bill Young"@en .
+
+res:person-Q86767 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Erwin Leder"@en .
+
+res:person-Q869771 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bobby Richardson"@en .
+
+res:person-Q87676 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Alexander Held"@en .
+
+res:person-Q88303 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Thomas Morris"@en .
+
+res:person-Q88583 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "August Schmölzer"@en .
+
+res:person-Q8877 a ex:Director,
+        ex:FilmContributor ;
+    rdfs:label "Steven Spielberg"@en .
+
+res:person-Q888617 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bobby Lockwood"@en .
+
+res:person-Q8927 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Marion Cotillard"@en .
+
+res:person-Q89552 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Danny Nucci"@en .
+
+res:person-Q909704 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Brent Briscoe"@en .
+
+res:person-Q910486 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Bret McKenzie"@en .
+
+res:person-Q9281760 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Grzegorz Damięcki"@en .
+
+res:person-Q933428 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jon Foo"@en .
+
+res:person-Q934484 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Nathan Gamble"@en .
+
+res:person-Q9354107 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tadeusz Bradecki"@en .
+
+res:person-Q937922 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tony Darrow"@en .
+
+res:person-Q938230 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jonathan Phillips"@en .
+
+res:person-Q938855 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Chin Han"@en .
+
+res:person-Q942932 a ex:FilmContributor,
+        ex:Screenwriter ;
+    rdfs:label "Eric Roth"@en .
+
+res:person-Q943589 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Frankie Faison"@en .
+
+res:person-Q944529 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Robert Taylor"@en .
+
+res:person-Q946196 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "John Marley"@en .
+
+res:person-Q94913 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Mackenzie Foy"@en .
+
+res:person-Q950104 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Michael Jace"@en .
+
+res:person-Q95043 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "James Caan"@en .
+
+res:person-Q95048 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Tim Robbins"@en .
+
+res:person-Q95316 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Ludger Pistor"@en .
+
+res:person-Q953588 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Paul Dillon"@en .
+
+res:person-Q9544977 a ex:Director,
+        ex:FilmContributor ;
+    rdfs:label "Lilly Wachowski"@en .
+
+res:person-Q95580 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Martin Semmelrogge"@en .
+
+res:person-Q957363 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Vincent Riotta"@en .
+
+res:person-Q95788171 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Daniel Del Ponte"@en .
+
+res:person-Q9582 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Gerald Ford"@en .
+
+res:person-Q960676 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joe Spinell"@en .
+
+res:person-Q964006 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Eion Bailey"@en .
+
+res:person-Q966678 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Joel Tobeck"@en .
+
+res:person-Q967833 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Josh Pence"@en .
+
+res:person-Q975161 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Alex Rocco"@en .
+
+res:person-Q97604 a ex:Actor,
+        ex:FilmContributor ;
+    rdfs:label "Jochen Nickel"@en .
+

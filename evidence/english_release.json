@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-07",
+  "interface_language": "en",
+  "query_files": 8,
+  "tests_passed": 8,
+  "browser_checks_passed": 9,
+  "source_commit": "283a8d337778da17ad4d5f5f60e07ce33c308ed8",
+  "version_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916~appgver_c31e9c37e9d0819198a365c36f410868",
+  "deployment_id": "appgdep_6ac6020879a88191932ccb64dacd2bba",
+  "status": "succeeded",
+  "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site",
+  "archive_content_hash": "sha256:2e626658607bed9da6bfcb1799e233124396695a8645080bbe8be987551e8024",
+  "verification": "Local query/endpoint/browser checks, source/archive verification, and native deployment success."
+}

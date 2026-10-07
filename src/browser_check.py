@@ -13,10 +13,27 @@ with sync_playwright() as p:
     page=context.new_page();errors=[]
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.goto('http://127.0.0.1:8000/',wait_until='networkidle')
-    page.wait_for_function("document.querySelector('#status').textContent.includes('kết quả')")
+    page.wait_for_function("!document.querySelector('#run').disabled && document.querySelector('#results tbody')")
     assert 'Christopher Nolan' in page.locator('#results').inner_text()
+    assert page.locator('html').get_attribute('lang')=='en'
+    assert 'Run query' in page.locator('#run').inner_text()
+    assert page.locator('#results th').all_text_contents()==['title','year','runtimeMinutes','director']
     page.screenshot(path=str(OUT/'01_app.png'),full_page=False)
     checks.append({'check':'local endpoint UI, Inception','passed':True})
+    page.select_option('#sample','3')
+    page.wait_for_function("!document.querySelector('#run').disabled")
+    assert 'Director' in page.locator('#results').inner_text()
+    assert 'Writer' in page.locator('#results').inner_text()
+    page.locator('#query-text').fill('not SPARQL')
+    page.click('#run');page.wait_for_function("!document.querySelector('#run').disabled")
+    assert page.locator('#status').inner_text().startswith('Query error:')
+    assert page.locator('#results').inner_text()=='Check the syntax or choose a sample query.'
+    page.locator('#query-text').fill('')
+    page.click('#run')
+    assert page.locator('#status').inner_text()=='Enter a SPARQL query.'
+    page.locator('#search').fill('__no_matching_film__')
+    assert page.locator('#film-list').inner_text()=='No matching films found.'
+    page.locator('#search').fill('')
     page.select_option('#sample','2')
     page.wait_for_function("!document.querySelector('#run').disabled")
     assert page.locator('#results tbody tr').count()>=5
@@ -24,6 +41,8 @@ with sync_playwright() as p:
     checks.append({'check':'Nolan query through endpoint','passed':True})
     page.goto('http://127.0.0.1:8000/resource/film-Q25188',wait_until='networkidle')
     assert page.locator('h1').inner_text()=='Inception'
+    assert page.locator('html').get_attribute('lang')=='en'
+    assert 'Download RDF description (Turtle)' in page.locator('main').inner_text()
     page.screenshot(path=str(OUT/'03_resource.png'),full_page=False)
     checks.append({'check':'IRI HTML and linked-data navigation','passed':True})
     page.goto('http://127.0.0.1:8000/?browser',wait_until='networkidle')
@@ -36,7 +55,7 @@ with sync_playwright() as p:
     checks.append({'check':'browser Comunica GROUP BY / COUNT','passed':True})
     page.select_option('#sample','7')
     page.wait_for_function("!document.querySelector('#run').disabled",timeout=45000)
-    assert 'Đúng (true)' in page.locator('#results').inner_text(),page.locator('#status').inner_text()
+    assert 'True' in page.locator('#results').inner_text(),page.locator('#status').inner_text()
     checks.append({'check':'browser Comunica ASK','passed':True})
     page.locator('#query-text').fill('CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 3')
     page.click('#run');page.wait_for_function("!document.querySelector('#run').disabled",timeout=45000)

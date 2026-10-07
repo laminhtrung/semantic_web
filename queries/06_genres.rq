@@ -1,6 +1,6 @@
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?theLoai (COUNT(DISTINCT ?phim) AS ?soPhim) WHERE {
-  ?phim a dbo:Film ; ex:hasGenre ?genre . ?genre rdfs:label ?theLoai .
-} GROUP BY ?theLoai ORDER BY DESC(?soPhim)
+SELECT ?genreName (COUNT(DISTINCT ?film) AS ?filmCount) WHERE {
+  ?film a dbo:Film ; ex:hasGenre ?genre . ?genre rdfs:label ?genreName .
+} GROUP BY ?genreName ORDER BY DESC(?filmCount)

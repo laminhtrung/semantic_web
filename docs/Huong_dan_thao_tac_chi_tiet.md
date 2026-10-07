@@ -16,9 +16,9 @@ Các lệnh chính dùng **macOS** theo môi trường của bài. Thu thập, c
 
 **Quy ước terminal:** Terminal A dùng để chạy server và giữ cửa sổ đó mở. Terminal B dùng để gọi endpoint, chạy kiểm tra và tạo tài liệu. Cả hai đều đứng trong thư mục `movie_lod_complete`. Phần lớn lệnh dùng `.venv/bin/python`, nên không cần kích hoạt môi trường bằng `source`.
 
-**Bản hiện tại:** 9 lớp, trong đó `dbo:Film`, `dbo:Person`, `dbo:Country` được tái sử dụng trực tiếp; các kiểm tra dữ liệu cơ bản dùng Python. Với nguồn mẫu đã lưu: 30 phim, 805 người, 936 credit, 964 liên kết ngoài, 12.089 triple dữ liệu và 166 triple lược đồ. Các số này là mốc đối chiếu của bản mẫu; dữ liệu tải mới có thể thay đổi.
+**Bản hiện tại:** 15 lớp, trong đó `dbo:Film`, `dbo:Person`, `dbo:Country` được tái sử dụng trực tiếp; các kiểm tra dữ liệu cơ bản dùng Python. Với nguồn mẫu đã lưu: 30 phim, 805 người, 936 credit, 964 liên kết ngoài, 12.089 triple dữ liệu và 291 triple lược đồ. Các số này là mốc đối chiếu của bản mẫu; dữ liệu tải mới có thể thay đổi.
 
-**Trạng thái xuất bản ghi nhận trong repo:** Site đã public, nhưng `local_changes_pending_publication` còn là `true`. Cần xuất bản lại bản trong repo và thực hiện mục 12 để xác nhận dữ liệu hosted đã đồng bộ. Tài liệu hướng dẫn thao tác; việc đọc tài liệu không tự thực hiện triển khai.
+**Trạng thái xuất bản ghi nhận trong repo:** Ngày 07/10/2026, bản giao diện/truy vấn tiếng Anh đã được triển khai công khai; `publication.json` ghi nhận triển khai thành công. Khi tái tạo hoặc sửa dữ liệu, thực hiện mục 11–12 để xác nhận bản mới đã đồng bộ. Tài liệu hướng dẫn thao tác; việc đọc tài liệu không tự thực hiện triển khai.
 
 | Chặng | Thao tác chính | Sản phẩm cần có |
 |:--|:--|:--|
@@ -156,6 +156,10 @@ Mở `src/build.py`, tìm hàm `schema()`. Đối chiếu mô hình sau:
 | `ex:ContributionRole` | Loại vai trò đóng góp | Đạo diễn, diễn viên, biên kịch |
 | `ex:SourceSnapshot` | Bản ghi về phản hồi nguồn | URL, ngày lấy, SHA-256 |
 | `ex:Dataset` | Mô tả bộ dữ liệu | Giấy phép, nguồn, URL tải RDF |
+| `ex:Director`; `ex:Actor`; `ex:Screenwriter` | Person giao với điều kiện đã tham gia một Film | Suy ra vai trò từ quan hệ ngược |
+| `ex:FilmContributor` | Hợp của ba lớp vai trò người | Người có ít nhất một vai trò |
+| `ex:DirectorWriter` | Giao của Director và Screenwriter | Nolan; hai vai trò có thể ở hai phim khác nhau |
+| `ex:CreditedFilm` | Film giao với điều kiện có ít nhất một Credit | Inception |
 
 `dbo:` là `http://dbpedia.org/ontology/`; `ex:` là namespace ontology của bài. Trong `schema()`, ba lớp tái sử dụng nằm trong biến `reused`. Chúng được dùng trực tiếp trong schema và `rdf:type` của dữ liệu.
 
@@ -197,11 +201,12 @@ Trong `schema()`, tìm `qualifiedCardinality`, `allValuesFrom`, `inverseOf` và 
 1. Một credit nối đúng 1 phim, 1 người và 1 vai trò.
 2. Vai trò sử dụng ba cá thể `DirectorRole`, `ActorRole`, `WriterRole`.
 3. `dbo:director` ngược với `ex:directed`; tương tự có quan hệ ngược cho diễn xuất và biên kịch.
-4. Các lớp chính được khai báo phân biệt nhau.
+4. Chín lớp nền rời nhau qua AllDisjointClasses và 36 cặp disjointWith; các lớp vai trò người có thể chồng lấp.
+5. Sáu defined class dùng equivalentClass, intersectionOf, unionOf, someValuesFrom. Chạy `.venv/bin/python src/reason.py`; xem `evidence/ontology_reasoning.json` và [mô tả ontology](Mo_ta_ontology.md).
 
 **Thao tác nếu sửa mô hình:** sửa hàm `schema()` trong `src/build.py`, đồng bộ phần sinh thực thể trong `build()`, các câu truy vấn và kiểm tra có liên quan; sau đó tạo lại sản phẩm. Các file OWL và Turtle là đầu ra do script sinh. Nếu sửa thử trong Protégé, lưu một bản riêng để so sánh, rồi đưa thay đổi cần giữ vào mã nguồn.
 
-**Hoàn tất mục 3 khi:** giải thích được vai trò của 9 lớp và đường đi “phim → credit → người + vai trò + nguồn”. Các file ontology sẽ được tạo cùng bước chuyển đổi ở mục 5.
+**Hoàn tất mục 3 khi:** giải thích được vai trò của 15 lớp và đường đi “phim → credit → người + vai trò + nguồn”. Các file ontology sẽ được tạo cùng bước chuyển đổi ở mục 5.
 
 ## 4. Thu thập dữ liệu thật và giữ nguồn — YC2
 
@@ -261,7 +266,7 @@ shasum -a 256 data/raw/TEN_FILE_NGUON.json
 
 Lệnh đầu đọc dữ liệu thu thập, tạo ontology, RDF và các trang thực thể. Lệnh sau đồng bộ câu truy vấn mẫu, giấy phép và PDF vào thư mục Web.
 
-**Kết quả cần thấy:** số liệu được in ra; với nguồn mẫu có 30 phim, 9 lớp, 12.089 triple dữ liệu, 166 triple lược đồ và 964 liên kết ngoài.
+**Kết quả cần thấy:** số liệu được in ra; với nguồn mẫu có 30 phim, 15 lớp, 12.089 triple dữ liệu, 291 triple lược đồ và 964 liên kết ngoài.
 
 ### 5.2. Kiểm tra những file được tạo
 
@@ -302,9 +307,9 @@ Trong `link_audit.json`, tìm `film-Q25188`. Cần thấy liên kết tới Wiki
 
 Mở Protégé, chọn **File → Open**, mở `ontology/Movie_Ontology.owl`. Trong **Entities**, chọn phần **Classes**, mở các lớp dưới `owl:Thing`. Chọn từng lớp để xem mô tả và IRI. Có thể dùng **Search** hoặc Cmd+F để tìm lớp. [Hướng dẫn giao diện Protégé](https://protegeproject.github.io/protege/getting-started/).
 
-**Đối chiếu mô hình của bài:** tổng có 9 lớp được khai báo. `Film`, `Person`, `Country` dùng IRI bắt đầu bằng `http://dbpedia.org/ontology/`; các lớp khác dùng namespace của bài. Nếu giao diện hiển thị nhãn “Phim” hoặc “Người”, đọc IRI của lớp đang chọn để xác định chính xác.
+**Đối chiếu mô hình của bài:** tổng có 15 lớp được khai báo. `Film`, `Person`, `Country` dùng IRI bắt đầu bằng `http://dbpedia.org/ontology/`; các lớp khác dùng namespace của bài. Bản hiện tại dùng nhãn tiếng Anh “Film”, “Person”, “Country”; đọc IRI của lớp đang chọn để xác định chính xác.
 
-Protégé có thể hiển thị thêm các lớp ngoài được tham chiếu trong `equivalentClass` hoặc dữ liệu, như lớp căn chỉnh của Genre, Language và Dataset. Khi đối chiếu mốc 9 lớp, dùng danh sách mô hình ở mục 3 và trường `classes` trong `statistics.json`; đây là số lớp được khai báo trực tiếp bằng `owl:Class` trong lược đồ, không phải tổng mọi tên lớp mà trình soạn thảo nhận diện.
+Protégé có thể hiển thị thêm các lớp ngoài được tham chiếu trong `equivalentClass` hoặc dữ liệu, như lớp căn chỉnh của Genre, Language và Dataset. Khi đối chiếu mốc 15 lớp, dùng danh sách mô hình ở mục 3 và trường `classes` trong `statistics.json`; đây là số lớp có tên được khai báo trực tiếp bằng `owl:Class` trong lược đồ, không tính biểu thức lớp vô danh, không phải tổng mọi tên lớp mà trình soạn thảo nhận diện.
 
 ### 6.2. Xem quan hệ và ràng buộc
 
@@ -390,13 +395,13 @@ Khi chọn 8001, dùng 8001 trong mọi URL cục bộ. Script chụp minh chứ
 ### 8.2. Kiểm tra qua giao diện Web
 
 1. Mở trình duyệt, nhập `http://127.0.0.1:8000`.
-2. Trong ô câu hỏi mẫu, chọn **Inception: năm, thời lượng và đạo diễn**.
-3. Bấm **Chạy truy vấn** nếu chưa có kết quả.
+2. Trong ô câu hỏi mẫu, chọn **Inception: year, runtime and director**.
+3. Bấm **Run query** nếu chưa có kết quả.
 4. Đọc bảng: Inception, năm 2010, 148 phút, Christopher Nolan trong nguồn mẫu.
-5. Chọn **Các phim do Christopher Nolan đạo diễn**; mẫu hiện có 8 phim.
+5. Chọn **Films directed by Christopher Nolan**; mẫu hiện có 8 phim.
 6. Chọn câu hỏi về vai trò; cần thấy Nolan làm đạo diễn và biên kịch.
-7. Chọn câu ASK; cần thấy `Đúng (true)`.
-8. Bấm **Tải kết quả** để lưu kết quả truy vấn.
+7. Chọn câu ASK; cần thấy `True`.
+8. Bấm **Download results** để lưu kết quả truy vấn.
 9. Tìm Inception trong danh sách phim, mở trang thực thể và bấm tải RDF.
 
 ![Giao diện Inception của bản mẫu](../evidence/screenshots/01_app.png){width=95%}
@@ -410,7 +415,7 @@ Trong Terminal B, chuyển đến thư mục repo rồi chạy:
 .venv/bin/python src/query.py queries/08_ask.rq
 ```
 
-**Kết quả cần thấy:** lệnh đầu trả JSON chứa các biến `ten`, `nam`, `phut`, `daoDien`; lệnh thứ hai trả boolean `true`. Lệnh terminal đọc graph trực tiếp từ file, nên có thể dùng ngay cả khi server chưa chạy.
+**Kết quả cần thấy:** lệnh đầu trả JSON chứa các biến `title`, `year`, `runtimeMinutes`, `director`; lệnh thứ hai trả boolean `true`. Lệnh terminal đọc graph trực tiếp từ file, nên có thể dùng ngay cả khi server chưa chạy.
 
 ### 8.4. Kiểm tra endpoint
 
@@ -646,7 +651,7 @@ Sites có bước lưu phiên bản và bước triển khai phiên bản; việ
 ### 11.3. Chuyển quyền truy cập khi cần
 
 1. Mở [Sites trong ChatGPT](https://chatgpt.com/sites) bằng tài khoản sở hữu Site.
-2. Chọn **MovieLOD — Dữ liệu phim liên kết**.
+2. Chọn **MovieLOD — Linked movie data**.
 3. Mở **Share**.
 4. Ở **Who has access**, chọn **Anyone on the internet**.
 5. Hoàn tất thao tác xuất bản/lưu quyền theo giao diện đang hiển thị.
@@ -875,3 +880,6 @@ Thực hiện xuất bản và đối chiếu public theo mục 11–12. Khi tr�
 ```
 
 **Điểm kết thúc thực hành:** ontology giải thích được; nguồn truy lại được; RDF/IRI/giấy phép truy cập công khai; liên kết ngoài có minh chứng; SPARQL chạy đúng; báo cáo, slide, video và ZIP thuộc cùng bản nộp.
+
+
+**Phân loại bổ sung (ontology 1.1.0):** 9 lớp nền và 6 defined class (`Director`, `Actor`, `Screenwriter`, `FilmContributor`, `DirectorWriter`, `CreditedFilm`). Các định nghĩa dùng `equivalentClass` với giao/hợp và restriction tồn tại; role của người có thể chồng lấp. Xem [mô tả đầy đủ và ví dụ suy luận](Mo_ta_ontology.md). Chạy `src/reason.py` để tạo minh chứng; endpoint mặc định không tự suy luận.

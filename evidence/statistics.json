@@ -7,8 +7,9 @@
   "languages": 15,
   "snapshots": 56,
   "data_triples": 12089,
-  "schema_triples": 166,
-  "classes": 9,
+  "schema_triples": 291,
+  "classes": 15,
+  "defined_classes": 6,
   "reused_dbpedia_classes": [
     "http://dbpedia.org/ontology/Film",
     "http://dbpedia.org/ontology/Person",

@@ -15,7 +15,7 @@ SCHEMA=Graph().parse(ROOT/'ontology/movie.ttl')
 def disallow_remote(node):
     if isinstance(node,CompValue):
         if node.name=='ServiceGraphPattern' or ('datasetClause' in node and node['datasetClause']):
-            raise ValueError('Endpoint này chỉ truy vấn dataset MovieLOD: không dùng SERVICE hoặc FROM.')
+            raise ValueError('This endpoint queries the MovieLOD dataset only. SERVICE and FROM are not supported.')
         for value in node.values():disallow_remote(value)
     elif isinstance(node,(list,tuple)):
         for value in node:disallow_remote(value)
@@ -37,7 +37,7 @@ def sparql():
         if request.mimetype=='application/sparql-query':query=request.get_data(as_text=True)
         elif request.is_json:query=(request.get_json(silent=True) or {}).get('query')
         else:query=request.form.get('query')
-    if not isinstance(query,str) or not query.strip():return {'error':'Thiếu query SPARQL.'},400
+    if not isinstance(query,str) or not query.strip():return {'error':'A SPARQL query is required.'},400
     try:
         prepared=prepareQuery(query)
         disallow_remote(prepared.algebra)
@@ -55,7 +55,7 @@ def health():return {'status':'ok','data_triples':len(DATA),'query_engine':'RDFL
 @app.get('/resource/<slug>/')
 def resource(slug):
     s=RES[slug]
-    if not any(DATA.triples((s,None,None))):return {'error':'Không có thực thể này.'},404
+    if not any(DATA.triples((s,None,None))):return {'error':'Resource not found.'},404
     if 'text/turtle' in request.headers.get('Accept',''):
         return redirect('/describe/'+slug+'.ttl',code=303)
     if 'application/ld+json' in request.headers.get('Accept',''):
@@ -64,10 +64,10 @@ def resource(slug):
 
 @app.get('/describe/<slug>.<suffix>')
 def describe(slug,suffix):
-    if suffix not in ['ttl','jsonld']:return {'error':'Định dạng không hỗ trợ'},404
+    if suffix not in ['ttl','jsonld']:return {'error':'Unsupported format.'},404
     s=RES[slug];sub=Graph()
     for t in DATA.triples((s,None,None)):sub.add(t)
-    if not len(sub):return {'error':'Không có thực thể này'},404
+    if not len(sub):return {'error':'Resource not found.'},404
     fmt,ctype=('turtle','text/turtle') if suffix=='ttl' else ('json-ld','application/ld+json')
     return Response(sub.serialize(format=fmt),content_type=ctype+'; charset=utf-8')
 

@@ -20,21 +20,21 @@ def schema():
     g = graph()
     ontology = URIRef(BASE+'/ontology')
     g.add((ontology,RDF.type,OWL.Ontology))
-    g.add((ontology,RDFS.label,Literal('MovieLOD — ontology điện ảnh tối giản',lang='vi')))
-    g.add((ontology,OWL.versionInfo,Literal('1.0.0')))
+    g.add((ontology,RDFS.label,Literal('MovieLOD — movie ontology',lang='en')))
+    g.add((ontology,OWL.versionInfo,Literal('1.1.0')))
     g.add((ontology,DCT.license,URIRef(CONFIG['data_license'])))
     classes = {
-      'Film':('Phim',DBO.Film), 'Person':('Người',DBO.Person), 'Genre':('Thể loại',DBO.Genre),
-      'Country':('Quốc gia',DBO.Country), 'Language':('Ngôn ngữ',DBO.Language),
-      'Credit':('Bản ghi đóng góp',None), 'ContributionRole':('Vai trò đóng góp',None),
-      'SourceSnapshot':('Bản ghi nguồn',None), 'Dataset':('Bộ dữ liệu',VOID.Dataset)}
+      'Film':('Film',DBO.Film), 'Person':('Person',DBO.Person), 'Genre':('Genre',DBO.Genre),
+      'Country':('Country',DBO.Country), 'Language':('Language',DBO.Language),
+      'Credit':('Credit',None), 'ContributionRole':('Contribution role',None),
+      'SourceSnapshot':('Source snapshot',None), 'Dataset':('Dataset',VOID.Dataset)}
     # Reuse these DBpedia class IRIs directly throughout the schema and data.
     reused = {'Film': DBO.Film, 'Person': DBO.Person, 'Country': DBO.Country}
     class_iris = {name: reused.get(name, EX[name]) for name in classes}
     for name,(label,alignment) in classes.items():
         class_iri = class_iris[name]
         g.add((class_iri, RDF.type,OWL.Class))
-        g.add((class_iri,RDFS.label,Literal(label,lang='vi')))
+        g.add((class_iri,RDFS.label,Literal(label,lang='en')))
         if alignment and class_iri != alignment:
             g.add((class_iri,OWL.equivalentClass,alignment))
     distinct = BNode()
@@ -42,16 +42,69 @@ def schema():
     members = BNode()
     g.add((distinct,OWL.members,members))
     Collection(g,members,[class_iris[n] for n in classes])
+    # Explicit pairs make the existing n-ary disjointness easy to inspect in tools.
+    base_classes = list(class_iris.values())
+    for index, left in enumerate(base_classes):
+        for right in base_classes[index + 1:]:
+            g.add((left, OWL.disjointWith, right))
+    descriptions = {
+        'Film': 'A film work, distinct from people, countries and metadata records.',
+        'Person': 'A human who may hold several film contribution roles.',
+        'Genre': 'A category used to describe a film genre.',
+        'Country': 'A country associated with film production.',
+        'Language': 'A language associated with a film.',
+        'Credit': 'A contribution record connecting exactly one person, one film and one role.',
+        'ContributionRole': 'A contribution role such as director, actor or writer; not a person.',
+        'SourceSnapshot': 'A saved source response with a URL, retrieval time and SHA-256 hash.',
+        'Dataset': 'The published collection of movie data, aligned with void:Dataset.',
+    }
+    for name, description in descriptions.items():
+        g.add((class_iris[name], RDFS.comment, Literal(description, lang='en')))
+
+    def some(prop, filler):
+        restriction = BNode()
+        g.add((restriction, RDF.type, OWL.Restriction))
+        g.add((restriction, OWL.onProperty, prop))
+        g.add((restriction, OWL.someValuesFrom, filler))
+        return restriction
+
+    def defined(name, label, description, operator, operands, parent):
+        cls, expression, head = EX[name], BNode(), BNode()
+        g.add((cls, RDF.type, OWL.Class))
+        g.add((cls, RDFS.label, Literal(label, lang='en')))
+        g.add((cls, RDFS.comment, Literal(description, lang='en')))
+        g.add((cls, RDFS.subClassOf, parent))
+        g.add((cls, OWL.equivalentClass, expression))
+        g.add((expression, RDF.type, OWL.Class))
+        g.add((expression, operator, head))
+        Collection(g, head, operands)
+
+    for name, label, prop, description in [
+        ('Director', 'Director', EX.directed, 'A person who has directed at least one film in this model.'),
+        ('Actor', 'Actor', EX.actedIn, 'A person who has acted in at least one film in this model.'),
+        ('Screenwriter', 'Screenwriter', EX.wrote, 'A person credited as writer on at least one film in this model.'),
+    ]:
+        defined(name, label, description, OWL.intersectionOf,
+                [DBO.Person, some(prop, DBO.Film)], DBO.Person)
+    defined('FilmContributor', 'Film contributor',
+            'A person who is a director, actor or screenwriter, possibly holding several of these roles.',
+            OWL.unionOf, [EX.Director, EX.Actor, EX.Screenwriter], DBO.Person)
+    defined('DirectorWriter', 'Director and writer',
+            'A person who has both directed a film and written a film; these may be different films.',
+            OWL.intersectionOf, [EX.Director, EX.Screenwriter], DBO.Person)
+    defined('CreditedFilm', 'Film with a credit',
+            'A film linked to at least one contribution record; this does not require complete credits.',
+            OWL.intersectionOf, [DBO.Film, some(EX.hasCredit, EX.Credit)], DBO.Film)
     obj = {
-      'inFilm':(EX.Credit,DBO.Film,'Thuộc phim'), 'participant':(EX.Credit,DBO.Person,'Người tham gia'),
-      'role':(EX.Credit,EX.ContributionRole,'Vai trò'), 'hasCredit':(DBO.Film,EX.Credit,'Có đóng góp'),
-      'hasGenre':(DBO.Film,EX.Genre,'Có thể loại'), 'country':(DBO.Film,DBO.Country,'Quốc gia sản xuất'),
-      'language':(DBO.Film,EX.Language,'Ngôn ngữ gốc'), 'sourceSnapshot':(None,EX.SourceSnapshot,'Bản ghi nguồn'),
-      'directed':(DBO.Person,DBO.Film,'Đã đạo diễn'), 'actedIn':(DBO.Person,DBO.Film,'Đã diễn xuất'),
-      'wrote':(DBO.Person,DBO.Film,'Đã viết kịch bản')}
+      'inFilm':(EX.Credit,DBO.Film,'In film'), 'participant':(EX.Credit,DBO.Person,'Participant'),
+      'role':(EX.Credit,EX.ContributionRole,'Role'), 'hasCredit':(DBO.Film,EX.Credit,'Has credit'),
+      'hasGenre':(DBO.Film,EX.Genre,'Has genre'), 'country':(DBO.Film,DBO.Country,'Production country'),
+      'language':(DBO.Film,EX.Language,'Original language'), 'sourceSnapshot':(None,EX.SourceSnapshot,'Source snapshot'),
+      'directed':(DBO.Person,DBO.Film,'Directed'), 'actedIn':(DBO.Person,DBO.Film,'Acted in'),
+      'wrote':(DBO.Person,DBO.Film,'Wrote')}
     for name,(domain,ran,label) in obj.items():
         g.add((EX[name],RDF.type,OWL.ObjectProperty))
-        g.add((EX[name],RDFS.label,Literal(label,lang='vi')))
+        g.add((EX[name],RDFS.label,Literal(label,lang='en')))
         if domain:g.add((EX[name],RDFS.domain,domain))
         g.add((EX[name],RDFS.range,ran))
     g.add((EX.inFilm,OWL.inverseOf,EX.hasCredit))
@@ -68,9 +121,9 @@ def schema():
         g.add((r,OWL.onProperty,prop));g.add((r,OWL.onClass,t));g.add((r,OWL.qualifiedCardinality,Literal(1,datatype=XSD.nonNegativeInteger)))
         r=BNode();g.add((EX.Credit,RDFS.subClassOf,r));g.add((r,RDF.type,OWL.Restriction))
         g.add((r,OWL.onProperty,prop));g.add((r,OWL.allValuesFrom,t))
-    for name,label in [('DirectorRole','Đạo diễn'),('ActorRole','Diễn viên'),('WriterRole','Biên kịch')]:
+    for name,label in [('DirectorRole','Director'),('ActorRole','Actor'),('WriterRole','Writer')]:
         g.add((EX[name],RDF.type,EX.ContributionRole));g.add((EX[name],RDF.type,OWL.NamedIndividual))
-        g.add((EX[name],RDFS.label,Literal(label,lang='vi')))
+        g.add((EX[name],RDFS.label,Literal(label,lang='en')))
     b=BNode();g.add((b,RDF.type,OWL.AllDifferent));l=BNode();g.add((b,OWL.distinctMembers,l))
     Collection(g,l,[EX.DirectorRole,EX.ActorRole,EX.WriterRole])
     return g
@@ -181,7 +234,8 @@ def build():
     stats={'films':len(records),'persons':len(set(g.subjects(RDF.type,DBO.Person))), 'credits':len(set(g.subjects(RDF.type,EX.Credit))),
            'genres':len(set(g.subjects(RDF.type,EX.Genre))),'countries':len(set(g.subjects(RDF.type,DBO.Country))),
            'languages':len(set(g.subjects(RDF.type,EX.Language))),'snapshots':len(snapshots),'data_triples':len(g),'schema_triples':len(sg),
-           'classes':len(set(sg.subjects(RDF.type,OWL.Class))),
+           'classes':len({c for c in sg.subjects(RDF.type,OWL.Class) if isinstance(c, URIRef)}),
+           'defined_classes':6,
            'reused_dbpedia_classes':['http://dbpedia.org/ontology/'+name for name in ['Film','Person','Country']],
            'same_as':len(links),'dbpedia_links':sum('dbpedia.org' in x['external'] for x in links),
            'wikidata_links':sum('wikidata.org' in x['external'] for x in links),
@@ -232,7 +286,7 @@ def render_resource(g,s,directory,include_all=False):
             extra+='<section id="'+html.escape(anchor,quote=True)+'"><h2>'+html.escape(anchor+' — '+label2)+'</h2><table>'+properties+'</table></section>'
     ld=sub.serialize(format='json-ld').replace('</','<\\/')
     path=str(s)[len(BASE):]
-    body='<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+html.escape(label)+' · MovieLOD</title><link rel="stylesheet" href="/style.css"><link rel="alternate" type="text/turtle" href="'+path+'/index.ttl"><script type="application/ld+json">'+ld+'</script></head><body class="resource-page"><main><a href="/">← MovieLOD</a><h1>'+html.escape(label)+'</h1><p class="iri">'+html.escape(str(s))+'</p><p><a href="'+path+'/index.ttl">Tải mô tả RDF (Turtle)</a></p><table><thead><tr><th>Quan hệ / thuộc tính</th><th>Đối tượng / giá trị</th></tr></thead><tbody>'+rows+'</tbody></table><footer>Dữ liệu nguồn: Wikidata, DBpedia. <a href="/LICENSE-DATA.txt">Giấy phép và ghi công</a>.</footer></main></body></html>'
+    body='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+html.escape(label)+' · MovieLOD</title><link rel="stylesheet" href="/style.css"><link rel="alternate" type="text/turtle" href="'+path+'/index.ttl"><script type="application/ld+json">'+ld+'</script></head><body class="resource-page"><main><a href="/">← MovieLOD</a><h1>'+html.escape(label)+'</h1><p class="iri">'+html.escape(str(s))+'</p><p><a href="'+path+'/index.ttl">Download RDF description (Turtle)</a></p><table><thead><tr><th>Property</th><th>Object / value</th></tr></thead><tbody>'+rows+'</tbody></table><footer>Data sources: Wikidata, DBpedia. <a href="/LICENSE-DATA.txt">License and attribution</a>.</footer></main></body></html>'
     if extra:body=body.replace('<footer>',extra+'<footer>')
     (directory/'index.html').write_text(body,encoding='utf-8')
 

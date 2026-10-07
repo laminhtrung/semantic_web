@@ -2,10 +2,10 @@
   "audience": "public",
   "status": "succeeded",
   "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site",
-  "note": "Public access verified through Sites and unauthenticated HTTP on 2026-10-06. The live deployment predates the local direct DBpedia class reuse change; republish the updated web/dist to synchronize it.",
   "project_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916",
-  "deployment_id": "appgdep_6ac4b923bf18819181c915f9cefb5023",
-  "version_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916~appgver_8f940fd786908191a9057831f3524cef",
-  "source_commit": "04aeb4d90f091fb99248d8e99ec155e6dc61761b",
-  "local_changes_pending_publication": true
+  "deployment_id": "appgdep_6ac6020879a88191932ccb64dacd2bba",
+  "version_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916~appgver_c31e9c37e9d0819198a365c36f410868",
+  "source_commit": "283a8d337778da17ad4d5f5f60e07ce33c308ed8",
+  "local_changes_pending_publication": true,
+  "note": "Public English-language deployment succeeded on 2026-10-07. Source and deployment archive were verified; local query, endpoint and browser checks passed. Local ontology 1.1.0 adds six defined classes and explicit disjoint pairs; this ontology update has not been deployed."
 }

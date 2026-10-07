@@ -5,7 +5,7 @@ date: "Báo cáo học phần Semantic Web • 06/10/2026"
 
 ## 1. Mục tiêu và yêu cầu đề bài
 
-**Mục tiêu:** xây dựng một ứng dụng Linked Open Data (LOD — dữ liệu mở có liên kết) về điện ảnh. Người dùng xem phim, truy lại nguồn và đặt câu hỏi bằng SPARQL. Mô hình được giới hạn ở phần cần cho bài, gồm **9 lớp**.
+**Mục tiêu:** xây dựng một ứng dụng Linked Open Data (LOD — dữ liệu mở có liên kết) về điện ảnh. Người dùng xem phim, truy lại nguồn và đặt câu hỏi bằng SPARQL. Mô hình được giới hạn ở phần cần cho bài, gồm **15 lớp**.
 
 | Đề gốc | Dịch và sản phẩm tương ứng |
 |:--|:--|
@@ -29,7 +29,7 @@ date: "Báo cáo học phần Semantic Web • 06/10/2026"
 | Ứng dụng | Giao diện Web; endpoint cục bộ dùng RDFLib; bản hosted dùng Comunica. | `src/server.py`; `web/dist/` |
 | Minh chứng | Kết quả đo thực tế, ảnh giao diện, báo cáo và video. | `evidence/`; `docs/` |
 
-**Trạng thái xuất bản:** Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao diện. Bản hosted còn dùng kiểu lớp trước lần sửa; bản trong repo đã dùng trực tiếp dbo:Film, dbo:Person, dbo:Country và cần xuất bản lại để đồng bộ.
+**Trạng thái xuất bản:** Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao diện. Bản hosted chưa có ontology 1.1.0 với sáu defined class; cần xuất bản lại để đồng bộ.
 
 \newpage
 
@@ -48,7 +48,7 @@ Quan hệ đối tượng (*object property*) nối hai thực thể: `dbo:direc
 
 **Quy tắc OWL:** các lớp chính loại trừ nhau; một credit có số lượng giá trị cố định và loại giá trị được quy định. `director` là quan hệ ngược của `directed`: nếu phim có đạo diễn Nolan, có thể suy ra Nolan đã đạo diễn phim đó. Test xác nhận truy vấn trực tiếp các lớp DBpedia, rồi chạy OWL RL để kiểm tra quan hệ ngược và suy luận range `dbo:Person`; đây không phải tuyên bố đã chạy phân loại toàn bộ bằng reasoner OWL DL.
 
-**Tái sử dụng từ vựng:** dùng trực tiếp `dbo:Film`, `dbo:Person`, `dbo:Country` trong kiểu thực thể, domain/range, cardinality và SPARQL. Mô hình gồm 3 lớp DBpedia và 6 lớp `ex:`. Dùng `owl:sameAs` để nối cá thể cùng danh tính, PROV cho nguồn, Dublin Core cho giấy phép và VoID cho bộ dữ liệu. Tái sử dụng lớp và liên kết cá thể là hai việc riêng. Các file OWL đều mở được bằng Protégé.
+**Tái sử dụng từ vựng:** dùng trực tiếp `dbo:Film`, `dbo:Person`, `dbo:Country` trong kiểu thực thể, domain/range, cardinality và SPARQL. Mô hình gồm 3 lớp DBpedia và 12 lớp `ex:`. Sáu defined class gồm Director, Actor, Screenwriter, FilmContributor, DirectorWriter và CreditedFilm, dùng equivalentClass với intersectionOf, unionOf và someValuesFrom. Ví dụ Nolan được suy ra là DirectorWriter. Xem `Mo_ta_ontology.md` và `evidence/ontology_reasoning.json`; chạy `src/reason.py` để tái lập. Dùng `owl:sameAs` để nối cá thể cùng danh tính, PROV cho nguồn, Dublin Core cho giấy phép và VoID cho bộ dữ liệu. Tái sử dụng lớp và liên kết cá thể là hai việc riêng. Các file OWL đều mở được bằng Protégé.
 
 ## 4. YC2 — Thu thập dữ liệu thật, có thể kiểm tra lại
 
@@ -70,7 +70,7 @@ Mỗi phản hồi có URL, thời điểm lấy, HTTP status và SHA-256. **Mã
 
 ## 5. YC3 — Chuyển đổi RDF và điều kiện 4 sao
 
-Một **triple** gồm chủ thể → quan hệ → đối tượng/giá trị. Dữ liệu có **12089 triple**, ontology có **166 triple**. Có bản Turtle, JSON-LD, CSV; có OWL chỉ chứa lược đồ và OWL chứa cả đồ thị.
+Một **triple** gồm chủ thể → quan hệ → đối tượng/giá trị. Dữ liệu có **12089 triple**, ontology có **291 triple**. Có bản Turtle, JSON-LD, CSV; có OWL chỉ chứa lược đồ và OWL chứa cả đồ thị.
 
 | Việc chuẩn hóa | Cách thực hiện |
 |:--|:--|
@@ -87,7 +87,7 @@ Một **triple** gồm chủ thể → quan hệ → đối tượng/giá trị.
 
 **Địa chỉ bộ dữ liệu:** [dataset](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/dataset), [RDF Turtle](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.ttl), [ontology](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology).
 
-Theo [thang sao Linked Data](https://www.w3.org/DesignIssues/LinkedData.html), các mức sao cộng dồn; có RDF và IRI là phần kỹ thuật, còn Open Data cần công bố trên Web với giấy phép mở. **Trạng thái hiện tại:** Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao diện. Bản hosted còn dùng kiểu lớp trước lần sửa; bản trong repo đã dùng trực tiếp dbo:Film, dbo:Person, dbo:Country và cần xuất bản lại để đồng bộ.
+Theo [thang sao Linked Data](https://www.w3.org/DesignIssues/LinkedData.html), các mức sao cộng dồn; có RDF và IRI là phần kỹ thuật, còn Open Data cần công bố trên Web với giấy phép mở. **Trạng thái hiện tại:** Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao diện. Bản hosted chưa có ontology 1.1.0 với sáu defined class; cần xuất bản lại để đồng bộ.
 
 ## 6. YC4 — Liên kết ngoài để tạo ngữ cảnh
 
@@ -111,10 +111,10 @@ Có **964 liên kết `owl:sameAs`**: **936** tới Wikidata, **28** tới DBped
 PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?ten ?daoDien WHERE {
-  ?phim a dbo:Film ; ex:title "Inception" ;
-        ex:title ?ten ; dbo:director ?nguoi .
-  ?nguoi rdfs:label ?daoDien .
+SELECT ?title ?director WHERE {
+  ?film a dbo:Film ; ex:title "Inception" ;
+        ex:title ?title ; dbo:director ?person .
+  ?person rdfs:label ?director .
 }
 ```
 

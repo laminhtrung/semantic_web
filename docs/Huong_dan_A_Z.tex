@@ -101,7 +101,7 @@
 này?}\label{a.-bux1ea1n-cuxf3-guxec-trong-thux1b0-mux1ee5c-nuxe0y}
 
 Đây là \textbf{bản độc lập}, không cần mở file OWL mở rộng cũ để chạy.
-Bài có \textbf{30 phim, 9 lớp}, nguồn thật và một ứng dụng truy vấn.
+Bài có \textbf{30 phim, 15 lớp}, nguồn thật và một ứng dụng truy vấn.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}ll@{}}
@@ -149,15 +149,14 @@ Mở \textbf{http://127.0.0.1:8000}. Có sẵn dữ liệu nên không cần t�
 Trên macOS, \texttt{start.command} làm các bước khởi động này. Dừng
 server bằng Ctrl+C.
 
-Trong giao diện: chọn câu hỏi Inception → bấm \textbf{Chạy truy vấn} →
-đọc bảng → mở một phim để thấy thông tin và nguồn → tải Turtle nếu muốn
-xem RDF. Bản hosted:
+Trong giao diện: chọn câu hỏi Inception → bấm \textbf{Run query} → đọc
+bảng → mở một phim để thấy thông tin và nguồn → tải Turtle nếu muốn xem
+RDF. Bản hosted:
 \href{https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/}{MovieLOD}.
 
 \textbf{Xuất bản:} Đã xuất bản công khai; người có URL truy cập được dữ
-liệu và giao diện. Bản hosted còn dùng kiểu lớp trước lần sửa; bản trong
-repo đã dùng trực tiếp dbo:Film, dbo:Person, dbo:Country và cần xuất bản
-lại để đồng bộ.
+liệu và giao diện. Bản hosted chưa có ontology 1.1.0 với sáu defined
+class; cần xuất bản lại để đồng bộ.
 
 \newpage
 
@@ -237,9 +236,12 @@ YC3}\label{e.-chuyux1ec3n-thuxe0nh-rdf-yc3}
 .venv/bin/python src/build.py
 \end{verbatim}
 
-Mã dùng 9 lớp (3 lớp DBpedia và 6 lớp của bài) cùng các quy tắc; biến
-thông tin đã thu thập thành đồ thị RDF; tạo định danh từ QID; đổi thời
-lượng về phút; thêm nguồn; xuất Turtle, JSON-LD, CSV và OWL.
+Mã dùng 15 lớp (3 lớp DBpedia và 12 lớp của bài), trong đó 6 defined
+class dùng giao/hợp và restriction tồn tại; xem
+\texttt{Mo\_\allowbreak{}ta\_\allowbreak{}ontology.md} và chạy
+\texttt{src/\allowbreak{}reason.py} để kiểm tra phân loại; biến thông
+tin đã thu thập thành đồ thị RDF; tạo định danh từ QID; đổi thời lượng
+về phút; thêm nguồn; xuất Turtle, JSON-LD, CSV và OWL.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
@@ -368,10 +370,10 @@ trang); \texttt{docs/\allowbreak{}Slide.pptx};
 Video có lời đọc tiếng Việt tổng hợp, minh họa bằng dữ liệu và ảnh ứng
 dụng thật; có kịch bản để tự thuyết trình lại.
 
-\textbf{Trình bày theo 5 ý:} mô hình 9 lớp → nguồn thật có hash → RDF và
-IRI → liên kết Wikidata/DBpedia → truy vấn ra kết quả. Không cần giải
-thích các mô-đun giải thưởng hoặc streaming vì bản này không đưa chúng
-vào phạm vi.
+\textbf{Trình bày theo 5 ý:} mô hình 15 lớp (9 nền + 6 suy luận; xem
+Mo\_ta\_ontology.md) → nguồn thật có hash → RDF và IRI → liên kết
+Wikidata/DBpedia → truy vấn ra kết quả. Không cần giải thích các mô-đun
+giải thưởng hoặc streaming vì bản này không đưa chúng vào phạm vi.
 
 \textbf{Nếu lỗi:} kiểm tra đã cài requirements; cổng 8000 chưa bị dùng;
 dữ liệu đã build. Dùng \texttt{-\allowbreak{}-\allowbreak{}port 8001}

@@ -3,14 +3,14 @@ import shutil
 from common import ROOT,write_json
 
 labels={
- '02_inception.rq':'Inception: năm, thời lượng và đạo diễn',
- '01_films.rq':'Tất cả phim đã thu thập',
- '03_nolan.rq':'Các phim do Christopher Nolan đạo diễn',
- '04_credits.rq':'Ai làm việc gì trong Inception?',
- '05_external_links.rq':'Các phim liên kết tới đâu?',
- '06_genres.rq':'Thống kê phim theo thể loại',
- '07_source.rq':'Nguồn và mã băm của Inception',
- '08_ask.rq':'Inception có liên kết đúng với Wikidata không?'}
+ '02_inception.rq':'Inception: year, runtime and director',
+ '01_films.rq':'All films in the dataset',
+ '03_nolan.rq':'Films directed by Christopher Nolan',
+ '04_credits.rq':'Who contributed to Inception, and in which role?',
+ '05_external_links.rq':'External links for each film',
+ '06_genres.rq':'Film counts by genre',
+ '07_source.rq':'Inception: source URLs and SHA-256 hashes',
+ '08_ask.rq':'Is Inception linked to its Wikidata entity?'}
 queries=[{'file':name,'label':label,'query':(ROOT/'queries'/name).read_text()} for name,label in labels.items()]
 write_json(ROOT/'web/dist/data/queries.json',queries)
 shutil.copy2(ROOT/'LICENSE-DATA.txt',ROOT/'web/dist/LICENSE-DATA.txt')

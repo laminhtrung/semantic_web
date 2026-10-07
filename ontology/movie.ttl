@@ -23,22 +23,45 @@ dbo:writer a owl:ObjectProperty ;
     owl:inverseOf ex:wrote .
 
 <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology> a owl:Ontology ;
-    rdfs:label "MovieLOD — ontology điện ảnh tối giản"@vi ;
+    rdfs:label "MovieLOD — movie ontology"@en ;
     dct:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
-    owl:versionInfo "1.0.0" .
+    owl:versionInfo "1.1.0" .
+
+ex:CreditedFilm a owl:Class ;
+    rdfs:label "Film with a credit"@en ;
+    rdfs:comment "A film linked to at least one contribution record; this does not require complete credits."@en ;
+    rdfs:subClassOf dbo:Film ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Film [ a owl:Restriction ;
+                        owl:onProperty ex:hasCredit ;
+                        owl:someValuesFrom ex:Credit ] ) ] .
+
+ex:DirectorWriter a owl:Class ;
+    rdfs:label "Director and writer"@en ;
+    rdfs:comment "A person who has both directed a film and written a film; these may be different films."@en ;
+    rdfs:subClassOf dbo:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( ex:Director ex:Screenwriter ) ] .
+
+ex:FilmContributor a owl:Class ;
+    rdfs:label "Film contributor"@en ;
+    rdfs:comment "A person who is a director, actor or screenwriter, possibly holding several of these roles."@en ;
+    rdfs:subClassOf dbo:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( ex:Director ex:Actor ex:Screenwriter ) ] .
 
 ex:country a owl:ObjectProperty ;
-    rdfs:label "Quốc gia sản xuất"@vi ;
+    rdfs:label "Production country"@en ;
     rdfs:domain dbo:Film ;
     rdfs:range dbo:Country .
 
 ex:hasGenre a owl:ObjectProperty ;
-    rdfs:label "Có thể loại"@vi ;
+    rdfs:label "Has genre"@en ;
     rdfs:domain dbo:Film ;
     rdfs:range ex:Genre .
 
 ex:language a owl:ObjectProperty ;
-    rdfs:label "Ngôn ngữ gốc"@vi ;
+    rdfs:label "Original language"@en ;
     rdfs:domain dbo:Film ;
     rdfs:range ex:Language .
 
@@ -59,7 +82,7 @@ ex:sha256 a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 ex:sourceSnapshot a owl:ObjectProperty ;
-    rdfs:label "Bản ghi nguồn"@vi ;
+    rdfs:label "Source snapshot"@en ;
     rdfs:range ex:SourceSnapshot .
 
 ex:sourceUrl a owl:DatatypeProperty ;
@@ -70,107 +93,179 @@ ex:title a owl:DatatypeProperty ;
     rdfs:domain dbo:Film ;
     rdfs:range xsd:string .
 
+ex:Actor a owl:Class ;
+    rdfs:label "Actor"@en ;
+    rdfs:comment "A person who has acted in at least one film in this model."@en ;
+    rdfs:subClassOf dbo:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
+                        owl:onProperty ex:actedIn ;
+                        owl:someValuesFrom dbo:Film ] ) ] .
+
 ex:ActorRole a owl:NamedIndividual,
         ex:ContributionRole ;
-    rdfs:label "Diễn viên"@vi .
-
-ex:Dataset a owl:Class ;
-    rdfs:label "Bộ dữ liệu"@vi ;
-    owl:equivalentClass void:Dataset .
+    rdfs:label "Actor"@en .
 
 ex:DirectorRole a owl:NamedIndividual,
         ex:ContributionRole ;
-    rdfs:label "Đạo diễn"@vi .
+    rdfs:label "Director"@en .
 
 ex:WriterRole a owl:NamedIndividual,
         ex:ContributionRole ;
-    rdfs:label "Biên kịch"@vi .
+    rdfs:label "Writer"@en .
+
+ex:Director a owl:Class ;
+    rdfs:label "Director"@en ;
+    rdfs:comment "A person who has directed at least one film in this model."@en ;
+    rdfs:subClassOf dbo:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
+                        owl:onProperty ex:directed ;
+                        owl:someValuesFrom dbo:Film ] ) ] .
+
+ex:Screenwriter a owl:Class ;
+    rdfs:label "Screenwriter"@en ;
+    rdfs:comment "A person credited as writer on at least one film in this model."@en ;
+    rdfs:subClassOf dbo:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
+                        owl:onProperty ex:wrote ;
+                        owl:someValuesFrom dbo:Film ] ) ] .
 
 ex:actedIn a owl:ObjectProperty ;
-    rdfs:label "Đã diễn xuất"@vi ;
+    rdfs:label "Acted in"@en ;
     rdfs:domain dbo:Person ;
     rdfs:range dbo:Film .
 
 ex:directed a owl:ObjectProperty ;
-    rdfs:label "Đã đạo diễn"@vi ;
+    rdfs:label "Directed"@en ;
     rdfs:domain dbo:Person ;
     rdfs:range dbo:Film .
 
 ex:hasCredit a owl:ObjectProperty ;
-    rdfs:label "Có đóng góp"@vi ;
+    rdfs:label "Has credit"@en ;
     rdfs:domain dbo:Film ;
     rdfs:range ex:Credit .
 
-ex:wrote a owl:ObjectProperty ;
-    rdfs:label "Đã viết kịch bản"@vi ;
-    rdfs:domain dbo:Person ;
-    rdfs:range dbo:Film .
-
-dbo:Country a owl:Class ;
-    rdfs:label "Quốc gia"@vi .
-
-ex:Genre a owl:Class ;
-    rdfs:label "Thể loại"@vi ;
-    owl:equivalentClass dbo:Genre .
-
-ex:Language a owl:Class ;
-    rdfs:label "Ngôn ngữ"@vi ;
-    owl:equivalentClass dbo:Language .
-
 ex:inFilm a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    rdfs:label "Thuộc phim"@vi ;
+    rdfs:label "In film"@en ;
     rdfs:domain ex:Credit ;
     rdfs:range dbo:Film ;
     owl:inverseOf ex:hasCredit .
 
 ex:participant a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    rdfs:label "Người tham gia"@vi ;
+    rdfs:label "Participant"@en ;
     rdfs:domain ex:Credit ;
     rdfs:range dbo:Person .
 
 ex:role a owl:FunctionalProperty,
         owl:ObjectProperty ;
-    rdfs:label "Vai trò"@vi ;
+    rdfs:label "Role"@en ;
     rdfs:domain ex:Credit ;
     rdfs:range ex:ContributionRole .
 
+ex:wrote a owl:ObjectProperty ;
+    rdfs:label "Wrote"@en ;
+    rdfs:domain dbo:Person ;
+    rdfs:range dbo:Film .
+
+ex:Genre a owl:Class ;
+    rdfs:label "Genre"@en ;
+    rdfs:comment "A category used to describe a film genre."@en ;
+    owl:disjointWith dbo:Country,
+        ex:ContributionRole,
+        ex:Credit,
+        ex:Dataset,
+        ex:Language,
+        ex:SourceSnapshot ;
+    owl:equivalentClass dbo:Genre .
+
+dbo:Country a owl:Class ;
+    rdfs:label "Country"@en ;
+    rdfs:comment "A country associated with film production."@en ;
+    owl:disjointWith ex:ContributionRole,
+        ex:Credit,
+        ex:Dataset,
+        ex:Language,
+        ex:SourceSnapshot .
+
+ex:Language a owl:Class ;
+    rdfs:label "Language"@en ;
+    rdfs:comment "A language associated with a film."@en ;
+    owl:disjointWith ex:ContributionRole,
+        ex:Credit,
+        ex:Dataset,
+        ex:SourceSnapshot ;
+    owl:equivalentClass dbo:Language .
+
+ex:Dataset a owl:Class ;
+    rdfs:label "Dataset"@en ;
+    rdfs:comment "The published collection of movie data, aligned with void:Dataset."@en ;
+    owl:equivalentClass void:Dataset .
+
 ex:Credit a owl:Class ;
-    rdfs:label "Bản ghi đóng góp"@vi ;
+    rdfs:label "Credit"@en ;
+    rdfs:comment "A contribution record connecting exactly one person, one film and one role."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ex:ContributionRole ;
-            owl:onProperty ex:role ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom dbo:Person ;
-            owl:onProperty ex:participant ],
+            owl:onClass ex:ContributionRole ;
+            owl:onProperty ex:role ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
             owl:onClass dbo:Film ;
             owl:onProperty ex:inFilm ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass ex:ContributionRole ;
-            owl:onProperty ex:role ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
             owl:onClass dbo:Person ;
             owl:onProperty ex:participant ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
+            owl:allValuesFrom ex:ContributionRole ;
+            owl:onProperty ex:role ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dbo:Person ;
+            owl:onProperty ex:participant ],
+        [ a owl:Restriction ;
             owl:allValuesFrom dbo:Film ;
-            owl:onProperty ex:inFilm ] .
+            owl:onProperty ex:inFilm ] ;
+    owl:disjointWith ex:ContributionRole,
+        ex:Dataset,
+        ex:SourceSnapshot .
 
 ex:SourceSnapshot a owl:Class ;
-    rdfs:label "Bản ghi nguồn"@vi .
+    rdfs:label "Source snapshot"@en ;
+    rdfs:comment "A saved source response with a URL, retrieval time and SHA-256 hash."@en ;
+    owl:disjointWith ex:Dataset .
 
 ex:ContributionRole a owl:Class ;
-    rdfs:label "Vai trò đóng góp"@vi .
+    rdfs:label "Contribution role"@en ;
+    rdfs:comment "A contribution role such as director, actor or writer; not a person."@en ;
+    owl:disjointWith ex:Dataset,
+        ex:SourceSnapshot .
 
 dbo:Person a owl:Class ;
-    rdfs:label "Người"@vi .
+    rdfs:label "Person"@en ;
+    rdfs:comment "A human who may hold several film contribution roles."@en ;
+    owl:disjointWith dbo:Country,
+        ex:ContributionRole,
+        ex:Credit,
+        ex:Dataset,
+        ex:Genre,
+        ex:Language,
+        ex:SourceSnapshot .
 
 dbo:Film a owl:Class ;
-    rdfs:label "Phim"@vi .
+    rdfs:label "Film"@en ;
+    rdfs:comment "A film work, distinct from people, countries and metadata records."@en ;
+    owl:disjointWith dbo:Country,
+        dbo:Person,
+        ex:ContributionRole,
+        ex:Credit,
+        ex:Dataset,
+        ex:Genre,
+        ex:Language,
+        ex:SourceSnapshot .
 
 [] a owl:AllDifferent ;
     owl:distinctMembers ( ex:DirectorRole ex:ActorRole ex:WriterRole ) .

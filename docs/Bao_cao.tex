@@ -118,7 +118,7 @@ bài}\label{mux1ee5c-tiuxeau-vuxe0-yuxeau-cux1ea7u-ux111ux1ec1-buxe0i}
 \textbf{Mục tiêu:} xây dựng một ứng dụng Linked Open Data (LOD --- dữ
 liệu mở có liên kết) về điện ảnh. Người dùng xem phim, truy lại nguồn và
 đặt câu hỏi bằng SPARQL. Mô hình được giới hạn ở phần cần cho bài, gồm
-\textbf{9 lớp}.
+\textbf{15 lớp}.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
@@ -193,9 +193,8 @@ Minh chứng & Kết quả đo thực tế, ảnh giao diện, báo cáo và vid
 }
 
 \textbf{Trạng thái xuất bản:} Đã xuất bản công khai; người có URL truy
-cập được dữ liệu và giao diện. Bản hosted còn dùng kiểu lớp trước lần
-sửa; bản trong repo đã dùng trực tiếp dbo:Film, dbo:Person, dbo:Country
-và cần xuất bản lại để đồng bộ.
+cập được dữ liệu và giao diện. Bản hosted chưa có ontology 1.1.0 với sáu
+defined class; cần xuất bản lại để đồng bộ.
 
 \newpage
 
@@ -252,11 +251,18 @@ phân loại toàn bộ bằng reasoner OWL DL.
 \textbf{Tái sử dụng từ vựng:} dùng trực tiếp
 \texttt{dbo:\allowbreak{}Film}, \texttt{dbo:\allowbreak{}Person},
 \texttt{dbo:\allowbreak{}Country} trong kiểu thực thể, domain/range,
-cardinality và SPARQL. Mô hình gồm 3 lớp DBpedia và 6 lớp
-\texttt{ex:\allowbreak{}}. Dùng \texttt{owl:\allowbreak{}sameAs} để nối
-cá thể cùng danh tính, PROV cho nguồn, Dublin Core cho giấy phép và VoID
-cho bộ dữ liệu. Tái sử dụng lớp và liên kết cá thể là hai việc riêng.
-Các file OWL đều mở được bằng Protégé.
+cardinality và SPARQL. Mô hình gồm 3 lớp DBpedia và 12 lớp
+\texttt{ex:\allowbreak{}}. Sáu defined class gồm Director, Actor,
+Screenwriter, FilmContributor, DirectorWriter và CreditedFilm, dùng
+equivalentClass với intersectionOf, unionOf và someValuesFrom. Ví dụ
+Nolan được suy ra là DirectorWriter. Xem
+\texttt{Mo\_\allowbreak{}ta\_\allowbreak{}ontology.md} và
+\texttt{evidence/\allowbreak{}ontology\_\allowbreak{}reasoning.json};
+chạy \texttt{src/\allowbreak{}reason.py} để tái lập. Dùng
+\texttt{owl:\allowbreak{}sameAs} để nối cá thể cùng danh tính, PROV cho
+nguồn, Dublin Core cho giấy phép và VoID cho bộ dữ liệu. Tái sử dụng lớp
+và liên kết cá thể là hai việc riêng. Các file OWL đều mở được bằng
+Protégé.
 
 \subsection{4. YC2 --- Thu thập dữ liệu thật, có thể kiểm tra
 lại}\label{yc2-thu-thux1eadp-dux1eef-liux1ec7u-thux1eadt-cuxf3-thux1ec3-kiux1ec3m-tra-lux1ea1i}
@@ -297,7 +303,7 @@ báo \texttt{dbo:\allowbreak{}Film}.
 sao}\label{yc3-chuyux1ec3n-ux111ux1ed5i-rdf-vuxe0-ux111iux1ec1u-kiux1ec7n-4-sao}
 
 Một \textbf{triple} gồm chủ thể → quan hệ → đối tượng/giá trị. Dữ liệu
-có \textbf{12089 triple}, ontology có \textbf{166 triple}. Có bản
+có \textbf{12089 triple}, ontology có \textbf{291 triple}. Có bản
 Turtle, JSON-LD, CSV; có OWL chỉ chứa lược đồ và OWL chứa cả đồ thị.
 
 {\def\LTcaptype{none} % do not increment counter
@@ -350,9 +356,8 @@ Theo \href{https://www.w3.org/DesignIssues/LinkedData.html}{thang sao
 Linked Data}, các mức sao cộng dồn; có RDF và IRI là phần kỹ thuật, còn
 Open Data cần công bố trên Web với giấy phép mở. \textbf{Trạng thái hiện
 tại:} Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao
-diện. Bản hosted còn dùng kiểu lớp trước lần sửa; bản trong repo đã dùng
-trực tiếp dbo:Film, dbo:Person, dbo:Country và cần xuất bản lại để đồng
-bộ.
+diện. Bản hosted chưa có ontology 1.1.0 với sáu defined class; cần xuất
+bản lại để đồng bộ.
 
 \subsection{6. YC4 --- Liên kết ngoài để tạo ngữ
 cảnh}\label{yc4-liuxean-kux1ebft-ngouxe0i-ux111ux1ec3-tux1ea1o-ngux1eef-cux1ea3nh}
@@ -397,10 +402,10 @@ credit, liên kết ngoài, thống kê thể loại, nguồn và ASK.
 PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?ten ?daoDien WHERE {
-  ?phim a dbo:Film ; ex:title "Inception" ;
-        ex:title ?ten ; dbo:director ?nguoi .
-  ?nguoi rdfs:label ?daoDien .
+SELECT ?title ?director WHERE {
+  ?film a dbo:Film ; ex:title "Inception" ;
+        ex:title ?title ; dbo:director ?person .
+  ?person rdfs:label ?director .
 }
 \end{verbatim}
 

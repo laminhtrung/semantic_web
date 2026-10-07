@@ -1,5 +1,5 @@
 PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-SELECT ?ten ?url ?thoiDiem ?maBam WHERE {
-  ?phim ex:title "Inception" ; ex:title ?ten ; ex:sourceSnapshot ?nguon .
-  ?nguon ex:sourceUrl ?url ; ex:retrievedAt ?thoiDiem ; ex:sha256 ?maBam .
+SELECT ?title ?sourceUrl ?retrievedAt ?sha256 WHERE {
+  ?film ex:title "Inception" ; ex:title ?title ; ex:sourceSnapshot ?source .
+  ?source ex:sourceUrl ?sourceUrl ; ex:retrievedAt ?retrievedAt ; ex:sha256 ?sha256 .
 }

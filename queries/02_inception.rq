@@ -1,9 +1,9 @@
 PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?ten ?nam ?phut ?daoDien WHERE {
-  ?phim a dbo:Film ; ex:title "Inception" ; ex:title ?ten ; dbo:director ?nguoi .
-  ?nguoi rdfs:label ?daoDien .
-  OPTIONAL { ?phim ex:releaseYear ?nam }
-  OPTIONAL { ?phim ex:runtimeMinutes ?phut }
+SELECT ?title ?year ?runtimeMinutes ?director WHERE {
+  ?film a dbo:Film ; ex:title "Inception" ; ex:title ?title ; dbo:director ?person .
+  ?person rdfs:label ?director .
+  OPTIONAL { ?film ex:releaseYear ?year }
+  OPTIONAL { ?film ex:runtimeMinutes ?runtimeMinutes }
 }

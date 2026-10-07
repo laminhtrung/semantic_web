@@ -12311,7 +12311,7 @@ res:film-Q46551 a dbo:Film ;
 
 ex:DirectorRole a owl:NamedIndividual,
         ex:ContributionRole ;
-    rdfs:label "Đạo diễn"@vi .
+    rdfs:label "Director"@en .
 
 res:film-Q133654 a dbo:Film ;
     rdfs:label "The Silence of the Lambs"@en ;
@@ -13486,7 +13486,7 @@ res:film-Q42047 a dbo:Film ;
 
 ex:WriterRole a owl:NamedIndividual,
         ex:ContributionRole ;
-    rdfs:label "Biên kịch"@vi .
+    rdfs:label "Writer"@en .
 
 res:film-Q44578 a dbo:Film ;
     rdfs:label "Titanic"@en ;
@@ -14027,5 +14027,5 @@ res:source-3e29244a71b9cd1900b290d9 a ex:SourceSnapshot ;
 
 ex:ActorRole a owl:NamedIndividual,
         ex:ContributionRole ;
-    rdfs:label "Diễn viên"@vi .
+    rdfs:label "Actor"@en .
 

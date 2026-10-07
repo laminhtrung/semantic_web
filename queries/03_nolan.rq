@@ -1,8 +1,8 @@
 PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-SELECT ?ten ?nam WHERE {
-  ?nguoi owl:sameAs <http://www.wikidata.org/entity/Q25191> .
-  ?phim dbo:director ?nguoi ; ex:title ?ten .
-  OPTIONAL { ?phim ex:releaseYear ?nam }
-} ORDER BY ?nam
+SELECT ?title ?year WHERE {
+  ?person owl:sameAs <http://www.wikidata.org/entity/Q25191> .
+  ?film dbo:director ?person ; ex:title ?title .
+  OPTIONAL { ?film ex:releaseYear ?year }
+} ORDER BY ?year

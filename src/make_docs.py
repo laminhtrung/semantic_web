@@ -31,7 +31,7 @@ def main():
     public=publication.get('audience')=='public' and publication.get('status')=='succeeded'
     pub_text='Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao diện.' if public else 'Bản chạy và dữ liệu đã chuẩn bị. Bản hosted hiện riêng tư; cần chủ sở hữu cho phép công khai để hoàn tất điều kiện Open Data trên Web.'
     if public and publication.get('local_changes_pending_publication'):
-        pub_text+=' Bản hosted còn dùng kiểu lớp trước lần sửa; bản trong repo đã dùng trực tiếp dbo:Film, dbo:Person, dbo:Country và cần xuất bản lại để đồng bộ.'
+        pub_text+=' Bản hosted chưa có ontology 1.1.0 với sáu defined class; cần xuất bản lại để đồng bộ.'
     report=f'''---
 title: "MovieLOD: ứng dụng dữ liệu phim liên kết"
 date: "Báo cáo học phần Semantic Web • 06/10/2026"
@@ -39,7 +39,7 @@ date: "Báo cáo học phần Semantic Web • 06/10/2026"
 
 ## 1. Mục tiêu và yêu cầu đề bài
 
-**Mục tiêu:** xây dựng một ứng dụng Linked Open Data (LOD — dữ liệu mở có liên kết) về điện ảnh. Người dùng xem phim, truy lại nguồn và đặt câu hỏi bằng SPARQL. Mô hình được giới hạn ở phần cần cho bài, gồm **9 lớp**.
+**Mục tiêu:** xây dựng một ứng dụng Linked Open Data (LOD — dữ liệu mở có liên kết) về điện ảnh. Người dùng xem phim, truy lại nguồn và đặt câu hỏi bằng SPARQL. Mô hình được giới hạn ở phần cần cho bài, gồm **15 lớp**.
 
 | Đề gốc | Dịch và sản phẩm tương ứng |
 |:--|:--|
@@ -82,7 +82,7 @@ Quan hệ đối tượng (*object property*) nối hai thực thể: `dbo:direc
 
 **Quy tắc OWL:** các lớp chính loại trừ nhau; một credit có số lượng giá trị cố định và loại giá trị được quy định. `director` là quan hệ ngược của `directed`: nếu phim có đạo diễn Nolan, có thể suy ra Nolan đã đạo diễn phim đó. Test xác nhận truy vấn trực tiếp các lớp DBpedia, rồi chạy OWL RL để kiểm tra quan hệ ngược và suy luận range `dbo:Person`; đây không phải tuyên bố đã chạy phân loại toàn bộ bằng reasoner OWL DL.
 
-**Tái sử dụng từ vựng:** dùng trực tiếp `dbo:Film`, `dbo:Person`, `dbo:Country` trong kiểu thực thể, domain/range, cardinality và SPARQL. Mô hình gồm 3 lớp DBpedia và 6 lớp `ex:`. Dùng `owl:sameAs` để nối cá thể cùng danh tính, PROV cho nguồn, Dublin Core cho giấy phép và VoID cho bộ dữ liệu. Tái sử dụng lớp và liên kết cá thể là hai việc riêng. Các file OWL đều mở được bằng Protégé.
+**Tái sử dụng từ vựng:** dùng trực tiếp `dbo:Film`, `dbo:Person`, `dbo:Country` trong kiểu thực thể, domain/range, cardinality và SPARQL. Mô hình gồm 3 lớp DBpedia và 12 lớp `ex:`. Sáu defined class gồm Director, Actor, Screenwriter, FilmContributor, DirectorWriter và CreditedFilm, dùng equivalentClass với intersectionOf, unionOf và someValuesFrom. Ví dụ Nolan được suy ra là DirectorWriter. Xem `Mo_ta_ontology.md` và `evidence/ontology_reasoning.json`; chạy `src/reason.py` để tái lập. Dùng `owl:sameAs` để nối cá thể cùng danh tính, PROV cho nguồn, Dublin Core cho giấy phép và VoID cho bộ dữ liệu. Tái sử dụng lớp và liên kết cá thể là hai việc riêng. Các file OWL đều mở được bằng Protégé.
 
 ## 4. YC2 — Thu thập dữ liệu thật, có thể kiểm tra lại
 
@@ -145,10 +145,10 @@ Có **{s['same_as']} liên kết `owl:sameAs`**: **{s['wikidata_links']}** tới
 PREFIX ex: <{BASE}/ontology#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?ten ?daoDien WHERE {{
-  ?phim a dbo:Film ; ex:title "Inception" ;
-        ex:title ?ten ; dbo:director ?nguoi .
-  ?nguoi rdfs:label ?daoDien .
+SELECT ?title ?director WHERE {{
+  ?film a dbo:Film ; ex:title "Inception" ;
+        ex:title ?title ; dbo:director ?person .
+  ?person rdfs:label ?director .
 }}
 ```
 
@@ -187,7 +187,7 @@ date: "Hướng dẫn ngắn • 06/10/2026"
 
 ## A. Bạn có gì trong thư mục này?
 
-Đây là **bản độc lập**, không cần mở file OWL mở rộng cũ để chạy. Bài có **{s['films']} phim, 9 lớp**, nguồn thật và một ứng dụng truy vấn.
+Đây là **bản độc lập**, không cần mở file OWL mở rộng cũ để chạy. Bài có **{s['films']} phim, 15 lớp**, nguồn thật và một ứng dụng truy vấn.
 
 | Thư mục / file | Để làm gì? |
 |:--|:--|
@@ -215,7 +215,7 @@ python3 -m venv .venv
 
 Mở **http://127.0.0.1:8000**. Có sẵn dữ liệu nên không cần tải lại. Trên macOS, `start.command` làm các bước khởi động này. Dừng server bằng Ctrl+C.
 
-Trong giao diện: chọn câu hỏi Inception → bấm **Chạy truy vấn** → đọc bảng → mở một phim để thấy thông tin và nguồn → tải Turtle nếu muốn xem RDF. Bản hosted: [MovieLOD]({BASE}/).
+Trong giao diện: chọn câu hỏi Inception → bấm **Run query** → đọc bảng → mở một phim để thấy thông tin và nguồn → tải Turtle nếu muốn xem RDF. Bản hosted: [MovieLOD]({BASE}/).
 
 **Xuất bản:** {pub_text}
 
@@ -256,7 +256,7 @@ Mã chọn phim theo `config.json`; tải Wikidata theo tiêu đề Wikipedia ti
 .venv/bin/python src/build.py
 ```
 
-Mã dùng 9 lớp (3 lớp DBpedia và 6 lớp của bài) cùng các quy tắc; biến thông tin đã thu thập thành đồ thị RDF; tạo định danh từ QID; đổi thời lượng về phút; thêm nguồn; xuất Turtle, JSON-LD, CSV và OWL.
+Mã dùng 15 lớp (3 lớp DBpedia và 12 lớp của bài), trong đó 6 defined class dùng giao/hợp và restriction tồn tại; xem `Mo_ta_ontology.md` và chạy `src/reason.py` để kiểm tra phân loại; biến thông tin đã thu thập thành đồ thị RDF; tạo định danh từ QID; đổi thời lượng về phút; thêm nguồn; xuất Turtle, JSON-LD, CSV và OWL.
 
 | Câu viết gọn | Dịch |
 |:--|:--|
@@ -321,7 +321,7 @@ curl -X POST http://127.0.0.1:8000/sparql \\
 
 **Nộp:** mã và dữ liệu trong thư mục này; `docs/Bao_cao.pdf` (không quá 15 trang); `docs/Slide.pptx`; `docs/Video_demo.mp4` (3–5 phút). Video có lời đọc tiếng Việt tổng hợp, minh họa bằng dữ liệu và ảnh ứng dụng thật; có kịch bản để tự thuyết trình lại.
 
-**Trình bày theo 5 ý:** mô hình 9 lớp → nguồn thật có hash → RDF và IRI → liên kết Wikidata/DBpedia → truy vấn ra kết quả. Không cần giải thích các mô-đun giải thưởng hoặc streaming vì bản này không đưa chúng vào phạm vi.
+**Trình bày theo 5 ý:** mô hình 15 lớp (9 nền + 6 suy luận; xem Mo_ta_ontology.md) → nguồn thật có hash → RDF và IRI → liên kết Wikidata/DBpedia → truy vấn ra kết quả. Không cần giải thích các mô-đun giải thưởng hoặc streaming vì bản này không đưa chúng vào phạm vi.
 
 **Nếu lỗi:** kiểm tra đã cài requirements; cổng 8000 chưa bị dùng; dữ liệu đã build. Dùng `--port 8001` nếu cần đổi cổng. API nguồn cần Internet khi thu thập mới; phản hồi cũ được giữ để chạy lại. Trạng thái công khai được ghi đúng trong `evidence/publication.json`.
 '''

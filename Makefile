@@ -11,6 +11,7 @@ build:
 	$(PYTHON) src/prepare_web.py
 validate:
 	$(PYTHON) src/validate.py
+	$(PYTHON) src/reason.py
 test:
 	$(PYTHON) -m pytest -q
 serve:

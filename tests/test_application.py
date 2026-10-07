@@ -20,14 +20,14 @@ def query_text(name):return (ROOT/'queries'/name).read_text()
 
 def test_inception_identity_and_normalized_data():
     rows=list(DATA.query(query_text('02_inception.rq')))
-    assert rows and all(str(r.ten)=='Inception' and str(r.daoDien)=='Christopher Nolan' for r in rows)
-    assert all(int(r.nam)==2010 and 140<=float(r.phut)<=160 for r in rows)
+    assert rows and all(str(r.title)=='Inception' and str(r.director)=='Christopher Nolan' for r in rows)
+    assert all(int(r.year)==2010 and 140<=float(r.runtimeMinutes)<=160 for r in rows)
 
 def test_credits_include_role_labels():
     rows=list(DATA.query(query_text('04_credits.rq')))
     assert rows
-    assert any(str(r.tenNguoi)=='Christopher Nolan' and str(r.vaiTro)=='Đạo diễn' for r in rows)
-    assert any(str(r.tenNguoi)=='Christopher Nolan' and str(r.vaiTro)=='Biên kịch' for r in rows)
+    assert any(str(r.personName)=='Christopher Nolan' and str(r.roleName)=='Director' for r in rows)
+    assert any(str(r.personName)=='Christopher Nolan' and str(r.roleName)=='Writer' for r in rows)
 
 def test_get_and_post_sparql_protocol(client):
     q=query_text('02_inception.rq')
@@ -37,7 +37,7 @@ def test_get_and_post_sparql_protocol(client):
     for r in responses:
         assert r.status_code==200
         assert r.mimetype=='application/sparql-results+json'
-        assert r.json['results']['bindings'][0]['ten']['value']=='Inception'
+        assert r.json['results']['bindings'][0]['title']['value']=='Inception'
 
 def test_ask_and_construct(client):
     assert client.post('/sparql',data=query_text('08_ask.rq'),content_type='application/sparql-query').json['boolean'] is True

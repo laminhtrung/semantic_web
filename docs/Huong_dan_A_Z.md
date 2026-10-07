@@ -5,7 +5,7 @@ date: "Hướng dẫn ngắn • 06/10/2026"
 
 ## A. Bạn có gì trong thư mục này?
 
-Đây là **bản độc lập**, không cần mở file OWL mở rộng cũ để chạy. Bài có **30 phim, 9 lớp**, nguồn thật và một ứng dụng truy vấn.
+Đây là **bản độc lập**, không cần mở file OWL mở rộng cũ để chạy. Bài có **30 phim, 15 lớp**, nguồn thật và một ứng dụng truy vấn.
 
 | Thư mục / file | Để làm gì? |
 |:--|:--|
@@ -33,9 +33,9 @@ python3 -m venv .venv
 
 Mở **http://127.0.0.1:8000**. Có sẵn dữ liệu nên không cần tải lại. Trên macOS, `start.command` làm các bước khởi động này. Dừng server bằng Ctrl+C.
 
-Trong giao diện: chọn câu hỏi Inception → bấm **Chạy truy vấn** → đọc bảng → mở một phim để thấy thông tin và nguồn → tải Turtle nếu muốn xem RDF. Bản hosted: [MovieLOD](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/).
+Trong giao diện: chọn câu hỏi Inception → bấm **Run query** → đọc bảng → mở một phim để thấy thông tin và nguồn → tải Turtle nếu muốn xem RDF. Bản hosted: [MovieLOD](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/).
 
-**Xuất bản:** Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao diện. Bản hosted còn dùng kiểu lớp trước lần sửa; bản trong repo đã dùng trực tiếp dbo:Film, dbo:Person, dbo:Country và cần xuất bản lại để đồng bộ.
+**Xuất bản:** Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao diện. Bản hosted chưa có ontology 1.1.0 với sáu defined class; cần xuất bản lại để đồng bộ.
 
 \newpage
 
@@ -74,7 +74,7 @@ Mã chọn phim theo `config.json`; tải Wikidata theo tiêu đề Wikipedia ti
 .venv/bin/python src/build.py
 ```
 
-Mã dùng 9 lớp (3 lớp DBpedia và 6 lớp của bài) cùng các quy tắc; biến thông tin đã thu thập thành đồ thị RDF; tạo định danh từ QID; đổi thời lượng về phút; thêm nguồn; xuất Turtle, JSON-LD, CSV và OWL.
+Mã dùng 15 lớp (3 lớp DBpedia và 12 lớp của bài), trong đó 6 defined class dùng giao/hợp và restriction tồn tại; xem `Mo_ta_ontology.md` và chạy `src/reason.py` để kiểm tra phân loại; biến thông tin đã thu thập thành đồ thị RDF; tạo định danh từ QID; đổi thời lượng về phút; thêm nguồn; xuất Turtle, JSON-LD, CSV và OWL.
 
 | Câu viết gọn | Dịch |
 |:--|:--|
@@ -139,6 +139,6 @@ curl -X POST http://127.0.0.1:8000/sparql \
 
 **Nộp:** mã và dữ liệu trong thư mục này; `docs/Bao_cao.pdf` (không quá 15 trang); `docs/Slide.pptx`; `docs/Video_demo.mp4` (3–5 phút). Video có lời đọc tiếng Việt tổng hợp, minh họa bằng dữ liệu và ảnh ứng dụng thật; có kịch bản để tự thuyết trình lại.
 
-**Trình bày theo 5 ý:** mô hình 9 lớp → nguồn thật có hash → RDF và IRI → liên kết Wikidata/DBpedia → truy vấn ra kết quả. Không cần giải thích các mô-đun giải thưởng hoặc streaming vì bản này không đưa chúng vào phạm vi.
+**Trình bày theo 5 ý:** mô hình 15 lớp (9 nền + 6 suy luận; xem Mo_ta_ontology.md) → nguồn thật có hash → RDF và IRI → liên kết Wikidata/DBpedia → truy vấn ra kết quả. Không cần giải thích các mô-đun giải thưởng hoặc streaming vì bản này không đưa chúng vào phạm vi.
 
 **Nếu lỗi:** kiểm tra đã cài requirements; cổng 8000 chưa bị dùng; dữ liệu đã build. Dùng `--port 8001` nếu cần đổi cổng. API nguồn cần Internet khi thu thập mới; phản hồi cũ được giữ để chạy lại. Trạng thái công khai được ghi đúng trong `evidence/publication.json`.
