@@ -77,7 +77,7 @@ def test_dbpedia_class_queries_and_owl_inverse_rule():
           UNION { ?country a dbo:Country }
         }
     '''))[0]
-    assert (int(counts.films),int(counts.people),int(counts.countries)) == (30,805,11)
+    assert (int(counts.films),int(counts.people),int(counts.countries)) == (30,851,11)
     assert (person,EX.directed,RES['film-Q25188']) not in DATA
     DeductiveClosure(OWLRL_Semantics).expand(g)
     assert (person,EX.directed,RES['film-Q25188']) in g
@@ -87,11 +87,11 @@ def test_dbpedia_class_queries_and_owl_inverse_rule():
     DeductiveClosure(OWLRL_Semantics).expand(probe)
     assert (URIRef('urn:test:director'),RDF.type,DBO.Person) in probe
 
-def test_data_checks_catch_missing_credit_person_and_empty_graph():
+def test_data_checks_catch_missing_contribution_person_and_empty_graph():
     from validate import check_data
     g=Graph().parse(ROOT/'data/processed/movies.ttl')
     assert not check_data(g)
-    credit=next(g.subjects(RDF.type,EX.Credit))
-    g.remove((credit,EX.participant,None))
-    assert any(str(credit) in error and 'participant' in error for error in check_data(g))
+    contribution=next(g.subjects(RDF.type,EX.Contribution))
+    g.remove((contribution,EX.contributionBy,None))
+    assert any(str(contribution) in error and 'contributionBy' in error for error in check_data(g))
     assert check_data(Graph())==['Dataset has no films.']

@@ -5,7 +5,7 @@ from rdflib.compare import isomorphic
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
 from common import ROOT, DBO, EX, RES
 from build import schema
-from reason import infer, DEFINED
+from reason import infer, DEFINED, RL_DEFINED, CARDINALITY_DEFINED
 
 
 def test_generated_schema_matches_owl_exports():
@@ -13,40 +13,94 @@ def test_generated_schema_matches_owl_exports():
     assert isomorphic(expected, Graph().parse(ROOT / 'ontology/movie.ttl'))
     assert isomorphic(expected, Graph().parse(ROOT / 'ontology/Movie_Ontology.owl'))
     named = {c for c in expected.subjects(RDF.type, OWL.Class) if isinstance(c, URIRef)}
-    assert len(named) == 15
+    assert len(named) == 42
     assert all(expected.value(c, RDFS.comment) for c in named)
 
 
-def test_real_data_classification():
+def test_defined_classes_are_inferred_not_asserted():
+    """No class in DEFINED is ever directly typed in the crawled data; membership only appears after inference."""
+    data = Graph().parse(ROOT / 'data/processed/movies.ttl')
+    for name in DEFINED:
+        assert not any(data.subjects(RDF.type, EX[name])), f'{name} must not be asserted in the base data'
+
+
+def test_real_data_classification_matches_sparql_ground_truth():
     data = Graph().parse(ROOT / 'data/processed/movies.ttl')
     g = schema() + data
-    assert all(not any(data.subjects(RDF.type, EX[name])) for name in DEFINED)
-    assert not infer(g)
-    expected = {
-        'Director': set(data.objects(None, DBO.director)),
-        'Actor': set(data.objects(None, DBO.starring)),
-        'Screenwriter': set(data.objects(None, DBO.writer)),
-        'CreditedFilm': set(data.subjects(EX.hasCredit, None)),
-    }
-    expected['FilmContributor'] = expected['Director'] | expected['Actor'] | expected['Screenwriter']
-    expected['DirectorWriter'] = expected['Director'] & expected['Screenwriter']
-    for name, subjects in expected.items():
-        local = {s for s in g.subjects(RDF.type, EX[name]) if str(s).startswith(str(RES))}
-        assert local == subjects
-    assert (RES['person-Q25191'], RDF.type, EX.DirectorWriter) in g
+    errors = infer(g)
+    assert not errors
+
+    def local(iterable):
+        return {s for s in iterable if isinstance(s, URIRef) and str(s).startswith(str(RES))}
+
+    # Contribution-kind classes must match exactly which role each ex:Contribution carries.
+    for role, cls in [(EX.ActorRole, EX.ActingContribution), (EX.DirectorRole, EX.DirectingContribution),
+                       (EX.WriterRole, EX.WritingContribution), (EX.ProducerRole, EX.ProducingContribution)]:
+        expected = local(data.subjects(EX.hasRole, role))
+        assert local(g.subjects(RDF.type, cls)) == expected
+
+    # Person-level classes must match direct SPARQL ground truth over the asserted data.
+    actors = local(data.subjects(EX.hasRole, EX.ActorRole))
+    acting_people = {data.value(c, EX.contributionBy) for c in actors}
+    assert local(g.subjects(RDF.type, EX.Actor)) == acting_people
+
+    award_winners = local(data.subjects(EX.hasAward, None)) & local(data.subjects(RDF.type, DBO.Person))
+    assert local(g.subjects(RDF.type, EX.AwardWinner)) == award_winners
+
+    # Genre-based film classes must match a direct hasGenre + genre-subclass query.
+    for genre_cls, film_cls in [(EX.ActionGenre, EX.ActionFilm), (EX.ComedyGenre, EX.ComedyFilm),
+                                 (EX.DramaGenre, EX.DramaFilm), (EX.ScienceFictionGenre, EX.ScienceFictionFilm)]:
+        genres = local(data.subjects(RDF.type, genre_cls))
+        expected_films = {f for f in data.subjects(RDF.type, DBO.Film) if set(data.objects(f, EX.hasGenre)) & genres}
+        assert local(g.subjects(RDF.type, film_cls)) == local(expected_films)
+
+    # Cardinality-based classes (outside OWL RL) must match the real >=N counts.
+    multi_genre = {f for f in data.subjects(RDF.type, DBO.Film) if len(set(data.objects(f, EX.hasGenre))) >= 2}
+    assert local(g.subjects(RDF.type, EX.MultiGenreFilm)) == local(multi_genre)
+    studios = {c for c in data.subjects(RDF.type, EX.ProductionCompany)
+               if len(set(data.subjects(EX.hasProductionCompany, c))) >= 3}
+    assert local(g.subjects(RDF.type, EX.FilmStudio)) == local(studios)
+
+    # Known real individuals: Christopher Nolan directs and writes but never acts; Tarantino does both.
+    nolan = RES['person-Q25191']
+    assert (nolan, RDF.type, EX.Filmmaker) in g
+    assert (nolan, RDF.type, EX.Actor) not in g
+    tarantino = RES['person-Q3772']
+    assert (tarantino, RDF.type, EX.Actor) in g
+    assert (tarantino, RDF.type, EX.Filmmaker) in g
+
+
+def test_multi_step_inference_chain_for_a_director():
+    """Contribution(hasRole=DirectorRole) -> DirectingContribution -> Filmmaker: a 2-hop chain with no asserted rdf:type."""
+    g = schema()
+    person, film, contribution = map(URIRef, ['urn:test:person', 'urn:test:film', 'urn:test:contribution'])
+    g.add((contribution, RDF.type, EX.Contribution))
+    g.add((contribution, EX.contributionBy, person))
+    g.add((contribution, EX.contributionTo, film))
+    g.add((contribution, EX.hasRole, EX.DirectorRole))
+    g.add((person, EX.hasContribution, contribution))
+    errors = infer(g)
+    assert not errors
+    assert (contribution, RDF.type, EX.DirectingContribution) in g
+    assert (person, RDF.type, EX.Filmmaker) in g
+    assert (person, RDF.type, EX.Actor) not in g
 
 
 def test_overlap_open_world_and_disjointness():
     g = schema()
-    person, film, other = map(URIRef, ['urn:test:person', 'urn:test:film', 'urn:test:other'])
-    g.add((film, DBO.director, person))
-    # DirectorWriter permits different films for the two roles.
-    g.add((other, DBO.writer, person))
-    assert not infer(g)
-    assert (person, RDF.type, EX.DirectorWriter) in g
-    assert (person, RDF.type, EX.FilmContributor) in g
-    assert (person, RDF.type, EX.Actor) not in g
-    assert (film, RDF.type, EX.CreditedFilm) not in g
-    assert (DBO.Film, OWL.disjointWith, DBO.Country) in g
-    g.add((film, RDF.type, DBO.Country))
+    actor_c, director_c, person = map(URIRef, ['urn:test:actor-contribution', 'urn:test:director-contribution', 'urn:test:person'])
+    for contribution, role in [(actor_c, EX.ActorRole), (director_c, EX.DirectorRole)]:
+        g.add((contribution, RDF.type, EX.Contribution))
+        g.add((contribution, EX.contributionBy, person))
+        g.add((contribution, EX.hasRole, role))
+        g.add((person, EX.hasContribution, contribution))
+    errors = infer(g)
+    assert not errors
+    # A person can hold several contributions at once: both Actor and Filmmaker, open-world style.
+    assert (person, RDF.type, EX.Actor) in g
+    assert (person, RDF.type, EX.Filmmaker) in g
+    disjoint_sets = [set(g.items(members)) for members in g.objects(None, OWL.members)]
+    assert any({DBO.Film, DBO.Country} <= members for members in disjoint_sets)
+    g.add((URIRef('urn:test:film'), RDF.type, DBO.Film))
+    g.add((URIRef('urn:test:film'), RDF.type, DBO.Country))
     assert infer(g), 'A film typed as a country must produce an inconsistency diagnostic.'

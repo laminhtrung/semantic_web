@@ -12,6 +12,11 @@ dbo:director a owl:ObjectProperty ;
     rdfs:range dbo:Person ;
     owl:inverseOf ex:directed .
 
+dbo:producer a owl:ObjectProperty ;
+    rdfs:domain dbo:Film ;
+    rdfs:range dbo:Person ;
+    owl:inverseOf ex:produced .
+
 dbo:starring a owl:ObjectProperty ;
     rdfs:domain dbo:Film ;
     rdfs:range dbo:Person ;
@@ -25,40 +30,167 @@ dbo:writer a owl:ObjectProperty ;
 <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology> a owl:Ontology ;
     rdfs:label "MovieLOD — movie ontology"@en ;
     dct:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
-    owl:versionInfo "1.1.0" .
+    owl:versionInfo "2.0.0" .
 
-ex:CreditedFilm a owl:Class ;
-    rdfs:label "Film with a credit"@en ;
-    rdfs:comment "A film linked to at least one contribution record; this does not require complete credits."@en ;
+ex:ActingAward a owl:Class ;
+    rdfs:label "Acting award"@en ;
+    rdfs:comment "An award category for acting (label contains \"actor\"/\"actress\")."@en ;
+    rdfs:subClassOf ex:Award .
+
+ex:ActionFilm a owl:Class ;
+    rdfs:label "Action film"@en ;
+    rdfs:comment "A film that has at least one action genre."@en ;
     rdfs:subClassOf dbo:Film ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( dbo:Film [ a owl:Restriction ;
-                        owl:onProperty ex:hasCredit ;
-                        owl:someValuesFrom ex:Credit ] ) ] .
+                        owl:onProperty ex:hasGenre ;
+                        owl:someValuesFrom ex:ActionGenre ] ) ] .
 
-ex:DirectorWriter a owl:Class ;
-    rdfs:label "Director and writer"@en ;
-    rdfs:comment "A person who has both directed a film and written a film; these may be different films."@en ;
+ex:Actor a owl:Class ;
+    rdfs:label "Actor"@en ;
+    rdfs:comment "A person who holds at least one acting contribution."@en ;
     rdfs:subClassOf dbo:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( ex:Director ex:Screenwriter ) ] .
+            owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
+                        owl:onProperty ex:hasContribution ;
+                        owl:someValuesFrom ex:ActingContribution ] ) ] .
 
-ex:FilmContributor a owl:Class ;
-    rdfs:label "Film contributor"@en ;
-    rdfs:comment "A person who is a director, actor or screenwriter, possibly holding several of these roles."@en ;
+ex:AnimatedFilm a owl:Class ;
+    rdfs:label "Animated film"@en ;
+    rdfs:comment "A film whose P31 instance-of is an animation kind (e.g. wd:Q20650540 anime film)."@en ;
+    rdfs:subClassOf dbo:Film .
+
+ex:AwardWinner a owl:Class ;
+    rdfs:label "Award winner"@en ;
+    rdfs:comment "A person who has received at least one award."@en ;
     rdfs:subClassOf dbo:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( ex:Director ex:Actor ex:Screenwriter ) ] .
+            owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
+                        owl:onProperty ex:hasAward ;
+                        owl:someValuesFrom ex:Award ] ) ] .
+
+ex:AwardWinningFilm a owl:Class ;
+    rdfs:label "Award-winning film"@en ;
+    rdfs:comment "A film that has received at least one award."@en ;
+    rdfs:subClassOf dbo:Film ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Film [ a owl:Restriction ;
+                        owl:onProperty ex:hasAward ;
+                        owl:someValuesFrom ex:Award ] ) ] .
+
+ex:ComedyFilm a owl:Class ;
+    rdfs:label "Comedy film"@en ;
+    rdfs:comment "A film that has at least one comedy genre."@en ;
+    rdfs:subClassOf dbo:Film ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Film [ a owl:Restriction ;
+                        owl:onProperty ex:hasGenre ;
+                        owl:someValuesFrom ex:ComedyGenre ] ) ] .
+
+ex:DirectingAward a owl:Class ;
+    rdfs:label "Directing award"@en ;
+    rdfs:comment "An award category for directing (label contains \"director\"/\"directing\")."@en ;
+    rdfs:subClassOf ex:Award .
+
+ex:DocumentaryFilm a owl:Class ;
+    rdfs:label "Documentary film"@en ;
+    rdfs:comment "A non-fiction film. Defined for completeness; the current 30-film sample contains no documentaries (see docs)."@en ;
+    rdfs:subClassOf dbo:Film .
+
+ex:DocumentaryGenre a owl:Class ;
+    rdfs:label "Documentary genre"@en ;
+    rdfs:comment "A genre whose Wikidata label contains \"documentary\". Defined for completeness; 0 films in this sample carry it."@en ;
+    rdfs:subClassOf ex:NonFictionGenre .
+
+ex:DramaFilm a owl:Class ;
+    rdfs:label "Drama film"@en ;
+    rdfs:comment "A film that has at least one drama genre."@en ;
+    rdfs:subClassOf dbo:Film ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Film [ a owl:Restriction ;
+                        owl:onProperty ex:hasGenre ;
+                        owl:someValuesFrom ex:DramaGenre ] ) ] .
+
+ex:FeatureFilm a owl:Class ;
+    rdfs:label "Feature film"@en ;
+    rdfs:comment "A theatrically released narrative film; asserted for wd:Q11424 instances in this sample."@en ;
+    rdfs:subClassOf dbo:Film .
+
+ex:FilmAward a owl:Class ;
+    rdfs:label "Film award"@en ;
+    rdfs:comment "An award category not specific to one contribution role (e.g. Best Picture, Best Editing)."@en ;
+    rdfs:subClassOf ex:Award .
+
+ex:FilmStudio a owl:Class ;
+    rdfs:label "Film studio"@en ;
+    rdfs:comment "A production company credited on at least three films in this dataset."@en ;
+    rdfs:subClassOf ex:ProductionCompany ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( ex:ProductionCompany [ a owl:Restriction ;
+                        owl:minQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                        owl:onClass dbo:Film ;
+                        owl:onProperty ex:productionOf ] ) ] .
+
+ex:Filmmaker a owl:Class ;
+    rdfs:label "Filmmaker"@en ;
+    rdfs:comment "A person who directed, wrote or produced at least one film."@en ;
+    rdfs:subClassOf dbo:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Person [ a owl:Class ;
+                        owl:unionOf ( [ a owl:Restriction ;
+                                    owl:onProperty ex:hasContribution ;
+                                    owl:someValuesFrom ex:DirectingContribution ] [ a owl:Restriction ;
+                                    owl:onProperty ex:hasContribution ;
+                                    owl:someValuesFrom ex:WritingContribution ] [ a owl:Restriction ;
+                                    owl:onProperty ex:hasContribution ;
+                                    owl:someValuesFrom ex:ProducingContribution ] ) ] ) ] .
+
+ex:MultiGenreFilm a owl:Class ;
+    rdfs:label "Multi-genre film"@en ;
+    rdfs:comment "A film tagged with at least two distinct genres."@en ;
+    rdfs:subClassOf dbo:Film ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Film [ a owl:Restriction ;
+                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                        owl:onClass ex:Genre ;
+                        owl:onProperty ex:hasGenre ] ) ] .
+
+ex:ScienceFictionFilm a owl:Class ;
+    rdfs:label "Science fiction film"@en ;
+    rdfs:comment "A film that has at least one science fiction genre."@en ;
+    rdfs:subClassOf dbo:Film ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( dbo:Film [ a owl:Restriction ;
+                        owl:onProperty ex:hasGenre ;
+                        owl:someValuesFrom ex:ScienceFictionGenre ] ) ] .
+
+ex:WritingAward a owl:Class ;
+    rdfs:label "Writing award"@en ;
+    rdfs:comment "An award category for screenwriting (label contains \"screenplay\"/\"writing\")."@en ;
+    rdfs:subClassOf ex:Award .
+
+ex:awardOf a owl:ObjectProperty ;
+    rdfs:label "Award of"@en ;
+    rdfs:domain ex:Award ;
+    rdfs:range _:N3830102020ae44919169e68cc1f5cb4d ;
+    owl:inverseOf ex:hasAward .
+
+ex:contributionOf a owl:ObjectProperty ;
+    rdfs:label "Contribution of"@en ;
+    rdfs:domain dbo:Film ;
+    rdfs:range ex:Contribution ;
+    owl:inverseOf ex:contributionTo .
 
 ex:country a owl:ObjectProperty ;
     rdfs:label "Production country"@en ;
     rdfs:domain dbo:Film ;
     rdfs:range dbo:Country .
 
-ex:hasGenre a owl:ObjectProperty ;
-    rdfs:label "Has genre"@en ;
-    rdfs:domain dbo:Film ;
-    rdfs:range ex:Genre .
+ex:genreOf a owl:ObjectProperty ;
+    rdfs:label "Genre of"@en ;
+    rdfs:domain ex:Genre ;
+    rdfs:range dbo:Film ;
+    owl:inverseOf ex:hasGenre .
 
 ex:language a owl:ObjectProperty ;
     rdfs:label "Original language"@en ;
@@ -72,6 +204,12 @@ ex:releaseYear a owl:DatatypeProperty ;
 ex:retrievedAt a owl:DatatypeProperty ;
     rdfs:domain ex:SourceSnapshot ;
     rdfs:range xsd:dateTime .
+
+ex:roleOf a owl:ObjectProperty ;
+    rdfs:label "Role of"@en ;
+    rdfs:domain ex:ContributionRole ;
+    rdfs:range ex:Contribution ;
+    owl:inverseOf ex:hasRole .
 
 ex:runtimeMinutes a owl:DatatypeProperty ;
     rdfs:domain dbo:Film ;
@@ -93,44 +231,75 @@ ex:title a owl:DatatypeProperty ;
     rdfs:domain dbo:Film ;
     rdfs:range xsd:string .
 
-ex:Actor a owl:Class ;
-    rdfs:label "Actor"@en ;
-    rdfs:comment "A person who has acted in at least one film in this model."@en ;
-    rdfs:subClassOf dbo:Person ;
+ex:ActingContribution a owl:Class ;
+    rdfs:label "Acting contribution"@en ;
+    rdfs:comment "A contribution whose role is ex:ActorRole."@en ;
+    rdfs:subClassOf ex:Contribution ;
     owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
-                        owl:onProperty ex:actedIn ;
-                        owl:someValuesFrom dbo:Film ] ) ] .
+            owl:intersectionOf ( ex:Contribution [ a owl:Restriction ;
+                        owl:hasValue ex:ActorRole ;
+                        owl:onProperty ex:hasRole ] ) ] .
 
-ex:ActorRole a owl:NamedIndividual,
-        ex:ContributionRole ;
-    rdfs:label "Actor"@en .
+ex:ActionGenre a owl:Class ;
+    rdfs:label "Action genre"@en ;
+    rdfs:comment "A genre whose Wikidata label contains \"action\"."@en ;
+    rdfs:subClassOf ex:FictionGenre .
 
-ex:DirectorRole a owl:NamedIndividual,
-        ex:ContributionRole ;
-    rdfs:label "Director"@en .
+ex:ComedyGenre a owl:Class ;
+    rdfs:label "Comedy genre"@en ;
+    rdfs:comment "A genre whose Wikidata label contains \"comedy\"."@en ;
+    rdfs:subClassOf ex:FictionGenre .
 
-ex:WriterRole a owl:NamedIndividual,
-        ex:ContributionRole ;
-    rdfs:label "Writer"@en .
+ex:CreativeWork a owl:Class ;
+    rdfs:label "Creative work"@en ;
+    rdfs:comment "A named work of authorship; the top-level branch for films."@en .
 
-ex:Director a owl:Class ;
-    rdfs:label "Director"@en ;
-    rdfs:comment "A person who has directed at least one film in this model."@en ;
-    rdfs:subClassOf dbo:Person ;
+ex:Dataset a owl:Class ;
+    rdfs:label "Dataset"@en ;
+    rdfs:comment "The published collection of movie data, aligned with void:Dataset."@en ;
+    owl:equivalentClass void:Dataset .
+
+ex:DirectingContribution a owl:Class ;
+    rdfs:label "Directing contribution"@en ;
+    rdfs:comment "A contribution whose role is ex:DirectorRole."@en ;
+    rdfs:subClassOf ex:Contribution ;
     owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
-                        owl:onProperty ex:directed ;
-                        owl:someValuesFrom dbo:Film ] ) ] .
+            owl:intersectionOf ( ex:Contribution [ a owl:Restriction ;
+                        owl:hasValue ex:DirectorRole ;
+                        owl:onProperty ex:hasRole ] ) ] .
 
-ex:Screenwriter a owl:Class ;
-    rdfs:label "Screenwriter"@en ;
-    rdfs:comment "A person credited as writer on at least one film in this model."@en ;
-    rdfs:subClassOf dbo:Person ;
+ex:DramaGenre a owl:Class ;
+    rdfs:label "Drama genre"@en ;
+    rdfs:comment "A genre whose Wikidata label contains \"drama\"."@en ;
+    rdfs:subClassOf ex:FictionGenre .
+
+ex:NonFictionGenre a owl:Class ;
+    rdfs:label "Non-fiction genre"@en ;
+    rdfs:comment "A genre denoting non-fictional film."@en ;
+    rdfs:subClassOf ex:Genre .
+
+ex:ProducingContribution a owl:Class ;
+    rdfs:label "Producing contribution"@en ;
+    rdfs:comment "A contribution whose role is ex:ProducerRole."@en ;
+    rdfs:subClassOf ex:Contribution ;
     owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
-                        owl:onProperty ex:wrote ;
-                        owl:someValuesFrom dbo:Film ] ) ] .
+            owl:intersectionOf ( ex:Contribution [ a owl:Restriction ;
+                        owl:hasValue ex:ProducerRole ;
+                        owl:onProperty ex:hasRole ] ) ] .
+
+ex:ScienceFictionGenre a owl:Class ;
+    rdfs:label "Science fiction genre"@en ;
+    rdfs:comment "A genre whose Wikidata label contains \"science fiction\"."@en ;
+    rdfs:subClassOf ex:FictionGenre .
+
+ex:WritingContribution a owl:Class ;
+    rdfs:label "Writing contribution"@en ;
+    rdfs:comment "A contribution whose role is ex:WriterRole."@en ;
+    rdfs:subClassOf ex:Contribution ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( ex:Contribution [ a owl:Restriction ;
+                        owl:hasValue ex:WriterRole ;
+                        owl:onProperty ex:hasRole ] ) ] .
 
 ex:actedIn a owl:ObjectProperty ;
     rdfs:label "Acted in"@en ;
@@ -142,134 +311,169 @@ ex:directed a owl:ObjectProperty ;
     rdfs:domain dbo:Person ;
     rdfs:range dbo:Film .
 
-ex:hasCredit a owl:ObjectProperty ;
-    rdfs:label "Has credit"@en ;
+ex:hasProductionCompany a owl:ObjectProperty ;
+    rdfs:label "Has production company"@en ;
     rdfs:domain dbo:Film ;
-    rdfs:range ex:Credit .
+    rdfs:range ex:ProductionCompany .
 
-ex:inFilm a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:label "In film"@en ;
-    rdfs:domain ex:Credit ;
+ex:produced a owl:ObjectProperty ;
+    rdfs:label "Produced"@en ;
+    rdfs:domain dbo:Person ;
+    rdfs:range dbo:Film .
+
+ex:productionOf a owl:ObjectProperty ;
+    rdfs:label "Production of"@en ;
+    rdfs:domain ex:ProductionCompany ;
     rdfs:range dbo:Film ;
-    owl:inverseOf ex:hasCredit .
-
-ex:participant a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:label "Participant"@en ;
-    rdfs:domain ex:Credit ;
-    rdfs:range dbo:Person .
-
-ex:role a owl:FunctionalProperty,
-        owl:ObjectProperty ;
-    rdfs:label "Role"@en ;
-    rdfs:domain ex:Credit ;
-    rdfs:range ex:ContributionRole .
+    owl:inverseOf ex:hasProductionCompany .
 
 ex:wrote a owl:ObjectProperty ;
     rdfs:label "Wrote"@en ;
     rdfs:domain dbo:Person ;
     rdfs:range dbo:Film .
 
-ex:Genre a owl:Class ;
-    rdfs:label "Genre"@en ;
-    rdfs:comment "A category used to describe a film genre."@en ;
-    owl:disjointWith dbo:Country,
-        ex:ContributionRole,
-        ex:Credit,
-        ex:Dataset,
-        ex:Language,
-        ex:SourceSnapshot ;
-    owl:equivalentClass dbo:Genre .
-
 dbo:Country a owl:Class ;
     rdfs:label "Country"@en ;
-    rdfs:comment "A country associated with film production."@en ;
-    owl:disjointWith ex:ContributionRole,
-        ex:Credit,
-        ex:Dataset,
-        ex:Language,
-        ex:SourceSnapshot .
+    rdfs:comment "A country associated with film production."@en .
+
+ex:ActorRole a owl:NamedIndividual,
+        ex:ContributionRole ;
+    rdfs:label "Actor"@en .
+
+ex:Agent a owl:Class ;
+    rdfs:label "Agent"@en ;
+    rdfs:comment "An entity able to contribute to a creative work: a person or an organization."@en .
+
+ex:DirectorRole a owl:NamedIndividual,
+        ex:ContributionRole ;
+    rdfs:label "Director"@en .
 
 ex:Language a owl:Class ;
     rdfs:label "Language"@en ;
     rdfs:comment "A language associated with a film."@en ;
-    owl:disjointWith ex:ContributionRole,
-        ex:Credit,
-        ex:Dataset,
-        ex:SourceSnapshot ;
     owl:equivalentClass dbo:Language .
 
-ex:Dataset a owl:Class ;
-    rdfs:label "Dataset"@en ;
-    rdfs:comment "The published collection of movie data, aligned with void:Dataset."@en ;
-    owl:equivalentClass void:Dataset .
+ex:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "A company able to produce films."@en ;
+    rdfs:subClassOf ex:Agent .
 
-ex:Credit a owl:Class ;
-    rdfs:label "Credit"@en ;
-    rdfs:comment "A contribution record connecting exactly one person, one film and one role."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ex:ContributionRole ;
-            owl:onProperty ex:role ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass dbo:Film ;
-            owl:onProperty ex:inFilm ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass dbo:Person ;
-            owl:onProperty ex:participant ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ex:ContributionRole ;
-            owl:onProperty ex:role ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom dbo:Person ;
-            owl:onProperty ex:participant ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom dbo:Film ;
-            owl:onProperty ex:inFilm ] ;
-    owl:disjointWith ex:ContributionRole,
-        ex:Dataset,
-        ex:SourceSnapshot .
+ex:ProducerRole a owl:NamedIndividual,
+        ex:ContributionRole ;
+    rdfs:label "Producer"@en .
+
+ex:WriterRole a owl:NamedIndividual,
+        ex:ContributionRole ;
+    rdfs:label "Writer"@en .
+
+ex:contributionBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Contribution by"@en ;
+    rdfs:domain ex:Contribution ;
+    rdfs:range dbo:Person ;
+    owl:inverseOf ex:hasContribution .
+
+ex:contributionTo a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Contribution to"@en ;
+    rdfs:domain ex:Contribution ;
+    rdfs:range dbo:Film .
+
+ex:hasAward a owl:ObjectProperty ;
+    rdfs:label "Has award"@en ;
+    rdfs:domain _:N3830102020ae44919169e68cc1f5cb4d ;
+    rdfs:range ex:Award .
+
+ex:FictionGenre a owl:Class ;
+    rdfs:label "Fiction genre"@en ;
+    rdfs:comment "A genre denoting fictional narrative film."@en ;
+    rdfs:subClassOf ex:Genre .
+
+ex:ProductionCompany a owl:Class ;
+    rdfs:label "Production company"@en ;
+    rdfs:comment "An organization credited with producing a film (wdt:P272)."@en ;
+    rdfs:subClassOf ex:Organization .
 
 ex:SourceSnapshot a owl:Class ;
     rdfs:label "Source snapshot"@en ;
-    rdfs:comment "A saved source response with a URL, retrieval time and SHA-256 hash."@en ;
-    owl:disjointWith ex:Dataset .
+    rdfs:comment "A saved source response with a URL, retrieval time and SHA-256 hash."@en .
+
+ex:hasContribution a owl:ObjectProperty ;
+    rdfs:label "Has contribution"@en ;
+    rdfs:domain dbo:Person ;
+    rdfs:range ex:Contribution .
+
+ex:Genre a owl:Class ;
+    rdfs:label "Genre"@en ;
+    rdfs:comment "A category used to describe a film genre."@en ;
+    owl:equivalentClass dbo:Genre .
+
+ex:hasGenre a owl:ObjectProperty ;
+    rdfs:label "Has genre"@en ;
+    rdfs:domain dbo:Film ;
+    rdfs:range ex:Genre .
+
+ex:hasRole a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Has role"@en ;
+    rdfs:domain ex:Contribution ;
+    rdfs:range ex:ContributionRole .
+
+ex:Award a owl:Class ;
+    rdfs:label "Award"@en ;
+    rdfs:comment "A recognition received by a film or by a person for film work (wdt:P166)."@en .
 
 ex:ContributionRole a owl:Class ;
     rdfs:label "Contribution role"@en ;
-    rdfs:comment "A contribution role such as director, actor or writer; not a person."@en ;
-    owl:disjointWith ex:Dataset,
-        ex:SourceSnapshot .
+    rdfs:comment "A role such as director, actor, writer or producer; not a person."@en .
+
+ex:Contribution a owl:Class ;
+    rdfs:label "Contribution"@en ;
+    rdfs:comment "A record connecting exactly one person, one film and one role."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ex:ContributionRole ;
+            owl:onProperty ex:hasRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dbo:Person ;
+            owl:onProperty ex:contributionBy ],
+        [ a owl:Restriction ;
+            owl:onClass ex:ContributionRole ;
+            owl:onProperty ex:hasRole ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dbo:Film ;
+            owl:onProperty ex:contributionTo ],
+        [ a owl:Restriction ;
+            owl:onClass dbo:Person ;
+            owl:onProperty ex:contributionBy ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass dbo:Film ;
+            owl:onProperty ex:contributionTo ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
 
 dbo:Person a owl:Class ;
     rdfs:label "Person"@en ;
     rdfs:comment "A human who may hold several film contribution roles."@en ;
-    owl:disjointWith dbo:Country,
-        ex:ContributionRole,
-        ex:Credit,
-        ex:Dataset,
-        ex:Genre,
-        ex:Language,
-        ex:SourceSnapshot .
+    rdfs:subClassOf ex:Agent .
 
 dbo:Film a owl:Class ;
     rdfs:label "Film"@en ;
-    rdfs:comment "A film work, distinct from people, countries and metadata records."@en ;
-    owl:disjointWith dbo:Country,
-        dbo:Person,
-        ex:ContributionRole,
-        ex:Credit,
-        ex:Dataset,
-        ex:Genre,
-        ex:Language,
-        ex:SourceSnapshot .
+    rdfs:comment "A film work, distinct from people, organizations and metadata records."@en ;
+    rdfs:subClassOf ex:CreativeWork .
 
 [] a owl:AllDifferent ;
-    owl:distinctMembers ( ex:DirectorRole ex:ActorRole ex:WriterRole ) .
+    owl:distinctMembers ( ex:DirectorRole ex:ActorRole ex:WriterRole ex:ProducerRole ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( dbo:Film dbo:Person ex:Genre dbo:Country ex:Language ex:Credit ex:ContributionRole ex:SourceSnapshot ex:Dataset ) .
+    owl:members ( dbo:Film dbo:Person ex:Organization ex:Genre dbo:Country ex:Language ex:Contribution ex:ContributionRole ex:SourceSnapshot ex:Dataset ex:Award ) .
+
+_:N0e339feab2544341bdb5d8199e204603 rdf:first dbo:Person ;
+    rdf:rest () .
+
+_:Nc5a3505a7f7a40eeb7dac04f92ff9e9d rdf:first dbo:Film ;
+    rdf:rest _:N0e339feab2544341bdb5d8199e204603 .
+
+_:N3830102020ae44919169e68cc1f5cb4d a owl:Class ;
+    owl:unionOf _:Nc5a3505a7f7a40eeb7dac04f92ff9e9d .
 

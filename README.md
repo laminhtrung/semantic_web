@@ -44,18 +44,18 @@ Mở **http://127.0.0.1:8000**. Dữ liệu đã có sẵn. Trên macOS có th�
 | Lớp dùng trực tiếp | Dữ liệu trong bài | Định nghĩa nguồn |
 |:--|:--|:--|
 | `dbo:Film` | 30 phim | [DBpedia Film](https://dbpedia.org/ontology/Film) |
-| `dbo:Person` | 805 người tham gia | [DBpedia Person](https://dbpedia.org/ontology/Person) |
+| `dbo:Person` | 851 người tham gia | [DBpedia Person](https://dbpedia.org/ontology/Person) |
 | `dbo:Country` | 11 quốc gia | [DBpedia Country](https://dbpedia.org/ontology/Country) |
 
 Các IRI lớp này được dùng trực tiếp trong `rdf:type`, domain/range, ràng buộc OWL và truy vấn mẫu. Ví dụ Inception có kiểu `dbo:Film`; Nolan có kiểu `dbo:Person`. Truy vấn `?film a dbo:Film` chạy được trên dữ liệu đã lưu mà không cần bật suy luận.
 
-Mô hình vẫn có 15 lớp: 3 lớp DBpedia và 12 lớp thuộc namespace của bài (`ex:Genre`, `ex:Language`, `ex:Credit`, `ex:ContributionRole`, `ex:SourceSnapshot`, `ex:Dataset` và 6 lớp suy luận). Các truy vấn dùng kiểu phim cần viết `dbo:Film`; xem [truy vấn Inception](queries/02_inception.rq).
+Mô hình có **42 lớp có tên** (ontology 2.0.0): 3 lớp DBpedia tái dùng, phần còn lại thuộc namespace của bài — theo cây `CreativeWork`/`Agent`/`Contribution`/`Genre`/`Award`/`Organization`, trong đó **14 lớp là suy luận** (`Actor`, `Filmmaker`, `AwardWinner`, `ActionFilm`, `MultiGenreFilm`, `FilmStudio`...). Chi tiết đầy đủ ở [Ontology_Redesign.md](docs/Ontology_Redesign.md).
 
 ### Phân loại suy luận và ý nghĩa lớp
 
-Đã thêm `Director`, `Actor`, `Screenwriter`, `FilmContributor`, `DirectorWriter`, `CreditedFilm` bằng `equivalentClass`, `intersectionOf`, `unionOf` và `someValuesFrom`. Xem [mô tả ontology và câu hỏi bảo vệ](docs/Mo_ta_ontology.md). Kết quả chạy suy luận ở [ontology_reasoning.json](evidence/ontology_reasoning.json); các kiểu suy ra được lưu riêng trong `data/processed/inferred_classes.ttl`. Endpoint mặc định vẫn truy vấn dữ liệu khai báo.
+14 lớp suy luận (`Actor`, `Filmmaker`, `AwardWinner`, `ActingContribution`/`DirectingContribution`/`WritingContribution`/`ProducingContribution`, `ActionFilm`/`ComedyFilm`/`DramaFilm`/`ScienceFictionFilm`/`MultiGenreFilm`/`AwardWinningFilm`, `FilmStudio`) được định nghĩa bằng `equivalentClass`, `intersectionOf`, `unionOf`, `someValuesFrom`, `hasValue` và `minQualifiedCardinality`. Xem [mô tả ontology và câu hỏi bảo vệ](docs/Mo_ta_ontology.md) và [bảng chi tiết đầy đủ](docs/Ontology_Redesign.md). Kết quả chạy suy luận ở [ontology_reasoning.json](evidence/ontology_reasoning.json); các kiểu suy ra được lưu riêng trong `data/processed/inferred_classes.ttl`. Endpoint mặc định vẫn truy vấn dữ liệu khai báo — chạy `python src/query.py <file> --reasoned` để truy vấn trên các lớp suy luận.
 
-Bản hosted cần xuất bản lại để có ontology 1.1.0. PDF báo cáo và hướng dẫn đã cập nhật; slide và video hiện vẫn là bản trước khi bổ sung sáu lớp.
+Bản hosted cần xuất bản lại để đồng bộ ontology 2.0.0 (bản local hiện có 42 lớp, nhiều hơn bản hosted). PDF báo cáo, slide và video hiện vẫn mô tả ontology 1.1.0 trước khi mở rộng Contribution/Award/Organization.
 
 ## Làm lại toàn bộ quy trình
 
@@ -100,7 +100,7 @@ curl -L -H 'Accept: text/turtle' \
 | `ontology/Movie_Knowledge_Graph.owl` | Cả mô hình và dữ liệu: mở bằng Protégé để xem cá thể. |
 | `data/raw/` | Phản hồi thật, URL nguồn, thời điểm lấy và SHA-256. |
 | `data/processed/` | Dữ liệu chuẩn hóa, tách riêng khỏi nguồn gốc. |
-| `queries/` | 8 câu hỏi mẫu theo thứ tự học/demo. |
+| `queries/` | 24 câu hỏi SPARQL mẫu (3 nhóm: trực tiếp, theo hierarchy, cần suy luận) theo thứ tự học/demo. |
 | `src/` | Mã nguồn toàn quy trình, có thể chạy từng bước. |
 | `web/dist/` | Web, thư viện truy vấn tự chứa, trang RDF và mô tả tài nguyên. |
 | `evidence/` | Số liệu, kiểm tra dữ liệu bằng Python, kiểm tra nguồn, kết quả truy vấn, ảnh. |

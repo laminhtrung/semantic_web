@@ -1034,6 +1034,30 @@
             },
             "roleName": {
               "type": "literal",
+              "value": "Producer",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Emma Thomas",
+              "xml:lang": "en"
+            },
+            "roleName": {
+              "type": "literal",
+              "value": "Producer",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Christopher Nolan",
+              "xml:lang": "en"
+            },
+            "roleName": {
+              "type": "literal",
               "value": "Writer",
               "xml:lang": "en"
             }
@@ -1903,7 +1927,7 @@
           {
             "genreName": {
               "type": "literal",
-              "value": "comedy film",
+              "value": "dystopian film",
               "xml:lang": "en"
             },
             "filmCount": {
@@ -1915,7 +1939,7 @@
           {
             "genreName": {
               "type": "literal",
-              "value": "dystopian film",
+              "value": "comedy film",
               "xml:lang": "en"
             },
             "filmCount": {
@@ -1975,6 +1999,18 @@
           {
             "genreName": {
               "type": "literal",
+              "value": "cyberpunk",
+              "xml:lang": "en"
+            },
+            "filmCount": {
+              "type": "literal",
+              "value": "2",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "genreName": {
+              "type": "literal",
               "value": "romance film",
               "xml:lang": "en"
             },
@@ -1988,18 +2024,6 @@
             "genreName": {
               "type": "literal",
               "value": "musical film",
-              "xml:lang": "en"
-            },
-            "filmCount": {
-              "type": "literal",
-              "value": "2",
-              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          },
-          {
-            "genreName": {
-              "type": "literal",
-              "value": "cyberpunk",
               "xml:lang": "en"
             },
             "filmCount": {
@@ -2251,7 +2275,7 @@
           {
             "genreName": {
               "type": "literal",
-              "value": "dance film",
+              "value": "tech noir",
               "xml:lang": "en"
             },
             "filmCount": {
@@ -2263,7 +2287,7 @@
           {
             "genreName": {
               "type": "literal",
-              "value": "tech noir",
+              "value": "dance film",
               "xml:lang": "en"
             },
             "filmCount": {
@@ -2383,18 +2407,6 @@
           {
             "genreName": {
               "type": "literal",
-              "value": "LGBTQ-related film",
-              "xml:lang": "en"
-            },
-            "filmCount": {
-              "type": "literal",
-              "value": "1",
-              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          },
-          {
-            "genreName": {
-              "type": "literal",
               "value": "psychological thriller",
               "xml:lang": "en"
             },
@@ -2407,7 +2419,7 @@
           {
             "genreName": {
               "type": "literal",
-              "value": "high fantasy",
+              "value": "LGBTQ-related film",
               "xml:lang": "en"
             },
             "filmCount": {
@@ -2419,7 +2431,7 @@
           {
             "genreName": {
               "type": "literal",
-              "value": "ninja film",
+              "value": "high fantasy",
               "xml:lang": "en"
             },
             "filmCount": {
@@ -2444,6 +2456,18 @@
             "genreName": {
               "type": "literal",
               "value": "black comedy film",
+              "xml:lang": "en"
+            },
+            "filmCount": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          {
+            "genreName": {
+              "type": "literal",
+              "value": "ninja film",
               "xml:lang": "en"
             },
             "filmCount": {
@@ -2619,6 +2643,534 @@
     "file": "08_ask.rq",
     "result": {
       "boolean": true
+    }
+  },
+  {
+    "file": "09_actors_of_inception.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Cillian Murphy",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Claire Geare",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Dileep Rao",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Earl Cameron",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Elliot Page",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Joseph Gordon-Levitt",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Ken Watanabe",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Leonardo DiCaprio",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Lukas Haas",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Marion Cotillard",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Michael Caine",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Michael Gaston",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Pete Postlethwaite",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Silvie Laguna",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Talulah Riley",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Taylor Geare",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Tohoru Masamune",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Tom Berenger",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Tom Hardy",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Virgile Bramly",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "actorName": {
+              "type": "literal",
+              "value": "Yuji Okumoto",
+              "xml:lang": "en"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "actorName"
+        ]
+      }
+    }
+  },
+  {
+    "file": "10_production_companies_of_a_film.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "Legendary Pictures",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          },
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "Syncopy Inc.",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          },
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "Warner Bros. Entertainment",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          },
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "Warner Bros. Pictures",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "title",
+          "companyName"
+        ]
+      }
+    }
+  },
+  {
+    "file": "11_awards_received_by_a_film.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "awardName": {
+              "type": "literal",
+              "value": "Academy Award for Best Actor",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "awardName": {
+              "type": "literal",
+              "value": "Academy Award for Best Picture",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "awardName": {
+              "type": "literal",
+              "value": "Academy Award for Best Writing, Adapted Screenplay",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "awardName": {
+              "type": "literal",
+              "value": "Golden Globe Award for Best Actor – Motion Picture Drama",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "awardName": {
+              "type": "literal",
+              "value": "Golden Globe Award for Best Motion Picture – Drama",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "awardName": {
+              "type": "literal",
+              "value": "Golden Globe Award for Best Screenplay",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "awardName": {
+              "type": "literal",
+              "value": "National Board of Review: Top Ten Films",
+              "xml:lang": "en"
+            },
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "title",
+          "awardName"
+        ]
+      }
+    }
+  },
+  {
+    "file": "12_countries_and_languages_of_a_film.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "title": {
+              "type": "literal",
+              "value": "Parasite"
+            },
+            "countryName": {
+              "type": "literal",
+              "value": "South Korea",
+              "xml:lang": "en"
+            },
+            "languageName": {
+              "type": "literal",
+              "value": "Korean",
+              "xml:lang": "en"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "title",
+          "countryName",
+          "languageName"
+        ]
+      }
+    }
+  },
+  {
+    "file": "13_fiction_genre_films_via_hierarchy.rq",
+    "result": {
+      "results": {
+        "bindings": []
+      },
+      "head": {
+        "vars": [
+          "title"
+        ]
+      }
+    }
+  },
+  {
+    "file": "14_all_agents_people_and_organizations.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "people": {
+              "type": "literal",
+              "value": "851",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "organizations": {
+              "type": "literal",
+              "value": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "people",
+          "organizations"
+        ]
+      }
+    }
+  },
+  {
+    "file": "15_feature_vs_animated_film_counts.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "featureFilms": {
+              "type": "literal",
+              "value": "29",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "animatedFilms": {
+              "type": "literal",
+              "value": "1",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "featureFilms",
+          "animatedFilms"
+        ]
+      }
+    }
+  },
+  {
+    "file": "16_documentary_film_count_ask.rq",
+    "result": {
+      "boolean": false
+    }
+  },
+  {
+    "file": "17_inferred_actors.rq",
+    "result": {
+      "results": {
+        "bindings": []
+      },
+      "head": {
+        "vars": [
+          "personName"
+        ]
+      }
+    }
+  },
+  {
+    "file": "18_inferred_filmmakers.rq",
+    "result": {
+      "results": {
+        "bindings": []
+      },
+      "head": {
+        "vars": [
+          "personName"
+        ]
+      }
+    }
+  },
+  {
+    "file": "19_inferred_action_films.rq",
+    "result": {
+      "results": {
+        "bindings": []
+      },
+      "head": {
+        "vars": [
+          "title"
+        ]
+      }
+    }
+  },
+  {
+    "file": "20_inferred_multi_genre_films.rq",
+    "result": {
+      "results": {
+        "bindings": []
+      },
+      "head": {
+        "vars": [
+          "title"
+        ]
+      }
+    }
+  },
+  {
+    "file": "21_inferred_award_winning_films.rq",
+    "result": {
+      "results": {
+        "bindings": []
+      },
+      "head": {
+        "vars": [
+          "title"
+        ]
+      }
+    }
+  },
+  {
+    "file": "22_inferred_film_studios.rq",
+    "result": {
+      "results": {
+        "bindings": []
+      },
+      "head": {
+        "vars": [
+          "companyName"
+        ]
+      }
+    }
+  },
+  {
+    "file": "23_people_with_directing_and_writing_contribution.rq",
+    "result": {
+      "results": {
+        "bindings": []
+      },
+      "head": {
+        "vars": [
+          "personName"
+        ]
+      }
+    }
+  },
+  {
+    "file": "24_nolan_asserted_types_only.rq",
+    "result": {
+      "results": {
+        "bindings": [
+          {
+            "type": {
+              "type": "uri",
+              "value": "http://dbpedia.org/ontology/Person"
+            }
+          }
+        ]
+      },
+      "head": {
+        "vars": [
+          "type"
+        ]
+      }
     }
   }
 ]

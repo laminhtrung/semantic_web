@@ -1,5 +1,3590 @@
 [
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1000104",
+    "external": "http://www.wikidata.org/entity/Q1000104",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1011509",
+    "external": "http://www.wikidata.org/entity/Q1011509",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1011547",
+    "external": "http://www.wikidata.org/entity/Q1011547",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1011564",
+    "external": "http://www.wikidata.org/entity/Q1011564",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q101242891",
+    "external": "http://www.wikidata.org/entity/Q101242891",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q102427",
+    "external": "http://www.wikidata.org/entity/Q102427",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1024866",
+    "external": "http://www.wikidata.org/entity/Q1024866",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10294045",
+    "external": "http://www.wikidata.org/entity/Q10294045",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1030402",
+    "external": "http://www.wikidata.org/entity/Q1030402",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q103360",
+    "external": "http://www.wikidata.org/entity/Q103360",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10354944",
+    "external": "http://www.wikidata.org/entity/Q10354944",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q103618",
+    "external": "http://www.wikidata.org/entity/Q103618",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q103916",
+    "external": "http://www.wikidata.org/entity/Q103916",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1044427",
+    "external": "http://www.wikidata.org/entity/Q1044427",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q104629144",
+    "external": "http://www.wikidata.org/entity/Q104629144",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q104783495",
+    "external": "http://www.wikidata.org/entity/Q104783495",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q105304",
+    "external": "http://www.wikidata.org/entity/Q105304",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q105447",
+    "external": "http://www.wikidata.org/entity/Q105447",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1056240",
+    "external": "http://www.wikidata.org/entity/Q1056240",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q105687604",
+    "external": "http://www.wikidata.org/entity/Q105687604",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1059569",
+    "external": "http://www.wikidata.org/entity/Q1059569",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1062026",
+    "external": "http://www.wikidata.org/entity/Q1062026",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q106291",
+    "external": "http://www.wikidata.org/entity/Q106291",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q106301",
+    "external": "http://www.wikidata.org/entity/Q106301",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q106517969",
+    "external": "http://www.wikidata.org/entity/Q106517969",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q106800",
+    "external": "http://www.wikidata.org/entity/Q106800",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1068636",
+    "external": "http://www.wikidata.org/entity/Q1068636",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q107058305",
+    "external": "http://www.wikidata.org/entity/Q107058305",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q107130728",
+    "external": "http://www.wikidata.org/entity/Q107130728",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q107130729",
+    "external": "http://www.wikidata.org/entity/Q107130729",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q107130737",
+    "external": "http://www.wikidata.org/entity/Q107130737",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1071888",
+    "external": "http://www.wikidata.org/entity/Q1071888",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1071903",
+    "external": "http://www.wikidata.org/entity/Q1071903",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q107258",
+    "external": "http://www.wikidata.org/entity/Q107258",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1075366",
+    "external": "http://www.wikidata.org/entity/Q1075366",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10762848",
+    "external": "http://www.wikidata.org/entity/Q10762848",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10854651",
+    "external": "http://www.wikidata.org/entity/Q10854651",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10855195",
+    "external": "http://www.wikidata.org/entity/Q10855195",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10855216",
+    "external": "http://www.wikidata.org/entity/Q10855216",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10855271",
+    "external": "http://www.wikidata.org/entity/Q10855271",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q108677027",
+    "external": "http://www.wikidata.org/entity/Q108677027",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q108809699",
+    "external": "http://www.wikidata.org/entity/Q108809699",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q108857021",
+    "external": "http://www.wikidata.org/entity/Q108857021",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q109012141",
+    "external": "http://www.wikidata.org/entity/Q109012141",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10905235",
+    "external": "http://www.wikidata.org/entity/Q10905235",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10905276",
+    "external": "http://www.wikidata.org/entity/Q10905276",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q10916695",
+    "external": "http://www.wikidata.org/entity/Q10916695",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1092356",
+    "external": "http://www.wikidata.org/entity/Q1092356",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1095395",
+    "external": "http://www.wikidata.org/entity/Q1095395",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q110145",
+    "external": "http://www.wikidata.org/entity/Q110145",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q110613177",
+    "external": "http://www.wikidata.org/entity/Q110613177",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q110728909",
+    "external": "http://www.wikidata.org/entity/Q110728909",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q110930267",
+    "external": "http://www.wikidata.org/entity/Q110930267",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1111310",
+    "external": "http://www.wikidata.org/entity/Q1111310",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q111292721",
+    "external": "http://www.wikidata.org/entity/Q111292721",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q11222980",
+    "external": "http://www.wikidata.org/entity/Q11222980",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q112241213",
+    "external": "http://www.wikidata.org/entity/Q112241213",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q112243",
+    "external": "http://www.wikidata.org/entity/Q112243",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1126636",
+    "external": "http://www.wikidata.org/entity/Q1126636",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1128506",
+    "external": "http://www.wikidata.org/entity/Q1128506",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1129487",
+    "external": "http://www.wikidata.org/entity/Q1129487",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q113031066",
+    "external": "http://www.wikidata.org/entity/Q113031066",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q113068",
+    "external": "http://www.wikidata.org/entity/Q113068",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1131356",
+    "external": "http://www.wikidata.org/entity/Q1131356",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1131772",
+    "external": "http://www.wikidata.org/entity/Q1131772",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1134095",
+    "external": "http://www.wikidata.org/entity/Q1134095",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q11415560",
+    "external": "http://www.wikidata.org/entity/Q11415560",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q11421395",
+    "external": "http://www.wikidata.org/entity/Q11421395",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1150306",
+    "external": "http://www.wikidata.org/entity/Q1150306",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q115796547",
+    "external": "http://www.wikidata.org/entity/Q115796547",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1161101",
+    "external": "http://www.wikidata.org/entity/Q1161101",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1161102",
+    "external": "http://www.wikidata.org/entity/Q1161102",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1161103",
+    "external": "http://www.wikidata.org/entity/Q1161103",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q116775735",
+    "external": "http://www.wikidata.org/entity/Q116775735",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1170500",
+    "external": "http://www.wikidata.org/entity/Q1170500",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1170507",
+    "external": "http://www.wikidata.org/entity/Q1170507",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q11789170",
+    "external": "http://www.wikidata.org/entity/Q11789170",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q11789175",
+    "external": "http://www.wikidata.org/entity/Q11789175",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1179189",
+    "external": "http://www.wikidata.org/entity/Q1179189",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q120649",
+    "external": "http://www.wikidata.org/entity/Q120649",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q121359767",
+    "external": "http://www.wikidata.org/entity/Q121359767",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q12143912",
+    "external": "http://www.wikidata.org/entity/Q12143912",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q12201445",
+    "external": "http://www.wikidata.org/entity/Q12201445",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q12201477",
+    "external": "http://www.wikidata.org/entity/Q12201477",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q12201526",
+    "external": "http://www.wikidata.org/entity/Q12201526",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q122167901",
+    "external": "http://www.wikidata.org/entity/Q122167901",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q12344311",
+    "external": "http://www.wikidata.org/entity/Q12344311",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q123737",
+    "external": "http://www.wikidata.org/entity/Q123737",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q12410745",
+    "external": "http://www.wikidata.org/entity/Q12410745",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q124390870",
+    "external": "http://www.wikidata.org/entity/Q124390870",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q125030529",
+    "external": "http://www.wikidata.org/entity/Q125030529",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q125030530",
+    "external": "http://www.wikidata.org/entity/Q125030530",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1257399",
+    "external": "http://www.wikidata.org/entity/Q1257399",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1257493",
+    "external": "http://www.wikidata.org/entity/Q1257493",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q125749677",
+    "external": "http://www.wikidata.org/entity/Q125749677",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q125749682",
+    "external": "http://www.wikidata.org/entity/Q125749682",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1258647",
+    "external": "http://www.wikidata.org/entity/Q1258647",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1259362",
+    "external": "http://www.wikidata.org/entity/Q1259362",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1259395",
+    "external": "http://www.wikidata.org/entity/Q1259395",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1260789",
+    "external": "http://www.wikidata.org/entity/Q1260789",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1265702",
+    "external": "http://www.wikidata.org/entity/Q1265702",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1266111",
+    "external": "http://www.wikidata.org/entity/Q1266111",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1268927",
+    "external": "http://www.wikidata.org/entity/Q1268927",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q127421432",
+    "external": "http://www.wikidata.org/entity/Q127421432",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1275727",
+    "external": "http://www.wikidata.org/entity/Q1275727",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q127612284",
+    "external": "http://www.wikidata.org/entity/Q127612284",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1277463",
+    "external": "http://www.wikidata.org/entity/Q1277463",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1277961",
+    "external": "http://www.wikidata.org/entity/Q1277961",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1285504",
+    "external": "http://www.wikidata.org/entity/Q1285504",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1285970",
+    "external": "http://www.wikidata.org/entity/Q1285970",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1286639",
+    "external": "http://www.wikidata.org/entity/Q1286639",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q12959336",
+    "external": "http://www.wikidata.org/entity/Q12959336",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q12981673",
+    "external": "http://www.wikidata.org/entity/Q12981673",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q130717752",
+    "external": "http://www.wikidata.org/entity/Q130717752",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q131298677",
+    "external": "http://www.wikidata.org/entity/Q131298677",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1315008",
+    "external": "http://www.wikidata.org/entity/Q1315008",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q131520",
+    "external": "http://www.wikidata.org/entity/Q131520",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1316544",
+    "external": "http://www.wikidata.org/entity/Q1316544",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q131837474",
+    "external": "http://www.wikidata.org/entity/Q131837474",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1320315",
+    "external": "http://www.wikidata.org/entity/Q1320315",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1321674",
+    "external": "http://www.wikidata.org/entity/Q1321674",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q133176287",
+    "external": "http://www.wikidata.org/entity/Q133176287",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q133176305",
+    "external": "http://www.wikidata.org/entity/Q133176305",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q133176391",
+    "external": "http://www.wikidata.org/entity/Q133176391",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1337827",
+    "external": "http://www.wikidata.org/entity/Q1337827",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q13422138",
+    "external": "http://www.wikidata.org/entity/Q13422138",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q13452524",
+    "external": "http://www.wikidata.org/entity/Q13452524",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q13452528",
+    "external": "http://www.wikidata.org/entity/Q13452528",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q13452531",
+    "external": "http://www.wikidata.org/entity/Q13452531",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q135992139",
+    "external": "http://www.wikidata.org/entity/Q135992139",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q13634272",
+    "external": "http://www.wikidata.org/entity/Q13634272",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1371682",
+    "external": "http://www.wikidata.org/entity/Q1371682",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1377738",
+    "external": "http://www.wikidata.org/entity/Q1377738",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1377753",
+    "external": "http://www.wikidata.org/entity/Q1377753",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1377763",
+    "external": "http://www.wikidata.org/entity/Q1377763",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1388076",
+    "external": "http://www.wikidata.org/entity/Q1388076",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q138996",
+    "external": "http://www.wikidata.org/entity/Q138996",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q139184",
+    "external": "http://www.wikidata.org/entity/Q139184",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1413741",
+    "external": "http://www.wikidata.org/entity/Q1413741",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1414482",
+    "external": "http://www.wikidata.org/entity/Q1414482",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1414566",
+    "external": "http://www.wikidata.org/entity/Q1414566",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1415017",
+    "external": "http://www.wikidata.org/entity/Q1415017",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1419495",
+    "external": "http://www.wikidata.org/entity/Q1419495",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1419872",
+    "external": "http://www.wikidata.org/entity/Q1419872",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1421666",
+    "external": "http://www.wikidata.org/entity/Q1421666",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1422140",
+    "external": "http://www.wikidata.org/entity/Q1422140",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1425151",
+    "external": "http://www.wikidata.org/entity/Q1425151",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q14420",
+    "external": "http://www.wikidata.org/entity/Q14420",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1445521",
+    "external": "http://www.wikidata.org/entity/Q1445521",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1450895",
+    "external": "http://www.wikidata.org/entity/Q1450895",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1453643",
+    "external": "http://www.wikidata.org/entity/Q1453643",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q14539729",
+    "external": "http://www.wikidata.org/entity/Q14539729",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q14539884",
+    "external": "http://www.wikidata.org/entity/Q14539884",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q14539974",
+    "external": "http://www.wikidata.org/entity/Q14539974",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1464670",
+    "external": "http://www.wikidata.org/entity/Q1464670",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q14705795",
+    "external": "http://www.wikidata.org/entity/Q14705795",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1471837",
+    "external": "http://www.wikidata.org/entity/Q1471837",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1472235",
+    "external": "http://www.wikidata.org/entity/Q1472235",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1474410",
+    "external": "http://www.wikidata.org/entity/Q1474410",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1483605",
+    "external": "http://www.wikidata.org/entity/Q1483605",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1483763",
+    "external": "http://www.wikidata.org/entity/Q1483763",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1502249",
+    "external": "http://www.wikidata.org/entity/Q1502249",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1513510",
+    "external": "http://www.wikidata.org/entity/Q1513510",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1524205",
+    "external": "http://www.wikidata.org/entity/Q1524205",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q15278101",
+    "external": "http://www.wikidata.org/entity/Q15278101",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q15278107",
+    "external": "http://www.wikidata.org/entity/Q15278107",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1534906",
+    "external": "http://www.wikidata.org/entity/Q1534906",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1535324",
+    "external": "http://www.wikidata.org/entity/Q1535324",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1535546",
+    "external": "http://www.wikidata.org/entity/Q1535546",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1538791",
+    "external": "http://www.wikidata.org/entity/Q1538791",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1542199",
+    "external": "http://www.wikidata.org/entity/Q1542199",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1543268",
+    "external": "http://www.wikidata.org/entity/Q1543268",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q154590",
+    "external": "http://www.wikidata.org/entity/Q154590",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q15715250",
+    "external": "http://www.wikidata.org/entity/Q15715250",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q15715251",
+    "external": "http://www.wikidata.org/entity/Q15715251",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q15715252",
+    "external": "http://www.wikidata.org/entity/Q15715252",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1571938",
+    "external": "http://www.wikidata.org/entity/Q1571938",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1582967",
+    "external": "http://www.wikidata.org/entity/Q1582967",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q15830911",
+    "external": "http://www.wikidata.org/entity/Q15830911",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1590605",
+    "external": "http://www.wikidata.org/entity/Q1590605",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16058279",
+    "external": "http://www.wikidata.org/entity/Q16058279",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16087837",
+    "external": "http://www.wikidata.org/entity/Q16087837",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16154915",
+    "external": "http://www.wikidata.org/entity/Q16154915",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16184868",
+    "external": "http://www.wikidata.org/entity/Q16184868",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1627408",
+    "external": "http://www.wikidata.org/entity/Q1627408",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1631998",
+    "external": "http://www.wikidata.org/entity/Q1631998",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16320408",
+    "external": "http://www.wikidata.org/entity/Q16320408",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1635307",
+    "external": "http://www.wikidata.org/entity/Q1635307",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q163700",
+    "external": "http://www.wikidata.org/entity/Q163700",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q165177",
+    "external": "http://www.wikidata.org/entity/Q165177",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q165313",
+    "external": "http://www.wikidata.org/entity/Q165313",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1653137",
+    "external": "http://www.wikidata.org/entity/Q1653137",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16850529",
+    "external": "http://www.wikidata.org/entity/Q16850529",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16933033",
+    "external": "http://www.wikidata.org/entity/Q16933033",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16947520",
+    "external": "http://www.wikidata.org/entity/Q16947520",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16968120",
+    "external": "http://www.wikidata.org/entity/Q16968120",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q16985329",
+    "external": "http://www.wikidata.org/entity/Q16985329",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q17008313",
+    "external": "http://www.wikidata.org/entity/Q17008313",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q17009285",
+    "external": "http://www.wikidata.org/entity/Q17009285",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1702885",
+    "external": "http://www.wikidata.org/entity/Q1702885",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1713744",
+    "external": "http://www.wikidata.org/entity/Q1713744",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q17144",
+    "external": "http://www.wikidata.org/entity/Q17144",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q17200714",
+    "external": "http://www.wikidata.org/entity/Q17200714",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1720784",
+    "external": "http://www.wikidata.org/entity/Q1720784",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1723064",
+    "external": "http://www.wikidata.org/entity/Q1723064",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1738793",
+    "external": "http://www.wikidata.org/entity/Q1738793",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q174389",
+    "external": "http://www.wikidata.org/entity/Q174389",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q175235",
+    "external": "http://www.wikidata.org/entity/Q175235",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1767819",
+    "external": "http://www.wikidata.org/entity/Q1767819",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1769490",
+    "external": "http://www.wikidata.org/entity/Q1769490",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q17748520",
+    "external": "http://www.wikidata.org/entity/Q17748520",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1780634",
+    "external": "http://www.wikidata.org/entity/Q1780634",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1789030",
+    "external": "http://www.wikidata.org/entity/Q1789030",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1789102",
+    "external": "http://www.wikidata.org/entity/Q1789102",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1789544",
+    "external": "http://www.wikidata.org/entity/Q1789544",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1790273",
+    "external": "http://www.wikidata.org/entity/Q1790273",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1790281",
+    "external": "http://www.wikidata.org/entity/Q1790281",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1790292",
+    "external": "http://www.wikidata.org/entity/Q1790292",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1790297",
+    "external": "http://www.wikidata.org/entity/Q1790297",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q179191",
+    "external": "http://www.wikidata.org/entity/Q179191",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q179808",
+    "external": "http://www.wikidata.org/entity/Q179808",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q17985761",
+    "external": "http://www.wikidata.org/entity/Q17985761",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1799442",
+    "external": "http://www.wikidata.org/entity/Q1799442",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1800189",
+    "external": "http://www.wikidata.org/entity/Q1800189",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q18154856",
+    "external": "http://www.wikidata.org/entity/Q18154856",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1818405",
+    "external": "http://www.wikidata.org/entity/Q1818405",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q181883",
+    "external": "http://www.wikidata.org/entity/Q181883",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q185299",
+    "external": "http://www.wikidata.org/entity/Q185299",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q18536327",
+    "external": "http://www.wikidata.org/entity/Q18536327",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q185493",
+    "external": "http://www.wikidata.org/entity/Q185493",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q18601721",
+    "external": "http://www.wikidata.org/entity/Q18601721",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q18681625",
+    "external": "http://www.wikidata.org/entity/Q18681625",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1868927",
+    "external": "http://www.wikidata.org/entity/Q1868927",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1868950",
+    "external": "http://www.wikidata.org/entity/Q1868950",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1870452",
+    "external": "http://www.wikidata.org/entity/Q1870452",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1895068",
+    "external": "http://www.wikidata.org/entity/Q1895068",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q19020",
+    "external": "http://www.wikidata.org/entity/Q19020",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q190353",
+    "external": "http://www.wikidata.org/entity/Q190353",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q191874",
+    "external": "http://www.wikidata.org/entity/Q191874",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1966965",
+    "external": "http://www.wikidata.org/entity/Q1966965",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1967719",
+    "external": "http://www.wikidata.org/entity/Q1967719",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1967731",
+    "external": "http://www.wikidata.org/entity/Q1967731",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q19694514",
+    "external": "http://www.wikidata.org/entity/Q19694514",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q19829650",
+    "external": "http://www.wikidata.org/entity/Q19829650",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q19830564",
+    "external": "http://www.wikidata.org/entity/Q19830564",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1983066",
+    "external": "http://www.wikidata.org/entity/Q1983066",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1983113",
+    "external": "http://www.wikidata.org/entity/Q1983113",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q19833467",
+    "external": "http://www.wikidata.org/entity/Q19833467",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q19833602",
+    "external": "http://www.wikidata.org/entity/Q19833602",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q1983581",
+    "external": "http://www.wikidata.org/entity/Q1983581",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q198533",
+    "external": "http://www.wikidata.org/entity/Q198533",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q19868021",
+    "external": "http://www.wikidata.org/entity/Q19868021",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q20002163",
+    "external": "http://www.wikidata.org/entity/Q20002163",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2005201",
+    "external": "http://www.wikidata.org/entity/Q2005201",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q20180674",
+    "external": "http://www.wikidata.org/entity/Q20180674",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q20649162",
+    "external": "http://www.wikidata.org/entity/Q20649162",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q20649879",
+    "external": "http://www.wikidata.org/entity/Q20649879",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q20714679",
+    "external": "http://www.wikidata.org/entity/Q20714679",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2079534",
+    "external": "http://www.wikidata.org/entity/Q2079534",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q20853550",
+    "external": "http://www.wikidata.org/entity/Q20853550",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q20887171",
+    "external": "http://www.wikidata.org/entity/Q20887171",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2089918",
+    "external": "http://www.wikidata.org/entity/Q2089918",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2089923",
+    "external": "http://www.wikidata.org/entity/Q2089923",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q209459",
+    "external": "http://www.wikidata.org/entity/Q209459",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q209690",
+    "external": "http://www.wikidata.org/entity/Q209690",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q21041879",
+    "external": "http://www.wikidata.org/entity/Q21041879",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q21164",
+    "external": "http://www.wikidata.org/entity/Q21164",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q211872",
+    "external": "http://www.wikidata.org/entity/Q211872",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q21595675",
+    "external": "http://www.wikidata.org/entity/Q21595675",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q219070",
+    "external": "http://www.wikidata.org/entity/Q219070",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q21948568",
+    "external": "http://www.wikidata.org/entity/Q21948568",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q21950729",
+    "external": "http://www.wikidata.org/entity/Q21950729",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q21950734",
+    "external": "http://www.wikidata.org/entity/Q21950734",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q21950735",
+    "external": "http://www.wikidata.org/entity/Q21950735",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q21954203",
+    "external": "http://www.wikidata.org/entity/Q21954203",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q21954284",
+    "external": "http://www.wikidata.org/entity/Q21954284",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q22023000",
+    "external": "http://www.wikidata.org/entity/Q22023000",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q22055485",
+    "external": "http://www.wikidata.org/entity/Q22055485",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q22235329",
+    "external": "http://www.wikidata.org/entity/Q22235329",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2294693",
+    "external": "http://www.wikidata.org/entity/Q2294693",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2294705",
+    "external": "http://www.wikidata.org/entity/Q2294705",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2295041",
+    "external": "http://www.wikidata.org/entity/Q2295041",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2296147",
+    "external": "http://www.wikidata.org/entity/Q2296147",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q23049765",
+    "external": "http://www.wikidata.org/entity/Q23049765",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q23049782",
+    "external": "http://www.wikidata.org/entity/Q23049782",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q23049797",
+    "external": "http://www.wikidata.org/entity/Q23049797",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q23050104",
+    "external": "http://www.wikidata.org/entity/Q23050104",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q23058979",
+    "external": "http://www.wikidata.org/entity/Q23058979",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2309070",
+    "external": "http://www.wikidata.org/entity/Q2309070",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2338071",
+    "external": "http://www.wikidata.org/entity/Q2338071",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2338107",
+    "external": "http://www.wikidata.org/entity/Q2338107",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2348108",
+    "external": "http://www.wikidata.org/entity/Q2348108",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2354625",
+    "external": "http://www.wikidata.org/entity/Q2354625",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2358089",
+    "external": "http://www.wikidata.org/entity/Q2358089",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2393205",
+    "external": "http://www.wikidata.org/entity/Q2393205",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2402341",
+    "external": "http://www.wikidata.org/entity/Q2402341",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q24051550",
+    "external": "http://www.wikidata.org/entity/Q24051550",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q24051551",
+    "external": "http://www.wikidata.org/entity/Q24051551",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q24051552",
+    "external": "http://www.wikidata.org/entity/Q24051552",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q24051554",
+    "external": "http://www.wikidata.org/entity/Q24051554",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2414252",
+    "external": "http://www.wikidata.org/entity/Q2414252",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2414873",
+    "external": "http://www.wikidata.org/entity/Q2414873",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q24204477",
+    "external": "http://www.wikidata.org/entity/Q24204477",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q24241",
+    "external": "http://www.wikidata.org/entity/Q24241",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2445351",
+    "external": "http://www.wikidata.org/entity/Q2445351",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2447242",
+    "external": "http://www.wikidata.org/entity/Q2447242",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2462064",
+    "external": "http://www.wikidata.org/entity/Q2462064",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2468132",
+    "external": "http://www.wikidata.org/entity/Q2468132",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q24895051",
+    "external": "http://www.wikidata.org/entity/Q24895051",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q24904939",
+    "external": "http://www.wikidata.org/entity/Q24904939",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q24905095",
+    "external": "http://www.wikidata.org/entity/Q24905095",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2510955",
+    "external": "http://www.wikidata.org/entity/Q2510955",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q251542",
+    "external": "http://www.wikidata.org/entity/Q251542",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2525430",
+    "external": "http://www.wikidata.org/entity/Q2525430",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2529381",
+    "external": "http://www.wikidata.org/entity/Q2529381",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2530270",
+    "external": "http://www.wikidata.org/entity/Q2530270",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q25338504",
+    "external": "http://www.wikidata.org/entity/Q25338504",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q253936",
+    "external": "http://www.wikidata.org/entity/Q253936",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q25405526",
+    "external": "http://www.wikidata.org/entity/Q25405526",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2544851",
+    "external": "http://www.wikidata.org/entity/Q2544851",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2544859",
+    "external": "http://www.wikidata.org/entity/Q2544859",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2545449",
+    "external": "http://www.wikidata.org/entity/Q2545449",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q257235",
+    "external": "http://www.wikidata.org/entity/Q257235",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2604800",
+    "external": "http://www.wikidata.org/entity/Q2604800",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2607188",
+    "external": "http://www.wikidata.org/entity/Q2607188",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2611552",
+    "external": "http://www.wikidata.org/entity/Q2611552",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2663714",
+    "external": "http://www.wikidata.org/entity/Q2663714",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2665878",
+    "external": "http://www.wikidata.org/entity/Q2665878",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q268670",
+    "external": "http://www.wikidata.org/entity/Q268670",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2687578",
+    "external": "http://www.wikidata.org/entity/Q2687578",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2701827",
+    "external": "http://www.wikidata.org/entity/Q2701827",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2702037",
+    "external": "http://www.wikidata.org/entity/Q2702037",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q27677315",
+    "external": "http://www.wikidata.org/entity/Q27677315",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q277536",
+    "external": "http://www.wikidata.org/entity/Q277536",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q277751",
+    "external": "http://www.wikidata.org/entity/Q277751",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q27927460",
+    "external": "http://www.wikidata.org/entity/Q27927460",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28007416",
+    "external": "http://www.wikidata.org/entity/Q28007416",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28044798",
+    "external": "http://www.wikidata.org/entity/Q28044798",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28044812",
+    "external": "http://www.wikidata.org/entity/Q28044812",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q281939",
+    "external": "http://www.wikidata.org/entity/Q281939",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28226224",
+    "external": "http://www.wikidata.org/entity/Q28226224",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28402571",
+    "external": "http://www.wikidata.org/entity/Q28402571",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28445711",
+    "external": "http://www.wikidata.org/entity/Q28445711",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28445727",
+    "external": "http://www.wikidata.org/entity/Q28445727",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28470",
+    "external": "http://www.wikidata.org/entity/Q28470",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q286069",
+    "external": "http://www.wikidata.org/entity/Q286069",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q287062",
+    "external": "http://www.wikidata.org/entity/Q287062",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2876690",
+    "external": "http://www.wikidata.org/entity/Q2876690",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28837118",
+    "external": "http://www.wikidata.org/entity/Q28837118",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q28950956",
+    "external": "http://www.wikidata.org/entity/Q28950956",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2899916",
+    "external": "http://www.wikidata.org/entity/Q2899916",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q292044",
+    "external": "http://www.wikidata.org/entity/Q292044",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2925687",
+    "external": "http://www.wikidata.org/entity/Q2925687",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2925695",
+    "external": "http://www.wikidata.org/entity/Q2925695",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2925701",
+    "external": "http://www.wikidata.org/entity/Q2925701",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2947548",
+    "external": "http://www.wikidata.org/entity/Q2947548",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q29561486",
+    "external": "http://www.wikidata.org/entity/Q29561486",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q2981152",
+    "external": "http://www.wikidata.org/entity/Q2981152",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3002941",
+    "external": "http://www.wikidata.org/entity/Q3002941",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q30132541",
+    "external": "http://www.wikidata.org/entity/Q30132541",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3019369",
+    "external": "http://www.wikidata.org/entity/Q3019369",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3046356",
+    "external": "http://www.wikidata.org/entity/Q3046356",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3053245",
+    "external": "http://www.wikidata.org/entity/Q3053245",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3062632",
+    "external": "http://www.wikidata.org/entity/Q3062632",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q30632400",
+    "external": "http://www.wikidata.org/entity/Q30632400",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q30687800",
+    "external": "http://www.wikidata.org/entity/Q30687800",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3077281",
+    "external": "http://www.wikidata.org/entity/Q3077281",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3101822",
+    "external": "http://www.wikidata.org/entity/Q3101822",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3110027",
+    "external": "http://www.wikidata.org/entity/Q3110027",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3114765",
+    "external": "http://www.wikidata.org/entity/Q3114765",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q311836",
+    "external": "http://www.wikidata.org/entity/Q311836",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3135388",
+    "external": "http://www.wikidata.org/entity/Q3135388",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3147245",
+    "external": "http://www.wikidata.org/entity/Q3147245",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q318770",
+    "external": "http://www.wikidata.org/entity/Q318770",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3241784",
+    "external": "http://www.wikidata.org/entity/Q3241784",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q329157",
+    "external": "http://www.wikidata.org/entity/Q329157",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3319305",
+    "external": "http://www.wikidata.org/entity/Q3319305",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3403229",
+    "external": "http://www.wikidata.org/entity/Q3403229",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3404521",
+    "external": "http://www.wikidata.org/entity/Q3404521",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3404523",
+    "external": "http://www.wikidata.org/entity/Q3404523",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3404782",
+    "external": "http://www.wikidata.org/entity/Q3404782",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3404975",
+    "external": "http://www.wikidata.org/entity/Q3404975",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3405093",
+    "external": "http://www.wikidata.org/entity/Q3405093",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3405197",
+    "external": "http://www.wikidata.org/entity/Q3405197",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3405405",
+    "external": "http://www.wikidata.org/entity/Q3405405",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3405880",
+    "external": "http://www.wikidata.org/entity/Q3405880",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3406648",
+    "external": "http://www.wikidata.org/entity/Q3406648",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3414212",
+    "external": "http://www.wikidata.org/entity/Q3414212",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3473889",
+    "external": "http://www.wikidata.org/entity/Q3473889",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q36460247",
+    "external": "http://www.wikidata.org/entity/Q36460247",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3667643",
+    "external": "http://www.wikidata.org/entity/Q3667643",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3703451",
+    "external": "http://www.wikidata.org/entity/Q3703451",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3703457",
+    "external": "http://www.wikidata.org/entity/Q3703457",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3703462",
+    "external": "http://www.wikidata.org/entity/Q3703462",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3703465",
+    "external": "http://www.wikidata.org/entity/Q3703465",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3724813",
+    "external": "http://www.wikidata.org/entity/Q3724813",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3734888",
+    "external": "http://www.wikidata.org/entity/Q3734888",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q374846",
+    "external": "http://www.wikidata.org/entity/Q374846",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3774974",
+    "external": "http://www.wikidata.org/entity/Q3774974",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q378567",
+    "external": "http://www.wikidata.org/entity/Q378567",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3806623",
+    "external": "http://www.wikidata.org/entity/Q3806623",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3827280",
+    "external": "http://www.wikidata.org/entity/Q3827280",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3833781",
+    "external": "http://www.wikidata.org/entity/Q3833781",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3841643",
+    "external": "http://www.wikidata.org/entity/Q3841643",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q385186",
+    "external": "http://www.wikidata.org/entity/Q385186",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3870548",
+    "external": "http://www.wikidata.org/entity/Q3870548",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3870549",
+    "external": "http://www.wikidata.org/entity/Q3870549",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q387380",
+    "external": "http://www.wikidata.org/entity/Q387380",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3885347",
+    "external": "http://www.wikidata.org/entity/Q3885347",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q39086548",
+    "external": "http://www.wikidata.org/entity/Q39086548",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3910469",
+    "external": "http://www.wikidata.org/entity/Q3910469",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q3910470",
+    "external": "http://www.wikidata.org/entity/Q3910470",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q392586",
+    "external": "http://www.wikidata.org/entity/Q392586",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q393686",
+    "external": "http://www.wikidata.org/entity/Q393686",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q39384825",
+    "external": "http://www.wikidata.org/entity/Q39384825",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q39477935",
+    "external": "http://www.wikidata.org/entity/Q39477935",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q400007",
+    "external": "http://www.wikidata.org/entity/Q400007",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q40024",
+    "external": "http://www.wikidata.org/entity/Q40024",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4026808",
+    "external": "http://www.wikidata.org/entity/Q4026808",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q41254",
+    "external": "http://www.wikidata.org/entity/Q41254",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q41375",
+    "external": "http://www.wikidata.org/entity/Q41375",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q41417",
+    "external": "http://www.wikidata.org/entity/Q41417",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4167639",
+    "external": "http://www.wikidata.org/entity/Q4167639",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q41799198",
+    "external": "http://www.wikidata.org/entity/Q41799198",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4220898",
+    "external": "http://www.wikidata.org/entity/Q4220898",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4220900",
+    "external": "http://www.wikidata.org/entity/Q4220900",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4220901",
+    "external": "http://www.wikidata.org/entity/Q4220901",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q42307030",
+    "external": "http://www.wikidata.org/entity/Q42307030",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q42309226",
+    "external": "http://www.wikidata.org/entity/Q42309226",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q42852129",
+    "external": "http://www.wikidata.org/entity/Q42852129",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4287207",
+    "external": "http://www.wikidata.org/entity/Q4287207",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4287215",
+    "external": "http://www.wikidata.org/entity/Q4287215",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q428808",
+    "external": "http://www.wikidata.org/entity/Q428808",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q430910",
+    "external": "http://www.wikidata.org/entity/Q430910",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4463232",
+    "external": "http://www.wikidata.org/entity/Q4463232",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4506760",
+    "external": "http://www.wikidata.org/entity/Q4506760",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q452283",
+    "external": "http://www.wikidata.org/entity/Q452283",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4589995",
+    "external": "http://www.wikidata.org/entity/Q4589995",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q463085",
+    "external": "http://www.wikidata.org/entity/Q463085",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4649797",
+    "external": "http://www.wikidata.org/entity/Q4649797",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4649799",
+    "external": "http://www.wikidata.org/entity/Q4649799",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4649813",
+    "external": "http://www.wikidata.org/entity/Q4649813",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4649838",
+    "external": "http://www.wikidata.org/entity/Q4649838",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4743376",
+    "external": "http://www.wikidata.org/entity/Q4743376",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4745055",
+    "external": "http://www.wikidata.org/entity/Q4745055",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4769231",
+    "external": "http://www.wikidata.org/entity/Q4769231",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4769235",
+    "external": "http://www.wikidata.org/entity/Q4769235",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4769236",
+    "external": "http://www.wikidata.org/entity/Q4769236",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4792992",
+    "external": "http://www.wikidata.org/entity/Q4792992",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4796784",
+    "external": "http://www.wikidata.org/entity/Q4796784",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4806629",
+    "external": "http://www.wikidata.org/entity/Q4806629",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4823084",
+    "external": "http://www.wikidata.org/entity/Q4823084",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4824149",
+    "external": "http://www.wikidata.org/entity/Q4824149",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4824396",
+    "external": "http://www.wikidata.org/entity/Q4824396",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4834543",
+    "external": "http://www.wikidata.org/entity/Q4834543",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4834546",
+    "external": "http://www.wikidata.org/entity/Q4834546",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4835654",
+    "external": "http://www.wikidata.org/entity/Q4835654",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4836602",
+    "external": "http://www.wikidata.org/entity/Q4836602",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q483826",
+    "external": "http://www.wikidata.org/entity/Q483826",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q487136",
+    "external": "http://www.wikidata.org/entity/Q487136",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q48781665",
+    "external": "http://www.wikidata.org/entity/Q48781665",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q488645",
+    "external": "http://www.wikidata.org/entity/Q488645",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q488651",
+    "external": "http://www.wikidata.org/entity/Q488651",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q48961500",
+    "external": "http://www.wikidata.org/entity/Q48961500",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q48965436",
+    "external": "http://www.wikidata.org/entity/Q48965436",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q489713",
+    "external": "http://www.wikidata.org/entity/Q489713",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4921555",
+    "external": "http://www.wikidata.org/entity/Q4921555",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q496411",
+    "external": "http://www.wikidata.org/entity/Q496411",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4970084",
+    "external": "http://www.wikidata.org/entity/Q4970084",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q497324",
+    "external": "http://www.wikidata.org/entity/Q497324",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4986375",
+    "external": "http://www.wikidata.org/entity/Q4986375",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q4992254",
+    "external": "http://www.wikidata.org/entity/Q4992254",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q499789",
+    "external": "http://www.wikidata.org/entity/Q499789",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5020532",
+    "external": "http://www.wikidata.org/entity/Q5020532",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q503034",
+    "external": "http://www.wikidata.org/entity/Q503034",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q505449",
+    "external": "http://www.wikidata.org/entity/Q505449",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q506565",
+    "external": "http://www.wikidata.org/entity/Q506565",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q508166",
+    "external": "http://www.wikidata.org/entity/Q508166",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q510175",
+    "external": "http://www.wikidata.org/entity/Q510175",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5123741",
+    "external": "http://www.wikidata.org/entity/Q5123741",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q514445",
+    "external": "http://www.wikidata.org/entity/Q514445",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q51703129",
+    "external": "http://www.wikidata.org/entity/Q51703129",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q518675",
+    "external": "http://www.wikidata.org/entity/Q518675",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5186883",
+    "external": "http://www.wikidata.org/entity/Q5186883",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5211221",
+    "external": "http://www.wikidata.org/entity/Q5211221",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5211225",
+    "external": "http://www.wikidata.org/entity/Q5211225",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5211226",
+    "external": "http://www.wikidata.org/entity/Q5211226",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5211229",
+    "external": "http://www.wikidata.org/entity/Q5211229",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q52382875",
+    "external": "http://www.wikidata.org/entity/Q52382875",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q524516",
+    "external": "http://www.wikidata.org/entity/Q524516",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5261137",
+    "external": "http://www.wikidata.org/entity/Q5261137",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5280673",
+    "external": "http://www.wikidata.org/entity/Q5280673",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5280674",
+    "external": "http://www.wikidata.org/entity/Q5280674",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5280675",
+    "external": "http://www.wikidata.org/entity/Q5280675",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5280678",
+    "external": "http://www.wikidata.org/entity/Q5280678",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5282987",
+    "external": "http://www.wikidata.org/entity/Q5282987",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5295360",
+    "external": "http://www.wikidata.org/entity/Q5295360",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5297422",
+    "external": "http://www.wikidata.org/entity/Q5297422",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5305701",
+    "external": "http://www.wikidata.org/entity/Q5305701",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5305702",
+    "external": "http://www.wikidata.org/entity/Q5305702",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5305704",
+    "external": "http://www.wikidata.org/entity/Q5305704",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5305711",
+    "external": "http://www.wikidata.org/entity/Q5305711",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5305712",
+    "external": "http://www.wikidata.org/entity/Q5305712",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5305713",
+    "external": "http://www.wikidata.org/entity/Q5305713",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q530923",
+    "external": "http://www.wikidata.org/entity/Q530923",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5365910",
+    "external": "http://www.wikidata.org/entity/Q5365910",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q540977",
+    "external": "http://www.wikidata.org/entity/Q540977",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5412592",
+    "external": "http://www.wikidata.org/entity/Q5412592",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5412594",
+    "external": "http://www.wikidata.org/entity/Q5412594",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5461347",
+    "external": "http://www.wikidata.org/entity/Q5461347",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5461359",
+    "external": "http://www.wikidata.org/entity/Q5461359",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5480301",
+    "external": "http://www.wikidata.org/entity/Q5480301",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q548389",
+    "external": "http://www.wikidata.org/entity/Q548389",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5513593",
+    "external": "http://www.wikidata.org/entity/Q5513593",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5513594",
+    "external": "http://www.wikidata.org/entity/Q5513594",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q55137804",
+    "external": "http://www.wikidata.org/entity/Q55137804",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5530024",
+    "external": "http://www.wikidata.org/entity/Q5530024",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5569066",
+    "external": "http://www.wikidata.org/entity/Q5569066",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5569172",
+    "external": "http://www.wikidata.org/entity/Q5569172",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5569374",
+    "external": "http://www.wikidata.org/entity/Q5569374",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q55697",
+    "external": "http://www.wikidata.org/entity/Q55697",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5593771",
+    "external": "http://www.wikidata.org/entity/Q5593771",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5593890",
+    "external": "http://www.wikidata.org/entity/Q5593890",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q56085709",
+    "external": "http://www.wikidata.org/entity/Q56085709",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q56085715",
+    "external": "http://www.wikidata.org/entity/Q56085715",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q566905",
+    "external": "http://www.wikidata.org/entity/Q566905",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5781223",
+    "external": "http://www.wikidata.org/entity/Q5781223",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q580231",
+    "external": "http://www.wikidata.org/entity/Q580231",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q583972",
+    "external": "http://www.wikidata.org/entity/Q583972",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q586140",
+    "external": "http://www.wikidata.org/entity/Q586140",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q586356",
+    "external": "http://www.wikidata.org/entity/Q586356",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q5873868",
+    "external": "http://www.wikidata.org/entity/Q5873868",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q58838460",
+    "external": "http://www.wikidata.org/entity/Q58838460",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q593098",
+    "external": "http://www.wikidata.org/entity/Q593098",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q601549",
+    "external": "http://www.wikidata.org/entity/Q601549",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q602299",
+    "external": "http://www.wikidata.org/entity/Q602299",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q602866",
+    "external": "http://www.wikidata.org/entity/Q602866",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q604370",
+    "external": "http://www.wikidata.org/entity/Q604370",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q60658956",
+    "external": "http://www.wikidata.org/entity/Q60658956",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q60768236",
+    "external": "http://www.wikidata.org/entity/Q60768236",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q615682",
+    "external": "http://www.wikidata.org/entity/Q615682",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q624198",
+    "external": "http://www.wikidata.org/entity/Q624198",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q627778",
+    "external": "http://www.wikidata.org/entity/Q627778",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q630018",
+    "external": "http://www.wikidata.org/entity/Q630018",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q640353",
+    "external": "http://www.wikidata.org/entity/Q640353",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6404857",
+    "external": "http://www.wikidata.org/entity/Q6404857",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q641316",
+    "external": "http://www.wikidata.org/entity/Q641316",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6414195",
+    "external": "http://www.wikidata.org/entity/Q6414195",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q644077",
+    "external": "http://www.wikidata.org/entity/Q644077",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q64964808",
+    "external": "http://www.wikidata.org/entity/Q64964808",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6500761",
+    "external": "http://www.wikidata.org/entity/Q6500761",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6500762",
+    "external": "http://www.wikidata.org/entity/Q6500762",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6500767",
+    "external": "http://www.wikidata.org/entity/Q6500767",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6500772",
+    "external": "http://www.wikidata.org/entity/Q6500772",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6500777",
+    "external": "http://www.wikidata.org/entity/Q6500777",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q652644",
+    "external": "http://www.wikidata.org/entity/Q652644",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6542686",
+    "external": "http://www.wikidata.org/entity/Q6542686",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q654471",
+    "external": "http://www.wikidata.org/entity/Q654471",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q654620",
+    "external": "http://www.wikidata.org/entity/Q654620",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q670282",
+    "external": "http://www.wikidata.org/entity/Q670282",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6725875",
+    "external": "http://www.wikidata.org/entity/Q6725875",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q673229",
+    "external": "http://www.wikidata.org/entity/Q673229",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6805081",
+    "external": "http://www.wikidata.org/entity/Q6805081",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6805082",
+    "external": "http://www.wikidata.org/entity/Q6805082",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6837811",
+    "external": "http://www.wikidata.org/entity/Q6837811",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q684444",
+    "external": "http://www.wikidata.org/entity/Q684444",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q687123",
+    "external": "http://www.wikidata.org/entity/Q687123",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6952053",
+    "external": "http://www.wikidata.org/entity/Q6952053",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6952065",
+    "external": "http://www.wikidata.org/entity/Q6952065",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q696972",
+    "external": "http://www.wikidata.org/entity/Q696972",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q696998",
+    "external": "http://www.wikidata.org/entity/Q696998",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q6978541",
+    "external": "http://www.wikidata.org/entity/Q6978541",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q708135",
+    "external": "http://www.wikidata.org/entity/Q708135",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q708830",
+    "external": "http://www.wikidata.org/entity/Q708830",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q716909",
+    "external": "http://www.wikidata.org/entity/Q716909",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7182737",
+    "external": "http://www.wikidata.org/entity/Q7182737",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q720434",
+    "external": "http://www.wikidata.org/entity/Q720434",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q721743",
+    "external": "http://www.wikidata.org/entity/Q721743",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q723830",
+    "external": "http://www.wikidata.org/entity/Q723830",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7241175",
+    "external": "http://www.wikidata.org/entity/Q7241175",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7243506",
+    "external": "http://www.wikidata.org/entity/Q7243506",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7243512",
+    "external": "http://www.wikidata.org/entity/Q7243512",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q727282",
+    "external": "http://www.wikidata.org/entity/Q727282",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q727328",
+    "external": "http://www.wikidata.org/entity/Q727328",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q732997",
+    "external": "http://www.wikidata.org/entity/Q732997",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q734036",
+    "external": "http://www.wikidata.org/entity/Q734036",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q739633",
+    "external": "http://www.wikidata.org/entity/Q739633",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q739694",
+    "external": "http://www.wikidata.org/entity/Q739694",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7413655",
+    "external": "http://www.wikidata.org/entity/Q7413655",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q74267946",
+    "external": "http://www.wikidata.org/entity/Q74267946",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q747089",
+    "external": "http://www.wikidata.org/entity/Q747089",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7552552",
+    "external": "http://www.wikidata.org/entity/Q7552552",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7569444",
+    "external": "http://www.wikidata.org/entity/Q7569444",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7585305",
+    "external": "http://www.wikidata.org/entity/Q7585305",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7589628",
+    "external": "http://www.wikidata.org/entity/Q7589628",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q775086",
+    "external": "http://www.wikidata.org/entity/Q775086",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7758074",
+    "external": "http://www.wikidata.org/entity/Q7758074",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7781991",
+    "external": "http://www.wikidata.org/entity/Q7781991",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q778870",
+    "external": "http://www.wikidata.org/entity/Q778870",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7821798",
+    "external": "http://www.wikidata.org/entity/Q7821798",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7826367",
+    "external": "http://www.wikidata.org/entity/Q7826367",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7866353",
+    "external": "http://www.wikidata.org/entity/Q7866353",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q787123",
+    "external": "http://www.wikidata.org/entity/Q787123",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q787127",
+    "external": "http://www.wikidata.org/entity/Q787127",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q787131",
+    "external": "http://www.wikidata.org/entity/Q787131",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q787148",
+    "external": "http://www.wikidata.org/entity/Q787148",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7914165",
+    "external": "http://www.wikidata.org/entity/Q7914165",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q793585",
+    "external": "http://www.wikidata.org/entity/Q793585",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q7971821",
+    "external": "http://www.wikidata.org/entity/Q7971821",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q8025998",
+    "external": "http://www.wikidata.org/entity/Q8025998",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q8035829",
+    "external": "http://www.wikidata.org/entity/Q8035829",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q8038186",
+    "external": "http://www.wikidata.org/entity/Q8038186",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q8038458",
+    "external": "http://www.wikidata.org/entity/Q8038458",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q80482724",
+    "external": "http://www.wikidata.org/entity/Q80482724",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q81180",
+    "external": "http://www.wikidata.org/entity/Q81180",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q812332",
+    "external": "http://www.wikidata.org/entity/Q812332",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q819973",
+    "external": "http://www.wikidata.org/entity/Q819973",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q821717",
+    "external": "http://www.wikidata.org/entity/Q821717",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q822907",
+    "external": "http://www.wikidata.org/entity/Q822907",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q828289",
+    "external": "http://www.wikidata.org/entity/Q828289",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q830079",
+    "external": "http://www.wikidata.org/entity/Q830079",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q833154",
+    "external": "http://www.wikidata.org/entity/Q833154",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q833163",
+    "external": "http://www.wikidata.org/entity/Q833163",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q844273",
+    "external": "http://www.wikidata.org/entity/Q844273",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q849124",
+    "external": "http://www.wikidata.org/entity/Q849124",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q849771",
+    "external": "http://www.wikidata.org/entity/Q849771",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q85196003",
+    "external": "http://www.wikidata.org/entity/Q85196003",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q85196951",
+    "external": "http://www.wikidata.org/entity/Q85196951",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q852071",
+    "external": "http://www.wikidata.org/entity/Q852071",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q857933",
+    "external": "http://www.wikidata.org/entity/Q857933",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q878902",
+    "external": "http://www.wikidata.org/entity/Q878902",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q889837",
+    "external": "http://www.wikidata.org/entity/Q889837",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q894588",
+    "external": "http://www.wikidata.org/entity/Q894588",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q894591",
+    "external": "http://www.wikidata.org/entity/Q894591",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q894592",
+    "external": "http://www.wikidata.org/entity/Q894592",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q894596",
+    "external": "http://www.wikidata.org/entity/Q894596",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q898527",
+    "external": "http://www.wikidata.org/entity/Q898527",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q906455",
+    "external": "http://www.wikidata.org/entity/Q906455",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q908858",
+    "external": "http://www.wikidata.org/entity/Q908858",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q911797",
+    "external": "http://www.wikidata.org/entity/Q911797",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q918660",
+    "external": "http://www.wikidata.org/entity/Q918660",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q919525",
+    "external": "http://www.wikidata.org/entity/Q919525",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q922263",
+    "external": "http://www.wikidata.org/entity/Q922263",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q922322",
+    "external": "http://www.wikidata.org/entity/Q922322",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q922348",
+    "external": "http://www.wikidata.org/entity/Q922348",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q922357",
+    "external": "http://www.wikidata.org/entity/Q922357",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q922396",
+    "external": "http://www.wikidata.org/entity/Q922396",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q923408",
+    "external": "http://www.wikidata.org/entity/Q923408",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q9264144",
+    "external": "http://www.wikidata.org/entity/Q9264144",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q932281",
+    "external": "http://www.wikidata.org/entity/Q932281",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q935843",
+    "external": "http://www.wikidata.org/entity/Q935843",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q943908",
+    "external": "http://www.wikidata.org/entity/Q943908",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q945887",
+    "external": "http://www.wikidata.org/entity/Q945887",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q952914",
+    "external": "http://www.wikidata.org/entity/Q952914",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q960966",
+    "external": "http://www.wikidata.org/entity/Q960966",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q9678710",
+    "external": "http://www.wikidata.org/entity/Q9678710",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q9680541",
+    "external": "http://www.wikidata.org/entity/Q9680541",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q9682417",
+    "external": "http://www.wikidata.org/entity/Q9682417",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q97274487",
+    "external": "http://www.wikidata.org/entity/Q97274487",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q973177",
+    "external": "http://www.wikidata.org/entity/Q973177",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q973829",
+    "external": "http://www.wikidata.org/entity/Q973829",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q97474308",
+    "external": "http://www.wikidata.org/entity/Q97474308",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q977915",
+    "external": "http://www.wikidata.org/entity/Q977915",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q978420",
+    "external": "http://www.wikidata.org/entity/Q978420",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q981030",
+    "external": "http://www.wikidata.org/entity/Q981030",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q989439",
+    "external": "http://www.wikidata.org/entity/Q989439",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q989442",
+    "external": "http://www.wikidata.org/entity/Q989442",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q989445",
+    "external": "http://www.wikidata.org/entity/Q989445",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q989447",
+    "external": "http://www.wikidata.org/entity/Q989447",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q989449",
+    "external": "http://www.wikidata.org/entity/Q989449",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q989453",
+    "external": "http://www.wikidata.org/entity/Q989453",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/award-Q99212276",
+    "external": "http://www.wikidata.org/entity/Q99212276",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q1188938",
+    "external": "http://www.wikidata.org/entity/Q1188938",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q126399",
+    "external": "http://www.wikidata.org/entity/Q126399",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q159846",
+    "external": "http://www.wikidata.org/entity/Q159846",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q168383",
+    "external": "http://www.wikidata.org/entity/Q168383",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q16984664",
+    "external": "http://www.wikidata.org/entity/Q16984664",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q1706678",
+    "external": "http://www.wikidata.org/entity/Q1706678",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q17305146",
+    "external": "http://www.wikidata.org/entity/Q17305146",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q182950",
+    "external": "http://www.wikidata.org/entity/Q182950",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q186941",
+    "external": "http://www.wikidata.org/entity/Q186941",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q192557",
+    "external": "http://www.wikidata.org/entity/Q192557",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q20714622",
+    "external": "http://www.wikidata.org/entity/Q20714622",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q21116815",
+    "external": "http://www.wikidata.org/entity/Q21116815",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q2450848",
+    "external": "http://www.wikidata.org/entity/Q2450848",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q260528",
+    "external": "http://www.wikidata.org/entity/Q260528",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q27646824",
+    "external": "http://www.wikidata.org/entity/Q27646824",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q28044838",
+    "external": "http://www.wikidata.org/entity/Q28044838",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q28044841",
+    "external": "http://www.wikidata.org/entity/Q28044841",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q28044843",
+    "external": "http://www.wikidata.org/entity/Q28044843",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q2924461",
+    "external": "http://www.wikidata.org/entity/Q2924461",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q29836837",
+    "external": "http://www.wikidata.org/entity/Q29836837",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q300323",
+    "external": "http://www.wikidata.org/entity/Q300323",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q3177524",
+    "external": "http://www.wikidata.org/entity/Q3177524",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q3476213",
+    "external": "http://www.wikidata.org/entity/Q3476213",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q3569323",
+    "external": "http://www.wikidata.org/entity/Q3569323",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q3875639",
+    "external": "http://www.wikidata.org/entity/Q3875639",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q3980774",
+    "external": "http://www.wikidata.org/entity/Q3980774",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q434841",
+    "external": "http://www.wikidata.org/entity/Q434841",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q457893",
+    "external": "http://www.wikidata.org/entity/Q457893",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q465449",
+    "external": "http://www.wikidata.org/entity/Q465449",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q466459",
+    "external": "http://www.wikidata.org/entity/Q466459",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q497155",
+    "external": "http://www.wikidata.org/entity/Q497155",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q5012265",
+    "external": "http://www.wikidata.org/entity/Q5012265",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q515869",
+    "external": "http://www.wikidata.org/entity/Q515869",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q621364",
+    "external": "http://www.wikidata.org/entity/Q621364",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q622668",
+    "external": "http://www.wikidata.org/entity/Q622668",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q622848",
+    "external": "http://www.wikidata.org/entity/Q622848",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q632323",
+    "external": "http://www.wikidata.org/entity/Q632323",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q655067",
+    "external": "http://www.wikidata.org/entity/Q655067",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q775450",
+    "external": "http://www.wikidata.org/entity/Q775450",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q79202",
+    "external": "http://www.wikidata.org/entity/Q79202",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q8016302",
+    "external": "http://www.wikidata.org/entity/Q8016302",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q86110392",
+    "external": "http://www.wikidata.org/entity/Q86110392",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q891732",
+    "external": "http://www.wikidata.org/entity/Q891732",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q951774",
+    "external": "http://www.wikidata.org/entity/Q951774",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/company-Q984047",
+    "external": "http://www.wikidata.org/entity/Q984047",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/country-Q142",
     "external": "http://www.wikidata.org/entity/Q142",
     "method": "exact Wikidata QID from source claim"
@@ -965,6 +4550,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1176945",
+    "external": "http://www.wikidata.org/entity/Q1176945",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1177114",
     "external": "http://www.wikidata.org/entity/Q1177114",
     "method": "exact Wikidata QID from source claim"
@@ -1030,6 +4620,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1252563",
+    "external": "http://www.wikidata.org/entity/Q1252563",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1254992",
     "external": "http://www.wikidata.org/entity/Q1254992",
     "method": "exact Wikidata QID from source claim"
@@ -1060,6 +4655,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1293513",
+    "external": "http://www.wikidata.org/entity/Q1293513",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q129817",
     "external": "http://www.wikidata.org/entity/Q129817",
     "method": "exact Wikidata QID from source claim"
@@ -1085,6 +4685,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q132451",
+    "external": "http://www.wikidata.org/entity/Q132451",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1332872",
     "external": "http://www.wikidata.org/entity/Q1332872",
     "method": "exact Wikidata QID from source claim"
@@ -1107,6 +4712,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q134317151",
     "external": "http://www.wikidata.org/entity/Q134317151",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q13449900",
+    "external": "http://www.wikidata.org/entity/Q13449900",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -1172,6 +4782,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1375689",
     "external": "http://www.wikidata.org/entity/Q1375689",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1385337",
+    "external": "http://www.wikidata.org/entity/Q1385337",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -1265,6 +4880,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1537983",
+    "external": "http://www.wikidata.org/entity/Q1537983",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1563838",
     "external": "http://www.wikidata.org/entity/Q1563838",
     "method": "exact Wikidata QID from source claim"
@@ -1332,6 +4952,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q16104953",
     "external": "http://www.wikidata.org/entity/Q16104953",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q1611265",
+    "external": "http://www.wikidata.org/entity/Q1611265",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -1685,8 +5310,18 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q19955710",
+    "external": "http://www.wikidata.org/entity/Q19955710",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q19956031",
     "external": "http://www.wikidata.org/entity/Q19956031",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q19956396",
+    "external": "http://www.wikidata.org/entity/Q19956396",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -1787,6 +5422,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q208026",
     "external": "http://www.wikidata.org/entity/Q208026",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q20873879",
+    "external": "http://www.wikidata.org/entity/Q20873879",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -1915,6 +5555,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q22676727",
+    "external": "http://www.wikidata.org/entity/Q22676727",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q22680663",
     "external": "http://www.wikidata.org/entity/Q22680663",
     "method": "exact Wikidata QID from source claim"
@@ -1990,6 +5635,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q2347318",
+    "external": "http://www.wikidata.org/entity/Q2347318",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q235115",
     "external": "http://www.wikidata.org/entity/Q235115",
     "method": "exact Wikidata QID from source claim"
@@ -2020,6 +5670,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q237207",
+    "external": "http://www.wikidata.org/entity/Q237207",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q238483",
     "external": "http://www.wikidata.org/entity/Q238483",
     "method": "exact Wikidata QID from source claim"
@@ -2042,6 +5697,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q23926673",
     "external": "http://www.wikidata.org/entity/Q23926673",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q2396324",
+    "external": "http://www.wikidata.org/entity/Q2396324",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -2077,6 +5737,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q2426862",
     "external": "http://www.wikidata.org/entity/Q2426862",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q242951",
+    "external": "http://www.wikidata.org/entity/Q242951",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -2232,6 +5897,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q267330",
     "external": "http://www.wikidata.org/entity/Q267330",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q2675693",
+    "external": "http://www.wikidata.org/entity/Q2675693",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -2690,6 +6360,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q2740357",
+    "external": "http://www.wikidata.org/entity/Q2740357",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q274836",
     "external": "http://www.wikidata.org/entity/Q274836",
     "method": "exact Wikidata QID from source claim"
@@ -2735,6 +6410,21 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q28044847",
+    "external": "http://www.wikidata.org/entity/Q28044847",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q280490",
+    "external": "http://www.wikidata.org/entity/Q280490",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q2820085",
+    "external": "http://www.wikidata.org/entity/Q2820085",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q2825721",
     "external": "http://www.wikidata.org/entity/Q2825721",
     "method": "exact Wikidata QID from source claim"
@@ -2765,8 +6455,18 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q28531045",
+    "external": "http://www.wikidata.org/entity/Q28531045",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q28542230",
     "external": "http://www.wikidata.org/entity/Q28542230",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q28542755",
+    "external": "http://www.wikidata.org/entity/Q28542755",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -3230,6 +6930,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q350422",
+    "external": "http://www.wikidata.org/entity/Q350422",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q3507348",
     "external": "http://www.wikidata.org/entity/Q3507348",
     "method": "exact Wikidata QID from source claim"
@@ -3302,6 +7007,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q361215",
     "external": "http://www.wikidata.org/entity/Q361215",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q361443",
+    "external": "http://www.wikidata.org/entity/Q361443",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -3412,6 +7122,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q379830",
     "external": "http://www.wikidata.org/entity/Q379830",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q3808035",
+    "external": "http://www.wikidata.org/entity/Q3808035",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -3705,6 +7420,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q459177",
+    "external": "http://www.wikidata.org/entity/Q459177",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q45923",
     "external": "http://www.wikidata.org/entity/Q45923",
     "method": "exact Wikidata QID from source claim"
@@ -3930,6 +7650,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q5081233",
+    "external": "http://www.wikidata.org/entity/Q5081233",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q509013",
     "external": "http://www.wikidata.org/entity/Q509013",
     "method": "exact Wikidata QID from source claim"
@@ -4002,6 +7727,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q519949",
     "external": "http://www.wikidata.org/entity/Q519949",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q521038",
+    "external": "http://www.wikidata.org/entity/Q521038",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4080,6 +7810,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q539718",
+    "external": "http://www.wikidata.org/entity/Q539718",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q544038",
     "external": "http://www.wikidata.org/entity/Q544038",
     "method": "exact Wikidata QID from source claim"
@@ -4102,6 +7837,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q551558",
     "external": "http://www.wikidata.org/entity/Q551558",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q5525133",
+    "external": "http://www.wikidata.org/entity/Q5525133",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4290,6 +8030,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q656655",
+    "external": "http://www.wikidata.org/entity/Q656655",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q658614",
     "external": "http://www.wikidata.org/entity/Q658614",
     "method": "exact Wikidata QID from source claim"
@@ -4307,6 +8052,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q674451",
     "external": "http://www.wikidata.org/entity/Q674451",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q6755521",
+    "external": "http://www.wikidata.org/entity/Q6755521",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4330,8 +8080,18 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q695608",
+    "external": "http://www.wikidata.org/entity/Q695608",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q696055",
     "external": "http://www.wikidata.org/entity/Q696055",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q7034951",
+    "external": "http://www.wikidata.org/entity/Q7034951",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4347,6 +8107,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q7050088",
     "external": "http://www.wikidata.org/entity/Q7050088",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q705631",
+    "external": "http://www.wikidata.org/entity/Q705631",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4377,6 +8142,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q711941",
     "external": "http://www.wikidata.org/entity/Q711941",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q713511",
+    "external": "http://www.wikidata.org/entity/Q713511",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4470,6 +8240,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q7363558",
+    "external": "http://www.wikidata.org/entity/Q7363558",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q737369",
     "external": "http://www.wikidata.org/entity/Q737369",
     "method": "exact Wikidata QID from source claim"
@@ -4482,6 +8257,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q741555",
     "external": "http://www.wikidata.org/entity/Q741555",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q7482626",
+    "external": "http://www.wikidata.org/entity/Q7482626",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4502,6 +8282,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q7647898",
     "external": "http://www.wikidata.org/entity/Q7647898",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q7650980",
+    "external": "http://www.wikidata.org/entity/Q7650980",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4547,6 +8332,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q8029127",
     "external": "http://www.wikidata.org/entity/Q8029127",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q808917",
+    "external": "http://www.wikidata.org/entity/Q808917",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4597,6 +8387,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q83694",
     "external": "http://www.wikidata.org/entity/Q83694",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q83945397",
+    "external": "http://www.wikidata.org/entity/Q83945397",
     "method": "exact Wikidata QID from source claim"
   },
   {
@@ -4745,6 +8540,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q950428",
+    "external": "http://www.wikidata.org/entity/Q950428",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q95043",
     "external": "http://www.wikidata.org/entity/Q95043",
     "method": "exact Wikidata QID from source claim"
@@ -4770,6 +8570,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q9545711",
+    "external": "http://www.wikidata.org/entity/Q9545711",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q95580",
     "external": "http://www.wikidata.org/entity/Q95580",
     "method": "exact Wikidata QID from source claim"
@@ -4785,6 +8590,11 @@
     "method": "exact Wikidata QID from source claim"
   },
   {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q95817606",
+    "external": "http://www.wikidata.org/entity/Q95817606",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q9582",
     "external": "http://www.wikidata.org/entity/Q9582",
     "method": "exact Wikidata QID from source claim"
@@ -4792,6 +8602,11 @@
   {
     "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q960676",
     "external": "http://www.wikidata.org/entity/Q960676",
+    "method": "exact Wikidata QID from source claim"
+  },
+  {
+    "local": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q961183",
+    "external": "http://www.wikidata.org/entity/Q961183",
     "method": "exact Wikidata QID from source claim"
   },
   {

@@ -1,6 +1,18 @@
 [
   {
+    "entity": "Q24930544",
+    "reason": "missing English label; omitted"
+  },
+  {
     "entity": "Q2680",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q24930544",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q24930544",
     "reason": "missing English label; omitted"
   },
   {
@@ -46,6 +58,30 @@
     "reason": "missing English label; omitted"
   },
   {
+    "entity": "Q6708571",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q25021464",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q140460577",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q140460577",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q65557474",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q12638022",
+    "reason": "missing English label; omitted"
+  },
+  {
     "film": "The Godfather Part II",
     "reason": "multiple runtimes; first non-deprecated/preferred claim retained",
     "values": [
@@ -66,7 +102,23 @@
     ]
   },
   {
+    "entity": "Q41043454",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q65557474",
+    "reason": "missing English label; omitted"
+  },
+  {
     "entity": "Q147077",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q65557474",
+    "reason": "missing English label; omitted"
+  },
+  {
+    "entity": "Q65557474",
     "reason": "missing English label; omitted"
   },
   {
@@ -78,11 +130,15 @@
     "reason": "missing English label; omitted"
   },
   {
+    "entity": "Q65557474",
+    "reason": "missing English label; omitted"
+  },
+  {
     "entity": "Q129591",
     "reason": "missing English label; omitted"
   },
   {
-    "entity": "Q9545711",
+    "entity": "Q65557474",
     "reason": "missing English label; omitted"
   },
   {

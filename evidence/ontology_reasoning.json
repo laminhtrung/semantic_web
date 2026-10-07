@@ -1,27 +1,59 @@
 {
-  "method": "owlrl OWL RL/RDF rule closure; not a complete OWL DL consistency proof",
+  "method": "owlrl OWL RL/RDF rule closure for RL_DEFINED; direct SPARQL aggregate materialization for CARDINALITY_DEFINED (N>=2 qualified cardinality is outside the OWL RL profile); not a complete OWL DL consistency proof",
+  "rl_defined": [
+    "ActingContribution",
+    "DirectingContribution",
+    "WritingContribution",
+    "ProducingContribution",
+    "Actor",
+    "Filmmaker",
+    "AwardWinner",
+    "ActionFilm",
+    "ComedyFilm",
+    "DramaFilm",
+    "ScienceFictionFilm",
+    "AwardWinningFilm"
+  ],
+  "cardinality_defined": [
+    "MultiGenreFilm",
+    "FilmStudio"
+  ],
   "asserted_counts": {
-    "Director": 0,
+    "ActingContribution": 0,
+    "DirectingContribution": 0,
+    "WritingContribution": 0,
+    "ProducingContribution": 0,
     "Actor": 0,
-    "Screenwriter": 0,
-    "FilmContributor": 0,
-    "DirectorWriter": 0,
-    "CreditedFilm": 0
+    "Filmmaker": 0,
+    "AwardWinner": 0,
+    "ActionFilm": 0,
+    "ComedyFilm": 0,
+    "DramaFilm": 0,
+    "ScienceFictionFilm": 0,
+    "AwardWinningFilm": 0,
+    "MultiGenreFilm": 0,
+    "FilmStudio": 0
   },
   "inferred_counts": {
-    "Director": 16,
+    "ActingContribution": 855,
+    "DirectingContribution": 31,
+    "WritingContribution": 51,
+    "ProducingContribution": 73,
     "Actor": 769,
-    "Screenwriter": 34,
-    "FilmContributor": 805,
-    "DirectorWriter": 10,
-    "CreditedFilm": 30
+    "Filmmaker": 89,
+    "AwardWinner": 290,
+    "ActionFilm": 12,
+    "ComedyFilm": 4,
+    "DramaFilm": 25,
+    "ScienceFictionFilm": 6,
+    "AwardWinningFilm": 26,
+    "MultiGenreFilm": 30,
+    "FilmStudio": 6
   },
   "count_scope": "Local resource IRIs only; external sameAs aliases excluded",
   "nolan_inferred_classes": [
-    "Director",
-    "Screenwriter",
-    "FilmContributor",
-    "DirectorWriter"
+    "Filmmaker",
+    "AwardWinner"
   ],
   "detected_errors": []
 }

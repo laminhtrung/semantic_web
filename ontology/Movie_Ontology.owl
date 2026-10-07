@@ -5,134 +5,344 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasGenre">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasAward">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">Has genre</rdfs:label>
-    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
+    <rdfs:label xml:lang="en">Has award</rdfs:label>
+    <rdfs:domain rdf:nodeID="N3830102020ae44919169e68cc1f5cb4d"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N373a3e3b9f044eab84ef87e78abc2703">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#actedIn"/>
-    <owl:someValuesFrom rdf:resource="http://dbpedia.org/ontology/Film"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectorRole">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProducerRole">
     <rdf:type rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">Director</rdfs:label>
+    <rdfs:label xml:lang="en">Producer</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Genre</rdfs:label>
-    <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Genre"/>
-    <owl:disjointWith rdf:resource="http://dbpedia.org/ontology/Country"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
-    <rdfs:comment xml:lang="en">A category used to describe a film genre.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Dataset</rdfs:label>
-    <owl:equivalentClass rdf:resource="http://rdfs.org/ns/void#Dataset"/>
-    <rdfs:comment xml:lang="en">The published collection of movie data, aligned with void:Dataset.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N02fa16bfc3f84412bed9b99842c7140d">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#directed"/>
-    <owl:someValuesFrom rdf:resource="http://dbpedia.org/ontology/Film"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectorWriter">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Director and writer</rdfs:label>
-    <rdfs:comment xml:lang="en">A person who has both directed a film and written a film; these may be different films.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <owl:equivalentClass rdf:nodeID="N80e176c8c2534eb88e769a4940048755"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Contribution role</rdfs:label>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
-    <rdfs:comment xml:lang="en">A contribution role such as director, actor or writer; not a person.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nebb4e7464d3044e0b5429bd34f4cb575">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
-    <rdf:rest rdf:nodeID="N67f5c14f17594c7f8c80f44eb6aeae8f"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd72460e5c0e64666a28d3ec4565fca22">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="N0ac3340ea7fd4c378f076ea076c522d9"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na1937243ccbb497b9572c2327080dc38">
-    <rdf:first rdf:nodeID="N373a3e3b9f044eab84ef87e78abc2703"/>
+  <rdf:Description rdf:nodeID="N2e4c30c933c44f28bd0ee3ab36491f15">
+    <rdf:first rdf:nodeID="N285b11bba1a747ebabdc898722df6a22"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N40359f50845846838ac6afd570afdde0">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#sha256">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nae5c9b110ae94cc482346793b99713ae">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N079a82378528460691240465a1c38f1b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N980177e83ba848769029ea7f9b63bdfe"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naa241f481fd04ba8a9bba24525de457c">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#inFilm"/>
-    <owl:onClass rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasGenre"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActionGenre"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WriterRole">
     <rdf:type rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdfs:label xml:lang="en">Writer</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na49bebd0aa6c485aaf757e36226c61fe">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="Nd9d1cf2271114129807adad8425c3b17"/>
+  <rdf:Description rdf:nodeID="N48f805b1a6eb410bbf3d77b2644c2e13">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:rest rdf:nodeID="N3a2aba1cf83844879551aa78834b0925"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Director">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FilmStudio">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Director</rdfs:label>
-    <rdfs:comment xml:lang="en">A person who has directed at least one film in this model.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <owl:equivalentClass rdf:nodeID="N77992c6cfb7848e4ad1303a05182b2f7"/>
+    <rdfs:label xml:lang="en">Film studio</rdfs:label>
+    <rdfs:comment xml:lang="en">A production company credited on at least three films in this dataset.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProductionCompany"/>
+    <owl:equivalentClass rdf:nodeID="Ne31ae154226b439e91aedaeeb17651c8"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N7b510290a1874339b7faba22407ab57e">
-    <rdf:first rdf:nodeID="N806c76d5ca1f4ecda3523fa8d23c2737"/>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#sourceSnapshot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Source snapshot</rdfs:label>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3830102020ae44919169e68cc1f5cb4d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="Nc5a3505a7f7a40eeb7dac04f92ff9e9d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#directed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Directed</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActionGenre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Action genre</rdfs:label>
+    <rdfs:comment xml:lang="en">A genre whose Wikidata label contains "action".</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FictionGenre"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne70b44b10d124085b957c456ddbf7c47">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasContribution"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectingContribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#AnimatedFilm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Animated film</rdfs:label>
+    <rdfs:comment xml:lang="en">A film whose P31 instance-of is an animation kind (e.g. wd:Q20650540 anime film).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncc21e18a62564e1789729be8cc7e14ba">
+    <rdf:first rdf:nodeID="N1cafd799ce5846ccb258dc0f5d8d8a11"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbb771dbd2e7a49e393fceb268e2858d1">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#role"/>
-    <owl:allValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#contributionTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="en">Contribution to</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8b060b7bc1184eafb4a2972fd65e87bb">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <rdf:rest rdf:nodeID="N654afc33b60341dd9c2246ec8116d036"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbpedia.org/ontology/Person">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Person</rdfs:label>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
-    <owl:disjointWith rdf:resource="http://dbpedia.org/ontology/Country"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
     <rdfs:comment xml:lang="en">A human who may hold several film contribution roles.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Agent"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#actedIn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">Acted in</rdfs:label>
-    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProducingContribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Producing contribution</rdfs:label>
+    <rdfs:comment xml:lang="en">A contribution whose role is ex:ProducerRole.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <owl:equivalentClass rdf:nodeID="N1bbcdfaa012345e1906465c1aa50c187"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#country">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">Production country</rdfs:label>
-    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#CreativeWork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Creative work</rdfs:label>
+    <rdfs:comment xml:lang="en">A named work of authorship; the top-level branch for films.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfd86308a0ed7453e8b031fd607931923">
+  <rdf:Description rdf:nodeID="N3a2aba1cf83844879551aa78834b0925">
+    <rdf:first rdf:nodeID="Naa241f481fd04ba8a9bba24525de457c"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec21cb705db54d4ab939e644ffc46f58">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nd2c58a1fc5dd4f84ad77161ebfddf0cb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd1ae3d01bd6148c0a19a6a56fe3d1e58">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#inFilm"/>
-    <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasRole"/>
+    <owl:hasValue rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WriterRole"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8cc84780d25a4353bda8b9054015c317">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
-    <rdf:rest rdf:nodeID="N582cb547f9ae4cd0b7d1724cb39a30fd"/>
+  <rdf:Description rdf:nodeID="N543e0eb442424256b946e11da5836896">
+    <rdf:first rdf:nodeID="N530fc763854749ad9b4f7f4a6740036e"/>
+    <rdf:rest rdf:nodeID="N2e4c30c933c44f28bd0ee3ab36491f15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#AwardWinner">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Award winner</rdfs:label>
+    <rdfs:comment xml:lang="en">A person who has received at least one award.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:equivalentClass rdf:nodeID="N829fd8ea9eea4daabd13ce17fb5bed08"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6aa858f557a445a5b7e313c8049cfbc6">
+    <rdf:first rdf:nodeID="N737c0c2d7e6c4f94975f739bfc97f2cd"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#MultiGenreFilm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Multi-genre film</rdfs:label>
+    <rdfs:comment xml:lang="en">A film tagged with at least two distinct genres.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:equivalentClass rdf:nodeID="N2a560fbf3f8b4371a5d9ea712676ad54"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActingContribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Acting contribution</rdfs:label>
+    <rdfs:comment xml:lang="en">A contribution whose role is ex:ActorRole.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <owl:equivalentClass rdf:nodeID="Nec21cb705db54d4ab939e644ffc46f58"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#roleOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Role of</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfc90c0a93eb04f44a510eeabe788c88c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N9a9cd7986545487ba47060e77280b6df"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#AwardWinningFilm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Award-winning film</rdfs:label>
+    <rdfs:comment xml:lang="en">A film that has received at least one award.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:equivalentClass rdf:nodeID="N4161996591274b2d86466eab833927d6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5fd343eac67f4275ae30756037d3f4e4">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:rest rdf:nodeID="N2aeca8c6ef13478b82e1f024c8a2375e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ScienceFictionFilm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Science fiction film</rdfs:label>
+    <rdfs:comment xml:lang="en">A film that has at least one science fiction genre.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:equivalentClass rdf:nodeID="N7e2862351a6e43ee90b9030918de1fd1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb7f18107ac345998a3a8ba8adbebfc0">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:rest rdf:nodeID="N6aa858f557a445a5b7e313c8049cfbc6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6cc94beeb7cd4a81ba1d6b005d57301f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasContribution"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActingContribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5483523c8d0941a7808731390dbdcbaf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasGenre"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DramaGenre"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndfe6b370bc554393bfc9e82dba89bf45">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasRole"/>
+    <owl:hasValue rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProducerRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9d6a2cccc4074084acac557a46da6023">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasRole"/>
+    <owl:hasValue rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectorRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WritingAward">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Writing award</rdfs:label>
+    <rdfs:comment xml:lang="en">An award category for screenwriting (label contains "screenplay"/"writing").</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WritingContribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Writing contribution</rdfs:label>
+    <rdfs:comment xml:lang="en">A contribution whose role is ex:WriterRole.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <owl:equivalentClass rdf:nodeID="N079a82378528460691240465a1c38f1b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Filmmaker">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Filmmaker</rdfs:label>
+    <rdfs:comment xml:lang="en">A person who directed, wrote or produced at least one film.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:equivalentClass rdf:nodeID="N52a0f38c63164b40afdcd7e8122ac447"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#productionOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Production of</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProductionCompany"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasProductionCompany"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Original language</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FeatureFilm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Feature film</rdfs:label>
+    <rdfs:comment xml:lang="en">A theatrically released narrative film; asserted for wd:Q11424 instances in this sample.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/Film">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Film</rdfs:label>
+    <rdfs:comment xml:lang="en">A film work, distinct from people, organizations and metadata records.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#CreativeWork"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec521a220f644130a3657ba433ca1de5">
+    <rdf:first rdf:nodeID="N2155fb5eca744ff3af3241c58765c961"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">MovieLOD — movie ontology</rdfs:label>
+    <owl:versionInfo>2.0.0</owl:versionInfo>
+    <dct:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd02433546821490e9660e009e187b4f9">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdf:rest rdf:nodeID="Ne239453e33e64eb3a9b43a47dfa6e185"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9a9cd7986545487ba47060e77280b6df">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdf:rest rdf:nodeID="Nf78906bfec9343e1a9a3d003fa19b9fe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#contributionBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="en">Contribution by</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasContribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#genreOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Genre of</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasGenre"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne239453e33e64eb3a9b43a47dfa6e185">
+    <rdf:first rdf:nodeID="Nadef421749524edcbb850ac3e38de2f8"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6fc8f40206be42ed8fc82230fa12fcb0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasRole"/>
+    <owl:onClass rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N641f83ab0e1e4eafa7782ca98c420aeb">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:rest rdf:nodeID="Nc0a6fac38eb3489d9d9dd69a2e230d1e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N72b06458ddf1481186ece7f21a2e48d5">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
+    <rdf:rest rdf:nodeID="N7d036fd3950a44008abff87520cdfe16"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6088fd33e066454bbe41553b3087ec18">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:rest rdf:nodeID="N0bb6eb4033b34dba856113e35f0dfa5f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ScienceFictionGenre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Science fiction genre</rdfs:label>
+    <rdfs:comment xml:lang="en">A genre whose Wikidata label contains "science fiction".</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FictionGenre"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbdcc917b04064053988a0eee068935eb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N48f805b1a6eb410bbf3d77b2644c2e13"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7e2862351a6e43ee90b9030918de1fd1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nb7603c31ce1f468a81dd6642e51bb71f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#sourceUrl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N737c0c2d7e6c4f94975f739bfc97f2cd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasGenre"/>
+    <owl:onClass rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N47948e17b677433ab559a1ee29d04685">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasAward"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbpedia.org/ontology/director">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -145,103 +355,57 @@
     <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#role">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:label xml:lang="en">Role</rdfs:label>
-    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
-    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActorRole">
-    <rdf:type rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-    <rdfs:label xml:lang="en">Actor</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N13594e153a054a99843c1c8e7eeee6e5">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#CreditedFilm">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Film with a credit</rdfs:label>
-    <rdfs:comment xml:lang="en">A film linked to at least one contribution record; this does not require complete credits.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <owl:equivalentClass rdf:nodeID="Nd72460e5c0e64666a28d3ec4565fca22"/>
+    <rdfs:label xml:lang="en">Genre</rdfs:label>
+    <rdfs:comment xml:lang="en">A category used to describe a film genre.</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Genre"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/ontology/starring">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#actedIn"/>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <rdfs:comment xml:lang="en">A company able to produce films.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Agent"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#sourceUrl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5b49e7a50820444190e7b4879aba7fe9">
-    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <rdf:rest rdf:nodeID="N0cf777830e8a41229cd1d80b192ec99e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N806c76d5ca1f4ecda3523fa8d23c2737">
+  <rdf:Description rdf:nodeID="N708eecb0890b444795d86c0cd6b5ccdd">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#wrote"/>
-    <owl:someValuesFrom rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasGenre"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ComedyGenre"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N21b322025ab243f4911567ffacbdc1d7">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActorRole"/>
-    <rdf:rest rdf:nodeID="Nd6cf926d1e43472eaed220d59fe4c236"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0fc39e2866664502b4921178aac6c2c3">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectorRole"/>
-    <rdf:rest rdf:nodeID="N21b322025ab243f4911567ffacbdc1d7"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/ontology/Country">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Country</rdfs:label>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
-    <rdfs:comment xml:lang="en">A country associated with film production.</rdfs:comment>
+    <rdfs:label xml:lang="en">Contribution role</rdfs:label>
+    <rdfs:comment xml:lang="en">A role such as director, actor, writer or producer; not a person.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd9d1cf2271114129807adad8425c3b17">
-    <rdf:first rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <rdf:rest rdf:nodeID="N7b510290a1874339b7faba22407ab57e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N582cb547f9ae4cd0b7d1724cb39a30fd">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
-    <rdf:rest rdf:nodeID="N589ef5c8e3834523ae3d59863ee3566e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N77992c6cfb7848e4ad1303a05182b2f7">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DocumentaryFilm">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="N49679c1764fc42799ca521585217ccd7"/>
+    <rdfs:label xml:lang="en">Documentary film</rdfs:label>
+    <rdfs:comment xml:lang="en">A non-fiction film. Defined for completeness; the current 30-film sample contains no documentaries (see docs).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language">
+  <rdf:Description rdf:nodeID="N2362f72121af47938b23681eb6f0dc73">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Language</rdfs:label>
-    <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Language"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
-    <rdfs:comment xml:lang="en">A language associated with a film.</rdfs:comment>
+    <owl:intersectionOf rdf:nodeID="N6088fd33e066454bbe41553b3087ec18"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#inFilm">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Source snapshot</rdfs:label>
+    <rdfs:comment xml:lang="en">A saved source response with a URL, retrieval time and SHA-256 hash.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nade56fcddd894cd8bd0c6b68884efa61">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <rdf:rest rdf:nodeID="Nf0ed8b55eb084300a1991dc62225105a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nadef421749524edcbb850ac3e38de2f8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N5b3ccf780e49486ca29a571ad6806657"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#awardOf">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:label xml:lang="en">In film</rdfs:label>
-    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
-    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasCredit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Actor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Actor</rdfs:label>
-    <rdfs:comment xml:lang="en">A person who has acted in at least one film in this model.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <owl:equivalentClass rdf:nodeID="N09cd68e1545c4eed8e60ac42e3b63e7e"/>
+    <rdfs:label xml:lang="en">Award of</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award"/>
+    <rdfs:range rdf:nodeID="N3830102020ae44919169e68cc1f5cb4d"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasAward"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://dbpedia.org/ontology/writer">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -249,57 +413,150 @@
     <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
     <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#wrote"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://dbpedia.org/ontology/Film">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Film</rdfs:label>
-    <owl:disjointWith rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
-    <owl:disjointWith rdf:resource="http://dbpedia.org/ontology/Country"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
-    <rdfs:comment xml:lang="en">A film work, distinct from people, countries and metadata records.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Credit</rdfs:label>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
-    <rdfs:comment xml:lang="en">A contribution record connecting exactly one person, one film and one role.</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="N40359f50845846838ac6afd570afdde0"/>
-    <rdfs:subClassOf rdf:nodeID="Nfd86308a0ed7453e8b031fd607931923"/>
-    <rdfs:subClassOf rdf:nodeID="N6fb96c7aa67248edb5889cd236e56884"/>
-    <rdfs:subClassOf rdf:nodeID="Ncf7352e915c04c659925b6740bfa8bc3"/>
-    <rdfs:subClassOf rdf:nodeID="N1b20cd5af11b4d8caab31831ce9c5669"/>
-    <rdfs:subClassOf rdf:nodeID="Nbb771dbd2e7a49e393fceb268e2858d1"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd6cf926d1e43472eaed220d59fe4c236">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WriterRole"/>
+  <rdf:Description rdf:nodeID="N31170071304c47c9bc5d0a3cfeb62cb5">
+    <rdf:first rdf:nodeID="N5483523c8d0941a7808731390dbdcbaf"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N688ae2913d45488e90d21745f0c03718">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <rdf:rest rdf:nodeID="N13594e153a054a99843c1c8e7eeee6e5"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6fb96c7aa67248edb5889cd236e56884">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#participant"/>
-    <owl:onClass rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Screenwriter">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Screenwriter</rdfs:label>
-    <rdfs:comment xml:lang="en">A person credited as writer on at least one film in this model.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <owl:equivalentClass rdf:nodeID="Na49bebd0aa6c485aaf757e36226c61fe"/>
+    <rdfs:label xml:lang="en">Language</rdfs:label>
+    <rdfs:comment xml:lang="en">A language associated with a film.</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/ontology/Language"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N589ef5c8e3834523ae3d59863ee3566e">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-    <rdf:rest rdf:nodeID="N688ae2913d45488e90d21745f0c03718"/>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DramaFilm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Drama film</rdfs:label>
+    <rdfs:comment xml:lang="en">A film that has at least one drama genre.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:equivalentClass rdf:nodeID="N0129d8eb04bb421d95669f233ef9636a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne31ae154226b439e91aedaeeb17651c8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nce22b0e4acc14581b51e2cba7e26bf39"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Contribution</rdfs:label>
+    <rdfs:comment xml:lang="en">A record connecting exactly one person, one film and one role.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="Na4807249e4654c3bbabdfb611cfd7b67"/>
+    <rdfs:subClassOf rdf:nodeID="N67c509b123dd487f98bbb95f87a29136"/>
+    <rdfs:subClassOf rdf:nodeID="Na650fbc3023c409c9937a28fcd24c01e"/>
+    <rdfs:subClassOf rdf:nodeID="N82ad7875dd804742bc1138c1ced5ced6"/>
+    <rdfs:subClassOf rdf:nodeID="N6fc8f40206be42ed8fc82230fa12fcb0"/>
+    <rdfs:subClassOf rdf:nodeID="N067d170c86e94a47ad5345a6e8fda470"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:label xml:lang="en">Has role</rdfs:label>
+    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N862907bbe01747b2bb5c682bd3023bf8">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProducerRole"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasGenre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Has genre</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Production country</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FilmAward">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Film award</rdfs:label>
+    <rdfs:comment xml:lang="en">An award category not specific to one contribution role (e.g. Best Picture, Best Editing).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd7427708e86a4c1da60710b4012987c2">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WriterRole"/>
+    <rdf:rest rdf:nodeID="N862907bbe01747b2bb5c682bd3023bf8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Actor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Actor</rdfs:label>
+    <rdfs:comment xml:lang="en">A person who holds at least one acting contribution.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:equivalentClass rdf:nodeID="Nfc90c0a93eb04f44a510eeabe788c88c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasContribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Has contribution</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4161996591274b2d86466eab833927d6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N5fd343eac67f4275ae30756037d3f4e4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N75cfc82e6dd544f3adef8ff720b1afb2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N641f83ab0e1e4eafa7782ca98c420aeb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8d8ed2ae159c4aaf818b3330f48ab005">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasRole"/>
+    <owl:hasValue rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActorRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/Country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Country</rdfs:label>
+    <rdfs:comment xml:lang="en">A country associated with film production.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2aeca8c6ef13478b82e1f024c8a2375e">
+    <rdf:first rdf:nodeID="N47948e17b677433ab559a1ee29d04685"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectingAward">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Directing award</rdfs:label>
+    <rdfs:comment xml:lang="en">An award category for directing (label contains "director"/"directing").</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nef67bcb610024840b8a0d46c0baf0a70">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdf:rest rdf:nodeID="N6a88f3dfa6fe48a0819f897177c3ce2c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N52a0f38c63164b40afdcd7e8122ac447">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nd02433546821490e9660e009e187b4f9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#produced">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Produced</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#contributionOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Contribution of</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#contributionTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na909dd2a9efb4568a4dc3009235e36d6">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
+    <rdf:rest rdf:nodeID="N8b060b7bc1184eafb4a2972fd65e87bb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf0ed8b55eb084300a1991dc62225105a">
+    <rdf:first rdf:nodeID="N9d6a2cccc4074084acac557a46da6023"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#actedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Acted in</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd2c58a1fc5dd4f84ad77161ebfddf0cb">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <rdf:rest rdf:nodeID="N62428b8d9ba341aabf82d19c0aa6550f"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#wrote">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -307,157 +564,291 @@
     <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
     <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FilmContributor">
+  <rdf:Description rdf:nodeID="N0129d8eb04bb421d95669f233ef9636a">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Film contributor</rdfs:label>
-    <rdfs:comment xml:lang="en">A person who is a director, actor or screenwriter, possibly holding several of these roles.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <owl:equivalentClass rdf:nodeID="N7b5ab3c13e4e4c8cadaf792cad4887e6"/>
+    <owl:intersectionOf rdf:nodeID="N4267fd50434f4aba943142b63292e811"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N80e176c8c2534eb88e769a4940048755">
+  <rdf:Description rdf:nodeID="N2a560fbf3f8b4371a5d9ea712676ad54">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="N9cff22772e5b4df09be9329f5cb376e9"/>
+    <owl:intersectionOf rdf:nodeID="Nfb7f18107ac345998a3a8ba8adbebfc0"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasCredit">
+  <rdf:Description rdf:nodeID="N62428b8d9ba341aabf82d19c0aa6550f">
+    <rdf:first rdf:nodeID="N8d8ed2ae159c4aaf818b3330f48ab005"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActionFilm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Action film</rdfs:label>
+    <rdfs:comment xml:lang="en">A film that has at least one action genre.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:equivalentClass rdf:nodeID="Nbdcc917b04064053988a0eee068935eb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0bb6eb4033b34dba856113e35f0dfa5f">
+    <rdf:first rdf:nodeID="N708eecb0890b444795d86c0cd6b5ccdd"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4267fd50434f4aba943142b63292e811">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:rest rdf:nodeID="N31170071304c47c9bc5d0a3cfeb62cb5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N067d170c86e94a47ad5345a6e8fda470">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasRole"/>
+    <owl:allValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/producer">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">Has credit</rdfs:label>
     <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1b20cd5af11b4d8caab31831ce9c5669">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#role"/>
-    <owl:onClass rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#participant">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:label xml:lang="en">Participant</rdfs:label>
-    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
     <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#produced"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncf7352e915c04c659925b6740bfa8bc3">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectingContribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Directing contribution</rdfs:label>
+    <rdfs:comment xml:lang="en">A contribution whose role is ex:DirectorRole.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <owl:equivalentClass rdf:nodeID="N318815bafe9949a097c7b08d675541e0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FictionGenre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Fiction genre</rdfs:label>
+    <rdfs:comment xml:lang="en">A genre denoting fictional narrative film.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a6e398160c54b3888949104c1fb6869">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
+    <rdf:rest rdf:nodeID="Nae5c9b110ae94cc482346793b99713ae"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6a88f3dfa6fe48a0819f897177c3ce2c">
+    <rdf:first rdf:nodeID="N87f233a30968443c9152a79f0407b3ca"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1cafd799ce5846ccb258dc0f5d8d8a11">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#participant"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#productionOf"/>
+    <owl:onClass rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActorRole">
+    <rdf:type rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="en">Actor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N67c509b123dd487f98bbb95f87a29136">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#contributionBy"/>
     <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/Person"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#releaseYear">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DocumentaryGenre">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Source snapshot</rdfs:label>
-    <owl:disjointWith rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset"/>
-    <rdfs:comment xml:lang="en">A saved source response with a URL, retrieval time and SHA-256 hash.</rdfs:comment>
+    <rdfs:label xml:lang="en">Documentary genre</rdfs:label>
+    <rdfs:comment xml:lang="en">A genre whose Wikidata label contains "documentary". Defined for completeness; 0 films in this sample carry it.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#NonFictionGenre"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#language">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">Original language</rdfs:label>
-    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N09cd68e1545c4eed8e60ac42e3b63e7e">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:intersectionOf rdf:nodeID="N50c92e4d6cd74091a316058ef8bacd8f"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9cff22772e5b4df09be9329f5cb376e9">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Director"/>
-    <rdf:rest rdf:nodeID="N7484bb7522994d42b6f6c032e4c85f4b"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#sourceSnapshot">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">Source snapshot</rdfs:label>
-    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne03ba16fe9a4470e83e3a8e0ecdfa155">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-    <owl:distinctMembers rdf:nodeID="N0fc39e2866664502b4921178aac6c2c3"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd5b1c4afebb24b4ea0f449e53f40f742">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Screenwriter"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2894e7dff7e44a289bc8f51ba8ce27ef">
-    <rdf:first rdf:nodeID="N5c12dc6c6c854fdab05287ece71361fa"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5c12dc6c6c854fdab05287ece71361fa">
+  <rdf:Description rdf:nodeID="N87f233a30968443c9152a79f0407b3ca">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasCredit"/>
-    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Credit"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasAward"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#directed">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">Directed</rdfs:label>
-    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Film"/>
+  <rdf:Description rdf:nodeID="Nc8f6357b1c0740c784bce9b179e55340">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <rdf:rest rdf:nodeID="N967c2886cfff4f57862ffef18ae8eafc"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc31a3ebf2a564676b14c2df9da774ba2">
-    <rdf:first rdf:nodeID="N02fa16bfc3f84412bed9b99842c7140d"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="N6b54f05c80df4f24ad8806868fd058c4">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectorRole"/>
+    <rdf:rest rdf:nodeID="N520c4fb741924652999d0906db9244f3"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9a24274230594aada8d683e59689693f">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Director"/>
-    <rdf:rest rdf:nodeID="Na88789fcf08e4908ba7155339772f019"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7b5ab3c13e4e4c8cadaf792cad4887e6">
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#NonFictionGenre">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N9a24274230594aada8d683e59689693f"/>
+    <rdfs:label xml:lang="en">Non-fiction genre</rdfs:label>
+    <rdfs:comment xml:lang="en">A genre denoting non-fictional film.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N0ac3340ea7fd4c378f076ea076c522d9">
-    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <rdf:rest rdf:nodeID="N2894e7dff7e44a289bc8f51ba8ce27ef"/>
+  <rdf:Description rdf:nodeID="N980177e83ba848769029ea7f9b63bdfe">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution"/>
+    <rdf:rest rdf:nodeID="N3e551b1c91f2422fa56ba362c010b804"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N0cf777830e8a41229cd1d80b192ec99e">
+  <rdf:Description rdf:nodeID="Na650fbc3023c409c9937a28fcd24c01e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#contributionTo"/>
+    <owl:onClass rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na4807249e4654c3bbabdfb611cfd7b67">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#contributionBy"/>
+    <owl:onClass rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0e339feab2544341bdb5d8199e204603">
     <rdf:first rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <rdf:rest rdf:nodeID="Nebb4e7464d3044e0b5429bd34f4cb575"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <rdfs:label xml:lang="en">MovieLOD — movie ontology</rdfs:label>
-    <owl:versionInfo>1.1.0</owl:versionInfo>
-    <dct:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#sha256">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#runtimeMinutes">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na88789fcf08e4908ba7155339772f019">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Actor"/>
-    <rdf:rest rdf:nodeID="Nd5b1c4afebb24b4ea0f449e53f40f742"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7484bb7522994d42b6f6c032e4c85f4b">
-    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Screenwriter"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N49679c1764fc42799ca521585217ccd7">
-    <rdf:first rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <rdf:rest rdf:nodeID="Nc31a3ebf2a564676b14c2df9da774ba2"/>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    <rdfs:comment xml:lang="en">The published collection of movie data, aligned with void:Dataset.</rdfs:comment>
+    <owl:equivalentClass rdf:resource="http://rdfs.org/ns/void#Dataset"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N50c92e4d6cd74091a316058ef8bacd8f">
+  <rdf:Description rdf:nodeID="N7d036fd3950a44008abff87520cdfe16">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Country"/>
+    <rdf:rest rdf:nodeID="Na909dd2a9efb4568a4dc3009235e36d6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1bbcdfaa012345e1906465c1aa50c187">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nc8f6357b1c0740c784bce9b179e55340"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf78906bfec9343e1a9a3d003fa19b9fe">
+    <rdf:first rdf:nodeID="N6cc94beeb7cd4a81ba1d6b005d57301f"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActingAward">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Acting award</rdfs:label>
+    <rdfs:comment xml:lang="en">An award category for acting (label contains "actor"/"actress").</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasProductionCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">Has production company</rdfs:label>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProductionCompany"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DramaGenre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Drama genre</rdfs:label>
+    <rdfs:comment xml:lang="en">A genre whose Wikidata label contains "drama".</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FictionGenre"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0a6fac38eb3489d9d9dd69a2e230d1e">
     <rdf:first rdf:resource="http://dbpedia.org/ontology/Person"/>
-    <rdf:rest rdf:nodeID="Na1937243ccbb497b9572c2327080dc38"/>
+    <rdf:rest rdf:nodeID="N30d311c38282434382faf47a355771d5"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#title">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N67f5c14f17594c7f8c80f44eb6aeae8f">
-    <rdf:first rdf:resource="http://dbpedia.org/ontology/Country"/>
-    <rdf:rest rdf:nodeID="N8cc84780d25a4353bda8b9054015c317"/>
+  <rdf:Description rdf:nodeID="N318815bafe9949a097c7b08d675541e0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nade56fcddd894cd8bd0c6b68884efa61"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nebd172083a394cef8c408845076674b5">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-    <owl:members rdf:nodeID="N5b49e7a50820444190e7b4879aba7fe9"/>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ComedyFilm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Comedy film</rdfs:label>
+    <rdfs:comment xml:lang="en">A film that has at least one comedy genre.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <owl:equivalentClass rdf:nodeID="N2362f72121af47938b23681eb6f0dc73"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N82ad7875dd804742bc1138c1ced5ced6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#contributionTo"/>
+    <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/Film"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb7603c31ce1f468a81dd6642e51bb71f">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:rest rdf:nodeID="Nec521a220f644130a3657ba433ca1de5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N30d311c38282434382faf47a355771d5">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Organization"/>
+    <rdf:rest rdf:nodeID="N72b06458ddf1481186ece7f21a2e48d5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProductionCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Production company</rdfs:label>
+    <rdfs:comment xml:lang="en">An organization credited with producing a film (wdt:P272).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3e551b1c91f2422fa56ba362c010b804">
+    <rdf:first rdf:nodeID="Nd1ae3d01bd6148c0a19a6a56fe3d1e58"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2155fb5eca744ff3af3241c58765c961">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasGenre"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ScienceFictionGenre"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ComedyGenre">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Comedy genre</rdfs:label>
+    <rdfs:comment xml:lang="en">A genre whose Wikidata label contains "comedy".</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FictionGenre"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc5a3505a7f7a40eeb7dac04f92ff9e9d">
+    <rdf:first rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:rest rdf:nodeID="N0e339feab2544341bdb5d8199e204603"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N285b11bba1a747ebabdc898722df6a22">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasContribution"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProducingContribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N654afc33b60341dd9c2246ec8116d036">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <rdf:rest rdf:nodeID="N660c15d87a22402ca774e19f509ba1cf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N967c2886cfff4f57862ffef18ae8eafc">
+    <rdf:first rdf:nodeID="Ndfe6b370bc554393bfc9e82dba89bf45"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N520c4fb741924652999d0906db9244f3">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActorRole"/>
+    <rdf:rest rdf:nodeID="Nd7427708e86a4c1da60710b4012987c2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N20912b77a0db477e84415adeac40f54a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+    <owl:distinctMembers rdf:nodeID="N6b54f05c80df4f24ad8806868fd058c4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectorRole">
+    <rdf:type rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label xml:lang="en">Director</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dbpedia.org/ontology/starring">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    <owl:inverseOf rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#actedIn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#runtimeMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5b3ccf780e49486ca29a571ad6806657">
+    <rdf:first rdf:nodeID="Ne70b44b10d124085b957c456ddbf7c47"/>
+    <rdf:rest rdf:nodeID="N543e0eb442424256b946e11da5836896"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N829fd8ea9eea4daabd13ce17fb5bed08">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="Nef67bcb610024840b8a0d46c0baf0a70"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Award</rdfs:label>
+    <rdfs:comment xml:lang="en">A recognition received by a film or by a person for film work (wdt:P166).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N660c15d87a22402ca774e19f509ba1cf">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot"/>
+    <rdf:rest rdf:nodeID="N7a6e398160c54b3888949104c1fb6869"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <rdfs:comment xml:lang="en">An entity able to contribute to a creative work: a person or an organization.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nce22b0e4acc14581b51e2cba7e26bf39">
+    <rdf:first rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProductionCompany"/>
+    <rdf:rest rdf:nodeID="Ncc21e18a62564e1789729be8cc7e14ba"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N530fc763854749ad9b4f7f4a6740036e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#hasContribution"/>
+    <owl:someValuesFrom rdf:resource="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WritingContribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#releaseYear">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
   </rdf:Description>
 </rdf:RDF>

@@ -17,16 +17,16 @@ def check_data(g):
             errors.append(f'{film}: missing source snapshot.')
         if not any(isinstance(link,URIRef) for link in g.objects(film,OWL.sameAs)):
             errors.append(f'{film}: missing external IRI.')
-    for credit in g.subjects(RDF.type,EX.Credit):
-        for prop,kind in [(EX.inFilm,DBO.Film),(EX.participant,DBO.Person)]:
-            values=list(g.objects(credit,prop))
+    for contribution in g.subjects(RDF.type,EX.Contribution):
+        for prop,kind in [(EX.contributionTo,DBO.Film),(EX.contributionBy,DBO.Person)]:
+            values=list(g.objects(contribution,prop))
             if len(values)!=1 or (values[0],RDF.type,kind) not in g:
-                errors.append(f'{credit}: expected one typed {prop}.')
-        roles=list(g.objects(credit,EX.role))
-        if len(roles)!=1 or roles[0] not in [EX.DirectorRole,EX.ActorRole,EX.WriterRole]:
-            errors.append(f'{credit}: expected one contribution role.')
-        if not any(g.objects(credit,EX.sourceSnapshot)):
-            errors.append(f'{credit}: missing source snapshot.')
+                errors.append(f'{contribution}: expected one typed {prop}.')
+        roles=list(g.objects(contribution,EX.hasRole))
+        if len(roles)!=1 or roles[0] not in [EX.DirectorRole,EX.ActorRole,EX.WriterRole,EX.ProducerRole]:
+            errors.append(f'{contribution}: expected one contribution role.')
+        if not any(g.objects(contribution,EX.sourceSnapshot)):
+            errors.append(f'{contribution}: missing source snapshot.')
     for snapshot in g.subjects(RDF.type,EX.SourceSnapshot):
         for prop in [EX.sourceUrl,EX.retrievedAt,EX.sha256]:
             values=list(g.objects(snapshot,prop))

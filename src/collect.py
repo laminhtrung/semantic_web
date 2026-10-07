@@ -20,9 +20,11 @@ def fetch(url, provider, refresh=False):
         if hashlib.sha256(path.read_bytes()).hexdigest() == info['sha256']:
             return json.loads(path.read_bytes()), info
     last_error = None
-    for attempt in range(3):
+    for attempt in range(6):
         try:
             r = requests.get(url, headers=HEADERS, timeout=45)
+            if r.status_code == 429:
+                raise requests.RequestException('429 rate limited')
             r.raise_for_status()
             data = r.json()
             if 'error' in data:
@@ -36,7 +38,7 @@ def fetch(url, provider, refresh=False):
             return data, info
         except (requests.RequestException, ValueError) as e:
             last_error = str(e)
-            time.sleep(attempt + 1)
+            time.sleep(min(2 ** attempt, 30))
     raise RuntimeError(provider + ': ' + last_error)
 
 def wd_url(**kwargs):
@@ -74,7 +76,7 @@ def collect(refresh=False):
         errors.append({'stage': 'identity', 'missing_titles': missing})
     needed = set()
     for f in films:
-        for prop in ['P57', 'P161', 'P58', 'P136', 'P495', 'P364']:
+        for prop in ['P57', 'P161', 'P58', 'P162', 'P136', 'P495', 'P364', 'P166', 'P272']:
             needed.update(claim_ids(entities[f['qid']], prop))
     for start in range(0, len(needed), 40):
         batch = sorted(needed)[start:start+40]
@@ -85,6 +87,24 @@ def collect(refresh=False):
                 entity['_snapshot_url'] = info['url']
                 entities[qid] = entity
         print('Wikidata related batch:', start+len(batch), '/', len(needed), flush=True)
+        time.sleep(1)
+    # Second hop: people can hold their own awards (e.g. Best Actor), distinct from awards the film itself received.
+    person_award_ids = set()
+    for qid in needed:
+        if qid in entities and 'Q5' in claim_ids(entities[qid], 'P31'):
+            person_award_ids.update(claim_ids(entities[qid], 'P166'))
+    person_award_ids -= set(entities)
+    person_award_ids = sorted(person_award_ids)
+    for start in range(0, len(person_award_ids), 40):
+        batch = person_award_ids[start:start+40]
+        data, info = fetch(wd_url(ids='|'.join(batch), props='labels|descriptions'), 'Wikidata', refresh)
+        snapshots[info['url']] = info
+        for qid, entity in data.get('entities', {}).items():
+            if 'missing' not in entity:
+                entity['_snapshot_url'] = info['url']
+                entities[qid] = entity
+        print('Wikidata person-award batch:', start+len(batch), '/', len(person_award_ids), flush=True)
+        time.sleep(3)
     def get_dbpedia(f):
         uri = 'http://dbpedia.org/resource/' + f['wiki_title'].replace(' ', '_')
         url = 'https://dbpedia.org/data/' + quote(f['wiki_title'].replace(' ', '_'), safe='') + '.json'
@@ -116,7 +136,7 @@ def collect(refresh=False):
         normalized_entities[qid] = {
             'id': qid, 'labels': entity.get('labels',{}),
             'sitelinks': {'enwiki':entity.get('sitelinks',{}).get('enwiki',{})},
-            'claims': {p:entity.get('claims',{}).get(p,[]) for p in ['P31','P57','P161','P58','P136','P495','P364','P577','P2047']},
+            'claims': {p:entity.get('claims',{}).get(p,[]) for p in ['P31','P57','P161','P58','P162','P136','P495','P364','P577','P2047','P166','P272']},
             '_snapshot_url': entity.get('_snapshot_url')}
     write_json(ROOT/'data/processed/collected.json', {'films': sorted(films,key=lambda x:x['qid']), 'entities': normalized_entities})
     write_json(ROOT/'evidence/collection.json', {'requested_films': len(titles), 'resolved_films': len(films),
