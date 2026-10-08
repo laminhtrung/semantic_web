@@ -1,0 +1,6 @@
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+# Requires inference. ex:MultiGenreFilm = Film with >=2 distinct ex:hasGenre values
+# (outside OWL RL's cardinality coverage; see src/reason.py for the SPARQL-based materialization).
+SELECT ?title WHERE {
+  ?film a ex:MultiGenreFilm ; ex:title ?title .
+} ORDER BY ?title

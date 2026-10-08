@@ -1,0 +1,11 @@
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Requires inference (ex:DirectingContribution / ex:WritingContribution are inferred from ex:hasRole).
+# Replaces a hand-built "DirectorWriter" combination class: a person can simply hold two
+# contributions of different inferred kinds, discovered here with a plain join.
+SELECT DISTINCT ?personName WHERE {
+  ?p a dbo:Person ; rdfs:label ?personName ; ex:hasContribution ?c1, ?c2 .
+  ?c1 a ex:DirectingContribution .
+  ?c2 a ex:WritingContribution .
+} ORDER BY ?personName

@@ -1,0 +1,5 @@
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+# Requires inference. ex:ActionFilm = Film with at least one ex:ActionGenre genre.
+SELECT ?title WHERE {
+  ?film a ex:ActionFilm ; ex:title ?title .
+} ORDER BY ?title

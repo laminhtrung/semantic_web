@@ -1,0 +1,7 @@
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# Requires inference: run with `python src/query.py queries/17_inferred_actors.rq --reasoned`
+# (or `python src/reason.py` first). ex:Actor is never asserted directly in movies.ttl.
+SELECT ?personName WHERE {
+  ?person a ex:Actor ; rdfs:label ?personName .
+} ORDER BY ?personName LIMIT 20

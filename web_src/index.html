@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MovieLOD — Linked Open Data về phim</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>MovieLOD</h1>
+    <p>Linked Open Data về phim — 9 lớp bản thể học, dữ liệu thật từ Wikidata/DBpedia, truy vấn SPARQL trực tiếp trên trình duyệt.</p>
+    <nav>
+      <a href="/dataset">Dataset</a>
+      <a href="/ontology">Ontology</a>
+      <a href="/data/movies.ttl">Tải Turtle</a>
+      <a href="/LICENSE-DATA.txt">Giấy phép</a>
+    </nav>
+  </header>
+
+  <section id="query-section">
+    <h2>Truy vấn SPARQL</h2>
+    <label for="query-select">Câu hỏi mẫu</label>
+    <select id="query-select"></select>
+
+    <label for="query-text">Truy vấn (có thể chỉnh sửa)</label>
+    <textarea id="query-text" rows="10" spellcheck="false"></textarea>
+
+    <button id="run-btn" type="button">Chạy truy vấn</button>
+    <span id="status"></span>
+
+    <div id="result-area"></div>
+  </section>
+
+  <footer>
+    <p>Endpoint cục bộ: <code>POST /sparql</code>. Dữ liệu nguồn: Wikidata, DBpedia. <a href="/LICENSE-DATA.txt">Giấy phép và ghi công</a>.</p>
+  </footer>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+# Run WITHOUT --reasoned: lists only the rdf:type triples actually asserted for Christopher Nolan
+# in movies.ttl. Compare with 18_inferred_filmmakers.rq (run WITH --reasoned, which lists him):
+# ex:Filmmaker never appears here even though he is unambiguously a filmmaker in the data.
+SELECT ?type WHERE {
+  res:person-Q25191 a ?type .
+}

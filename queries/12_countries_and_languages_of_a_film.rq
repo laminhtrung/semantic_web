@@ -1,0 +1,8 @@
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?title ?countryName ?languageName WHERE {
+  ?film ex:title ?title .
+  OPTIONAL { ?film ex:country ?c . ?c rdfs:label ?countryName }
+  OPTIONAL { ?film ex:language ?l . ?l rdfs:label ?languageName }
+  FILTER(?title = "Parasite")
+}
