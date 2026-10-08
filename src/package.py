@@ -27,6 +27,10 @@ def main():
     assert hermit['local_inferred_counts']==pellet['local_inferred_counts']
     assert not (ROOT/'ontology/Movie_Knowledge_Graph_Protege.owl').exists()
     report=len(PdfReader(ROOT/'docs/Bao_cao.pdf').pages)
+    report_format=json.loads((ROOT/'evidence/report_format_checks.json').read_text())
+    assert report==15 and report_format['verified'] and report_format['font']=='Times New Roman' and report_format['font_size_pt']==13 and report_format['line_spacing']==1.5
+    assert report_format['pdf_sha256']==hashlib.sha256((ROOT/'docs/Bao_cao.pdf').read_bytes()).hexdigest()
+    assert report_format['docx_sha256']==hashlib.sha256((ROOT/'docs/Bao_cao.docx').read_bytes()).hexdigest()
     guide=len(PdfReader(ROOT/'docs/Huong_dan_A_Z.pdf').pages)
     slides=len(Presentation(ROOT/'docs/Slide.pptx').slides)
     video=json.loads((ROOT/'evidence/video.json').read_text())
@@ -36,6 +40,11 @@ def main():
     video_seconds=float(measured_video['format']['duration'])
     assert report<=15 and 12<=slides<25 and 180<=video_seconds<=300
     assert len(PdfReader(ROOT/'docs/Slide.pdf').pages)==slides
+    language=json.loads((ROOT/'evidence/presentation_language_checks.json').read_text())
+    assert language['slide_language']=='English' and language['placeholder_language']=='Vietnamese'
+    assert not language['unexpected_non_english_text'] and len(language['vietnamese_placeholder_slides'])==11
+    assert language['pptx_sha256']==hashlib.sha256((ROOT/'docs/Slide.pptx').read_bytes()).hexdigest()
+    assert language['pdf_sha256']==hashlib.sha256((ROOT/'docs/Slide.pdf').read_bytes()).hexdigest()
     exact_video_match=video.get('matches_current_dataset') and video.get('dataset_sha256')==hashlib.sha256((ROOT/'data/processed/movies.ttl').read_bytes()).hexdigest()
     if not exact_video_match:
         verify_video_compatibility(data)
@@ -53,6 +62,8 @@ def main():
     summary={'turtle_jsonld_same_graph':True,'owl_combined_matches_data_and_schema':True,
              'hermit_pellet_current_owl_verified':True,'single_primary_knowledge_graph':True,
              'report_pages':report,'guide_pages':guide,'slides':slides,'video_seconds':video_seconds,
+             'report_language':'English','report_font':'Times New Roman','report_font_size_pt':13,'report_line_spacing':1.5,'report_figures':report_format['figures'],
+             'slide_language':'English','placeholder_language':'Vietnamese',
              'tests_passed':int(test_match.group(1)),'browser_checks_passed':len(browser),
              'public_query_checks_passed':len(public_queries['checks']),
              'video_matches_current_dataset':bool(exact_video_match),

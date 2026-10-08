@@ -1,0 +1,28 @@
+{
+  "published_at": "2026-10-08T08:12:58.253729+00:00",
+  "verification": "Native Sites deployment succeeded for the exact pushed source archive; local deployment copies verified byte-for-byte. No new HTTP check performed for this document-only update.",
+  "version_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916~appgver_eb485fe1a59c81919b70b21eb8099625",
+  "source_commit": "ee61c5327a2e7647711a95f579a189eada23d921",
+  "documents": [
+    {
+      "path": "/docs/Slide.pptx",
+      "sha256": "35b4c6ee3a86b58f4347d4d74ac9a3da93df48834d7ed0299e1f12165ce813c1",
+      "deployment_copy_matches": true
+    },
+    {
+      "path": "/docs/Slide.pdf",
+      "sha256": "4d1523738c5ebf0a7ab95bb3191a4bdc00261c2fdcd7f6707fc034bafed0a7eb",
+      "deployment_copy_matches": true
+    },
+    {
+      "path": "/docs/Script_thuyet_trinh.pdf",
+      "sha256": "c0350f683a3b1f0d387e85bd6758c4d5c04a50a78bda1d9e2bdb54d044bf81f7",
+      "deployment_copy_matches": true
+    },
+    {
+      "path": "/docs/Checklist_anh_Protege.pdf",
+      "sha256": "db3f1d73bdddc517b9db510eae7b1914738882380859976424c4076cfa19884f",
+      "deployment_copy_matches": true
+    }
+  ]
+}

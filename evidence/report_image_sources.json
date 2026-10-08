@@ -1,0 +1,161 @@
+{
+  "source_pdf": "docs/Slide_full.pptx.pdf",
+  "source_pdf_sha256": "1e8fbcf02c1b95b4b4bd74fb6ae76b8dba500855d36dc2a7ecf599c10a384b3e",
+  "images": [
+    {
+      "file": "docs/report_images/P00_ontology_header.png",
+      "slide_page": 5,
+      "xref": 93,
+      "width": 1103,
+      "height": 321,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P01_film_hierarchy.png",
+      "slide_page": 6,
+      "xref": 109,
+      "width": 1470,
+      "height": 956,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P02_agent_hierarchy.png",
+      "slide_page": 7,
+      "xref": 122,
+      "width": 1176,
+      "height": 765,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P03_genre_award_hierarchy.png",
+      "slide_page": 8,
+      "xref": 142,
+      "width": 1470,
+      "height": 956,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P04_contribution_restrictions.png",
+      "slide_page": 9,
+      "xref": 156,
+      "width": 1470,
+      "height": 956,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P05_object_property.png",
+      "slide_page": 10,
+      "xref": 169,
+      "width": 1470,
+      "height": 956,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P06_filmmaker_equivalent_class.png",
+      "slide_page": 13,
+      "xref": 214,
+      "width": 1470,
+      "height": 956,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P07_filmstudio_cardinality.png",
+      "slide_page": 14,
+      "xref": 224,
+      "width": 1176,
+      "height": 765,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P08_runtime_datatype.png",
+      "slide_page": 16,
+      "xref": 250,
+      "width": 1470,
+      "height": 956,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P09_inception_individual.png",
+      "slide_page": 18,
+      "xref": 267,
+      "width": 1470,
+      "height": 956,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/P10_nolan_asserted_types.png",
+      "slide_page": 21,
+      "xref": 297,
+      "width": 1470,
+      "height": 956,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/01_pipeline.png",
+      "slide_page": 3,
+      "clip": [
+        60.0,
+        262.5,
+        1402.5,
+        697.5
+      ],
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/02_contribution.png",
+      "slide_page": 9,
+      "clip": [
+        72.0,
+        267.0,
+        735.0,
+        720.0
+      ],
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/03_nolan_inference.png",
+      "slide_page": 13,
+      "clip": [
+        69.0,
+        262.5,
+        738.0,
+        700.5
+      ],
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/04_lod_levels.png",
+      "slide_page": 17,
+      "clip": [
+        67.5,
+        261.0,
+        1408.5,
+        678.0
+      ],
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/05_source_viewer.png",
+      "slide_page": 15,
+      "xref": 236,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/06_query_ui.png",
+      "slide_page": 19,
+      "xref": 275,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/07_validation_log.png",
+      "slide_page": 22,
+      "xref": 307,
+      "source": "docs/Slide_full.pptx.pdf"
+    },
+    {
+      "file": "docs/report_images/academic_framework.png",
+      "source": "Author-generated conceptual framework for MovieLOD",
+      "source_type": "author_diagram"
+    }
+  ]
+}

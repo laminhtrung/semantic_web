@@ -9,6 +9,9 @@ DOCUMENTS=['Bao_cao','Huong_dan_A_Z','Huong_dan_thao_tac_chi_tiet','Mo_ta_ontolo
 
 def render(source):
     source=Path(source);docs=ROOT/'docs'
+    if source.name=='Bao_cao.md':
+        from make_report import main as make_report
+        return make_report()
     header=docs/'latex_header.tex'
     subprocess.run(['pandoc',str(source),'--standalone','--from=markdown','--to=latex','--resource-path='+str(ROOT)+':'+str(docs),'--lua-filter='+str(docs/'code-wrap.lua'),'--include-in-header='+str(header),'-V','documentclass=article','-V','fontsize=11pt','-V','geometry:a4paper,margin=19mm','-V','mainfont=Be Vietnam Pro','-V','monofont=Menlo','-V','colorlinks=true','-V','linkcolor=teal','-V','urlcolor=teal','--syntax-highlighting=none','-o',str(source.with_suffix('.tex'))],check=True,cwd=docs)
     log=ROOT/'evidence'/('build_'+source.stem+'.log')

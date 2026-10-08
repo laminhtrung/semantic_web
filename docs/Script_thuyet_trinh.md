@@ -5,7 +5,7 @@ date: "Bản đầy đủ · 08/10/2026"
 
 ## Cách dùng
 
-Bộ chính có **24 slide**, thuyết trình đầy đủ khoảng **18–22 phút**. Mỗi đoạn lời cũng nằm trong Speaker Notes. Bản ngắn 13 trang vẫn ở Slide_ngan_13.pptx/pdf và Script_thuyet_trinh_ngan_13.md/pdf. Video demo 4:50 là tài liệu riêng; không đọc toàn bộ lời slide vào video.
+Bộ chính có **24 slide**, thuyết trình đầy đủ khoảng **18–22 phút**. Nội dung slide và Speaker Notes bằng tiếng Anh; script riêng giữ lời tiếng Việt tương ứng để tập nói. Hướng dẫn trong ô chờ ảnh vẫn bằng tiếng Việt. Bản ngắn 13 trang vẫn ở Slide_ngan_13.pptx/pdf và Script_thuyet_trinh_ngan_13.md/pdf. Video demo 4:50 là tài liệu riêng; không đọc toàn bộ lời slide vào video.
 
 Tập theo 3 phần: thành viên A slide 1–10; B slide 11–18; C slide 19–24. Nếu chỉ có 2 người, chia sau slide 14. Các con số lấy từ dữ liệu và evidence hiện tại. Khung ảnh Protégé chưa có ảnh thực; không đọc ghi chú chờ bổ sung như kết quả đã chứng minh.
 
@@ -18,29 +18,29 @@ Tập theo 3 phần: thành viên A slide 1–10; B slide 11–18; C slide 19–
 | Slide | Nội dung |
 |:--|:--|
 | 01 | MovieLOD |
-| 02 | Bài giải quyết gì? Đối chiếu đủ 5 yêu cầu |
-| 03 | Kiến trúc và đường đi của dữ liệu |
-| 04 | Bộ dữ liệu hiện tại: đọc đúng các con số |
-| 05 | YC1 · Ontology: 42 lớp, 6 nhóm khái niệm |
-| 06 | YC1 · Cây lớp tác phẩm và phim |
-| 07 | YC1 · Người, tổ chức và vai trò nghề nghiệp |
-| 08 | YC1 · Thể loại, giải thưởng và xuất xứ |
-| 09 | YC1 · Contribution: ai làm gì trong phim nào? |
-| 10 | YC1 · Quan hệ, domain/range và inverse |
-| 11 | YC1 · OWL mô tả ngữ nghĩa như thế nào? |
-| 12 | YC1 · 14 lớp có kiểu được bổ sung |
-| 13 | YC1 · Ví dụ suy luận: Christopher Nolan |
-| 14 | YC1 · Cardinality: ngưỡng 2 và ngưỡng 3 |
-| 15 | YC2 · Thu thập thật và giữ xuất xứ |
-| 16 | YC3 · RDF và giá trị có datatype |
-| 17 | YC3–YC4 · Từ RDF đến Linked Open Data |
-| 18 | YC3 · Tra cứu IRI của Inception |
-| 19 | YC5 · Truy vấn Inception trên Web |
-| 20 | YC5 · Một người, nhiều vai trò và nhiều câu hỏi |
-| 21 | YC5 · Endpoint, terminal và kiểu được bổ sung |
-| 22 | Kiểm tra dữ liệu, ứng dụng và bản công khai |
-| 23 | Đối chiếu đề và giới hạn cần nói rõ |
-| 24 | Kết luận và ảnh Protégé cần bổ sung |
+| 02 | Problem and five assignment requirements |
+| 03 | Architecture and data flow |
+| 04 | Current dataset: interpreting the numbers |
+| 05 | R1 · Ontology: 42 classes in six groups |
+| 06 | R1 · Creative works and film classes |
+| 07 | R1 · People, organizations and roles |
+| 08 | R1 · Genres, awards and provenance |
+| 09 | R1 · Contribution: who did what in a film? |
+| 10 | R1 · Properties, domain/range and inverses |
+| 11 | R1 · How OWL expresses meaning |
+| 12 | R1 · Fourteen classes with additional types |
+| 13 | R1 · Inference example: Christopher Nolan |
+| 14 | R1 · Cardinality: thresholds of two and three |
+| 15 | R2 · Real collection and traceable sources |
+| 16 | R3 · RDF and typed literal values |
+| 17 | R3–R4 · From RDF to Linked Open Data |
+| 18 | R3 · Looking up Inception’s IRI |
+| 19 | R5 · Querying Inception on the Web |
+| 20 | R5 · One person, multiple roles and questions |
+| 21 | R5 · Endpoint, terminal and inferred types |
+| 22 | Validating data, application and publication |
+| 23 | Assessment and limitations |
+| 24 | Conclusion and pending Protégé evidence |
 
 ## Slide 01 — MovieLOD
 
@@ -48,33 +48,33 @@ Tập theo 3 phần: thành viên A slide 1–10; B slide 11–18; C slide 19–
 
 Chào thầy cô và các bạn. Nhóm chúng em trình bày MovieLOD, ứng dụng dữ liệu mở có liên kết về điện ảnh. Bài đi từ mô hình khái niệm, dữ liệu nguồn và RDF đến liên kết ngoài và truy vấn. Phiên bản hiện tại có 30 phim, 42 lớp ontology và 1.727 liên kết ngoài. Ví dụ xuyên suốt là Inception và Christopher Nolan. Bộ slide này có 24 trang; lời nói riêng và hướng dẫn chụp minh chứng Protégé đi kèm. Một số khung ảnh Protégé được để sẵn vì lần làm tài liệu này chưa chụp được giao diện trên máy. Các khung này ghi rõ yêu cầu, không được coi là ảnh minh chứng đã có.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang bài giải quyết gì? đối chiếu đủ 5 yêu cầu.
+**Chuyển trang:** Sau đây nhóm chuyển sang problem and five assignment requirements.
 
-## Slide 02 — Bài giải quyết gì? Đối chiếu đủ 5 yêu cầu
+## Slide 02 — Problem and five assignment requirements
 
 **Lời nói:**
 
 Điện ảnh có nhiều thực thể và nhiều vai trò chồng lấp. Chúng ta muốn hỏi Nolan tham gia Inception ở những vai trò nào, phim này liên quan tới công ty nào hoặc dữ liệu lấy từ phản hồi nào. Năm yêu cầu của đề tạo thành một chuỗi công việc. Ontology định nghĩa khái niệm và quan hệ. Thu thập cung cấp dữ liệu thật. Chuyển đổi tạo RDF và IRI với giấy phép mở. Liên kết nối cá thể tới Wikidata và DBpedia. SPARQL cho phép đặt câu hỏi trên đồ thị. Đề còn yêu cầu báo cáo không quá 15 trang và video 3–5 phút; video demo hiện dài khoảng 4 phút 50 giây.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang kiến trúc và đường đi của dữ liệu.
+**Chuyển trang:** Sau đây nhóm chuyển sang architecture and data flow.
 
-## Slide 03 — Kiến trúc và đường đi của dữ liệu
+## Slide 03 — Architecture and data flow
 
 **Lời nói:**
 
 Luồng xử lý bắt đầu từ danh sách phim trong config. collect lấy phản hồi nguồn và lưu metadata. build tạo ontology cùng graph RDF từ dữ liệu đã chuẩn hóa. validate kiểm tra trường ứng dụng, hash và truy vấn. reason bổ sung các kiểu phân loại ở file riêng. Web cục bộ gọi endpoint Flask dùng RDFLib; hosted dùng Comunica trong trình duyệt. Endpoint mặc định đọc movies.ttl, còn terminal với reasoned nạp thêm schema và inferred_classes.ttl. Tùy chọn này nạp kết quả phân loại đã lưu, không tự chạy reasoner mỗi lần truy vấn. Việc tách ba phần giúp phân biệt dữ kiện gốc với kiểu được bổ sung.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang bộ dữ liệu hiện tại: đọc đúng các con số.
+**Chuyển trang:** Sau đây nhóm chuyển sang current dataset: interpreting the numbers.
 
-## Slide 04 — Bộ dữ liệu hiện tại: đọc đúng các con số
+## Slide 04 — Current dataset: interpreting the numbers
 
 **Lời nói:**
 
 Mẫu hiện có 30 phim, 851 người và 1.010 bản ghi đóng góp. Ngoài ra có 45 công ty, 672 thực thể giải thưởng, 75 thể loại, 11 quốc gia và 15 ngôn ngữ. 76 phản hồi gốc được giữ và kiểm tra hash. Dữ liệu gồm 19.339 triple, tách khỏi 518 triple lược đồ. Cần đọc đúng đơn vị: 672 là số thực thể giải khác nhau, không phải số lần trao giải; 1.010 là bản ghi một người giữ một vai trò trong một phim, không phải số người. Mọi phim trong mẫu có năm, thời lượng và đạo diễn, nhưng mẫu này không đại diện toàn bộ điện ảnh.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · ontology: 42 lớp, 6 nhóm khái niệm.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · ontology: 42 classes in six groups.
 
-## Slide 05 — YC1 · Ontology: 42 lớp, 6 nhóm khái niệm
+## Slide 05 — R1 · Ontology: 42 classes in six groups
 
 **Lời nói:**
 
@@ -88,9 +88,9 @@ Ontology có 42 IRI lớp được khai báo owl Class, trong đó ba lớp dùn
 
 **Cần thấy:** IRI đúng namespace của bài; phiên bản 2.0.0. Metrics có thể tính cả lớp ngoài được tham chiếu, khác 42 lớp tự khai báo.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · cây lớp tác phẩm và phim.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · creative works and film classes.
 
-## Slide 06 — YC1 · Cây lớp tác phẩm và phim
+## Slide 06 — R1 · Creative works and film classes
 
 **Lời nói:**
 
@@ -104,9 +104,9 @@ CreativeWork là nhánh tác phẩm. Film dùng IRI DBpedia và có các lớp c
 
 **Cần thấy:** Film thuộc CreativeWork; IRI là http://dbpedia.org/ontology/Film. Chụp cây khai báo, không gọi là cây đã suy luận.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · người, tổ chức và vai trò nghề nghiệp.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · people, organizations and roles.
 
-## Slide 07 — YC1 · Người, tổ chức và vai trò nghề nghiệp
+## Slide 07 — R1 · People, organizations and roles
 
 **Lời nói:**
 
@@ -120,9 +120,9 @@ Agent gồm Person và Organization. Person dùng lớp DBpedia và có các nh�
 
 **Cần thấy:** Person và Organization cùng dưới Agent; Actor/Filmmaker/AwardWinner là lớp con Person.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · thể loại, giải thưởng và xuất xứ.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · genres, awards and provenance.
 
-## Slide 08 — YC1 · Thể loại, giải thưởng và xuất xứ
+## Slide 08 — R1 · Genres, awards and provenance
 
 **Lời nói:**
 
@@ -136,9 +136,9 @@ Genre có FictionGenre và NonFictionGenre; các lớp thể loại hành độn
 
 **Cần thấy:** Cây Genre/Award khớp sơ đồ. Nhóm thể loại/giải được ánh xạ theo nhãn trong bước build.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · contribution: ai làm gì trong phim nào?.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · contribution: who did what in a film?.
 
-## Slide 09 — YC1 · Contribution: ai làm gì trong phim nào?
+## Slide 09 — R1 · Contribution: who did what in a film?
 
 **Lời nói:**
 
@@ -152,9 +152,9 @@ Nếu chỉ gắn một nhãn nghề nghiệp cho Nolan, chúng ta không biết
 
 **Cần thấy:** Ba qualified cardinality đúng 1, cùng các allValuesFrom. Đây là mô hình OWL, không phải biên bản kiểm tra thiếu trường.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · quan hệ, domain/range và inverse.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · properties, domain/range and inverses.
 
-## Slide 10 — YC1 · Quan hệ, domain/range và inverse
+## Slide 10 — R1 · Properties, domain/range and inverses
 
 **Lời nói:**
 
@@ -170,22 +170,22 @@ Object property nối hai thực thể. contributionBy có domain Contribution v
 
 **Tra cứu khi bảo vệ (không đọc toàn bộ):**
 
-Bảng tra đủ 23 object property (không cần đọc hết khi thuyết trình):
-| Quan hệ | Domain | Range | Inverse / đặc tính |
+Reference: all 23 object properties (not intended to be read aloud in full):
+| Property | Domain | Range | Inverse / characteristics |
 |:--|:--|:--|:--|
 | dbo:director | dbo:Film | dbo:Person | ex:directed |
 | dbo:producer | dbo:Film | dbo:Person | ex:produced |
 | dbo:starring | dbo:Film | dbo:Person | ex:actedIn |
 | dbo:writer | dbo:Film | dbo:Person | ex:wrote |
 | ex:actedIn | dbo:Person | dbo:Film | dbo:starring |
-| ex:awardOf | ex:Award | dbo:Film hoặc dbo:Person | ex:hasAward |
+| ex:awardOf | ex:Award | dbo:Film or dbo:Person | ex:hasAward |
 | ex:contributionBy | ex:Contribution | dbo:Person | ex:hasContribution · functional |
 | ex:contributionOf | dbo:Film | ex:Contribution | ex:contributionTo |
 | ex:contributionTo | ex:Contribution | dbo:Film | ex:contributionOf · functional |
 | ex:country | dbo:Film | dbo:Country | — |
 | ex:directed | dbo:Person | dbo:Film | dbo:director |
 | ex:genreOf | ex:Genre | dbo:Film | ex:hasGenre |
-| ex:hasAward | dbo:Film hoặc dbo:Person | ex:Award | ex:awardOf |
+| ex:hasAward | dbo:Film or dbo:Person | ex:Award | ex:awardOf |
 | ex:hasContribution | dbo:Person | ex:Contribution | ex:contributionBy |
 | ex:hasGenre | dbo:Film | ex:Genre | ex:genreOf |
 | ex:hasProductionCompany | dbo:Film | ex:ProductionCompany | ex:productionOf |
@@ -197,25 +197,25 @@ Bảng tra đủ 23 object property (không cần đọc hết khi thuyết trì
 | ex:sourceSnapshot | — | ex:SourceSnapshot | — |
 | ex:wrote | dbo:Person | dbo:Film | dbo:writer |
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · owl mô tả ngữ nghĩa như thế nào?.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · how owl expresses meaning.
 
-## Slide 11 — YC1 · OWL mô tả ngữ nghĩa như thế nào?
+## Slide 11 — R1 · How OWL expresses meaning
 
 **Lời nói:**
 
 OWL cho phép định nghĩa tương đương lớp, giao, hợp, tồn tại, giá trị cố định và cardinality. Ví dụ Contribution có exactly một Person, một Film và một Role; DirectingContribution được nhận diện khi hasRole có giá trị DirectorRole. Quan hệ inverse suy ra đường đi ngược. Disjointness chỉ dùng cho các lớp không thể chồng lấp theo mô hình, không dùng cho Actor với Filmmaker. Cần nhớ giả định thế giới mở: thiếu một triple không tự chứng minh sự việc không có. Các IRI khác nhau cũng không tự bảo đảm là cá thể khác nhau. Vì vậy ứng dụng dùng kiểm tra Python riêng để phát hiện thiếu hoặc thừa trường, còn OWL phát biểu ý nghĩa và hỗ trợ phân loại.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · 14 lớp có kiểu được bổ sung.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · fourteen classes with additional types.
 
-## Slide 12 — YC1 · 14 lớp có kiểu được bổ sung
+## Slide 12 — R1 · Fourteen classes with additional types
 
 **Lời nói:**
 
 Bảng này cho thấy toàn bộ 14 lớp có kiểu được bổ sung. Bốn nhóm Contribution dùng role, ba nhóm người dùng đóng góp hoặc giải, năm nhóm phim dùng thể loại hoặc giải. Mười hai lớp thuộc phần xử lý bằng luật OWL RL. Hai lớp còn lại, MultiGenreFilm và FilmStudio, dùng truy vấn COUNT DISTINCT sau bước luật. Các số đếm chỉ tính tài nguyên nội bộ để tránh alias sameAs làm tăng số. Bảng là kết quả trong ontology_reasoning.json, không phải 14 kiểu gán sẵn trong movies.ttl. Hai truy vấn người có LIMIT 20; số hiển thị không phải tổng 769 Actor hoặc 89 Filmmaker. Phần cardinality được giải thích riêng ở slide sau.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · ví dụ suy luận: christopher nolan.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · inference example: christopher nolan.
 
-## Slide 13 — YC1 · Ví dụ suy luận: Christopher Nolan
+## Slide 13 — R1 · Inference example: Christopher Nolan
 
 **Lời nói:**
 
@@ -229,9 +229,9 @@ Dữ liệu gốc chỉ khai báo Nolan là Person, cùng các quan hệ đóng 
 
 **Cần thấy:** Định nghĩa giao/hợp/tồn tại. Ảnh định nghĩa không tự chứng minh HermiT đã phân loại dữ liệu.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc1 · cardinality: ngưỡng 2 và ngưỡng 3.
+**Chuyển trang:** Sau đây nhóm chuyển sang r1 · cardinality: thresholds of two and three.
 
-## Slide 14 — YC1 · Cardinality: ngưỡng 2 và ngưỡng 3
+## Slide 14 — R1 · Cardinality: thresholds of two and three
 
 **Lời nói:**
 
@@ -245,17 +245,17 @@ MultiGenreFilm được định nghĩa là Film có ít nhất hai Genre; FilmSt
 
 **Cần thấy:** Ảnh công thức cardinality. Kết quả 6 studio/30 phim nhiều thể loại của app dùng COUNT DISTINCT, không tự coi là chứng minh OWL DL.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc2 · thu thập thật và giữ xuất xứ.
+**Chuyển trang:** Sau đây nhóm chuyển sang r2 · real collection and traceable sources.
 
-## Slide 15 — YC2 · Thu thập thật và giữ xuất xứ
+## Slide 15 — R2 · Real collection and traceable sources
 
 **Lời nói:**
 
 Danh tính phim được xác định qua sitelink Wikipedia tiếng Anh chính xác, thay vì so tên gần giống. Wikidata cung cấp đạo diễn P57, diễn viên P161, biên kịch P58, nhà sản xuất P162, giải P166 và công ty P272. DBpedia chỉ nối khi chủ thể khớp tiêu đề và có kiểu Film; vì vậy có 28 liên kết DBpedia thay vì tự đoán đủ 30. Mỗi phản hồi có URL, provider, thời điểm, HTTP status, SHA-256 và đường dẫn. Hiện đủ 76 phản hồi và hash khớp. Một phản hồi tải lại đổi nội dung được ghi hash/time mới, đồng thời giữ danh mục lịch sử. Hash kiểm tra toàn vẹn byte, không chứng minh mọi phát biểu ngoài đời đúng.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc3 · rdf và giá trị có datatype.
+**Chuyển trang:** Sau đây nhóm chuyển sang r3 · rdf and typed literal values.
 
-## Slide 16 — YC3 · RDF và giá trị có datatype
+## Slide 16 — R3 · RDF and typed literal values
 
 **Lời nói:**
 
@@ -269,17 +269,17 @@ Một triple gồm chủ thể, quan hệ và đối tượng hoặc giá trị.
 
 **Cần thấy:** Thuộc tính dữ liệu nối thực thể với literal, khác quan hệ nối hai thực thể.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc3–yc4 · từ rdf đến linked open data.
+**Chuyển trang:** Sau đây nhóm chuyển sang r3–r4 · from rdf to linked open data.
 
-## Slide 17 — YC3–YC4 · Từ RDF đến Linked Open Data
+## Slide 17 — R3–R4 · From RDF to Linked Open Data
 
 **Lời nói:**
 
 Mức một sao bắt đầu với dữ liệu trên Web có giấy phép mở; hai sao là có cấu trúc; ba sao dùng định dạng mở; bốn sao dùng HTTP URI và chuẩn RDF để tra cứu; năm sao thêm liên kết tới dữ liệu khác. Bài có giấy phép CC BY-SA 4.0, RDF/Turtle/JSON-LD và các IRI có trang mô tả. Bản công khai đã được kiểm tra không đăng nhập, cả bốn graph RDF đối chiếu đều đẳng cấu với local. Có 1.699 liên kết Wikidata và 28 DBpedia. sameAs khẳng định cùng danh tính, còn sourceSnapshot ghi xuất xứ. Tái dùng dbo:Film là dùng từ vựng lớp ở YC1, khác liên kết cá thể ở YC4.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc3 · tra cứu iri của inception.
+**Chuyển trang:** Sau đây nhóm chuyển sang r3 · looking up inception’s iri.
 
-## Slide 18 — YC3 · Tra cứu IRI của Inception
+## Slide 18 — R3 · Looking up Inception’s IRI
 
 **Lời nói:**
 
@@ -293,25 +293,25 @@ Trang Inception hiển thị tên, kiểu, năm, thời lượng, đạo diễn,
 
 **Cần thấy:** Cá thể thật và thuộc tính khớp truy vấn. Giữ tên ontology để không chụp nhầm file chỉ có schema.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc5 · truy vấn inception trên web.
+**Chuyển trang:** Sau đây nhóm chuyển sang r5 · querying inception on the web.
 
-## Slide 19 — YC5 · Truy vấn Inception trên Web
+## Slide 19 — R5 · Querying Inception on the Web
 
 **Lời nói:**
 
 Truy vấn đầu tiên tìm phim tên Inception, đi theo director tới người và lấy nhãn người đó. Kết quả là Inception, 2010, 148 phút, Christopher Nolan. SELECT chọn cột, WHERE đưa mẫu đồ thị, dấu hỏi đánh dấu biến. OPTIONAL giữ dòng khi thuộc tính năm hoặc thời lượng có thể thiếu. Người dùng có thể sửa truy vấn, bấm Run query và tải kết quả. Giao diện có 14 mẫu trực tiếp. Ngoài SELECT trả bảng, ASK trả True hoặc False, CONSTRUCT tạo graph RDF. Kết quả được tính từ graph; danh sách phim hoặc tên đạo diễn không được nhập cứng trong bảng.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc5 · một người, nhiều vai trò và nhiều câu hỏi.
+**Chuyển trang:** Sau đây nhóm chuyển sang r5 · one person, multiple roles and questions.
 
-## Slide 20 — YC5 · Một người, nhiều vai trò và nhiều câu hỏi
+## Slide 20 — R5 · One person, multiple roles and questions
 
 **Lời nói:**
 
 Câu hỏi toàn bộ đóng góp Inception trả 25 bản ghi, gồm 21 diễn viên, một đạo diễn, một biên kịch và hai nhà sản xuất. Ảnh trên slide lọc riêng Christopher Nolan nên chỉ còn ba dòng: Director, Writer, Producer. Chúng ta không lấy ba dòng này làm tổng đóng góp. Các truy vấn khác cho biết tám phim do Nolan đạo diễn trong mẫu, bốn công ty liên quan Inception và bảy giải của The Godfather. Việc thêm câu hỏi không cần nhập một bảng kết quả riêng; chúng dùng cùng đồ thị và mô hình. Download results xuất kết quả đang hiển thị. Các file truy vấn và biên bản cho phép kiểm tra lại những số này.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang yc5 · endpoint, terminal và kiểu được bổ sung.
+**Chuyển trang:** Sau đây nhóm chuyển sang r5 · endpoint, terminal and inferred types.
 
-## Slide 21 — YC5 · Endpoint, terminal và kiểu được bổ sung
+## Slide 21 — R5 · Endpoint, terminal and inferred types
 
 **Lời nói:**
 
@@ -327,8 +327,8 @@ Bài có endpoint GET/POST và terminal, ngoài giao diện Web. SELECT và ASK 
 
 **Tra cứu khi bảo vệ (không đọc toàn bộ):**
 
-Bảng tra 24 truy vấn; số là số dòng trả về, hoặc boolean đối với ASK:
-| File | Gốc | Có schema / phân loại |
+Reference: 24 queries; values are result-row counts or ASK booleans:
+| File | Asserted | With schema / inference |
 |:--|:--|:--|
 | 01_films.rq | 30 | 30 |
 | 02_inception.rq | 1 | 1 |
@@ -354,27 +354,27 @@ Bảng tra 24 truy vấn; số là số dòng trả về, hoặc boolean đối 
 | 22_inferred_film_studios.rq | 0 | 6 |
 | 23_people_with_directing_and_writing_contribution.rq | 0 | 10 |
 | 24_nolan_asserted_types_only.rq | 1 | 3 |
-Câu 14/15 trả một dòng thống kê. Câu 17/18 có LIMIT 20; tổng Actor/Filmmaker là 769/89. Câu 24 có 1 kiểu gốc hoặc 3 kiểu khi nạp phân loại.
+Queries 14/15 each return one aggregate row. Queries 17/18 have LIMIT 20; full Actor/Filmmaker totals are 769/89. Query 24 returns one asserted type or three with inference.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang kiểm tra dữ liệu, ứng dụng và bản công khai.
+**Chuyển trang:** Sau đây nhóm chuyển sang validating data, application and publication.
 
-## Slide 22 — Kiểm tra dữ liệu, ứng dụng và bản công khai
+## Slide 22 — Validating data, application and publication
 
 **Lời nói:**
 
 validate đã kiểm tra tên, nguồn, liên kết của phim và các thành phần Contribution; 76 hash nguồn khớp và 24 file truy vấn đã chạy ở chế độ dữ liệu phù hợp. Có 14 test pass và chín kiểm tra trình duyệt đạt, gồm endpoint, Comunica, lỗi cú pháp, ASK, CONSTRUCT, trang IRI và màn hình mobile. Bản công khai được kiểm tra qua tám URL không có cookie hay đăng nhập; bốn graph RDF đều đẳng cấu với local, có giấy phép và link mô tả máy đọc được. HermiT/Pellet riêng đã xác nhận OWL nhất quán và không có lớp không khả thỏa. Test và hash không chứng minh mọi thông tin ngoài đời đúng. Timestamp OWL/Turtle/JSON-LD đã đồng bộ đến mili giây. Đó là lý do cần vừa nêu kết quả vừa giữ giới hạn phương pháp.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang đối chiếu đề và giới hạn cần nói rõ.
+**Chuyển trang:** Sau đây nhóm chuyển sang assessment and limitations.
 
-## Slide 23 — Đối chiếu đề và giới hạn cần nói rõ
+## Slide 23 — Assessment and limitations
 
 **Lời nói:**
 
 Ảnh đề gốc không đưa trọng số; nhóm dùng thang tự đánh giá chia đều hai điểm mỗi yêu cầu. Ontology, thu thập, RDF công khai, liên kết và truy vấn đều có minh chứng đạt nên đề xuất mười trên mười. Đây không phải điểm chính thức của giảng viên. Các giới hạn vẫn còn: mẫu 30 phim có chủ đích; nhóm thể loại và giải ánh xạ theo nhãn; chưa có ngân sách hoặc streaming; HermiT/Pellet đã xác nhận nhất quán, còn hai nhóm cardinality chỉ có số đếm ứng dụng 30/6; DL có không cá thể. SQL cũng có thể trả nhiều câu hỏi bằng JOIN/view/quy tắc. Giá trị Semantic Web ở đây là IRI dùng chung, từ vựng tái dùng, liên kết dataset, xuất xứ và định nghĩa ngữ nghĩa tường minh.
 
-**Chuyển trang:** Sau đây nhóm chuyển sang kết luận và ảnh protégé cần bổ sung.
+**Chuyển trang:** Sau đây nhóm chuyển sang conclusion and pending protégé evidence.
 
-## Slide 24 — Kết luận và ảnh Protégé cần bổ sung
+## Slide 24 — Conclusion and pending Protégé evidence
 
 **Lời nói:**
 

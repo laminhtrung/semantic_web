@@ -13,7 +13,7 @@ from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
 from common import ROOT, write_json
-from presentation_content import SLIDES, PROTEGE_SHOTS
+from presentation_content_en import SLIDES, PROTEGE_SHOTS
 
 SCALE=120
 INK='152B3A'; TEAL='007F82'; GOLD='E8B65D'; PAPER='F3F6F7'; WHITE='FFFFFF'; MUTED='506776'; LINE='DDE6E9'
@@ -30,7 +30,7 @@ class Canvas:
         self.text(.65,.95,14.7,.9,title,34,WHITE if dark else INK,True)
         self.text(.67,1.88,14.6,.6,subtitle,17,'B8CDD6' if dark else MUTED)
         self.rect(.65,8.43,14.7,.01,'395361' if dark else LINE)
-        self.text(.65,8.58,13,.22,'Đối chiếu dữ liệu: 08/10/2026  •  Nguồn: mã dự án và evidence/',10,'B8CDD6' if dark else MUTED)
+        self.text(.65,8.58,13,.22,'Data checked: 08 Oct 2026  •  Sources: project code and evidence/',10,'B8CDD6' if dark else MUTED)
         self.text(14.5,8.55,1,.3,f'{i:02d} / {len(SLIDES)}',12,GOLD if dark else TEAL,True)
     def rect(self,x,y,w,h,color,rounded=False):
         shape=self.ps.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE if rounded else MSO_SHAPE.RECTANGLE, Inches(x),Inches(y),Inches(w),Inches(h))
@@ -125,7 +125,8 @@ def table(c,x,y,widths,headers,rows,size=16,row_min=.42,max_bottom=8.12,compact=
     return y
 
 
-def proof_photo(c,key,x=8.55,y=2.82,w=6.65,h=5.15):
+def proof_photo(c,key,x=8.55,y=2.82,w=6.65,h=5.02):
+    first_shape=len(c.ps.shapes)
     spec=PROTEGE_SHOTS[key];directory=ROOT/'evidence/protege'
     stem=Path(spec['file']).stem
     found=next((directory/(stem+ext) for ext in ['.png','.jpg','.jpeg'] if (directory/(stem+ext)).exists()),None)
@@ -133,9 +134,9 @@ def proof_photo(c,key,x=8.55,y=2.82,w=6.65,h=5.15):
     frame.name='PHOTO_'+key;frame.fill.solid();frame.fill.fore_color.rgb=RGBColor.from_string(WHITE);frame.line.color.rgb=RGBColor.from_string(TEAL)
     c.d.rounded_rectangle((int(x*SCALE),int(y*SCALE),int((x+w)*SCALE),int((y+h)*SCALE)),radius=18,fill='#'+WHITE,outline='#'+TEAL,width=2)
     if found:
-        c.text(x+.22,y+.2,w-.44,.4,f'ẢNH PROTÉGÉ · {key}',14,TEAL,True)
+        c.text(x+.22,y+.2,w-.44,.4,f'PROTÉGÉ SCREENSHOT · {key}',14,TEAL,True)
         c.picture(found,x+.22,y+.8,w-.44,h-1.3)
-        c.text(x+.22,y+h-.35,w-.44,.3,spec['title'],12,MUTED)
+        c.text(x+.22,y+h-.35,w-.44,.3,spec['title_en'],12,MUTED)
         return True
     c.text(x+.22,y+.18,w-.44,.38,f'ẢNH PROTÉGÉ CẦN BỔ SUNG · {key}',14,TEAL,True)
     c.rect(x+.22,y+.8,w-.44,1.15,'E7EFF1',True)
@@ -145,6 +146,8 @@ def proof_photo(c,key,x=8.55,y=2.82,w=6.65,h=5.15):
     for i,step in enumerate(spec['steps'],1):
         current=paragraph(c,x+.26,current,w-.52,f'{i}. {step}',14,MUTED)+.1
     c.text(x+.25,y+h-.37,w-.5,.31,'Thay khung bằng ảnh thật; chi tiết thêm trong Speaker Notes.',11,TEAL)
+    for i,shape in enumerate(list(c.ps.shapes)[first_shape:]):
+        shape.name='PHOTO_'+key+'_'+str(i)
     return False
 
 
@@ -180,11 +183,11 @@ def technical_notes(s):
             if term is None:return '—'
             if isinstance(term,BNode):
                 union=schema.value(term,OWL.unionOf)
-                if union:return ' hoặc '.join(name(value) for value in Collection(schema,union))
-                return 'biểu thức lớp'
+                if union:return ' or '.join(name(value) for value in Collection(schema,union))
+                return 'class expression'
             value=str(term)
             return ('ex:'+value[len(str(EX)):] if value.startswith(str(EX)) else 'dbo:'+value.rsplit('/',1)[-1] if value.startswith('http://dbpedia.org/ontology/') else value.rsplit('/',1)[-1])
-        lines=['Bảng tra đủ 23 object property (không cần đọc hết khi thuyết trình):','| Quan hệ | Domain | Range | Inverse / đặc tính |','|:--|:--|:--|:--|']
+        lines=['Reference: all 23 object properties (not intended to be read aloud in full):','| Property | Domain | Range | Inverse / characteristics |','|:--|:--|:--|:--|']
         for prop in sorted(set(schema.subjects(RDF.type,OWL.ObjectProperty)),key=str):
             inverse=schema.value(prop,OWL.inverseOf)
             if inverse is None:inverse=next(schema.subjects(OWL.inverseOf,prop),None)
@@ -193,9 +196,9 @@ def technical_notes(s):
         return '\n'.join(lines)
     if s['kind']=='endpoint':
         report=json.loads((ROOT/'evidence/review_2026-10-08.json').read_text())
-        lines=['Bảng tra 24 truy vấn; số là số dòng trả về, hoặc boolean đối với ASK:','| File | Gốc | Có schema / phân loại |','|:--|:--|:--|']
+        lines=['Reference: 24 queries; values are result-row counts or ASK booleans:','| File | Asserted | With schema / inference |','|:--|:--|:--|']
         for row in report['queries']:lines.append('| '+row['file']+' | '+str(row['asserted_result']).lower()+' | '+str(row['with_saved_inference_result']).lower()+' |')
-        lines.append('Câu 14/15 trả một dòng thống kê. Câu 17/18 có LIMIT 20; tổng Actor/Filmmaker là 769/89. Câu 24 có 1 kiểu gốc hoặc 3 kiểu khi nạp phân loại.')
+        lines.append('Queries 14/15 each return one aggregate row. Queries 17/18 have LIMIT 20; full Actor/Filmmaker totals are 769/89. Query 24 returns one asserted type or three with inference.')
         return '\n'.join(lines)
     return ''
 
@@ -203,18 +206,18 @@ def technical_notes(s):
 def render_slide(c,s):
     kind=s['kind']
     if kind=='cover':
-        c.text(.85,3,8.5,1.6,'Từ dữ liệu điện ảnh\nđến đồ thị tri thức',35,WHITE,True)
+        c.text(.85,3,8.5,1.6,'From movie data\nto a knowledge graph',35,WHITE,True)
         c.text(.85,5.08,8,.7,'Ontology · RDF · Linked Open Data · SPARQL',21,'B8CDD6')
-        c.text(.85,6.3,8,.8,'Bản đầy đủ 24 trang\nNhóm / thành viên / lớp: [điền trước khi nộp]',17,'B8CDD6')
-        for i,(n,label) in enumerate([('30','phim thật'),('42','lớp có tên'),('1.727','liên kết ngoài')]):
+        c.text(.85,6.3,8,.8,'Full 24-slide presentation\nTeam / members / class: [complete before submission]',17,'B8CDD6')
+        for i,(n,label) in enumerate([('30','real films'),('42','named classes'),('1,727','external links')]):
             c.rect(10.05,2.95+i*1.5,5.15,1.28,'24424F',True);c.text(10.32,3.11+i*1.5,2.2,.65,n,30,GOLD,True);c.text(12.63,3.32+i*1.5,2.3,.4,label,17,WHITE)
     elif kind=='requirements':
-        table(c,.8,2.95,[1.05,4.25,9.25],['Mã','Yêu cầu','Sản phẩm / minh chứng'],s['rows'],size=20,row_min=.85)
-        note(c,'Đề yêu cầu: báo cáo ≤15 trang · slide · video 3–5 phút. Ví dụ xuyên suốt: Inception và Nolan.')
+        table(c,.8,2.95,[1.05,4.25,9.25],['ID','Requirement','Deliverable / evidence'],s['rows'],size=20,row_min=.85)
+        note(c,'Required: report ≤15 pages · slides · 3–5-minute video. Running examples: Inception and Nolan.')
     elif kind=='pipeline':
         for i,(n,title,body) in enumerate(s['stages']):c.card(.8+i*3.72,2.95,3.43,3.05,title,body,n)
         c.rect(.8,6.35,14.55,1.22,TEAL,True)
-        c.text(1.05,6.53,14,.92,'ỨNG DỤNG: Web / Flask + RDFLib / Comunica / Terminal\nEndpoint: movies.ttl.  --reasoned: thêm schema + inferred_classes.ttl.',18,WHITE,True)
+        c.text(1.05,6.53,14,.92,'APPLICATION: Web / Flask + RDFLib / Comunica / Terminal\nEndpoint: movies.ttl.  --reasoned: adds schema + inferred_classes.ttl.',18,WHITE,True)
     elif kind=='metrics':
         for i,(n,label) in enumerate(s['metrics']):
             x=.8+(i%3)*4.96;y=2.96+(i//3)*2.18
@@ -223,7 +226,7 @@ def render_slide(c,s):
     elif kind=='ontology_overview':
         for i,(n,label) in enumerate(s['groups']):
             y=2.88+i*.65;c.rect(.8,y,7.38,.53,WHITE,True);c.text(1,y+.1,1.65,.36,n,17,TEAL,True);c.text(2.6,y+.1,5.3,.4,label,14 if i==5 else 16,INK)
-        c.text(1,7.04,6.95,.73,'3 lớp DBpedia + 39 lớp ex:\n14 lớp có kiểu được bổ sung; 42 là số lớp tự khai báo.',16,MUTED)
+        c.text(1,7.04,6.95,.73,'3 DBpedia classes + 39 ex: classes\n14 classes receive types; 42 classes explicitly declared.',16,MUTED)
         proof_photo(c,s['photo'])
     elif kind=='hierarchy':
         tree(c,.8,2.86,7.35,s['tree'],row_height=.4,size=18)
@@ -238,18 +241,18 @@ def render_slide(c,s):
     elif kind=='contribution':
         for i,(left,relation,right) in enumerate([('Nolan','hasContribution','Contribution'),('Contribution','contributionTo','Inception · Film'),('Contribution','hasRole','DirectorRole')]):
             yy=2.96+i*1.16;c.node(.85,yy,2.35,.76,left);c.arrow(3.45,yy+.03,1.1,relation);c.node(4.72,yy,3.35,.76,right)
-        small_card(c,.85,6.61,7.35,1.25,'Mỗi vai trò có bản ghi riêng','Director / Actor / Writer / Producer. Nolan có 3 vai trò trong Inception.',16)
+        small_card(c,.85,6.61,7.35,1.25,'Each role has its own record','Director / Actor / Writer / Producer. Nolan has 3 roles in Inception.',16)
         proof_photo(c,s['photo'])
     elif kind=='properties':
-        table(c,.8,2.93,[2.2,3.13,2.12],['Quan hệ','Domain → range','Inverse'],s['rows'],size=14,row_min=.48,max_bottom=7.8)
-        proof_photo(c,s['photo']);note(c,'contributionBy, contributionTo, hasRole: functional. Domain/range có thể suy ra kiểu; inverse là đảo hướng.')
+        table(c,.8,2.93,[2.2,3.13,2.12],['Property','Domain → range','Inverse'],s['rows'],size=14,row_min=.48,max_bottom=7.8)
+        proof_photo(c,s['photo']);note(c,'contributionBy / contributionTo / hasRole: functional. Domain/range can infer types; inverse reverses a relation.')
     elif kind=='owl_rules':
         for i,(title,body) in enumerate(s['cards']):small_card(c,.8+(i%2)*7.48,2.95+(i//2)*2.42,7.18,2.13,title,body,18)
     elif kind=='defined_table':
         reason=json.loads((ROOT/'evidence/ontology_reasoning.json').read_text())
-        meanings={'ActingContribution':'Contribution có ActorRole','DirectingContribution':'Contribution có DirectorRole','WritingContribution':'Contribution có WriterRole','ProducingContribution':'Contribution có ProducerRole','Actor':'Person có đóng góp diễn xuất','Filmmaker':'Person có đóng góp làm phim','AwardWinner':'Person có giải thưởng riêng','ActionFilm':'Film có ActionGenre','ComedyFilm':'Film có ComedyGenre','DramaFilm':'Film có DramaGenre','ScienceFictionFilm':'Film có ScienceFictionGenre','AwardWinningFilm':'Film có giải thưởng','MultiGenreFilm':'Film có từ 2 IRI Genre','FilmStudio':'Công ty có từ 3 IRI Film'}
-        rows=[[n,meanings[n],reason['inferred_counts'][n],'OWL RL' if n in reason['rl_defined'] else 'Đếm IRI'] for n in reason['rl_defined']+reason['cardinality_defined']]
-        table(c,.8,2.78,[4.15,6.75,1.35,2.3],['Lớp','Điều kiện đọc bằng lời','Số','Cách làm'],rows,size=15,row_min=.323,max_bottom=7.95,compact=True)
+        meanings={'ActingContribution':'Contribution with ActorRole','DirectingContribution':'Contribution with DirectorRole','WritingContribution':'Contribution with WriterRole','ProducingContribution':'Contribution with ProducerRole','Actor':'Person with acting contributions','Filmmaker':'Person with filmmaking contributions','AwardWinner':'Person who receives an award','ActionFilm':'Film with ActionGenre','ComedyFilm':'Film with ComedyGenre','DramaFilm':'Film with DramaGenre','ScienceFictionFilm':'Film with ScienceFictionGenre','AwardWinningFilm':'Film that receives an award','MultiGenreFilm':'Film with at least 2 Genre IRIs','FilmStudio':'Company with at least 3 Film IRIs'}
+        rows=[[n,meanings[n],reason['inferred_counts'][n],'OWL RL' if n in reason['rl_defined'] else 'IRI counting'] for n in reason['rl_defined']+reason['cardinality_defined']]
+        table(c,.8,2.78,[4.15,6.75,1.35,2.3],['Class','Condition in plain language','Count','Method'],rows,size=15,row_min=.323,max_bottom=7.95,compact=True)
         note(c,s['footer'])
     elif kind=='nolan_chain':
         for i,(title,body) in enumerate(s['steps']):
@@ -258,15 +261,15 @@ def render_slide(c,s):
         proof_photo(c,s['photo']);note(c,s['footer'])
     elif kind=='cardinality':
         for i,(title,body) in enumerate(s['cards']):small_card(c,.8,2.9+i*2.12,7.35,1.9,title,body,18)
-        c.text(1,7.21,6.93,.61,'Đếm IRI ≠ chứng minh cá thể khác nhau theo OWL DL.',16,TEAL,True)
+        c.text(1,7.21,6.93,.61,'Distinct IRIs ≠ provably different OWL individuals.',16,TEAL,True)
         proof_photo(c,s['photo']);note(c,s['footer'])
     elif kind=='collection':
         for i,(title,body) in enumerate(s['cards']):small_card(c,.8,2.9+i*1.61,7.25,1.42,title,body,16)
         c.picture(ROOT/s['image'],8.45,2.85,6.85,5.23)
-        note(c,'Ảnh phải: metadata và trích phản hồi Wikidata thật; hash kiểm tra toàn vẹn, không chứng minh độ đúng ngoài đời.')
+        note(c,'Right: actual Wikidata metadata and response excerpt. Hashes verify integrity, not real-world truth.')
     elif kind=='rdf':
         code(c,.8,2.88,7.35,1.98,s['code'],16)
-        table(c,.8,5.08,[4.05,3.3],['Datatype property','Kiểu xsd:'],s['rows'],size=16,row_min=.35,max_bottom=8)
+        table(c,.8,5.08,[4.05,3.3],['Data property','xsd: type'],s['rows'],size=16,row_min=.35,max_bottom=8)
         proof_photo(c,s['photo'])
     elif kind=='lod':
         for i,(star,title,result) in enumerate(s['stars']):
@@ -277,7 +280,7 @@ def render_slide(c,s):
         proof_photo(c,s['photo']);note(c,s['footer'])
     elif kind=='query':
         code(c,.8,2.95,6.25,3.3,s['code'],14)
-        small_card(c,.8,6.56,6.25,1.2,'2010 · 148 phút · Nolan','SELECT lấy cột; WHERE khớp mẫu; OPTIONAL giữ dòng.',15)
+        small_card(c,.8,6.56,6.25,1.2,'2010 · 148 minutes · Nolan','SELECT chooses columns; WHERE matches; OPTIONAL preserves rows.',15)
         c.picture(ROOT/s['image'],7.42,2.84,7.93,5.23)
         note(c,s['footer'])
     elif kind=='roles':
@@ -285,32 +288,32 @@ def render_slide(c,s):
         for i,(title,body) in enumerate(s['cards']):small_card(c,10.5,2.92+i*1.7,4.86,1.45,title,body,16)
     elif kind=='endpoint':
         code(c,.8,2.85,7.35,2.73,s['code'],14)
-        table(c,.8,5.94,[2.22,5.13],['Chế độ','Kiểu trả về cho Nolan'],s['rows'],size=16,row_min=.68,max_bottom=7.9)
-        proof_photo(c,s['photo']);note(c,'--reasoned nạp schema + kiểu đã lưu. Endpoint mặc định chỉ graph gốc; SELECT/ASK JSON, CONSTRUCT/DESCRIBE Turtle.')
+        table(c,.8,5.94,[2.22,5.13],['Mode','Nolan types returned'],s['rows'],size=16,row_min=.68,max_bottom=7.9)
+        proof_photo(c,s['photo']);note(c,'--reasoned loads schema + saved types. Endpoint: asserted graph by default. SELECT/ASK: JSON; graph queries: Turtle.')
     elif kind=='validation':
         for i,(n,label) in enumerate(s['checks']):
             y=2.93+i*1.15;c.rect(.8,y,6.5,.94,WHITE,True);c.text(1.02,y+.16,2.15,.57,n if i<3 else '8 / 4',25,TEAL,True);c.text(3.44,y+.23,3.52,.52,label,17,INK)
         c.picture(ROOT/s['image'],7.74,2.86,7.55,4.9)
-        note(c,'14 test / 9 browser checks. HermiT/Pellet kiểm tra DL riêng; ảnh là viewer log thực thi.')
+        note(c,'14 tests / 9 browser checks. HermiT/Pellet verify DL separately; the image shows actual execution logs.')
     elif kind=='score_limits':
-        table(c,.8,2.95,[1.15,4.9,1.3],['YC','Minh chứng','Điểm'],s['rows'],size=17,row_min=.65,max_bottom=7.6)
-        c.rect(.8,7.18,7.35,.7,TEAL,True);c.text(1.06,7.29,6.8,.45,'Tổng 10/10 · điểm tự đề xuất, không phải điểm giảng viên',17,WHITE,True)
+        table(c,.8,2.95,[1.15,4.9,1.3],['Req.','Evidence','Score'],s['rows'],size=17,row_min=.65,max_bottom=7.6)
+        c.rect(.8,7.18,7.35,.7,TEAL,True);c.text(1.06,7.29,6.8,.45,'Total 10/10 · proposed self-score, not an official grade',17,WHITE,True)
         for i,(title,body) in enumerate(s['cards']):small_card(c,8.55,2.94+i*1.63,6.65,1.55,title,body,16)
     elif kind=='closing':
         photos=[(key, spec) for key,spec in PROTEGE_SHOTS.items()]
         mapping={item['photo']:item['number'] for item in SLIDES if 'photo' in item}
-        rows=[[key,str(mapping[key]),spec['title']] for key,spec in photos]
-        table(c,.8,2.86,[1.1,1.1,6.45],['Ảnh','Slide','Nội dung cần chụp'],rows,size=15,row_min=.345,max_bottom=7.75)
-        small_card(c,9.75,2.93,5.43,4.9,'Hoàn thiện trước khi nộp','1. Điền tên nhóm / thành viên.\n\n2. Chèn 11 ảnh thật theo mã bên trái.\n\n3. Lưu vào evidence/protege/ để tạo lại tự động.\n\n4. Tập nói theo Script_thuyet_trinh.pdf; xem lại video.',18)
+        rows=[[key,str(mapping[key]),spec['title_en']] for key,spec in photos]
+        table(c,.8,2.86,[1.1,1.1,6.45],['Image','Slide','Evidence to capture'],rows,size=15,row_min=.345,max_bottom=7.75)
+        small_card(c,9.75,2.93,5.43,4.9,'Before submission','1. Complete team / member details.\n\n2. Insert 11 genuine screenshots.\n\n3. Save them in evidence/protege/ for automatic replacement.\n\n4. Rehearse with the speaker script and review the video.',18)
         note(c,s['footer'])
     else:raise ValueError('Unknown slide kind: '+kind)
 
 
 def create_scripts():
-    lines=['---','title: "MovieLOD: lời thuyết trình cho bộ 24 slide"','date: "Bản đầy đủ · 08/10/2026"','---','','## Cách dùng','','Bộ chính có **24 slide**, thuyết trình đầy đủ khoảng **18–22 phút**. Mỗi đoạn lời cũng nằm trong Speaker Notes. Bản ngắn 13 trang vẫn ở Slide_ngan_13.pptx/pdf và Script_thuyet_trinh_ngan_13.md/pdf. Video demo 4:50 là tài liệu riêng; không đọc toàn bộ lời slide vào video.','','Tập theo 3 phần: thành viên A slide 1–10; B slide 11–18; C slide 19–24. Nếu chỉ có 2 người, chia sau slide 14. Các con số lấy từ dữ liệu và evidence hiện tại. Khung ảnh Protégé chưa có ảnh thực; không đọc ghi chú chờ bổ sung như kết quả đã chứng minh.','','## Luồng rút gọn 12–15 phút','','Ưu tiên slide 1–5, 9–10, 12–13, 15–17, 19–23. Các trang cây lớp, công thức cardinality và tra cứu IRI có thể dùng khi trả lời câu hỏi.','','## Mục lục','','| Slide | Nội dung |','|:--|:--|']
+    lines=['---','title: "MovieLOD: lời thuyết trình cho bộ 24 slide"','date: "Bản đầy đủ · 08/10/2026"','---','','## Cách dùng','','Bộ chính có **24 slide**, thuyết trình đầy đủ khoảng **18–22 phút**. Nội dung slide và Speaker Notes bằng tiếng Anh; script riêng giữ lời tiếng Việt tương ứng để tập nói. Hướng dẫn trong ô chờ ảnh vẫn bằng tiếng Việt. Bản ngắn 13 trang vẫn ở Slide_ngan_13.pptx/pdf và Script_thuyet_trinh_ngan_13.md/pdf. Video demo 4:50 là tài liệu riêng; không đọc toàn bộ lời slide vào video.','','Tập theo 3 phần: thành viên A slide 1–10; B slide 11–18; C slide 19–24. Nếu chỉ có 2 người, chia sau slide 14. Các con số lấy từ dữ liệu và evidence hiện tại. Khung ảnh Protégé chưa có ảnh thực; không đọc ghi chú chờ bổ sung như kết quả đã chứng minh.','','## Luồng rút gọn 12–15 phút','','Ưu tiên slide 1–5, 9–10, 12–13, 15–17, 19–23. Các trang cây lớp, công thức cardinality và tra cứu IRI có thể dùng khi trả lời câu hỏi.','','## Mục lục','','| Slide | Nội dung |','|:--|:--|']
     for s in SLIDES:lines.append(f"| {s['number']:02d} | {s['title']} |")
     for s in SLIDES:
-        lines.extend([f"\n## Slide {s['number']:02d} — {s['title']}\n",'**Lời nói:**\n',s['speech'],''])
+        lines.extend([f"\n## Slide {s['number']:02d} — {s['title']}\n",'**Lời nói:**\n',s.get('speech_vi',s['speech']),''])
         if 'photo' in s:
             spec=PROTEGE_SHOTS[s['photo']]
             lines.extend([f"**Ảnh cần bổ sung — {s['photo']}:** `{spec['file']}`; mở `ontology/{spec['owl']}`.\n"]+[f'{i}. {step}' for i,step in enumerate(spec['steps'],1)]+['\n**Cần thấy:** '+spec['expect'],''])
@@ -367,7 +370,7 @@ def create_slides():
     for i,im in enumerate(pages):contact.paste(im.resize((480,270)),((i%4)*480,(i//4)*270))
     contact.save(out/'contact_sheet.jpg')
     create_scripts()
-    write_json(ROOT/'evidence/presentation.json',{'review_date':'2026-10-08','slide_count':len(SLIDES),'font':FONT,'editable_text_and_diagrams':True,'pdf_export':export,'speaking_time_minutes':'18–22','protege_photos':photos,'protege_images_present':sum(p['image_present'] for p in photos),'protege_placeholders':sum(not p['image_present'] for p in photos),'real_application_screenshots':['05_inception_current.png','06_nolan_roles.png','09_inception_resource.png'],'short_deck_preserved':'docs/Slide_ngan_13.pptx','technical_self_score':10.0})
+    write_json(ROOT/'evidence/presentation.json',{'review_date':'2026-10-08','slide_count':len(SLIDES),'font':FONT,'slide_language':'English','placeholder_language':'Vietnamese','speaker_notes_language':'English','rehearsal_script_language':'Vietnamese','editable_text_and_diagrams':True,'pdf_export':export,'speaking_time_minutes':'18–22','protege_photos':photos,'protege_images_present':sum(p['image_present'] for p in photos),'protege_placeholders':sum(not p['image_present'] for p in photos),'real_application_screenshots':['05_inception_current.png','06_nolan_roles.png','09_inception_resource.png'],'short_deck_preserved':'docs/Slide_ngan_13.pptx','technical_self_score':10.0})
     print('Created 24-slide PPTX/PDF, matching speaker script and Protégé checklist.')
 
 if __name__=='__main__':

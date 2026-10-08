@@ -1,32 +1,27 @@
-[
-  {
-    "path": "/Movie_Knowledge_Graph.owl",
-    "http_status": 200,
-    "matches_local_bytes": true,
-    "sha256": "75eecc27cb4353abc0d4115fb38aac37e09d5e4cf4b0dbe3003fc0f5fd6d8dbc"
-  },
-  {
-    "path": "/docs/Slide.pptx",
-    "http_status": 200,
-    "matches_local_bytes": true,
-    "sha256": "a98c2177c497804fa83484c520124b2e8c2b2bc8563de5054efa88478003fbea"
-  },
-  {
-    "path": "/docs/Slide.pdf",
-    "http_status": 200,
-    "matches_local_bytes": true,
-    "sha256": "6bf1d04b91729e2811c69074ea9e2d7bcd1aa33577432d8e2defc711e1d6ef23"
-  },
-  {
-    "path": "/docs/Script_thuyet_trinh.pdf",
-    "http_status": 200,
-    "matches_local_bytes": true,
-    "sha256": "f546e000a63714e1a6446c46a889a3625863d4b319c317b9c8e08777209b9e0b"
-  },
-  {
-    "path": "/docs/Ket_qua_reasoner.pdf",
-    "http_status": 200,
-    "matches_local_bytes": true,
-    "sha256": "d02115565e940e6dbce40b895fc25faba50e8cdd460c915c5f2cce13f8cef7f2"
-  }
-]
+{
+  "verification": "Native Sites deployment succeeded for the exact pushed source archive; local deployment copies verified byte-for-byte. No additional HTTP check performed for this document update.",
+  "version_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916~appgver_b0707e9af90c819197d83c8d877b1550",
+  "source_commit": "da6e04cc4114422d4f4eca6f2dda3fb8d62fcb17",
+  "documents": [
+    {
+      "path": "/docs/Bao_cao.pdf",
+      "sha256": "5d0dbff9e774908d052123231d887032e2e1200581006cf7c39fcb647f87cc52",
+      "deployment_copy_matches": true
+    },
+    {
+      "path": "/docs/Bao_cao.docx",
+      "sha256": "c515e6feebfbb6710e82ae57c646013dd5e0172930e90384b77d945613d06ef3",
+      "deployment_copy_matches": true
+    },
+    {
+      "path": "/docs/Slide.pptx",
+      "sha256": "35b4c6ee3a86b58f4347d4d74ac9a3da93df48834d7ed0299e1f12165ce813c1",
+      "deployment_copy_matches": true
+    },
+    {
+      "path": "/docs/Slide.pdf",
+      "sha256": "4d1523738c5ebf0a7ab95bb3191a4bdc00261c2fdcd7f6707fc034bafed0a7eb",
+      "deployment_copy_matches": true
+    }
+  ]
+}

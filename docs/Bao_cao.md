@@ -1,124 +1,293 @@
----
-title: "MovieLOD: báo cáo học phần Semantic Web"
-date: "MovieLOD 2.0 · Đối chiếu ngày 08/10/2026"
----
+# MovieLOD: course project report (English)
 
-## 1. Mục tiêu và đối chiếu đề
+Formatting: Times New Roman 13 pt; 1.5 line spacing; justified body text; A4; left 3 cm, right/top/bottom 2 cm. PDF has 15 pages including cover, contents and references.
 
-MovieLOD là ứng dụng dữ liệu mở có liên kết về điện ảnh. Ví dụ xuyên suốt: phim **Inception**, đạo diễn **Christopher Nolan**, nguồn dữ liệu và các định danh bên ngoài. Giao diện ứng dụng dùng tiếng Anh; tài liệu giải thích bằng tiếng Việt. Bộ nộp gồm báo cáo này (không quá 15 trang), **24 slide** và kịch bản quay demo **4 phút 50 giây**. `Video_demo.mp4` được thay bằng video ghi thao tác trình duyệt và kết quả lệnh thật trên bản 2.0, lời đọc tiếng Việt tổng hợp.
+## Page 1: Cover
 
-| Yêu cầu đề gốc | Triển khai | Minh chứng |
-|:--|:--|:--|
-| YC1: Define an ontology | 42 lớp, quan hệ, ràng buộc và định nghĩa lớp | `ontology/movie.ttl`, hai file OWL, `src/build.py` |
-| YC2: Collect relevant data | Wikidata/DBpedia, danh tính chính xác, URL và metadata nguồn | `src/collect.py`, `data/raw/`, `collection.json` |
-| YC3: Transform to 4* | RDF, HTTP IRI, Turtle/JSON-LD, giấy phép, trang mô tả | `data/processed/`, `LICENSE-DATA.txt` |
-| YC4: Establish links for 5* | 1.727 liên kết owl:sameAs | `link_audit.json`, truy vấn 05 |
-| YC5: SPARQL endpoint/terminal | Web, Flask/RDFLib, terminal | `src/server.py`, `src/query.py`, 24 truy vấn |
+Hanoi University of Science and Technology
+Supervisor: TS. Đỗ Bá Lâm
+Lã Minh Trung — 20251319M
+Nguyễn Thu Uyên — 20252279M
+Nguyễn Thị Nhã Linh — 20261262M
+Nguyễn Khắc Thái Bình — 20251324M
 
-**Trạng thái:** Bản 2.0 đã được xuất bản công khai và kiểm tra không đăng nhập: dữ liệu Turtle/JSON-LD, ontology và mô tả RDF của Inception đều đẳng cấu với graph cục bộ. Có 19.339 triple dữ liệu và 42 lớp ontology. Đã bổ sung 43 phản hồi còn thiếu và chạy lại quy trình: đủ 76/76 file nguồn, 76/76 SHA-256 khớp, không có file thiếu. Một phản hồi tải lại có nội dung thay đổi được ghi thời điểm/hash mới; danh mục lịch sử được giữ ở `evidence/source_manifest_before_recovery.json`.
+<!-- page break -->
 
-## 2. Kiến trúc và quy trình
+## Page 2: TABLE OF CONTENTS
 
-Chọn phim trong `config.json`, lấy phản hồi bằng `collect.py`, tạo mô hình và RDF bằng `build.py`, kiểm tra dữ liệu bằng Python, phân loại bằng `reason.py`, sau đó truy vấn và công bố. Phản hồi gốc lưu ở `data/raw/`; dữ liệu chuẩn hóa ở `data/processed/`; các số liệu và biên bản ở `evidence/`.
+1. INTRODUCTION AND OBJECTIVES … 3
+  1.1 Abstract and problem statement … 3
+  1.2 Research objectives and competency questions … 3
+  1.3 Scope and evaluation approach … 3
+2. CONCEPTUAL FRAMEWORK … 4
+  2.1 From heterogeneous sources to a knowledge graph … 4
+  2.2 Representation and interpretation … 4
+3. DATA ACQUISITION AND PROVENANCE … 5
+4. NORMALIZATION AND RDF GENERATION … 6
+5. ONTOLOGY STRUCTURE … 7
+6. CONTRIBUTION MODEL … 8
+7. PROPERTIES AND OWL CONSTRAINTS … 9
+8. PUBLICATION AND FOUR-STAR DATA … 10
+9. EXTERNAL IDENTITY LINKS … 11
+10. SPARQL AND COMPETENCY QUESTIONS … 12
+11. REASONING AND INTERPRETATION … 13
+12. EVALUATION AND LIMITATIONS … 14
+13. CONCLUSION AND REFERENCES … 15
+  13.1 Conclusion and future work … 15
+  13.2 References … 15
 
-Dữ liệu khai báo nằm trong `movies.ttl`. Lược đồ nằm trong `ontology/movie.ttl`. Kiểu phân loại bổ sung nằm riêng trong `inferred_classes.ttl`. Endpoint mặc định chỉ truy vấn graph khai báo. Terminal với `--reasoned` nạp cả ba file; không tự chạy reasoner mỗi lần gọi.
+<!-- page break -->
 
-\newpage
+## Page 3: 1. INTRODUCTION AND OBJECTIVES
 
-## 3. YC1 — Ontology và mô hình đóng góp
+### 1.1 Abstract and problem statement
 
-**42 lớp có tên:** dùng trực tiếp `dbo:Film`, `dbo:Person`, `dbo:Country`; 39 lớp khác thuộc namespace của bài. Có **23 object property**, **6 datatype property** và **14 lớp phân loại bổ sung**. Các lớp bên ngoài được tham chiếu qua equivalentClass không được cộng vào số lớp khai báo này.
+MovieLOD combines Wikidata and DBpedia responses with an OWL ontology, RDF publication, external identity links and three query interfaces. Its selected sample contains 30 films, 42 declared classes, 19,339 data triples and 1,727 identity links. Source integrity and query behavior are verified; HermiT and Pellet confirm consistency and matching inferred populations. Application counting is distinguished from OWL DL inference. The motivating problem is that movie information uses different identifiers and overlapping roles across sources. Inception and Christopher Nolan illustrate how one person can direct, write and produce the same film without losing the identity or provenance of each contribution.
 
-| Nhánh | Ý nghĩa và ví dụ |
-|:--|:--|
-| CreativeWork / Film | Tác phẩm, phim, FeatureFilm, AnimatedFilm và các nhóm theo thể loại |
-| Agent / Person / Organization | Người và tổ chức; ProductionCompany là công ty sản xuất |
-| Contribution | Một người giữ một vai trò trong một phim |
-| Genre / Award | Thể loại và giải thưởng, có các nhóm con |
-| Country / Language / SourceSnapshot / Dataset | Quốc gia, ngôn ngữ, bản ghi nguồn và bộ dữ liệu |
+### 1.2 Research objectives and competency questions
 
-**Contribution:** `contributionBy` trỏ một Person; `contributionTo` trỏ một Film; `hasRole` trỏ một ContributionRole. Bốn vai trò là Director, Actor, Writer và Producer. Nolan có thể có nhiều đóng góp riêng; không dùng lớp DirectorWriter của phiên bản cũ. `hasContribution` và `contributionOf` là các đường đi ngược.
+Table 1. Competency questions guiding ontology design and evaluation.
 
-Các quan hệ có domain/range và inverse; ba thuộc tính của Contribution là functional, có ràng buộc đúng một giá trị. Các lớp nền được khai báo rời nhau khi phù hợp. Actor và Filmmaker không rời nhau vì một người có thể vừa diễn xuất vừa đạo diễn.
+| ID | Competency question | Knowledge required |
+| --- | --- | --- |
+| CQ1 | Who directed a film? | Film, Person and director relation |
+| CQ2 | Which roles did one person hold? | Person–film–role association |
+| CQ3 | How are films grouped by genre? | Genre taxonomy and film membership |
+| CQ4 | Which external entities identify a film? | Identity alignment across datasets |
+| CQ5 | Which types follow from stated facts? | Class definitions and entailment |
 
-**Domain/range và cardinality là ngữ nghĩa OWL:** domain/range có thể suy ra kiểu; cardinality đúng một không tự báo lỗi khi trường bị thiếu. Vì OWL dùng giả định thế giới mở và không mặc định mọi tên khác nhau đều là cá thể khác nhau, kiểm tra cấu trúc dữ liệu của ứng dụng được thực hiện riêng bằng Python.
+### 1.3 Scope and evaluation approach
 
-**Ví dụ suy luận:** Contribution có DirectorRole được phân loại DirectingContribution; Person có đóng góp thuộc nhóm đạo diễn/biên kịch/sản xuất được phân loại Filmmaker. Nolan không được gán sẵn Filmmaker trong `movies.ttl`.
+The selected sample is a case study rather than a comprehensive film catalogue. Evaluation examines whether the conceptual model represents the domain coherently and answers the competency questions. Three levels are distinguished: source assertions, logically entailed types, and application-defined aggregation. This distinction permits a meaningful assessment of semantic expressiveness without treating the sample as representative of the entire film industry.
 
-**Cách chạy:** 12 lớp dùng OWL RL; MultiGenreFilm và FilmStudio dùng SPARQL COUNT DISTINCT bổ sung. Việc đếm các IRI là quy tắc ứng dụng, chưa chứng minh ngữ nghĩa cardinality OWL DL nếu chưa có căn cứ cá thể khác nhau. Đã chạy HermiT/Pellet riêng trên OWL chính: nhất quán, không có lớp không khả thỏa; 12 lớp có số lượng khớp OWL RL, hai lớp cardinality có 0 cá thể suy luận DL. File OWL, Turtle và JSON-LD cùng dùng timestamp đến mili giây; manifest nguồn giữ thời điểm đầy đủ. Bảng đủ các lớp/thuộc tính ở `Ontology_Redesign.md`.
+<!-- page break -->
 
-\newpage
+## Page 4: 2. CONCEPTUAL FRAMEWORK
 
-## 4. YC2 — Thu thập và xuất xứ
+![Figure 1. Conceptual workflow: source knowledge, entity alignment, RDF assertions, ontology semantics and querying. Source: authors.](report_images/academic_framework.png)
 
-| Chỉ số bản cục bộ | Giá trị |
-|:--|--:|
-| Phim / người / đóng góp | 30 / 851 / 1.010 |
-| Công ty sản xuất / thực thể giải thưởng | 45 / 672 |
-| Thể loại / quốc gia / ngôn ngữ | 75 / 11 / 15 |
-| Phim có năm, thời lượng và đạo diễn | 30/30 cho từng trường |
-| Phản hồi được liệt kê / file gốc còn có | 76 / 76 |
+### 2.1 From heterogeneous sources to a knowledge graph
 
-Wikidata được lấy qua API với sitelink Wikipedia tiếng Anh chính xác. P57/P161/P58/P162 cung cấp đạo diễn/diễn viên/biên kịch/nhà sản xuất; P136 thể loại, P495 quốc gia, P364 ngôn ngữ, P577 ngày phát hành, P2047 thời lượng, P166 giải, P272 công ty. Thu thập giải thưởng của người là bước bổ sung, khác giải của phim.
+The study combines complementary source descriptions through a common conceptual model. Entity alignment identifies which records refer to the same film or person. RDF then expresses the aligned descriptions as relationships and typed values. The ontology supplies a vocabulary and axioms that make these relationships interpretable. Semantic inference adds consequences of the axioms, while SPARQL retrieves both stated and entailed knowledge. Provenance provides a basis for interpreting where each description originated.
 
-DBpedia chỉ được nối khi tài nguyên khớp tiêu đề và được khai báo `dbo:Film`. Chỉ có 28 liên kết DBpedia; không tự đoán hai phim còn lại. Metadata nguồn có URL, provider, retrieved_at, HTTP status, SHA-256 và đường dẫn. Hash kiểm tra toàn vẹn byte, không chứng minh độ đúng của phát biểu.
+Table 2. Distinct knowledge layers used in the study.
 
-**Kiểm tra nguồn hiện tại:** Đã bổ sung 43 phản hồi còn thiếu và chạy lại quy trình: đủ 76/76 file nguồn, 76/76 SHA-256 khớp, không có file thiếu. Một phản hồi tải lại có nội dung thay đổi được ghi thời điểm/hash mới; danh mục lịch sử được giữ ở `evidence/source_manifest_before_recovery.json`. Đã chạy lại collect từ cache nguồn đầy đủ, build, reason, validate và test. Các phản hồi không đổi giữ hash/thời điểm lịch sử; phản hồi đổi có mốc nguồn mới được lưu trung thực.
+| Knowledge layer | Semantic role |
+| --- | --- |
+| Terminological knowledge (TBox/RBox) | Classes, properties and restrictions |
+| Assertional knowledge (ABox) | Individuals, relationships and literal values |
+| Entailed knowledge | Consequences of assertions and axioms |
 
-## 5. YC3 — Chuyển đổi RDF và mức 4 sao
+### 2.2 Representation and interpretation
 
-Dữ liệu gồm **19.339 triple**, lược đồ **518 triple**. Triple gồm chủ thể, quan hệ, đối tượng hoặc giá trị. Ví dụ `Inception dbo:director Nolan`; năm dùng số nguyên và thời lượng dùng số phút có datatype. Dùng QID để tạo IRI ổn định, chuẩn hóa thời lượng phút/giờ/giây, ghi các trường hợp nhiều giá trị trong `quality_issues.json`.
+Separating the layers supports a precise interpretation of query answers. A person may be explicitly described as a Person while satisfying the definition of Filmmaker through a contribution. The additional type follows from the ontology, not a new source statement. Conversely, an aggregation over distinct RDF terms is a query operation and may not establish an OWL cardinality restriction. The framework therefore separates logical entailment from data summarization.
 
-Turtle và JSON-LD biểu diễn cùng graph; file `Movie_Ontology.owl` chỉ có lược đồ, `Movie_Knowledge_Graph.owl` gồm lược đồ và dữ liệu. Có CSV cho tiện đọc nhưng CSV tự nó không phải RDF.
+<!-- page break -->
 
-Dữ liệu có giấy phép **CC BY-SA 4.0**, ghi công các nguồn; mã ứng dụng MIT. Mức sao cộng dồn: công khai và giấy phép mở, dữ liệu có cấu trúc, định dạng mở, HTTP URI/RDF, rồi liên kết ngoài. **Bản 2.0 đã được xuất bản công khai và kiểm tra không đăng nhập: dữ liệu Turtle/JSON-LD, ontology và mô tả RDF của Inception đều đẳng cấu với graph cục bộ. Có 19.339 triple dữ liệu và 42 lớp ontology.** Kết luận công bố dựa trên kiểm tra URL không đăng nhập và so sánh graph, không chỉ dựa vào file cục bộ.
+## Page 5: 3. DATA ACQUISITION AND PROVENANCE
 
-\newpage
+Wikidata entities are resolved through exact English Wikipedia sitelinks. The collector retrieves film claims and the related people, companies, awards and terms. DBpedia matches are accepted only when the resource corresponds to the expected title and is typed as a Film. This conservative rule produces 28 DBpedia film links; missing matches are not guessed [4,5].
 
-## 6. YC4 — Liên kết cùng danh tính
+Table 3. Main source properties used by the collector.
 
-Có **1.699 liên kết Wikidata + 28 DBpedia = 1.727 owl:sameAs**. Tổng gồm phim, người, thể loại, giải, công ty và các thực thể liên quan; truy vấn 05 chỉ theo phim trả **58 dòng**. `link_audit.json` lưu IRI nội bộ, IRI ngoài và phương pháp nối.
+| Claim group | Wikidata properties |
+| --- | --- |
+| People and roles | P57 director; P161 cast; P58 writer; P162 producer |
+| Film context | P136 genre; P495 country; P364 language |
+| Dates, runtime and organizations | P577 release; P2047 runtime; P166 award; P272 company |
 
-Ví dụ Inception nối với `http://www.wikidata.org/entity/Q25188` và tài nguyên DBpedia Inception. `owl:sameAs` khẳng định cùng một thực thể; `sourceSnapshot` ghi thông tin được lấy ở phản hồi nào. Tái dùng `dbo:Film` là dùng từ vựng ontology ở YC1, còn sameAs giữa cá thể là liên kết ở YC4.
+![Figure 2. Actual saved response metadata and selected Inception claims. Source: supplied slide PDF, p. 15.](report_images/05_source_viewer.png)
 
-Liên kết cùng danh tính cần kiểm tra kỹ vì OWL có thể lan truyền mọi phát biểu qua sameAs. Khi đếm sau suy luận, bài lọc namespace tài nguyên nội bộ để tránh tính các alias bên ngoài như nhiều cá thể. Điều kiện 4 sao và liên kết ngoài của bản 2.0 đã được đối chiếu trên bản công khai; tiêu chí 5 sao đạt theo phạm vi đề.
+Provenance associates an assertion with its source and retrieval context. The corpus contains 76 retained source responses, allowing normalized claims to be traced to their original descriptions. This is important because source content can evolve, and a later response may differ from the one used in the study. Integrity checks establish that a retained response is unchanged; they do not establish that the source claim is true. Provenance, entity matching and semantic validation therefore address different aspects of data quality.
 
-## 7. YC5 — Ba cách truy vấn
+<!-- page break -->
 
-**Web:** mở `http://127.0.0.1:8000`, chọn Sample queries, bấm Run query. Có 14 câu trực tiếp trên giao diện, tìm phim, mở IRI và tải kết quả. SELECT trả bảng, ASK trả boolean, CONSTRUCT trả RDF. Chế độ local dùng endpoint; `/?browser` dùng Comunica. Website hosted dùng engine trình duyệt, không phải endpoint Flask công khai.
+## Page 6: 4. NORMALIZATION AND RDF GENERATION
 
-**Terminal:** `.venv/bin/python src/query.py queries/02_inception.rq` trả Inception, 2010, 148 phút, Christopher Nolan. Truy vấn Nolan trả 8 dòng; đóng góp Inception 25 dòng; diễn viên Inception 21 dòng. Các file 17/18 có LIMIT 20, nên 20 dòng hiển thị không phải tổng 769 Actor hoặc 89 Filmmaker.
+QIDs form stable local identifiers for films, people and other entities. The build step maps source claims to ontology properties, normalizes runtime units to minutes and records ambiguous or multiple values for review. Source snapshots remain available so a normalized statement can be traced back to the exact response. The current sample includes 30 films, 851 people, 1,010 contributions, 45 companies and 672 award entities.
 
-**Endpoint:** GET/POST `/sparql`, hỗ trợ form hoặc `application/sparql-query`; SELECT/ASK trả SPARQL Results JSON, CONSTRUCT/DESCRIBE trả Turtle. Endpoint chặn Update và SERVICE/FROM tải ngoài. Tra cứu cục bộ với Accept text/turtle trả 303 đến mô tả RDF.
-
-```bash
-curl -X POST http://127.0.0.1:8000/sparql \
-  -H 'Content-Type: application/sparql-query' \
-  --data-binary @queries/02_inception.rq
-.venv/bin/python src/query.py queries/18_inferred_filmmakers.rq --reasoned
+```
+res:film-Q25188 a dbo:Film ;
+  ex:title "Inception" ;
+  ex:releaseYear 2010 ;
+  ex:runtimeMinutes "148.0"^^xsd:decimal ;
+  dbo:director res:person-Q25191 .
 ```
 
-Ảnh ứng dụng và ảnh trang Inception nằm ở `evidence/screenshots/`; ảnh trong slide là ảnh thao tác thật. Các truy vấn suy luận trả rỗng trên graph khai báo là kết quả đúng với chế độ nạp hiện tại.
+![Figure 3. runtimeMinutes in Protégé: Film domain and xsd:decimal range. Source: supplied slide PDF, p. 16.](report_images/P08_runtime_datatype.png)
 
-\newpage
+The representation contains 19,339 assertional triples and 518 schema triples. Turtle and JSON-LD express the same graph: their surface syntax differs, but their statements are equivalent. Datatypes distinguish a numeric duration from a textual title and permit meaningful comparison and aggregation. This also illustrates the distinction between an entity and its attributes: Nolan is identified by an IRI, whereas 148 minutes is a literal value. Normalization supports semantic interoperability by representing comparable quantities in a common unit [6].
 
-## 8. Kiểm tra, đánh giá và giới hạn
+<!-- page break -->
 
-Lần kiểm tra 08/10/2026: **14 test pass**; kiểm tra các trường dữ liệu hiện tại không phát hiện lỗi; chạy đủ 24 file trên graph khai báo và trên graph có schema/phân loại đã lưu. `evidence/review_2026-10-08.json` chứa số liệu và xác nhận không còn file nguồn thiếu. `evidence/tests.txt` chứa kết quả test. Kiểm tra trình duyệt sau đồng bộ file local nằm trong `browser_checks.json`; trạng thái public đo mới ở `publication_checks.json`.
+## Page 7: 5. ONTOLOGY STRUCTURE
 
-| Yêu cầu | Điểm tự đề xuất / 2 | Giới hạn |
-|:--|--:|:--|
-| YC1 | 2,0 | Ontology đã triển khai; HermiT/Pellet xác nhận nhất quán |
-| YC2 | 2,0 | 76/76 phản hồi gốc có và khớp hash |
-| YC3 | 2,0 | RDF công khai đẳng cấu với local |
-| YC4 | 2,0 | Liên kết và bản công bố đã đồng bộ |
-| YC5 | 2,0 | Web, endpoint và terminal hoạt động |
-| Tổng | **10/10** | Thang chia đều do nhóm đề xuất; không phải điểm giảng viên |
+The ontology declares 42 named classes organized around films, agents, contributions, genres, awards and contextual information. dbo:Film, dbo:Person and dbo:Country reuse DBpedia vocabulary; 39 declarations express concepts specific to the study. Vocabulary reuse supports interoperability, while local definitions address modeling requirements that a general film description does not capture. Human-readable labels and comments clarify intended meaning without replacing formal axioms.
 
-Mẫu phim có chủ đích, không đại diện toàn bộ điện ảnh. DocumentaryFilm hiện không có cá thể; ASK false chỉ nói về dataset này. MultiGenreFilm bằng toàn bộ 30 phim vì mỗi phim trong mẫu có ít nhất hai thể loại. Các nhóm genre/award còn dùng từ khóa nhãn, cần kiểm tra thủ công khi mở rộng nguồn. FilmStudio là tên lớp theo quy tắc của bài (công ty có ít nhất ba phim trong mẫu), không phải xác nhận quy mô studio ngoài đời. Chưa mô hình hóa ngân sách, doanh thu, streaming hoặc từng bản dựng phim.
+![Figure 4. Asserted Film hierarchy and reused DBpedia Film IRI. Source: supplied slide PDF, p. 6.](report_images/P01_film_hierarchy.png)
 
-**Trước khi nộp:** điền thành viên trên bìa, xem lại video/slide và dùng ZIP mới. Phần nguồn, bản công khai và video đã được sửa; kiểm tra lại khi thay đổi dữ liệu hoặc mô hình. Lời thuyết trình riêng nằm ở `Script_thuyet_trinh.md` và notes của từng slide.
+Table 4. Six conceptual groups, totaling 42 declared classes.
 
-Nguồn ngữ nghĩa: [Linked Data và thang sao](https://www.w3.org/DesignIssues/LinkedData.html), [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), [OWL 2 Profiles](https://www.w3.org/TR/owl2-profiles/). Dẫn chiếu tiêu chuẩn dùng để giải thích RDF, SPARQL và giới hạn reasoning; số liệu ứng dụng lấy từ repository.
+| Concept group | Declared classes |
+| --- | --- |
+| CreativeWork / Film; Agent / Person / Organization | 11; 8 |
+| Contribution / roles; Genre; Award | 6; 8; 5 |
+| Country / Language / SourceSnapshot / Dataset | 4 |
 
-**Cập nhật timestamp/reasoner:** dùng duy nhất Movie_Knowledge_Graph.owl cho graph đầy đủ. HermiT/Pellet đã chạy; xem Ket_qua_reasoner.pdf. Video_demo.mp4 giữ nguyên theo yêu cầu nhóm; timestamp trong dữ liệu mới giảm đến mili giây, nội dung phim/quan hệ giữ nguyên, đã kiểm tra ở video_dataset_compatibility.json. Video chưa thể hiện kết quả reasoner mới và vẫn nhắc bộ slide ngắn 13 trang.
+Film subclasses include FeatureFilm, AnimatedFilm and DocumentaryFilm, together with genre-based and award-based classes. The P31 mapping yields 29 FeatureFilm and one AnimatedFilm in this sample. DocumentaryFilm has no instances. Actor and Filmmaker overlap by design; Person and Organization represent different categories of agent. Genre and award subgroups are mapped from source-label keywords and require review when the dataset is expanded.
+
+<!-- page break -->
+
+## Page 8: 6. CONTRIBUTION MODEL
+
+Contribution represents a person-film-role association. contributionBy identifies the person, contributionTo the film, and hasRole one of four role individuals: DirectorRole, ActorRole, WriterRole or ProducerRole. Separate records preserve multiple roles without inventing a combined profession class. Nolan’s directing, writing and producing contributions to Inception are therefore three records, not three people.
+
+![Figure 5. ActingContribution definition and inherited Contribution restrictions. Source: supplied slide PDF, p. 9.](report_images/P04_contribution_restrictions.png)
+
+Table 5. Role distribution returned by the full Inception query.
+
+| Inception role | Contribution records |
+| --- | --- |
+| Actor | 21 |
+| Director / Writer / Producer | 1 / 1 / 2 |
+| Total | 25 |
+
+The contribution node represents a ternary association through three binary relations. Compared with a direct director or starring edge, it makes the person–film–role context explicit and permits association-level provenance. The additional nodes increase representation size but support extensions such as credit order or role-specific dates. Inverse relationships enable navigation from either a person or a film. The 1,010 contribution records must therefore be interpreted as contextual associations, not 1,010 distinct people.
+
+<!-- page break -->
+
+## Page 9: 7. PROPERTIES AND OWL CONSTRAINTS
+
+The model declares 23 object properties and six data properties. Object properties connect entities, whereas data properties connect individuals to typed values. contributionBy, contributionTo and hasRole are functional and have qualified exactly-one restrictions. Universal restrictions constrain the types of their fillers. Together, these axioms characterize a Contribution as an association with one person, one film and one role, rather than an unrestricted collection of relationships.
+
+![Figure 6. contributionBy: functional, inverse hasContribution, domain Contribution and range Person. Source: supplied slide PDF, p. 10.](report_images/P05_object_property.png)
+
+Table 6. All six declared data properties.
+
+| Data property | Datatype |
+| --- | --- |
+| title; sha256 | xsd:string |
+| releaseYear; runtimeMinutes | xsd:integer; xsd:decimal |
+| sourceUrl; retrievedAt | xsd:anyURI; xsd:dateTime |
+
+OWL interprets restrictions semantically. Domain and range can support type inference, while absence of a statement does not imply its negation. Different identifiers are not automatically different individuals. Thus, an exactly-one restriction is not equivalent to requiring a filled database field. Disjointness expresses incompatibility between categories, while equivalent-class definitions characterize membership using intersections, unions, existential restrictions and fixed values. These distinctions determine which conclusions are justified [1].
+
+<!-- page break -->
+
+## Page 10: 8. PUBLICATION AND FOUR-STAR DATA
+
+MovieLOD publishes RDF using HTTP IRIs and a CC BY-SA 4.0 data license. Turtle and JSON-LD are open serializations of the same graph; CSV is provided for convenience but is not itself RDF. The four-star claim depends on public access, an open license and useful descriptions reached through identifiers, rather than the existence of local files alone [3].
+
+![Figure 7. Inception individual: types, external identity links, companies, provenance and typed literals. Source: supplied slide PDF, p. 18.](report_images/P09_inception_individual.png)
+
+An IRI description connects the identity of a resource with information about it. For Inception, the description includes its types, title, duration, director, contributions, contextual entities and source associations. Human-readable presentation and machine-readable RDF serve complementary audiences. Consumers can follow these relationships to explore connected resources rather than treating a film as an isolated record.
+
+The academic significance of publication is interoperability: another consumer can interpret the identifiers and reuse the statements without adopting the original application. An open license establishes reuse conditions, while standard RDF representations preserve meaning across tools. External links extend this principle across datasets. Publication alone does not guarantee semantic accuracy; the quality of the model, matching decisions and source claims remains essential.
+
+<!-- page break -->
+
+## Page 11: 9. EXTERNAL IDENTITY LINKS
+
+Entity alignment yields 1,699 Wikidata and 28 DBpedia owl:sameAs statements, totaling 1,727 identity links. These concern films, people and related entities; the film-only query returns 58 links. Matching combines identifiers, exact title associations and compatible entity types. This conservative approach prioritizes justified identity assertions over maximizing the number of links.
+
+![Figure 8. Cumulative Linked Open Data levels and project evidence. Source: supplied slide PDF, p. 17.](report_images/04_lod_levels.png)
+
+```
+res:film-Q25188 owl:sameAs
+  <http://www.wikidata.org/entity/Q25188>,
+  <http://dbpedia.org/resource/Inception> .
+```
+
+sameAs means that identifiers denote the same entity. It differs from reusing dbo:Film as vocabulary and from sourceSnapshot as provenance. Identity links require careful matching because reasoning can propagate statements across aliases. The application therefore filters local resource namespaces when counting inferred instances, preventing Wikidata and DBpedia aliases from inflating totals.
+
+Table 7. Link counts and their scopes.
+
+| Measure | Recorded result |
+| --- | --- |
+| All identity links | 1,727 |
+| Wikidata / DBpedia links | 1,699 / 28 |
+| Film-only link query | 58 rows |
+
+<!-- page break -->
+
+## Page 12: 10. SPARQL AND COMPETENCY QUESTIONS
+
+SPARQL operationalizes the competency questions through graph patterns. SELECT retrieves bindings, ASK evaluates whether a pattern has a solution, and CONSTRUCT creates a graph from matching data [2]. In the Inception example, the query joins the film’s title and director relationship with the person’s label. OPTIONAL permits a result even when a descriptive attribute is absent.
+
+![Figure 9. Inception query on the actual application. Source: supplied slide PDF, p. 19.](report_images/06_query_ui.png)
+
+Table 8. Selected query outputs.
+
+| Question | Verified result |
+| --- | --- |
+| Inception year / runtime / director | 2010 / 148 min / Christopher Nolan |
+| Nolan films; Inception companies | 8 films; 4 companies |
+| Inception actors; Godfather awards | 21 actors; 7 awards |
+
+The query examples demonstrate structural expressiveness: one pattern retrieves a film’s attributes, another follows contributions to roles, and an aggregation summarizes films by genre. Taxonomic queries can use subclass relationships to retrieve broader categories. Answers depend on the knowledge considered: asserted Person membership differs from entailed Filmmaker membership. LIMIT restricts displayed solutions rather than the population of a class. A useful interpretation of an answer therefore states its graph scope and counting unit.
+
+<!-- page break -->
+
+## Page 13: 11. REASONING AND INTERPRETATION
+
+Reasoning evaluates whether the assertions and axioms admit a consistent interpretation and determines additional class memberships. Independent classification with HermiT and Pellet found the knowledge base consistent and no named class unsatisfiable. Both reasoners agreed on the populations reported below. This agreement supports the interpretation of the model; it is not evidence that every source claim is factually correct.
+
+![Figure 10. Filmmaker equivalent-class definition in an asserted Protégé view. Source: supplied slide PDF, p. 13. This image shows the axiom, not reasoner execution.](report_images/P06_filmmaker_equivalent_class.png)
+
+Table 9. Local instance counts independently confirmed by both reasoners.
+
+| Class group | HermiT / Pellet result |
+| --- | --- |
+| Actor; Filmmaker; AwardWinner | 769; 89; 290 |
+| Acting / Directing / Writing / ProducingContribution | 855 / 31 / 51 / 73 |
+| Action / Comedy / Drama / ScienceFiction / AwardWinningFilm | 12 / 4 / 25 / 6 / 26 |
+| MultiGenreFilm; FilmStudio | 0; 0 DL-inferred instances |
+
+Nolan satisfies Filmmaker through a directing, writing or producing contribution and AwardWinner through an award association. Twelve populations agree with OWL RL classification. In contrast, distinct-IRI aggregation identifies 30 MultiGenreFilm and six FilmStudio candidates, while neither DL reasoner entails those memberships under the current axioms. The discrepancy reflects different identity assumptions, not a contradictory result. Absence of inferred instances does not imply that a class is unsatisfiable.
+
+<!-- page break -->
+
+## Page 14: 12. EVALUATION AND LIMITATIONS
+
+Evaluation considers representational coverage, logical consistency and the ability to answer competency questions. The 30-film sample contains a year, duration and director for every film. Contribution records preserve multiple roles, and query results distinguish role associations from distinct people. The genre and award taxonomies support category-based retrieval. These observations demonstrate capabilities within the sample, rather than general accuracy over the film domain.
+
+![Figure 11. Genre hierarchy supporting category-based retrieval. Source: supplied slide PDF, p. 8.](report_images/P03_genre_award_hierarchy.png)
+
+Table 10. Academic evaluation dimensions and their interpretive limits.
+
+| Dimension | Observation | Interpretation |
+| --- | --- | --- |
+| Completeness | 30/30 films; 3 attributes | Coverage within the selected sample |
+| Consistency | Agreement of two reasoners | No detected logical contradiction |
+| Expressiveness | Roles, hierarchy and identity | Competency questions are answerable |
+| External validity | Selected 30-film corpus | Industry-wide conclusions are unsupported |
+
+Selection bias limits generalization, and keyword-based genre or award grouping can introduce semantic misclassification. Identity alignment also lacks an independently annotated reference set, so precision and recall are not claimed. Logical consistency is weaker than factual correctness; incomplete information remains possible under open-world semantics. A broader study should separately evaluate source accuracy, matching quality and sensitivity to modeling assumptions.
+
+<!-- page break -->
+
+## Page 15: 13. CONCLUSION AND REFERENCES
+
+### 13.1 Conclusion and future work
+
+The study demonstrates how a movie domain can be represented as linked knowledge rather than isolated records. The Contribution pattern preserves the context of multiple roles, reused vocabulary supports interoperability, and identity links connect complementary descriptions. SPARQL answers competency questions while OWL exposes consequences of explicit definitions. The distinction between entailment and distinct-term aggregation is a central methodological result: apparently similar counts can rest on different semantic assumptions.
+
+Future research should use a larger and more diverse sample, annotated identity matches and expert-reviewed genre and award categories. Conflicting source claims require provenance-aware reconciliation. Richer models could distinguish film works, releases and editions. Cardinality-based membership should rely on justified individual distinctions. These extensions would permit more rigorous evaluation of accuracy, completeness and generalizability.
+
+### 13.2 References
+
+[1] W3C. OWL 2 Web Ontology Language Primer, Second Edition. 2012. https://www.w3.org/TR/owl2-primer/
+
+[2] W3C. SPARQL 1.1 Query Language. 2013. https://www.w3.org/TR/sparql11-query/
+
+[3] Tim Berners-Lee. Linked Data — Design Issues. W3C. https://www.w3.org/DesignIssues/LinkedData.html
+
+[4] Wikidata. Data access. https://www.wikidata.org/wiki/Wikidata:Data_access
+
+[5] DBpedia Association. SPARQL over Online Databases. https://www.dbpedia.org/resources/sparql/
+
+[6] W3C. RDF 1.1 Concepts and Abstract Syntax. 2014. https://www.w3.org/TR/rdf11-concepts/
+
+Online references accessed 8 October 2026. All figure origins are identified in their captions.
+
+<!-- page break -->

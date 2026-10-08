@@ -12,14 +12,18 @@
 | [Kịch bản demo](docs/Kich_ban_video.pdf) / [Markdown](docs/Kich_ban_video.md) | Timeline, lời đọc khớp video, lệnh và kết quả cần thấy; cách tự quay/ghi lại |
 | [Checklist ảnh Protégé](docs/Checklist_anh_Protege.pdf) | 11 ảnh, tên file, slide tương ứng, thao tác và nội dung cần thấy |
 | [Bảng chấm](CHAM_DIEM.pdf) / [Markdown](CHAM_DIEM.md) | 10/10 tự đề xuất sau sửa; đủ 5 YC, tiêu chí con, minh chứng và giới hạn |
-| [Báo cáo](docs/Bao_cao.pdf) / [Markdown](docs/Bao_cao.md) | Đúng 5 yêu cầu, cập nhật 2.0, không quá 15 trang |
+| [Báo cáo PDF](docs/Bao_cao.pdf) / [Word](docs/Bao_cao.docx) / [Markdown](docs/Bao_cao.md) | Báo cáo tiếng Anh đúng 15 trang; Times New Roman 13, giãn dòng 1,5, căn đều; 10 hình từ Slide_full.pptx.pdf và 1 sơ đồ khái niệm; nội dung học thuật về ontology, liên kết, SPARQL, suy luận và giới hạn nghiên cứu |
 | [A–Z](docs/Huong_dan_A_Z.pdf) / [hướng dẫn chi tiết](docs/Huong_dan_thao_tac_chi_tiet.pdf) | Chạy, đọc từ khóa, lệnh, Protégé, Web/endpoint/terminal và xử lý lỗi |
 | [Mô tả ontology](docs/Mo_ta_ontology.pdf) / [bảng đầy đủ](docs/Ontology_Redesign.pdf) | Giải thích tiếng Việt: 42 lớp/23 quan hệ/6 datatype property/14 lớp phân loại/24 truy vấn |
 | [ZIP tài liệu](docs/Bo_tai_lieu_thuyet_trinh.zip) | Slide, video, báo cáo, scripts và hướng dẫn trong một gói |
 
 **Bản ngắn:** [13 slide](docs/Slide_ngan_13.pptx) và [lời nói riêng](docs/Script_thuyet_trinh_ngan_13.pdf) vẫn được giữ. Video demo 4:50 minh họa app và nhắc bộ ngắn 13 trang; bộ 24 trang phục vụ thuyết trình đầy đủ.
 
-**Ảnh Protégé:** chưa chụp được do macOS chặn điều khiển giao diện. Các khung P00–P10 ghi rõ hướng dẫn; nhóm bổ sung ảnh thật vào PPTX hoặc lưu đúng tên trong evidence/protege rồi tạo lại slide. Khung chờ không được gọi là ảnh minh chứng đã có.
+**Ngôn ngữ slide chính:** bộ 24 slide và Speaker Notes bằng tiếng Anh; 11 ô chờ ảnh Protégé giữ hướng dẫn tiếng Việt. Script riêng vẫn bằng tiếng Việt để tập nói, với tiêu đề tiếng Anh khớp slide. Nội dung tiếng Anh ở `src/presentation_content_en.py`; phần lời tiếng Việt gốc ở `src/presentation_content.py`. Bản ngắn 13 trang được giữ như tài liệu lịch sử. Video không thay đổi.
+
+**Ảnh Protégé cho báo cáo:** đã trích ảnh gốc từ `docs/Slide_full.pptx.pdf` do nhóm cung cấp; nguồn ảnh được ghi trong `evidence/report_image_sources.json`. Ảnh trích đặt trong `docs/report_images/`. Báo cáo dùng ảnh thật, phân biệt asserted view với log reasoner. Bộ Slide.pptx trước đó vẫn có ô hướng dẫn; file PDF đầy đủ do nhóm cung cấp giữ nguyên.
+
+**Định dạng báo cáo:** A4, lề trái 3 cm, phải/trên/dưới 2 cm; nội dung căn đều hai bên, Times New Roman 13 pt, giãn dòng 1,5. Dùng `src/make_report.py` để tạo Word/PDF và `src/check_report.py` để kiểm tra. `src/make_docs.py` tự chuyển báo cáo sang trình tạo riêng để không ghi đè bằng định dạng tài liệu hướng dẫn. Bìa có logo chính thức Bách khoa Hà Nội, đủ bốn thành viên/mã học viên và giảng viên hướng dẫn TS. Đỗ Bá Lâm. Mục lục là một trang riêng, dùng dấu chấm dẫn và số trang căn phải, không kẻ bảng. Video giữ nguyên.
 
 **Chạy HermiT trong Protégé:** mở `ontology/Movie_Knowledge_Graph.owl`. File chính đã sửa timestamp đến mili giây và đồng bộ Turtle/JSON-LD/Web; không còn bản OWL tương thích riêng. HermiT và Pellet đã kiểm tra. Xem `docs/Ket_qua_reasoner.pdf` và `evidence/hermit_run.json`. Video giữ nguyên; minh chứng chỉ thay đổi timestamp ở `evidence/video_dataset_compatibility.json`.
 
