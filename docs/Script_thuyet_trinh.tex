@@ -1,0 +1,1022 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[a4paper,margin=19mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Be Vietnam Pro}
+  \setmonofont[]{Menlo}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+\usepackage{fancyhdr}
+\usepackage{array}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small MovieLOD · Bài làm hoàn chỉnh}
+\fancyfoot[C]{\small\thepage}\setlength{\headheight}{15pt}
+\renewcommand{\arraystretch}{1.14}\setlength{\extrarowheight}{1pt}
+\AtBeginEnvironment{longtable}{\small}
+\setlength{\emergencystretch}{3em}\setlength{\parskip}{4pt}
+\usepackage{titling}\setlength{\droptitle}{-1.5cm}
+\pretitle{\begin{center}\Large\bfseries\color{teal}}
+\posttitle{\par\end{center}\vspace{-0.5em}}
+\predate{\begin{center}\small}\postdate{\par\end{center}\vspace{-1em}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  pdftitle={MovieLOD: lời thuyết trình cho bộ 24 slide},
+  colorlinks=true,
+  linkcolor={teal},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={teal},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{MovieLOD: lời thuyết trình cho bộ 24 slide}
+\author{}
+\date{Bản đầy đủ · 08/10/2026}
+
+\begin{document}
+\maketitle
+
+\subsection{Cách dùng}\label{cuxe1ch-duxf9ng}
+
+Bộ chính có \textbf{24 slide}, thuyết trình đầy đủ khoảng \textbf{18--22
+phút}. Mỗi đoạn lời cũng nằm trong Speaker Notes. Bản ngắn 13 trang vẫn
+ở
+Slide\_\allowbreak{}ng\allowbreak{}an\_\allowbreak{}13.\allowbreak{}pp\allowbreak{}tx/\allowbreak{}pdf
+và
+Script\_\allowbreak{}t\allowbreak{}huyet\_\allowbreak{}tr\allowbreak{}inh\_\allowbreak{}ngan\allowbreak{}\_\allowbreak{}13.\allowbreak{}md/\allowbreak{}p\allowbreak{}df.\allowbreak{}
+Video demo 4:50 là tài liệu riêng; không đọc toàn bộ lời slide vào
+video.
+
+Tập theo 3 phần: thành viên A slide 1--10; B slide 11--18; C slide
+19--24. Nếu chỉ có 2 người, chia sau slide 14. Các con số lấy từ dữ liệu
+và evidence hiện tại. Khung ảnh Protégé chưa có ảnh thực; không đọc ghi
+chú chờ bổ sung như kết quả đã chứng minh.
+
+\subsection{Luồng rút gọn 12--15
+phút}\label{luux1ed3ng-ruxfat-gux1ecdn-1215-phuxfat}
+
+Ưu tiên slide 1--5, 9--10, 12--13, 15--17, 19--23. Các trang cây lớp,
+công thức cardinality và tra cứu IRI có thể dùng khi trả lời câu hỏi.
+
+\subsection{Mục lục}\label{mux1ee5c-lux1ee5c}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Slide & Nội dung \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+01 & MovieLOD \\
+02 & Bài giải quyết gì? Đối chiếu đủ 5 yêu cầu \\
+03 & Kiến trúc và đường đi của dữ liệu \\
+04 & Bộ dữ liệu hiện tại: đọc đúng các con số \\
+05 & YC1 · Ontology: 42 lớp, 6 nhóm khái niệm \\
+06 & YC1 · Cây lớp tác phẩm và phim \\
+07 & YC1 · Người, tổ chức và vai trò nghề nghiệp \\
+08 & YC1 · Thể loại, giải thưởng và xuất xứ \\
+09 & YC1 · Contribu\allowbreak{}tion:\allowbreak{} ai làm gì trong phim
+nào? \\
+10 & YC1 · Quan hệ, domain/range và inverse \\
+11 & YC1 · OWL mô tả ngữ nghĩa như thế nào? \\
+12 & YC1 · 14 lớp có kiểu được bổ sung \\
+13 & YC1 · Ví dụ suy luận: Christopher Nolan \\
+14 & YC1 · Cardinality: ngưỡng 2 và ngưỡng 3 \\
+15 & YC2 · Thu thập thật và giữ xuất xứ \\
+16 & YC3 · RDF và giá trị có datatype \\
+17 & YC3--YC4 · Từ RDF đến Linked Open Data \\
+18 & YC3 · Tra cứu IRI của Inception \\
+19 & YC5 · Truy vấn Inception trên Web \\
+20 & YC5 · Một người, nhiều vai trò và nhiều câu hỏi \\
+21 & YC5 · Endpoint, terminal và kiểu được bổ sung \\
+22 & Kiểm tra dữ liệu, ứng dụng và bản công khai \\
+23 & Đối chiếu đề và giới hạn cần nói rõ \\
+24 & Kết luận và ảnh Protégé cần bổ sung \\
+\end{longtable}
+}
+
+\subsection{Slide 01 --- MovieLOD}\label{slide-01-movielod}
+
+\textbf{Lời nói:}
+
+Chào thầy cô và các bạn. Nhóm chúng em trình bày MovieLOD, ứng dụng dữ
+liệu mở có liên kết về điện ảnh. Bài đi từ mô hình khái niệm, dữ liệu
+nguồn và RDF đến liên kết ngoài và truy vấn. Phiên bản hiện tại có 30
+phim, 42 lớp ontology và 1.727 liên kết ngoài. Ví dụ xuyên suốt là
+Inception và Christopher Nolan. Bộ slide này có 24 trang; lời nói riêng
+và hướng dẫn chụp minh chứng Protégé đi kèm. Một số khung ảnh Protégé
+được để sẵn vì lần làm tài liệu này chưa chụp được giao diện trên máy.
+Các khung này ghi rõ yêu cầu, không được coi là ảnh minh chứng đã có.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang bài giải quyết gì? đối
+chiếu đủ 5 yêu cầu.
+
+\subsection{Slide 02 --- Bài giải quyết gì? Đối chiếu đủ 5 yêu
+cầu}\label{slide-02-buxe0i-giux1ea3i-quyux1ebft-guxec-ux111ux1ed1i-chiux1ebfu-ux111ux1ee7-5-yuxeau-cux1ea7u}
+
+\textbf{Lời nói:}
+
+Điện ảnh có nhiều thực thể và nhiều vai trò chồng lấp. Chúng ta muốn hỏi
+Nolan tham gia Inception ở những vai trò nào, phim này liên quan tới
+công ty nào hoặc dữ liệu lấy từ phản hồi nào. Năm yêu cầu của đề tạo
+thành một chuỗi công việc. Ontology định nghĩa khái niệm và quan hệ. Thu
+thập cung cấp dữ liệu thật. Chuyển đổi tạo RDF và IRI với giấy phép mở.
+Liên kết nối cá thể tới Wikidata và DBpedia. SPARQL cho phép đặt câu hỏi
+trên đồ thị. Đề còn yêu cầu báo cáo không quá 15 trang và video 3--5
+phút; video demo hiện dài khoảng 4 phút 50 giây.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang kiến trúc và đường đi
+của dữ liệu.
+
+\subsection{Slide 03 --- Kiến trúc và đường đi của dữ
+liệu}\label{slide-03-kiux1ebfn-truxfac-vuxe0-ux111ux1b0ux1eddng-ux111i-cux1ee7a-dux1eef-liux1ec7u}
+
+\textbf{Lời nói:}
+
+Luồng xử lý bắt đầu từ danh sách phim trong config. collect lấy phản hồi
+nguồn và lưu metadata. build tạo ontology cùng graph RDF từ dữ liệu đã
+chuẩn hóa. validate kiểm tra trường ứng dụng, hash và truy vấn. reason
+bổ sung các kiểu phân loại ở file riêng. Web cục bộ gọi endpoint Flask
+dùng RDFLib; hosted dùng Comunica trong trình duyệt. Endpoint mặc định
+đọc movies.ttl, còn terminal với reasoned nạp thêm schema và
+inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
+Tùy chọn này nạp kết quả phân loại đã lưu, không tự chạy reasoner mỗi
+lần truy vấn. Việc tách ba phần giúp phân biệt dữ kiện gốc với kiểu được
+bổ sung.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang bộ dữ liệu hiện tại: đọc
+đúng các con số.
+
+\subsection{Slide 04 --- Bộ dữ liệu hiện tại: đọc đúng các con
+số}\label{slide-04-bux1ed9-dux1eef-liux1ec7u-hiux1ec7n-tux1ea1i-ux111ux1ecdc-ux111uxfang-cuxe1c-con-sux1ed1}
+
+\textbf{Lời nói:}
+
+Mẫu hiện có 30 phim, 851 người và 1.010 bản ghi đóng góp. Ngoài ra có 45
+công ty, 672 thực thể giải thưởng, 75 thể loại, 11 quốc gia và 15 ngôn
+ngữ. 76 phản hồi gốc được giữ và kiểm tra hash. Dữ liệu gồm 19.339
+triple, tách khỏi 518 triple lược đồ. Cần đọc đúng đơn vị: 672 là số
+thực thể giải khác nhau, không phải số lần trao giải; 1.010 là bản ghi
+một người giữ một vai trò trong một phim, không phải số người. Mọi phim
+trong mẫu có năm, thời lượng và đạo diễn, nhưng mẫu này không đại diện
+toàn bộ điện ảnh.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · ontology: 42 lớp,
+6 nhóm khái niệm.
+
+\subsection{Slide 05 --- YC1 · Ontology: 42 lớp, 6 nhóm khái
+niệm}\label{slide-05-yc1-ontology-42-lux1edbp-6-nhuxf3m-khuxe1i-niux1ec7m}
+
+\textbf{Lời nói:}
+
+Ontology có 42 IRI lớp được khai báo owl Class, trong đó ba lớp dùng
+trực tiếp từ DBpedia, còn lại thuộc namespace của bài. Chúng ta có nhánh
+tác phẩm và phim; chủ thể người hoặc tổ chức; đóng góp và vai trò; thể
+loại; giải thưởng; và các lớp bổ trợ cho quốc gia, ngôn ngữ, nguồn,
+dataset. Trong số này, 14 lớp có kiểu được bổ sung từ định nghĩa hoặc
+quy tắc phân loại. Các lớp ngoài được tham chiếu qua
+equivale\allowbreak{}nt\allowbreak{}Class có thể được Protégé tính thêm
+trong Metrics; vì vậy con số 42 dùng quy ước đếm lớp tự khai báo. Ảnh
+cần bổ sung ở bên phải là IRI ontology và versionInfo 2.0.0.
+
+\textbf{Ảnh cần bổ sung --- P00:}
+\texttt{P00\_\allowbreak{}onto\allowbreak{}logy\_\allowbreak{}hea\allowbreak{}der.\allowbreak{}png};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mở
+  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl.\allowbreak{}
+\item
+  Chọn Active Ontology / Ontology Header.
+\item
+  Giữ IRI ontology và versionInfo 2.0.0 trong khung hình.
+\end{enumerate}
+
+\textbf{Cần thấy:} IRI đúng namespace của bài; phiên bản 2.0.0. Metrics
+có thể tính cả lớp ngoài được tham chiếu, khác 42 lớp tự khai báo.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · cây lớp tác phẩm
+và phim.
+
+\subsection{Slide 06 --- YC1 · Cây lớp tác phẩm và
+phim}\label{slide-06-yc1-cuxe2y-lux1edbp-tuxe1c-phux1ea9m-vuxe0-phim}
+
+\textbf{Lời nói:}
+
+CreativeWork là nhánh tác phẩm. Film dùng IRI DBpedia và có các lớp con
+như FeatureFilm, Animated\allowbreak{}\allowbreak{}Film,
+Document\allowbreak{}ary\allowbreak{}Film.\allowbreak{} FeatureFilm và
+AnimatedFilm được ánh xạ theo quy tắc P31 của bài; đây là cách giản
+lược, không phải khẳng định đã kiểm tra mọi tiêu chí phát hành rạp. Các
+lớp ActionFilm, ComedyFilm, DramaFilm,
+Science\allowbreak{}F\allowbreak{}iction\allowbreak{}Fi\allowbreak{}lm,
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film và
+Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{}
+được phân loại bổ sung. Document\allowbreak{}ary\allowbreak{}Film hiện
+không có cá thể trong mẫu. Việc có một lớp trong mô hình không yêu cầu
+mẫu dữ liệu phải có sẵn mọi loại phim. Khung ảnh yêu cầu mở cây
+Creative\allowbreak{}\allowbreak{}Work/\allowbreak{}\allowbreak{}Fil\allowbreak{}m
+và chọn Film để thấy IRI DBpedia.
+
+\textbf{Ảnh cần bổ sung --- P01:}
+\texttt{P01\_\allowbreak{}film\allowbreak{}\_\allowbreak{}hierarc\allowbreak{}hy.\allowbreak{}png};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → mở CreativeWork và Film.
+\item
+  Hiện các lớp con FeatureFilm, AnimatedFilm và nhóm phim.
+\item
+  Chọn Film; giữ IRI DBpedia và Class Description.
+\end{enumerate}
+
+\textbf{Cần thấy:} Film thuộc Creative\allowbreak{}\allowbreak{}Work;
+IRI là
+http:\allowbreak{}/\allowbreak{}/\allowbreak{}d\allowbreak{}bpedia.\allowbreak{}o\allowbreak{}rg/\allowbreak{}ontol\allowbreak{}ogy/\allowbreak{}\allowbreak{}Film\allowbreak{}.\allowbreak{}
+Chụp cây khai báo, không gọi là cây đã suy luận.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · người, tổ chức và
+vai trò nghề nghiệp.
+
+\subsection{Slide 07 --- YC1 · Người, tổ chức và vai trò nghề
+nghiệp}\label{slide-07-yc1-ngux1b0ux1eddi-tux1ed5-chux1ee9c-vuxe0-vai-truxf2-nghux1ec1-nghiux1ec7p}
+
+\textbf{Lời nói:}
+
+Agent gồm Person và Organiza\allowbreak{}tion.\allowbreak{} Person dùng
+lớp DBpedia và có các nhóm Actor, Filmmaker, AwardWinner. Organization
+có Producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y; FilmStudio
+là nhóm công ty được ứng dụng phân loại theo ngưỡng số phim trong mẫu.
+Actor và Filmmaker không rời nhau, vì một người có thể vừa diễn xuất vừa
+đạo diễn hoặc biên kịch. Chúng ta cũng không dùng một lớp tổ hợp
+Director\allowbreak{}\allowbreak{}Writer để giữ hai nghề; từng công việc
+được ghi qua Contribution và SPARQL có thể JOIN các đóng góp. Số người
+hoặc công ty không được suy từ số dòng của một truy vấn có LIMIT. Ảnh
+cần chụp là cây Agent mở cả nhánh Person và
+Organiza\allowbreak{}tion.\allowbreak{}
+
+\textbf{Ảnh cần bổ sung --- P02:}
+\texttt{P02\_\allowbreak{}agen\allowbreak{}t\_\allowbreak{}hierar\allowbreak{}chy.\allowbreak{}png};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → mở Agent.
+\item
+  Mở Person và Organization →
+  Producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y.\allowbreak{}
+\item
+  Chọn Person hoặc Filmmaker; giữ cây lớp và Description.
+\end{enumerate}
+
+\textbf{Cần thấy:} Person và Organization cùng dưới Agent;
+Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker/\allowbreak{}\allowbreak{}Award\allowbreak{}Win\allowbreak{}ner
+là lớp con Person.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · thể loại, giải
+thưởng và xuất xứ.
+
+\subsection{Slide 08 --- YC1 · Thể loại, giải thưởng và xuất
+xứ}\label{slide-08-yc1-thux1ec3-loux1ea1i-giux1ea3i-thux1b0ux1edfng-vuxe0-xuux1ea5t-xux1ee9}
+
+\textbf{Lời nói:}
+
+Genre có FictionGenre và
+Non\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre;\allowbreak{} các
+lớp thể loại hành động, hài, chính kịch, khoa học viễn tưởng thuộc
+Fiction\allowbreak{}G\allowbreak{}enre, còn
+Document\allowbreak{}ary\allowbreak{}Genre\allowbreak{} dưới
+Non\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre.\allowbreak{}
+Award có các nhóm FilmAward, ActingAward,
+Directin\allowbreak{}g\allowbreak{}Award,
+Writing\allowbreak{}A\allowbreak{}ward.\allowbreak{} Việc chia nhóm thể
+loại và giải hiện dùng từ khóa nhãn trong bước build, không phải suy
+luận tự khám phá nghĩa tiếng Anh. FilmAward là nhóm mặc định khi nhãn
+chưa khớp một nhóm nghề nghiệp. Các lớp Country, Language,
+Source\allowbreak{}Sn\allowbreak{}apshot và Dataset bổ sung bối cảnh và
+xuất xứ. Giải của người được giữ riêng với giải của phim. Khung ảnh cần
+mở hai nhánh Genre và Award, thu gọn nhánh khác để đọc rõ.
+
+\textbf{Ảnh cần bổ sung --- P03:}
+\texttt{P03\_\allowbreak{}genr\allowbreak{}e\_\allowbreak{}award\_\allowbreak{}hierarch\allowbreak{}y.\allowbreak{}png};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Thu gọn Film/Agent để ảnh dễ đọc.
+\item
+  Mở Genre → FictionGenre /
+  Non\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre và Award.
+\item
+  Hiện các lớp thể loại và nhóm giải; giữ Class Description.
+\end{enumerate}
+
+\textbf{Cần thấy:} Cây Genre/Award khớp sơ đồ. Nhóm thể loại/giải được
+ánh xạ theo nhãn trong bước build.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 ·
+contribu\allowbreak{}tion:\allowbreak{} ai làm gì trong phim nào?.
+
+\subsection{\texorpdfstring{Slide 09 --- YC1 ·
+Contribu\allowbreak{}tion:\allowbreak{} ai làm gì trong phim
+nào?}{Slide 09 --- YC1 ·  ai làm gì trong phim nào?}}\label{slide-09-yc1-contribution-ai-luxe0m-guxec-trong-phim-nuxe0o}
+
+\textbf{Lời nói:}
+
+Nếu chỉ gắn một nhãn nghề nghiệp cho Nolan, chúng ta không biết vai trò
+đó thuộc phim nào. Contribution giải quyết bằng một bản ghi nối một
+người, một phim và một vai trò. contribu\allowbreak{}tion\allowbreak{}By
+trỏ Person, contribu\allowbreak{}tion\allowbreak{}To trỏ Film, hasRole
+trỏ
+Contribu\allowbreak{}tion\allowbreak{}Role\allowbreak{}.\allowbreak{}
+Mỗi quan hệ có ràng buộc đúng một giá trị phù hợp. Bốn cá thể vai trò là
+Director\allowbreak{}\allowbreak{}Role, ActorRole, WriterRole,
+Producer\allowbreak{}\allowbreak{}Role.\allowbreak{} Nolan giữ ba vai
+trò trong Inception, vì vậy có ba Contribution riêng. Các nhóm Acting,
+Directing, Writing,
+Producin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution được phân
+loại từ hasRole. Ảnh cần chụp Class Description của
+Contribu\allowbreak{}tion, hiện cả exactly 1 và các restriction về loại
+giá trị.
+
+\textbf{Ảnh cần bổ sung --- P04:}
+\texttt{P04\_\allowbreak{}cont\allowbreak{}ribution\allowbreak{}\_\allowbreak{}restric\allowbreak{}tions.\allowbreak{}pn\allowbreak{}g};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → chọn Contribu\allowbreak{}tion.\allowbreak{}
+\item
+  Trong Class Description, mở đủ SubClass Of.
+\item
+  Hiện contribu\allowbreak{}tion\allowbreak{}By /
+  contribu\allowbreak{}tion\allowbreak{}To / hasRole: exactly 1.
+\end{enumerate}
+
+\textbf{Cần thấy:} Ba qualified cardinality đúng 1, cùng các
+all\allowbreak{}Value\allowbreak{}s\allowbreak{}From.\allowbreak{} Đây
+là mô hình OWL, không phải biên bản kiểm tra thiếu trường.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · quan hệ,
+domain/range và inverse.
+
+\subsection{Slide 10 --- YC1 · Quan hệ, domain/range và
+inverse}\label{slide-10-yc1-quan-hux1ec7-domainrange-vuxe0-inverse}
+
+\textbf{Lời nói:}
+
+Object property nối hai thực thể.
+contribu\allowbreak{}tion\allowbreak{}By có domain Contribution và range
+Person; quan hệ ngược là
+has\allowbreak{}Contr\allowbreak{}ibution.\allowbreak{}
+contribu\allowbreak{}tion\allowbreak{}To nối tới Film, hasRole nối tới
+Contribu\allowbreak{}tion\allowbreak{}Role\allowbreak{}.\allowbreak{} Ba
+quan hệ này có tính functional. Các quan hệ trực tiếp director,
+starring, writer, producer dùng từ DBpedia để hỏi thuận tiện. Những cặp
+như
+has\allowbreak{}Genre\allowbreak{}/\allowbreak{}genre\allowbreak{}Of\allowbreak{},
+has\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany/\allowbreak{}pro\allowbreak{}duction\allowbreak{}O\allowbreak{}f,
+has\allowbreak{}Award\allowbreak{}/\allowbreak{}award\allowbreak{}Of\allowbreak{}
+cho phép đi hai chiều. inverse là đảo hướng, không đồng nghĩa quan hệ
+đối xứng. Domain và range có thể giúp suy ra kiểu khi quan hệ được biết;
+chúng không tự đóng vai trò từ chối nhập liệu như một biểu mẫu. Ảnh yêu
+cầu chọn contribu\allowbreak{}tion\allowbreak{}By để thấy
+domain/\allowbreak{}r\allowbreak{}ange/\allowbreak{}inv\allowbreak{}erse/\allowbreak{}fun\allowbreak{}ctional.\allowbreak{}
+
+\textbf{Ảnh cần bổ sung --- P05:}
+\texttt{P05\_\allowbreak{}obje\allowbreak{}ct\_\allowbreak{}prope\allowbreak{}rty.\allowbreak{}png};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Object properties → chọn
+  contribu\allowbreak{}tion\allowbreak{}By.\allowbreak{}
+\item
+  Hiện Domain=Contribution, Range=Person.
+\item
+  Giữ inverse has\allowbreak{}Contr\allowbreak{}ibution và ô Functional
+  được chọn.
+\end{enumerate}
+
+\textbf{Cần thấy:} Đúng
+domain/\allowbreak{}r\allowbreak{}ange/\allowbreak{}inv\allowbreak{}erse/\allowbreak{}fun\allowbreak{}ctional
+của contribu\allowbreak{}tion\allowbreak{}By.\allowbreak{} Nếu cần, chụp
+bổ sung hasRole hoặc director.
+
+\textbf{Tra cứu khi bảo vệ (không đọc toàn bộ):}
+
+Bảng tra đủ 23 object property (không cần đọc hết khi thuyết trình):
+\textbar{} Quan hệ \textbar{} Domain \textbar{} Range \textbar{} Inverse
+/ đặc tính \textbar{}
+\textbar:--\textbar:--\textbar:--\textbar:--\textbar{} \textbar{}
+dbo:director \textbar{} dbo:Film \textbar{} dbo:Person \textbar{}
+ex:directed \textbar{} \textbar{} dbo:producer \textbar{} dbo:Film
+\textbar{} dbo:Person \textbar{} ex:produced \textbar{} \textbar{}
+dbo:starring \textbar{} dbo:Film \textbar{} dbo:Person \textbar{}
+ex:actedIn \textbar{} \textbar{} dbo:writer \textbar{} dbo:Film
+\textbar{} dbo:Person \textbar{} ex:wrote \textbar{} \textbar{}
+ex:actedIn \textbar{} dbo:Person \textbar{} dbo:Film \textbar{}
+dbo:starring \textbar{} \textbar{} ex:awardOf \textbar{} ex:Award
+\textbar{} dbo:Film hoặc dbo:Person \textbar{} ex:hasAward \textbar{}
+\textbar{}
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}B\allowbreak{}y
+\textbar{} ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution
+\textbar{} dbo:Person \textbar{}
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on ·
+functional \textbar{} \textbar{}
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}O\allowbreak{}f
+\textbar{} dbo:Film \textbar{}
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution \textbar{}
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}T\allowbreak{}o
+\textbar{} \textbar{}
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}T\allowbreak{}o
+\textbar{} ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution
+\textbar{} dbo:Film \textbar{}
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}O\allowbreak{}f ·
+functional \textbar{} \textbar{} ex:country \textbar{} dbo:Film
+\textbar{} dbo:Country \textbar{} --- \textbar{} \textbar{} ex:directed
+\textbar{} dbo:Person \textbar{} dbo:Film \textbar{} dbo:director
+\textbar{} \textbar{} ex:genreOf \textbar{} ex:Genre \textbar{} dbo:Film
+\textbar{} ex:hasGenre \textbar{} \textbar{} ex:hasAward \textbar{}
+dbo:Film hoặc dbo:Person \textbar{} ex:Award \textbar{} ex:awardOf
+\textbar{} \textbar{}
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+\textbar{} dbo:Person \textbar{}
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution \textbar{}
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}B\allowbreak{}y
+\textbar{} \textbar{} ex:hasGenre \textbar{} dbo:Film \textbar{}
+ex:Genre \textbar{} ex:genreOf \textbar{} \textbar{}
+ex:\allowbreak{}has\allowbreak{}Pr\allowbreak{}oduction\allowbreak{}\allowbreak{}Company
+\textbar{} dbo:Film \textbar{}
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
+\textbar{} ex:\allowbreak{}produ\allowbreak{}ction\allowbreak{}Of
+\textbar{} \textbar{} ex:hasRole \textbar{}
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution \textbar{}
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole
+\textbar{} ex:roleOf · functional \textbar{} \textbar{} ex:language
+\textbar{} dbo:Film \textbar{} ex:Language \textbar{} --- \textbar{}
+\textbar{} ex:produced \textbar{} dbo:Person \textbar{} dbo:Film
+\textbar{} dbo:producer \textbar{} \textbar{}
+ex:\allowbreak{}produ\allowbreak{}ction\allowbreak{}Of \textbar{}
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
+\textbar{} dbo:Film \textbar{}
+ex:\allowbreak{}has\allowbreak{}Pr\allowbreak{}oduction\allowbreak{}\allowbreak{}Company
+\textbar{} \textbar{} ex:roleOf \textbar{}
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole
+\textbar{} ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution
+\textbar{} ex:hasRole \textbar{} \textbar{}
+ex:\allowbreak{}sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+\textbar{} --- \textbar{}
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+\textbar{} --- \textbar{} \textbar{} ex:wrote \textbar{} dbo:Person
+\textbar{} dbo:Film \textbar{} dbo:writer \textbar{}
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · owl mô tả ngữ
+nghĩa như thế nào?.
+
+\subsection{Slide 11 --- YC1 · OWL mô tả ngữ nghĩa như thế
+nào?}\label{slide-11-yc1-owl-muxf4-tux1ea3-ngux1eef-nghux129a-nhux1b0-thux1ebf-nuxe0o}
+
+\textbf{Lời nói:}
+
+OWL cho phép định nghĩa tương đương lớp, giao, hợp, tồn tại, giá trị cố
+định và cardinality. Ví dụ Contribution có exactly một Person, một Film
+và một Role;
+Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution được nhận
+diện khi hasRole có giá trị
+Director\allowbreak{}\allowbreak{}Role.\allowbreak{} Quan hệ inverse suy
+ra đường đi ngược. Disjointness chỉ dùng cho các lớp không thể chồng lấp
+theo mô hình, không dùng cho Actor với Filmmaker. Cần nhớ giả định thế
+giới mở: thiếu một triple không tự chứng minh sự việc không có. Các IRI
+khác nhau cũng không tự bảo đảm là cá thể khác nhau. Vì vậy ứng dụng
+dùng kiểm tra Python riêng để phát hiện thiếu hoặc thừa trường, còn OWL
+phát biểu ý nghĩa và hỗ trợ phân loại.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · 14 lớp có kiểu
+được bổ sung.
+
+\subsection{Slide 12 --- YC1 · 14 lớp có kiểu được bổ
+sung}\label{slide-12-yc1-14-lux1edbp-cuxf3-kiux1ec3u-ux111ux1b0ux1ee3c-bux1ed5-sung}
+
+\textbf{Lời nói:}
+
+Bảng này cho thấy toàn bộ 14 lớp có kiểu được bổ sung. Bốn nhóm
+Contribution dùng role, ba nhóm người dùng đóng góp hoặc giải, năm nhóm
+phim dùng thể loại hoặc giải. Mười hai lớp thuộc phần xử lý bằng luật
+OWL RL. Hai lớp còn lại,
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film và FilmStudio,
+dùng truy vấn COUNT DISTINCT sau bước luật. Các số đếm chỉ tính tài
+nguyên nội bộ để tránh alias sameAs làm tăng số. Bảng là kết quả trong
+ontology\allowbreak{}\_\allowbreak{}reasoni\allowbreak{}ng.\allowbreak{}json,\allowbreak{}
+không phải 14 kiểu gán sẵn trong movies.ttl. Hai truy vấn người có LIMIT
+20; số hiển thị không phải tổng 769 Actor hoặc 89 Filmmaker. Phần
+cardinality được giải thích riêng ở slide sau.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · ví dụ suy luận:
+christopher nolan.
+
+\subsection{Slide 13 --- YC1 · Ví dụ suy luận: Christopher
+Nolan}\label{slide-13-yc1-vuxed-dux1ee5-suy-luux1eadn-christopher-nolan}
+
+\textbf{Lời nói:}
+
+Dữ liệu gốc chỉ khai báo Nolan là Person, cùng các quan hệ đóng góp và
+giải. Một Contribution của Nolan trong Inception có
+Director\allowbreak{}\allowbreak{}Role.\allowbreak{} Định nghĩa hasValue
+phân loại bản ghi này là
+Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution.\allowbreak{}
+Từ Person có loại đóng góp đạo diễn, biên kịch hoặc sản xuất, định nghĩa
+dùng giao, hợp và tồn tại phân loại Nolan là Filmmaker. Nolan còn có
+giải riêng nên được bổ sung AwardWinner. Đây là khác biệt giữa kiểu gán
+ban đầu và kiểu suy ra trong ứng dụng. Khung ảnh yêu cầu Class
+Description và Equivalent To của Filmmaker. Ảnh này chứng minh công thức
+đã khai báo; kết quả thực thi được kiểm chứng riêng bằng terminal và
+tests.
+
+\textbf{Ảnh cần bổ sung --- P06:}
+\texttt{P06\_\allowbreak{}film\allowbreak{}maker\_\allowbreak{}eq\allowbreak{}uivalent\allowbreak{}\_\allowbreak{}class.\allowbreak{}p\allowbreak{}ng};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → chọn Filmmaker.
+\item
+  Mở Class Description → Equivalent To.
+\item
+  Hiện Person AND các nhánh SOME
+  Directin\allowbreak{}g/\allowbreak{}\allowbreak{}Writin\allowbreak{}g/\allowbreak{}\allowbreak{}Produc\allowbreak{}ing\allowbreak{}Contr\allowbreak{}ibution.\allowbreak{}
+\end{enumerate}
+
+\textbf{Cần thấy:} Định nghĩa giao/hợp/tồn tại. Ảnh định nghĩa không tự
+chứng minh HermiT đã phân loại dữ liệu.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · cardinality:
+ngưỡng 2 và ngưỡng 3.
+
+\subsection{Slide 14 --- YC1 · Cardinality: ngưỡng 2 và ngưỡng
+3}\label{slide-14-yc1-cardinality-ngux1b0ux1ee1ng-2-vuxe0-ngux1b0ux1ee1ng-3}
+
+\textbf{Lời nói:}
+
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film được định nghĩa là
+Film có ít nhất hai Genre; FilmStudio là
+Producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y có ít nhất ba
+Film qua producti\allowbreak{}on\allowbreak{}Of.\allowbreak{} Trong mẫu,
+toàn bộ 30 phim có ít nhất hai thể loại và có sáu công ty đạt ngưỡng ba
+phim. Warner Bros.~liên quan tới 11 phim trong mẫu. owlrl không xử lý
+các ngưỡng này theo nhu cầu của bài, nên reason.py dùng COUNT DISTINCT
+bổ sung sau khi suy ra inverse. Đếm IRI khác nhau là quy tắc ứng dụng;
+trong OWL, hai tên khác nhau có thể chỉ cùng một cá thể.
+Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã
+chạy: hai lớp này có không cá thể được suy luận, còn 30 và sáu là số đếm
+trong ứng dụng. Ảnh cần chụp công thức min 3 của FilmStudio, không yêu
+cầu giả lập kết quả reasoner.
+
+\textbf{Ảnh cần bổ sung --- P07:}
+\texttt{P07\_\allowbreak{}film\allowbreak{}studio\_\allowbreak{}c\allowbreak{}ardinali\allowbreak{}ty.\allowbreak{}png};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → chọn FilmStudio.
+\item
+  Mở Equivalent To; hiện min 3 productionOf Film.
+\item
+  Có thể chụp thêm
+  Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film:\allowbreak{}
+  min 2 hasGenre Genre.
+\end{enumerate}
+
+\textbf{Cần thấy:} Ảnh công thức cardinality. Kết quả 6 studio/30 phim
+nhiều thể loại của app dùng COUNT DISTINCT, không tự coi là chứng minh
+OWL DL.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc2 · thu thập thật và
+giữ xuất xứ.
+
+\subsection{Slide 15 --- YC2 · Thu thập thật và giữ xuất
+xứ}\label{slide-15-yc2-thu-thux1eadp-thux1eadt-vuxe0-giux1eef-xuux1ea5t-xux1ee9}
+
+\textbf{Lời nói:}
+
+Danh tính phim được xác định qua sitelink Wikipedia tiếng Anh chính xác,
+thay vì so tên gần giống. Wikidata cung cấp đạo diễn P57, diễn viên
+P161, biên kịch P58, nhà sản xuất P162, giải P166 và công ty P272.
+DBpedia chỉ nối khi chủ thể khớp tiêu đề và có kiểu Film; vì vậy có 28
+liên kết DBpedia thay vì tự đoán đủ 30. Mỗi phản hồi có URL, provider,
+thời điểm, HTTP status, SHA-256 và đường dẫn. Hiện đủ 76 phản hồi và
+hash khớp. Một phản hồi tải lại đổi nội dung được ghi hash/time mới,
+đồng thời giữ danh mục lịch sử. Hash kiểm tra toàn vẹn byte, không chứng
+minh mọi phát biểu ngoài đời đúng.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc3 · rdf và giá trị có
+datatype.
+
+\subsection{Slide 16 --- YC3 · RDF và giá trị có
+datatype}\label{slide-16-yc3-rdf-vuxe0-giuxe1-trux1ecb-cuxf3-datatype}
+
+\textbf{Lời nói:}
+
+Một triple gồm chủ thể, quan hệ và đối tượng hoặc giá trị. Inception có
+đạo diễn Nolan, năm 2010 và thời lượng 148 phút. Quan hệ đạo diễn nối
+hai thực thể; năm và thời lượng là literal có datatype. Dùng QID để tạo
+IRI ổn định; chuẩn hóa các đơn vị giờ, phút, giây về phút và ghi các
+trường hợp nguồn có nhiều giá trị. Sáu datatype property khai báo là
+title, releaseYear, runtime\allowbreak{}M\allowbreak{}inutes, sourceUrl,
+retrievedAt, sha256. Turtle và JSON-LD biểu diễn cùng graph; file OWL
+riêng có schema, file Knowledge Graph có schema và dữ liệu. Ảnh cần chọn
+runtime\allowbreak{}M\allowbreak{}inutes trong Data properties để thấy
+domain Film và range decimal.
+
+\textbf{Ảnh cần bổ sung --- P08:}
+\texttt{P08\_\allowbreak{}runt\allowbreak{}ime\_\allowbreak{}data\allowbreak{}type.\allowbreak{}png\allowbreak{}};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Data properties → chọn
+  runtime\allowbreak{}M\allowbreak{}inutes.\allowbreak{}
+\item
+  Hiện Domain=Film và Range=xsd:decimal.
+\item
+  Có thể chụp thêm releaseYear có range xsd:integer.
+\end{enumerate}
+
+\textbf{Cần thấy:} Thuộc tính dữ liệu nối thực thể với literal, khác
+quan hệ nối hai thực thể.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc3--yc4 · từ rdf đến
+linked open data.
+
+\subsection{Slide 17 --- YC3--YC4 · Từ RDF đến Linked Open
+Data}\label{slide-17-yc3yc4-tux1eeb-rdf-ux111ux1ebfn-linked-open-data}
+
+\textbf{Lời nói:}
+
+Mức một sao bắt đầu với dữ liệu trên Web có giấy phép mở; hai sao là có
+cấu trúc; ba sao dùng định dạng mở; bốn sao dùng HTTP URI và chuẩn RDF
+để tra cứu; năm sao thêm liên kết tới dữ liệu khác. Bài có giấy phép CC
+BY-SA 4.0,
+R\allowbreak{}D\allowbreak{}F/\allowbreak{}\allowbreak{}Turt\allowbreak{}le/\allowbreak{}\allowbreak{}J\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D
+và các IRI có trang mô tả. Bản công khai đã được kiểm tra không đăng
+nhập, cả bốn graph RDF đối chiếu đều đẳng cấu với local. Có 1.699 liên
+kết Wikidata và 28 DBpedia. sameAs khẳng định cùng danh tính, còn
+source\allowbreak{}Sn\allowbreak{}apshot ghi xuất xứ. Tái dùng dbo:Film
+là dùng từ vựng lớp ở YC1, khác liên kết cá thể ở YC4.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc3 · tra cứu iri của
+inception.
+
+\subsection{Slide 18 --- YC3 · Tra cứu IRI của
+Inception}\label{slide-18-yc3-tra-cux1ee9u-iri-cux1ee7a-inception}
+
+\textbf{Lời nói:}
+
+Trang Inception hiển thị tên, kiểu, năm, thời lượng, đạo diễn, đóng góp,
+liên kết ngoài và nguồn. Người đọc có thể tải mô tả Turtle; HTML cũng
+nhúng JSON-LD. Ở Flask local, Accept text turtle trả 303 đến mô tả RDF
+và curl trừ L theo chuyển hướng. Hosted tĩnh cung cấp HTML/JSON-LD và
+link RDF; không tự khẳng định nó có cùng hành vi 303 như Flask. Bên trái
+là ảnh ứng dụng thật. Bên phải là khung cần ảnh Individuals trong
+Protégé khi mở Knowledge Graph: chọn film-Q25188 và hiện kiểu cùng các
+thuộc tính. Không mở file chỉ schema để chụp cá thể.
+
+\textbf{Ảnh cần bổ sung --- P09:}
+\texttt{P09\_\allowbreak{}ince\allowbreak{}ption\_\allowbreak{}in\allowbreak{}dividual\allowbreak{}.\allowbreak{}png};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mở
+  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl.\allowbreak{}
+\item
+  Individuals → chọn film-Q25188 (Inception).
+\item
+  Hiện Film, title, releaseYear=2010, runtimeMinutes=148 và director.
+\end{enumerate}
+
+\textbf{Cần thấy:} Cá thể thật và thuộc tính khớp truy vấn. Giữ tên
+ontology để không chụp nhầm file chỉ có schema.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc5 · truy vấn inception
+trên web.
+
+\subsection{Slide 19 --- YC5 · Truy vấn Inception trên
+Web}\label{slide-19-yc5-truy-vux1ea5n-inception-truxean-web}
+
+\textbf{Lời nói:}
+
+Truy vấn đầu tiên tìm phim tên Inception, đi theo director tới người và
+lấy nhãn người đó. Kết quả là Inception, 2010, 148 phút, Christopher
+Nolan. SELECT chọn cột, WHERE đưa mẫu đồ thị, dấu hỏi đánh dấu biến.
+OPTIONAL giữ dòng khi thuộc tính năm hoặc thời lượng có thể thiếu. Người
+dùng có thể sửa truy vấn, bấm Run query và tải kết quả. Giao diện có 14
+mẫu trực tiếp. Ngoài SELECT trả bảng, ASK trả True hoặc False, CONSTRUCT
+tạo graph RDF. Kết quả được tính từ graph; danh sách phim hoặc tên đạo
+diễn không được nhập cứng trong bảng.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc5 · một người, nhiều
+vai trò và nhiều câu hỏi.
+
+\subsection{Slide 20 --- YC5 · Một người, nhiều vai trò và nhiều câu
+hỏi}\label{slide-20-yc5-mux1ed9t-ngux1b0ux1eddi-nhiux1ec1u-vai-truxf2-vuxe0-nhiux1ec1u-cuxe2u-hux1ecfi}
+
+\textbf{Lời nói:}
+
+Câu hỏi toàn bộ đóng góp Inception trả 25 bản ghi, gồm 21 diễn viên, một
+đạo diễn, một biên kịch và hai nhà sản xuất. Ảnh trên slide lọc riêng
+Christopher Nolan nên chỉ còn ba dòng: Director, Writer, Producer. Chúng
+ta không lấy ba dòng này làm tổng đóng góp. Các truy vấn khác cho biết
+tám phim do Nolan đạo diễn trong mẫu, bốn công ty liên quan Inception và
+bảy giải của The Godfather. Việc thêm câu hỏi không cần nhập một bảng
+kết quả riêng; chúng dùng cùng đồ thị và mô hình. Download results xuất
+kết quả đang hiển thị. Các file truy vấn và biên bản cho phép kiểm tra
+lại những số này.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc5 · endpoint, terminal
+và kiểu được bổ sung.
+
+\subsection{Slide 21 --- YC5 · Endpoint, terminal và kiểu được bổ
+sung}\label{slide-21-yc5-endpoint-terminal-vuxe0-kiux1ec3u-ux111ux1b0ux1ee3c-bux1ed5-sung}
+
+\textbf{Lời nói:}
+
+Bài có endpoint GET/POST và terminal, ngoài giao diện Web. SELECT và ASK
+trả JSON; CONSTRUCT và DESCRIBE trả Turtle. Endpoint mặc định chỉ nạp
+graph khai báo. Lệnh query.py với reasoned nạp thêm schema và
+inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
+Cùng câu 24 trên Nolan trả một kiểu Person khi chạy gốc; chạy reasoned
+trả Person, Filmmaker, AwardWinner. File kiểu được tạo trước bởi
+reason.py, không tính suy luận mỗi lần gọi query.py. Truy vấn hierarchy
+như câu 13 cần schema;
+Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker có LIMIT 20 nên
+tổng thực ở biên bản là 769 và 89. Khung ảnh Protégé yêu cầu Types của
+Nolan ở chế độ asserted; nếu ảnh sau reasoner phải ghi rõ trạng thái.
+
+\textbf{Ảnh cần bổ sung --- P10:}
+\texttt{P10\_\allowbreak{}nola\allowbreak{}n\_\allowbreak{}assert\allowbreak{}ed\_\allowbreak{}types\allowbreak{}.\allowbreak{}png};
+mở
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mở
+  Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l,
+  chọn person-\allowbreak{}\allowbreak{}Q\allowbreak{}25191 (Nolan).
+\item
+  Hiện Types trong chế độ asserted / trước suy luận.
+\item
+  Giữ dbo:Person và các quan hệ đóng góp/giải trong ảnh.
+\end{enumerate}
+
+\textbf{Cần thấy:} Kiểu gán gốc là Person;
+Filmmake\allowbreak{}r/\allowbreak{}\allowbreak{}Award\allowbreak{}W\allowbreak{}inner
+trong app được bổ sung qua file phân loại. Nếu chụp sau reasoner, phải
+ghi rõ tên và trạng thái thực thi.
+
+\textbf{Tra cứu khi bảo vệ (không đọc toàn bộ):}
+
+Bảng tra 24 truy vấn; số là số dòng trả về, hoặc boolean đối với ASK:
+\textbar{} File \textbar{} Gốc \textbar{} Có schema / phân loại
+\textbar{} \textbar:--\textbar:--\textbar:--\textbar{} \textbar{}
+01\_films.rq \textbar{} 30 \textbar{} 30 \textbar{} \textbar{}
+02\_\allowbreak{}incep\allowbreak{}tion.\allowbreak{}rq \textbar{} 1
+\textbar{} 1 \textbar{} \textbar{} 03\_nolan.rq \textbar{} 8 \textbar{}
+8 \textbar{} \textbar{}
+04\_\allowbreak{}credi\allowbreak{}ts.\allowbreak{}rq \textbar{} 25
+\textbar{} 25 \textbar{} \textbar{}
+05\_\allowbreak{}exter\allowbreak{}nal\_\allowbreak{}link\allowbreak{}s.\allowbreak{}rq
+\textbar{} 58 \textbar{} 58 \textbar{} \textbar{} 06\_genres.rq
+\textbar{} 75 \textbar{} 75 \textbar{} \textbar{} 07\_source.rq
+\textbar{} 2 \textbar{} 2 \textbar{} \textbar{} 08\_ask.rq \textbar{}
+true \textbar{} true \textbar{} \textbar{}
+09\_\allowbreak{}actor\allowbreak{}s\_\allowbreak{}of\_\allowbreak{}inc\allowbreak{}eption.\allowbreak{}r\allowbreak{}q
+\textbar{} 21 \textbar{} 21 \textbar{} \textbar{}
+10\_\allowbreak{}produ\allowbreak{}ction\_\allowbreak{}co\allowbreak{}mpanies\_\allowbreak{}of\_\allowbreak{}a\_\allowbreak{}fil\allowbreak{}m.\allowbreak{}rq
+\textbar{} 4 \textbar{} 4 \textbar{} \textbar{}
+11\_\allowbreak{}award\allowbreak{}s\_\allowbreak{}receiv\allowbreak{}ed\_\allowbreak{}by\_\allowbreak{}a\_\allowbreak{}film.\allowbreak{}rq
+\textbar{} 7 \textbar{} 7 \textbar{} \textbar{}
+12\_\allowbreak{}count\allowbreak{}ries\_\allowbreak{}and\allowbreak{}\_\allowbreak{}languag\allowbreak{}es\_\allowbreak{}of\_\allowbreak{}a\_\allowbreak{}film.\allowbreak{}rq
+\textbar{} 1 \textbar{} 1 \textbar{} \textbar{}
+13\_\allowbreak{}ficti\allowbreak{}on\_\allowbreak{}genre\allowbreak{}\_\allowbreak{}films\_\allowbreak{}v\allowbreak{}ia\_\allowbreak{}hiera\allowbreak{}rchy.\allowbreak{}rq
+\textbar{} 0 \textbar{} 29 \textbar{} \textbar{}
+14\_\allowbreak{}all\_\allowbreak{}a\allowbreak{}gents\_\allowbreak{}pe\allowbreak{}ople\_\allowbreak{}and\allowbreak{}\_\allowbreak{}organiz\allowbreak{}ations.\allowbreak{}r\allowbreak{}q
+\textbar{} 1 \textbar{} 1 \textbar{} \textbar{}
+15\_\allowbreak{}featu\allowbreak{}re\_\allowbreak{}vs\_\allowbreak{}an\allowbreak{}imated\_\allowbreak{}f\allowbreak{}ilm\_\allowbreak{}coun\allowbreak{}ts.\allowbreak{}rq
+\textbar{} 1 \textbar{} 1 \textbar{} \textbar{}
+16\_\allowbreak{}docum\allowbreak{}entary\_\allowbreak{}f\allowbreak{}ilm\_\allowbreak{}coun\allowbreak{}t\_\allowbreak{}ask.\allowbreak{}rq\allowbreak{}
+\textbar{} false \textbar{} false \textbar{} \textbar{}
+17\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}acto\allowbreak{}rs.\allowbreak{}rq
+\textbar{} 0 \textbar{} 20 \textbar{} \textbar{}
+18\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}film\allowbreak{}makers.\allowbreak{}r\allowbreak{}q
+\textbar{} 0 \textbar{} 20 \textbar{} \textbar{}
+19\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}acti\allowbreak{}on\_\allowbreak{}films\allowbreak{}.\allowbreak{}rq
+\textbar{} 0 \textbar{} 12 \textbar{} \textbar{}
+20\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}mult\allowbreak{}i\_\allowbreak{}genre\_\allowbreak{}films.\allowbreak{}rq\allowbreak{}
+\textbar{} 0 \textbar{} 30 \textbar{} \textbar{}
+21\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}awar\allowbreak{}d\_\allowbreak{}winnin\allowbreak{}g\_\allowbreak{}films.\allowbreak{}rq
+\textbar{} 0 \textbar{} 26 \textbar{} \textbar{}
+22\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}film\allowbreak{}\_\allowbreak{}studios\allowbreak{}.\allowbreak{}rq
+\textbar{} 0 \textbar{} 6 \textbar{} \textbar{}
+23\_\allowbreak{}peopl\allowbreak{}e\_\allowbreak{}with\_\allowbreak{}d\allowbreak{}irecting\allowbreak{}\_\allowbreak{}and\_\allowbreak{}wri\allowbreak{}ting\_\allowbreak{}con\allowbreak{}tributio\allowbreak{}n.\allowbreak{}rq
+\textbar{} 0 \textbar{} 10 \textbar{} \textbar{}
+24\_\allowbreak{}nolan\allowbreak{}\_\allowbreak{}asserte\allowbreak{}d\_\allowbreak{}types\_\allowbreak{}only.\allowbreak{}rq
+\textbar{} 1 \textbar{} 3 \textbar{} Câu 14/15 trả một dòng thống kê.
+Câu 17/18 có LIMIT 20; tổng
+Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker là 769/89. Câu 24
+có 1 kiểu gốc hoặc 3 kiểu khi nạp phân loại.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang kiểm tra dữ liệu, ứng
+dụng và bản công khai.
+
+\subsection{Slide 22 --- Kiểm tra dữ liệu, ứng dụng và bản công
+khai}\label{slide-22-kiux1ec3m-tra-dux1eef-liux1ec7u-ux1ee9ng-dux1ee5ng-vuxe0-bux1ea3n-cuxf4ng-khai}
+
+\textbf{Lời nói:}
+
+validate đã kiểm tra tên, nguồn, liên kết của phim và các thành phần
+Contribu\allowbreak{}tion; 76 hash nguồn khớp và 24 file truy vấn đã
+chạy ở chế độ dữ liệu phù hợp. Có 14 test pass và chín kiểm tra trình
+duyệt đạt, gồm endpoint, Comunica, lỗi cú pháp, ASK, CONSTRUCT, trang
+IRI và màn hình mobile. Bản công khai được kiểm tra qua tám URL không có
+cookie hay đăng nhập; bốn graph RDF đều đẳng cấu với local, có giấy phép
+và link mô tả máy đọc được.
+Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet riêng
+đã xác nhận OWL nhất quán và không có lớp không khả thỏa. Test và hash
+không chứng minh mọi thông tin ngoài đời đúng. Timestamp
+O\allowbreak{}W\allowbreak{}L/\allowbreak{}\allowbreak{}Turt\allowbreak{}le/\allowbreak{}\allowbreak{}J\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D
+đã đồng bộ đến mili giây. Đó là lý do cần vừa nêu kết quả vừa giữ giới
+hạn phương pháp.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang đối chiếu đề và giới hạn
+cần nói rõ.
+
+\subsection{Slide 23 --- Đối chiếu đề và giới hạn cần nói
+rõ}\label{slide-23-ux111ux1ed1i-chiux1ebfu-ux111ux1ec1-vuxe0-giux1edbi-hux1ea1n-cux1ea7n-nuxf3i-ruxf5}
+
+\textbf{Lời nói:}
+
+Ảnh đề gốc không đưa trọng số; nhóm dùng thang tự đánh giá chia đều hai
+điểm mỗi yêu cầu. Ontology, thu thập, RDF công khai, liên kết và truy
+vấn đều có minh chứng đạt nên đề xuất mười trên mười. Đây không phải
+điểm chính thức của giảng viên. Các giới hạn vẫn còn: mẫu 30 phim có chủ
+đích; nhóm thể loại và giải ánh xạ theo nhãn; chưa có ngân sách hoặc
+streaming;
+Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã xác
+nhận nhất quán, còn hai nhóm cardinality chỉ có số đếm ứng dụng 30/6; DL
+có không cá thể. SQL cũng có thể trả nhiều câu hỏi bằng
+J\allowbreak{}O\allowbreak{}I\allowbreak{}N/\allowbreak{}vie\allowbreak{}w/\allowbreak{}quy
+tắc. Giá trị Semantic Web ở đây là IRI dùng chung, từ vựng tái dùng,
+liên kết dataset, xuất xứ và định nghĩa ngữ nghĩa tường minh.
+
+\textbf{Chuyển trang:} Sau đây nhóm chuyển sang kết luận và ảnh protégé
+cần bổ sung.
+
+\subsection{Slide 24 --- Kết luận và ảnh Protégé cần bổ
+sung}\label{slide-24-kux1ebft-luux1eadn-vuxe0-ux1ea3nh-protuxe9guxe9-cux1ea7n-bux1ed5-sung}
+
+\textbf{Lời nói:}
+
+MovieLOD đã nối mô hình, dữ liệu thật, nguồn, RDF, liên kết và truy vấn
+trong một ứng dụng. Bản này có 24 slide; nhóm có thể trình bày đầy đủ
+khoảng 18--22 phút hoặc chọn các trang chính để rút gọn. Trước khi nộp,
+điền tên thành viên và bổ sung các ảnh Protégé theo mã trên bảng. Các
+khung ảnh và hướng dẫn đã có ngay ở những slide liên quan. Giao diện
+macOS chưa cho phép chụp trong lần làm tài liệu này, nên không có ảnh
+Protégé giả được gắn vào. Có thể chèn ảnh trực tiếp trong PowerPoint
+hoặc lưu đúng tên ở
+evidence\allowbreak{}/\allowbreak{}protege\allowbreak{} rồi chạy lại
+trình tạo slide. Nhóm xin kết thúc và sẵn sàng trả lời câu hỏi.
+
+\textbf{Chuyển trang:} Nhóm xin mời thầy cô đặt câu hỏi.
+
+\subsection{Câu hỏi bảo vệ
+ngắn}\label{cuxe2u-hux1ecfi-bux1ea3o-vux1ec7-ngux1eafn}
+
+\textbf{42 lớp khác gì 30 phim?} 42 là lớp trong schema; 30 là cá thể
+Film trong graph dữ liệu. Protégé Metrics có thể tính thêm lớp ngoài
+được tham chiếu.
+
+\textbf{Vì sao cần Contribution?} Một người có nhiều vai trò trong nhiều
+phim; mỗi bộ người--phim--vai trò có bản ghi riêng.
+
+\textbf{Vì sao exact cardinality chưa thay Python?} OWL dùng thế giới
+mở; Python kiểm tra trường bắt buộc của ứng dụng.
+
+\textbf{COUNT DISTINCT có phải suy luận DL không?} Đếm tên IRI là quy
+tắc ứng dụng; OWL không mặc định tên khác nhau chỉ cá thể khác nhau.
+
+\textbf{Endpoint không có Filmmaker có phải lỗi?} Endpoint mặc định
+graph gốc. Dùng --reasoned nạp schema và kết quả phân loại.
+
+\textbf{sameAs khác nguồn thế nào?} sameAs là cùng danh tính;
+source\allowbreak{}Sn\allowbreak{}apshot là xuất xứ; dbo:Film là tái
+dùng từ vựng.
+
+\textbf{SQL có trả được các câu hỏi không?} Có, bằng
+J\allowbreak{}O\allowbreak{}I\allowbreak{}N/\allowbreak{}vie\allowbreak{}w/\allowbreak{}quy
+tắc. Giá trị của bài là IRI, từ vựng chung, liên kết, nguồn và định
+nghĩa ngữ nghĩa.
+
+\textbf{Ảnh Protégé có chứng minh reasoner đã chạy không?} Ảnh cây
+asserted/định nghĩa chỉ chứng minh khai báo. Muốn dùng ảnh inferred,
+phải ghi rõ reasoner và trạng thái/kết quả thật.
+
+\end{document}

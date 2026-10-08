@@ -1,0 +1,27 @@
+<!doctype html><meta charset="utf-8"><style>body{background:#f3f6f7;color:#152b3a;font:21px Arial,sans-serif;margin:0;padding:35px}h1{font-size:32px;color:#007f82;margin:0 0 24px}h2{font-size:23px}section{background:white;padding:20px 26px;border-radius:12px;margin:16px 0}pre{font:17px Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.4;margin:8px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.meta{color:#506776;font-size:17px}</style><h1>Kiểm tra nguồn, ứng dụng và công bố</h1><p class="meta">Minh chứng đọc từ file / kết quả lệnh thực thi thật của MovieLOD 2.0</p><section><h2>src/validate.py</h2><pre>{
+  &quot;data_checks_passed&quot;: true,
+  &quot;data_errors&quot;: [],
+  &quot;source_hashes_match&quot;: true,
+  &quot;snapshots_checked&quot;: 76,
+  &quot;query_files_executed&quot;: 24,
+  &quot;missing_source_files&quot;: [],
+  &quot;films_have_sources&quot;: true,
+  &quot;films_have_external_links&quot;: true
+}</pre></section><section><h2>pytest</h2><pre>.............                                                            [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.9/site-packages/urllib3/__init__.py:35
+  /Users/gnexla/master_DS/Semantic_web/project/movie_lod_complete/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the &#x27;ssl&#x27; module is compiled with &#x27;LibreSSL 2.8.3&#x27;. See: https://github.com/urllib3/urllib3/issues/3020
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+13 passed, 1 warning in 90.50s (0:01:30)
+</pre></section><section><h2>Đối chiếu bản công khai</h2><pre>{
+  &quot;all_urls_public_http_200&quot;: true,
+  &quot;all_rdf_graphs_match_local&quot;: true,
+  &quot;open_license_present&quot;: true,
+  &quot;film_iri_has_machine_readable_description&quot;: true,
+  &quot;local_data_triples&quot;: 19339,
+  &quot;local_schema_triples&quot;: 518,
+  &quot;local_named_classes&quot;: 42,
+  &quot;publication_complete&quot;: true
+}</pre></section>

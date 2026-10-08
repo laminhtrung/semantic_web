@@ -4,6 +4,7 @@ import hashlib
 import html
 import json
 from decimal import Decimal, InvalidOperation
+from datetime import datetime
 from pathlib import Path
 from rdflib import Graph, URIRef, Literal, BNode, RDF, RDFS, OWL, XSD
 from rdflib.collection import Collection
@@ -15,6 +16,11 @@ def graph():
     for name, ns in [('ex', EX), ('res',RES),('dbo',DBO),('prov',PROV),('void',VOID),('dct',DCT),('owl',OWL),('rdfs',RDFS),('xsd',XSD)]:
         g.bind(name, ns)
     return g
+
+def timestamp_literal(value):
+    """Use milliseconds consistently; legacy HermiT rejects six fractional digits."""
+    lexical = datetime.fromisoformat(value.replace('Z', '+00:00')).isoformat(timespec='milliseconds')
+    return Literal(lexical, datatype=XSD.dateTime, normalize=False)
 
 # Genres and awards are classified from the real labels Wikidata returned, not invented.
 GENRE_KEYWORDS = [('documentary', EX.DocumentaryGenre), ('science fiction', EX.ScienceFictionGenre),
@@ -244,7 +250,7 @@ def build():
     for snap in snapshots:
         s=RES['source-'+snap['sha256'][:24]];snapshot_iris[snap['url']]=s
         g.add((s,RDF.type,EX.SourceSnapshot));g.add((s,EX.sourceUrl,Literal(snap['url'],datatype=XSD.anyURI)))
-        g.add((s,EX.retrievedAt,Literal(snap['retrieved_at'],datatype=XSD.dateTime)))
+        g.add((s,EX.retrievedAt,timestamp_literal(snap['retrieved_at'])))
         g.add((s,EX.sha256,Literal(snap['sha256'])));g.add((s,PROV.wasDerivedFrom,URIRef(snap['url'])))
         g.add((s,RDFS.label,Literal(snap['provider']+' source snapshot')))
     links, records, issues=[],[],[]

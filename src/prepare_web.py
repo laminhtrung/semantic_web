@@ -24,6 +24,6 @@ queries=[{'file':name,'label':label,'query':(ROOT/'queries'/name).read_text()} f
 write_json(ROOT/'web/dist/data/queries.json',queries)
 shutil.copy2(ROOT/'LICENSE-DATA.txt',ROOT/'web/dist/LICENSE-DATA.txt')
 docs=ROOT/'web/dist/docs';docs.mkdir(exist_ok=True)
-for name in ['Bao_cao.pdf','Huong_dan_A_Z.pdf','Huong_dan_thao_tac_chi_tiet.pdf','Slide.pdf']:
+for name in ['Bao_cao.pdf','Huong_dan_A_Z.pdf','Huong_dan_thao_tac_chi_tiet.pdf','Slide.pdf','Slide.pptx','Slide_ngan_13.pdf','Slide_ngan_13.pptx','Script_thuyet_trinh.pdf','Script_thuyet_trinh_ngan_13.pdf','Checklist_anh_Protege.pdf','Ket_qua_reasoner.pdf','Kich_ban_video.pdf','Video_demo.mp4']:
     if (ROOT/'docs'/name).exists():shutil.copy2(ROOT/'docs'/name,docs/name)
 print('Web assets ready')

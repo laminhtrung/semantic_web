@@ -1,0 +1,93 @@
+{
+  "reasoner": "Pellet 2.3.1",
+  "checked_at": "2026-10-08T07:41:31.878675+00:00",
+  "input": "Original RDF/XML files loaded directly with OWLAPI",
+  "checks": [
+    {
+      "file": "ontology/Movie_Ontology.owl",
+      "sha256": "2d549be4438389e14aa926d153960b137190d273fdb76440cdc5d15d603a72a5",
+      "action": "consistency",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.49,
+      "log": "evidence/pellet_Movie_Ontology_consistency.txt"
+    },
+    {
+      "file": "ontology/Movie_Ontology.owl",
+      "sha256": "2d549be4438389e14aa926d153960b137190d273fdb76440cdc5d15d603a72a5",
+      "action": "unsat",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.5,
+      "log": "evidence/pellet_Movie_Ontology_unsat.txt"
+    },
+    {
+      "file": "ontology/Movie_Ontology.owl",
+      "sha256": "2d549be4438389e14aa926d153960b137190d273fdb76440cdc5d15d603a72a5",
+      "action": "classify",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 0.55,
+      "log": "evidence/pellet_Movie_Ontology_classify.txt"
+    },
+    {
+      "file": "ontology/Movie_Knowledge_Graph.owl",
+      "sha256": "75eecc27cb4353abc0d4115fb38aac37e09d5e4cf4b0dbe3003fc0f5fd6d8dbc",
+      "action": "consistency",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 12.14,
+      "log": "evidence/pellet_Movie_Knowledge_Graph_consistency.txt"
+    },
+    {
+      "file": "ontology/Movie_Knowledge_Graph.owl",
+      "sha256": "75eecc27cb4353abc0d4115fb38aac37e09d5e4cf4b0dbe3003fc0f5fd6d8dbc",
+      "action": "unsat",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 13.25,
+      "log": "evidence/pellet_Movie_Knowledge_Graph_unsat.txt"
+    },
+    {
+      "file": "ontology/Movie_Knowledge_Graph.owl",
+      "sha256": "75eecc27cb4353abc0d4115fb38aac37e09d5e4cf4b0dbe3003fc0f5fd6d8dbc",
+      "action": "classify",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 14.02,
+      "log": "evidence/pellet_Movie_Knowledge_Graph_classify.txt"
+    },
+    {
+      "file": "ontology/Movie_Knowledge_Graph.owl",
+      "sha256": "75eecc27cb4353abc0d4115fb38aac37e09d5e4cf4b0dbe3003fc0f5fd6d8dbc",
+      "action": "realize",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 120.49,
+      "log": "evidence/pellet_Movie_Knowledge_Graph_realize.txt"
+    }
+  ],
+  "local_inferred_counts": {
+    "ActingContribution": 855,
+    "DirectingContribution": 31,
+    "WritingContribution": 51,
+    "ProducingContribution": 73,
+    "Actor": 769,
+    "Filmmaker": 89,
+    "AwardWinner": 290,
+    "ActionFilm": 12,
+    "ComedyFilm": 4,
+    "DramaFilm": 25,
+    "ScienceFictionFilm": 6,
+    "AwardWinningFilm": 26,
+    "MultiGenreFilm": 0,
+    "FilmStudio": 0
+  },
+  "nolan_inferred_classes": [
+    "Filmmaker",
+    "AwardWinner"
+  ],
+  "count_scope": "Local resource IRIs only",
+  "matches_hermit": true,
+  "knowledge_graph_realization_seconds": 120.49
+}

@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><style>body{background:#f3f6f7;color:#152b3a;font:21px Arial,sans-serif;margin:0;padding:35px}h1{font-size:32px;color:#007f82;margin:0 0 24px}h2{font-size:23px}section{background:white;padding:20px 26px;border-radius:12px;margin:16px 0}pre{font:17px Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.4;margin:8px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.meta{color:#506776;font-size:17px}</style><h1>YC1 · Ontology 2.0: lớp, quan hệ và ràng buộc</h1><p class="meta">Minh chứng đọc từ file / kết quả lệnh thực thi thật của MovieLOD 2.0</p><section><h2>42 lớp có tên · 3 lớp DBpedia dùng trực tiếp</h2><pre>dbo:Film     http://dbpedia.org/ontology/Film
+dbo:Person   http://dbpedia.org/ontology/Person
+dbo:Country  http://dbpedia.org/ontology/Country</pre></section><section><h2>Contribution · các restriction đọc trực tiếp từ ontology/movie.ttl</h2><pre>hasRole : exactly 1 ContributionRole
+contributionTo : exactly 1 Film
+contributionBy : exactly 1 Person</pre></section><section><h2>Các vai trò có trong ontology</h2><pre>ActorRole
+DirectorRole
+ProducerRole
+WriterRole</pre></section><section><h2>Định nghĩa Filmmaker</h2><pre>Person AND hasContribution SOME
+(DirectingContribution OR WritingContribution OR ProducingContribution)</pre></section>

@@ -1,8 +1,12 @@
-...........                                                              [100%]
+..............                                                           [100%]
 =============================== warnings summary ===============================
 .venv/lib/python3.9/site-packages/urllib3/__init__.py:35
   /Users/gnexla/master_DS/Semantic_web/project/movie_lod_complete/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
     warnings.warn(
 
+tests/test_ontology.py::test_primary_exports_are_synchronized_and_hermit_safe
+  /Users/gnexla/master_DS/Semantic_web/project/movie_lod_complete/.venv/lib/python3.9/site-packages/rdflib/plugins/parsers/jsonld.py:159: DeprecationWarning: ConjunctiveGraph is deprecated, use Dataset instead.
+    conj_sink = ConjunctiveGraph(store=sink.store, identifier=sink.identifier)
+
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-11 passed, 1 warning in 48.72s
+14 passed, 2 warnings in 96.97s (0:01:36)

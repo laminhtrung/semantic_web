@@ -1,0 +1,46 @@
+<!doctype html><meta charset="utf-8"><style>body{background:#f3f6f7;color:#152b3a;font:21px Arial,sans-serif;margin:0;padding:35px}h1{font-size:32px;color:#007f82;margin:0 0 24px}h2{font-size:23px}section{background:white;padding:20px 26px;border-radius:12px;margin:16px 0}pre{font:17px Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.4;margin:8px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.meta{color:#506776;font-size:17px}</style><h1>YC5 · endpoint và terminal: đầu vào / đầu ra thật</h1><p class="meta">Minh chứng đọc từ file / kết quả lệnh thực thi thật của MovieLOD 2.0</p><section><h2>POST /sparql · JSON nhận từ server</h2><pre>{
+  &quot;results&quot;: {
+    &quot;bindings&quot;: [
+      {
+        &quot;title&quot;: {
+          &quot;type&quot;: &quot;literal&quot;,
+          &quot;value&quot;: &quot;Inception&quot;
+        },
+        &quot;director&quot;: {
+          &quot;type&quot;: &quot;literal&quot;,
+          &quot;value&quot;: &quot;Christopher Nolan&quot;,
+          &quot;xml:lang&quot;: &quot;en&quot;
+        },
+        &quot;year&quot;: {
+          &quot;type&quot;: &quot;literal&quot;,
+          &quot;value&quot;: &quot;2010&quot;,
+          &quot;datatype&quot;: &quot;http://www.w3.org/2001/XMLSchema#integer&quot;
+        },
+        &quot;runtimeMinutes&quot;: {
+          &quot;type&quot;: &quot;literal&quot;,
+          &quot;value&quot;: &quot;148.0&quot;,
+          &quot;datatype&quot;: &quot;http://www.w3.org/2001/XMLSchema#decimal&quot;
+        }
+      }
+    ]
+  },
+  &quot;head&quot;: {
+    &quot;vars&quot;: [
+      &quot;title&quot;,
+      &quot;year&quot;,
+      &quot;runtimeMinutes&quot;,
+      &quot;director&quot;
+    ]
+  }
+}</pre></section><section><h2>query.py queries/02_inception.rq</h2><pre>{&quot;results&quot;: {&quot;bindings&quot;: [{&quot;title&quot;: {&quot;type&quot;: &quot;literal&quot;, &quot;value&quot;: &quot;Inception&quot;}, &quot;director&quot;: {&quot;type&quot;: &quot;literal&quot;, &quot;value&quot;: &quot;Christopher Nolan&quot;, &quot;xml:lang&quot;: &quot;en&quot;}, &quot;year&quot;: {&quot;type&quot;: &quot;literal&quot;, &quot;value&quot;: &quot;2010&quot;, &quot;datatype&quot;: &quot;http://www.w3.org/2001/XMLSchema#integer&quot;}, &quot;runtimeMinutes&quot;: {&quot;type&quot;: &quot;literal&quot;, &quot;value&quot;: &quot;148.0&quot;, &quot;datatype&quot;: &quot;http://www.w3.org/2001/XMLSchema#decimal&quot;}}]}, &quot;head&quot;: {&quot;vars&quot;: [&quot;title&quot;, &quot;year&quot;, &quot;runtimeMinutes&quot;, &quot;director&quot;]}}
+</pre></section><section><h2>Tra cứu RDF · header trả về</h2><pre>HTTP/1.1 303 SEE OTHER
+Server: Werkzeug/3.1.9 Python/3.9.6
+Date: Thu, 08 Oct 2026 03:40:13 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 237
+Location: /describe/film-Q25188.ttl
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+Connection: close
+
+</pre></section>

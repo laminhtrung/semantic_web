@@ -1,0 +1,12 @@
+{
+  "recorded_dataset_sha256": "383959f01316fb241e95c57cda2a2d55b1d3b3b10163b814cdaf17db113cf5a7",
+  "recorded_graph_digest": "1128204226991465844507892520199583593517985425283703994257035960226972978407592538",
+  "recorded_movie_content_digest": "1123454424733991949884667943824521347032969002673672741692683249768739750082219169",
+  "video_sha256": "31ba259a7762fbf64cb6a7818842cd1c028039fe03d8c6684d8e93d5acec59fd",
+  "recorded_timestamp_triples": 76,
+  "video_policy": "Keep MP4 bytes unchanged at the user request; assess compatibility separately from exact dataset identity.",
+  "current_dataset_sha256": "c29cd4d8939d36a800b7e0f367f0c6985e1fb5ee2b298b0cbbb77f76de2c49fd",
+  "movie_content_unchanged": true,
+  "only_retrieved_at_precision_changed": true,
+  "verified": true
+}

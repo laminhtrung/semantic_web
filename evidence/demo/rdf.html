@@ -1,0 +1,27 @@
+<!doctype html><meta charset="utf-8"><style>body{background:#f3f6f7;color:#152b3a;font:21px Arial,sans-serif;margin:0;padding:35px}h1{font-size:32px;color:#007f82;margin:0 0 24px}h2{font-size:23px}section{background:white;padding:20px 26px;border-radius:12px;margin:16px 0}pre{font:17px Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.4;margin:8px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.meta{color:#506776;font-size:17px}</style><h1>YC3 · trích RDF và giấy phép</h1><p class="meta">Minh chứng đọc từ file / kết quả lệnh thực thi thật của MovieLOD 2.0</p><section><h2>Inception: triple thực tế</h2><pre>@prefix ns1: &lt;http://dbpedia.org/ontology/&gt; .
+@prefix ns2: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+&lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188&gt; a ns1:Film,
+        ns2:FeatureFilm ;
+    ns1:director &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q25191&gt; ;
+    owl:sameAs &lt;http://dbpedia.org/resource/Inception&gt;,
+        &lt;http://www.wikidata.org/entity/Q25188&gt; ;
+    ns2:releaseYear 2010 ;
+    ns2:runtimeMinutes 148.0 ;
+    ns2:title &quot;Inception&quot; .
+
+</pre></section><section><h2>LICENSE-DATA.txt</h2><pre>MovieLOD dataset — Creative Commons Attribution-ShareAlike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Attribution: Wikidata contributors (structured data under CC0), DBpedia maintainers and Wikipedia contributors.
+Sources: https://www.wikidata.org/ and https://dbpedia.org/
+Wikidata licensing: https://www.wikidata.org/wiki/Wikidata:Licensing
+DBpedia resource pages display their source attribution and CC BY-SA 4.0 license.
+
+This educational dataset selects, normalizes, and links source records. Original responses,
+URLs, retrieval timestamps and SHA-256 hashes are retained in data/raw/ and its manifest.
+The public dataset does not reproduce long source articles or film artwork.
+When redistributing adaptations of this combined dataset, keep attribution and this license.
+</pre></section>

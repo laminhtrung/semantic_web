@@ -172,7 +172,7 @@ ex:WritingAward a owl:Class ;
 ex:awardOf a owl:ObjectProperty ;
     rdfs:label "Award of"@en ;
     rdfs:domain ex:Award ;
-    rdfs:range _:N3830102020ae44919169e68cc1f5cb4d ;
+    rdfs:range _:N2d031555067e4cd089551168693551b5 ;
     owl:inverseOf ex:hasAward .
 
 ex:contributionOf a owl:ObjectProperty ;
@@ -381,7 +381,7 @@ ex:contributionTo a owl:FunctionalProperty,
 
 ex:hasAward a owl:ObjectProperty ;
     rdfs:label "Has award"@en ;
-    rdfs:domain _:N3830102020ae44919169e68cc1f5cb4d ;
+    rdfs:domain _:N2d031555067e4cd089551168693551b5 ;
     rdfs:range ex:Award .
 
 ex:FictionGenre a owl:Class ;
@@ -434,11 +434,8 @@ ex:Contribution a owl:Class ;
             owl:allValuesFrom ex:ContributionRole ;
             owl:onProperty ex:hasRole ],
         [ a owl:Restriction ;
-            owl:allValuesFrom dbo:Person ;
-            owl:onProperty ex:contributionBy ],
-        [ a owl:Restriction ;
-            owl:onClass ex:ContributionRole ;
-            owl:onProperty ex:hasRole ;
+            owl:onClass dbo:Film ;
+            owl:onProperty ex:contributionTo ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
             owl:allValuesFrom dbo:Film ;
@@ -448,9 +445,12 @@ ex:Contribution a owl:Class ;
             owl:onProperty ex:contributionBy ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
-            owl:onClass dbo:Film ;
-            owl:onProperty ex:contributionTo ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
+            owl:onClass ex:ContributionRole ;
+            owl:onProperty ex:hasRole ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom dbo:Person ;
+            owl:onProperty ex:contributionBy ] .
 
 dbo:Person a owl:Class ;
     rdfs:label "Person"@en ;
@@ -468,12 +468,9 @@ dbo:Film a owl:Class ;
 [] a owl:AllDisjointClasses ;
     owl:members ( dbo:Film dbo:Person ex:Organization ex:Genre dbo:Country ex:Language ex:Contribution ex:ContributionRole ex:SourceSnapshot ex:Dataset ex:Award ) .
 
-_:N0e339feab2544341bdb5d8199e204603 rdf:first dbo:Person ;
-    rdf:rest () .
+_:N185ac8a05aac494db12694f235f827f4 rdf:first dbo:Film ;
+    rdf:rest ( dbo:Person ) .
 
-_:Nc5a3505a7f7a40eeb7dac04f92ff9e9d rdf:first dbo:Film ;
-    rdf:rest _:N0e339feab2544341bdb5d8199e204603 .
-
-_:N3830102020ae44919169e68cc1f5cb4d a owl:Class ;
-    owl:unionOf _:Nc5a3505a7f7a40eeb7dac04f92ff9e9d .
+_:N2d031555067e4cd089551168693551b5 a owl:Class ;
+    owl:unionOf _:N185ac8a05aac494db12694f235f827f4 .
 

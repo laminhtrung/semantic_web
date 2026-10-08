@@ -1,0 +1,95 @@
+{
+  "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/",
+  "checked_at": "2026-10-08T07:49:17.459796+00:00",
+  "checks": [
+    {
+      "query": "02_inception.rq",
+      "status": "1 result · 0.01 s",
+      "passed": true
+    },
+    {
+      "query": "01_films.rq",
+      "status": "30 results · 0.06 s",
+      "passed": true
+    },
+    {
+      "query": "03_nolan.rq",
+      "status": "8 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "04_credits.rq",
+      "status": "25 results · 0.25 s",
+      "passed": true
+    },
+    {
+      "query": "05_external_links.rq",
+      "status": "58 results · 0.10 s",
+      "passed": true
+    },
+    {
+      "query": "06_genres.rq",
+      "status": "75 results · 0.39 s",
+      "passed": true
+    },
+    {
+      "query": "07_source.rq",
+      "status": "2 results · 0.01 s",
+      "passed": true
+    },
+    {
+      "query": "08_ask.rq",
+      "status": "1 result · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "09_actors_of_inception.rq",
+      "status": "21 results · 0.03 s",
+      "passed": true
+    },
+    {
+      "query": "10_production_companies_of_a_film.rq",
+      "status": "4 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "11_awards_received_by_a_film.rq",
+      "status": "7 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "12_countries_and_languages_of_a_film.rq",
+      "status": "1 result · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "15_feature_vs_animated_film_counts.rq",
+      "status": "1 result · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "16_documentary_film_count_ask.rq",
+      "status": "1 result · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "CONSTRUCT",
+      "status": "3 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "DESCRIBE",
+      "status": "85 results · 0.02 s",
+      "passed": true
+    }
+  ],
+  "invalid_query_recovery": true,
+  "uncaught_errors": [],
+  "dataset_responses": [
+    {
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.ttl",
+      "status": 200,
+      "content_type": "application/octet-stream"
+    }
+  ]
+}

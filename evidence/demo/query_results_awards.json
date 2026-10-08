@@ -1,0 +1,89 @@
+{
+  "results": {
+    "bindings": [
+      {
+        "awardName": {
+          "type": "literal",
+          "value": "Academy Award for Best Actor",
+          "xml:lang": "en"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Godfather"
+        }
+      },
+      {
+        "awardName": {
+          "type": "literal",
+          "value": "Academy Award for Best Picture",
+          "xml:lang": "en"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Godfather"
+        }
+      },
+      {
+        "awardName": {
+          "type": "literal",
+          "value": "Academy Award for Best Writing, Adapted Screenplay",
+          "xml:lang": "en"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Godfather"
+        }
+      },
+      {
+        "awardName": {
+          "type": "literal",
+          "value": "Golden Globe Award for Best Actor – Motion Picture Drama",
+          "xml:lang": "en"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Godfather"
+        }
+      },
+      {
+        "awardName": {
+          "type": "literal",
+          "value": "Golden Globe Award for Best Motion Picture – Drama",
+          "xml:lang": "en"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Godfather"
+        }
+      },
+      {
+        "awardName": {
+          "type": "literal",
+          "value": "Golden Globe Award for Best Screenplay",
+          "xml:lang": "en"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Godfather"
+        }
+      },
+      {
+        "awardName": {
+          "type": "literal",
+          "value": "National Board of Review: Top Ten Films",
+          "xml:lang": "en"
+        },
+        "title": {
+          "type": "literal",
+          "value": "The Godfather"
+        }
+      }
+    ]
+  },
+  "head": {
+    "vars": [
+      "title",
+      "awardName"
+    ]
+  }
+}

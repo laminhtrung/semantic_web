@@ -64,6 +64,7 @@
 \usepackage{fvextra}
 \DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
 \usepackage{fancyhdr}
+\usepackage{array}
 \pagestyle{fancy}\fancyhf{}
 \fancyhead[L]{\small MovieLOD · Bài làm hoàn chỉnh}
 \fancyfoot[C]{\small\thepage}\setlength{\headheight}{15pt}
@@ -82,7 +83,7 @@
 \@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
 \hypersetup{
-  pdftitle={MovieLOD: làm và đọc bài từ A đến Z},
+  pdftitle={MovieLOD: hướng dẫn đọc và chạy từ A đến Z},
   colorlinks=true,
   linkcolor={teal},
   filecolor={Maroon},
@@ -90,54 +91,45 @@
   urlcolor={teal},
   pdfcreator={LaTeX via pandoc}}
 
-\title{MovieLOD: làm và đọc bài từ A đến Z}
+\title{MovieLOD: hướng dẫn đọc và chạy từ A đến Z}
 \author{}
-\date{Hướng dẫn ngắn • 06/10/2026}
+\date{MovieLOD 2.0 · Đối chiếu ngày 08/10/2026}
 
 \begin{document}
 \maketitle
 
-\subsection{A. Bạn có gì trong thư mục
-này?}\label{a.-bux1ea1n-cuxf3-guxec-trong-thux1b0-mux1ee5c-nuxe0y}
+\subsection{Đọc theo thứ tự
+nào?}\label{ux111ux1ecdc-theo-thux1ee9-tux1ef1-nuxe0o}
 
-Đây là \textbf{bản độc lập}, không cần mở file OWL mở rộng cũ để chạy.
-Bài có \textbf{30 phim, 15 lớp}, nguồn thật và một ứng dụng truy vấn.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Đọc tài liệu này để biết chạy ứng dụng và hiểu từ khóa.
+\item
+  Mở \texttt{Slide.\allowbreak{}pp\allowbreak{}tx} cùng
+  \texttt{Script\_\allowbreak{}t\allowbreak{}huyet\_\allowbreak{}tr\allowbreak{}inh.\allowbreak{}pdf}
+  để tập nói.
+\item
+  Đọc
+  \texttt{Kich\_\allowbreak{}ban\allowbreak{}\_\allowbreak{}video.\allowbreak{}p\allowbreak{}df}
+  để quay demo 3--5 phút.
+\item
+  Đọc \texttt{Bao\_\allowbreak{}cao.\allowbreak{}pdf} và
+  \texttt{C\allowbreak{}H\allowbreak{}A\allowbreak{}M\_\allowbreak{}\allowbreak{}D\allowbreak{}I\allowbreak{}E\allowbreak{}\allowbreak{}M.\allowbreak{}pdf}
+  để đối chiếu yêu cầu.
+\item
+  Tra
+  \texttt{Huong\_\allowbreak{}da\allowbreak{}n\_\allowbreak{}thao\_\allowbreak{}t\allowbreak{}ac\_\allowbreak{}chi\_\allowbreak{}t\allowbreak{}iet.\allowbreak{}pdf}
+  khi cần lệnh và xử lý lỗi;
+  \texttt{Ontology\allowbreak{}\_\allowbreak{}\allowbreak{}Redesig\allowbreak{}n.\allowbreak{}pdf}
+  khi cần đầy đủ lớp/thuộc tính.
+\end{enumerate}
 
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-Thư mục / file & Để làm gì? \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\texttt{README.md} & Điểm bắt đầu, các lệnh chạy và trạng thái xuất
-bản. \\
-\texttt{ontology/\allowbreak{}} & Mô hình OWL và dữ liệu RDF. \\
-\texttt{data/\allowbreak{}raw/\allowbreak{}} & Phản hồi gốc; metadata
-ghi URL, ngày lấy và SHA-256. \\
-\texttt{data/\allowbreak{}processed/\allowbreak{}} & Dữ liệu đã chuẩn
-hóa: Turtle, JSON-LD, CSV. \\
-\texttt{src/\allowbreak{}} & Mã thu thập, chuyển đổi, kiểm tra, server
-và terminal. \\
-\texttt{queries/\allowbreak{}} & 8 câu hỏi SPARQL mẫu, có thể chỉnh
-sửa. \\
-\texttt{web/\allowbreak{}dist/\allowbreak{}} & Giao diện và dữ liệu phục
-vụ trên Web. \\
-\texttt{evidence/\allowbreak{}} & Số liệu, kết quả kiểm tra, ảnh và biên
-bản thực thi. \\
-\texttt{docs/\allowbreak{}} & Báo cáo, hướng dẫn, slide và video. \\
-\end{longtable}
-}
+\subsection{Chạy ứng dụng từ dữ liệu đã
+có}\label{chux1ea1y-ux1ee9ng-dux1ee5ng-tux1eeb-dux1eef-liux1ec7u-ux111uxe3-cuxf3}
 
-\textbf{Bốn từ để nhớ:} ontology = mô hình; RDF = câu dữ liệu; IRI =
-định danh; SPARQL = ngôn ngữ hỏi dữ liệu. Đọc ví dụ Inception trước, rồi
-mới xem mã nguồn.
-
-\subsection{B. Chạy ứng dụng
-ngay}\label{b.-chux1ea1y-ux1ee9ng-dux1ee5ng-ngay}
-
-Mở terminal trong thư mục này. Dùng Python 3.9 trở lên.
+Trong terminal ở thư mục dự án:
 
 \begin{verbatim}
 python3 -m venv .venv
@@ -145,103 +137,21 @@ python3 -m venv .venv
 .venv/bin/python src/server.py
 \end{verbatim}
 
-Mở \textbf{http://127.0.0.1:8000}. Có sẵn dữ liệu nên không cần tải lại.
-Trên macOS, \texttt{start.command} làm các bước khởi động này. Dừng
-server bằng Ctrl+C.
+Mở
+\texttt{http:\allowbreak{}/\allowbreak{}/\allowbreak{}1\allowbreak{}27.\allowbreak{}0.\allowbreak{}0.\allowbreak{}1\allowbreak{}:\allowbreak{}8000}.
+Nếu cổng đang bị dùng, chạy server với
+\texttt{-\allowbreak{}-\allowbreak{}port 8\allowbreak{}001}, mở URL cổng
+8001 và thay cổng trong curl. Sau khi build dữ liệu mới, dừng và chạy
+lại server để endpoint nạp graph mới. Không dừng tiến trình của người
+khác chỉ để lấy lại cổng.
 
-Trong giao diện: chọn câu hỏi Inception → bấm \textbf{Run query} → đọc
-bảng → mở một phim để thấy thông tin và nguồn → tải Turtle nếu muốn xem
-RDF. Bản hosted:
-\href{https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/}{MovieLOD}.
+Chọn Sample queries: Inception; kết quả \textbf{2010, 148, Christopher
+Nolan}. Chọn Films directed by Christopher Nolan: \textbf{8 dòng}. Chọn
+Who contributed to Inception: \textbf{25 dòng} gồm các vai trò Director,
+Actor, Writer, Producer. Tìm Inception ở Find a film, mở trang phim để
+xem nguồn và RDF.
 
-\textbf{Xuất bản:} Đã xuất bản công khai; người có URL truy cập được dữ
-liệu và giao diện. Bản hosted chưa có ontology 1.1.0 với sáu defined
-class; cần xuất bản lại để đồng bộ.
-
-\newpage
-
-\subsection{C. Đọc ontology --- YC1}\label{c.-ux111ux1ecdc-ontology-yc1}
-
-Mở \texttt{ontology/\allowbreak{}Movie\_\allowbreak{}Ontology.owl} bằng
-Protégé để xem \textbf{mô hình}. Mở
-\texttt{ontology/\allowbreak{}Movie\_\allowbreak{}Knowledge\_\allowbreak{}Graph.owl}
-để xem \textbf{cả mô hình và dữ liệu}.
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Tên / từ tiếng Anh
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Dịch
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Hiểu bằng ví dụ
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-dbo:Film / dbo:Person & Phim / người & Lớp DBpedia, dùng cho Inception /
-Christopher Nolan. \\
-ex:Genre / dbo:Country / ex:Language & Thể loại / quốc gia / ngôn ngữ &
-Country dùng lớp DBpedia; Genre và Language thuộc mô hình của bài. \\
-Credit / ContributionRole & Đóng góp / vai trò & Nolan làm đạo diễn
-trong Inception. \\
-SourceSnapshot / Dataset & Bản ghi nguồn / bộ dữ liệu & Thông tin truy
-lại được; dữ liệu được mô tả và tải về. \\
-Object property / Data property & Quan hệ / thuộc tính giá trị & Phim →
-đạo diễn; phim → năm. \\
-Exactly 1 / Inverse & Đúng một / quan hệ ngược & Một credit có đúng một
-người; director ↔ directed. \\
-\end{longtable}
-}
-
-\textbf{Đi từ một ví dụ:} Film Inception → \texttt{hasCredit} → credit →
-\texttt{participant} Nolan + \texttt{role} DirectorRole +
-\texttt{sourceSnapshot} nguồn. Đây là cách lưu một người làm nhiều vai
-trò mà không lẫn các đóng góp.
-
-\subsection{D. Thu thập nguồn thật ---
-YC2}\label{d.-thu-thux1eadp-nguux1ed3n-thux1eadt-yc2}
-
-\begin{verbatim}
-.venv/bin/python src/collect.py
-\end{verbatim}
-
-Mã chọn phim theo \texttt{config.json}; tải Wikidata theo tiêu đề
-Wikipedia tiếng Anh; tải dữ liệu các người/thể loại/quốc gia/ngôn ngữ
-liên quan; kiểm tra chủ thể Film của DBpedia; lưu phản hồi gốc.
-
-\textbf{Mỗi nguồn có:} URL = địa chỉ;
-\texttt{retrieved\_\allowbreak{}at} = thời điểm lấy; SHA-256 = dấu vân
-tay nội dung. Mở
-\texttt{data/\allowbreak{}raw/\allowbreak{}snapshots.json} để tra từng
-phản hồi. Mã dùng cache khi hash vẫn đúng; thêm
-\texttt{-\allowbreak{}-\allowbreak{}refresh} để tải lại từ Internet.
-
-\textbf{Danh tính được kiểm tra:} QID Wikidata được giải quyết từ
-sitelink đúng tiêu đề; DBpedia dùng cùng tiêu đề và type Film. Không nối
-bằng cách đoán từ tên gần giống. Xem lỗi hoặc phản hồi bị bỏ ở
-\texttt{evidence/\allowbreak{}collection.json}.
-
-\newpage
-
-\subsection{E. Chuyển thành RDF ---
-YC3}\label{e.-chuyux1ec3n-thuxe0nh-rdf-yc3}
-
-\begin{verbatim}
-.venv/bin/python src/build.py
-\end{verbatim}
-
-Mã dùng 15 lớp (3 lớp DBpedia và 12 lớp của bài), trong đó 6 defined
-class dùng giao/hợp và restriction tồn tại; xem
-\texttt{Mo\_\allowbreak{}ta\_\allowbreak{}ontology.md} và chạy
-\texttt{src/\allowbreak{}reason.py} để kiểm tra phân loại; biến thông
-tin đã thu thập thành đồ thị RDF; tạo định danh từ QID; đổi thời lượng
-về phút; thêm nguồn; xuất Turtle, JSON-LD, CSV và OWL.
+\subsection{Từ khóa cần hiểu}\label{tux1eeb-khuxf3a-cux1ea7n-hiux1ec3u}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
@@ -249,136 +159,104 @@ về phút; thêm nguồn; xuất Turtle, JSON-LD, CSV và OWL.
   >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Câu viết gọn
+Từ
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Dịch
+Nghĩa dễ nhớ
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\texttt{film-\allowbreak{}Q25188 a dbo:\allowbreak{}Film} & Đối tượng
-này là phim, dùng trực tiếp lớp của DBpedia. \\
-\texttt{film-\allowbreak{}Q25188 ex:\allowbreak{}title "Inception"} &
-Phim có tên Inception. \\
-\texttt{film-\allowbreak{}Q25188 dbo:\allowbreak{}director person-\allowbreak{}Q25191}
-& Nolan là đạo diễn của phim. \\
-\texttt{credit ex:\allowbreak{}role ex:\allowbreak{}DirectorRole} & Bản
-ghi đóng góp này có vai trò đạo diễn. \\
+Ontology & Bản mô tả các khái niệm, quan hệ và quy tắc \\
+Class / individual & Loại đối tượng / một đối tượng cụ thể; Film /
+Inception \\
+RDF triple & Một câu dữ liệu: chủ thể, quan hệ, đối tượng hoặc giá
+trị \\
+IRI / URI & Định danh để phân biệt thực thể; HTTP IRI còn có thể tra
+cứu \\
+SPARQL & Ngôn ngữ đặt câu hỏi trên đồ thị RDF \\
+SELECT / ASK / CONSTRUCT & Lấy bảng / hỏi đúng-sai / tạo đồ thị \\
+owl:sameAs & Hai định danh cùng chỉ một thực thể \\
+Source\allowbreak{}Sn\allowbreak{}apshot & Bản ghi URL, thời điểm, hash
+của phản hồi nguồn \\
+OWL RL & Bộ luật suy luận mà thư viện owlrl đang dùng \\
+--reasoned & Nạp thêm schema và kết quả phân loại đã lưu \\
 \end{longtable}
 }
 
-\texttt{a} viết tắt \texttt{rdf:\allowbreak{}type};
-\texttt{ex:\allowbreak{}} viết tắt từ vựng của bài;
-\texttt{dbo:\allowbreak{}} viết tắt DBpedia ontology.
-\texttt{dbo:\allowbreak{}Film}, \texttt{dbo:\allowbreak{}Person},
-\texttt{dbo:\allowbreak{}Country} là các lớp tái sử dụng trực tiếp. Các
-tên \texttt{film-\allowbreak{}...} là phần cuối IRI đầy đủ.
+\subsection{Phân biệt ba việc dễ
+nhầm}\label{phuxe2n-biux1ec7t-ba-viux1ec7c-dux1ec5-nhux1ea7m}
 
-\textbf{Phần công bố:} Web có trang IRI cho từng thực thể, RDF của thực
-thể, JSON-LD và các file tải. Giấy phép được ghi cả trong RDF và
-\texttt{LICENSE-\allowbreak{}DATA.txt}. Muốn đủ Open Data, audience phải
-công khai; chạy trên localhost chỉ là minh chứng chạy ứng dụng tại máy.
+Dùng \texttt{dbo:\allowbreak{}\allowbreak{}Film\allowbreak{}} là tái sử
+dụng lớp DBpedia. Nối Inception với Wikidata bằng sameAs là nối
+\textbf{cá thể}. Ghi nguồn bằng source\allowbreak{}Sn\allowbreak{}apshot
+là giữ \textbf{xuất xứ}. Ba việc này giải quyết ba câu hỏi khác nhau.
 
-\subsection{F. Liên kết ngoài ---
-YC4}\label{f.-liuxean-kux1ebft-ngouxe0i-yc4}
+Một người có thể giữ nhiều vai trò. Contribution là bản ghi \textbf{một
+người + một phim + một vai trò}. Các vai trò khác nhau có bản ghi riêng.
+Không dùng mô hình
+Credit/\allowbreak{}p\allowbreak{}articipa\allowbreak{}nt/\allowbreak{}has\allowbreak{}Cr\allowbreak{}edit
+của bản cũ.
 
-\texttt{owl:\allowbreak{}sameAs} nghĩa là hai IRI chỉ cùng thực thể.
-Inception có QID \textbf{Q25188}; Nolan có QID \textbf{Q25191}. Mỗi thực
-thể được tái dùng giữa các phim, không tạo một Nolan khác cho từng phim.
+Endpoint truy vấn dữ liệu khai báo. Muốn hỏi các lớp
+Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker được suy ra, dùng
+terminal với --reasoned. File
+inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl
+đã có; chạy reason.py khi cần tính lại sau sửa dữ liệu. Một SELECT trực
+tiếp trả 0 không có nghĩa ontology không có định nghĩa.
 
-Mở \texttt{evidence/\allowbreak{}link\_\allowbreak{}audit.json} để xem
-IRI nội bộ, IRI ngoài và phương pháp nối. Có \textbf{964 liên kết} trong
-lần tạo dữ liệu này. \texttt{sameAs} dùng cho danh tính;
-\texttt{wasDerivedFrom} dùng cho nguồn.
+\subsection{Số liệu và kết quả hoàn
+tất}\label{sux1ed1-liux1ec7u-vuxe0-kux1ebft-quux1ea3-houxe0n-tux1ea5t}
 
-\subsection{G. Kiểm tra trước khi
-demo}\label{g.-kiux1ec3m-tra-trux1b0ux1edbc-khi-demo}
+Bản local: \textbf{42 lớp, 30 phim, 851 người, 1.010 đóng góp, 19.339
+triple, 1.727 liên kết ngoài}. Bản 2.0 đã được xuất bản công khai và
+kiểm tra không đăng nhập: dữ liệu
+Turtle/\allowbreak{}\allowbreak{}J\allowbreak{}\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D,
+ontology và mô tả RDF của Inception đều đẳng cấu với graph cục bộ. Có
+19.339 triple dữ liệu và 42 lớp ontology.
 
-\begin{verbatim}
-.venv/bin/python src/validate.py
-.venv/bin/python -m pytest -q
-\end{verbatim}
+Đã bổ sung 43 phản hồi còn thiếu và chạy lại quy trình: đủ 76/76 file
+nguồn, 76/76 SHA-256 khớp, không có file thiếu. Một phản hồi tải lại có
+nội dung thay đổi được ghi thời điểm/hash mới; danh mục lịch sử được giữ
+ở
+\texttt{evidence\allowbreak{}/\allowbreak{}source\_\allowbreak{}manifest\allowbreak{}\_\allowbreak{}before\_\allowbreak{}recovery\allowbreak{}.\allowbreak{}json}.
 
-Python kiểm tra phim có tên, nguồn, liên kết; credit có đúng
-phim--người--vai trò; bản ghi nguồn có URL, thời điểm, hash. Mã kiểm tra
-nằm ở \texttt{src/\allowbreak{}validate.py}. Test còn thử truy vấn,
-chuyển hướng RDF, câu truy vấn sai và suy luận quan hệ ngược. Kết quả
-nằm trong \texttt{evidence/\allowbreak{}}.
+Theo thang chia đều 2 điểm/yêu cầu, hiện \textbf{10/10}: cả 5 yêu cầu
+đạt trong phạm vi đề và kiểm tra hiện tại. Đây là tự đánh giá, không
+phải điểm chính thức.
+\texttt{Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4} đã được
+thay bằng demo thao tác bản 2.0, có lời tiếng Việt tổng hợp; nhóm có thể
+tự đọc lại theo kịch bản. Đọc
+\texttt{C\allowbreak{}H\allowbreak{}A\allowbreak{}M\_\allowbreak{}\allowbreak{}D\allowbreak{}I\allowbreak{}E\allowbreak{}\allowbreak{}M.\allowbreak{}md}
+để biết minh chứng và cách hoàn tất.
 
-\newpage
+\subsection{Slide đầy đủ và ảnh
+Protégé}\label{slide-ux111ux1ea7y-ux111ux1ee7-vuxe0-ux1ea3nh-protuxe9guxe9}
 
-\subsection{H. Truy vấn theo ba cách ---
-YC5}\label{h.-truy-vux1ea5n-theo-ba-cuxe1ch-yc5}
+Slide.\allowbreak{}pp\allowbreak{}tx/\allowbreak{}pdf hiện có \textbf{24
+trang},
+Script\_\allowbreak{}t\allowbreak{}huyet\_\allowbreak{}tr\allowbreak{}inh.\allowbreak{}md/\allowbreak{}p\allowbreak{}df
+khớp từng trang. Bản ngắn 13 trang vẫn ở
+Slide\_\allowbreak{}ng\allowbreak{}an\_\allowbreak{}13.\allowbreak{}pp\allowbreak{}tx/\allowbreak{}pdf
+cùng lời nói riêng. Có \textbf{11 khung ảnh Protégé} ghi ngay trên
+slide; xem
+Checklis\allowbreak{}t\_\allowbreak{}anh\_\allowbreak{}\allowbreak{}Pr\allowbreak{}otege.\allowbreak{}pd\allowbreak{}f
+để bổ sung. Lần này chưa có ảnh Protégé thật, không dùng khung chờ làm
+minh chứng đã chụp.
 
-\textbf{1. Giao diện:} mở Web, chọn câu hỏi mẫu, chỉnh SPARQL nếu cần,
-bấm chạy, đọc bảng và tải kết quả. Bản hosted dùng Comunica để hỏi file
-RDF trong trình duyệt. Bản cục bộ dùng endpoint.
-
-\textbf{2. Terminal:}
-
-\begin{verbatim}
-.venv/bin/python src/query.py queries/02_inception.rq
-\end{verbatim}
-
-\textbf{3. Endpoint:} chạy server, rồi mở terminal khác:
-
-\begin{verbatim}
-curl -X POST http://127.0.0.1:8000/sparql \
-  -H 'Content-Type: application/sparql-query' \
-  --data-binary @queries/02_inception.rq
-\end{verbatim}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}ll@{}}
-\toprule\noalign{}
-Truy vấn & Câu hỏi dễ hiểu \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\texttt{01\_\allowbreak{}films.rq} & Bộ dữ liệu có những phim nào? \\
-\texttt{02\_\allowbreak{}inception.rq} & Inception ra năm nào, dài bao
-lâu, ai đạo diễn? \\
-\texttt{03\_\allowbreak{}nolan.rq} & Có những phim nào do Nolan đạo
-diễn? \\
-\texttt{04\_\allowbreak{}credits.rq} & Ai đóng góp vai trò gì trong
-Inception? \\
-\texttt{05\_\allowbreak{}external\_\allowbreak{}links.rq} & Phim nối tới
-định danh ngoài nào? \\
-\texttt{06\_\allowbreak{}genres.rq} & Mỗi thể loại có bao nhiêu phim
-trong mẫu? \\
-\texttt{07\_\allowbreak{}source.rq} & Thông tin Inception được lấy từ
-đâu, khi nào? \\
-\texttt{08\_\allowbreak{}ask.rq} & Inception có đúng liên kết Wikidata
-không? \\
-\end{longtable}
-}
-
-\texttt{SELECT} = lấy bảng; \texttt{WHERE} = mẫu dữ liệu;
-\texttt{OPTIONAL} = thông tin có thì lấy; \texttt{FILTER} = điều kiện;
-\texttt{COUNT} = đếm; \texttt{ASK} = đúng/sai. Truy vấn mặc định đọc dữ
-liệu gốc, không tự bật suy luận.
-
-\subsection{I. Gói nộp và những điều cần
-nhớ}\label{i.-guxf3i-nux1ed9p-vuxe0-nhux1eefng-ux111iux1ec1u-cux1ea7n-nhux1edb}
-
-\textbf{Nộp:} mã và dữ liệu trong thư mục này;
-\texttt{docs/\allowbreak{}Bao\_\allowbreak{}cao.pdf} (không quá 15
-trang); \texttt{docs/\allowbreak{}Slide.pptx};
-\texttt{docs/\allowbreak{}Video\_\allowbreak{}demo.mp4} (3--5 phút).
-Video có lời đọc tiếng Việt tổng hợp, minh họa bằng dữ liệu và ảnh ứng
-dụng thật; có kịch bản để tự thuyết trình lại.
-
-\textbf{Trình bày theo 5 ý:} mô hình 15 lớp (9 nền + 6 suy luận; xem
-Mo\_ta\_ontology.md) → nguồn thật có hash → RDF và IRI → liên kết
-Wikidata/DBpedia → truy vấn ra kết quả. Không cần giải thích các mô-đun
-giải thưởng hoặc streaming vì bản này không đưa chúng vào phạm vi.
-
-\textbf{Nếu lỗi:} kiểm tra đã cài requirements; cổng 8000 chưa bị dùng;
-dữ liệu đã build. Dùng \texttt{-\allowbreak{}-\allowbreak{}port 8001}
-nếu cần đổi cổng. API nguồn cần Internet khi thu thập mới; phản hồi cũ
-được giữ để chạy lại. Trạng thái công khai được ghi đúng trong
-\texttt{evidence/\allowbreak{}publication.json}.
+\textbf{Cập nhật
+timestam\allowbreak{}p/\allowbreak{}reason\allowbreak{}er:\allowbreak{}}
+dùng duy nhất
+Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l
+cho graph đầy đủ.
+Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã
+chạy; xem
+Ket\_\allowbreak{}qua\_\allowbreak{}reasoner\allowbreak{}.\allowbreak{}pdf.\allowbreak{}
+Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4 giữ nguyên theo
+yêu cầu nhóm; timestamp trong dữ liệu mới giảm đến mili giây, nội dung
+phim/quan hệ giữ nguyên, đã kiểm tra ở
+video\_\allowbreak{}da\allowbreak{}taset\_\allowbreak{}co\allowbreak{}mpatibil\allowbreak{}ity.\allowbreak{}json\allowbreak{}.\allowbreak{}
+Video chưa thể hiện kết quả reasoner mới và vẫn nhắc bộ slide ngắn 13
+trang.
 
 \end{document}

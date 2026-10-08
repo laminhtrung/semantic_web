@@ -11,9 +11,10 @@ RL_DEFINED = ['ActingContribution', 'DirectingContribution', 'WritingContributio
 
 # Inferred via owl:minQualifiedCardinality with N>=2. The W3C OWL 2 RL profile only has rules for
 # qualified cardinality of 0 or 1 (see cls-maxqc1/cls-maxqc2 in the OWL 2 RL spec); N>=2 is a valid
-# OWL DL entailment (a full reasoner such as Protege's HermiT/Pellet infers it) but owlrl's rule-based
-# DeductiveClosure silently skips it. We compute the same entailment with a SPARQL aggregate query
-# instead and assert the resulting rdf:type triples ourselves.
+# OWL DL construct requiring sufficiently many provably different fillers, but owlrl's rule-based
+# DeductiveClosure silently skips it. We classify by distinct RDF terms with a SPARQL aggregate
+# instead. This is an application rule, not the same OWL DL entailment: distinct IRIs need not
+# denote different individuals unless the ontology establishes their inequality.
 CARDINALITY_DEFINED = ['MultiGenreFilm', 'FilmStudio']
 DEFINED = RL_DEFINED + CARDINALITY_DEFINED
 

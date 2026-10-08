@@ -1,0 +1,139 @@
+{
+  "review_date": "2026-10-08",
+  "data_triples": 19339,
+  "schema_triples": 518,
+  "named_classes": 42,
+  "data_errors": [],
+  "raw_snapshots_listed": 76,
+  "raw_hashes_matching": 76,
+  "missing_raw_files": [],
+  "hash_mismatches": [],
+  "queries": [
+    {
+      "file": "01_films.rq",
+      "asserted_result": 30,
+      "with_saved_inference_result": 30
+    },
+    {
+      "file": "02_inception.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 1
+    },
+    {
+      "file": "03_nolan.rq",
+      "asserted_result": 8,
+      "with_saved_inference_result": 8
+    },
+    {
+      "file": "04_credits.rq",
+      "asserted_result": 25,
+      "with_saved_inference_result": 25
+    },
+    {
+      "file": "05_external_links.rq",
+      "asserted_result": 58,
+      "with_saved_inference_result": 58
+    },
+    {
+      "file": "06_genres.rq",
+      "asserted_result": 75,
+      "with_saved_inference_result": 75
+    },
+    {
+      "file": "07_source.rq",
+      "asserted_result": 2,
+      "with_saved_inference_result": 2
+    },
+    {
+      "file": "08_ask.rq",
+      "asserted_result": true,
+      "with_saved_inference_result": true
+    },
+    {
+      "file": "09_actors_of_inception.rq",
+      "asserted_result": 21,
+      "with_saved_inference_result": 21
+    },
+    {
+      "file": "10_production_companies_of_a_film.rq",
+      "asserted_result": 4,
+      "with_saved_inference_result": 4
+    },
+    {
+      "file": "11_awards_received_by_a_film.rq",
+      "asserted_result": 7,
+      "with_saved_inference_result": 7
+    },
+    {
+      "file": "12_countries_and_languages_of_a_film.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 1
+    },
+    {
+      "file": "13_fiction_genre_films_via_hierarchy.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 29
+    },
+    {
+      "file": "14_all_agents_people_and_organizations.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 1
+    },
+    {
+      "file": "15_feature_vs_animated_film_counts.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 1
+    },
+    {
+      "file": "16_documentary_film_count_ask.rq",
+      "asserted_result": false,
+      "with_saved_inference_result": false
+    },
+    {
+      "file": "17_inferred_actors.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 20
+    },
+    {
+      "file": "18_inferred_filmmakers.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 20
+    },
+    {
+      "file": "19_inferred_action_films.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 12
+    },
+    {
+      "file": "20_inferred_multi_genre_films.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 30
+    },
+    {
+      "file": "21_inferred_award_winning_films.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 26
+    },
+    {
+      "file": "22_inferred_film_studios.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 6
+    },
+    {
+      "file": "23_people_with_directing_and_writing_contribution.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 10
+    },
+    {
+      "file": "24_nolan_asserted_types_only.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 3
+    }
+  ],
+  "inference_scope": "Uses saved inferred_classes.ttl; pytest independently exercises reasoning.",
+  "timestamp_normalization": "evidence/timestamp_normalization.json",
+  "hermit": "evidence/hermit_run.json",
+  "pellet": "evidence/pellet_run.json",
+  "tests_passed": 14,
+  "video_preserved": true
+}

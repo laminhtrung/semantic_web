@@ -1,48 +1,83 @@
 {
-  "checked_on": "2026-10-06",
-  "access_mode": "public",
+  "checked_at": "2026-10-08T14:49:16.528202+07:00",
+  "authentication": "No cookies, credentials or signed-in browser session supplied",
+  "summary": {
+    "all_urls_public_http_200": true,
+    "all_rdf_graphs_match_local": true,
+    "open_license_present": true,
+    "film_iri_has_machine_readable_description": true,
+    "local_data_triples": 19339,
+    "local_schema_triples": 518,
+    "local_named_classes": 42,
+    "publication_complete": true
+  },
   "checks": [
     {
+      "path": "/",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/",
+      "http_status": 200,
+      "content_type": "text/html",
+      "sha256": "1122ee95399db08374a6664861587a6f337998532e5f4b303719dc0c51c15cd0"
+    },
+    {
+      "path": "/dataset",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/dataset",
+      "http_status": 200,
+      "content_type": "text/html",
+      "sha256": "85724a86a78a983b61c56f40761594333fd6e356a5642ad612c730565d044215"
+    },
+    {
       "path": "/data/movies.ttl",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.ttl",
       "http_status": 200,
       "content_type": "application/octet-stream",
-      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.ttl",
-      "rdf_triples": 12089,
-      "direct_dbpedia_films": 0
+      "sha256": "c29cd4d8939d36a800b7e0f367f0c6985e1fb5ee2b298b0cbbb77f76de2c49fd",
+      "triples": 19339,
+      "matches_local_graph": true
     },
     {
       "path": "/data/movies.jsonld",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.jsonld",
       "http_status": 200,
       "content_type": "application/octet-stream",
-      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.jsonld"
+      "sha256": "ea1eed4329c493db52752f9d0c1eb06b70dd1cb9245b6e2b151a3312113bc706",
+      "triples": 19339,
+      "matches_local_graph": true
+    },
+    {
+      "path": "/ontology.ttl",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology.ttl",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "sha256": "1680938dbfc4124f64a00d612a28a6c4c14485428c05503b8f39623e8de5769e",
+      "triples": 518,
+      "matches_local_graph": true,
+      "named_classes": 42
     },
     {
       "path": "/resource/film-Q25188",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188",
       "http_status": 200,
       "content_type": "text/html",
-      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188/",
-      "has_jsonld": true
+      "sha256": "4a2ab168f4aa92d9c18c2f9b41764d12bd25da7af90bd2871b2afc53b1d3ae70",
+      "html_has_rdf_link": true
     },
     {
       "path": "/resource/film-Q25188/index.ttl",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188/index.ttl",
       "http_status": 200,
       "content_type": "application/octet-stream",
-      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188/index.ttl",
-      "rdf_triples": 69
-    },
-    {
-      "path": "/ontology",
-      "http_status": 200,
-      "content_type": "text/html",
-      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology/"
+      "sha256": "40dc3d62665997210c35d7dd3222729f99766686181df445ac2741be438e1a40",
+      "triples": 85,
+      "matches_local_graph": true
     },
     {
       "path": "/LICENSE-DATA.txt",
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/LICENSE-DATA.txt",
       "http_status": 200,
       "content_type": "text/plain",
-      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/LICENSE-DATA.txt"
+      "sha256": "547bfac7ae05d3b6910e1e702a7c4865c880654b7bcc7c9e5fa327cbf3dfb3a7",
+      "open_license_present": true
     }
-  ],
-  "live_uses_direct_dbpedia_film_class": false,
-  "local_changes_pending_publication": true
+  ]
 }

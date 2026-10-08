@@ -3,9 +3,12 @@
   "status": "succeeded",
   "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site",
   "project_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916",
-  "deployment_id": "appgdep_6ac6020879a88191932ccb64dacd2bba",
-  "version_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916~appgver_c31e9c37e9d0819198a365c36f410868",
-  "source_commit": "283a8d337778da17ad4d5f5f60e07ce33c308ed8",
-  "local_changes_pending_publication": true,
-  "note": "Public English-language deployment succeeded on 2026-10-07. Source and deployment archive were verified; local query, endpoint and browser checks passed. Local ontology 1.1.0 adds six defined classes and explicit disjoint pairs; this ontology update has not been deployed."
+  "deployment_id": "appgdep_6ac74abe78dc819183779c804aa3f398",
+  "version_id": "appgprj_6ac4b120e5bc81918f6f5e2c5f851916~appgver_dc0a13dac5808191930cd7f4fb805128",
+  "source_commit": "ae8cd95c77ad4f8c71e595bb288ca2ced6d2d5c0",
+  "local_changes_pending_publication": false,
+  "note": "Primary OWL and all RDF timestamps normalized to milliseconds; separate compatibility OWL removed. HermiT/Pellet rerun successfully. 24-slide deck, scripts and reports synchronized. Demo MP4 bytes unchanged; timestamp-only compatibility independently verified.",
+  "latest_http_review": "evidence/publication_checks.json",
+  "latest_query_review": "evidence/public_query_checks.json",
+  "latest_reasoner_review": "evidence/hermit_run.json"
 }

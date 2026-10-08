@@ -1,9 +1,95 @@
 {
   "file": "docs/Video_demo.mp4",
-  "duration_seconds": 256.04644,
+  "duration_seconds": 290.04644,
   "width": 1280,
   "height": 720,
-  "narration": "Vietnamese synthetic voice Linh; not a recording of the student",
-  "slides": 8,
-  "contains_real_application_screenshots": true
+  "ontology_version": "2.0.0",
+  "narration": "Vietnamese synthetic voice Linh; not a recording of a student",
+  "capture": "Real Playwright browser interactions and localhost viewers of actual source files and command outputs; not a Protégé desktop recording",
+  "live_browser_recording": true,
+  "scenes": [
+    {
+      "scene": "intro",
+      "duration_seconds": 15,
+      "title": "MovieLOD · dữ liệu điện ảnh liên kết",
+      "speech": "Đây là Movie L O D, ứng dụng dữ liệu phim liên kết. Nhóm sẽ minh họa năm yêu cầu bằng ontology, dữ liệu thật, R D F, liên kết bên ngoài và các truy vấn chạy trực tiếp.",
+      "screenshot": "evidence/demo/01_intro.png"
+    },
+    {
+      "scene": "ontology",
+      "duration_seconds": 35,
+      "title": "YC1 · Ontology và mô hình Contribution",
+      "speech": "Ontology có bốn mươi hai lớp và dùng trực tiếp Film, Person, Country của DBpedia. Mô hình Contribution ghi một người giữ một vai trò trong một phim. Ba quan hệ contribution By, contribution To và has Role có ràng buộc đúng một giá trị. Bốn vai trò là đạo diễn, diễn viên, biên kịch và nhà sản xuất. Một người có thể giữ nhiều vai trò bằng các bản ghi riêng. Các lớp Actor và Filmmaker được phân loại từ định nghĩa thay vì nhập sẵn.",
+      "screenshot": "evidence/demo/02_ontology.png"
+    },
+    {
+      "scene": "sources",
+      "duration_seconds": 25,
+      "title": "YC2 · Phản hồi nguồn thật và SHA-256",
+      "speech": "Mã thu thập lấy Wikidata và DBpedia, xác định phim qua sitelink Wikipedia chính xác. Trên màn hình là metadata và một phản hồi nguồn thật, có địa chỉ, thời điểm và mã băm. Các phản hồi được giữ để kiểm tra và chạy lại. SHA hai trăm năm mươi sáu kiểm tra toàn vẹn nội dung, không tự chứng minh mọi phát biểu ngoài đời đều đúng.",
+      "screenshot": "evidence/demo/03_sources.png"
+    },
+    {
+      "scene": "rdf",
+      "duration_seconds": 30,
+      "title": "YC3 · RDF, HTTP IRI và giấy phép mở",
+      "speech": "Dữ liệu được chuyển thành các bộ ba: chủ thể, quan hệ và đối tượng hoặc giá trị. Inception có đạo diễn Christopher Nolan, năm hai nghìn mười và thời lượng một trăm bốn mươi tám phút. Định danh H T T P mở được trang mô tả và bản R D F để tải. Dữ liệu có Turtle, JSON L D và giấy phép C C BY S A bốn chấm không. Phần công bố được đối chiếu với bản cục bộ trong biên bản kiểm tra.",
+      "screenshot": "evidence/demo/04_rdf.png"
+    },
+    {
+      "scene": "links",
+      "duration_seconds": 25,
+      "title": "YC4 · sameAs đến Wikidata và DBpedia",
+      "speech": "Inception nối tới Wikidata và DBpedia bằng owl same As. Hai định danh này cùng chỉ một thực thể. Tổng dataset có một nghìn bảy trăm hai mươi bảy liên kết; bảng theo phim có năm mươi tám dòng. Câu ASK trả True cho liên kết Wikidata. Quan hệ nguồn dữ liệu được ghi riêng và không thay thế same As.",
+      "screenshot": "evidence/demo/05_links.png"
+    },
+    {
+      "scene": "queries",
+      "duration_seconds": 40,
+      "title": "YC5 · Inception, phim Nolan và các vai trò",
+      "speech": "Truy vấn Inception trả năm phát hành, thời lượng và tên đạo diễn. Đổi câu hỏi sang phim do Nolan đạo diễn, chúng ta có tám dòng trong bộ dữ liệu. Truy vấn đóng góp Inception trả hai mươi lăm bản ghi, có các vai trò Actor, Director, Writer và Producer. Nolan xuất hiện ở những công việc khác nhau trong cùng phim. Các kết quả được S P A R Q L tính từ đồ thị. Người dùng có thể sửa câu hỏi rồi bấm Run query để chạy lại.",
+      "screenshot": "evidence/demo/06_queries.png"
+    },
+    {
+      "scene": "extras",
+      "duration_seconds": 25,
+      "title": "YC5 · Công ty, giải thưởng và tải kết quả",
+      "speech": "Ứng dụng còn có câu hỏi về công ty sản xuất, giải thưởng và nguồn. Inception có bốn công ty trong dữ liệu. The Godfather có bảy giải được ghi nhận. Nút Download results tải kết quả đang hiển thị. Có thể dùng dữ liệu này để kiểm tra lại bằng một công cụ khác.",
+      "screenshot": "evidence/demo/07_extras.png"
+    },
+    {
+      "scene": "endpoint",
+      "duration_seconds": 30,
+      "title": "YC5 · Kết quả thật từ endpoint và terminal",
+      "speech": "Đây là kết quả các lệnh đã chạy thật. P O S T tới endpoint trả J S O N có Inception và Christopher Nolan. Cùng câu hỏi chạy được bằng file S P A R Q L ở terminal. Khi gửi Accept text turtle tới định danh phim cục bộ, server trả chuyển hướng ba trăm linh ba; curl trừ L theo chuyển hướng và nhận mô tả R D F. Giao diện, endpoint và terminal dùng cùng dữ liệu khai báo.",
+      "screenshot": "evidence/demo/08_endpoint.png"
+    },
+    {
+      "scene": "inference",
+      "duration_seconds": 40,
+      "title": "YC1 + YC5 · Kiểu gốc và kiểu được phân loại",
+      "speech": "Trên dữ liệu gốc, Nolan chỉ được khai báo là Person. Chạy cùng câu với reasoned, kết quả bổ sung Filmmaker và AwardWinner từ file phân loại. Contribution có DirectorRole được phân loại DirectingContribution; người có đóng góp đó được phân loại Filmmaker. Có mười hai ActionFilm trong mẫu. Mười hai lớp dùng luật O W L R L. Hai lớp có ngưỡng số lượng dùng truy vấn đếm I R I bổ sung; phần này chưa phải bằng chứng phân loại O W L D L đầy đủ.",
+      "screenshot": "evidence/demo/09_inference.png"
+    },
+    {
+      "scene": "checks",
+      "duration_seconds": 25,
+      "title": "Đối chiếu minh chứng và bộ bài nộp",
+      "speech": "Bài có ontology, dữ liệu thật, R D F, liên kết và ba cách truy vấn. Các kiểm tra nguồn, truy vấn, test và bản công khai được lưu trong evidence để đối chiếu. Báo cáo, mười ba slide và video này cùng dùng mô hình hai chấm không. Bảng tự chấm ghi điểm theo minh chứng, không phải điểm chính thức của giảng viên.",
+      "screenshot": "evidence/demo/10_checks.png"
+    }
+  ],
+  "covers_requirements": [
+    "YC1",
+    "YC2",
+    "YC3",
+    "YC4",
+    "YC5"
+  ],
+  "matches_current_dataset": false,
+  "dataset_sha256": "383959f01316fb241e95c57cda2a2d55b1d3b3b10163b814cdaf17db113cf5a7",
+  "matches_current_movie_content": true,
+  "current_dataset_sha256": "c29cd4d8939d36a800b7e0f367f0c6985e1fb5ee2b298b0cbbb77f76de2c49fd",
+  "compatibility_evidence": "evidence/video_dataset_compatibility.json",
+  "preservation_note": "MP4 unchanged at user request. The dataset now uses millisecond timestamps; all other RDF triples are unchanged. New reasoner results are in the report and slides, not the recorded video."
 }

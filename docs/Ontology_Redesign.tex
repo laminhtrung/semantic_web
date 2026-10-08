@@ -1,0 +1,674 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[a4paper,margin=19mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Be Vietnam Pro}
+  \setmonofont[]{Menlo}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+\usepackage{fancyhdr}
+\usepackage{array}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small MovieLOD · Bài làm hoàn chỉnh}
+\fancyfoot[C]{\small\thepage}\setlength{\headheight}{15pt}
+\renewcommand{\arraystretch}{1.14}\setlength{\extrarowheight}{1pt}
+\AtBeginEnvironment{longtable}{\small}
+\setlength{\emergencystretch}{3em}\setlength{\parskip}{4pt}
+\usepackage{titling}\setlength{\droptitle}{-1.5cm}
+\pretitle{\begin{center}\Large\bfseries\color{teal}}
+\posttitle{\par\end{center}\vspace{-0.5em}}
+\predate{\begin{center}\small}\postdate{\par\end{center}\vspace{-1em}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  pdftitle={MovieLOD: ontology 2.0 đầy đủ bằng tiếng Việt},
+  colorlinks=true,
+  linkcolor={teal},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={teal},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{MovieLOD: ontology 2.0 đầy đủ bằng tiếng Việt}
+\author{}
+\date{MovieLOD 2.0 · Đối chiếu 08/10/2026}
+
+\begin{document}
+\maketitle
+
+\subsection{1. Mô hình hiện tại và cách
+đọc}\label{muxf4-huxecnh-hiux1ec7n-tux1ea1i-vuxe0-cuxe1ch-ux111ux1ecdc}
+
+Tài liệu này trình bày đầy đủ \textbf{42 lớp}, \textbf{23 object
+property}, \textbf{6 datatype property}, \textbf{14 lớp phân loại} và
+\textbf{24 truy vấn} của ontology 2.0. Tên kỹ thuật giữ nguyên để đối
+chiếu mã nguồn; giải thích bằng tiếng Việt. Các bảng sinh từ
+\texttt{ontology\allowbreak{}/\allowbreak{}movie.\allowbreak{}t\allowbreak{}tl}
+và biên bản đã kiểm tra ngày 08/10/2026.
+
+\texttt{dbo:\allowbreak{}} là từ vựng DBpedia; \texttt{ex:\allowbreak{}}
+là namespace ontology của bài. ``Lớp có tên'' nghĩa là IRI được khai báo
+owl:Class trong lược đồ. Có các lớp nền chỉ mô tả cây lớp, không gán
+trực tiếp cho cá thể. ``Phân loại'' nghĩa là kiểu không có sẵn trong
+graph khai báo và được bổ sung ở file
+inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
+
+Bản cũ dùng
+Credit/\allowbreak{}p\allowbreak{}articipa\allowbreak{}nt/\allowbreak{}has\allowbreak{}Cr\allowbreak{}edit/\allowbreak{}\allowbreak{}Dir\allowbreak{}ector\allowbreak{}Wri\allowbreak{}ter.\allowbreak{}
+Bản 2.0 dùng
+Contribu\allowbreak{}tion/\allowbreak{}con\allowbreak{}tributio\allowbreak{}n\allowbreak{}By/\allowbreak{}cont\allowbreak{}ribution\allowbreak{}\allowbreak{}To/\allowbreak{}has\allowbreak{}Ro\allowbreak{}le
+và thêm Producer, Award,
+Producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y.\allowbreak{}
+\textbf{Website công khai đã được đồng bộ và kiểm tra graph bản 2.0.}
+
+\subsection{2. Toàn bộ lớp và cây
+cha}\label{touxe0n-bux1ed9-lux1edbp-vuxe0-cuxe2y-cha}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Lớp
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lớp cha được khai báo
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cách có kiểu
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Ý nghĩa
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{dbo:\allowbreak{}\allowbreak{}Coun\allowbreak{}try} & --- & Nền
+/ khai báo & Quốc gia; dùng lớp DBpedia \\
+\texttt{dbo:\allowbreak{}\allowbreak{}Film\allowbreak{}} &
+ex:\allowbreak{}\allowbreak{}Creat\allowbreak{}ive\allowbreak{}Work &
+Nền / khai báo & Phim; dùng lớp DBpedia \\
+\texttt{dbo:\allowbreak{}\allowbreak{}Pers\allowbreak{}on} & ex:Agent &
+Nền / khai báo & Người; dùng lớp DBpedia \\
+\texttt{ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Award}
+& ex:Award & Nền / khai báo & Giải có nhãn
+actor/\allowbreak{}ac\allowbreak{}tress \\
+\texttt{ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution}
+& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & OWL RL & Đóng
+góp diễn xuất \\
+\texttt{ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Film}
+& dbo:Film & OWL RL & Phim có thể loại ActionGenre \\
+\texttt{ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre}
+& ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre &
+Nền / khai báo & Nhãn thể loại chứa action \\
+\texttt{ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}} & dbo:Person &
+OWL RL & Người có đóng góp diễn xuất \\
+\texttt{ex:\allowbreak{}\allowbreak{}Agent\allowbreak{}} & --- & Nền /
+khai báo & Chủ thể có thể đóng góp \\
+\texttt{ex:\allowbreak{}\allowbreak{}Anima\allowbreak{}ted\allowbreak{}Film}
+& dbo:Film & Nền / khai báo & Phim hoạt hình theo P31 \\
+\texttt{ex:\allowbreak{}\allowbreak{}Award\allowbreak{}} & --- & Nền /
+khai báo & Thực thể giải thưởng, không phải một lần trao \\
+\texttt{ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winner}
+& dbo:Person & OWL RL & Người có giải thưởng riêng \\
+\texttt{ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm}
+& dbo:Film & OWL RL & Phim có liên kết tới giải thưởng \\
+\texttt{ex:\allowbreak{}\allowbreak{}Comed\allowbreak{}y\allowbreak{}Film}
+& dbo:Film & OWL RL & Phim có thể loại ComedyGenre \\
+\texttt{ex:\allowbreak{}\allowbreak{}Comed\allowbreak{}y\allowbreak{}Genre}
+& ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre &
+Nền / khai báo & Nhãn thể loại chứa comedy \\
+\texttt{ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution} & --- &
+Nền / khai báo & Một người giữ một vai trò trong một phim \\
+\texttt{ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole}
+& --- & Nền / khai báo & Loại vai trò; có 4 cá thể vai trò \\
+\texttt{ex:\allowbreak{}\allowbreak{}Creat\allowbreak{}ive\allowbreak{}Work}
+& --- & Nền / khai báo & Tác phẩm sáng tạo \\
+\texttt{ex:\allowbreak{}\allowbreak{}Datas\allowbreak{}et} & --- & Nền /
+khai báo & Bộ dữ liệu công bố \\
+\texttt{ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Awar\allowbreak{}d}
+& ex:Award & Nền / khai báo & Giải có nhãn
+director\allowbreak{}/\allowbreak{}directi\allowbreak{}ng \\
+\texttt{ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}}
+& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & OWL RL & Đóng
+góp đạo diễn \\
+\texttt{ex:\allowbreak{}\allowbreak{}Docum\allowbreak{}entary\allowbreak{}Fi\allowbreak{}lm}
+& dbo:Film & Nền / khai báo & Phim có thể loại tài liệu; mẫu hiện không
+có \\
+\texttt{ex:\allowbreak{}\allowbreak{}Docum\allowbreak{}entary\allowbreak{}Ge\allowbreak{}nre}
+&
+ex:\allowbreak{}\allowbreak{}Non\allowbreak{}Fi\allowbreak{}ction\allowbreak{}Gen\allowbreak{}re
+& Nền / khai báo & Nhãn thể loại chứa documentary \\
+\texttt{ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Film}
+& dbo:Film & OWL RL & Phim có thể loại DramaGenre \\
+\texttt{ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Genre}
+& ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre &
+Nền / khai báo & Nhãn thể loại chứa drama \\
+\texttt{ex:\allowbreak{}\allowbreak{}Featu\allowbreak{}re\allowbreak{}Film}
+& dbo:Film & Nền / khai báo & Nhóm phim dài theo cách ánh xạ P31 của
+bài \\
+\texttt{ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre}
+& ex:Genre & Nền / khai báo & Nhóm thể loại hư cấu \\
+\texttt{ex:\allowbreak{}\allowbreak{}Film\allowbreak{}A\allowbreak{}ward}
+& ex:Award & Nền / khai báo & Nhóm giải mặc định khi chưa khớp nhóm nghề
+nghiệp \\
+\texttt{ex:\allowbreak{}\allowbreak{}Film\allowbreak{}S\allowbreak{}tudio}
+&
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
+& Đếm IRI & Công ty có ít nhất 3 IRI phim trong mẫu; quy tắc bài \\
+\texttt{ex:\allowbreak{}\allowbreak{}Filmm\allowbreak{}aker} &
+dbo:Person & OWL RL & Người có đóng góp đạo diễn, biên kịch hoặc sản
+xuất \\
+\texttt{ex:\allowbreak{}\allowbreak{}Genre\allowbreak{}} & --- & Nền /
+khai báo & Thể loại \\
+\texttt{ex:\allowbreak{}\allowbreak{}Langu\allowbreak{}age} & --- & Nền
+/ khai báo & Ngôn ngữ \\
+\texttt{ex:\allowbreak{}\allowbreak{}Multi\allowbreak{}\allowbreak{}Genre\allowbreak{}Fil\allowbreak{}m}
+& dbo:Film & Đếm IRI & Phim có từ 2 IRI thể loại; quy tắc đếm bổ sung \\
+\texttt{ex:\allowbreak{}\allowbreak{}Non\allowbreak{}Fi\allowbreak{}ction\allowbreak{}Gen\allowbreak{}re}
+& ex:Genre & Nền / khai báo & Nhóm thể loại phi hư cấu \\
+\texttt{ex:\allowbreak{}\allowbreak{}Organ\allowbreak{}ization} &
+ex:Agent & Nền / khai báo & Tổ chức \\
+\texttt{ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}}
+& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & OWL RL & Đóng
+góp nhà sản xuất \\
+\texttt{ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany}
+& ex:\allowbreak{}\allowbreak{}Organ\allowbreak{}ization & Nền / khai
+báo & Công ty sản xuất lấy từ P272 \\
+\texttt{ex:\allowbreak{}\allowbreak{}Scien\allowbreak{}ce\allowbreak{}Fictio\allowbreak{}n\allowbreak{}Film}
+& dbo:Film & OWL RL & Phim có thể loại
+Science\allowbreak{}F\allowbreak{}iction\allowbreak{}Ge\allowbreak{}nre \\
+\texttt{ex:\allowbreak{}\allowbreak{}Scien\allowbreak{}ce\allowbreak{}Fictio\allowbreak{}n\allowbreak{}Genre}
+& ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre &
+Nền / khai báo & Nhãn thể loại chứa science fiction \\
+\texttt{ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t}
+& --- & Nền / khai báo & Metadata của phản hồi nguồn \\
+\texttt{ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Award}
+& ex:Award & Nền / khai báo & Giải có nhãn
+screenpl\allowbreak{}ay/\allowbreak{}writi\allowbreak{}ng \\
+\texttt{ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution}
+& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & OWL RL & Đóng
+góp biên kịch \\
+\end{longtable}
+}
+
+\subsection{3. Các quan hệ đối
+tượng}\label{cuxe1c-quan-hux1ec7-ux111ux1ed1i-tux1b0ux1ee3ng}
+
+Quan hệ đối tượng nối \textbf{hai thực thể}; inverse là đường đi ngược.
+Functional nghĩa là nhiều nhất một đối tượng trong ngữ nghĩa OWL; không
+tự thay thế kiểm tra số trường trong file. Domain/range hỗ trợ suy ra
+kiểu, không phải cơ chế từ chối nhập liệu.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Quan hệ
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Domain
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Inverse / đặc tính
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{dbo:\allowbreak{}dire\allowbreak{}ctor} & dbo:Film & dbo:Person
+& ex:directed \\
+\texttt{dbo:\allowbreak{}prod\allowbreak{}ucer} & dbo:Film & dbo:Person
+& ex:produced \\
+\texttt{dbo:\allowbreak{}star\allowbreak{}ring} & dbo:Film & dbo:Person
+& ex:actedIn \\
+\texttt{dbo:\allowbreak{}writ\allowbreak{}er} & dbo:Film & dbo:Person &
+ex:wrote \\
+\texttt{ex:\allowbreak{}acted\allowbreak{}\allowbreak{}In} & dbo:Person
+& dbo:Film & --- \\
+\texttt{ex:\allowbreak{}award\allowbreak{}\allowbreak{}Of} & ex:Award &
+(dbo:Film HOẶC dbo:Person) & ex:hasAward \\
+\texttt{ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}B\allowbreak{}y}
+& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & dbo:Person &
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on,
+functional \\
+\texttt{ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}O\allowbreak{}f}
+& dbo:Film & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}T\allowbreak{}o \\
+\texttt{ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}T\allowbreak{}o}
+& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & dbo:Film &
+functional \\
+\texttt{ex:\allowbreak{}count\allowbreak{}ry} & dbo:Film & dbo:Country &
+--- \\
+\texttt{ex:\allowbreak{}direc\allowbreak{}ted} & dbo:Person & dbo:Film &
+--- \\
+\texttt{ex:\allowbreak{}genre\allowbreak{}\allowbreak{}Of} & ex:Genre &
+dbo:Film & ex:hasGenre \\
+\texttt{ex:\allowbreak{}has\allowbreak{}Aw\allowbreak{}ard} & (dbo:Film
+HOẶC dbo:Person) & ex:Award & --- \\
+\texttt{ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on}
+& dbo:Person & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+--- \\
+\texttt{ex:\allowbreak{}has\allowbreak{}Ge\allowbreak{}nre} & dbo:Film &
+ex:Genre & --- \\
+\texttt{ex:\allowbreak{}has\allowbreak{}Pr\allowbreak{}oduction\allowbreak{}\allowbreak{}Company}
+& dbo:Film &
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
+& --- \\
+\texttt{ex:\allowbreak{}has\allowbreak{}Ro\allowbreak{}le} &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole
+& functional \\
+\texttt{ex:\allowbreak{}langu\allowbreak{}age} & dbo:Film & ex:Language
+& --- \\
+\texttt{ex:\allowbreak{}produ\allowbreak{}ced} & dbo:Person & dbo:Film &
+--- \\
+\texttt{ex:\allowbreak{}produ\allowbreak{}ction\allowbreak{}Of} &
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
+& dbo:Film &
+ex:\allowbreak{}has\allowbreak{}Pr\allowbreak{}oduction\allowbreak{}\allowbreak{}Company \\
+\texttt{ex:\allowbreak{}role\allowbreak{}O\allowbreak{}f} &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole
+& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & ex:hasRole \\
+\texttt{ex:\allowbreak{}sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t}
+& --- &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& --- \\
+\texttt{ex:\allowbreak{}wrote\allowbreak{}} & dbo:Person & dbo:Film &
+--- \\
+\end{longtable}
+}
+
+\textbf{Luồng chính:} Person → has\allowbreak{}Contr\allowbreak{}ibution
+→ Contribution → contribu\allowbreak{}tion\allowbreak{}To → Film.
+Contribution → hasRole → Role; contribu\allowbreak{}tion\allowbreak{}By
+đi ngược đến Person. Film →
+has\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
+→ Company; Film/Person → hasAward → Award.
+\texttt{dbo:\allowbreak{}dire\allowbreak{}ctor},
+\texttt{dbo:\allowbreak{}writ\allowbreak{}er},
+\texttt{dbo:\allowbreak{}star\allowbreak{}ring},
+\texttt{dbo:\allowbreak{}prod\allowbreak{}ucer} là các quan hệ trực tiếp
+bổ sung để truy vấn thuận tiện.
+
+\subsection{4. Thuộc tính giá
+trị}\label{thuux1ed9c-tuxednh-giuxe1-trux1ecb}
+
+Thuộc tính giá trị nối một thực thể với chuỗi, số hoặc thời điểm.
+Metadata nguồn còn có thuộc tính từ Dublin Core/PROV hoặc từ vựng RDF
+khác, không tính vào 6 datatype property tự khai báo dưới đây.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Thuộc tính & Domain & Datatype \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{ex:\allowbreak{}relea\allowbreak{}se\allowbreak{}Year} &
+dbo:Film & xsd:integer \\
+\texttt{ex:\allowbreak{}retri\allowbreak{}eved\allowbreak{}At} &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& xsd:dateTime \\
+\texttt{ex:\allowbreak{}runti\allowbreak{}me\allowbreak{}Minute\allowbreak{}s}
+& dbo:Film & xsd:decimal \\
+\texttt{ex:\allowbreak{}sha25\allowbreak{}6} &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& xsd:string \\
+\texttt{ex:\allowbreak{}sourc\allowbreak{}e\allowbreak{}Url} &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& xsd:anyURI \\
+\texttt{ex:\allowbreak{}title\allowbreak{}} & dbo:Film & xsd:string \\
+\end{longtable}
+}
+
+\subsection{5. Định nghĩa và số liệu 14 lớp phân
+loại}\label{ux111ux1ecbnh-nghux129a-vuxe0-sux1ed1-liux1ec7u-14-lux1edbp-phuxe2n-loux1ea1i}
+
+Các lớp sau có \textbf{0 cá thể gán sẵn} trong graph khai báo. Số bên
+dưới lấy từ
+\texttt{ontology\allowbreak{}\_\allowbreak{}reasoni\allowbreak{}ng.\allowbreak{}json},
+đếm tài nguyên nội bộ, loại alias sameAs. Các truy vấn
+Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker có LIMIT 20 nên
+bảng hiển thị chỉ 20 dòng.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Lớp
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Định nghĩa đọc bằng lời
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Số cá thể
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Phương pháp
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{Acting\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on} &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} VÀ
+ex:hasRole có giá trị
+ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}\allowbreak{}Role) & 855
+& OWL RL \\
+\texttt{Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution} &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} VÀ
+ex:hasRole có giá trị
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}tor\allowbreak{}Role)\allowbreak{}
+& 31 & OWL RL \\
+\texttt{Writing\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion} &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} VÀ
+ex:hasRole có giá trị
+ex:\allowbreak{}\allowbreak{}Write\allowbreak{}r\allowbreak{}Role) & 51
+& OWL RL \\
+\texttt{Producin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution} &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} VÀ
+ex:hasRole có giá trị
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cer\allowbreak{}Role)\allowbreak{}
+& 73 & OWL RL \\
+\texttt{Actor} & (dbo:Person VÀ
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+tồn tại
+ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution)
+& 769 & OWL RL \\
+\texttt{Filmmake\allowbreak{}r} & (dbo:Person VÀ
+(ex:\allowbreak{}has\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion
+tồn tại
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+HOẶC
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+tồn tại
+ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
+HOẶC
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+tồn tại
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}))
+& 89 & OWL RL \\
+\texttt{Award\allowbreak{}Win\allowbreak{}ner} & (dbo:Person VÀ
+ex:hasAward tồn tại ex:Award) & 290 & OWL RL \\
+\texttt{Action\allowbreak{}Fi\allowbreak{}lm} & (dbo:Film VÀ ex:hasGenre
+tồn tại
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre) & 12
+& OWL RL \\
+\texttt{Comedy\allowbreak{}Fi\allowbreak{}lm} & (dbo:Film VÀ ex:hasGenre
+tồn tại
+ex:\allowbreak{}\allowbreak{}Comed\allowbreak{}y\allowbreak{}Genre) & 4
+& OWL RL \\
+\texttt{Drama\allowbreak{}Fil\allowbreak{}m} & (dbo:Film VÀ ex:hasGenre
+tồn tại
+ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Genre) & 25
+& OWL RL \\
+\texttt{Science\allowbreak{}F\allowbreak{}iction\allowbreak{}Fi\allowbreak{}lm}
+& (dbo:Film VÀ ex:hasGenre tồn tại
+ex:\allowbreak{}\allowbreak{}Scien\allowbreak{}ce\allowbreak{}Fictio\allowbreak{}n\allowbreak{}Genre)
+& 6 & OWL RL \\
+\texttt{Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{}}
+& (dbo:Film VÀ ex:hasAward tồn tại ex:Award) & 26 & OWL RL \\
+\texttt{Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film} &
+(dbo:Film VÀ ex:hasGenre ít nhất 2 (ex:Genre)) & 30 & SPARQL đếm IRI \\
+\texttt{Film\allowbreak{}Stud\allowbreak{}io} &
+(ex:\allowbreak{}\allowbreak{}Prod\allowbreak{}uction\allowbreak{}Co\allowbreak{}mpany
+VÀ ex:\allowbreak{}produ\allowbreak{}ction\allowbreak{}Of ít nhất 3
+(dbo:Film)) & 6 & SPARQL đếm IRI \\
+\end{longtable}
+}
+
+\textbf{Giới hạn cần nói đúng:}
+\texttt{Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film} và
+\texttt{Film\allowbreak{}Stud\allowbreak{}io} được
+\texttt{src/\allowbreak{}reas\allowbreak{}on.\allowbreak{}py} thêm kiểu
+bằng COUNT DISTINCT sau khi chạy OWL RL. Ngưỡng 2/3 không được owlrl xử
+lý như yêu cầu của bài. Đếm IRI khác nhau là quy tắc ứng dụng; dưới ngữ
+nghĩa OWL, hai tên khác nhau có thể cùng chỉ một cá thể. Muốn khẳng định
+cardinality theo OWL DL cần căn cứ phân biệt cá thể hoặc kết quả
+reasoner phù hợp. Đã chạy HermiT và Pellet: ontology nhất quán, 12 lớp
+đầu có số lượng khớp OWL RL; hai lớp cardinality có 0 cá thể được suy
+luận DL, còn số 30/6 là quy tắc ứng dụng. Không nói ``HermiT chắc chắn
+suy ra cả hai lớp'' chỉ dựa vào số IRI.
+
+\subsection{6. Chuỗi minh họa để bảo
+vệ}\label{chuux1ed7i-minh-hux1ecda-ux111ux1ec3-bux1ea3o-vux1ec7}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Nolan có Contribution với DirectorRole → định nghĩa hasValue phân loại
+  Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution → Person
+  có đóng góp đó được phân loại Filmmaker.
+\item
+  DiCaprio có Contribution với ActorRole →
+  Acting\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on → Actor.
+\item
+  Inception liên kết tới genre được ánh xạ ActionGenre → ActionFilm. Nếu
+  genre còn thuộc
+  Science\allowbreak{}F\allowbreak{}iction\allowbreak{}Ge\allowbreak{}nre
+  thì phim có thể thuộc hai nhóm.
+\item
+  Phim có hasAward tới Award →
+  Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{};
+  giải của người được xử lý riêng qua AwardWinner.
+\item
+  has\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
+  có inverse producti\allowbreak{}on\allowbreak{}Of; ứng dụng đếm từ 3
+  IRI phim trở lên để gán FilmStudio. Tên lớp này là định nghĩa của bài,
+  không kết luận công ty là studio lớn ngoài đời.
+\end{enumerate}
+
+Các thể loại/giải được ánh xạ nhóm bằng từ khóa nhãn trong build.py; đây
+là bước quy tắc chuyển đổi dữ liệu, không phải suy luận tự khám phá
+nghĩa từ ngôn ngữ tự nhiên.
+
+\subsection{7. 24 câu hỏi SPARQL và kết quả kiểm
+tra}\label{cuxe2u-hux1ecfi-sparql-vuxe0-kux1ebft-quux1ea3-kiux1ec3m-tra}
+
+``Gốc'' chỉ nạp movies.ttl. ``Có phân loại'' nạp movies.ttl +
+ontology\allowbreak{}/\allowbreak{}movie.\allowbreak{}t\allowbreak{}tl +
+inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
+Với câu 14/15, 1 dòng là \textbf{một dòng thống kê}, không phải chỉ có
+một thực thể. Câu 24 dùng không --reasoned để xem kiểu gán gốc; chạy
+--reasoned trả thêm kiểu.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+File
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Gốc
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Có phân loại
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Ý nghĩa
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\texttt{01\_\allowbreak{}films\allowbreak{}.\allowbreak{}rq} & 30 & 30 &
+Danh sách 30 phim \\
+\texttt{02\_\allowbreak{}incep\allowbreak{}tion.\allowbreak{}rq} & 1 & 1
+& Inception: năm, thời lượng, đạo diễn \\
+\texttt{03\_\allowbreak{}nolan\allowbreak{}.\allowbreak{}rq} & 8 & 8 & 8
+phim Nolan trong mẫu \\
+\texttt{04\_\allowbreak{}credi\allowbreak{}ts.\allowbreak{}rq} & 25 & 25
+& Đóng góp Inception (25 bản ghi) \\
+\texttt{05\_\allowbreak{}exter\allowbreak{}nal\_\allowbreak{}link\allowbreak{}s.\allowbreak{}rq}
+& 58 & 58 & Liên kết ngoài theo phim \\
+\texttt{06\_\allowbreak{}genre\allowbreak{}s.\allowbreak{}rq} & 75 & 75
+& Đếm phim theo thể loại \\
+\texttt{07\_\allowbreak{}sourc\allowbreak{}e.\allowbreak{}rq} & 2 & 2 &
+Nguồn và hash Inception \\
+\texttt{08\_\allowbreak{}ask.\allowbreak{}r\allowbreak{}q} & true & true
+& Có liên kết Wikidata Inception? \\
+\texttt{09\_\allowbreak{}actor\allowbreak{}s\_\allowbreak{}of\_\allowbreak{}inc\allowbreak{}eption.\allowbreak{}r\allowbreak{}q}
+& 21 & 21 & 21 diễn viên Inception \\
+\texttt{10\_\allowbreak{}produ\allowbreak{}ction\_\allowbreak{}co\allowbreak{}mpanies\_\allowbreak{}of\_\allowbreak{}a\_\allowbreak{}fil\allowbreak{}m.\allowbreak{}rq}
+& 4 & 4 & 4 công ty Inception \\
+\texttt{11\_\allowbreak{}award\allowbreak{}s\_\allowbreak{}receiv\allowbreak{}ed\_\allowbreak{}by\_\allowbreak{}a\_\allowbreak{}film.\allowbreak{}rq}
+& 7 & 7 & 7 giải The Godfather \\
+\texttt{12\_\allowbreak{}count\allowbreak{}ries\_\allowbreak{}and\allowbreak{}\_\allowbreak{}languag\allowbreak{}es\_\allowbreak{}of\_\allowbreak{}a\_\allowbreak{}film.\allowbreak{}rq}
+& 1 & 1 & Quốc gia/ngôn ngữ Parasite \\
+\texttt{13\_\allowbreak{}ficti\allowbreak{}on\_\allowbreak{}genre\allowbreak{}\_\allowbreak{}films\_\allowbreak{}v\allowbreak{}ia\_\allowbreak{}hiera\allowbreak{}rchy.\allowbreak{}rq}
+& 0 & 29 & Phim qua hierarchy FictionGenre \\
+\texttt{14\_\allowbreak{}all\_\allowbreak{}a\allowbreak{}gents\_\allowbreak{}pe\allowbreak{}ople\_\allowbreak{}and\allowbreak{}\_\allowbreak{}organiz\allowbreak{}ations.\allowbreak{}r\allowbreak{}q}
+& 1 & 1 & Thống kê
+Person/\allowbreak{}\allowbreak{}O\allowbreak{}rganizat\allowbreak{}ion
+qua hierarchy \\
+\texttt{15\_\allowbreak{}featu\allowbreak{}re\_\allowbreak{}vs\_\allowbreak{}an\allowbreak{}imated\_\allowbreak{}f\allowbreak{}ilm\_\allowbreak{}coun\allowbreak{}ts.\allowbreak{}rq}
+& 1 & 1 & Thống kê
+Feature\allowbreak{}F\allowbreak{}ilm/\allowbreak{}\allowbreak{}Anim\allowbreak{}ated\allowbreak{}Film\allowbreak{} \\
+\texttt{16\_\allowbreak{}docum\allowbreak{}entary\_\allowbreak{}f\allowbreak{}ilm\_\allowbreak{}coun\allowbreak{}t\_\allowbreak{}ask.\allowbreak{}rq\allowbreak{}}
+& false & false & Có Document\allowbreak{}ary\allowbreak{}Film trong
+mẫu? \\
+\texttt{17\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}acto\allowbreak{}rs.\allowbreak{}rq}
+& 0 & 20 & Actor được phân loại (LIMIT 20) \\
+\texttt{18\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}film\allowbreak{}makers.\allowbreak{}r\allowbreak{}q}
+& 0 & 20 & Filmmaker được phân loại (LIMIT 20) \\
+\texttt{19\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}acti\allowbreak{}on\_\allowbreak{}films\allowbreak{}.\allowbreak{}rq}
+& 0 & 12 & 12 ActionFilm \\
+\texttt{20\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}mult\allowbreak{}i\_\allowbreak{}genre\_\allowbreak{}films.\allowbreak{}rq\allowbreak{}}
+& 0 & 30 & 30 Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film \\
+\texttt{21\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}awar\allowbreak{}d\_\allowbreak{}winnin\allowbreak{}g\_\allowbreak{}films.\allowbreak{}rq}
+& 0 & 26 & 26
+Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{} \\
+\texttt{22\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}film\allowbreak{}\_\allowbreak{}studios\allowbreak{}.\allowbreak{}rq}
+& 0 & 6 & 6 FilmStudio theo quy tắc bài \\
+\texttt{23\_\allowbreak{}peopl\allowbreak{}e\_\allowbreak{}with\_\allowbreak{}d\allowbreak{}irecting\allowbreak{}\_\allowbreak{}and\_\allowbreak{}wri\allowbreak{}ting\_\allowbreak{}con\allowbreak{}tributio\allowbreak{}n.\allowbreak{}rq}
+& 0 & 10 & 10 người có đóng góp đạo diễn và biên kịch \\
+\texttt{24\_\allowbreak{}nolan\allowbreak{}\_\allowbreak{}asserte\allowbreak{}d\_\allowbreak{}types\_\allowbreak{}only.\allowbreak{}rq}
+& 1 & 3 & Kiểu Nolan gốc hoặc đã bổ sung tùy chế độ \\
+\end{longtable}
+}
+
+Nhóm trực tiếp: 01--12, 15--16; có schema: 13--14; cần file phân loại:
+17--23; đối chiếu kiểu khai báo: 24. Giao diện có 14 mẫu trực tiếp.
+Terminal hỗ trợ --reasoned cho các nhóm còn lại.
+
+\subsection{8. Semantic Web đóng góp
+gì?}\label{semantic-web-ux111uxf3ng-guxf3p-guxec}
+
+RDF cung cấp IRI dùng chung để mô tả và nối thực thể qua nhiều nguồn.
+OWL mô tả lớp/quan hệ dưới dạng máy xử lý được; bộ luật có thể bổ sung
+kiểu từ các quan hệ thay vì lưu sẵn nhãn nghề nghiệp. SPARQL hỏi cùng mô
+hình đồ thị, kể cả đường đi qua hierarchy khi schema được nạp.
+
+CSDL quan hệ vẫn có thể trả các câu hỏi bằng JOIN, view, truy vấn đệ quy
+hoặc quy tắc ứng dụng. Không dùng ``SQL không làm được'' làm lập luận.
+Giá trị chính ở đây là chia sẻ định danh/từ vựng, liên kết dataset,
+nguồn truy lại được và định nghĩa ngữ nghĩa tường minh.
+
+\subsection{9. Giới hạn và tái
+lập}\label{giux1edbi-hux1ea1n-vuxe0-tuxe1i-lux1eadp}
+
+Document\allowbreak{}ary\allowbreak{}Film/\allowbreak{}\allowbreak{}Document\allowbreak{}ary\allowbreak{}Genre\allowbreak{}
+có 0 cá thể; ASK false chỉ nói về dataset.
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film hiện bằng 30/30 do
+mẫu đều có nhiều thể loại. Việc phân loại FeatureFilm theo quy tắc P31
+là giản lược; chưa chứng minh mọi phim phát hành rạp đều phù hợp định
+nghĩa học thuật. Không có ngân sách/doanh
+thu/\allowbreak{}stre\allowbreak{}aming.\allowbreak{}
+
+Đã bổ sung đủ 76 phản hồi gốc, kiểm tra toàn bộ hash và chạy lại
+collect/\allowbreak{}build/\allowbreak{}va\allowbreak{}lidate/\allowbreak{}r\allowbreak{}eason.\allowbreak{}
+Có 14 test pass. Không phát hiện lỗi owlrl không đồng nghĩa ontology OWL
+DL đã được chứng minh nhất quán.
+
+\begin{verbatim}
+.venv/bin/python src/build.py
+.venv/bin/python src/prepare_web.py
+.venv/bin/python src/reason.py
+.venv/bin/python src/query.py queries/18_inferred_filmmakers.rq --reasoned
+.venv/bin/python -m pytest -q
+\end{verbatim}
+
+Muốn lấy lại nguồn: dùng sao lưu đúng snapshot; nếu chạy
+collect.py/--refresh để tải mới, giữ mốc
+U\allowbreak{}R\allowbreak{}L/\allowbreak{}hash\allowbreak{}/\allowbreak{}time
+mới và build, kiểm tra lại toàn bộ; không ghi đè lịch sử để giả vờ hash
+cũ đã khớp.
+
+Nguồn: \href{https://www.w3.org/TR/owl2-profiles/}{OWL 2 Profiles},
+\href{https://www.w3.org/TR/owl2-primer/}{OWL 2 Primer},
+\href{https://www.w3.org/TR/sparql11-query/}{SPARQL 1.1}. Các số liệu và
+kết quả truy vấn lấy từ repository.
+
+\end{document}

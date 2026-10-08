@@ -4,4 +4,5 @@ __pycache__/
 *.pyc
 .DS_Store
 *.log
-data/raw/*.json
+docs/video_parts*/
+evidence/site_*.tar.gz

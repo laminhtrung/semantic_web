@@ -1,0 +1,397 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[a4paper,margin=19mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Be Vietnam Pro}
+  \setmonofont[]{Menlo}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+\usepackage{fancyhdr}
+\usepackage{array}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small MovieLOD · Bài làm hoàn chỉnh}
+\fancyfoot[C]{\small\thepage}\setlength{\headheight}{15pt}
+\renewcommand{\arraystretch}{1.14}\setlength{\extrarowheight}{1pt}
+\AtBeginEnvironment{longtable}{\small}
+\setlength{\emergencystretch}{3em}\setlength{\parskip}{4pt}
+\usepackage{titling}\setlength{\droptitle}{-1.5cm}
+\pretitle{\begin{center}\Large\bfseries\color{teal}}
+\posttitle{\par\end{center}\vspace{-0.5em}}
+\predate{\begin{center}\small}\postdate{\par\end{center}\vspace{-1em}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  pdftitle={MovieLOD: checklist ảnh minh chứng Protégé},
+  colorlinks=true,
+  linkcolor={teal},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={teal},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{MovieLOD: checklist ảnh minh chứng Protégé}
+\author{}
+\date{11 vị trí trong bộ 24 slide · 08/10/2026}
+
+\begin{document}
+\maketitle
+
+\subsection{Cách chèn}\label{cuxe1ch-chuxe8n}
+
+Có 11 khung ảnh ghi rõ mã, tên file và thao tác ngay trên slide. Lần tạo
+này không có ảnh Protégé thật: macOS chặn quyền điều khiển giao diện;
+không thay bằng ảnh dựng. Ảnh ứng dụng Web trong slide là ảnh chụp thực.
+
+Cách 1: chèn ảnh vào PowerPoint và che/xóa khung chờ cùng phần hướng dẫn
+của khung đó. Cách 2: lưu đúng tên ở
+\texttt{evidence\allowbreak{}/\allowbreak{}protege\allowbreak{}/\allowbreak{}}
+(\allowbreak{}P\allowbreak{}N\allowbreak{}G/\allowbreak{}\allowbreak{}J\allowbreak{}P\allowbreak{}G\allowbreak{}/\allowbreak{}\allowbreak{}J\allowbreak{}P\allowbreak{}E\allowbreak{}G
+cùng stem), chạy
+\texttt{.\allowbreak{}venv/\allowbreak{}bi\allowbreak{}n/\allowbreak{}python\allowbreak{} src/\allowbreak{}mak\allowbreak{}e\_\allowbreak{}slides\allowbreak{}\_\allowbreak{}video.\allowbreak{}p\allowbreak{}y -\allowbreak{}-\allowbreak{}slid\allowbreak{}es-\allowbreak{}only};
+khung chờ tự thay bằng ảnh. Speaker Notes giữ quy trình chụp.
+
+Chụp đúng cửa sổ/view, chữ đủ lớn (gợi ý 1440×900 trở lên); không lấy cả
+desktop có ứng dụng khác. Giữ tên ontology và IRI/thông tin cần chứng
+minh. Ảnh cây khai báo không được ghi nhãn inferred.
+
+\subsection{Danh sách ảnh}\label{danh-suxe1ch-ux1ea3nh}
+
+\subsubsection{P00 --- Slide 05: Ontology IRI và phiên
+bản}\label{p00-slide-05-ontology-iri-vuxe0-phiuxean-bux1ea3n}
+
+\textbf{Tên file:}
+\texttt{P00\_\allowbreak{}onto\allowbreak{}logy\_\allowbreak{}hea\allowbreak{}der.\allowbreak{}png}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mở
+  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl.\allowbreak{}
+\item
+  Chọn Active Ontology / Ontology Header.
+\item
+  Giữ IRI ontology và versionInfo 2.0.0 trong khung hình.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} IRI đúng namespace của bài; phiên bản 2.0.0.
+Metrics có thể tính cả lớp ngoài được tham chiếu, khác 42 lớp tự khai
+báo.
+
+\subsubsection{P01 --- Slide 06: Cây lớp
+phim}\label{p01-slide-06-cuxe2y-lux1edbp-phim}
+
+\textbf{Tên file:}
+\texttt{P01\_\allowbreak{}film\allowbreak{}\_\allowbreak{}hierarc\allowbreak{}hy.\allowbreak{}png}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → mở CreativeWork và Film.
+\item
+  Hiện các lớp con FeatureFilm, AnimatedFilm và nhóm phim.
+\item
+  Chọn Film; giữ IRI DBpedia và Class Description.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Film thuộc
+Creative\allowbreak{}\allowbreak{}Work; IRI là
+http:\allowbreak{}/\allowbreak{}/\allowbreak{}d\allowbreak{}bpedia.\allowbreak{}o\allowbreak{}rg/\allowbreak{}ontol\allowbreak{}ogy/\allowbreak{}\allowbreak{}Film\allowbreak{}.\allowbreak{}
+Chụp cây khai báo, không gọi là cây đã suy luận.
+
+\subsubsection{P02 --- Slide 07: Cây người và tổ
+chức}\label{p02-slide-07-cuxe2y-ngux1b0ux1eddi-vuxe0-tux1ed5-chux1ee9c}
+
+\textbf{Tên file:}
+\texttt{P02\_\allowbreak{}agen\allowbreak{}t\_\allowbreak{}hierar\allowbreak{}chy.\allowbreak{}png}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → mở Agent.
+\item
+  Mở Person và Organization →
+  Producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y.\allowbreak{}
+\item
+  Chọn Person hoặc Filmmaker; giữ cây lớp và Description.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Person và Organization cùng dưới Agent;
+Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker/\allowbreak{}\allowbreak{}Award\allowbreak{}Win\allowbreak{}ner
+là lớp con Person.
+
+\subsubsection{P03 --- Slide 08: Cây Genre và
+Award}\label{p03-slide-08-cuxe2y-genre-vuxe0-award}
+
+\textbf{Tên file:}
+\texttt{P03\_\allowbreak{}genr\allowbreak{}e\_\allowbreak{}award\_\allowbreak{}hierarch\allowbreak{}y.\allowbreak{}png}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Thu gọn Film/Agent để ảnh dễ đọc.
+\item
+  Mở Genre → FictionGenre /
+  Non\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre và Award.
+\item
+  Hiện các lớp thể loại và nhóm giải; giữ Class Description.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Cây Genre/Award khớp sơ đồ. Nhóm thể loại/giải
+được ánh xạ theo nhãn trong bước build.
+
+\subsubsection{P04 --- Slide 09: Ràng buộc của
+Contribution}\label{p04-slide-09-ruxe0ng-buux1ed9c-cux1ee7a-contribution}
+
+\textbf{Tên file:}
+\texttt{P04\_\allowbreak{}cont\allowbreak{}ribution\allowbreak{}\_\allowbreak{}restric\allowbreak{}tions.\allowbreak{}pn\allowbreak{}g}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → chọn Contribu\allowbreak{}tion.\allowbreak{}
+\item
+  Trong Class Description, mở đủ SubClass Of.
+\item
+  Hiện contribu\allowbreak{}tion\allowbreak{}By /
+  contribu\allowbreak{}tion\allowbreak{}To / hasRole: exactly 1.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Ba qualified cardinality đúng 1, cùng các
+all\allowbreak{}Value\allowbreak{}s\allowbreak{}From.\allowbreak{} Đây
+là mô hình OWL, không phải biên bản kiểm tra thiếu trường.
+
+\subsubsection{P05 --- Slide 10: Domain, range, inverse,
+functional}\label{p05-slide-10-domain-range-inverse-functional}
+
+\textbf{Tên file:}
+\texttt{P05\_\allowbreak{}obje\allowbreak{}ct\_\allowbreak{}prope\allowbreak{}rty.\allowbreak{}png}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Object properties → chọn
+  contribu\allowbreak{}tion\allowbreak{}By.\allowbreak{}
+\item
+  Hiện Domain=Contribution, Range=Person.
+\item
+  Giữ inverse has\allowbreak{}Contr\allowbreak{}ibution và ô Functional
+  được chọn.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Đúng
+domain/\allowbreak{}r\allowbreak{}ange/\allowbreak{}inv\allowbreak{}erse/\allowbreak{}fun\allowbreak{}ctional
+của contribu\allowbreak{}tion\allowbreak{}By.\allowbreak{} Nếu cần, chụp
+bổ sung hasRole hoặc director.
+
+\subsubsection{P06 --- Slide 13: Định nghĩa
+Filmmaker}\label{p06-slide-13-ux111ux1ecbnh-nghux129a-filmmaker}
+
+\textbf{Tên file:}
+\texttt{P06\_\allowbreak{}film\allowbreak{}maker\_\allowbreak{}eq\allowbreak{}uivalent\allowbreak{}\_\allowbreak{}class.\allowbreak{}p\allowbreak{}ng}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → chọn Filmmaker.
+\item
+  Mở Class Description → Equivalent To.
+\item
+  Hiện Person AND các nhánh SOME
+  Directin\allowbreak{}g/\allowbreak{}\allowbreak{}Writin\allowbreak{}g/\allowbreak{}\allowbreak{}Produc\allowbreak{}ing\allowbreak{}Contr\allowbreak{}ibution.\allowbreak{}
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Định nghĩa giao/hợp/tồn tại. Ảnh định nghĩa không
+tự chứng minh HermiT đã phân loại dữ liệu.
+
+\subsubsection{P07 --- Slide 14: Định nghĩa
+FilmStudio}\label{p07-slide-14-ux111ux1ecbnh-nghux129a-filmstudio}
+
+\textbf{Tên file:}
+\texttt{P07\_\allowbreak{}film\allowbreak{}studio\_\allowbreak{}c\allowbreak{}ardinali\allowbreak{}ty.\allowbreak{}png}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Classes → chọn FilmStudio.
+\item
+  Mở Equivalent To; hiện min 3 productionOf Film.
+\item
+  Có thể chụp thêm
+  Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film:\allowbreak{}
+  min 2 hasGenre Genre.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Ảnh công thức cardinality. Kết quả 6 studio/30
+phim nhiều thể loại của app dùng COUNT DISTINCT, không tự coi là chứng
+minh OWL DL.
+
+\subsubsection{P08 --- Slide 16: Datatype của thời
+lượng}\label{p08-slide-16-datatype-cux1ee7a-thux1eddi-lux1b0ux1ee3ng}
+
+\textbf{Tên file:}
+\texttt{P08\_\allowbreak{}runt\allowbreak{}ime\_\allowbreak{}data\allowbreak{}type.\allowbreak{}png\allowbreak{}}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Entities → Data properties → chọn
+  runtime\allowbreak{}M\allowbreak{}inutes.\allowbreak{}
+\item
+  Hiện Domain=Film và Range=xsd:decimal.
+\item
+  Có thể chụp thêm releaseYear có range xsd:integer.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Thuộc tính dữ liệu nối thực thể với literal, khác
+quan hệ nối hai thực thể.
+
+\subsubsection{P09 --- Slide 18: Cá thể
+Inception}\label{p09-slide-18-cuxe1-thux1ec3-inception}
+
+\textbf{Tên file:}
+\texttt{P09\_\allowbreak{}ince\allowbreak{}ption\_\allowbreak{}in\allowbreak{}dividual\allowbreak{}.\allowbreak{}png}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mở
+  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl.\allowbreak{}
+\item
+  Individuals → chọn film-Q25188 (Inception).
+\item
+  Hiện Film, title, releaseYear=2010, runtimeMinutes=148 và director.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Cá thể thật và thuộc tính khớp truy vấn. Giữ tên
+ontology để không chụp nhầm file chỉ có schema.
+
+\subsubsection{P10 --- Slide 21: Kiểu khai báo của
+Nolan}\label{p10-slide-21-kiux1ec3u-khai-buxe1o-cux1ee7a-nolan}
+
+\textbf{Tên file:}
+\texttt{P10\_\allowbreak{}nola\allowbreak{}n\_\allowbreak{}assert\allowbreak{}ed\_\allowbreak{}types\allowbreak{}.\allowbreak{}png}.
+\textbf{Mở:}
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mở
+  Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l,
+  chọn person-\allowbreak{}\allowbreak{}Q\allowbreak{}25191 (Nolan).
+\item
+  Hiện Types trong chế độ asserted / trước suy luận.
+\item
+  Giữ dbo:Person và các quan hệ đóng góp/giải trong ảnh.
+\end{enumerate}
+
+\textbf{Mục cần thấy:} Kiểu gán gốc là Person;
+Filmmake\allowbreak{}r/\allowbreak{}\allowbreak{}Award\allowbreak{}W\allowbreak{}inner
+trong app được bổ sung qua file phân loại. Nếu chụp sau reasoner, phải
+ghi rõ tên và trạng thái thực thi.
+
+\subsection{Kiểm tra trước khi dùng làm minh
+chứng}\label{kiux1ec3m-tra-trux1b0ux1edbc-khi-duxf9ng-luxe0m-minh-chux1ee9ng}
+
+\begin{itemize}
+\tightlist
+\item
+  Đúng ontology 2.0 của bài, không phải file mở rộng cũ.
+\item
+  Ảnh cá thể dùng Knowledge Graph; ảnh mô hình dùng schema OWL.
+\item
+  IRI lớp DBpedia, cardinality và datatype đọc được.
+\item
+  Không nói
+  Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã
+  chứng minh DL nếu chỉ chụp công thức hoặc chọn menu.
+\item
+  Nếu chạy reasoner, giữ tên và trạng thái; ghi cả lỗi nếu có.
+\end{itemize}
+
+Nguồn hướng dẫn giao diện:
+\href{https://protegeproject.github.io/protege/views/}{Protégé Views}.
+Ngữ nghĩa cần nhớ: \href{https://www.w3.org/TR/owl2-primer/}{OWL 2
+Primer}. Nội dung lớp/thuộc tính/cá thể lấy từ OWL của bài.
+
+\end{document}

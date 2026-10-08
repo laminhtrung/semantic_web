@@ -1,0 +1,399 @@
+{
+  "checked_at": "2026-10-08T07:42:32.510842+00:00",
+  "primary_knowledge_graph": "ontology/Movie_Knowledge_Graph.owl",
+  "separate_compatibility_owl_removed": true,
+  "timestamp_precision": "milliseconds in all RDF exports; full precision retained in raw source manifest",
+  "triples_changed": 76,
+  "all_other_triples_unchanged": true,
+  "files": {
+    "ontology/Movie_Knowledge_Graph.owl": "75eecc27cb4353abc0d4115fb38aac37e09d5e4cf4b0dbe3003fc0f5fd6d8dbc",
+    "ontology/Movie_Ontology.owl": "2d549be4438389e14aa926d153960b137190d273fdb76440cdc5d15d603a72a5",
+    "data/processed/movies.ttl": "c29cd4d8939d36a800b7e0f367f0c6985e1fb5ee2b298b0cbbb77f76de2c49fd",
+    "data/processed/movies.jsonld": "ea1eed4329c493db52752f9d0c1eb06b70dd1cb9245b6e2b151a3312113bc706"
+  },
+  "hermit_verified": true,
+  "pellet_verified": true,
+  "video_bytes_unchanged": true,
+  "changes": [
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-434da39b2ee00c238aca8cf8",
+      "original": "2026-10-06T08:42:02.697930+00:00",
+      "exported": "2026-10-06T08:42:02.697+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-dd68be11edb49634d61ecba8",
+      "original": "2026-10-06T08:41:54.798394+00:00",
+      "exported": "2026-10-06T08:41:54.798+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-732753dcab1a96503b548910",
+      "original": "2026-10-06T08:42:03.630986+00:00",
+      "exported": "2026-10-06T08:42:03.630+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-1baac09ed03ce36de65d716d",
+      "original": "2026-10-06T08:41:54.743755+00:00",
+      "exported": "2026-10-06T08:41:54.743+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-c96843096ba6ca1de9f0ab22",
+      "original": "2026-10-06T08:41:59.039898+00:00",
+      "exported": "2026-10-06T08:41:59.039+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-5f45d5b12765005d781b993d",
+      "original": "2026-10-06T08:41:57.935103+00:00",
+      "exported": "2026-10-06T08:41:57.935+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-f141d420651d6814a6a72d85",
+      "original": "2026-10-06T08:42:02.513358+00:00",
+      "exported": "2026-10-06T08:42:02.513+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-a4d0cf955f9ab00f6c81990a",
+      "original": "2026-10-06T08:41:59.474211+00:00",
+      "exported": "2026-10-06T08:41:59.474+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-514bd35dd455093667eb081f",
+      "original": "2026-10-06T08:41:52.952071+00:00",
+      "exported": "2026-10-06T08:41:52.952+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-3b78c4260ce558e6273b2799",
+      "original": "2026-10-06T08:41:52.812126+00:00",
+      "exported": "2026-10-06T08:41:52.812+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-39bf11b99eaea7b3ce392693",
+      "original": "2026-10-06T08:42:05.570287+00:00",
+      "exported": "2026-10-06T08:42:05.570+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-f6cf607b6ee77f9747015585",
+      "original": "2026-10-06T08:41:54.326665+00:00",
+      "exported": "2026-10-06T08:41:54.326+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-4a04da5402675c256ada934c",
+      "original": "2026-10-06T08:42:04.293893+00:00",
+      "exported": "2026-10-06T08:42:04.293+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-918dad9e995eae829e9881e1",
+      "original": "2026-10-06T08:41:57.536965+00:00",
+      "exported": "2026-10-06T08:41:57.536+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-27a4a609adeeb8f61665592b",
+      "original": "2026-10-06T08:42:00.972779+00:00",
+      "exported": "2026-10-06T08:42:00.972+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-4f6244fc2173e8322e60ac62",
+      "original": "2026-10-06T08:47:40.433577+00:00",
+      "exported": "2026-10-06T08:47:40.433+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-55c92492ee66c9d5cf52464f",
+      "original": "2026-10-06T08:42:04.664287+00:00",
+      "exported": "2026-10-06T08:42:04.664+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-57bf80cb4704118575aae763",
+      "original": "2026-10-06T08:47:40.144307+00:00",
+      "exported": "2026-10-06T08:47:40.144+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-01c22ef7d3be4b100d5dac26",
+      "original": "2026-10-06T08:41:53.005258+00:00",
+      "exported": "2026-10-06T08:41:53.005+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-4bb48e073201b4e955b780ae",
+      "original": "2026-10-06T08:41:55.919646+00:00",
+      "exported": "2026-10-06T08:41:55.919+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-ceb513dddfb87c1cc7690b84",
+      "original": "2026-10-06T08:41:56.658618+00:00",
+      "exported": "2026-10-06T08:41:56.658+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-20fe8b45a0358744817c64b8",
+      "original": "2026-10-06T08:42:01.017577+00:00",
+      "exported": "2026-10-06T08:42:01.017+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-db3aa6ebce337e38917bd5c3",
+      "original": "2026-10-06T08:42:06.336113+00:00",
+      "exported": "2026-10-06T08:42:06.336+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-10558aa20ca8607275e5aa7a",
+      "original": "2026-10-06T08:42:06.692268+00:00",
+      "exported": "2026-10-06T08:42:06.692+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-146237842471bc5f929e09cf",
+      "original": "2026-10-06T08:41:58.309915+00:00",
+      "exported": "2026-10-06T08:41:58.309+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-bd42f844610bf98c87075ba2",
+      "original": "2026-10-06T08:47:40.166798+00:00",
+      "exported": "2026-10-06T08:47:40.166+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-29faa784a977498431b6fa25",
+      "original": "2026-10-06T08:41:56.313983+00:00",
+      "exported": "2026-10-06T08:41:56.313+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-c11540fa3bdf45d9df424841",
+      "original": "2026-10-06T08:41:59.923541+00:00",
+      "exported": "2026-10-06T08:41:59.923+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-66f865586a63256fe1fef0e2",
+      "original": "2026-10-06T08:42:01.900779+00:00",
+      "exported": "2026-10-06T08:42:01.900+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-f95e7e29ea62942fd98edef5",
+      "original": "2026-10-06T08:42:05.100399+00:00",
+      "exported": "2026-10-06T08:42:05.100+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-cf8305ed67a8f5f22f7f5653",
+      "original": "2026-10-07T14:56:46.731061+00:00",
+      "exported": "2026-10-07T14:56:46.731+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-125e8e07aa0b622e289724a2",
+      "original": "2026-10-08T03:19:12.109184+00:00",
+      "exported": "2026-10-08T03:19:12.109+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-1c42d282f795483c77a94b24",
+      "original": "2026-10-07T14:51:27.511668+00:00",
+      "exported": "2026-10-07T14:51:27.511+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-5fada19eb43d66d6a7ca80cc",
+      "original": "2026-10-07T14:56:48.449656+00:00",
+      "exported": "2026-10-07T14:56:48.449+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-d575e89ee6f63a14842d22cf",
+      "original": "2026-10-07T14:51:30.930542+00:00",
+      "exported": "2026-10-07T14:51:30.930+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-3d57d215578392c20b927aed",
+      "original": "2026-10-07T14:56:50.377203+00:00",
+      "exported": "2026-10-07T14:56:50.377+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-8f5d01b5c9c2be92e7bf466a",
+      "original": "2026-10-07T14:51:58.643468+00:00",
+      "exported": "2026-10-07T14:51:58.643+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-c67f8d379979cfc951c4028e",
+      "original": "2026-10-07T14:56:52.277100+00:00",
+      "exported": "2026-10-07T14:56:52.277+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-663206da4be1168eca278e08",
+      "original": "2026-10-07T14:52:01.091033+00:00",
+      "exported": "2026-10-07T14:52:01.091+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-812613e258ab8d7e06a39ea5",
+      "original": "2026-10-07T14:57:02.915063+00:00",
+      "exported": "2026-10-07T14:57:02.915+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-7a2dcb888d960de21c471cf9",
+      "original": "2026-10-07T14:52:16.498066+00:00",
+      "exported": "2026-10-07T14:52:16.498+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-7ab23c0198c0fe0981d24b3b",
+      "original": "2026-10-07T14:52:54.759239+00:00",
+      "exported": "2026-10-07T14:52:54.759+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-8c53dd10280f0a6d0cab26d2",
+      "original": "2026-10-07T14:53:09.217985+00:00",
+      "exported": "2026-10-07T14:53:09.217+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-be3d7041e0dec5d61c7094a1",
+      "original": "2026-10-07T14:57:04.532619+00:00",
+      "exported": "2026-10-07T14:57:04.532+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-95de1603c72929d3b2973622",
+      "original": "2026-10-07T14:53:23.705230+00:00",
+      "exported": "2026-10-07T14:53:23.705+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-b6db89f06fcfacdd9ae40f6b",
+      "original": "2026-10-07T14:57:06.206700+00:00",
+      "exported": "2026-10-07T14:57:06.206+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-da9917eb50e9e79008bb81ae",
+      "original": "2026-10-07T14:53:25.965387+00:00",
+      "exported": "2026-10-07T14:53:25.965+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-b82d4cd24c4fcbc751ccf4dc",
+      "original": "2026-10-07T14:53:28.597170+00:00",
+      "exported": "2026-10-07T14:53:28.597+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-07172c2f78ac33d912a721a2",
+      "original": "2026-10-07T14:57:07.945687+00:00",
+      "exported": "2026-10-07T14:57:07.945+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-69c90559fe17b0ccd5410e4f",
+      "original": "2026-10-07T14:53:30.250635+00:00",
+      "exported": "2026-10-07T14:53:30.250+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-464bad042398ab7517cf2b19",
+      "original": "2026-10-07T14:53:32.446316+00:00",
+      "exported": "2026-10-07T14:53:32.446+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-c1c7221b65b5fe36d3d50e86",
+      "original": "2026-10-07T14:53:40.716856+00:00",
+      "exported": "2026-10-07T14:53:40.716+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-24e2ab3470e472768aa25d26",
+      "original": "2026-10-07T14:53:43.970426+00:00",
+      "exported": "2026-10-07T14:53:43.970+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-256e3fe45cbe00107b6fcabe",
+      "original": "2026-10-07T14:53:46.972718+00:00",
+      "exported": "2026-10-07T14:53:46.972+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-b2a352c089d8e96c9bed10e7",
+      "original": "2026-10-07T14:57:09.598784+00:00",
+      "exported": "2026-10-07T14:57:09.598+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-70350d2b565eee56f834c56a",
+      "original": "2026-10-07T14:53:50.042468+00:00",
+      "exported": "2026-10-07T14:53:50.042+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-b5b73be0267261c9c9a2b7ca",
+      "original": "2026-10-07T14:53:53.087174+00:00",
+      "exported": "2026-10-07T14:53:53.087+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-9e94454ce34a83ba6f3dd0b6",
+      "original": "2026-10-07T14:55:12.097122+00:00",
+      "exported": "2026-10-07T14:55:12.097+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-5b26fe85240950161438a838",
+      "original": "2026-10-07T14:57:11.392476+00:00",
+      "exported": "2026-10-07T14:57:11.392+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-784aba8cd47bf4430b0f4f9b",
+      "original": "2026-10-07T14:55:30.345848+00:00",
+      "exported": "2026-10-07T14:55:30.345+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-da3b5f106516c6082cf64a1b",
+      "original": "2026-10-07T14:55:49.963657+00:00",
+      "exported": "2026-10-07T14:55:49.963+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-db039a90c2a01890f1927744",
+      "original": "2026-10-07T14:57:13.291833+00:00",
+      "exported": "2026-10-07T14:57:13.291+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-9dbe0aef3dbb0e67f93e0d3d",
+      "original": "2026-10-07T14:55:59.188762+00:00",
+      "exported": "2026-10-07T14:55:59.188+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-ab4921807c89cf717964e3c4",
+      "original": "2026-10-07T14:56:07.269239+00:00",
+      "exported": "2026-10-07T14:56:07.269+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-54db2618110b9433d713e304",
+      "original": "2026-10-07T14:57:15.065678+00:00",
+      "exported": "2026-10-07T14:57:15.065+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-f4ca917e06a8755924ffd24a",
+      "original": "2026-10-07T14:56:17.965593+00:00",
+      "exported": "2026-10-07T14:56:17.965+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-02a565dc091a4655cc178303",
+      "original": "2026-10-07T14:56:33.237954+00:00",
+      "exported": "2026-10-07T14:56:33.237+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-694a1c81866b2e31e61f03c6",
+      "original": "2026-10-07T14:57:16.736805+00:00",
+      "exported": "2026-10-07T14:57:16.736+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-b5f24e75cf7a988a6c070475",
+      "original": "2026-10-07T14:56:36.999594+00:00",
+      "exported": "2026-10-07T14:56:36.999+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-843595b65d6fcdb3ca5c20e8",
+      "original": "2026-10-07T14:57:18.441022+00:00",
+      "exported": "2026-10-07T14:57:18.441+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-9264f1267bdcba7b243a5f53",
+      "original": "2026-10-07T14:56:41.026116+00:00",
+      "exported": "2026-10-07T14:56:41.026+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-8c6fb43b7aa45e3aebfc36f9",
+      "original": "2026-10-07T14:56:44.877849+00:00",
+      "exported": "2026-10-07T14:56:44.877+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-2e03a262c96a36d048623d7c",
+      "original": "2026-10-07T15:00:34.049427+00:00",
+      "exported": "2026-10-07T15:00:34.049+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-56d8b57c83cb1ad3dc2d2e0c",
+      "original": "2026-10-06T08:43:21.455429+00:00",
+      "exported": "2026-10-06T08:43:21.455+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-3e29244a71b9cd1900b290d9",
+      "original": "2026-10-06T08:43:30.709402+00:00",
+      "exported": "2026-10-06T08:43:30.709+00:00"
+    },
+    {
+      "source_snapshot": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/source-767abf09b55092603628beb7",
+      "original": "2026-10-06T08:38:16.834612+00:00",
+      "exported": "2026-10-06T08:38:16.834+00:00"
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+{
+  "method": "Re-download missing sources with a 6-second interval. Preserve historical metadata only if SHA-256 matches; archive old manifest and record new time/hash for changed responses.",
+  "restored": [
+    {
+      "path": "data/raw/e0a6d37dc71a550609c03f09.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "cf8305ed67a8f5f22f7f5653b1a762944fe5f46389be6c93b19e65963edd7866"
+    },
+    {
+      "path": "data/raw/fb9a253c3ee2611c9c09539c.json",
+      "recovered": true,
+      "historical_sha256_matched": false,
+      "current_sha256": "125e8e07aa0b622e289724a26eacf3bacd1f4151929a44bd0912dc3c6a4866fd"
+    },
+    {
+      "path": "data/raw/92f8b360e6100f50aba356a2.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "1c42d282f795483c77a94b2418dd2545833057b1226ddf4a114b56683c047b12"
+    },
+    {
+      "path": "data/raw/2a0189842e5a5538fa47e709.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "5fada19eb43d66d6a7ca80cc279fdd5fda27cacfcc2d3ac5bca9e8b9897d49ab"
+    },
+    {
+      "path": "data/raw/db1fe2ccafd55ce0b81fdbdc.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "d575e89ee6f63a14842d22cf193f8edbd9e28f8611bc9689900e8c37478f34ae"
+    },
+    {
+      "path": "data/raw/56a0f6e441ee9b24a15474a6.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "3d57d215578392c20b927aedba74ca459097c09271cb3b4b10bc1eeca3a9a255"
+    },
+    {
+      "path": "data/raw/c83be619495ae90c4eef1cd6.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "8f5d01b5c9c2be92e7bf466aaf5c27d2822335fe6d892f2053edf41a2ef75ca4"
+    },
+    {
+      "path": "data/raw/5523a5e8d1722ef4ff4d4799.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "c67f8d379979cfc951c4028e92c5993aa91f0b5b91d3f2a6e8d2c2e825431c64"
+    },
+    {
+      "path": "data/raw/db5d8d6708e1f48058380cba.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "663206da4be1168eca278e089d73064d9d33ea48991505090a7b0ac7246f8f66"
+    },
+    {
+      "path": "data/raw/d0a1d6d25ed7b604ea2f8582.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "812613e258ab8d7e06a39ea5e92b15e8c3b827d8192bdc7fe04598be2c243076"
+    },
+    {
+      "path": "data/raw/c1d0fce67a349cfdeb740b82.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "7a2dcb888d960de21c471cf90db90a5153c64ab27d5f710fc5beda3e9c3a15a1"
+    },
+    {
+      "path": "data/raw/e3932bc8f28b82286c8fb5c3.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "7ab23c0198c0fe0981d24b3ba3b38f65d44df8ca4d12b832539e839e23d1fb33"
+    },
+    {
+      "path": "data/raw/aafc7ffdf11d350e6595a58c.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "8c53dd10280f0a6d0cab26d2b75bdb0270e4433a962d82d9ab2bd9a62edf8c41"
+    },
+    {
+      "path": "data/raw/59229e7dbc0cfc7d410347f8.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "be3d7041e0dec5d61c7094a17b527d20f7545309c24dd8c8e6e42102983d74df"
+    },
+    {
+      "path": "data/raw/c9b727fabf754f8672a379b2.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "95de1603c72929d3b29736223aaf75c76036937337b109cf6dd113bbdb1e324e"
+    },
+    {
+      "path": "data/raw/de10b693c14b13eee6e95e13.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "b6db89f06fcfacdd9ae40f6bc54e1f3b3bfa640591f98a307aa053ee8d028ac5"
+    },
+    {
+      "path": "data/raw/afebe7c93b28a4a87f1c917b.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "da9917eb50e9e79008bb81aea6ba2e6301dc9d49f5cba1c672c57d9b5630428d"
+    },
+    {
+      "path": "data/raw/5635e77c41dd4fdb9c6ffe09.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "b82d4cd24c4fcbc751ccf4dcc60b41ab079cd0f1069f4b3921e6f988dc191534"
+    },
+    {
+      "path": "data/raw/007cb554090bd335a5a01c13.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "07172c2f78ac33d912a721a24ea954a3a9d7a5a8c20d175557dbd1e580bd9e38"
+    },
+    {
+      "path": "data/raw/5bf898c3e126d05ecc454f3c.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "69c90559fe17b0ccd5410e4f746c07bebc3edc6f7a9f80f5c127fd6997c0bc9b"
+    },
+    {
+      "path": "data/raw/df3d77232f176791d53e8919.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "464bad042398ab7517cf2b19b73c86cc13f49a00d1e748dc2c8ec2b44ef9cab6"
+    },
+    {
+      "path": "data/raw/8dd524e771b487b7c2587f81.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "c1c7221b65b5fe36d3d50e86d4385e954b8bb680ffcb356b0bedbb5e80a4038b"
+    },
+    {
+      "path": "data/raw/93686269da7cde8255a04975.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "24e2ab3470e472768aa25d26ad1d418f6d274fe1792049d8c32e22e5bd48a898"
+    },
+    {
+      "path": "data/raw/319e586d00d02f14632f5d23.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "256e3fe45cbe00107b6fcabe2ac6f0efb537191d75efb9b0f11a487ee05d12d1"
+    },
+    {
+      "path": "data/raw/45b70b59f4b127236294595a.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "b2a352c089d8e96c9bed10e7de24b493e683c477ed60940af76a4e868462851b"
+    },
+    {
+      "path": "data/raw/87560e3073d6446e43516608.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "70350d2b565eee56f834c56a6ef501864a8141483015d96f4f415e04ba7849f6"
+    },
+    {
+      "path": "data/raw/dd8dac8bde2f53ae761a8970.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "b5b73be0267261c9c9a2b7ca10355e405b39802a822d6dfa762a4cb68b1e55c9"
+    },
+    {
+      "path": "data/raw/743e5c68ff843f9dfdb7e43e.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "9e94454ce34a83ba6f3dd0b64b7270a8b4922370ee264322adb28c4d98b92394"
+    },
+    {
+      "path": "data/raw/282c4d6d1eab936492ecfa8a.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "5b26fe85240950161438a8382d664ff719c7dea38cc00983368a66c07671fdcc"
+    },
+    {
+      "path": "data/raw/aba4e3b867115c4aa43dee4f.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "784aba8cd47bf4430b0f4f9bd683ca1f9406a53c556832a01be9f0bb86ca4d30"
+    },
+    {
+      "path": "data/raw/5eeb9c3a8129b682e84812fb.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "da3b5f106516c6082cf64a1be2185a9dc163921566b884862f51435b033a894c"
+    },
+    {
+      "path": "data/raw/741df6dc3fec61e1994c7468.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "db039a90c2a01890f1927744a79672ce85f6c606a489d9a09b49e95fac572e8c"
+    },
+    {
+      "path": "data/raw/bdd66cac4a27e3318cd9f8ae.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "9dbe0aef3dbb0e67f93e0d3d66f19a7e69d553f3fc053f3a6c2c4a4b7945629a"
+    },
+    {
+      "path": "data/raw/d4d7d51ca9ba515282c6ae30.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "ab4921807c89cf717964e3c4a43a45fd455c35b4bddf2a8aa8a744ebd7b07c7c"
+    },
+    {
+      "path": "data/raw/cf09766b50cdfd28079d80f1.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "54db2618110b9433d713e304229dc128bb2aa7215b2a5dfe9ae87e51b9f9b987"
+    },
+    {
+      "path": "data/raw/fbc514045b51cd6da672c708.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "f4ca917e06a8755924ffd24adadb3cad1ae62b8127c8ae868c6d8b05cd10e091"
+    },
+    {
+      "path": "data/raw/09d6efa713ffe79599ed79e5.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "02a565dc091a4655cc1783039a3e50171369f6b0d71260a35a5c3ad33154a176"
+    },
+    {
+      "path": "data/raw/7e3f9ad203f7e06a0bd2ad20.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "694a1c81866b2e31e61f03c6533fa6368428753beadf1504313983cff83d72b2"
+    },
+    {
+      "path": "data/raw/bc57431d88765429d2de727b.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "b5f24e75cf7a988a6c07047516fe04eb37a0a34727d386cc27f164bc2593c5f8"
+    },
+    {
+      "path": "data/raw/0b4c2d4bfca2ec2d6b50bc7e.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "843595b65d6fcdb3ca5c20e84c31190b1d8f2e8321101ed516a0345993fab5d9"
+    },
+    {
+      "path": "data/raw/70da591a8acbdb08b125c8ce.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "9264f1267bdcba7b243a5f53adc6e84840931ad2aa35e6ecd16710931d29267b"
+    },
+    {
+      "path": "data/raw/ef108b9618676afe446402e9.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "8c6fb43b7aa45e3aebfc36f9bd801d1c20b644861768b4134f10ec8d50fd3aa0"
+    },
+    {
+      "path": "data/raw/8750baa2abfe2f1c727b76a7.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "current_sha256": "2e03a262c96a36d048623d7c11490186330d097915eae0a8cde983e8d101ca79"
+    }
+  ],
+  "refreshed_responses": [
+    {
+      "path": "data/raw/fb9a253c3ee2611c9c09539c.json",
+      "historical_sha256": "ae819cf2ca2b10ddb994828b09b780bdf9306c54421659595d1e8e2b79914449",
+      "new_sha256": "125e8e07aa0b622e289724a26eacf3bacd1f4151929a44bd0912dc3c6a4866fd",
+      "new_retrieved_at": "2026-10-08T03:19:12.109184+00:00"
+    }
+  ],
+  "remaining_missing": [],
+  "total_snapshots": 76,
+  "initial_missing_count": 43,
+  "final_missing_count": 0,
+  "final_sources_checked": 76,
+  "recovery_complete": true,
+  "download_log": [
+    {
+      "path": "data/raw/fb9a253c3ee2611c9c09539c.json",
+      "recovered": true,
+      "historical_sha256_matched": false,
+      "download_checked_at": "2026-10-08T03:19:12.110527+00:00"
+    },
+    {
+      "path": "data/raw/c1d0fce67a349cfdeb740b82.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:19:21.165406+00:00"
+    },
+    {
+      "path": "data/raw/e3932bc8f28b82286c8fb5c3.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:19:31.839825+00:00"
+    },
+    {
+      "path": "data/raw/aafc7ffdf11d350e6595a58c.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:20:04.908311+00:00"
+    },
+    {
+      "path": "data/raw/59229e7dbc0cfc7d410347f8.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:20:11.647724+00:00"
+    },
+    {
+      "path": "data/raw/c9b727fabf754f8672a379b2.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:20:42.466868+00:00"
+    },
+    {
+      "path": "data/raw/de10b693c14b13eee6e95e13.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:20:49.252391+00:00"
+    },
+    {
+      "path": "data/raw/afebe7c93b28a4a87f1c917b.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:21:03.139077+00:00"
+    },
+    {
+      "path": "data/raw/5635e77c41dd4fdb9c6ffe09.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:21:12.289539+00:00"
+    },
+    {
+      "path": "data/raw/007cb554090bd335a5a01c13.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:21:19.281393+00:00"
+    },
+    {
+      "path": "data/raw/5bf898c3e126d05ecc454f3c.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:21:27.344027+00:00"
+    },
+    {
+      "path": "data/raw/df3d77232f176791d53e8919.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:21:44.219830+00:00"
+    },
+    {
+      "path": "data/raw/8dd524e771b487b7c2587f81.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:21:52.679361+00:00"
+    },
+    {
+      "path": "data/raw/93686269da7cde8255a04975.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:22:01.921791+00:00"
+    },
+    {
+      "path": "data/raw/319e586d00d02f14632f5d23.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:22:28.899944+00:00"
+    },
+    {
+      "path": "data/raw/45b70b59f4b127236294595a.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:22:35.620284+00:00"
+    },
+    {
+      "path": "data/raw/87560e3073d6446e43516608.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:22:44.753429+00:00"
+    },
+    {
+      "path": "data/raw/dd8dac8bde2f53ae761a8970.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:23:18.907025+00:00"
+    },
+    {
+      "path": "data/raw/743e5c68ff843f9dfdb7e43e.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:23:27.913578+00:00"
+    },
+    {
+      "path": "data/raw/282c4d6d1eab936492ecfa8a.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:23:34.676795+00:00"
+    },
+    {
+      "path": "data/raw/bc57431d88765429d2de727b.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:24:00.769018+00:00"
+    },
+    {
+      "path": "data/raw/0b4c2d4bfca2ec2d6b50bc7e.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:24:07.564539+00:00"
+    },
+    {
+      "path": "data/raw/70da591a8acbdb08b125c8ce.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:24:17.069408+00:00"
+    },
+    {
+      "path": "data/raw/ef108b9618676afe446402e9.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:24:25.392792+00:00"
+    },
+    {
+      "path": "data/raw/8750baa2abfe2f1c727b76a7.json",
+      "recovered": true,
+      "historical_sha256_matched": true,
+      "download_checked_at": "2026-10-08T03:24:32.106864+00:00"
+    }
+  ],
+  "final_hashes_matching": 76
+}

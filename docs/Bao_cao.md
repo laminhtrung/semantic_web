@@ -1,147 +1,124 @@
 ---
-title: "MovieLOD: ứng dụng dữ liệu phim liên kết"
-date: "Báo cáo học phần Semantic Web • 06/10/2026"
+title: "MovieLOD: báo cáo học phần Semantic Web"
+date: "MovieLOD 2.0 · Đối chiếu ngày 08/10/2026"
 ---
 
-## 1. Mục tiêu và yêu cầu đề bài
+## 1. Mục tiêu và đối chiếu đề
 
-**Mục tiêu:** xây dựng một ứng dụng Linked Open Data (LOD — dữ liệu mở có liên kết) về điện ảnh. Người dùng xem phim, truy lại nguồn và đặt câu hỏi bằng SPARQL. Mô hình được giới hạn ở phần cần cho bài, gồm **15 lớp**.
+MovieLOD là ứng dụng dữ liệu mở có liên kết về điện ảnh. Ví dụ xuyên suốt: phim **Inception**, đạo diễn **Christopher Nolan**, nguồn dữ liệu và các định danh bên ngoài. Giao diện ứng dụng dùng tiếng Anh; tài liệu giải thích bằng tiếng Việt. Bộ nộp gồm báo cáo này (không quá 15 trang), **24 slide** và kịch bản quay demo **4 phút 50 giây**. `Video_demo.mp4` được thay bằng video ghi thao tác trình duyệt và kết quả lệnh thật trên bản 2.0, lời đọc tiếng Việt tổng hợp.
 
-| Đề gốc | Dịch và sản phẩm tương ứng |
-|:--|:--|
-| Define an ontology for the selected domain | **YC1:** định nghĩa mô hình điện ảnh → ontology OWL, sơ đồ và quy tắc. |
-| Collect relevant data in this domain | **YC2:** thu thập dữ liệu → mã thu thập, phản hồi gốc, URL, thời điểm và mã băm. |
-| Transform collected data into 4* standard | **YC3:** biểu diễn theo chuẩn 4 sao → RDF, IRI, giấy phép mở và công bố dữ liệu. |
-| Find and establish links to other datasets to obtain 5* standard | **YC4:** nối dữ liệu với bộ dữ liệu khác → liên kết đúng danh tính tới Wikidata/DBpedia. |
-| Provide an interface via SPARQL endpoint/terminal to query data | **YC5:** có nơi chạy truy vấn → giao diện Web, endpoint và terminal. |
+| Yêu cầu đề gốc | Triển khai | Minh chứng |
+|:--|:--|:--|
+| YC1: Define an ontology | 42 lớp, quan hệ, ràng buộc và định nghĩa lớp | `ontology/movie.ttl`, hai file OWL, `src/build.py` |
+| YC2: Collect relevant data | Wikidata/DBpedia, danh tính chính xác, URL và metadata nguồn | `src/collect.py`, `data/raw/`, `collection.json` |
+| YC3: Transform to 4* | RDF, HTTP IRI, Turtle/JSON-LD, giấy phép, trang mô tả | `data/processed/`, `LICENSE-DATA.txt` |
+| YC4: Establish links for 5* | 1.727 liên kết owl:sameAs | `link_audit.json`, truy vấn 05 |
+| YC5: SPARQL endpoint/terminal | Web, Flask/RDFLib, terminal | `src/server.py`, `src/query.py`, 24 truy vấn |
 
-**Sản phẩm kèm theo:** báo cáo này; `Slide.pptx` và `Slide.pdf`; `Video_demo.mp4` dài 3–5 phút; hướng dẫn chạy từ A đến Z.
+**Trạng thái:** Bản 2.0 đã được xuất bản công khai và kiểm tra không đăng nhập: dữ liệu Turtle/JSON-LD, ontology và mô tả RDF của Inception đều đẳng cấu với graph cục bộ. Có 19.339 triple dữ liệu và 42 lớp ontology. Đã bổ sung 43 phản hồi còn thiếu và chạy lại quy trình: đủ 76/76 file nguồn, 76/76 SHA-256 khớp, không có file thiếu. Một phản hồi tải lại có nội dung thay đổi được ghi thời điểm/hash mới; danh mục lịch sử được giữ ở `evidence/source_manifest_before_recovery.json`.
 
 ## 2. Kiến trúc và quy trình
 
-**Chọn phim → tải dữ liệu → kiểm tra danh tính → chuẩn hóa → tạo RDF → kiểm tra → truy vấn → xuất bản.**
+Chọn phim trong `config.json`, lấy phản hồi bằng `collect.py`, tạo mô hình và RDF bằng `build.py`, kiểm tra dữ liệu bằng Python, phân loại bằng `reason.py`, sau đó truy vấn và công bố. Phản hồi gốc lưu ở `data/raw/`; dữ liệu chuẩn hóa ở `data/processed/`; các số liệu và biên bản ở `evidence/`.
 
-| Thành phần | Việc thực hiện | File chính |
-|:--|:--|:--|
-| Thu thập | Tải API Wikidata và JSON DBpedia; lưu nguyên phản hồi. | `src/collect.py`; `data/raw/` |
-| Chuyển đổi | Tạo định danh, lớp, quan hệ, credit và thông tin nguồn. | `src/build.py` |
-| Chất lượng | Kiểm tra dữ liệu bằng Python, mã băm, truy vấn và quy tắc suy luận. | `src/validate.py`; `tests/` |
-| Ứng dụng | Giao diện Web; endpoint cục bộ dùng RDFLib; bản hosted dùng Comunica. | `src/server.py`; `web/dist/` |
-| Minh chứng | Kết quả đo thực tế, ảnh giao diện, báo cáo và video. | `evidence/`; `docs/` |
-
-**Trạng thái xuất bản:** Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao diện. Bản hosted chưa có ontology 1.1.0 với sáu defined class; cần xuất bản lại để đồng bộ.
+Dữ liệu khai báo nằm trong `movies.ttl`. Lược đồ nằm trong `ontology/movie.ttl`. Kiểu phân loại bổ sung nằm riêng trong `inferred_classes.ttl`. Endpoint mặc định chỉ truy vấn graph khai báo. Terminal với `--reasoned` nạp cả ba file; không tự chạy reasoner mỗi lần gọi.
 
 \newpage
 
-## 3. YC1 — Ontology vừa đủ cho lĩnh vực phim
+## 3. YC1 — Ontology và mô hình đóng góp
 
-| Lớp / thuật ngữ | Dịch | Ý nghĩa |
-|:--|:--|:--|
-| dbo:Film; dbo:Person | Phim; người | Tái sử dụng trực tiếp lớp DBpedia cho đối tượng trung tâm. |
-| ex:Genre; dbo:Country; ex:Language | Thể loại; quốc gia; ngôn ngữ | Country tái sử dụng DBpedia; Genre và Language thuộc mô hình của bài. |
-| Credit; ContributionRole | Bản ghi đóng góp; vai trò | Ai làm việc gì trong phim nào? |
-| SourceSnapshot; Dataset | Bản ghi nguồn; bộ dữ liệu | Thông tin lấy từ đâu, được công bố thế nào? |
+**42 lớp có tên:** dùng trực tiếp `dbo:Film`, `dbo:Person`, `dbo:Country`; 39 lớp khác thuộc namespace của bài. Có **23 object property**, **6 datatype property** và **14 lớp phân loại bổ sung**. Các lớp bên ngoài được tham chiếu qua equivalentClass không được cộng vào số lớp khai báo này.
 
-Một **credit** nối đúng **1 phim, 1 người, 1 vai trò**. Ba vai trò được dùng là đạo diễn, diễn viên, biên kịch. Ví dụ: Inception → credit đạo diễn → Christopher Nolan, với role `DirectorRole`.
-
-Quan hệ đối tượng (*object property*) nối hai thực thể: `dbo:director`, `ex:hasGenre`, `ex:participant`. Thuộc tính giá trị (*data property*) nối thực thể với giá trị: `ex:title`, `ex:releaseYear`, `ex:runtimeMinutes`.
-
-**Quy tắc OWL:** các lớp chính loại trừ nhau; một credit có số lượng giá trị cố định và loại giá trị được quy định. `director` là quan hệ ngược của `directed`: nếu phim có đạo diễn Nolan, có thể suy ra Nolan đã đạo diễn phim đó. Test xác nhận truy vấn trực tiếp các lớp DBpedia, rồi chạy OWL RL để kiểm tra quan hệ ngược và suy luận range `dbo:Person`; đây không phải tuyên bố đã chạy phân loại toàn bộ bằng reasoner OWL DL.
-
-**Tái sử dụng từ vựng:** dùng trực tiếp `dbo:Film`, `dbo:Person`, `dbo:Country` trong kiểu thực thể, domain/range, cardinality và SPARQL. Mô hình gồm 3 lớp DBpedia và 12 lớp `ex:`. Sáu defined class gồm Director, Actor, Screenwriter, FilmContributor, DirectorWriter và CreditedFilm, dùng equivalentClass với intersectionOf, unionOf và someValuesFrom. Ví dụ Nolan được suy ra là DirectorWriter. Xem `Mo_ta_ontology.md` và `evidence/ontology_reasoning.json`; chạy `src/reason.py` để tái lập. Dùng `owl:sameAs` để nối cá thể cùng danh tính, PROV cho nguồn, Dublin Core cho giấy phép và VoID cho bộ dữ liệu. Tái sử dụng lớp và liên kết cá thể là hai việc riêng. Các file OWL đều mở được bằng Protégé.
-
-## 4. YC2 — Thu thập dữ liệu thật, có thể kiểm tra lại
-
-Danh sách chọn có **30 phim**. Đây là mẫu có chủ đích để minh họa ứng dụng, không phải toàn bộ phim trên thế giới. API Wikidata được truy theo **sitelink Wikipedia tiếng Anh chính xác**, không đoán danh tính từ tên gần giống.
-
-| Chỉ số từ lần chạy | Kết quả |
-|:--|--:|
-| Phim / người | 30 / 805 |
-| Credit | 936 |
-| Thể loại / quốc gia / ngôn ngữ | 75 / 11 / 15 |
-| Phản hồi nguồn đã lưu | 56 |
-| Phim có năm / thời lượng / đạo diễn | 30 / 30 / 30 |
-
-Mỗi phản hồi có URL, thời điểm lấy, HTTP status và SHA-256. **Mã băm** là dấu vân tay của nội dung; dùng để kiểm tra phản hồi có bị đổi không. 56 phản hồi đã được kiểm tra khớp mã băm.
-
-**Chọn nguồn:** dùng nhãn và các phát biểu của Wikidata cho thông tin chính; không nhập nguyên các nhãn/`sameAs` bị trộn của DBpedia. Chỉ nối DBpedia khi chủ thể đúng tiêu đề Wikipedia và được khai báo `dbo:Film`.
-
-\newpage
-
-## 5. YC3 — Chuyển đổi RDF và điều kiện 4 sao
-
-Một **triple** gồm chủ thể → quan hệ → đối tượng/giá trị. Dữ liệu có **12089 triple**, ontology có **291 triple**. Có bản Turtle, JSON-LD, CSV; có OWL chỉ chứa lược đồ và OWL chứa cả đồ thị.
-
-| Việc chuẩn hóa | Cách thực hiện |
+| Nhánh | Ý nghĩa và ví dụ |
 |:--|:--|
-| Định danh ổn định | Dùng QID nguồn để tạo IRI, ví dụ `film-Q25188`; cùng thực thể được tái sử dụng. |
-| Năm phát hành | Năm sớm nhất trong các ngày nguồn có lịch Gregory và độ chính xác ít nhất đến năm. |
-| Thời lượng | Chuyển đơn vị phút/giây/giờ về phút; không tự điền giá trị thiếu. |
-| Nhiều giá trị nguồn | Ưu tiên phát biểu có rank preferred; ghi các thời lượng khác vào nhật ký chất lượng. |
-| Đóng góp | Tạo credit riêng theo bộ phim–người–vai trò, giữ nguồn của phát biểu. |
-| Nguồn dữ liệu | `sourceSnapshot` nối bản ghi với URL, thời điểm và SHA-256. |
+| CreativeWork / Film | Tác phẩm, phim, FeatureFilm, AnimatedFilm và các nhóm theo thể loại |
+| Agent / Person / Organization | Người và tổ chức; ProductionCompany là công ty sản xuất |
+| Contribution | Một người giữ một vai trò trong một phim |
+| Genre / Award | Thể loại và giải thưởng, có các nhóm con |
+| Country / Language / SourceSnapshot / Dataset | Quốc gia, ngôn ngữ, bản ghi nguồn và bộ dữ liệu |
 
-**Giấy phép dữ liệu:** CC BY-SA 4.0, có ghi công Wikidata, DBpedia và Wikipedia contributors. Dữ liệu có ghi giấy phép trong RDF và trong `LICENSE-DATA.txt`. Mã ứng dụng có giấy phép MIT; thư viện giữ giấy phép của tác giả.
+**Contribution:** `contributionBy` trỏ một Person; `contributionTo` trỏ một Film; `hasRole` trỏ một ContributionRole. Bốn vai trò là Director, Actor, Writer và Producer. Nolan có thể có nhiều đóng góp riêng; không dùng lớp DirectorWriter của phiên bản cũ. `hasContribution` và `contributionOf` là các đường đi ngược.
 
-**Định danh phim mẫu:** [Inception](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188). Mở IRI sẽ thấy mô tả HTML, liên kết RDF và JSON-LD nhúng. Máy chủ cục bộ còn nhận `Accept: text/turtle`, chuyển hướng HTTP 303 và trả RDF riêng của thực thể.
+Các quan hệ có domain/range và inverse; ba thuộc tính của Contribution là functional, có ràng buộc đúng một giá trị. Các lớp nền được khai báo rời nhau khi phù hợp. Actor và Filmmaker không rời nhau vì một người có thể vừa diễn xuất vừa đạo diễn.
 
-**Địa chỉ bộ dữ liệu:** [dataset](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/dataset), [RDF Turtle](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.ttl), [ontology](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology).
+**Domain/range và cardinality là ngữ nghĩa OWL:** domain/range có thể suy ra kiểu; cardinality đúng một không tự báo lỗi khi trường bị thiếu. Vì OWL dùng giả định thế giới mở và không mặc định mọi tên khác nhau đều là cá thể khác nhau, kiểm tra cấu trúc dữ liệu của ứng dụng được thực hiện riêng bằng Python.
 
-Theo [thang sao Linked Data](https://www.w3.org/DesignIssues/LinkedData.html), các mức sao cộng dồn; có RDF và IRI là phần kỹ thuật, còn Open Data cần công bố trên Web với giấy phép mở. **Trạng thái hiện tại:** Đã xuất bản công khai; người có URL truy cập được dữ liệu và giao diện. Bản hosted chưa có ontology 1.1.0 với sáu defined class; cần xuất bản lại để đồng bộ.
+**Ví dụ suy luận:** Contribution có DirectorRole được phân loại DirectingContribution; Person có đóng góp thuộc nhóm đạo diễn/biên kịch/sản xuất được phân loại Filmmaker. Nolan không được gán sẵn Filmmaker trong `movies.ttl`.
 
-## 6. YC4 — Liên kết ngoài để tạo ngữ cảnh
-
-Có **964 liên kết `owl:sameAs`**: **936** tới Wikidata, **28** tới DBpedia. Liên kết bao phủ phim, người và các thuật ngữ được sử dụng. Mỗi phim có ít nhất một liên kết ngoài.
-
-`sameAs` dịch là **“hai định danh chỉ cùng một thực thể”**. Ví dụ: Inception cục bộ ↔ Wikidata Q25188 ↔ DBpedia Inception. `wasDerivedFrom` dịch là **“được lấy từ”**; quan hệ này nói về nguồn thông tin, không thay thế `sameAs`.
-
-`evidence/link_audit.json` ghi cả hai IRI và phương pháp nối. 5 sao thêm liên kết ngoài trên nền điều kiện 4 sao; không đánh đồng số lượng liên kết với điểm đánh giá.
+**Cách chạy:** 12 lớp dùng OWL RL; MultiGenreFilm và FilmStudio dùng SPARQL COUNT DISTINCT bổ sung. Việc đếm các IRI là quy tắc ứng dụng, chưa chứng minh ngữ nghĩa cardinality OWL DL nếu chưa có căn cứ cá thể khác nhau. Đã chạy HermiT/Pellet riêng trên OWL chính: nhất quán, không có lớp không khả thỏa; 12 lớp có số lượng khớp OWL RL, hai lớp cardinality có 0 cá thể suy luận DL. File OWL, Turtle và JSON-LD cùng dùng timestamp đến mili giây; manifest nguồn giữ thời điểm đầy đủ. Bảng đủ các lớp/thuộc tính ở `Ontology_Redesign.md`.
 
 \newpage
 
-## 7. YC5 — Giao diện, endpoint và terminal chạy thực tế
+## 4. YC2 — Thu thập và xuất xứ
 
-**Giao diện Web:** có ô nhập SPARQL, câu hỏi mẫu, bảng kết quả, báo lỗi và tải kết quả. Có thể tìm phim và mở IRI để xem nguồn. Bản hosted chạy truy vấn RDF ngay trong trình duyệt bằng Comunica; bản cục bộ gửi truy vấn tới endpoint Python.
+| Chỉ số bản cục bộ | Giá trị |
+|:--|--:|
+| Phim / người / đóng góp | 30 / 851 / 1.010 |
+| Công ty sản xuất / thực thể giải thưởng | 45 / 672 |
+| Thể loại / quốc gia / ngôn ngữ | 75 / 11 / 15 |
+| Phim có năm, thời lượng và đạo diễn | 30/30 cho từng trường |
+| Phản hồi được liệt kê / file gốc còn có | 76 / 76 |
 
-**Endpoint cục bộ:** `http://127.0.0.1:8000/sparql`. Hỗ trợ GET, POST form và `application/sparql-query`; trả SPARQL Results JSON cho SELECT/ASK và Turtle cho CONSTRUCT/DESCRIBE. Chỉ truy vấn dataset của bài; không nhận SPARQL Update và không dùng SERVICE/FROM để tải dữ liệu ngoài.
+Wikidata được lấy qua API với sitelink Wikipedia tiếng Anh chính xác. P57/P161/P58/P162 cung cấp đạo diễn/diễn viên/biên kịch/nhà sản xuất; P136 thể loại, P495 quốc gia, P364 ngôn ngữ, P577 ngày phát hành, P2047 thời lượng, P166 giải, P272 công ty. Thu thập giải thưởng của người là bước bổ sung, khác giải của phim.
 
-**Terminal:** `.venv/bin/python src/query.py queries/02_inception.rq`. Tám file truy vấn bao gồm danh sách phim, Inception, phim của Nolan, credit, liên kết ngoài, thống kê thể loại, nguồn và ASK.
+DBpedia chỉ được nối khi tài nguyên khớp tiêu đề và được khai báo `dbo:Film`. Chỉ có 28 liên kết DBpedia; không tự đoán hai phim còn lại. Metadata nguồn có URL, provider, retrieved_at, HTTP status, SHA-256 và đường dẫn. Hash kiểm tra toàn vẹn byte, không chứng minh độ đúng của phát biểu.
 
-```sparql
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?title ?director WHERE {
-  ?film a dbo:Film ; ex:title "Inception" ;
-        ex:title ?title ; dbo:director ?person .
-  ?person rdfs:label ?director .
-}
+**Kiểm tra nguồn hiện tại:** Đã bổ sung 43 phản hồi còn thiếu và chạy lại quy trình: đủ 76/76 file nguồn, 76/76 SHA-256 khớp, không có file thiếu. Một phản hồi tải lại có nội dung thay đổi được ghi thời điểm/hash mới; danh mục lịch sử được giữ ở `evidence/source_manifest_before_recovery.json`. Đã chạy lại collect từ cache nguồn đầy đủ, build, reason, validate và test. Các phản hồi không đổi giữ hash/thời điểm lịch sử; phản hồi đổi có mốc nguồn mới được lưu trung thực.
+
+## 5. YC3 — Chuyển đổi RDF và mức 4 sao
+
+Dữ liệu gồm **19.339 triple**, lược đồ **518 triple**. Triple gồm chủ thể, quan hệ, đối tượng hoặc giá trị. Ví dụ `Inception dbo:director Nolan`; năm dùng số nguyên và thời lượng dùng số phút có datatype. Dùng QID để tạo IRI ổn định, chuẩn hóa thời lượng phút/giờ/giây, ghi các trường hợp nhiều giá trị trong `quality_issues.json`.
+
+Turtle và JSON-LD biểu diễn cùng graph; file `Movie_Ontology.owl` chỉ có lược đồ, `Movie_Knowledge_Graph.owl` gồm lược đồ và dữ liệu. Có CSV cho tiện đọc nhưng CSV tự nó không phải RDF.
+
+Dữ liệu có giấy phép **CC BY-SA 4.0**, ghi công các nguồn; mã ứng dụng MIT. Mức sao cộng dồn: công khai và giấy phép mở, dữ liệu có cấu trúc, định dạng mở, HTTP URI/RDF, rồi liên kết ngoài. **Bản 2.0 đã được xuất bản công khai và kiểm tra không đăng nhập: dữ liệu Turtle/JSON-LD, ontology và mô tả RDF của Inception đều đẳng cấu với graph cục bộ. Có 19.339 triple dữ liệu và 42 lớp ontology.** Kết luận công bố dựa trên kiểm tra URL không đăng nhập và so sánh graph, không chỉ dựa vào file cục bộ.
+
+\newpage
+
+## 6. YC4 — Liên kết cùng danh tính
+
+Có **1.699 liên kết Wikidata + 28 DBpedia = 1.727 owl:sameAs**. Tổng gồm phim, người, thể loại, giải, công ty và các thực thể liên quan; truy vấn 05 chỉ theo phim trả **58 dòng**. `link_audit.json` lưu IRI nội bộ, IRI ngoài và phương pháp nối.
+
+Ví dụ Inception nối với `http://www.wikidata.org/entity/Q25188` và tài nguyên DBpedia Inception. `owl:sameAs` khẳng định cùng một thực thể; `sourceSnapshot` ghi thông tin được lấy ở phản hồi nào. Tái dùng `dbo:Film` là dùng từ vựng ontology ở YC1, còn sameAs giữa cá thể là liên kết ở YC4.
+
+Liên kết cùng danh tính cần kiểm tra kỹ vì OWL có thể lan truyền mọi phát biểu qua sameAs. Khi đếm sau suy luận, bài lọc namespace tài nguyên nội bộ để tránh tính các alias bên ngoài như nhiều cá thể. Điều kiện 4 sao và liên kết ngoài của bản 2.0 đã được đối chiếu trên bản công khai; tiêu chí 5 sao đạt theo phạm vi đề.
+
+## 7. YC5 — Ba cách truy vấn
+
+**Web:** mở `http://127.0.0.1:8000`, chọn Sample queries, bấm Run query. Có 14 câu trực tiếp trên giao diện, tìm phim, mở IRI và tải kết quả. SELECT trả bảng, ASK trả boolean, CONSTRUCT trả RDF. Chế độ local dùng endpoint; `/?browser` dùng Comunica. Website hosted dùng engine trình duyệt, không phải endpoint Flask công khai.
+
+**Terminal:** `.venv/bin/python src/query.py queries/02_inception.rq` trả Inception, 2010, 148 phút, Christopher Nolan. Truy vấn Nolan trả 8 dòng; đóng góp Inception 25 dòng; diễn viên Inception 21 dòng. Các file 17/18 có LIMIT 20, nên 20 dòng hiển thị không phải tổng 769 Actor hoặc 89 Filmmaker.
+
+**Endpoint:** GET/POST `/sparql`, hỗ trợ form hoặc `application/sparql-query`; SELECT/ASK trả SPARQL Results JSON, CONSTRUCT/DESCRIBE trả Turtle. Endpoint chặn Update và SERVICE/FROM tải ngoài. Tra cứu cục bộ với Accept text/turtle trả 303 đến mô tả RDF.
+
+```bash
+curl -X POST http://127.0.0.1:8000/sparql \
+  -H 'Content-Type: application/sparql-query' \
+  --data-binary @queries/02_inception.rq
+.venv/bin/python src/query.py queries/18_inferred_filmmakers.rq --reasoned
 ```
 
-**Dịch:** tìm phim tên Inception, đi theo quan hệ đạo diễn, rồi lấy tên người đó. **Kết quả đã kiểm tra:** Inception — Christopher Nolan. `SELECT` chọn cột; `WHERE` đưa mẫu dữ liệu; `?` đánh dấu biến cần tìm. Cú pháp đối chiếu [W3C SPARQL 1.1](https://www.w3.org/TR/sparql11-query/).
-
-![Giao diện thật với truy vấn Inception](../evidence/screenshots/01_app.png){width=95%}
+Ảnh ứng dụng và ảnh trang Inception nằm ở `evidence/screenshots/`; ảnh trong slide là ảnh thao tác thật. Các truy vấn suy luận trả rỗng trên graph khai báo là kết quả đúng với chế độ nạp hiện tại.
 
 \newpage
 
-## 8. Kiểm tra, giới hạn và cách chạy lại
+## 8. Kiểm tra, đánh giá và giới hạn
 
-| Kiểm tra | Minh chứng |
-|:--|:--|
-| Kiểm tra cơ bản bằng Python | `evidence/validation.json`; data_checks_passed = true. |
-| Toàn vẹn phản hồi gốc | `evidence/validation.json`; 56 mã băm khớp. |
-| Chạy các truy vấn mẫu | `evidence/query_results.json`; 8 truy vấn đã chạy. |
-| Endpoint, nội dung RDF, lỗi đầu vào | `tests/test_application.py`; biên bản `evidence/tests.txt`. |
-| Suy luận quan hệ ngược | Test thực thi OWL RL; không lưu kết quả suy luận lẫn vào graph gốc. |
-| Giao diện và trình duyệt | `evidence/browser_checks.json`; ảnh desktop/mobile. |
-| Xuất bản | `evidence/publication.json` ghi URL, trạng thái và audience thực tế. |
+Lần kiểm tra 08/10/2026: **14 test pass**; kiểm tra các trường dữ liệu hiện tại không phát hiện lỗi; chạy đủ 24 file trên graph khai báo và trên graph có schema/phân loại đã lưu. `evidence/review_2026-10-08.json` chứa số liệu và xác nhận không còn file nguồn thiếu. `evidence/tests.txt` chứa kết quả test. Kiểm tra trình duyệt sau đồng bộ file local nằm trong `browser_checks.json`; trạng thái public đo mới ở `publication_checks.json`.
 
-**Giới hạn:** mẫu phim được chọn có chủ đích; không thu thập giải thưởng, streaming hoặc ngân sách. Thông tin có thể thay đổi sau ngày lấy. Dữ liệu thiếu giữ trạng thái chưa biết, không tự gán 0. Năm và thời lượng là giá trị tóm tắt, không mô tả từng quốc gia hoặc từng bản dựng. Kiểm tra Python xác nhận một số trường cơ bản; không chứng minh mọi phát biểu đúng ngoài đời hay mọi ràng buộc OWL đều thỏa mãn.
+| Yêu cầu | Điểm tự đề xuất / 2 | Giới hạn |
+|:--|--:|:--|
+| YC1 | 2,0 | Ontology đã triển khai; HermiT/Pellet xác nhận nhất quán |
+| YC2 | 2,0 | 76/76 phản hồi gốc có và khớp hash |
+| YC3 | 2,0 | RDF công khai đẳng cấu với local |
+| YC4 | 2,0 | Liên kết và bản công bố đã đồng bộ |
+| YC5 | 2,0 | Web, endpoint và terminal hoạt động |
+| Tổng | **10/10** | Thang chia đều do nhóm đề xuất; không phải điểm giảng viên |
 
-**Chạy trên macOS/Linux:** vào thư mục `movie_lod_complete`, tạo virtual environment, cài `requirements.txt`, chạy `make all` để thu thập lại từ cache và kiểm tra, rồi `make serve`. Mở `http://127.0.0.1:8000`. Trên macOS có thể chạy `start.command`.
+Mẫu phim có chủ đích, không đại diện toàn bộ điện ảnh. DocumentaryFilm hiện không có cá thể; ASK false chỉ nói về dataset này. MultiGenreFilm bằng toàn bộ 30 phim vì mỗi phim trong mẫu có ít nhất hai thể loại. Các nhóm genre/award còn dùng từ khóa nhãn, cần kiểm tra thủ công khi mở rộng nguồn. FilmStudio là tên lớp theo quy tắc của bài (công ty có ít nhất ba phim trong mẫu), không phải xác nhận quy mô studio ngoài đời. Chưa mô hình hóa ngân sách, doanh thu, streaming hoặc từng bản dựng phim.
 
-**Chạy lại không cần tải nguồn mới:** dùng phản hồi đã lưu; `collect.py` kiểm tra hash trước khi dùng cache. Dùng `--refresh` nếu muốn tải phiên bản mới từ Internet. Thư viện Python vẫn cần được cài trước khi chạy.
+**Trước khi nộp:** điền thành viên trên bìa, xem lại video/slide và dùng ZIP mới. Phần nguồn, bản công khai và video đã được sửa; kiểm tra lại khi thay đổi dữ liệu hoặc mô hình. Lời thuyết trình riêng nằm ở `Script_thuyet_trinh.md` và notes của từng slide.
 
-**Đối chiếu cuối:** YC1 có ontology và quy tắc; YC2 có mã thu thập, dữ liệu gốc, nguồn; YC3 có RDF, IRI, giấy phép và bản xuất bản; YC4 có liên kết được kiểm tra; YC5 có giao diện, endpoint và terminal. **Điều kiện công khai của YC3–YC4 phụ thuộc audience của bản hosted nêu ở trên.** Báo cáo không tự gán điểm chính thức.
+Nguồn ngữ nghĩa: [Linked Data và thang sao](https://www.w3.org/DesignIssues/LinkedData.html), [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), [OWL 2 Profiles](https://www.w3.org/TR/owl2-profiles/). Dẫn chiếu tiêu chuẩn dùng để giải thích RDF, SPARQL và giới hạn reasoning; số liệu ứng dụng lấy từ repository.
 
-Nguồn kỹ thuật: [W3C Linked Data](https://www.w3.org/DesignIssues/LinkedData.html), [W3C SPARQL](https://www.w3.org/TR/sparql11-query/), [Wikidata licensing](https://www.wikidata.org/wiki/Wikidata:Licensing), [Comunica](https://comunica.dev/docs/query/getting_started/query_browser_app/).
+**Cập nhật timestamp/reasoner:** dùng duy nhất Movie_Knowledge_Graph.owl cho graph đầy đủ. HermiT/Pellet đã chạy; xem Ket_qua_reasoner.pdf. Video_demo.mp4 giữ nguyên theo yêu cầu nhóm; timestamp trong dữ liệu mới giảm đến mili giây, nội dung phim/quan hệ giữ nguyên, đã kiểm tra ở video_dataset_compatibility.json. Video chưa thể hiện kết quả reasoner mới và vẫn nhắc bộ slide ngắn 13 trang.

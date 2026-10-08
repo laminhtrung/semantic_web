@@ -11,6 +11,17 @@ from common import ROOT, CONFIG, write_json
 
 RAW = ROOT / 'data/raw'
 HEADERS = {'User-Agent': 'MovieLOD-CourseProject/1.0 (educational RDF snapshot)', 'Accept': 'application/json'}
+_last_wikidata_request = 0.0
+
+def pace_wikidata(provider):
+    """Respect the public API's rate limits; cache hits do not incur a delay."""
+    global _last_wikidata_request
+    if provider != 'Wikidata':
+        return
+    delay = 6 - (time.monotonic() - _last_wikidata_request)
+    if delay > 0:
+        time.sleep(delay)
+    _last_wikidata_request = time.monotonic()
 
 def fetch(url, provider, refresh=False):
     key = hashlib.sha256(url.encode()).hexdigest()[:24]
@@ -22,9 +33,15 @@ def fetch(url, provider, refresh=False):
     last_error = None
     for attempt in range(6):
         try:
+            pace_wikidata(provider)
             r = requests.get(url, headers=HEADERS, timeout=45)
             if r.status_code == 429:
-                raise requests.RequestException('429 rate limited')
+                try:
+                    retry_after = float(r.headers.get('Retry-After', '35'))
+                except ValueError:
+                    retry_after = 35
+                time.sleep(max(35, retry_after))
+                raise requests.RequestException('429 rate limited; respected Retry-After')
             r.raise_for_status()
             data = r.json()
             if 'error' in data:
@@ -87,7 +104,6 @@ def collect(refresh=False):
                 entity['_snapshot_url'] = info['url']
                 entities[qid] = entity
         print('Wikidata related batch:', start+len(batch), '/', len(needed), flush=True)
-        time.sleep(1)
     # Second hop: people can hold their own awards (e.g. Best Actor), distinct from awards the film itself received.
     person_award_ids = set()
     for qid in needed:
@@ -104,7 +120,6 @@ def collect(refresh=False):
                 entity['_snapshot_url'] = info['url']
                 entities[qid] = entity
         print('Wikidata person-award batch:', start+len(batch), '/', len(person_award_ids), flush=True)
-        time.sleep(3)
     def get_dbpedia(f):
         uri = 'http://dbpedia.org/resource/' + f['wiki_title'].replace(' ', '_')
         url = 'https://dbpedia.org/data/' + quote(f['wiki_title'].replace(' ', '_'), safe='') + '.json'

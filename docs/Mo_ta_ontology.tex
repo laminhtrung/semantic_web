@@ -1,0 +1,232 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[a4paper,margin=19mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Be Vietnam Pro}
+  \setmonofont[]{Menlo}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+\usepackage{fancyhdr}
+\usepackage{array}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small MovieLOD · Bài làm hoàn chỉnh}
+\fancyfoot[C]{\small\thepage}\setlength{\headheight}{15pt}
+\renewcommand{\arraystretch}{1.14}\setlength{\extrarowheight}{1pt}
+\AtBeginEnvironment{longtable}{\small}
+\setlength{\emergencystretch}{3em}\setlength{\parskip}{4pt}
+\usepackage{titling}\setlength{\droptitle}{-1.5cm}
+\pretitle{\begin{center}\Large\bfseries\color{teal}}
+\posttitle{\par\end{center}\vspace{-0.5em}}
+\predate{\begin{center}\small}\postdate{\par\end{center}\vspace{-1em}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  pdftitle={MovieLOD: mô tả ontology và câu hỏi bảo vệ},
+  colorlinks=true,
+  linkcolor={teal},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={teal},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{MovieLOD: mô tả ontology và câu hỏi bảo vệ}
+\author{}
+\date{MovieLOD 2.0 · Đối chiếu 08/10/2026}
+
+\begin{document}
+\maketitle
+
+\subsection{Những ý cần nhớ}\label{nhux1eefng-uxfd-cux1ea7n-nhux1edb}
+
+Ontology 2.0 có \textbf{42 lớp}: 3 lớp DBpedia dùng trực tiếp
+(\allowbreak{}Film/\allowbreak{}\allowbreak{}Pe\allowbreak{}rson/\allowbreak{}\allowbreak{}Cou\allowbreak{}ntry),
+39 lớp namespace ex:, trong đó 14 lớp có kiểu được bổ sung từ định
+nghĩa/quy tắc. Có 23 object property và 6 datatype property. Bảng toàn
+bộ nằm ở
+\href{Ontology_Redesign.md}{Ontology\allowbreak{}\_\allowbreak{}\allowbreak{}Redesig\allowbreak{}n.\allowbreak{}md}.
+
+Contribution nối đúng một \textbf{người, phim và vai trò}. Các quan hệ
+là contribu\allowbreak{}tion\allowbreak{}By,
+contribu\allowbreak{}tion\allowbreak{}To và hasRole. Bốn vai trò:
+Director, Actor, Writer, Producer. Đường đi ngược:
+has\allowbreak{}Contr\allowbreak{}ibution từ người và
+contribu\allowbreak{}tion\allowbreak{}Of từ phim. Dữ liệu hiện có 1.010
+Contribu\allowbreak{}tion.\allowbreak{} Mỗi vai trò trong từng phim có
+bản ghi riêng; một người không bị ép chỉ một nghề.
+
+\subsection{Ví dụ nói trong buổi bảo
+vệ}\label{vuxed-dux1ee5-nuxf3i-trong-buux1ed5i-bux1ea3o-vux1ec7}
+
+Dữ liệu Inception ghi Nolan là Person, có đóng góp với
+Director\allowbreak{}\allowbreak{}Role.\allowbreak{} Từ hasValue suy ra
+Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution; Person có
+loại đóng góp này được phân loại Filmmaker. Nolan còn có giải riêng nên
+được phân loại AwardWinner. Các kiểu bổ sung lưu tách ở
+inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
+
+\begin{verbatim}
+.venv/bin/python src/query.py queries/24_nolan_asserted_types_only.rq
+.venv/bin/python src/query.py queries/24_nolan_asserted_types_only.rq --reasoned
+\end{verbatim}
+
+Không --reasoned: 1 kiểu Person. Có --reasoned: 3 kiểu Person,
+Filmmaker, AwardWinner. Lệnh chỉ nạp file phân loại đã lưu; cần
+\texttt{src/\allowbreak{}reas\allowbreak{}on.\allowbreak{}py} để tính
+lại sau khi sửa dữ liệu.
+
+\subsection{14 lớp được xử lý như thế
+nào?}\label{lux1edbp-ux111ux1b0ux1ee3c-xux1eed-luxfd-nhux1b0-thux1ebf-nuxe0o}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Nhóm
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lớp
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cách xử lý
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Đóng góp &
+Acting/\allowbreak{}\allowbreak{}D\allowbreak{}irecting\allowbreak{}/\allowbreak{}\allowbreak{}Writing\allowbreak{}/\allowbreak{}\allowbreak{}Produci\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
+& OWL RL, hasValue \\
+Người & Actor, Filmmaker, AwardWinner & OWL RL, tồn tại/giao/hợp \\
+Phim &
+Action/\allowbreak{}\allowbreak{}C\allowbreak{}omedy/\allowbreak{}\allowbreak{}Dr\allowbreak{}ama/\allowbreak{}\allowbreak{}Scie\allowbreak{}nce\allowbreak{}Ficti\allowbreak{}on/\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm
+& OWL RL, thể loại hoặc giải \\
+Đếm theo ngưỡng & Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film,
+FilmStudio & SPARQL COUNT DISTINCT bổ sung \\
+\end{longtable}
+}
+
+Có 769 Actor, 89 Filmmaker, 12 ActionFilm, 26
+Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{}, 30
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film, 6 FilmStudio
+trong kết quả phân loại hiện tại. Phạm vi đếm là IRI tài nguyên nội bộ;
+hai truy vấn người chỉ hiển thị 20 dòng do LIMIT.
+
+\subsection{Các câu hỏi dễ
+nhầm}\label{cuxe1c-cuxe2u-hux1ecfi-dux1ec5-nhux1ea7m}
+
+\textbf{Cardinality có bắt buộc file phải điền đủ không?} Không như kiểm
+tra form/CSDL. OWL dùng thế giới mở; Python kiểm tra trường bắt buộc
+riêng.
+
+\textbf{Hai IRI khác nhau có chắc là hai cá thể khác nhau không?} Không
+trong OWL. COUNT DISTINCT là đếm tên trong ứng dụng; cần căn cứ phân
+biệt cá thể khi chứng minh cardinality DL.
+
+\textbf{owlrl đã chứng minh ontology nhất quán chưa?} Chỉ chạy bộ luật
+và kiểm tra lỗi được phát hiện trong phạm vi đó; chưa phải chứng minh
+OWL DL đầy đủ. HermiT và Pellet đã chạy riêng trên file OWL chính và xác
+nhận nhất quán; xem
+Ket\_\allowbreak{}qua\_\allowbreak{}reasoner\allowbreak{}.\allowbreak{}pdf.\allowbreak{}
+
+\textbf{Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker có rời
+nhau không?} Không. Một người có thể diễn xuất và đạo diễn; vai trò
+chồng lấp được mô hình hóa bằng các Contribution riêng.
+
+\textbf{sameAs có phải nguồn không?} sameAs là cùng danh tính;
+source\allowbreak{}Sn\allowbreak{}apshot là xuất xứ. dbo:Film là tái
+dùng từ vựng lớp.
+
+\textbf{Vì sao endpoint không có Filmmaker?} Endpoint mặc định chỉ nạp
+movies.ttl; dùng --reasoned ở terminal để nạp schema và file phân loại.
+
+\textbf{Document\allowbreak{}ary\allowbreak{}Film bằng 0 có phải lỗi?}
+Không nhất thiết: danh sách 30 phim hiện không có phim tài liệu. ASK
+false không nói rằng thế giới không có phim tài liệu.
+
+\textbf{Mẫu có đủ nguồn để tái lập chưa?} Có đủ 76/76 file và hash khớp.
+Đã chạy lại thu thập từ cache nguồn, build, validate, reason và 14 test.
+Giữ cả biên bản nguồn lịch sử và nguồn tải lại.
+
+\textbf{Website đã có 42 lớp chưa?} Có. Bản public đã được triển khai
+lại, ontology 42 lớp và dữ liệu 19.339 triple đều đẳng cấu với local;
+kiểm tra không đăng nhập ở
+publicat\allowbreak{}ion\_\allowbreak{}chec\allowbreak{}ks.\allowbreak{}json.\allowbreak{}
+
+\subsection{Xem trong Protégé}\label{xem-trong-protuxe9guxe9}
+
+Mở
+Movie\_\allowbreak{}\allowbreak{}On\allowbreak{}tology.\allowbreak{}o\allowbreak{}wl
+để xem mô hình; mở
+Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l
+để xem cả dữ liệu. Xem lớp, IRI, restriction; xem inverse và functional
+ở Object properties. HermiT và Pellet đã xác nhận nhất quán, không có
+lớp không khả thỏa. File OWL chính và các bản RDF đều xuất timestamp đến
+mili giây để tránh lỗi HermiT. Có 769 Actor, 89 Filmmaker và 290
+AwardWinner;
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film/\allowbreak{}\allowbreak{}F\allowbreak{}ilm\allowbreak{}Studi\allowbreak{}o
+không có cá thể suy luận DL, khác số đếm ứng dụng 30/6.
+
+\end{document}

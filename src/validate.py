@@ -42,19 +42,28 @@ def run():
     snapshots=json.loads((ROOT/'data/raw/snapshots.json').read_text())
     checked=[]
     for s in snapshots:
-        actual=hashlib.sha256((ROOT/s['path']).read_bytes()).hexdigest()
-        checked.append({'path':s['path'],'sha256':actual,'matches':actual==s['sha256']})
+        path=ROOT/s['path']
+        actual=hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+        checked.append({'path':s['path'],'sha256':actual,'matches':actual==s['sha256'],'exists':path.is_file()})
+    reasoned=g+Graph().parse(ROOT/'ontology/movie.ttl')
+    inference_path=ROOT/'data/processed/inferred_classes.ttl'
+    if inference_path.exists():
+        reasoned.parse(inference_path)
     query_results=[]
     for p in sorted((ROOT/'queries').glob('*.rq')):
-        result=g.query(p.read_text())
+        query_number=int(p.name.split('_',1)[0])
+        needs_schema_or_inference=query_number in [13,14,17,18,19,20,21,22,23]
+        result=(reasoned if needs_schema_or_inference else g).query(p.read_text())
         if result.type=='SELECT':
             data=json.loads(result.serialize(format='json'))
         elif result.type=='ASK':data={'boolean':bool(result.askAnswer)}
         else:data={'triples':len(result.graph)}
-        query_results.append({'file':p.name,'result':data})
+        query_results.append({'file':p.name,'mode':'schema_and_saved_inference' if needs_schema_or_inference else 'asserted','result':data})
     write_json(ROOT/'evidence/query_results.json',query_results)
     summary={'data_checks_passed':not errors,'data_errors':errors,'source_hashes_match':all(s['matches'] for s in checked),
              'snapshots_checked':len(checked),'query_files_executed':len(query_results),
+             'missing_source_files':[s['path'] for s in checked if not s['exists']],
+             'source_hash_checks':checked,
              'films_have_sources':all(any(g.objects(f,EX.sourceSnapshot)) for f in g.subjects(RDF.type,DBO.Film)),
              'films_have_external_links':all(any(g.objects(f,OWL.sameAs)) for f in g.subjects(RDF.type,DBO.Film))}
     write_json(ROOT/'evidence/validation.json',summary)

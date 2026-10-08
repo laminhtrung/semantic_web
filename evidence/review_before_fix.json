@@ -1,0 +1,178 @@
+{
+  "review_date": "2026-10-08",
+  "data_triples": 19339,
+  "schema_triples": 518,
+  "named_classes": 42,
+  "data_errors": [],
+  "raw_snapshots_listed": 76,
+  "raw_hashes_matching": 33,
+  "missing_raw_files": [
+    "data/raw/e0a6d37dc71a550609c03f09.json",
+    "data/raw/fb9a253c3ee2611c9c09539c.json",
+    "data/raw/92f8b360e6100f50aba356a2.json",
+    "data/raw/2a0189842e5a5538fa47e709.json",
+    "data/raw/db1fe2ccafd55ce0b81fdbdc.json",
+    "data/raw/56a0f6e441ee9b24a15474a6.json",
+    "data/raw/c83be619495ae90c4eef1cd6.json",
+    "data/raw/5523a5e8d1722ef4ff4d4799.json",
+    "data/raw/db5d8d6708e1f48058380cba.json",
+    "data/raw/d0a1d6d25ed7b604ea2f8582.json",
+    "data/raw/c1d0fce67a349cfdeb740b82.json",
+    "data/raw/e3932bc8f28b82286c8fb5c3.json",
+    "data/raw/aafc7ffdf11d350e6595a58c.json",
+    "data/raw/59229e7dbc0cfc7d410347f8.json",
+    "data/raw/c9b727fabf754f8672a379b2.json",
+    "data/raw/de10b693c14b13eee6e95e13.json",
+    "data/raw/afebe7c93b28a4a87f1c917b.json",
+    "data/raw/5635e77c41dd4fdb9c6ffe09.json",
+    "data/raw/007cb554090bd335a5a01c13.json",
+    "data/raw/5bf898c3e126d05ecc454f3c.json",
+    "data/raw/df3d77232f176791d53e8919.json",
+    "data/raw/8dd524e771b487b7c2587f81.json",
+    "data/raw/93686269da7cde8255a04975.json",
+    "data/raw/319e586d00d02f14632f5d23.json",
+    "data/raw/45b70b59f4b127236294595a.json",
+    "data/raw/87560e3073d6446e43516608.json",
+    "data/raw/dd8dac8bde2f53ae761a8970.json",
+    "data/raw/743e5c68ff843f9dfdb7e43e.json",
+    "data/raw/282c4d6d1eab936492ecfa8a.json",
+    "data/raw/aba4e3b867115c4aa43dee4f.json",
+    "data/raw/5eeb9c3a8129b682e84812fb.json",
+    "data/raw/741df6dc3fec61e1994c7468.json",
+    "data/raw/bdd66cac4a27e3318cd9f8ae.json",
+    "data/raw/d4d7d51ca9ba515282c6ae30.json",
+    "data/raw/cf09766b50cdfd28079d80f1.json",
+    "data/raw/fbc514045b51cd6da672c708.json",
+    "data/raw/09d6efa713ffe79599ed79e5.json",
+    "data/raw/7e3f9ad203f7e06a0bd2ad20.json",
+    "data/raw/bc57431d88765429d2de727b.json",
+    "data/raw/0b4c2d4bfca2ec2d6b50bc7e.json",
+    "data/raw/70da591a8acbdb08b125c8ce.json",
+    "data/raw/ef108b9618676afe446402e9.json",
+    "data/raw/8750baa2abfe2f1c727b76a7.json"
+  ],
+  "hash_mismatches": [],
+  "queries": [
+    {
+      "file": "01_films.rq",
+      "asserted_result": 30,
+      "with_saved_inference_result": 30
+    },
+    {
+      "file": "02_inception.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 1
+    },
+    {
+      "file": "03_nolan.rq",
+      "asserted_result": 8,
+      "with_saved_inference_result": 8
+    },
+    {
+      "file": "04_credits.rq",
+      "asserted_result": 25,
+      "with_saved_inference_result": 25
+    },
+    {
+      "file": "05_external_links.rq",
+      "asserted_result": 58,
+      "with_saved_inference_result": 58
+    },
+    {
+      "file": "06_genres.rq",
+      "asserted_result": 75,
+      "with_saved_inference_result": 75
+    },
+    {
+      "file": "07_source.rq",
+      "asserted_result": 2,
+      "with_saved_inference_result": 2
+    },
+    {
+      "file": "08_ask.rq",
+      "asserted_result": true,
+      "with_saved_inference_result": true
+    },
+    {
+      "file": "09_actors_of_inception.rq",
+      "asserted_result": 21,
+      "with_saved_inference_result": 21
+    },
+    {
+      "file": "10_production_companies_of_a_film.rq",
+      "asserted_result": 4,
+      "with_saved_inference_result": 4
+    },
+    {
+      "file": "11_awards_received_by_a_film.rq",
+      "asserted_result": 7,
+      "with_saved_inference_result": 7
+    },
+    {
+      "file": "12_countries_and_languages_of_a_film.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 1
+    },
+    {
+      "file": "13_fiction_genre_films_via_hierarchy.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 29
+    },
+    {
+      "file": "14_all_agents_people_and_organizations.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 1
+    },
+    {
+      "file": "15_feature_vs_animated_film_counts.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 1
+    },
+    {
+      "file": "16_documentary_film_count_ask.rq",
+      "asserted_result": false,
+      "with_saved_inference_result": false
+    },
+    {
+      "file": "17_inferred_actors.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 20
+    },
+    {
+      "file": "18_inferred_filmmakers.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 20
+    },
+    {
+      "file": "19_inferred_action_films.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 12
+    },
+    {
+      "file": "20_inferred_multi_genre_films.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 30
+    },
+    {
+      "file": "21_inferred_award_winning_films.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 26
+    },
+    {
+      "file": "22_inferred_film_studios.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 6
+    },
+    {
+      "file": "23_people_with_directing_and_writing_contribution.rq",
+      "asserted_result": 0,
+      "with_saved_inference_result": 10
+    },
+    {
+      "file": "24_nolan_asserted_types_only.rq",
+      "asserted_result": 1,
+      "with_saved_inference_result": 3
+    }
+  ],
+  "inference_scope": "Uses saved inferred_classes.ttl; pytest independently exercises reasoning."
+}

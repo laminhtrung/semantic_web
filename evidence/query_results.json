@@ -1,6 +1,7 @@
 [
   {
     "file": "01_films.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -618,6 +619,7 @@
   },
   {
     "file": "02_inception.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -656,6 +658,7 @@
   },
   {
     "file": "03_nolan.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -759,6 +762,7 @@
   },
   {
     "file": "04_credits.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -1074,6 +1078,7 @@
   },
   {
     "file": "05_external_links.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -1669,6 +1674,7 @@
   },
   {
     "file": "06_genres.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -2584,6 +2590,7 @@
   },
   {
     "file": "07_source.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -2594,7 +2601,7 @@
             },
             "retrievedAt": {
               "type": "literal",
-              "value": "2026-10-06T08:41:52.952071+00:00",
+              "value": "2026-10-06T08:41:52.952000+00:00",
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
             },
             "sha256": {
@@ -2614,7 +2621,7 @@
             },
             "retrievedAt": {
               "type": "literal",
-              "value": "2026-10-06T08:43:21.455429+00:00",
+              "value": "2026-10-06T08:43:21.455000+00:00",
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
             },
             "sha256": {
@@ -2641,12 +2648,14 @@
   },
   {
     "file": "08_ask.rq",
+    "mode": "asserted",
     "result": {
       "boolean": true
     }
   },
   {
     "file": "09_actors_of_inception.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -2808,6 +2817,7 @@
   },
   {
     "file": "10_production_companies_of_a_film.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -2867,6 +2877,7 @@
   },
   {
     "file": "11_awards_received_by_a_film.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -2959,6 +2970,7 @@
   },
   {
     "file": "12_countries_and_languages_of_a_film.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -2991,9 +3003,185 @@
   },
   {
     "file": "13_fiction_genre_films_via_hierarchy.rq",
+    "mode": "schema_and_saved_inference",
     "result": {
       "results": {
-        "bindings": []
+        "bindings": [
+          {
+            "title": {
+              "type": "literal",
+              "value": "Alien"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Batman Begins"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Blade Runner"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Dunkirk"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Fight Club"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Forrest Gump"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Gladiator"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Goodfellas"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Interstellar"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "La La Land"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Memento"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Parasite"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Pulp Fiction"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Schindler's List"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Seven"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Spirited Away"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Tenet"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Dark Knight"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Godfather Part II"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Green Mile"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Fellowship of the Ring"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Matrix"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Prestige"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Shawshank Redemption"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Silence of the Lambs"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Titanic"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Whiplash"
+            }
+          }
+        ]
       },
       "head": {
         "vars": [
@@ -3004,6 +3192,7 @@
   },
   {
     "file": "14_all_agents_people_and_organizations.rq",
+    "mode": "schema_and_saved_inference",
     "result": {
       "results": {
         "bindings": [
@@ -3015,7 +3204,7 @@
             },
             "organizations": {
               "type": "literal",
-              "value": "0",
+              "value": "45",
               "datatype": "http://www.w3.org/2001/XMLSchema#integer"
             }
           }
@@ -3031,6 +3220,7 @@
   },
   {
     "file": "15_feature_vs_animated_film_counts.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [
@@ -3058,15 +3248,158 @@
   },
   {
     "file": "16_documentary_film_count_ask.rq",
+    "mode": "asserted",
     "result": {
       "boolean": false
     }
   },
   {
     "file": "17_inferred_actors.rq",
+    "mode": "schema_and_saved_inference",
     "result": {
       "results": {
-        "bindings": []
+        "bindings": [
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Aaron Eckhart",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Aaron Izbicki",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Aaron Taylor-Johnson",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Abe Vigoda",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Ada Nicodemou",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Adam Levy",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Adam Long",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Adelle Lutz",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Afemo Omilami",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Agnieszka Wagner",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Al Harrington",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Al Lettieri",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Al Martino",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Al Pacino",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Alan Howard",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Alex Rocco",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Alexander Held",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Alexander Strobele",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Alexander Zemeckis",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Alexis Arquette",
+              "xml:lang": "en"
+            }
+          }
+        ]
       },
       "head": {
         "vars": [
@@ -3077,9 +3410,151 @@
   },
   {
     "file": "18_inferred_filmmakers.rq",
+    "mode": "schema_and_saved_inference",
     "result": {
       "results": {
-        "bindings": []
+        "bindings": [
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Aaron Ryder",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Albert S. Ruddy",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Andrew Kevin Walker",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Arnold Kopelson",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Art Linson",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Barrie M. Osborne",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Bill Finger",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Bob Kane",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Bong Joon-ho",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Branko Lustig",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Bud Yorkin",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Ceán Chaffin",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Charles Newirth",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Charles Roven",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Christopher Nolan",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Christopher Priest",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Chuck Palahniuk",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Damien Chazelle",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Dan O'Bannon",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "David Fincher",
+              "xml:lang": "en"
+            }
+          }
+        ]
       },
       "head": {
         "vars": [
@@ -3090,9 +3565,83 @@
   },
   {
     "file": "19_inferred_action_films.rq",
+    "mode": "schema_and_saved_inference",
     "result": {
       "results": {
-        "bindings": []
+        "bindings": [
+          {
+            "title": {
+              "type": "literal",
+              "value": "Alien"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Batman Begins"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Blade Runner"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Gladiator"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Pulp Fiction"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Seven"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Tenet"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Dark Knight"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Godfather Part II"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Fellowship of the Ring"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Matrix"
+            }
+          }
+        ]
       },
       "head": {
         "vars": [
@@ -3103,9 +3652,191 @@
   },
   {
     "file": "20_inferred_multi_genre_films.rq",
+    "mode": "schema_and_saved_inference",
     "result": {
       "results": {
-        "bindings": []
+        "bindings": [
+          {
+            "title": {
+              "type": "literal",
+              "value": "Alien"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Batman Begins"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Blade Runner"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Dunkirk"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Fight Club"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Forrest Gump"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Gladiator"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Goodfellas"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Interstellar"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "La La Land"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Memento"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Parasite"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Pulp Fiction"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Schindler's List"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Seven"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Spirited Away"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Tenet"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Dark Knight"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Godfather Part II"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Green Mile"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Fellowship of the Ring"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Return of the King"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Matrix"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Prestige"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Shawshank Redemption"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Silence of the Lambs"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Titanic"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Whiplash"
+            }
+          }
+        ]
       },
       "head": {
         "vars": [
@@ -3116,9 +3847,167 @@
   },
   {
     "file": "21_inferred_award_winning_films.rq",
+    "mode": "schema_and_saved_inference",
     "result": {
       "results": {
-        "bindings": []
+        "bindings": [
+          {
+            "title": {
+              "type": "literal",
+              "value": "Alien"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Blade Runner"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Dunkirk"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Fight Club"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Forrest Gump"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Gladiator"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Goodfellas"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Inception"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Interstellar"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "La La Land"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Memento"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Parasite"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Pulp Fiction"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Schindler's List"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Seven"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Spirited Away"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Dark Knight"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Godfather"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Godfather Part II"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Fellowship of the Ring"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Lord of the Rings: The Return of the King"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Matrix"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Shawshank Redemption"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "The Silence of the Lambs"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Titanic"
+            }
+          },
+          {
+            "title": {
+              "type": "literal",
+              "value": "Whiplash"
+            }
+          }
+        ]
       },
       "head": {
         "vars": [
@@ -3129,9 +4018,53 @@
   },
   {
     "file": "22_inferred_film_studios.rq",
+    "mode": "schema_and_saved_inference",
     "result": {
       "results": {
-        "bindings": []
+        "bindings": [
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "20th Century Studios",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "Legendary Pictures",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "New Line Cinema",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "Paramount Pictures",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "Syncopy Inc.",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "companyName": {
+              "type": "literal",
+              "value": "Warner Bros. Entertainment",
+              "xml:lang": "en"
+            }
+          }
+        ]
       },
       "head": {
         "vars": [
@@ -3142,9 +4075,81 @@
   },
   {
     "file": "23_people_with_directing_and_writing_contribution.rq",
+    "mode": "schema_and_saved_inference",
     "result": {
       "results": {
-        "bindings": []
+        "bindings": [
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Bong Joon-ho",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Christopher Nolan",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Damien Chazelle",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Francis Ford Coppola",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Frank Darabont",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Hayao Miyazaki",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "James Cameron",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Martin Scorsese",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Peter Jackson",
+              "xml:lang": "en"
+            }
+          },
+          {
+            "personName": {
+              "type": "literal",
+              "value": "Quentin Tarantino",
+              "xml:lang": "en"
+            }
+          }
+        ]
       },
       "head": {
         "vars": [
@@ -3155,6 +4160,7 @@
   },
   {
     "file": "24_nolan_asserted_types_only.rq",
+    "mode": "asserted",
     "result": {
       "results": {
         "bindings": [

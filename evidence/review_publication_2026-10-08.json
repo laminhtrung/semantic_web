@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-08",
+  "checks": [
+    {
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "9898a555b4ce6e12b86e5f0ad77d58d1526fcf9be7e3b968402f26209ca6ae43"
+    },
+    {
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/data/movies.ttl",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "sha256": "f01ba2737a000501987f28f8298d084ee11ca73c8178600823a2aec0610b59b0",
+      "triples": 12089,
+      "matches_local_graph": false
+    },
+    {
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology.ttl",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "sha256": "66a8056eea25340fe24235846aa1600500ce236ffc720818b2d618b8ce508206",
+      "triples": 166,
+      "named_classes": 9
+    },
+    {
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "7d66ef4122d5532afcd9871922444239659705884403f9d7f2c3e2032fa49d0a"
+    },
+    {
+      "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/LICENSE-DATA.txt",
+      "status": 200,
+      "content_type": "text/plain",
+      "sha256": "547bfac7ae05d3b6910e1e702a7c4865c880654b7bcc7c9e5fa327cbf3dfb3a7"
+    }
+  ]
+}

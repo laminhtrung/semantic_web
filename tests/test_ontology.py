@@ -1,10 +1,12 @@
 import sys
 from pathlib import Path
-from rdflib import Graph, RDF, RDFS, OWL, URIRef
+from rdflib import Graph, RDF, RDFS, OWL, URIRef, XSD
+import re
+import xml.etree.ElementTree as ET
 from rdflib.compare import isomorphic
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
 from common import ROOT, DBO, EX, RES
-from build import schema
+from build import schema, timestamp_literal
 from reason import infer, DEFINED, RL_DEFINED, CARDINALITY_DEFINED
 
 
@@ -15,6 +17,18 @@ def test_generated_schema_matches_owl_exports():
     named = {c for c in expected.subjects(RDF.type, OWL.Class) if isinstance(c, URIRef)}
     assert len(named) == 42
     assert all(expected.value(c, RDFS.comment) for c in named)
+
+
+def test_primary_exports_are_synchronized_and_hermit_safe():
+    # Catch RDFLib silently expanding .736 to .736000 during export.
+    assert str(timestamp_literal('2026-10-07T14:57:16.736805+00:00')) == '2026-10-07T14:57:16.736+00:00'
+    source = ROOT / 'ontology/Movie_Knowledge_Graph.owl'
+    data = Graph().parse(ROOT / 'data/processed/movies.ttl')
+    assert isomorphic(data, Graph().parse(ROOT / 'data/processed/movies.jsonld', format='json-ld'))
+    assert isomorphic(data + schema(), Graph().parse(source))
+    values = [node.text for node in ET.parse(source).iter() if node.get('{'+str(RDF)+'}datatype') == str(XSD.dateTime)]
+    assert len(values) == 76
+    assert all(re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}[+-]\d{2}:\d{2}', value) for value in values)
 
 
 def test_defined_classes_are_inferred_not_asserted():

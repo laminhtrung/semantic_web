@@ -1,0 +1,253 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[a4paper,margin=19mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Be Vietnam Pro}
+  \setmonofont[]{Menlo}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{newunicodechar}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\small}
+\usepackage{fancyhdr}
+\usepackage{array}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small MovieLOD · Bài làm hoàn chỉnh}
+\fancyfoot[C]{\small\thepage}\setlength{\headheight}{15pt}
+\renewcommand{\arraystretch}{1.14}\setlength{\extrarowheight}{1pt}
+\AtBeginEnvironment{longtable}{\small}
+\setlength{\emergencystretch}{3em}\setlength{\parskip}{4pt}
+\usepackage{titling}\setlength{\droptitle}{-1.5cm}
+\pretitle{\begin{center}\Large\bfseries\color{teal}}
+\posttitle{\par\end{center}\vspace{-0.5em}}
+\predate{\begin{center}\small}\postdate{\par\end{center}\vspace{-1em}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  colorlinks=true,
+  linkcolor={teal},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={teal},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\section{Kết quả reasoner và đồng bộ dữ
+liệu}\label{kux1ebft-quux1ea3-reasoner-vuxe0-ux111ux1ed3ng-bux1ed9-dux1eef-liux1ec7u}
+
+Cập nhật ngày 08/10/2026. Dùng \textbf{một file knowledge graph chính:
+ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
+Movie\_\allowbreak{}\allowbreak{}On\allowbreak{}tology.\allowbreak{}o\allowbreak{}wl
+vẫn là file schema riêng, không phải bản knowledge graph thứ hai. Bản
+OWL tương thích riêng đã được bỏ.
+
+\subsection{Kết luận}\label{kux1ebft-luux1eadn}
+
+\textbf{HermiT 1.3.8.1099 và Pellet 2.3.1 đều chạy thành công trên file
+chính:} ontology nhất quán, không có lớp có tên không khả thỏa; đã hoàn
+tất phân cấp lớp và suy luận cá thể. Chạy qua CLI với Java Temurin
+17.0.20.1; không phải ảnh giao diện Protégé. Pellet cũng kiểm tra file
+schema và xác nhận nhất quán.
+
+Lỗi trước đây phát sinh khi HermiT đọc giây có sáu chữ số thập phân.
+Pipeline hiện xuất timestamp đến mili giây: .736805+00:00 thành
+.736+00:00. Cách xuất này áp dụng thống nhất cho OWL, Turtle, JSON-LD và
+Web. Manifest nguồn thô giữ độ chính xác gốc; không sửa phản hồi hoặc
+hash nguồn. Không bỏ thuộc tính ngày giờ, không thêm AllDifferent để
+thay đổi suy luận.
+
+\subsection{Số cá thể suy
+luận}\label{sux1ed1-cuxe1-thux1ec3-suy-luux1eadn}
+
+Hai reasoner có số lượng khớp nhau. Chỉ đếm IRI tài nguyên nội bộ, loại
+alias
+Wikidata\allowbreak{}/\allowbreak{}\allowbreak{}D\allowbreak{}Bpedia\allowbreak{}.\allowbreak{}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrr@{}}
+\toprule\noalign{}
+Lớp & HermiT & Pellet \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Acting\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on & 855 & 855 \\
+Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution & 31 &
+31 \\
+Writing\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion & 51 & 51 \\
+Producin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution & 73 &
+73 \\
+Actor & 769 & 769 \\
+Filmmaker & 89 & 89 \\
+AwardWinner & 290 & 290 \\
+ActionFilm & 12 & 12 \\
+ComedyFilm & 4 & 4 \\
+DramaFilm & 25 & 25 \\
+Science\allowbreak{}F\allowbreak{}iction\allowbreak{}Fi\allowbreak{}lm &
+6 & 6 \\
+Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{} &
+26 & 26 \\
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film & 0 & 0 \\
+FilmStudio & 0 & 0 \\
+\end{longtable}
+}
+
+Nolan (person-\allowbreak{}\allowbreak{}Q25191) thuộc \textbf{Filmmaker}
+và \textbf{AwardWinner} theo cả hai reasoner. Mười hai lớp đầu khớp OWL
+RL. Pellet hoàn tất bước suy luận cá thể trong khoảng 120,49 giây.
+
+\textbf{Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film và
+FilmStudio:}
+Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet có 0
+cá thể được suy luận vào hai lớp này; số 30/6 trong pipeline ứng dụng là
+quy tắc SPARQL COUNT DISTINCT. OWL không mặc định hai IRI khác nhau là
+hai cá thể khác nhau. Không có cá thể suy luận không đồng nghĩa lớp
+không khả thỏa. Phải ghi rõ phương pháp khi dùng hai bảng kết quả.
+
+\subsection{Dùng trong Protégé}\label{duxf9ng-trong-protuxe9guxe9}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Stop reasoner và đóng bản đang mở để tránh dùng dữ liệu cũ.
+\item
+  Mở
+  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl
+  đã cập nhật trong thư mục dự án này.
+\item
+  Chọn HermiT → Start reasoner; xem inferred hierarchy hoặc inferred
+  Types.
+\item
+  Với Nolan, kiểm tra
+  Filmmake\allowbreak{}r/\allowbreak{}\allowbreak{}Award\allowbreak{}W\allowbreak{}inner;
+  ảnh asserted chỉ thể hiện kiểu khai báo.
+\end{enumerate}
+
+Nếu từng lưu một bản sao ở thư mục khác, cần mở lại file mới trong dự
+án. Slide và checklist dùng tên file chính trên.
+
+\subsection{Minh chứng và chạy
+lại}\label{minh-chux1ee9ng-vuxe0-chux1ea1y-lux1ea1i}
+
+\begin{itemize}
+\tightlist
+\item
+  evidence\allowbreak{}/\allowbreak{}hermit\_\allowbreak{}run.\allowbreak{}json\allowbreak{}:\allowbreak{}
+  file đầu vào, SHA-256 và số lượng HermiT.
+\item
+  evidence\allowbreak{}/\allowbreak{}hermit\_\allowbreak{}primary\_\allowbreak{}run.\allowbreak{}txt:\allowbreak{}
+  log thực thi và các dòng Type từ HermiT.
+\item
+  evidence\allowbreak{}/\allowbreak{}hermit\_\allowbreak{}inferred\allowbreak{}\_\allowbreak{}types.\allowbreak{}t\allowbreak{}tl:\allowbreak{}
+  các type trích từ HermiT.
+\item
+  evidence\allowbreak{}/\allowbreak{}pellet\_\allowbreak{}run.\allowbreak{}json\allowbreak{}:\allowbreak{}
+  từng bước kiểm tra, SHA-256, thời gian và số lượng Pellet.
+\item
+  evidence/pellet\_Movie\_*\_*.txt: log consistency, unsat, classify và
+  realize.
+\item
+  evidence\allowbreak{}/\allowbreak{}pellet\_\allowbreak{}inferred\allowbreak{}\_\allowbreak{}types.\allowbreak{}t\allowbreak{}tl:\allowbreak{}
+  các type trích từ Pellet.
+\item
+  evidence\allowbreak{}/\allowbreak{}timesta\allowbreak{}mp\_\allowbreak{}norma\allowbreak{}lization\allowbreak{}.\allowbreak{}json:\allowbreak{}
+  thời điểm gốc, thời điểm xuất và hash mới.
+\end{itemize}
+
+\begin{verbatim}
+.venv/bin/python -m pip install -r requirements_reasoner.txt
+.venv/bin/python src/check_owl_reasoner.py --java /duong/dan/toi/java --realize
+\end{verbatim}
+
+Lệnh trên chạy Pellet trực tiếp với OWLAPI. Nếu Java nằm trong PATH có
+thể bỏ --java. HermiT có thể chạy trong Protégé theo hướng dẫn trên.
+src/build.py luôn xuất timestamp đến mili giây, nên build lại không tạo
+lỗi sáu chữ số như trước.
+
+\subsection{Đồng bộ và video giữ
+nguyên}\label{ux111ux1ed3ng-bux1ed9-vuxe0-video-giux1eef-nguyuxean}
+
+Đã kiểm tra Turtle và JSON-LD đẳng cấu; OWL chính đẳng cấu với dữ liệu
+cộng schema. Các kiểm tra nguồn, truy vấn và test đã chạy lại. Bản Web
+dùng cùng dữ liệu và được kiểm tra sau xuất bản.
+
+\textbf{Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4 giữ
+nguyên byte theo yêu cầu nhóm.} Hash dữ liệu khi ghi video được giữ đúng
+là hash lịch sử, không thay bằng hash mới.
+video\_\allowbreak{}da\allowbreak{}taset\_\allowbreak{}co\allowbreak{}mpatibil\allowbreak{}ity.\allowbreak{}json\allowbreak{}
+xác minh chỉ 76 triple retrievedAt thay đổi độ chính xác; mọi triple
+khác và MP4 không đổi. Nội dung phim, vai trò, liên kết và số đếm trong
+video vẫn áp dụng. Video chưa thể hiện kết quả
+Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet mới và
+vẫn nhắc bộ slide ngắn 13 trang; dùng báo cáo này cùng slide chính 24
+trang để trình bày kết quả hiện tại.
+
+Tài liệu:
+\href{https://owlready2.readthedocs.io/en/v0.49/reasoning.html}{Owlready2
+Reasoning}.
+
+\end{document}

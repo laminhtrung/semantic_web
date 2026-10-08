@@ -1,12 +1,40 @@
-# MovieLOD — bản bài làm độc lập từ A đến Z
+# MovieLOD — dữ liệu phim liên kết, bản 2.0 đã hoàn tất
 
-**Bắt đầu:** đọc [hướng dẫn A–Z](docs/Huong_dan_A_Z.pdf), rồi chạy ứng dụng. Bản này dùng mô hình **15 lớp**, dữ liệu thật của **30 phim**, có nguồn, chuyển đổi RDF, **964 liên kết ngoài**, giao diện SPARQL, endpoint và terminal.
+**5/5 yêu cầu đạt theo phạm vi kiểm tra; tự đề xuất 10/10** trên thang chia đều 2 điểm/yêu cầu. Đây không phải điểm chính thức của giảng viên. Bản cục bộ và [website công khai](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site) đã đồng bộ ontology 2.0: **42 lớp, 30 phim, 851 người, 1.010 đóng góp, 19.339 triple dữ liệu và 1.727 liên kết ngoài**.
 
-**Ngôn ngữ ứng dụng:** giao diện, truy vấn mẫu, tên biến SPARQL, nhãn ontology/vai trò và thông báo endpoint dùng tiếng Anh. Tài liệu hướng dẫn học phần được viết bằng tiếng Việt.
+## Bộ nộp và tài liệu thuyết trình
 
-## Chạy ngay
+| File | Nội dung |
+|:--|:--|
+| [Slide.pptx](docs/Slide.pptx) / [PDF](docs/Slide.pdf) | 24 trang, font Be Vietnam Pro, ảnh app thật, sơ đồ; 11 khung ảnh Protégé có hướng dẫn ngay trên slide; chữ/sơ đồ và Speaker Notes chỉnh sửa được |
+| [Script thuyết trình](docs/Script_thuyet_trinh.pdf) / [Markdown](docs/Script_thuyet_trinh.md) | Lời nói riêng cho 24 slide, khoảng 18–22 phút; chia người nói và câu hỏi bảo vệ |
+| [Video demo](docs/Video_demo.mp4) | Bản 2.0 mới, 4 phút 50 giây; ghi tương tác app và kết quả lệnh thật, có giọng tổng hợp tiếng Việt Linh |
+| [Kịch bản demo](docs/Kich_ban_video.pdf) / [Markdown](docs/Kich_ban_video.md) | Timeline, lời đọc khớp video, lệnh và kết quả cần thấy; cách tự quay/ghi lại |
+| [Checklist ảnh Protégé](docs/Checklist_anh_Protege.pdf) | 11 ảnh, tên file, slide tương ứng, thao tác và nội dung cần thấy |
+| [Bảng chấm](CHAM_DIEM.pdf) / [Markdown](CHAM_DIEM.md) | 10/10 tự đề xuất sau sửa; đủ 5 YC, tiêu chí con, minh chứng và giới hạn |
+| [Báo cáo](docs/Bao_cao.pdf) / [Markdown](docs/Bao_cao.md) | Đúng 5 yêu cầu, cập nhật 2.0, không quá 15 trang |
+| [A–Z](docs/Huong_dan_A_Z.pdf) / [hướng dẫn chi tiết](docs/Huong_dan_thao_tac_chi_tiet.pdf) | Chạy, đọc từ khóa, lệnh, Protégé, Web/endpoint/terminal và xử lý lỗi |
+| [Mô tả ontology](docs/Mo_ta_ontology.pdf) / [bảng đầy đủ](docs/Ontology_Redesign.pdf) | Giải thích tiếng Việt: 42 lớp/23 quan hệ/6 datatype property/14 lớp phân loại/24 truy vấn |
+| [ZIP tài liệu](docs/Bo_tai_lieu_thuyet_trinh.zip) | Slide, video, báo cáo, scripts và hướng dẫn trong một gói |
 
-Mở terminal trong thư mục này:
+**Bản ngắn:** [13 slide](docs/Slide_ngan_13.pptx) và [lời nói riêng](docs/Script_thuyet_trinh_ngan_13.pdf) vẫn được giữ. Video demo 4:50 minh họa app và nhắc bộ ngắn 13 trang; bộ 24 trang phục vụ thuyết trình đầy đủ.
+
+**Ảnh Protégé:** chưa chụp được do macOS chặn điều khiển giao diện. Các khung P00–P10 ghi rõ hướng dẫn; nhóm bổ sung ảnh thật vào PPTX hoặc lưu đúng tên trong evidence/protege rồi tạo lại slide. Khung chờ không được gọi là ảnh minh chứng đã có.
+
+**Chạy HermiT trong Protégé:** mở `ontology/Movie_Knowledge_Graph.owl`. File chính đã sửa timestamp đến mili giây và đồng bộ Turtle/JSON-LD/Web; không còn bản OWL tương thích riêng. HermiT và Pellet đã kiểm tra. Xem `docs/Ket_qua_reasoner.pdf` và `evidence/hermit_run.json`. Video giữ nguyên; minh chứng chỉ thay đổi timestamp ở `evidence/video_dataset_compatibility.json`.
+
+Bộ dự án đầy đủ được đóng thành `../movie_lod_complete.zip`, gồm mã, nguồn gốc, RDF/OWL, sản phẩm và evidence. **Điền tên nhóm/thành viên/lớp trên bìa**, xem lại video và tập nói trước khi nộp. Font trên máy khác cần Be Vietnam Pro hoặc dùng PDF. Video dùng giọng tổng hợp, không phải lời ghi của sinh viên; nhóm có thể đọc lại bằng giọng thành viên.
+
+## Các lỗi đã sửa và minh chứng
+
+- **Nguồn:** bổ sung 43 phản hồi thiếu; hiện **76/76 file có và hash khớp**. Một phản hồi tải lại đổi nội dung được lưu hash/time mới; giữ danh mục trước sửa. Đã chạy collect từ cache, build, reason, validate và test.
+- **Public:** triển khai lại site hiện có và giữ audience public. Kiểm tra 8 URL không đăng nhập trả 200; 4 graph RDF kiểm tra (Turtle, JSON-LD, ontology, Inception) đều đẳng cấu local, có giấy phép và mô tả máy đọc được.
+- **Video/tài liệu:** thay video cũ bằng demo tương tác bản 2.0 dài 290,05 giây, đồng bộ slide/scripts/báo cáo/hướng dẫn và chấm lại theo minh chứng.
+- **Tái lập:** bỏ gitignore loại phản hồi nguồn; thu thập giãn lượt tải và tôn trọng 429 Retry-After; validate báo file thiếu rõ ràng và chạy nhóm truy vấn ở chế độ dữ liệu phù hợp; đóng gói kiểm tra nguồn/video/public trước khi tạo ZIP.
+
+**14 test pass, 9/9 browser checks, 24 file truy vấn đã chạy.** Minh chứng mới: [validation](evidence/validation.json), [tests](evidence/tests.txt), [browser](evidence/browser_checks.json), [public HTTP/graph](evidence/publication_checks.json), [source recovery](evidence/source_recovery.json), [video](evidence/video.json), [bộ nộp](evidence/deliverables.json). `review_before_fix.json`, `self_assessment_before_fix.md` và `review_publication_2026-10-08.json` là lịch sử trước sửa.
+
+## Chạy ứng dụng
 
 ```bash
 python3 -m venv .venv
@@ -14,112 +42,57 @@ python3 -m venv .venv
 .venv/bin/python src/server.py
 ```
 
-Mở **http://127.0.0.1:8000**. Dữ liệu đã có sẵn. Trên macOS có thể chạy [start.command](start.command). Dừng server bằng Ctrl+C. Nếu cổng đã được dùng: `src/server.py --port 8001`.
+Mở **http://127.0.0.1:8000**, dừng Ctrl+C; macOS có thể dùng start.command. Nếu cổng bận thêm `--port 8001`, đổi URL/curl tương ứng. **Sau build cần khởi động lại server** để endpoint nạp graph mới.
 
-**Bản hosted:** [MovieLOD](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site). Trạng thái và audience thực tế nằm ở [publication.json](evidence/publication.json). Site đã được cập nhật công khai với giao diện và truy vấn tiếng Anh, cùng dữ liệu dùng trực tiếp các lớp DBpedia. Trạng thái triển khai mới nằm trong `publication.json`; `publication_checks.json` ghi lại lần đối chiếu HTTP trước đó.
+```bash
+.venv/bin/python src/query.py queries/02_inception.rq
+.venv/bin/python src/query.py queries/18_inferred_filmmakers.rq --reasoned
+curl -X POST http://127.0.0.1:8000/sparql \
+  -H 'Content-Type: application/sparql-query' \
+  --data-binary @queries/02_inception.rq
+curl -L -H 'Accept: text/turtle' \
+  http://127.0.0.1:8000/resource/film-Q25188
+```
 
-## Sản phẩm nộp
+Inception: 2010/148 phút/Christopher Nolan; phim Nolan: 8 dòng; đóng góp Inception: 25 dòng với 4 vai trò. Web có 14 mẫu trực tiếp, queries có 24 file. Endpoint chỉ graph khai báo; --reasoned nạp schema và file phân loại đã lưu, không tự tính suy luận lúc truy vấn. Hosted dùng Comunica trong trình duyệt, không phải endpoint Flask public.
 
-- [Báo cáo](docs/Bao_cao.pdf): đối chiếu đúng 5 tiêu chí; không quá 15 trang.
-- [Slide PowerPoint](docs/Slide.pptx) và [PDF slide](docs/Slide.pdf).
-- [Video demo](docs/Video_demo.mp4): 3–5 phút, có lời đọc tiếng Việt tổng hợp và hình ứng dụng thật.
-- [Hướng dẫn A–Z](docs/Huong_dan_A_Z.pdf); [kịch bản thuyết trình](docs/Kich_ban_video.md).
-- [Hướng dẫn thao tác chi tiết từ đầu đến cuối](docs/Huong_dan_thao_tac_chi_tiet.pdf): thao tác, lệnh chạy, kết quả cần thấy và xử lý lỗi; có [bản Markdown](docs/Huong_dan_thao_tac_chi_tiet.md).
-- Mã nguồn, dữ liệu gốc, dữ liệu RDF và biên bản kiểm tra trong thư mục này.
-
-## 5 yêu cầu tương ứng với phần nào?
-
-| Yêu cầu trong đề | Phần đã triển khai | Minh chứng |
-|:--|:--|:--|
-| YC1 — Define an ontology: định nghĩa mô hình | 15 lớp; tái sử dụng trực tiếp 3 lớp DBpedia; quan hệ, cardinality, inverse, disjointness và 6 defined class dùng giao/hợp. | `ontology/Movie_Ontology.owl`; `src/build.py`; test truy vấn DBpedia và suy luận. |
-| YC2 — Collect data: thu thập dữ liệu | Tải Wikidata/DBpedia, xác định danh tính chính xác, lưu phản hồi gốc và hash. | `src/collect.py`; `data/raw/snapshots.json`; `evidence/collection.json`. |
-| YC3 — Transform to 4*: RDF và công bố mở | Turtle, JSON-LD, HTTP IRI, giấy phép; trang mô tả từng thực thể và tải RDF. | `data/processed/`; `LICENSE-DATA.txt`; Web; `publication.json`. |
-| YC4 — Link to 5*: liên kết ngoài | 936 liên kết Wikidata và 28 DBpedia, ghi phương pháp nối. | `evidence/link_audit.json`; truy vấn 05. |
-| YC5 — SPARQL interface: truy vấn | Web, endpoint GET/POST cục bộ, terminal; SELECT/ASK/CONSTRUCT. | `src/server.py`; `src/query.py`; `queries/`; ảnh và video demo. |
-
-**Điều kiện xuất bản:** chạy cục bộ hay có bản hosted riêng tư chưa đủ “Open Data trên Web”. Cần xác nhận audience `public`, status `succeeded` và bản công khai khớp phiên bản dữ liệu nộp. `local_changes_pending_publication` ghi nhận khi bản hosted còn dùng dữ liệu trước lần sửa mới.
-
-### Tái sử dụng các lớp DBpedia
-
-| Lớp dùng trực tiếp | Dữ liệu trong bài | Định nghĩa nguồn |
-|:--|:--|:--|
-| `dbo:Film` | 30 phim | [DBpedia Film](https://dbpedia.org/ontology/Film) |
-| `dbo:Person` | 851 người tham gia | [DBpedia Person](https://dbpedia.org/ontology/Person) |
-| `dbo:Country` | 11 quốc gia | [DBpedia Country](https://dbpedia.org/ontology/Country) |
-
-Các IRI lớp này được dùng trực tiếp trong `rdf:type`, domain/range, ràng buộc OWL và truy vấn mẫu. Ví dụ Inception có kiểu `dbo:Film`; Nolan có kiểu `dbo:Person`. Truy vấn `?film a dbo:Film` chạy được trên dữ liệu đã lưu mà không cần bật suy luận.
-
-Mô hình có **42 lớp có tên** (ontology 2.0.0): 3 lớp DBpedia tái dùng, phần còn lại thuộc namespace của bài — theo cây `CreativeWork`/`Agent`/`Contribution`/`Genre`/`Award`/`Organization`, trong đó **14 lớp là suy luận** (`Actor`, `Filmmaker`, `AwardWinner`, `ActionFilm`, `MultiGenreFilm`, `FilmStudio`...). Chi tiết đầy đủ ở [Ontology_Redesign.md](docs/Ontology_Redesign.md).
-
-### Phân loại suy luận và ý nghĩa lớp
-
-14 lớp suy luận (`Actor`, `Filmmaker`, `AwardWinner`, `ActingContribution`/`DirectingContribution`/`WritingContribution`/`ProducingContribution`, `ActionFilm`/`ComedyFilm`/`DramaFilm`/`ScienceFictionFilm`/`MultiGenreFilm`/`AwardWinningFilm`, `FilmStudio`) được định nghĩa bằng `equivalentClass`, `intersectionOf`, `unionOf`, `someValuesFrom`, `hasValue` và `minQualifiedCardinality`. Xem [mô tả ontology và câu hỏi bảo vệ](docs/Mo_ta_ontology.md) và [bảng chi tiết đầy đủ](docs/Ontology_Redesign.md). Kết quả chạy suy luận ở [ontology_reasoning.json](evidence/ontology_reasoning.json); các kiểu suy ra được lưu riêng trong `data/processed/inferred_classes.ttl`. Endpoint mặc định vẫn truy vấn dữ liệu khai báo — chạy `python src/query.py <file> --reasoned` để truy vấn trên các lớp suy luận.
-
-Bản hosted cần xuất bản lại để đồng bộ ontology 2.0.0 (bản local hiện có 42 lớp, nhiều hơn bản hosted). PDF báo cáo, slide và video hiện vẫn mô tả ontology 1.1.0 trước khi mở rộng Contribution/Award/Organization.
-
-## Làm lại toàn bộ quy trình
+## Quy trình và giới hạn
 
 ```bash
 .venv/bin/python src/collect.py
 .venv/bin/python src/build.py
 .venv/bin/python src/prepare_web.py
-.venv/bin/python src/validate.py
 .venv/bin/python src/reason.py
+.venv/bin/python src/validate.py
 .venv/bin/python -m pytest -q
 ```
 
-Hoặc `make all` sau khi tạo `.venv`. Thu thập mặc định dùng cache đã kiểm tra SHA-256; `collect.py --refresh` tải lại qua Internet. Không tự điền thông tin thiếu. `quality_issues.json` ghi các giá trị nguồn cần chú ý.
+`collect.py --refresh` chủ động tải nguồn mới và có thể đổi dữ liệu; cache đủ/khớp hash không tải lại. Khi thay dữ liệu, cập nhật tài liệu/video, xuất bản lại và chạy check_publication.py. `make all` chạy quy trình từ cache nguồn hiện đã đủ.
 
-**Truy vấn bằng terminal:**
+Contribution ghi một người, một phim, một vai trò: Director/Actor/Writer/Producer. Dùng dbo:Film/Person/Country là tái sử dụng lớp; owl:sameAs nối cá thể; sourceSnapshot ghi xuất xứ. 12 lớp dùng OWL RL; MultiGenreFilm/FilmStudio dùng SPARQL đếm IRI bổ sung. HermiT/Pellet xác nhận tính nhất quán; hai lớp cardinality vẫn dùng COUNT DISTINCT trong ứng dụng; mẫu 30 phim có chủ đích và một số nhóm genre/award ánh xạ bằng nhãn. Hash kiểm tra toàn vẹn, không bảo đảm mọi phát biểu ngoài đời đúng.
 
-```bash
-.venv/bin/python src/query.py queries/02_inception.rq
-```
+## Tạo lại tài liệu, ảnh và video
 
-**Gọi endpoint:** khởi động server, rồi:
+Sửa Markdown trong docs/CHAM_DIEM; lời slide ở src/presentation_content.py. PDF cần Pandoc/Tectonic/font Be Vietnam Pro; slide dùng python-pptx/Pillow.
 
 ```bash
-curl -X POST http://127.0.0.1:8000/sparql \
-  -H 'Content-Type: application/sparql-query' \
-  --data-binary @queries/02_inception.rq
+.venv/bin/python src/make_slides_video.py --slides-only
+.venv/bin/python src/make_docs.py
+.venv/bin/python src/prepare_web.py
 ```
 
-**Tra cứu một IRI bằng RDF:**
+make_docs render Markdown hiện có, không ghi đè nội dung. Slide có editable text/diagram; PDF slide hiện là bản vector có chữ tìm kiếm được, xuất từ bố cục PPTX. Kiểm tra browser cần Playwright và Chrome/Chromium; `browser_check.py --port 8000` khi server đang chạy.
+
+Ghi lại demo trên macOS cần Playwright, FFmpeg hệ thống và voice Linh. Terminal A chạy `src/demo_server.py --port 8002`; terminal B:
 
 ```bash
-curl -L -H 'Accept: text/turtle' \
-  http://127.0.0.1:8000/resource/film-Q25188
+.venv/bin/python -m pip install playwright
+.venv/bin/python -m playwright install ffmpeg
+.venv/bin/python src/record_demo.py --port 8002
 ```
 
-## Cách đọc các file
+Các trang xem minh chứng chỉ phục vụ ghi demo cục bộ, không được xuất bản lên sản phẩm. Cảnh kết luận chỉ ghi khi public graph check đã đạt. Kịch bản có hướng dẫn dùng giọng thành viên nếu muốn.
 
-| Nơi lưu | Ý nghĩa |
-|:--|:--|
-| `config.json` | URL định danh và danh sách phim đã chọn. |
-| `ontology/Movie_Ontology.owl` | Chỉ mô hình: mở bằng Protégé để xem lớp/quy tắc. |
-| `ontology/Movie_Knowledge_Graph.owl` | Cả mô hình và dữ liệu: mở bằng Protégé để xem cá thể. |
-| `data/raw/` | Phản hồi thật, URL nguồn, thời điểm lấy và SHA-256. |
-| `data/processed/` | Dữ liệu chuẩn hóa, tách riêng khỏi nguồn gốc. |
-| `queries/` | 24 câu hỏi SPARQL mẫu (3 nhóm: trực tiếp, theo hierarchy, cần suy luận) theo thứ tự học/demo. |
-| `src/` | Mã nguồn toàn quy trình, có thể chạy từng bước. |
-| `web/dist/` | Web, thư viện truy vấn tự chứa, trang RDF và mô tả tài nguyên. |
-| `evidence/` | Số liệu, kiểm tra dữ liệu bằng Python, kiểm tra nguồn, kết quả truy vấn, ảnh. |
-| `docs/` | Các tài liệu để đọc, thuyết trình và nộp. |
+**Đóng gói:** `.venv/bin/python src/package.py` kiểm tra graph, nguồn, video, sản phẩm và public evidence rồi tạo ZIP đầy đủ ở thư mục cha; loại .venv/Git/cache/file dựng video/hosting archive. Dữ liệu CC BY-SA 4.0, mã MIT; giữ giấy phép thư viện.
 
-**Giấy phép:** dữ liệu CC BY-SA 4.0, ghi công Wikidata/DBpedia/Wikipedia; mã ứng dụng MIT. Thư viện Comunica giữ giấy phép riêng.
-
-## Kiểm tra giao diện và tạo lại tài liệu
-
-Ứng dụng chạy được chỉ với Python và các dependencies. PDF/slide/video đã được tạo sẵn. Để tạo lại PDF: cần Pandoc, Tectonic và font Be Vietnam Pro; chạy `.venv/bin/python src/make_docs.py`.
-
-Kiểm tra trình duyệt là bước bổ sung: cài Playwright và Chromium, chạy server, rồi `python src/browser_check.py`. Script dùng Chrome đã cài trên macOS hoặc Chromium của Playwright. Không cần bước này để dùng ứng dụng.
-
-Tạo lại hướng dẫn thao tác chi tiết: chỉnh `docs/Huong_dan_thao_tac_chi_tiet.md`, rồi chạy `.venv/bin/python src/make_manual.py`; dùng cùng Pandoc, Tectonic và font như báo cáo.
-
-Video được tạo từ slide và ảnh ứng dụng thật; giọng tiếng Việt Linh của macOS. Mã tạo lại nằm ở `src/make_slides_video.py`, cần FFmpeg và lệnh `say` trên macOS.
-
-**Đổi địa chỉ xuất bản:** chạy `src/rebase.py https://ten-mien-moi`, sau đó build, prepare_web, validate và tạo lại tài liệu. Mã đồng bộ namespace trong dữ liệu, truy vấn và giao diện. Không sửa từng IRI bằng tay.
-
-**Gói lại để nộp:** `.venv/bin/python src/package.py` kiểm tra RDF, số trang báo cáo, slide, thời lượng video và tạo ZIP bên cạnh thư mục này; loại `.venv`, Git và file tạm.
-
-Nguồn đối chiếu: [W3C Linked Data](https://www.w3.org/DesignIssues/LinkedData.html), [W3C SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), [Wikidata licensing](https://www.wikidata.org/wiki/Wikidata:Licensing), [Comunica](https://comunica.dev/docs/query/getting_started/query_browser_app/).
+Tham khảo [Linked Data](https://www.w3.org/DesignIssues/LinkedData.html), [SPARQL](https://www.w3.org/TR/sparql11-query/), [OWL 2 Profiles](https://www.w3.org/TR/owl2-profiles/).

@@ -1,0 +1,6 @@
+{
+  "attempt_date": "2026-10-08",
+  "status": "unavailable",
+  "reason": "System Events returned osascript is not allowed assistive access (-1728); no on-screen Protege window was available for a window-only capture. No screenshot is claimed.",
+  "fallback": "Editable photo placeholders with exact capture instructions on the slides."
+}

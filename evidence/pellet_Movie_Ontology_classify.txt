@@ -1,0 +1,48 @@
+Classifying 47 elements
+Classifying:  2% complete in 00:00Classifying:  4% complete in 00:00Classifying:  6% complete in 00:00Classifying:  8% complete in 00:00Classifying:  10% complete in 00:00Classifying:  12% complete in 00:00Classifying:  14% complete in 00:00Classifying:  17% complete in 00:00Classifying:  19% complete in 00:00Classifying:  21% complete in 00:00Classifying:  23% complete in 00:00Classifying:  25% complete in 00:00Classifying:  27% complete in 00:00Classifying:  29% complete in 00:00Classifying:  31% complete in 00:00Classifying:  34% complete in 00:00Classifying:  36% complete in 00:00Classifying:  38% complete in 00:00Classifying:  40% complete in 00:00Classifying:  42% complete in 00:00Classifying:  44% complete in 00:00Classifying:  46% complete in 00:00Classifying:  48% complete in 00:00Classifying:  51% complete in 00:00Classifying:  53% complete in 00:00Classifying:  55% complete in 00:00Classifying:  57% complete in 00:00Classifying:  59% complete in 00:00Classifying:  61% complete in 00:00Classifying:  63% complete in 00:00Classifying:  65% complete in 00:00Classifying:  68% complete in 00:00Classifying:  70% complete in 00:00Classifying:  72% complete in 00:00Classifying:  74% complete in 00:00Classifying:  76% complete in 00:00Classifying:  78% complete in 00:00Classifying:  80% complete in 00:00Classifying:  82% complete in 00:00Classifying:  85% complete in 00:00Classifying:  87% complete in 00:00Classifying:  89% complete in 00:00Classifying:  91% complete in 00:00Classifying:  93% complete in 00:00Classifying:  95% complete in 00:00Classifying:  97% complete in 00:00Classifying:  100% complete in 00:00
+Classifying finished in 00:00
+
+ http://www.w3.org/2002/07/owl#Thing
+    http://dbpedia.org/ontology/Country
+    http://dbpedia.org/ontology/Language = https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Language
+    http://rdfs.org/ns/void#Dataset = https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Dataset
+    https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Agent
+       http://dbpedia.org/ontology/Person
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Actor
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#AwardWinner
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Filmmaker
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Organization
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProductionCompany
+             https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FilmStudio
+    https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Award
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActingAward
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectingAward
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FilmAward
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WritingAward
+    https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ContributionRole
+    https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Contribution
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActingContribution
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DirectingContribution
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ProducingContribution
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#WritingContribution
+    https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#CreativeWork
+       http://dbpedia.org/ontology/Film
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActionFilm
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#AnimatedFilm
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#AwardWinningFilm
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ComedyFilm
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DocumentaryFilm
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DramaFilm
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FeatureFilm
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#MultiGenreFilm
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ScienceFictionFilm
+    http://dbpedia.org/ontology/Genre = https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#Genre
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#FictionGenre
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ActionGenre
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ComedyGenre
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DramaGenre
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ScienceFictionGenre
+       https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#NonFictionGenre
+          https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#DocumentaryGenre
+    https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#SourceSnapshot
+

@@ -1,0 +1,8 @@
+{
+  "cause": "Public static hosting serves /data/movies.ttl as application/octet-stream; Comunica cannot choose an RDF parser.",
+  "fix": "Custom Comunica fetch corrects MIME only for successful responses from the known same-origin Turtle dataset.",
+  "production_verified": true,
+  "checks": "evidence/public_query_checks.json",
+  "video_modified": false,
+  "video_sha256": "31ba259a7762fbf64cb6a7818842cd1c028039fe03d8c6684d8e93d5acec59fd"
+}
