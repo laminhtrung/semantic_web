@@ -1,5 +1,7 @@
 # DBpedia-based Movie Ontology: Evidence-driven Design
 
+**Final OWL export (version 3.0.0):** [Movie_Knowledge_Graph.owl](../ontology/Movie_Knowledge_Graph.owl). The canonical local OWL and schema have been updated and checked directly with HermiT. The deployed application still uses its previous vocabulary snapshot.
+
 This design is grounded in the existing crawled dataset. Domain facts are not invented. The runnable validation is independent of the deployed application; adopting it requires vocabulary migration, rather than importing this module into the old model.
 
 ## 1. Findings and semantic decisions

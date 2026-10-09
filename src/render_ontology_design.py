@@ -39,6 +39,10 @@ def main():
         for p in sorted((ROOT/'queries/design').glob('*.rq')):z.write(p,'queries/design/'+p.name)
         for name in ['complete.ttl','schema.ttl','asserted.ttl','inferred.ttl','before_after.trig','reasoning.json','query_results.json','source_mapping.json','hermit.log','cardinality_negative.log','classification_input.json','checks.json','README.md']:
             p=ROOT/'evidence/ontology_design'/name;z.write(p,'evidence/'+name)
-    write_json(ROOT/'evidence/ontology_design/deliverables.json',{'artifacts':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [md,md.with_suffix('.html'),md.with_suffix('.docx'),bundle]},'authoritative_owl_unmodified':True,'app_unmodified':True,'video_sha256':hashlib.sha256((ROOT/'docs/Video_demo.mp4').read_bytes()).hexdigest()})
+    if (ROOT/'evidence/ontology_design/final_owl_checks.json').exists():
+        with zipfile.ZipFile(bundle,'a',zipfile.ZIP_DEFLATED) as z:
+            for name in ['Movie_Knowledge_Graph.owl','Movie_Ontology.owl','movie.ttl']:z.write(ROOT/'ontology'/name,'ontology/'+name)
+            for name in ['final_owl_checks.json','final_owl_hermit.log']:z.write(ROOT/'evidence/ontology_design'/name,'evidence/'+name)
+    write_json(ROOT/'evidence/ontology_design/deliverables.json',{'artifacts':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [md,md.with_suffix('.html'),md.with_suffix('.docx'),bundle]},'authoritative_owl_unmodified':not (ROOT/'evidence/ontology_design/final_owl_checks.json').exists(),'app_unmodified':True,'video_sha256':hashlib.sha256((ROOT/'docs/Video_demo.mp4').read_bytes()).hexdigest()})
     print(bundle)
 if __name__=='__main__':main()
