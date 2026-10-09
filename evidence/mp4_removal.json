@@ -1,0 +1,157 @@
+{
+  "user_requested_removal": true,
+  "deleted_files": [
+    {
+      "path": "web/dist/docs/Video_demo.mp4",
+      "sha256": "31ba259a7762fbf64cb6a7818842cd1c028039fe03d8c6684d8e93d5acec59fd"
+    },
+    {
+      "path": "docs/Video_demo.mp4",
+      "sha256": "31ba259a7762fbf64cb6a7818842cd1c028039fe03d8c6684d8e93d5acec59fd"
+    },
+    {
+      "path": "docs/video_parts_v2/09.mp4",
+      "sha256": "5d110fbb83320e5b0e2a29fe385c036e936e1d3a485d31de57e6be24061d1e0a"
+    },
+    {
+      "path": "docs/video_parts_v2/08.mp4",
+      "sha256": "5faaf9670e3d6b75032bd97bb3c6aafd7d8a6cea4313b95cc8981a7534bc4c97"
+    },
+    {
+      "path": "docs/video_parts_v2/03.mp4",
+      "sha256": "420d1908e967f31310aee79ebf32d98860c24f14e467c44b5e7ad6e527d266c7"
+    },
+    {
+      "path": "docs/video_parts_v2/02.mp4",
+      "sha256": "e49b523c4e13b8058f39f087f7286dfc0f26ee15a01db39def58e6a906416106"
+    },
+    {
+      "path": "docs/video_parts_v2/01.mp4",
+      "sha256": "683292d10ec690fc0732221b86f08281afb957437a25d020037c66a16435a080"
+    },
+    {
+      "path": "docs/video_parts_v2/05.mp4",
+      "sha256": "b3c508edd90ab1c582a07f722b1aa420a4ef827e0c699bb77d33f81f89de4cce"
+    },
+    {
+      "path": "docs/video_parts_v2/10.mp4",
+      "sha256": "2648c122f6096b52e3759fe712937db82d2151c4974c3867c3f7361efdd72955"
+    },
+    {
+      "path": "docs/video_parts_v2/04.mp4",
+      "sha256": "caa55f64685658c77c8ff51954f7296444f1fc3320e603bf647d557eb2d74bdf"
+    },
+    {
+      "path": "docs/video_parts_v2/06.mp4",
+      "sha256": "edb17854514fb8f0e69391efc56a6966dd09cd262dc0146b0be5cb8977cbdd8e"
+    },
+    {
+      "path": "docs/video_parts_v2/07.mp4",
+      "sha256": "74e4c766a80553dfe7b65798460ad10523765647838dae9862ee1c01ba55547f"
+    },
+    {
+      "path": "docs/video_parts/08.mp4",
+      "sha256": "cffea6159026b238b2846060a8f64d6e6e6cd18b1d3a6bced0a102fd055f55fd"
+    },
+    {
+      "path": "docs/video_parts/03.mp4",
+      "sha256": "e670e45083acd30fbd2b9900133bc444db557687047b3e7e585b3dafe6322890"
+    },
+    {
+      "path": "docs/video_parts/02.mp4",
+      "sha256": "83e3ba8a8754c3cf72b9c80d78dd1f401e8478c866440583e6879e5320d10954"
+    },
+    {
+      "path": "docs/video_parts/01.mp4",
+      "sha256": "27dd73f70dc3b9dc8f4620be467f13f400ecb1d155dec7c770529881de54ab1f"
+    },
+    {
+      "path": "docs/video_parts/05.mp4",
+      "sha256": "1e04f9e9063253bf70b1978fdfacd732fb9e281b3e62fb4526f9035a144f9343"
+    },
+    {
+      "path": "docs/video_parts/04.mp4",
+      "sha256": "97a412b243bce82c808e4b813931ee1fccc9b9b330534f4c798947895f12d80d"
+    },
+    {
+      "path": "docs/video_parts/06.mp4",
+      "sha256": "6e19fd837759806927ce63ef38f40c4fe55f3410f6f18e6d3564b60217592ae3"
+    },
+    {
+      "path": "docs/video_parts/07.mp4",
+      "sha256": "9a54c9d4b20d30204896abb86a36c735e7c1bd99011b36ba973d776a324cc9f5"
+    }
+  ],
+  "cleaned_archives": [
+    {
+      "archive": "/Users/gnexla/master_DS/Semantic_web/project/movie_lod_complete/docs/Bo_tai_lieu_thuyet_trinh.zip",
+      "removed_entries": [
+        "docs/Video_demo.mp4"
+      ]
+    },
+    {
+      "archive": "/Users/gnexla/master_DS/Semantic_web/project/movie_lod_complete.zip",
+      "removed_entries": [
+        "movie_lod_complete/docs/Video_demo.mp4",
+        "movie_lod_complete/web/dist/docs/Video_demo.mp4"
+      ]
+    },
+    {
+      "archive": "evidence/site_timestamp_sync.tar.gz",
+      "removed_entries": [
+        "dist/docs/._Video_demo.mp4",
+        "dist/docs/Video_demo.mp4"
+      ]
+    },
+    {
+      "archive": "evidence/site_final_documents.tar.gz",
+      "removed_entries": [
+        "dist/docs/._Video_demo.mp4",
+        "dist/docs/Video_demo.mp4"
+      ]
+    },
+    {
+      "archive": "evidence/site_english_slides.tar.gz",
+      "removed_entries": [
+        "dist/docs/._Video_demo.mp4",
+        "dist/docs/Video_demo.mp4"
+      ]
+    },
+    {
+      "archive": "evidence/site_report_cover_toc.tar.gz",
+      "removed_entries": [
+        "dist/docs/._Video_demo.mp4",
+        "dist/docs/Video_demo.mp4"
+      ]
+    },
+    {
+      "archive": "evidence/site_report_15_en.tar.gz",
+      "removed_entries": [
+        "dist/docs/._Video_demo.mp4",
+        "dist/docs/Video_demo.mp4"
+      ]
+    },
+    {
+      "archive": "evidence/site_query_fixed.tar.gz",
+      "removed_entries": [
+        "dist/docs/._Video_demo.mp4",
+        "dist/docs/Video_demo.mp4"
+      ]
+    },
+    {
+      "archive": "evidence/site_academic_report.tar.gz",
+      "removed_entries": [
+        "dist/docs/._Video_demo.mp4",
+        "dist/docs/Video_demo.mp4"
+      ]
+    },
+    {
+      "archive": "evidence/site_slide24.tar.gz",
+      "removed_entries": [
+        "dist/docs/._Video_demo.mp4",
+        "dist/docs/Video_demo.mp4"
+      ]
+    }
+  ],
+  "content_edited_or_regenerated": false
+}

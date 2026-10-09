@@ -1,5 +1,5 @@
 {
-  "review_date": "2026-10-08",
+  "review_date": "2026-10-09",
   "slide_count": 24,
   "font": "Be Vietnam Pro",
   "slide_language": "English",
@@ -62,7 +62,7 @@
     {
       "id": "P07",
       "slide": 14,
-      "file": "P07_filmstudio_cardinality.png",
+      "file": "P07_three_credit_cardinality.png",
       "image_present": false,
       "instructions_visible_on_slide": true
     },
@@ -83,7 +83,7 @@
     {
       "id": "P10",
       "slide": 21,
-      "file": "P10_nolan_asserted_types.png",
+      "file": "P10_nolan_inferred_types.png",
       "image_present": false,
       "instructions_visible_on_slide": true
     }
@@ -95,6 +95,10 @@
     "06_nolan_roles.png",
     "09_inception_resource.png"
   ],
-  "short_deck_preserved": "docs/Slide_ngan_13.pptx",
-  "technical_self_score": 10.0
+  "short_deck_updated": "docs/Slide_ngan_13.pptx",
+  "application_images_scope": "current version 3.0.0 captures",
+  "technical_self_score": null,
+  "ontology_version": "3.0.0",
+  "application_snapshot": "3.0.0",
+  "mp4_included": false
 }

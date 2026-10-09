@@ -1,11 +1,11 @@
 {
   "artifacts": {
-    "docs/DBpedia_OWL_Design.md": "1a5d26d2a48c9c3ccd06a8e2ab06f6cbf3d335a75e709deddf75dc85ec4c79d8",
-    "docs/DBpedia_OWL_Design.html": "9563f355b098475a6b8fa352ed5d785559a9bc9b09a50812212edc08486c138f",
-    "docs/DBpedia_OWL_Design.docx": "643a592496a923dc81c10e8c1412b44e6aa35e1c7db0c302a98c6bfc5dd09afb",
-    "docs/DBpedia_OWL_Design.zip": "af949cde60d90f5e982d73b857d2376e9b0a8a93b25285744ce73b9830ba57d4"
+    "docs/DBpedia_OWL_Design.md": "50a6a3b3be34d6010be9784723d48556afffbfb6959c3199b9bd748879f65c4b",
+    "docs/DBpedia_OWL_Design.html": "a0fc967f1e7777c8c02328d029ee2654773c516cd8afcd1a84c24e9affe10876",
+    "docs/DBpedia_OWL_Design.docx": "746627b297dbf9121a87f14554384c61bb1b354bb34a3e27670215da8566fcdb",
+    "docs/DBpedia_OWL_Design.zip": "3bc6cb5e0117752b99aca29a07308f85b1e921798aa64af48342a14cddcefa20"
   },
   "authoritative_owl_unmodified": false,
-  "app_unmodified": true,
-  "video_sha256": "31ba259a7762fbf64cb6a7818842cd1c028039fe03d8c6684d8e93d5acec59fd"
+  "application_version": "3.0.0",
+  "mp4_included": false
 }

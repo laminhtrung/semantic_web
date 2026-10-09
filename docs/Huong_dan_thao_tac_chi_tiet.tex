@@ -41,19 +41,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{longtable,booktabs,array}
-\usepackage{caption}
-\captionsetup[table]{skip=6pt}
-\newcounter{none} % for unnumbered tables
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -83,7 +70,6 @@
 \@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
 \hypersetup{
-  pdftitle={MovieLOD: hướng dẫn thao tác chi tiết bản 2.0},
   colorlinks=true,
   linkcolor={teal},
   filecolor={Maroon},
@@ -91,497 +77,117 @@
   urlcolor={teal},
   pdfcreator={LaTeX via pandoc}}
 
-\title{MovieLOD: hướng dẫn thao tác chi tiết bản 2.0}
 \author{}
-\date{MovieLOD 2.0 · Đối chiếu 08/10/2026}
+\date{}
 
 \begin{document}
-\maketitle
 
-\subsection{1. Phiên bản, thứ tự đọc và kết quả cần
-biết}\label{phiuxean-bux1ea3n-thux1ee9-tux1ef1-ux111ux1ecdc-vuxe0-kux1ebft-quux1ea3-cux1ea7n-biux1ebft}
+\section{MovieLOD --- Thao tác kiểm tra bản
+mới}\label{movielod-thao-tuxe1c-kiux1ec3m-tra-bux1ea3n-mux1edbi}
 
-Tài liệu cho \textbf{ontology 2.0}, cập nhật 08/10/2026. Giao diện tiếng
-Anh, hướng dẫn tiếng Việt. Đọc
-Huong\_\allowbreak{}da\allowbreak{}n\_\allowbreak{}\allowbreak{}A\_\allowbreak{}\allowbreak{}Z
-trước; tra bảng lớp ở
-Ontology\allowbreak{}\_\allowbreak{}\allowbreak{}Redesig\allowbreak{}n;
-tập nói theo
-Script\_\allowbreak{}t\allowbreak{}huyet\_\allowbreak{}tr\allowbreak{}inh;
-quay theo
-Kich\_\allowbreak{}ban\allowbreak{}\_\allowbreak{}video.\allowbreak{}
+\begin{quote}
+\textbf{Phiên bản:} Ontology, dữ liệu, web và truy vấn dùng chung 3.0.0.
+MP4 đã được xoá theo yêu cầu; tài liệu demo dùng cho trình diễn trực
+tiếp.
+\end{quote}
 
-\textbf{Mốc local:} 42 lớp, 30 phim, 851 người, 1.010 đóng góp, 45 công
-ty, 672 thực thể giải, 19.339 triple dữ liệu, 518 triple lược đồ, 1.727
-sameAs. Có 24 file SPARQL và 14 mẫu trực tiếp trên Web. Số lượng có thể
-thay đổi nếu tải lại nguồn; phải đo lại thay vì dùng mốc này cho phiên
-bản mới.
+\subsection{1. Kiểm tra đúng file}\label{kiux1ec3m-tra-ux111uxfang-file}
 
-\textbf{Các lỗi đã sửa:} bổ sung 43 file còn thiếu, hiện đủ 76/76 và
-hash khớp; công bố bản 2.0 với 19.339 triple và 42 lớp, graph public
-đẳng cấu local. 14 test pass vẫn cần đi kèm kiểm tra nguồn. Biên bản mới
-ở
-evidence\allowbreak{}/\allowbreak{}review\_\allowbreak{}2026-\allowbreak{}10-\allowbreak{}08.\allowbreak{}json
-và
-publicat\allowbreak{}ion\_\allowbreak{}chec\allowbreak{}ks.\allowbreak{}json.\allowbreak{}
-Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4 đã được thay bằng
-demo tương tác bản 2.0 với lời tiếng Việt tổng hợp.
-
-\subsection{2. Chuẩn bị môi trường và chạy
-ngay}\label{chuux1ea9n-bux1ecb-muxf4i-trux1b0ux1eddng-vuxe0-chux1ea1y-ngay}
-
-Mở terminal tại thư mục chứa README.md và config.json:
-
-\begin{verbatim}
-pwd
-python3 --version
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python src/server.py
-\end{verbatim}
-
-Mở
-\textbf{http:\allowbreak{}/\allowbreak{}/\allowbreak{}1\allowbreak{}27.\allowbreak{}0.\allowbreak{}0.\allowbreak{}1\allowbreak{}:\allowbreak{}8000}.
-Dừng bằng Ctrl+C. Có thể dùng start.\allowbreak{}co\allowbreak{}mmand
-trên macOS. Nếu cổng bị chiếm, dùng
-\texttt{-\allowbreak{}-\allowbreak{}port 8\allowbreak{}001}; thay cổng
-trong mọi URL/curl. Không tự dừng server của người khác. Server nạp dữ
-liệu lúc khởi động; \textbf{sau build phải khởi động lại} để endpoint
-không giữ graph cũ trong RAM.
-
-Dữ liệu chuẩn hóa đã có; không cần chạy collect hay validate để mở ứng
-dụng. Khi ghi video hãy dùng một server vừa khởi động trên cổng trống.
-
-\subsection{3. Kiểm tra giao diện lần
-đầu}\label{kiux1ec3m-tra-giao-diux1ec7n-lux1ea7n-ux111ux1ea7u}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\begin{itemize}
 \tightlist
 \item
-  Chọn \textbf{Inception: year, runtime and director}; bấm \textbf{Run
-  query} nếu cần. Thấy Inception, 2010, 148, Christopher Nolan.
+  Full OWL:
+  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl.\allowbreak{}
 \item
-  Chọn \textbf{Films directed by Christopher Nolan}: 8 dòng trong
-  dataset.
+  Schema:
+  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl
+  / movie.ttl.
 \item
-  Chọn \textbf{Who contributed to Inception, and in which role?}: 25
-  dòng, các vai trò
-  Actor/\allowbreak{}\allowbreak{}Di\allowbreak{}rector/\allowbreak{}\allowbreak{}W\allowbreak{}riter/\allowbreak{}\allowbreak{}Pr\allowbreak{}oducer.\allowbreak{}
-  Hai vai trò cùng người có các Contribution riêng.
+  Facts và inference mới:
+  evidence\allowbreak{}/\allowbreak{}ontolog\allowbreak{}y\_\allowbreak{}design\allowbreak{}/\allowbreak{}asserte\allowbreak{}d.\allowbreak{}ttl,
+  schema.ttl, inferred\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
 \item
-  Chọn \textbf{Production companies of Inception}: 4 dòng.
-  \textbf{Awards received by The Godfather}: 7 dòng.
-\item
-  Chọn \textbf{Is Inception linked to its Wikidata entity?}: True.
-\item
-  Bấm \textbf{Download results} để tải kết quả. Dùng Find a film để tìm
-  Inception, mở trang thực thể, nguồn và link Download RDF (Turtle).
-\end{enumerate}
+  So sánh named graphs:
+  before\_\allowbreak{}a\allowbreak{}fter.\allowbreak{}tri\allowbreak{}g.\allowbreak{}
+\end{itemize}
 
-Các số option không cố định khi thêm câu hỏi; dùng \textbf{nhãn}. Query
-editor có thể sửa SPARQL. Gõ
-\texttt{not \allowbreak{}S\allowbreak{}P\allowbreak{}A\allowbreak{}R\allowbreak{}\allowbreak{}Q\allowbreak{}L},
-bấm Run query để xem báo lỗi; chọn lại câu hỏi mẫu để phục hồi.
+\subsection{2. Protégé}\label{protuxe9guxe9}
 
-\subsection{4. Đọc dữ liệu nguồn và hiểu
-YC2}\label{ux111ux1ecdc-dux1eef-liux1ec7u-nguux1ed3n-vuxe0-hiux1ec3u-yc2}
+Mở full OWL, kiểm tra 3.0.0, chọn HermiT và Start reasoner. Xem inferred
+types của Nolan và các credit của Nolan trên Inception. Credit có
+DirectorRole →
+Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution; người có
+credit này → Movie\allowbreak{}Dir\allowbreak{}ector / Filmmaker.
+Writing credit → Screen\allowbreak{}Wr\allowbreak{}iter; giao hai nghề →
+Writer\allowbreak{}Di\allowbreak{}rector.\allowbreak{}
 
-Mở src/\allowbreak{}coll\allowbreak{}ect.\allowbreak{}py:\allowbreak{}
-phim được tìm bằng sitelink Wikipedia chính xác. Wikidata cung cấp dữ
-liệu về đạo diễn, diễn viên, biên kịch, nhà sản xuất, thể loại, quốc
-gia, ngôn ngữ, năm, thời lượng, giải và công ty. DBpedia chỉ nối khi
-đúng chủ thể Film.
+hasRole là functional; Director\allowbreak{}\allowbreak{}Role,
+WriterRole và ProducerRole khác nhau. Ba credit không thể collapse thành
+một; đây là căn cứ min 3. Không thêm AllDifferent cho genre QID để ép
+kết quả.
 
-Mở
-data/\allowbreak{}raw\allowbreak{}/\allowbreak{}snapsho\allowbreak{}ts.\allowbreak{}json
-để xem
-U\allowbreak{}R\allowbreak{}L/\allowbreak{}prov\allowbreak{}ider/\allowbreak{}ret\allowbreak{}rieved\_\allowbreak{}a\allowbreak{}t/\allowbreak{}http\_\allowbreak{}s\allowbreak{}tatus/\allowbreak{}sh\allowbreak{}a256/\allowbreak{}pat\allowbreak{}h.\allowbreak{}
-Chọn một row có path đang tồn tại để mở phản hồi gốc. Hash là dấu vân
-tay byte; cùng hash chứng minh nội dung khớp với mốc lưu, không chứng
-minh độ đúng ngoài đời.
-
-\textbf{Nguồn đã hoàn tất:} danh mục có 76 row, 76 file có và 76 hash
-khớp. validate.py hoàn tất và có biên bản mới. Một phản hồi đổi nội dung
-được ghi hash/thời điểm mới; danh mục trước khôi phục được giữ để truy
-lịch sử.
-
-Khôi phục từ bản sao lưu đúng snapshot nếu có. Nếu phải tải lại, giữ mốc
-thời điểm/hash mới, build và kiểm tra lại; dữ liệu Internet có thể thay
-đổi. collect.py dùng cache đủ và khớp hash; khi thiếu sẽ tải,
-\texttt{-\allowbreak{}-\allowbreak{}refres\allowbreak{}h} buộc tải lại.
-\textbf{Chạy thu thập có thể thay đổi bộ dữ liệu}, hãy giữ bản sao của
-data trước khi chủ động cập nhật.
+\subsection{3. Truy vấn trực tiếp và suy
+luận}\label{truy-vux1ea5n-trux1ef1c-tiux1ebfp-vuxe0-suy-luux1eadn}
 
 \begin{verbatim}
-.venv/bin/python src/collect.py
-# Refresh all source responses:
-.venv/bin/python src/collect.py --refresh
+.venv/bin/python src/query_design.py queries/design/05.rq --mode asserted
+.venv/bin/python src/query_design.py queries/design/20.rq --mode asserted
+.venv/bin/python src/query_design.py queries/design/20.rq --mode reasoned
+.venv/bin/python src/query_design.py queries/design/27.rq --mode dataset
 \end{verbatim}
 
-\subsection{5. Sinh mô hình/RDF và đồng bộ Web
-local}\label{sinh-muxf4-huxecnhrdf-vuxe0-ux111ux1ed3ng-bux1ed9-web-local}
+Nolan films: 8; Writer\allowbreak{}Di\allowbreak{}rector:\allowbreak{} 0
+trước và 10 sau. Query 27 cần
+Dataset/\allowbreak{}\allowbreak{}Tri\allowbreak{}G, không graph phẳng.
+Query runner chỉ đọc graph, không chạy reasoner mới mỗi lần.
 
-\begin{verbatim}
-.venv/bin/python src/build.py
-.venv/bin/python src/prepare_web.py
-\end{verbatim}
+\subsection{4. Các lỗi dễ nhầm}\label{cuxe1c-lux1ed7i-dux1ec5-nhux1ea7m}
 
-Build dùng dữ liệu chuẩn hóa hiện có và sinh RDF, OWL, số liệu, trang
-thực thể và dữ liệu cho Web. Prepare\_web cập nhật truy vấn mẫu/giấy
-phép/PDF trong web/dist. Không cần tải lại nguồn để build bản đã chuẩn
-hóa. Sau khi build, khởi động lại server.
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-File
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Dùng để làm gì
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl
-& Chỉ mô hình; mở trong Protégé để xem lớp/ràng buộc \\
-ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl
-& Mô hình + dữ liệu; xem cá thể \\
-ontology\allowbreak{}/\allowbreak{}movie.\allowbreak{}t\allowbreak{}tl &
-Lược đồ Turtle; nguồn đối chiếu 42 lớp \\
-data/\allowbreak{}pro\allowbreak{}cessed/\allowbreak{}m\allowbreak{}ovies.\allowbreak{}tt\allowbreak{}l
-& Graph khai báo; endpoint truy vấn file này \\
-data/\allowbreak{}pro\allowbreak{}cessed/\allowbreak{}m\allowbreak{}ovies.\allowbreak{}js\allowbreak{}onld
-& Cùng dữ liệu dưới dạng JSON-LD \\
-data/\allowbreak{}pro\allowbreak{}cessed/\allowbreak{}i\allowbreak{}nferred\_\allowbreak{}classes.\allowbreak{}ttl
-& Các kiểu phân loại bổ sung, tách khỏi graph gốc \\
-web/\allowbreak{}dist\allowbreak{}/\allowbreak{}data/\allowbreak{} & Dữ
-liệu cấp cho engine trình duyệt \\
-evidence\allowbreak{}/\allowbreak{}statist\allowbreak{}ics.\allowbreak{}json\allowbreak{}
-& Số liệu mới sau build \\
-\end{longtable}
-}
-
-Build không khắc phục các snapshot gốc đã mất. ``Dựng được từ dữ liệu
-chuẩn hóa'' khác ``tái lập được từ mọi phản hồi gốc''.
-
-\subsection{6. Xem ontology trong
-Protégé}\label{xem-ontology-trong-protuxe9guxe9}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\begin{itemize}
 \tightlist
 \item
-  File → Open →
-  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl.\allowbreak{}
-  Trong Entities → Classes, chọn Film, Person, Country và kiểm tra IRI
-  DBpedia.
+  Sai prefix: ex:Actor không còn ở model mới; dùng dbo:Actor.
 \item
-  Mở
-  Creative\allowbreak{}\allowbreak{}Work/\allowbreak{}\allowbreak{}Age\allowbreak{}nt/\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution/\allowbreak{}\allowbreak{}Genre/\allowbreak{}\allowbreak{}Aw\allowbreak{}ard
-  để xem nhánh. Số lớp 42 đếm owl:Class IRI tự khai báo; Protégé có thể
-  hiển thị thêm lớp tham chiếu ngoài và biểu thức vô danh.
+  Sai property/đơn vị: dbo:runtime là giây, xsd:double; UI thẻ phim có
+  thể đổi sang phút để dễ đọc; RDF vẫn lưu giây.
 \item
-  Object properties →
-  contribu\allowbreak{}tion\allowbreak{}By/\allowbreak{}c\allowbreak{}ontribut\allowbreak{}ion\allowbreak{}To/\allowbreak{}ha\allowbreak{}s\allowbreak{}Role:\allowbreak{}
-  kiểm tra domain, range, functional; lớp Contribution có restriction
-  đúng một người/phim/vai trò.
+  Type trống: kiểm tra
+  asserted\allowbreak{}/\allowbreak{}reasone\allowbreak{}d graph và
+  trạng thái reasoner.
 \item
-  Chọn
-  has\allowbreak{}Contr\allowbreak{}ibution/\allowbreak{}contribu\allowbreak{}tion\allowbreak{}Of
-  để xem inverse; director có inverse directed.
+  OWL đúng nhưng query web không có lớp mới: chọn scope Inference rồi
+  bấm Run.
 \item
-  Mở
-  Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l,
-  Individuals chọn film-Q25188 (Inception),
-  person-\allowbreak{}\allowbreak{}Q\allowbreak{}25191 (Nolan), một
-  Contribution của Nolan. Xem vai trò, phim và nguồn.
+  Timestamp malformed với HermiT cũ: dùng full OWL đã xuất với ba chữ số
+  phần thập phân; không khẳng định mọi timestamp dài hơn đều sai XSD.
 \item
-  Chọn Filmmake\allowbreak{}r/\allowbreak{}\allowbreak{}Actor để xem
-  equivale\allowbreak{}nt\allowbreak{}Class.\allowbreak{} Các kiểu không
-  gán sẵn cần reasoning mới xuất hiện.
-\end{enumerate}
+  COUNT DISTINCT không tự chứng minh minimum cardinality do OWL không có
+  unique-name assumption.
+\end{itemize}
 
-\textbf{Giới hạn:}
-Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã
-chạy trên
-Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l
-và xác nhận nhất quán. Timestamp trong bản RDF chuẩn hóa dùng mili giây;
-bản nguồn thô giữ thời điểm đầy đủ. OWL không mặc định hai IRI là cá thể
-khác nhau; không khẳng định ngưỡng cardinality bằng số IRI là chứng minh
-DL.
-Domain/\allowbreak{}r\allowbreak{}ange/\allowbreak{}car\allowbreak{}dinality\allowbreak{}
-không tự thay kiểm tra biểu mẫu bằng Python.
+\subsection{5. Chụp ảnh và đối
+chiếu}\label{chux1ee5p-ux1ea3nh-vuxe0-ux111ux1ed1i-chiux1ebfu}
 
-\subsection{7. Kiểm tra và tạo phân
-loại}\label{kiux1ec3m-tra-vuxe0-tux1ea1o-phuxe2n-loux1ea1i}
+Theo
+Checklis\allowbreak{}t\_\allowbreak{}anh\_\allowbreak{}\allowbreak{}Pr\allowbreak{}otege.\allowbreak{}md\allowbreak{}/\allowbreak{}pdf;
+đặt ảnh đúng stem ở
+evidence\allowbreak{}/\allowbreak{}protege\allowbreak{}.\allowbreak{}
+Các ô chờ hiện không phải ảnh đã có. Hình author diagram và evidence
+summary không được gọi là screenshot Protégé. File nguồn
+Slide\_\allowbreak{}fu\allowbreak{}ll.\allowbreak{}pptx.\allowbreak{}pdf
+phản ánh model trước đó.
 
-\begin{verbatim}
-.venv/bin/python src/validate.py
-.venv/bin/python src/reason.py
-.venv/bin/python -m pytest -q
-\end{verbatim}
-
-Validate kiểm tra các trường cơ bản, hash phản hồi nguồn và chạy file
-SPARQL. Lệnh hiện chạy hoàn tất: data\_checks\_passed=true,
-source\_hashes\_match=true, snapshots\_checked=76 và không có file
-thiếu. Khi tải lại phải đo mới số lượng/hash thay vì mặc định mốc cũ.
-
-Reason thực hiện OWL RL cho 12 lớp, COUNT DISTINCT cho 2 lớp
-Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film/\allowbreak{}\allowbreak{}F\allowbreak{}ilm\allowbreak{}Studi\allowbreak{}o.\allowbreak{}
-Kết quả ở
-ontology\allowbreak{}\_\allowbreak{}reasoni\allowbreak{}ng.\allowbreak{}json
-và
-inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
-Không chạy trong thời gian demo nếu mất nhiều thời gian; chạy trước để
-tạo file. Không có lỗi được phát hiện bởi owlrl không đồng nghĩa chứng
-minh OWL DL nhất quán.
-
-Test hiện \textbf{14 passed} (xem thời gian thực tế trong
-evidence\allowbreak{}/\allowbreak{}tests.\allowbreak{}t\allowbreak{}xt).\allowbreak{}
-Có kiểm tra endpoint, kiểu DBpedia, chuẩn hóa Inception, role, kiểm tra
-dữ liệu thiếu, OWL RL và các định nghĩa lớp. Chạy test là một phần xác
-minh; kiểm tra 76 nguồn được thực hiện riêng và đã đạt.
-
-\subsection{8. Terminal và endpoint}\label{terminal-vuxe0-endpoint}
-
-\textbf{Terminal đọc graph gốc:}
+\subsection{6. Chạy web 3.0.0}\label{chux1ea1y-web-3.0.0}
 
 \begin{verbatim}
-.venv/bin/python src/query.py queries/02_inception.rq
-.venv/bin/python src/query.py queries/04_credits.rq
-.venv/bin/python src/query.py queries/08_ask.rq
+.venv/bin/python src/server.py --port 8000
 \end{verbatim}
 
-\textbf{Truy vấn có schema/phân loại:}
-
-\begin{verbatim}
-.venv/bin/python src/query.py queries/13_fiction_genre_films_via_hierarchy.rq --reasoned
-.venv/bin/python src/query.py queries/18_inferred_filmmakers.rq --reasoned
-.venv/bin/python src/query.py queries/24_nolan_asserted_types_only.rq
-.venv/bin/python src/query.py queries/24_nolan_asserted_types_only.rq --reasoned
-\end{verbatim}
-
-Câu 13 trả 29 phim khi có schema. Câu 18 hiển thị 20 dòng do LIMIT dù
-tổng có 89 Filmmaker. Câu 24 gốc có 1 kiểu; có phân loại có 3 kiểu.
---reasoned nạp file phân loại đã có, không chạy suy luận ngay.
-
-\textbf{Endpoint --- server đang chạy ở terminal A:}
-
-\begin{verbatim}
-curl -G http://127.0.0.1:8000/sparql \
-  --data-urlencode query@queries/02_inception.rq
-curl -X POST http://127.0.0.1:8000/sparql \
-  -H 'Content-Type: application/sparql-query' \
-  --data-binary @queries/02_inception.rq
-curl -L -H 'Accept: text/turtle' \
-  http://127.0.0.1:8000/resource/film-Q25188
-\end{verbatim}
-
-GET/POST SELECT/ASK trả JSON.
-C\allowbreak{}O\allowbreak{}N\allowbreak{}S\allowbreak{}T\allowbreak{}R\allowbreak{}U\allowbreak{}C\allowbreak{}\allowbreak{}T/\allowbreak{}\allowbreak{}D\allowbreak{}E\allowbreak{}S\allowbreak{}C\allowbreak{}R\allowbreak{}I\allowbreak{}\allowbreak{}B\allowbreak{}E
-trả Turtle. Accept Turtle tại resource cục bộ trả 303; -L theo chuyển
-hướng. Hosted dùng Comunica trong trình duyệt và file RDF, không phải
-endpoint Flask public. SERVICE/FROM tải ngoài và SPARQL Update bị chặn.
-
-\subsection{9. Ảnh minh chứng và kiểm tra trình
-duyệt}\label{ux1ea3nh-minh-chux1ee9ng-vuxe0-kiux1ec3m-tra-truxecnh-duyux1ec7t}
-
-Script bổ sung cần Playwright và Google Chrome đã cài, hoặc Chromium của
-Playwright. Script không bắt buộc để mở ứng dụng.
-
-\begin{verbatim}
-.venv/bin/python -m pip install playwright
-# If a suitable Chrome is not installed:
-.venv/bin/python -m playwright install chromium
-.venv/bin/python src/browser_check.py --port 8000
-\end{verbatim}
-
-Server phải chạy đúng cổng. Có thể dùng --port 8001/8002 khi kiểm tra.
-Script ghi 4 ảnh
-(app/\allowbreak{}\allowbreak{}Nol\allowbreak{}an/\allowbreak{}resou\allowbreak{}rce/\allowbreak{}mobi\allowbreak{}le)
-và
-browser\_\allowbreak{}checks.\allowbreak{}j\allowbreak{}son.\allowbreak{}
-Minh chứng: SELECT endpoint, Comunica SELECT/GROUP
-B\allowbreak{}Y/\allowbreak{}\allowbreak{}A\allowbreak{}S\allowbreak{}K/\allowbreak{}\allowbreak{}C\allowbreak{}\allowbreak{}O\allowbreak{}N\allowbreak{}S\allowbreak{}T\allowbreak{}R\allowbreak{}U\allowbreak{}C\allowbreak{}T\allowbreak{},
-thông báo lỗi, trang IRI, không tràn màn hình mobile, không có exception
-trình duyệt.
-
-Ảnh trong slide phải lấy \textbf{sau khi build và khởi động lại server}.
-Nếu chỉ dữ liệu endpoint mới nhưng file web cũ, KPI và trang thực thể sẽ
-lệch; build + prepare\_web đồng bộ file local rồi chụp lại. Việc này
-chưa xuất bản lên Internet.
-
-\subsection{10. Sửa tài liệu, tạo slide và
-PDF}\label{sux1eeda-tuxe0i-liux1ec7u-tux1ea1o-slide-vuxe0-pdf}
-
-Nguồn nội dung tài liệu là các file Markdown trong docs. Lời slide nằm
-trong
-src/\allowbreak{}pres\allowbreak{}entation\allowbreak{}\_\allowbreak{}content\allowbreak{}.\allowbreak{}py;
-sơ đồ và bố cục trong
-src/\allowbreak{}make\allowbreak{}\_\allowbreak{}slides\_\allowbreak{}video.\allowbreak{}py\allowbreak{}.\allowbreak{}
-Font chung \textbf{Be Vietnam Pro}. Các công cụ PDF cần Pandoc, Tectonic
-và font; máy hiện tại đã có.
-
-\begin{verbatim}
-.venv/bin/python src/make_slides_video.py --slides-only
-.venv/bin/python src/make_docs.py
-.venv/bin/python src/prepare_web.py
-\end{verbatim}
-
-make\_docs chỉ render Markdown hiện có, không tự ghi đè nội dung đã sửa.
-Có thể render riêng:
-\texttt{.\allowbreak{}venv/\allowbreak{}bi\allowbreak{}n/\allowbreak{}python\allowbreak{} src/\allowbreak{}mak\allowbreak{}e\_\allowbreak{}docs.\allowbreak{}p\allowbreak{}y docs/\allowbreak{}\allowbreak{}B\allowbreak{}ao\_\allowbreak{}cao.\allowbreak{}m\allowbreak{}d}.
-Huong\_\allowbreak{}da\allowbreak{}n\_\allowbreak{}thao\_\allowbreak{}t\allowbreak{}ac\_\allowbreak{}chi\_\allowbreak{}t\allowbreak{}iet
-cũng có thể render bằng
-make\_\allowbreak{}man\allowbreak{}ual.\allowbreak{}py.\allowbreak{} PDF
-slide hiện có 24 trang; PowerPoint có editable text/diagram và Speaker
-Notes. PDF slide hiện là bản vector xuất từ PPTX qua LibreOffice; thiếu
-LibreOffice thì trình tạo dùng bản raster dự phòng.
-
-Nếu máy người đọc không có Be Vietnam Pro, cài font để PPTX giữ đúng bố
-cục hoặc dùng PDF. Điền nhóm/thành viên/lớp trên bìa. Không cần thêm ảnh
-stock; slide có sơ đồ mô hình và ảnh ứng dụng thật. Có thể thêm ảnh
-Protégé thật theo cảnh YC1 trong kịch bản nếu muốn.
-
-\subsection{11. Quay video 3--5 phút}\label{quay-video-35-phuxfat}
-
-Dùng
-Kich\_\allowbreak{}ban\allowbreak{}\_\allowbreak{}video.\allowbreak{}m\allowbreak{}d/\allowbreak{}pdf:\allowbreak{}
-timeline 0:00--4:50, lời đọc từng cảnh, lệnh thật và kết quả mong đợi.
-Script\_\allowbreak{}t\allowbreak{}huyet\_\allowbreak{}tr\allowbreak{}inh.\allowbreak{}md/\allowbreak{}p\allowbreak{}df
-là lời nói 24 slide (\textasciitilde18--22 phút), không dùng nguyên để
-quay video 3--5 phút.
-
-Quay thao tác Protégé/editor/Web/terminal. Giữ cảnh nguồn/RDF/giấy
-phép/sameAs; demo không chỉ bấm hai câu hỏi.
-Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4 hiện là bản demo
-2.0 dài khoảng 4:50, ghi thao tác trình duyệt và kết quả lệnh thật, có
-lời tiếng Việt tổng hợp. Xem lại trước khi nộp; có thể thay bằng giọng
-của thành viên.
-
-\begin{verbatim}
-ffprobe -v error -show_entries format=duration \
-  -of default=noprint_wrappers=1:nokey=1 docs/Video_demo_2_0.mp4
-\end{verbatim}
-
-\subsection{12. Công bố và đối chiếu bản
-public}\label{cuxf4ng-bux1ed1-vuxe0-ux111ux1ed1i-chiux1ebfu-bux1ea3n-public}
-
-Lần kiểm tra mới 08/10: trang chủ, dataset,
-Turtle/\allowbreak{}\allowbreak{}J\allowbreak{}\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D,
-ontology, IRI Inception, mô tả RDF và giấy phép đều trả 200 không đăng
-nhập. RDF public có 19.339 triple, ontology 42 lớp; cả 4 graph RDF kiểm
-tra đều đẳng cấu với local. Kết luận dùng kết quả HTTP và graph, không
-chỉ trường audience\allowbreak{}/\allowbreak{}status trong JSON.
-
-Sau khi nhóm xuất bản bản mới, kiểm tra từ phiên không đăng nhập: trang
-dataset,
-Turtle/\allowbreak{}\allowbreak{}J\allowbreak{}\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D,
-ontology, IRI và giấy phép. Tải RDF public về và so sánh \textbf{graph
-đẳng cấu}, không so byte vì thứ tự Turtle có thể khác. Lưu thời điểm,
-status, URL và kết quả thật trong evidence. Hosted có file tĩnh nên
-không mặc định có hành vi 303/content negotiation như Flask local.
-
-Đổi tên miền cần dùng
-src/\allowbreak{}reba\allowbreak{}se.\allowbreak{}py rồi
-build/\allowbreak{}pr\allowbreak{}epare\_\allowbreak{}we\allowbreak{}b;
-IRI trong dữ liệu/truy vấn/giao diện phải thống nhất. Site đã được triển
-khai lại qua quy trình hosting; trạng thái và ID phiên bản thật nằm
-trong
-publicat\allowbreak{}ion.\allowbreak{}json\allowbreak{}.\allowbreak{}
-Khi sửa sau này, xuất bản và đối chiếu lại.
-
-\subsection{13. Chấm và kiểm tra sản phẩm
-nộp}\label{chux1ea5m-vuxe0-kiux1ec3m-tra-sux1ea3n-phux1ea9m-nux1ed9p}
-
-Theo thang tự đề xuất chia đều 2 điểm mỗi YC: cả 5 YC đều đạt 2 điểm;
-tổng \textbf{10/10}. Đề gốc không có trọng số; đọc CHAM\_DIEM.md để xem
-tiêu chí con và minh chứng. Đây không phải điểm chính thức của giảng
-viên.
-
-Báo cáo tối đa 15 trang; slide 24 trang theo yêu cầu nhóm; video mới
-180--300 giây. Có mã nguồn, RDF, OWL, dữ liệu gốc đủ, giấy phép, scripts
-và evidence. Không đóng gói
-.\allowbreak{}venv/\allowbreak{}\allowbreak{}Gi\allowbreak{}t/\allowbreak{}cache;\allowbreak{}
-kiểm tra file nguồn có thực sự trong ZIP vì mọi phản hồi gốc phải nằm
-trong bộ nộp; quy tắc gitignore làm mất nguồn đã được bỏ.
-\texttt{src/\allowbreak{}pack\allowbreak{}age.\allowbreak{}py} là tiện
-ích đóng gói, không thay các thiếu sót thành đạt.
-
-\subsection{14. Lỗi thường gặp}\label{lux1ed7i-thux1b0ux1eddng-gux1eb7p}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Hiện tượng
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Cách kiểm tra và xử lý
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Port already in use & Dùng --port cổng trống và sửa URL/curl; không dừng
-tiến trình khác \\
-Contribution trả 0 & Server giữ graph cũ;
-build/\allowbreak{}pr\allowbreak{}epare\_\allowbreak{}we\allowbreak{}b
-và khởi động server mới \\
-KPI/ảnh còn 15 lớp hoặc 964 links & File web cũ; build lại để đồng bộ
-statisti\allowbreak{}cs.\allowbreak{}json và RDF \\
-validate
-File\allowbreak{}Not\allowbreak{}F\allowbreak{}ound\allowbreak{}Erro\allowbreak{}r
-& Thiếu snapshot; bổ sung bản gốc hoặc thu thập lại có mốc mới \\
-Filmmake\allowbreak{}r/\allowbreak{}\allowbreak{}Actor trả 0 trên
-endpoint & Chạy terminal --reasoned; endpoint mặc định chỉ graph gốc \\
-Câu hỏi chỉ 20 người & LIMIT 20; tổng
-Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker nằm ở
-ontology\allowbreak{}\_\allowbreak{}reasoni\allowbreak{}ng.\allowbreak{}json \\
-Documentary ASK false & Mẫu chưa có phim tài liệu; không phải kết luận
-ngoài dataset \\
-PDF lỗi công cụ/font & Kiểm tra
-Pandoc/\allowbreak{}\allowbreak{}T\allowbreak{}ectonic/\allowbreak{}\allowbreak{}Be
-Vietnam Pro, đọc build\_*.log \\
-PPTX chữ lệch máy khác & Cài Be Vietnam Pro hoặc trình chiếu PDF \\
-Hosted có 200 nhưng số liệu cũ & Xuất bản đúng bản mới rồi đối chiếu
-graph \\
-\end{longtable}
-}
-
-\subsection{15. Bổ sung ảnh Protégé vào bộ 24
-slide}\label{bux1ed5-sung-ux1ea3nh-protuxe9guxe9-vuxe0o-bux1ed9-24-slide}
-
-Có 11 khung P00--P10, có hướng dẫn ngay trên slide và Speaker Notes. Đọc
-Checklis\allowbreak{}t\_\allowbreak{}anh\_\allowbreak{}\allowbreak{}Pr\allowbreak{}otege.\allowbreak{}md\allowbreak{}/\allowbreak{}pdf
-để chọn đúng file OWL, lớp/thuộc tính/cá thể và nội dung cần thấy. Khung
-chờ chưa phải ảnh thật. Có thể chèn trực tiếp vào PPTX hoặc lưu ảnh đúng
-stem ở evidence\allowbreak{}/\allowbreak{}protege\allowbreak{}
-(\allowbreak{}P\allowbreak{}N\allowbreak{}G/\allowbreak{}\allowbreak{}J\allowbreak{}P\allowbreak{}G\allowbreak{}/\allowbreak{}\allowbreak{}J\allowbreak{}P\allowbreak{}E\allowbreak{}G),
-chạy lại
-make\_\allowbreak{}sli\allowbreak{}des\_\allowbreak{}vide\allowbreak{}o.\allowbreak{}py
---slides-only. Ảnh tự thay khung chờ khi tạo lại. Bản ngắn 13 trang vẫn
-ở
-Slide\_\allowbreak{}ng\allowbreak{}an\_\allowbreak{}13.\allowbreak{}pp\allowbreak{}tx/\allowbreak{}pdf.\allowbreak{}
-
-\textbf{Cập nhật
-timestam\allowbreak{}p/\allowbreak{}reason\allowbreak{}er:\allowbreak{}}
-dùng duy nhất
-Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l
-cho graph đầy đủ.
-Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã
-chạy; xem
-Ket\_\allowbreak{}qua\_\allowbreak{}reasoner\allowbreak{}.\allowbreak{}pdf.\allowbreak{}
-Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4 giữ nguyên theo
-yêu cầu nhóm; timestamp trong dữ liệu mới giảm đến mili giây, nội dung
-phim/quan hệ giữ nguyên, đã kiểm tra ở
-video\_\allowbreak{}da\allowbreak{}taset\_\allowbreak{}co\allowbreak{}mpatibil\allowbreak{}ity.\allowbreak{}json\allowbreak{}.\allowbreak{}
-Video chưa thể hiện kết quả reasoner mới và vẫn nhắc bộ slide ngắn 13
-trang.
+Web local dùng RDFLib; hosted dùng Comunica. Endpoint mặc định source
+facts. Thêm \texttt{?mode=re\allowbreak{}asoned} để truy vấn type suy
+luận hoặc \texttt{?mode=da\allowbreak{}taset} cho query 27. Hosted
+Comunica dùng cùng exports trong
+web/\allowbreak{}dist\allowbreak{}/\allowbreak{}data.\allowbreak{} Sau
+build/reason cần restart server; không có MP4.
 
 \end{document}

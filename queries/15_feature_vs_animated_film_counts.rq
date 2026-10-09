@@ -1,5 +1,0 @@
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-SELECT (COUNT(DISTINCT ?feature) AS ?featureFilms) (COUNT(DISTINCT ?animated) AS ?animatedFilms) WHERE {
-  OPTIONAL { ?feature a ex:FeatureFilm }
-  OPTIONAL { ?animated a ex:AnimatedFilm }
-}

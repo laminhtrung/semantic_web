@@ -14,7 +14,7 @@
     "bottom": 2
   },
   "figures": 11,
-  "figure_source": "10 figures from supplied slide PDF; 1 author-generated conceptual diagram",
+  "figure_source": "1 figure retained from supplied slide PDF; 10 author-generated diagrams and verified result panels",
   "source_manifest": "evidence/report_image_sources.json",
   "cover_members": [
     [
@@ -37,8 +37,8 @@
   "supervisor": "TS. Đỗ Bá Lâm",
   "institution": "Hanoi University of Science and Technology",
   "toc": "Dedicated page; hierarchical paragraphs, dotted leaders and right-aligned page numbers; no table",
-  "docx_sha256": "c515e6feebfbb6710e82ae57c646013dd5e0172930e90384b77d945613d06ef3",
-  "pdf_sha256": "5d0dbff9e774908d052123231d887032e2e1200581006cf7c39fcb647f87cc52",
+  "docx_sha256": "bb0bd1d9577e36f07d9b05306e8597b929e2def3aeebc1b74cc3372329184e55",
+  "pdf_sha256": "1e03ae50ba15234af2bf12fd5734f0b773c3d369f3509110ea3ed6bbca9227ed",
   "video_modified": false,
   "verified": true,
   "actual_pdf_fonts": [
@@ -54,11 +54,10 @@
   "page_numbers_verified": true,
   "page_titles_match_plan": true,
   "all_figures_have_attributed_sources": true,
-  "figures_from_supplied_pdf": 10,
-  "author_generated_diagrams": 1,
+  "figures_from_supplied_pdf": 1,
+  "author_generated_diagrams": 10,
   "cover_names_ids_and_supervisor_verified": true,
   "official_logo_on_cover": true,
   "toc_own_page_no_table": true,
-  "toc_dotted_leaders": 20,
-  "academic_focus_verified": true
+  "toc_dotted_leaders": 20
 }

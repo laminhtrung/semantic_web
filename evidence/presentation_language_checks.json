@@ -20,11 +20,11 @@
   "unexpected_non_english_text": [],
   "outside_shapes": [],
   "pdf_searchable": true,
-  "translated_evidence_images": [
+  "evidence_images": [
     "12_sources_en.png",
-    "13_validation_en.png"
+    "docs/sync_images/verification.png"
   ],
-  "pptx_sha256": "35b4c6ee3a86b58f4347d4d74ac9a3da93df48834d7ed0299e1f12165ce813c1",
-  "pdf_sha256": "4d1523738c5ebf0a7ab95bb3191a4bdc00261c2fdcd7f6707fc034bafed0a7eb",
-  "video_preserved": true
+  "pptx_sha256": "d992a6d515475aef196d58481dc7f3b1b10a2c3b488656ac6e196869d594db05",
+  "pdf_sha256": "a4facd7a56a2502b4b8253a42b090bd393a50459c4d2a4280f60fec36b7171db",
+  "mp4_included": false
 }

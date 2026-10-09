@@ -80,7 +80,7 @@
 
 \title{MovieLOD: checklist ảnh minh chứng Protégé}
 \author{}
-\date{11 vị trí trong bộ 24 slide · 08/10/2026}
+\date{11 vị trí trong bộ 24 slide · 09/10/2026}
 
 \begin{document}
 \maketitle
@@ -88,8 +88,9 @@
 \subsection{Cách chèn}\label{cuxe1ch-chuxe8n}
 
 Có 11 khung ảnh ghi rõ mã, tên file và thao tác ngay trên slide. Lần tạo
-này không có ảnh Protégé thật: macOS chặn quyền điều khiển giao diện;
-không thay bằng ảnh dựng. Ảnh ứng dụng Web trong slide là ảnh chụp thực.
+này không có ảnh Protégé thật: chưa có ảnh giao diện đã xác minh cho
+ontology mới; không dùng ảnh dựng làm screenshot. Ảnh ứng dụng Web trong
+slide là ảnh chụp thực.
 
 Cách 1: chèn ảnh vào PowerPoint và che/xóa khung chờ cùng phần hướng dẫn
 của khung đó. Cách 2: lưu đúng tên ở
@@ -105,150 +106,150 @@ minh. Ảnh cây khai báo không được ghi nhãn inferred.
 
 \subsection{Danh sách ảnh}\label{danh-suxe1ch-ux1ea3nh}
 
-\subsubsection{P00 --- Slide 05: Ontology IRI và phiên
-bản}\label{p00-slide-05-ontology-iri-vuxe0-phiuxean-bux1ea3n}
+\subsubsection{P00 --- Slide 05: IRI và phiên bản
+3.0.0}\label{p00-slide-05-iri-vuxe0-phiuxean-bux1ea3n-3.0.0}
 
 \textbf{Tên file:}
 \texttt{P00\_\allowbreak{}onto\allowbreak{}logy\_\allowbreak{}hea\allowbreak{}der.\allowbreak{}png}.
 \textbf{Mở:}
-\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
   Mở
-  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl.\allowbreak{}
+  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl.\allowbreak{}
 \item
   Chọn Active Ontology / Ontology Header.
 \item
-  Giữ IRI ontology và versionInfo 2.0.0 trong khung hình.
+  Giữ IRI và versionInfo 3.0.0 trong ảnh.
 \end{enumerate}
 
-\textbf{Mục cần thấy:} IRI đúng namespace của bài; phiên bản 2.0.0.
-Metrics có thể tính cả lớp ngoài được tham chiếu, khác 42 lớp tự khai
-báo.
+\textbf{Mục cần thấy:} 37 lớp có tên; không đếm biểu thức anonymous như
+lớp có tên.
 
-\subsubsection{P01 --- Slide 06: Cây lớp
-phim}\label{p01-slide-06-cuxe2y-lux1edbp-phim}
+\subsubsection{P01 --- Slide 06: Cây Work /
+Film}\label{p01-slide-06-cuxe2y-work-film}
 
 \textbf{Tên file:}
 \texttt{P01\_\allowbreak{}film\allowbreak{}\_\allowbreak{}hierarc\allowbreak{}hy.\allowbreak{}png}.
 \textbf{Mở:}
-\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Entities → Classes → mở CreativeWork và Film.
+  Mở Classes → dbo:Work → dbo:Film.
 \item
-  Hiện các lớp con FeatureFilm, AnimatedFilm và nhóm phim.
+  Hiện ActionFilm,
+  Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{}
+  và các lớp giao.
 \item
-  Chọn Film; giữ IRI DBpedia và Class Description.
+  Giữ IRI DBpedia của Film trong Description.
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Film thuộc
-Creative\allowbreak{}\allowbreak{}Work; IRI là
-http:\allowbreak{}/\allowbreak{}/\allowbreak{}d\allowbreak{}bpedia.\allowbreak{}o\allowbreak{}rg/\allowbreak{}ontol\allowbreak{}ogy/\allowbreak{}\allowbreak{}Film\allowbreak{}.\allowbreak{}
-Chụp cây khai báo, không gọi là cây đã suy luận.
+\textbf{Mục cần thấy:} Không có
+Feature\allowbreak{}F\allowbreak{}ilm/\allowbreak{}\allowbreak{}Anim\allowbreak{}ated\allowbreak{}Film\allowbreak{}/\allowbreak{}\allowbreak{}Documen\allowbreak{}tary\allowbreak{}Film\allowbreak{}
+trong module cuối.
 
-\subsubsection{P02 --- Slide 07: Cây người và tổ
-chức}\label{p02-slide-07-cuxe2y-ngux1b0ux1eddi-vuxe0-tux1ed5-chux1ee9c}
+\subsubsection{P02 --- Slide 07: Cây chủ thể
+DBpedia}\label{p02-slide-07-cuxe2y-chux1ee7-thux1ec3-dbpedia}
 
 \textbf{Tên file:}
 \texttt{P02\_\allowbreak{}agen\allowbreak{}t\_\allowbreak{}hierar\allowbreak{}chy.\allowbreak{}png}.
 \textbf{Mở:}
-\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Entities → Classes → mở Agent.
+  Mở dbo:Agent → dbo:Person và
+  dbo:\allowbreak{}\allowbreak{}Orga\allowbreak{}nisation\allowbreak{}.\allowbreak{}
 \item
-  Mở Person và Organization →
-  Producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y.\allowbreak{}
+  Hiện Artist → Actor; Organisation → Company.
 \item
-  Chọn Person hoặc Filmmaker; giữ cây lớp và Description.
+  Mở Movie\allowbreak{}Dir\allowbreak{}ector / Writer →
+  Screen\allowbreak{}Wr\allowbreak{}iter.\allowbreak{}
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Person và Organization cùng dưới Agent;
-Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker/\allowbreak{}\allowbreak{}Award\allowbreak{}Win\allowbreak{}ner
-là lớp con Person.
+\textbf{Mục cần thấy:} Reuse lớp DBpedia; không tạo ex:Actor hoặc
+ex:\allowbreak{}\allowbreak{}Organ\allowbreak{}ization.\allowbreak{}
 
-\subsubsection{P03 --- Slide 08: Cây Genre và
-Award}\label{p03-slide-08-cuxe2y-genre-vuxe0-award}
+\subsubsection{P03 --- Slide 08: MovieGenre và
+Award}\label{p03-slide-08-moviegenre-vuxe0-award}
 
 \textbf{Tên file:}
 \texttt{P03\_\allowbreak{}genr\allowbreak{}e\_\allowbreak{}award\_\allowbreak{}hierarch\allowbreak{}y.\allowbreak{}png}.
 \textbf{Mở:}
-\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Thu gọn Film/Agent để ảnh dễ đọc.
+  Mở dbo:Genre →
+  dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Genre.\allowbreak{}
 \item
-  Mở Genre → FictionGenre /
-  Non\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre và Award.
+  Hiện ActionGenre / DramaGenre; chọn dbo:Award.
 \item
-  Hiện các lớp thể loại và nhóm giải; giữ Class Description.
+  Giữ Description để đọc IRI và lớp cha.
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Cây Genre/Award khớp sơ đồ. Nhóm thể loại/giải
-được ánh xạ theo nhãn trong bước build.
+\textbf{Mục cần thấy:} Không có FictionGenre hoặc các nhóm award suy
+đoán theo nhãn.
 
-\subsubsection{P04 --- Slide 09: Ràng buộc của
-Contribution}\label{p04-slide-09-ruxe0ng-buux1ed9c-cux1ee7a-contribution}
+\subsubsection{P04 --- Slide 09: Ràng buộc
+Contribution}\label{p04-slide-09-ruxe0ng-buux1ed9c-contribution}
 
 \textbf{Tên file:}
 \texttt{P04\_\allowbreak{}cont\allowbreak{}ribution\allowbreak{}\_\allowbreak{}restric\allowbreak{}tions.\allowbreak{}pn\allowbreak{}g}.
 \textbf{Mở:}
-\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Entities → Classes → chọn Contribu\allowbreak{}tion.\allowbreak{}
+  Chọn
+  ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution.\allowbreak{}
 \item
-  Trong Class Description, mở đủ SubClass Of.
+  Hiện exactly 1 cho contribu\allowbreak{}tion\allowbreak{}By,
+  contribu\allowbreak{}tion\allowbreak{}To, hasRole.
 \item
-  Hiện contribu\allowbreak{}tion\allowbreak{}By /
-  contribu\allowbreak{}tion\allowbreak{}To / hasRole: exactly 1.
+  Chọn hasRole để thấy Functional và role individual.
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Ba qualified cardinality đúng 1, cùng các
-all\allowbreak{}Value\allowbreak{}s\allowbreak{}From.\allowbreak{} Đây
-là mô hình OWL, không phải biên bản kiểm tra thiếu trường.
+\textbf{Mục cần thấy:} Ba endpoint đúng 1; dữ liệu thiếu cần structural
+validation riêng.
 
-\subsubsection{P05 --- Slide 10: Domain, range, inverse,
-functional}\label{p05-slide-10-domain-range-inverse-functional}
+\subsubsection{P05 --- Slide 10: Domain / range /
+inverse}\label{p05-slide-10-domain-range-inverse}
 
 \textbf{Tên file:}
 \texttt{P05\_\allowbreak{}obje\allowbreak{}ct\_\allowbreak{}prope\allowbreak{}rty.\allowbreak{}png}.
 \textbf{Mở:}
-\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Entities → Object properties → chọn
-  contribu\allowbreak{}tion\allowbreak{}By.\allowbreak{}
+  Chọn contribu\allowbreak{}tion\allowbreak{}By:\allowbreak{}
+  Contribution → dbo:Person.
 \item
-  Hiện Domain=Contribution, Range=Person.
+  Hiện Functional và inverse
+  has\allowbreak{}Contr\allowbreak{}ibution.\allowbreak{}
 \item
-  Giữ inverse has\allowbreak{}Contr\allowbreak{}ibution và ô Functional
-  được chọn.
+  Có thể chụp contribu\allowbreak{}ted\allowbreak{}To với property
+  chain.
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Đúng
-domain/\allowbreak{}r\allowbreak{}ange/\allowbreak{}inv\allowbreak{}erse/\allowbreak{}fun\allowbreak{}ctional
-của contribu\allowbreak{}tion\allowbreak{}By.\allowbreak{} Nếu cần, chụp
-bổ sung hasRole hoặc director.
+\textbf{Mục cần thấy:} Chain has\allowbreak{}Contr\allowbreak{}ibution
+rồi contribu\allowbreak{}tion\allowbreak{}To; không đặt cardinality trên
+contribu\allowbreak{}ted\allowbreak{}To.\allowbreak{}
 
 \subsubsection{P06 --- Slide 13: Định nghĩa
 Filmmaker}\label{p06-slide-13-ux111ux1ecbnh-nghux129a-filmmaker}
@@ -256,73 +257,71 @@ Filmmaker}\label{p06-slide-13-ux111ux1ecbnh-nghux129a-filmmaker}
 \textbf{Tên file:}
 \texttt{P06\_\allowbreak{}film\allowbreak{}maker\_\allowbreak{}eq\allowbreak{}uivalent\allowbreak{}\_\allowbreak{}class.\allowbreak{}p\allowbreak{}ng}.
 \textbf{Mở:}
-\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Entities → Classes → chọn Filmmaker.
+  Chọn ex:\allowbreak{}\allowbreak{}Filmm\allowbreak{}aker.\allowbreak{}
 \item
-  Mở Class Description → Equivalent To.
+  Hiện Equivalent To với Person AND các nhánh SOME.
 \item
-  Hiện Person AND các nhánh SOME
-  Directin\allowbreak{}g/\allowbreak{}\allowbreak{}Writin\allowbreak{}g/\allowbreak{}\allowbreak{}Produc\allowbreak{}ing\allowbreak{}Contr\allowbreak{}ibution.\allowbreak{}
+  Đọc các nhánh Directing / Writing /
+  Producin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution.\allowbreak{}
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Định nghĩa giao/hợp/tồn tại. Ảnh định nghĩa không
-tự chứng minh HermiT đã phân loại dữ liệu.
+\textbf{Mục cần thấy:} Công thức không tự chứng minh reasoner đã chạy.
 
-\subsubsection{P07 --- Slide 14: Định nghĩa
-FilmStudio}\label{p07-slide-14-ux111ux1ecbnh-nghux129a-filmstudio}
+\subsubsection{P07 --- Slide 14: Cardinality trên
+Contribution}\label{p07-slide-14-cardinality-truxean-contribution}
 
 \textbf{Tên file:}
-\texttt{P07\_\allowbreak{}film\allowbreak{}studio\_\allowbreak{}c\allowbreak{}ardinali\allowbreak{}ty.\allowbreak{}png}.
+\texttt{P07\_\allowbreak{}thre\allowbreak{}e\_\allowbreak{}credit\allowbreak{}\_\allowbreak{}cardina\allowbreak{}lity.\allowbreak{}png\allowbreak{}}.
 \textbf{Mở:}
-\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Entities → Classes → chọn FilmStudio.
+  Chọn
+  ex:\allowbreak{}\allowbreak{}Three\allowbreak{}\allowbreak{}Credit\allowbreak{}Co\allowbreak{}ntributo\allowbreak{}r;
+  hiện min 3 has\allowbreak{}Contr\allowbreak{}ibution
+  Contribu\allowbreak{}tion.\allowbreak{}
 \item
-  Mở Equivalent To; hiện min 3 productionOf Film.
+  Chạy HermiT; chọn Nolan ở inferred view.
 \item
-  Có thể chụp thêm
-  Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film:\allowbreak{}
-  min 2 hasGenre Genre.
+  Chụp thêm Functional hasRole và AllDifferent của bốn role.
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Ảnh công thức cardinality. Kết quả 6 studio/30
-phim nhiều thể loại của app dùng COUNT DISTINCT, không tự coi là chứng
-minh OWL DL.
+\textbf{Mục cần thấy:} 7 người đạt min 3; 17 người đạt min 2; không phải
+COUNT DISTINCT.
 
-\subsubsection{P08 --- Slide 16: Datatype của thời
-lượng}\label{p08-slide-16-datatype-cux1ee7a-thux1eddi-lux1b0ux1ee3ng}
+\subsubsection{P08 --- Slide 16: Thời lượng theo
+DBpedia}\label{p08-slide-16-thux1eddi-lux1b0ux1ee3ng-theo-dbpedia}
 
 \textbf{Tên file:}
 \texttt{P08\_\allowbreak{}runt\allowbreak{}ime\_\allowbreak{}data\allowbreak{}type.\allowbreak{}png\allowbreak{}}.
 \textbf{Mở:}
-\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}.
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Entities → Data properties → chọn
-  runtime\allowbreak{}M\allowbreak{}inutes.\allowbreak{}
+  Chọn dbo:runtime trong Data properties.
 \item
-  Hiện Domain=Film và Range=xsd:decimal.
+  Hiện domain dbo:Work và range xsd:double.
 \item
-  Có thể chụp thêm releaseYear có range xsd:integer.
+  Chọn Inception: runtime = 8880 giây.
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Thuộc tính dữ liệu nối thực thể với literal, khác
-quan hệ nối hai thực thể.
+\textbf{Mục cần thấy:} 8880 giây = 148 phút; rdfs:label là annotation
+property.
 
-\subsubsection{P09 --- Slide 18: Cá thể
-Inception}\label{p09-slide-18-cuxe1-thux1ec3-inception}
+\subsubsection{P09 --- Slide 18: Cá thể Inception bản
+mới}\label{p09-slide-18-cuxe1-thux1ec3-inception-bux1ea3n-mux1edbi}
 
 \textbf{Tên file:}
 \texttt{P09\_\allowbreak{}ince\allowbreak{}ption\_\allowbreak{}in\allowbreak{}dividual\allowbreak{}.\allowbreak{}png}.
@@ -334,21 +333,23 @@ Inception}\label{p09-slide-18-cuxe1-thux1ec3-inception}
 \tightlist
 \item
   Mở
-  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl.\allowbreak{}
+  Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l
+  3.0.0.
 \item
-  Individuals → chọn film-Q25188 (Inception).
+  Chọn film-Q25188; hiện label, releaseYear 2010, runtime 8880.
 \item
-  Hiện Film, title, releaseYear=2010, runtimeMinutes=148 và director.
+  Hiện dbo:\allowbreak{}dire\allowbreak{}ctor, genre,
+  producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y và award.
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Cá thể thật và thuộc tính khớp truy vấn. Giữ tên
-ontology để không chụp nhầm file chỉ có schema.
+\textbf{Mục cần thấy:} Cá thể trong OWL khớp trang resource 3.0.0;
+runtime là 8880 giây.
 
-\subsubsection{P10 --- Slide 21: Kiểu khai báo của
-Nolan}\label{p10-slide-21-kiux1ec3u-khai-buxe1o-cux1ee7a-nolan}
+\subsubsection{P10 --- Slide 21: Các type suy luận của
+Nolan}\label{p10-slide-21-cuxe1c-type-suy-luux1eadn-cux1ee7a-nolan}
 
 \textbf{Tên file:}
-\texttt{P10\_\allowbreak{}nola\allowbreak{}n\_\allowbreak{}assert\allowbreak{}ed\_\allowbreak{}types\allowbreak{}.\allowbreak{}png}.
+\texttt{P10\_\allowbreak{}nola\allowbreak{}n\_\allowbreak{}inferr\allowbreak{}ed\_\allowbreak{}types\allowbreak{}.\allowbreak{}png}.
 \textbf{Mở:}
 \texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}.
 
@@ -356,19 +357,18 @@ Nolan}\label{p10-slide-21-kiux1ec3u-khai-buxe1o-cux1ee7a-nolan}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Mở
-  Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l,
-  chọn person-\allowbreak{}\allowbreak{}Q\allowbreak{}25191 (Nolan).
+  Chọn HermiT → Start reasoner, chờ hoàn tất.
 \item
-  Hiện Types trong chế độ asserted / trước suy luận.
+  Chọn person-\allowbreak{}\allowbreak{}Q\allowbreak{}25191; mở inferred
+  types.
 \item
-  Giữ dbo:Person và các quan hệ đóng góp/giải trong ảnh.
+  Giữ Writer\allowbreak{}Di\allowbreak{}rector, Filmmaker,
+  Three\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor
+  trong ảnh.
 \end{enumerate}
 
-\textbf{Mục cần thấy:} Kiểu gán gốc là Person;
-Filmmake\allowbreak{}r/\allowbreak{}\allowbreak{}Award\allowbreak{}W\allowbreak{}inner
-trong app được bổ sung qua file phân loại. Nếu chụp sau reasoner, phải
-ghi rõ tên và trạng thái thực thi.
+\textbf{Mục cần thấy:} Type mới không được gán trực tiếp trong asserted
+graph; giữ trạng thái reasoner.
 
 \subsection{Kiểm tra trước khi dùng làm minh
 chứng}\label{kiux1ec3m-tra-trux1b0ux1edbc-khi-duxf9ng-luxe0m-minh-chux1ee9ng}
@@ -376,7 +376,8 @@ chứng}\label{kiux1ec3m-tra-trux1b0ux1edbc-khi-duxf9ng-luxe0m-minh-chux1ee9ng}
 \begin{itemize}
 \tightlist
 \item
-  Đúng ontology 2.0 của bài, không phải file mở rộng cũ.
+  Đúng ontology 3.0.0 của bài; không dùng ảnh 2.0 làm minh chứng mô hình
+  mới.
 \item
   Ảnh cá thể dùng Knowledge Graph; ảnh mô hình dùng schema OWL.
 \item

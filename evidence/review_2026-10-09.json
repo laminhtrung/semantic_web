@@ -1,0 +1,149 @@
+{
+  "review_date": "2026-10-09",
+  "data_triples": 18595,
+  "schema_triples": 442,
+  "named_classes": 37,
+  "data_errors": [],
+  "raw_snapshots_listed": 76,
+  "raw_hashes_matching": 76,
+  "missing_raw_files": [],
+  "hash_mismatches": [],
+  "queries": [
+    {
+      "file": "01.rq",
+      "mode": "asserted",
+      "rows": 30
+    },
+    {
+      "file": "02.rq",
+      "mode": "asserted",
+      "rows": 1
+    },
+    {
+      "file": "03.rq",
+      "mode": "asserted",
+      "rows": 1
+    },
+    {
+      "file": "04.rq",
+      "mode": "asserted",
+      "rows": 25
+    },
+    {
+      "file": "05.rq",
+      "mode": "asserted",
+      "rows": 8
+    },
+    {
+      "file": "06.rq",
+      "mode": "asserted",
+      "rows": 4
+    },
+    {
+      "file": "07.rq",
+      "mode": "asserted",
+      "rows": 7
+    },
+    {
+      "file": "08.rq",
+      "mode": "asserted",
+      "rows": 1
+    },
+    {
+      "file": "09.rq",
+      "mode": "reasoned",
+      "rows": 75
+    },
+    {
+      "file": "10.rq",
+      "mode": "reasoned",
+      "rows": 851
+    },
+    {
+      "file": "11.rq",
+      "mode": "reasoned",
+      "rows": 45
+    },
+    {
+      "file": "12.rq",
+      "mode": "reasoned",
+      "rows": 4
+    },
+    {
+      "file": "13.rq",
+      "mode": "reasoned",
+      "rows": 769
+    },
+    {
+      "file": "14.rq",
+      "mode": "reasoned",
+      "rows": 769
+    },
+    {
+      "file": "15.rq",
+      "mode": "reasoned",
+      "rows": 89
+    },
+    {
+      "file": "16.rq",
+      "mode": "reasoned",
+      "rows": 12
+    },
+    {
+      "file": "17.rq",
+      "mode": "reasoned",
+      "rows": 26
+    },
+    {
+      "file": "18.rq",
+      "mode": "reasoned",
+      "rows": 17
+    },
+    {
+      "file": "19.rq",
+      "mode": "reasoned",
+      "rows": 7
+    },
+    {
+      "file": "20.rq",
+      "mode": "reasoned",
+      "rows": 10
+    },
+    {
+      "file": "21.rq",
+      "mode": "reasoned",
+      "rows": 7
+    },
+    {
+      "file": "22.rq",
+      "mode": "reasoned",
+      "rows": 65
+    },
+    {
+      "file": "23.rq",
+      "mode": "reasoned",
+      "rows": 10
+    },
+    {
+      "file": "24.rq",
+      "mode": "reasoned",
+      "rows": 8
+    },
+    {
+      "file": "25.rq",
+      "mode": "reasoned",
+      "rows": 8
+    },
+    {
+      "file": "26.rq",
+      "mode": "reasoned",
+      "rows": 8
+    },
+    {
+      "file": "27.rq",
+      "mode": "dataset",
+      "rows": 1261
+    }
+  ],
+  "inference_scope": "Uses current canonical graph scopes; HermiT proof and pytest are separate verification."
+}

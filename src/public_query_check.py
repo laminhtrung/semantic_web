@@ -27,11 +27,13 @@ with sync_playwright() as p:
         assert not status.startswith('Query error:'), status
         result = expected[sample['file']]
         if 'boolean' in result:
-            assert page.locator('#results').inner_text() == str(result['boolean'])
+            assert page.locator('#results').inner_text() == ('True' if result['boolean'] else 'False')
         else:
             assert page.locator('#results tbody tr').count() == len(result['results']['bindings']), sample['file']
         assert not page.locator('#export').is_disabled()
         checks.append({'query':sample['file'], 'status':status, 'passed':True})
+    page.select_option('#query-mode','asserted')
+    page.wait_for_function("!document.querySelector('#run').disabled", timeout=45000)
     for query in ['CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 3', 'DESCRIBE <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188>']:
         page.locator('#query-text').fill(query)
         page.click('#run')
@@ -42,6 +44,14 @@ with sync_playwright() as p:
             page.click('#export')
         assert download.value.suggested_filename == 'query_results.ttl'
         checks.append({'query':query.split()[0], 'status':page.locator('#status').inner_text(), 'passed':True})
+    # The same minimum-cardinality ASK must differ between source facts and inference.
+    for mode, answer in [('asserted','False'),('reasoned','True')]:
+        page.select_option('#query-mode',mode)
+        page.locator('#query-text').fill('ASK { <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/person-Q25191> a <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#ThreeCreditContributor> }')
+        page.click('#run')
+        page.wait_for_function("!document.querySelector('#run').disabled",timeout=45000)
+        assert page.locator('#results').inner_text()==answer
+        checks.append({'query':'ASK min3 '+mode,'status':answer,'passed':True})
     page.locator('#query-text').fill('not SPARQL')
     page.click('#run')
     page.wait_for_function("!document.querySelector('#run').disabled", timeout=45000)

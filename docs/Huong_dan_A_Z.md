@@ -1,63 +1,48 @@
----
-title: "MovieLOD: hướng dẫn đọc và chạy từ A đến Z"
-date: "MovieLOD 2.0 · Đối chiếu ngày 08/10/2026"
----
+# MovieLOD — Hướng dẫn bắt đầu với repo hiện tại
 
-## Đọc theo thứ tự nào?
+> **Phiên bản:** Ontology, dữ liệu, web và truy vấn dùng chung 3.0.0. MP4 đã được xoá theo yêu cầu; tài liệu demo dùng cho trình diễn trực tiếp.
 
-1. Đọc tài liệu này để biết chạy ứng dụng và hiểu từ khóa.
-2. Mở `Slide.pptx` cùng `Script_thuyet_trinh.pdf` để tập nói.
-3. Đọc `Kich_ban_video.pdf` để quay demo 3–5 phút.
-4. Đọc `Bao_cao.pdf` và `CHAM_DIEM.pdf` để đối chiếu yêu cầu.
-5. Tra `Huong_dan_thao_tac_chi_tiet.pdf` khi cần lệnh và xử lý lỗi; `Ontology_Redesign.pdf` khi cần đầy đủ lớp/thuộc tính.
+## Đọc đúng tài liệu
 
-## Chạy ứng dụng từ dữ liệu đã có
+Bắt đầu bằng [hướng dẫn đọc hiểu 25 trang](Huong_dan_doc_hieu_project.pdf). Slide chính là Slide.pptx/pdf, 24 trang tiếng Anh; script tập nói bằng tiếng Việt. Báo cáo tiếng Anh đúng 15 trang. Ô chờ ảnh Protégé giữ tiếng Việt, yêu cầu ảnh mới của OWL 3.0.0.
 
-Trong terminal ở thư mục dự án:
+## Chạy ontology mới
+
+1. Mở ontology/Movie_Knowledge_Graph.owl trong Protégé. Đây là schema + facts đầy đủ.
+2. Kiểm tra versionInfo 3.0.0. File Movie_Ontology.owl chỉ chứa schema.
+3. Chọn HermiT → Start reasoner, đợi hoàn tất.
+4. Tìm Nolan/person-Q25191. Kiểm tra Filmmaker, WriterDirector và ThreeCreditContributor ở inferred view.
+
+HermiT xác nhận consistent và không có named class bất khả thỏa. Kết quả nằm ở evidence/ontology_design/final_owl_checks.json, gắn với hash file OWL.
+
+## Truy vấn graph mới
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python src/server.py
+.venv/bin/python src/query_design.py queries/design/20.rq --mode asserted
+.venv/bin/python src/query_design.py queries/design/20.rq --mode reasoned
+.venv/bin/python src/query_design.py queries/design/27.rq --mode dataset
 ```
 
-Mở `http://127.0.0.1:8000`. Nếu cổng đang bị dùng, chạy server với `--port 8001`, mở URL cổng 8001 và thay cổng trong curl. Sau khi build dữ liệu mới, dừng và chạy lại server để endpoint nạp graph mới. Không dừng tiến trình của người khác chỉ để lấy lại cổng.
+Hai lệnh đầu trả lần lượt 0 và 10 người WriterDirector. Lệnh cuối so sánh type chỉ xuất hiện sau inference bằng hai named graph. SELECT/ASK trả JSON; graph query trả Turtle.
 
-Chọn Sample queries: Inception; kết quả **2010, 148, Christopher Nolan**. Chọn Films directed by Christopher Nolan: **8 dòng**. Chọn Who contributed to Inception: **25 dòng** gồm các vai trò Director, Actor, Writer, Producer. Tìm Inception ở Find a film, mở trang phim để xem nguồn và RDF.
+## Chạy ứng dụng hiện có
 
-## Từ khóa cần hiểu
+```bash
+.venv/bin/python src/server.py --port 8000
+```
 
-| Từ | Nghĩa dễ nhớ |
-|:--|:--|
-| Ontology | Bản mô tả các khái niệm, quan hệ và quy tắc |
-| Class / individual | Loại đối tượng / một đối tượng cụ thể; Film / Inception |
-| RDF triple | Một câu dữ liệu: chủ thể, quan hệ, đối tượng hoặc giá trị |
-| IRI / URI | Định danh để phân biệt thực thể; HTTP IRI còn có thể tra cứu |
-| SPARQL | Ngôn ngữ đặt câu hỏi trên đồ thị RDF |
-| SELECT / ASK / CONSTRUCT | Lấy bảng / hỏi đúng-sai / tạo đồ thị |
-| owl:sameAs | Hai định danh cùng chỉ một thực thể |
-| SourceSnapshot | Bản ghi URL, thời điểm, hash của phản hồi nguồn |
-| OWL RL | Bộ luật suy luận mà thư viện owlrl đang dùng |
-| --reasoned | Nạp thêm schema và kết quả phân loại đã lưu |
+Mở http://127.0.0.1:8000. Nếu cổng bận, chọn cổng khác và đổi URL tương ứng. Endpoint đọc exports 3.0.0: source facts, reasoned graph và named before/after dataset. Mẫu query tự chọn scope; đổi scope rồi bấm Run. Không chạy HermiT cho từng request.
 
-## Phân biệt ba việc dễ nhầm
+## Số liệu cần nhớ
 
-Dùng `dbo:Film` là tái sử dụng lớp DBpedia. Nối Inception với Wikidata bằng sameAs là nối **cá thể**. Ghi nguồn bằng sourceSnapshot là giữ **xuất xứ**. Ba việc này giải quyết ba câu hỏi khác nhau.
+OWL cuối: 37 lớp có tên, 19 object và 5 datatype property; 19.025 triple bao gồm schema và facts. Có 30 phim, 851 người, 1.010 credit, 45 công ty, 75 genre và 672 award entity. Inception: 2010, 8.880 giây (=148 phút); Nolan đạo diễn 8 phim trong mẫu.
 
-Một người có thể giữ nhiều vai trò. Contribution là bản ghi **một người + một phim + một vai trò**. Các vai trò khác nhau có bản ghi riêng. Không dùng mô hình Credit/participant/hasCredit của bản cũ.
+Actor 769; Filmmaker 89; WriterDirector 10; MultiCreditContributor 17; ThreeCreditContributor 7. Bốn role individual ở namespace ex:, không được bỏ qua chỉ vì thống kê local res: hiển thị 0 role.
 
-Endpoint truy vấn dữ liệu khai báo. Muốn hỏi các lớp Actor/Filmmaker được suy ra, dùng terminal với --reasoned. File inferred_classes.ttl đã có; chạy reason.py khi cần tính lại sau sửa dữ liệu. Một SELECT trực tiếp trả 0 không có nghĩa ontology không có định nghĩa.
+## Tái lập dữ liệu và tài liệu
 
-## Số liệu và kết quả hoàn tất
+Trình tạo slide: src/make_slides_video.py --slides-only. Báo cáo: src/make_report.py. Hướng dẫn đọc hiểu: src/make_reading_guide.py. Các trình tạo này không cần ghi lại MP4.
 
-Bản local: **42 lớp, 30 phim, 851 người, 1.010 đóng góp, 19.339 triple, 1.727 liên kết ngoài**. Bản 2.0 đã được xuất bản công khai và kiểm tra không đăng nhập: dữ liệu Turtle/JSON-LD, ontology và mô tả RDF của Inception đều đẳng cấu với graph cục bộ. Có 19.339 triple dữ liệu và 42 lớp ontology.
+`make build` xuất model 3.0.0 từ corpus; `make reason JAVA=/path/to/java` chạy HermiT trực tiếp trên canonical OWL và materialize OWL RL; `make validate` kiểm tra nguồn và 27 queries; `make test` chạy pytest. `make all` thực hiện cả collect trước pipeline này. Java 17 và requirements_reasoner.txt cần có để chạy HermiT.
 
-Đã bổ sung 43 phản hồi còn thiếu và chạy lại quy trình: đủ 76/76 file nguồn, 76/76 SHA-256 khớp, không có file thiếu. Một phản hồi tải lại có nội dung thay đổi được ghi thời điểm/hash mới; danh mục lịch sử được giữ ở `evidence/source_manifest_before_recovery.json`.
-
-Theo thang chia đều 2 điểm/yêu cầu, hiện **10/10**: cả 5 yêu cầu đạt trong phạm vi đề và kiểm tra hiện tại. Đây là tự đánh giá, không phải điểm chính thức. `Video_demo.mp4` đã được thay bằng demo thao tác bản 2.0, có lời tiếng Việt tổng hợp; nhóm có thể tự đọc lại theo kịch bản. Đọc `CHAM_DIEM.md` để biết minh chứng và cách hoàn tất.
-
-## Slide đầy đủ và ảnh Protégé
-
-Slide.pptx/pdf hiện có **24 trang**, Script_thuyet_trinh.md/pdf khớp từng trang. Bản ngắn 13 trang vẫn ở Slide_ngan_13.pptx/pdf cùng lời nói riêng. Có **11 khung ảnh Protégé** ghi ngay trên slide; xem Checklist_anh_Protege.pdf để bổ sung. Lần này chưa có ảnh Protégé thật, không dùng khung chờ làm minh chứng đã chụp.
-
-**Cập nhật timestamp/reasoner:** dùng duy nhất Movie_Knowledge_Graph.owl cho graph đầy đủ. HermiT/Pellet đã chạy; xem Ket_qua_reasoner.pdf. Video_demo.mp4 giữ nguyên theo yêu cầu nhóm; timestamp trong dữ liệu mới giảm đến mili giây, nội dung phim/quan hệ giữ nguyên, đã kiểm tra ở video_dataset_compatibility.json. Video chưa thể hiện kết quả reasoner mới và vẫn nhắc bộ slide ngắn 13 trang.
+MP4 đã xoá theo yêu cầu, không có video trong bộ bàn giao. File Slide_full.pptx.pdf là nguồn ảnh do nhóm cung cấp; Slide.pptx/pdf là deck mới nhất.

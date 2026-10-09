@@ -1,11 +1,11 @@
 ---
 title: "MovieLOD: checklist ảnh minh chứng Protégé"
-date: "11 vị trí trong bộ 24 slide · 08/10/2026"
+date: "11 vị trí trong bộ 24 slide · 09/10/2026"
 ---
 
 ## Cách chèn
 
-Có 11 khung ảnh ghi rõ mã, tên file và thao tác ngay trên slide. Lần tạo này không có ảnh Protégé thật: macOS chặn quyền điều khiển giao diện; không thay bằng ảnh dựng. Ảnh ứng dụng Web trong slide là ảnh chụp thực.
+Có 11 khung ảnh ghi rõ mã, tên file và thao tác ngay trên slide. Lần tạo này không có ảnh Protégé thật: chưa có ảnh giao diện đã xác minh cho ontology mới; không dùng ảnh dựng làm screenshot. Ảnh ứng dụng Web trong slide là ảnh chụp thực.
 
 Cách 1: chèn ảnh vào PowerPoint và che/xóa khung chờ cùng phần hướng dẫn của khung đó. Cách 2: lưu đúng tên ở `evidence/protege/` (PNG/JPG/JPEG cùng stem), chạy `.venv/bin/python src/make_slides_video.py --slides-only`; khung chờ tự thay bằng ảnh. Speaker Notes giữ quy trình chụp.
 
@@ -13,119 +13,119 @@ Chụp đúng cửa sổ/view, chữ đủ lớn (gợi ý 1440×900 trở lên)
 
 ## Danh sách ảnh
 
-### P00 — Slide 05: Ontology IRI và phiên bản
+### P00 — Slide 05: IRI và phiên bản 3.0.0
 
-**Tên file:** `P00_ontology_header.png`. **Mở:** `ontology/Movie_Ontology.owl`.
+**Tên file:** `P00_ontology_header.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Mở ontology/Movie_Ontology.owl.
+1. Mở ontology/Movie_Knowledge_Graph.owl.
 2. Chọn Active Ontology / Ontology Header.
-3. Giữ IRI ontology và versionInfo 2.0.0 trong khung hình.
+3. Giữ IRI và versionInfo 3.0.0 trong ảnh.
 
-**Mục cần thấy:** IRI đúng namespace của bài; phiên bản 2.0.0. Metrics có thể tính cả lớp ngoài được tham chiếu, khác 42 lớp tự khai báo.
+**Mục cần thấy:** 37 lớp có tên; không đếm biểu thức anonymous như lớp có tên.
 
-### P01 — Slide 06: Cây lớp phim
+### P01 — Slide 06: Cây Work / Film
 
-**Tên file:** `P01_film_hierarchy.png`. **Mở:** `ontology/Movie_Ontology.owl`.
+**Tên file:** `P01_film_hierarchy.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Entities → Classes → mở CreativeWork và Film.
-2. Hiện các lớp con FeatureFilm, AnimatedFilm và nhóm phim.
-3. Chọn Film; giữ IRI DBpedia và Class Description.
+1. Mở Classes → dbo:Work → dbo:Film.
+2. Hiện ActionFilm, AwardWinningFilm và các lớp giao.
+3. Giữ IRI DBpedia của Film trong Description.
 
-**Mục cần thấy:** Film thuộc CreativeWork; IRI là http://dbpedia.org/ontology/Film. Chụp cây khai báo, không gọi là cây đã suy luận.
+**Mục cần thấy:** Không có FeatureFilm/AnimatedFilm/DocumentaryFilm trong module cuối.
 
-### P02 — Slide 07: Cây người và tổ chức
+### P02 — Slide 07: Cây chủ thể DBpedia
 
-**Tên file:** `P02_agent_hierarchy.png`. **Mở:** `ontology/Movie_Ontology.owl`.
+**Tên file:** `P02_agent_hierarchy.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Entities → Classes → mở Agent.
-2. Mở Person và Organization → ProductionCompany.
-3. Chọn Person hoặc Filmmaker; giữ cây lớp và Description.
+1. Mở dbo:Agent → dbo:Person và dbo:Organisation.
+2. Hiện Artist → Actor; Organisation → Company.
+3. Mở MovieDirector / Writer → ScreenWriter.
 
-**Mục cần thấy:** Person và Organization cùng dưới Agent; Actor/Filmmaker/AwardWinner là lớp con Person.
+**Mục cần thấy:** Reuse lớp DBpedia; không tạo ex:Actor hoặc ex:Organization.
 
-### P03 — Slide 08: Cây Genre và Award
+### P03 — Slide 08: MovieGenre và Award
 
-**Tên file:** `P03_genre_award_hierarchy.png`. **Mở:** `ontology/Movie_Ontology.owl`.
+**Tên file:** `P03_genre_award_hierarchy.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Thu gọn Film/Agent để ảnh dễ đọc.
-2. Mở Genre → FictionGenre / NonFictionGenre và Award.
-3. Hiện các lớp thể loại và nhóm giải; giữ Class Description.
+1. Mở dbo:Genre → dbo:MovieGenre.
+2. Hiện ActionGenre / DramaGenre; chọn dbo:Award.
+3. Giữ Description để đọc IRI và lớp cha.
 
-**Mục cần thấy:** Cây Genre/Award khớp sơ đồ. Nhóm thể loại/giải được ánh xạ theo nhãn trong bước build.
+**Mục cần thấy:** Không có FictionGenre hoặc các nhóm award suy đoán theo nhãn.
 
-### P04 — Slide 09: Ràng buộc của Contribution
+### P04 — Slide 09: Ràng buộc Contribution
 
-**Tên file:** `P04_contribution_restrictions.png`. **Mở:** `ontology/Movie_Ontology.owl`.
+**Tên file:** `P04_contribution_restrictions.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Entities → Classes → chọn Contribution.
-2. Trong Class Description, mở đủ SubClass Of.
-3. Hiện contributionBy / contributionTo / hasRole: exactly 1.
+1. Chọn ex:Contribution.
+2. Hiện exactly 1 cho contributionBy, contributionTo, hasRole.
+3. Chọn hasRole để thấy Functional và role individual.
 
-**Mục cần thấy:** Ba qualified cardinality đúng 1, cùng các allValuesFrom. Đây là mô hình OWL, không phải biên bản kiểm tra thiếu trường.
+**Mục cần thấy:** Ba endpoint đúng 1; dữ liệu thiếu cần structural validation riêng.
 
-### P05 — Slide 10: Domain, range, inverse, functional
+### P05 — Slide 10: Domain / range / inverse
 
-**Tên file:** `P05_object_property.png`. **Mở:** `ontology/Movie_Ontology.owl`.
+**Tên file:** `P05_object_property.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Entities → Object properties → chọn contributionBy.
-2. Hiện Domain=Contribution, Range=Person.
-3. Giữ inverse hasContribution và ô Functional được chọn.
+1. Chọn contributionBy: Contribution → dbo:Person.
+2. Hiện Functional và inverse hasContribution.
+3. Có thể chụp contributedTo với property chain.
 
-**Mục cần thấy:** Đúng domain/range/inverse/functional của contributionBy. Nếu cần, chụp bổ sung hasRole hoặc director.
+**Mục cần thấy:** Chain hasContribution rồi contributionTo; không đặt cardinality trên contributedTo.
 
 ### P06 — Slide 13: Định nghĩa Filmmaker
 
-**Tên file:** `P06_filmmaker_equivalent_class.png`. **Mở:** `ontology/Movie_Ontology.owl`.
+**Tên file:** `P06_filmmaker_equivalent_class.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Entities → Classes → chọn Filmmaker.
-2. Mở Class Description → Equivalent To.
-3. Hiện Person AND các nhánh SOME Directing/Writing/ProducingContribution.
+1. Chọn ex:Filmmaker.
+2. Hiện Equivalent To với Person AND các nhánh SOME.
+3. Đọc các nhánh Directing / Writing / ProducingContribution.
 
-**Mục cần thấy:** Định nghĩa giao/hợp/tồn tại. Ảnh định nghĩa không tự chứng minh HermiT đã phân loại dữ liệu.
+**Mục cần thấy:** Công thức không tự chứng minh reasoner đã chạy.
 
-### P07 — Slide 14: Định nghĩa FilmStudio
+### P07 — Slide 14: Cardinality trên Contribution
 
-**Tên file:** `P07_filmstudio_cardinality.png`. **Mở:** `ontology/Movie_Ontology.owl`.
+**Tên file:** `P07_three_credit_cardinality.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Entities → Classes → chọn FilmStudio.
-2. Mở Equivalent To; hiện min 3 productionOf Film.
-3. Có thể chụp thêm MultiGenreFilm: min 2 hasGenre Genre.
+1. Chọn ex:ThreeCreditContributor; hiện min 3 hasContribution Contribution.
+2. Chạy HermiT; chọn Nolan ở inferred view.
+3. Chụp thêm Functional hasRole và AllDifferent của bốn role.
 
-**Mục cần thấy:** Ảnh công thức cardinality. Kết quả 6 studio/30 phim nhiều thể loại của app dùng COUNT DISTINCT, không tự coi là chứng minh OWL DL.
+**Mục cần thấy:** 7 người đạt min 3; 17 người đạt min 2; không phải COUNT DISTINCT.
 
-### P08 — Slide 16: Datatype của thời lượng
+### P08 — Slide 16: Thời lượng theo DBpedia
 
-**Tên file:** `P08_runtime_datatype.png`. **Mở:** `ontology/Movie_Ontology.owl`.
+**Tên file:** `P08_runtime_datatype.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Entities → Data properties → chọn runtimeMinutes.
-2. Hiện Domain=Film và Range=xsd:decimal.
-3. Có thể chụp thêm releaseYear có range xsd:integer.
+1. Chọn dbo:runtime trong Data properties.
+2. Hiện domain dbo:Work và range xsd:double.
+3. Chọn Inception: runtime = 8880 giây.
 
-**Mục cần thấy:** Thuộc tính dữ liệu nối thực thể với literal, khác quan hệ nối hai thực thể.
+**Mục cần thấy:** 8880 giây = 148 phút; rdfs:label là annotation property.
 
-### P09 — Slide 18: Cá thể Inception
+### P09 — Slide 18: Cá thể Inception bản mới
 
 **Tên file:** `P09_inception_individual.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Mở ontology/Movie_Knowledge_Graph.owl.
-2. Individuals → chọn film-Q25188 (Inception).
-3. Hiện Film, title, releaseYear=2010, runtimeMinutes=148 và director.
+1. Mở Movie_Knowledge_Graph.owl 3.0.0.
+2. Chọn film-Q25188; hiện label, releaseYear 2010, runtime 8880.
+3. Hiện dbo:director, genre, productionCompany và award.
 
-**Mục cần thấy:** Cá thể thật và thuộc tính khớp truy vấn. Giữ tên ontology để không chụp nhầm file chỉ có schema.
+**Mục cần thấy:** Cá thể trong OWL khớp trang resource 3.0.0; runtime là 8880 giây.
 
-### P10 — Slide 21: Kiểu khai báo của Nolan
+### P10 — Slide 21: Các type suy luận của Nolan
 
-**Tên file:** `P10_nolan_asserted_types.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
+**Tên file:** `P10_nolan_inferred_types.png`. **Mở:** `ontology/Movie_Knowledge_Graph.owl`.
 
-1. Mở Movie_Knowledge_Graph.owl, chọn person-Q25191 (Nolan).
-2. Hiện Types trong chế độ asserted / trước suy luận.
-3. Giữ dbo:Person và các quan hệ đóng góp/giải trong ảnh.
+1. Chọn HermiT → Start reasoner, chờ hoàn tất.
+2. Chọn person-Q25191; mở inferred types.
+3. Giữ WriterDirector, Filmmaker, ThreeCreditContributor trong ảnh.
 
-**Mục cần thấy:** Kiểu gán gốc là Person; Filmmaker/AwardWinner trong app được bổ sung qua file phân loại. Nếu chụp sau reasoner, phải ghi rõ tên và trạng thái thực thi.
+**Mục cần thấy:** Type mới không được gán trực tiếp trong asserted graph; giữ trạng thái reasoner.
 
 ## Kiểm tra trước khi dùng làm minh chứng
 
-- Đúng ontology 2.0 của bài, không phải file mở rộng cũ.
+- Đúng ontology 3.0.0 của bài; không dùng ảnh 2.0 làm minh chứng mô hình mới.
 - Ảnh cá thể dùng Knowledge Graph; ảnh mô hình dùng schema OWL.
 - IRI lớp DBpedia, cardinality và datatype đọc được.
 - Không nói HermiT/Pellet đã chứng minh DL nếu chỉ chụp công thức hoặc chọn menu.

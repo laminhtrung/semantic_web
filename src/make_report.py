@@ -104,8 +104,8 @@ def cover(doc):
     for name,student_id in MEMBERS:
         paragraph(doc,name+' — '+student_id,align=WD_ALIGN_PARAGRAPH.CENTER,first_line=False)
     paragraph(doc,align=WD_ALIGN_PARAGRAPH.CENTER,first_line=False)
-    paragraph(doc,'English report · MovieLOD ontology 2.0.0',align=WD_ALIGN_PARAGRAPH.CENTER,first_line=False)
-    paragraph(doc,'8 October 2026',align=WD_ALIGN_PARAGRAPH.CENTER,first_line=False)
+    paragraph(doc,'English report · MovieLOD ontology 3.0.0',align=WD_ALIGN_PARAGRAPH.CENTER,first_line=False)
+    paragraph(doc,'9 October 2026',align=WD_ALIGN_PARAGRAPH.CENTER,first_line=False)
 
 def markdown():
     lines=['# MovieLOD: course project report (English)','', 'Formatting: Times New Roman 13 pt; 1.5 line spacing; justified body text; A4; left 3 cm, right/top/bottom 2 cm. PDF has 15 pages including cover, contents and references.','']
@@ -175,7 +175,7 @@ def main():
     report={'language':'English','pages':len(pdf.pages),'target_pages':15,'font':FONT,'font_size_pt':13,'line_spacing':1.5,
             'alignment':'justified body text','paper':'A4','margins_cm':{'left':3,'right':2,'top':2,'bottom':2},
             'figures':sum(b['type']=='image' for p in PAGES for b in p['blocks']),
-            'figure_source':'10 figures from supplied slide PDF; 1 author-generated conceptual diagram','source_manifest':'evidence/report_image_sources.json',
+            'figure_source':'1 figure retained from supplied slide PDF; 10 author-generated diagrams and verified result panels','source_manifest':'evidence/report_image_sources.json',
             'cover_members':MEMBERS,'supervisor':SUPERVISOR,'institution':'Hanoi University of Science and Technology',
             'toc':'Dedicated page; hierarchical paragraphs, dotted leaders and right-aligned page numbers; no table',
             'docx_sha256':hashlib.sha256(destination.read_bytes()).hexdigest(),

@@ -1,85 +1,160 @@
 {
   "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/",
-  "checked_at": "2026-10-08T07:49:17.459796+00:00",
+  "checked_at": "2026-10-09T09:56:16.945385+00:00",
   "checks": [
     {
-      "query": "02_inception.rq",
-      "status": "1 result · 0.01 s",
+      "query": "02.rq",
+      "status": "1 result · 0.00 s",
       "passed": true
     },
     {
-      "query": "01_films.rq",
-      "status": "30 results · 0.06 s",
+      "query": "01.rq",
+      "status": "30 results · 0.10 s",
       "passed": true
     },
     {
-      "query": "03_nolan.rq",
-      "status": "8 results · 0.00 s",
+      "query": "03.rq",
+      "status": "1 result · 0.00 s",
       "passed": true
     },
     {
-      "query": "04_credits.rq",
+      "query": "04.rq",
       "status": "25 results · 0.25 s",
       "passed": true
     },
     {
-      "query": "05_external_links.rq",
-      "status": "58 results · 0.10 s",
+      "query": "05.rq",
+      "status": "8 results · 0.01 s",
       "passed": true
     },
     {
-      "query": "06_genres.rq",
-      "status": "75 results · 0.39 s",
-      "passed": true
-    },
-    {
-      "query": "07_source.rq",
-      "status": "2 results · 0.01 s",
-      "passed": true
-    },
-    {
-      "query": "08_ask.rq",
-      "status": "1 result · 0.00 s",
-      "passed": true
-    },
-    {
-      "query": "09_actors_of_inception.rq",
-      "status": "21 results · 0.03 s",
-      "passed": true
-    },
-    {
-      "query": "10_production_companies_of_a_film.rq",
+      "query": "06.rq",
       "status": "4 results · 0.00 s",
       "passed": true
     },
     {
-      "query": "11_awards_received_by_a_film.rq",
+      "query": "07.rq",
       "status": "7 results · 0.00 s",
       "passed": true
     },
     {
-      "query": "12_countries_and_languages_of_a_film.rq",
+      "query": "08.rq",
       "status": "1 result · 0.00 s",
       "passed": true
     },
     {
-      "query": "15_feature_vs_animated_film_counts.rq",
-      "status": "1 result · 0.00 s",
+      "query": "09.rq",
+      "status": "75 results · 1.30 s",
       "passed": true
     },
     {
-      "query": "16_documentary_film_count_ask.rq",
-      "status": "1 result · 0.00 s",
+      "query": "10.rq",
+      "status": "851 results · 1.49 s",
+      "passed": true
+    },
+    {
+      "query": "11.rq",
+      "status": "45 results · 0.11 s",
+      "passed": true
+    },
+    {
+      "query": "12.rq",
+      "status": "4 results · 0.01 s",
+      "passed": true
+    },
+    {
+      "query": "13.rq",
+      "status": "769 results · 1.31 s",
+      "passed": true
+    },
+    {
+      "query": "14.rq",
+      "status": "769 results · 0.52 s",
+      "passed": true
+    },
+    {
+      "query": "15.rq",
+      "status": "89 results · 0.13 s",
+      "passed": true
+    },
+    {
+      "query": "16.rq",
+      "status": "12 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "17.rq",
+      "status": "26 results · 0.10 s",
+      "passed": true
+    },
+    {
+      "query": "18.rq",
+      "status": "17 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "19.rq",
+      "status": "7 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "20.rq",
+      "status": "10 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "21.rq",
+      "status": "7 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "22.rq",
+      "status": "65 results · 0.12 s",
+      "passed": true
+    },
+    {
+      "query": "23.rq",
+      "status": "10 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "24.rq",
+      "status": "8 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "25.rq",
+      "status": "8 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "26.rq",
+      "status": "8 results · 0.00 s",
+      "passed": true
+    },
+    {
+      "query": "27.rq",
+      "status": "1261 results · 7.59 s",
       "passed": true
     },
     {
       "query": "CONSTRUCT",
-      "status": "3 results · 0.00 s",
+      "status": "3 results · 0.01 s",
       "passed": true
     },
     {
       "query": "DESCRIBE",
-      "status": "85 results · 0.02 s",
+      "status": "83 results · 0.02 s",
+      "passed": true
+    },
+    {
+      "query": "ASK min3 asserted",
+      "status": "False",
+      "passed": true
+    },
+    {
+      "query": "ASK min3 reasoned",
+      "status": "True",
       "passed": true
     }
   ],

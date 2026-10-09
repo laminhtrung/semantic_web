@@ -1,6 +1,0 @@
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-# Requires inference (see 17). ex:Filmmaker unions directing/writing/producing contributions.
-SELECT ?personName WHERE {
-  ?person a ex:Filmmaker ; rdfs:label ?personName .
-} ORDER BY ?personName LIMIT 20

@@ -1,7 +1,0 @@
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?title ?awardName WHERE {
-  ?film ex:title ?title ; ex:hasAward ?award .
-  ?award rdfs:label ?awardName .
-  FILTER(?title = "The Godfather")
-} ORDER BY ?awardName

@@ -19,18 +19,18 @@ def client():
 def query_text(name):return (ROOT/'queries'/name).read_text()
 
 def test_inception_identity_and_normalized_data():
-    rows=list(DATA.query(query_text('02_inception.rq')))
+    rows=list(DATA.query(query_text('02.rq')))
     assert rows and all(str(r.title)=='Inception' and str(r.director)=='Christopher Nolan' for r in rows)
-    assert all(int(r.year)==2010 and 140<=float(r.runtimeMinutes)<=160 for r in rows)
+    assert all(int(r.year)==2010 and float(r.runtimeSeconds)==8880 for r in rows)
 
 def test_credits_include_role_labels():
-    rows=list(DATA.query(query_text('04_credits.rq')))
+    rows=list(DATA.query(query_text('04.rq')))
     assert rows
     assert any(str(r.personName)=='Christopher Nolan' and str(r.roleName)=='Director' for r in rows)
     assert any(str(r.personName)=='Christopher Nolan' and str(r.roleName)=='Writer' for r in rows)
 
 def test_get_and_post_sparql_protocol(client):
-    q=query_text('02_inception.rq')
+    q=query_text('02.rq')
     responses=[client.get('/sparql',query_string={'query':q}),
                client.post('/sparql',data={'query':q}),
                client.post('/sparql',data=q,content_type='application/sparql-query')]
@@ -40,7 +40,7 @@ def test_get_and_post_sparql_protocol(client):
         assert r.json['results']['bindings'][0]['title']['value']=='Inception'
 
 def test_ask_and_construct(client):
-    assert client.post('/sparql',data=query_text('08_ask.rq'),content_type='application/sparql-query').json['boolean'] is True
+    assert client.post('/sparql',data='ASK { <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188> <http://www.w3.org/2002/07/owl#sameAs> <http://www.wikidata.org/entity/Q25188> }',content_type='application/sparql-query').json['boolean'] is True
     q='CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 3'
     r=client.get('/sparql',query_string={'query':q})
     assert r.status_code==200 and r.mimetype=='text/turtle'
@@ -95,3 +95,14 @@ def test_data_checks_catch_missing_contribution_person_and_empty_graph():
     g.remove((contribution,EX.contributionBy,None))
     assert any(str(contribution) in error and 'contributionBy' in error for error in check_data(g))
     assert check_data(Graph())==['Dataset has no films.']
+
+
+def test_query_modes_return_genuine_before_after_membership(client):
+    q=query_text('20.rq')
+    before=client.post('/sparql?mode=asserted',data=q,content_type='application/sparql-query')
+    after=client.post('/sparql?mode=reasoned',data=q,content_type='application/sparql-query')
+    assert len(before.json['results']['bindings'])==0
+    assert len(after.json['results']['bindings'])==10
+    named=client.post('/sparql?mode=dataset',data=query_text('27.rq'),content_type='application/sparql-query')
+    assert named.status_code==200 and len(named.json['results']['bindings'])==1261
+    assert client.get('/sparql',query_string={'mode':'invalid','query':'ASK {}'}).status_code==400

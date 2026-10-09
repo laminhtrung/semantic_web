@@ -15,7 +15,7 @@ def test_generated_schema_matches_owl_exports():
     assert isomorphic(expected, Graph().parse(ROOT / 'ontology/movie.ttl'))
     assert isomorphic(expected, Graph().parse(ROOT / 'ontology/Movie_Ontology.owl'))
     named = {c for c in expected.subjects(RDF.type, OWL.Class) if isinstance(c, URIRef)}
-    assert len(named) == 42
+    assert len(named) == 37
     assert all(expected.value(c, RDFS.comment) for c in named)
 
 
@@ -56,31 +56,28 @@ def test_real_data_classification_matches_sparql_ground_truth():
     # Person-level classes must match direct SPARQL ground truth over the asserted data.
     actors = local(data.subjects(EX.hasRole, EX.ActorRole))
     acting_people = {data.value(c, EX.contributionBy) for c in actors}
-    assert local(g.subjects(RDF.type, EX.Actor)) == acting_people
+    assert local(g.subjects(RDF.type, DBO.Actor)) == acting_people
 
-    award_winners = local(data.subjects(EX.hasAward, None)) & local(data.subjects(RDF.type, DBO.Person))
-    assert local(g.subjects(RDF.type, EX.AwardWinner)) == award_winners
-
-    # Genre-based film classes must match a direct hasGenre + genre-subclass query.
-    for genre_cls, film_cls in [(EX.ActionGenre, EX.ActionFilm), (EX.ComedyGenre, EX.ComedyFilm),
-                                 (EX.DramaGenre, EX.DramaFilm), (EX.ScienceFictionGenre, EX.ScienceFictionFilm)]:
-        genres = local(data.subjects(RDF.type, genre_cls))
-        expected_films = {f for f in data.subjects(RDF.type, DBO.Film) if set(data.objects(f, EX.hasGenre)) & genres}
-        assert local(g.subjects(RDF.type, film_cls)) == local(expected_films)
-
-    # Cardinality-based classes (outside OWL RL) must match the real >=N counts.
-    multi_genre = {f for f in data.subjects(RDF.type, DBO.Film) if len(set(data.objects(f, EX.hasGenre))) >= 2}
-    assert local(g.subjects(RDF.type, EX.MultiGenreFilm)) == local(multi_genre)
-    studios = {c for c in data.subjects(RDF.type, EX.ProductionCompany)
-               if len(set(data.subjects(EX.hasProductionCompany, c))) >= 3}
-    assert local(g.subjects(RDF.type, EX.FilmStudio)) == local(studios)
+    genres = local(data.subjects(RDF.type, EX.ActionGenre))
+    expected_films = {f for f in data.subjects(RDF.type,DBO.Film) if set(data.objects(f,DBO.genre)) & genres}
+    assert local(g.subjects(RDF.type,EX.ActionFilm))==expected_films
+    # Cardinality is loaded from a hash-bound HermiT export, never emulated by COUNT.
+    import json,hashlib
+    proof=json.loads((ROOT/'evidence/ontology_design/final_owl_checks.json').read_text())
+    assert proof['sha256']==hashlib.sha256((ROOT/'ontology/Movie_Knowledge_Graph.owl').read_bytes()).hexdigest()
+    dl=Graph().parse(ROOT/'data/processed/inferred_classes.ttl')
+    for name,k in [('MultiCreditContributor',2),('ThreeCreditContributor',3)]:
+        witnesses={person for person in data.subjects(RDF.type,DBO.Person)
+                   if len({data.value(c,EX.hasRole) for c in data.objects(person,EX.hasContribution)})>=k}
+        assert local(dl.subjects(RDF.type,EX[name]))==witnesses
+    assert not list(dl.subjects(RDF.type,EX.MultiGenreFilm))
 
     # Known real individuals: Christopher Nolan directs and writes but never acts; Tarantino does both.
     nolan = RES['person-Q25191']
     assert (nolan, RDF.type, EX.Filmmaker) in g
-    assert (nolan, RDF.type, EX.Actor) not in g
+    assert (nolan, RDF.type, DBO.Actor) not in g
     tarantino = RES['person-Q3772']
-    assert (tarantino, RDF.type, EX.Actor) in g
+    assert (tarantino, RDF.type, DBO.Actor) in g
     assert (tarantino, RDF.type, EX.Filmmaker) in g
 
 
@@ -97,7 +94,7 @@ def test_multi_step_inference_chain_for_a_director():
     assert not errors
     assert (contribution, RDF.type, EX.DirectingContribution) in g
     assert (person, RDF.type, EX.Filmmaker) in g
-    assert (person, RDF.type, EX.Actor) not in g
+    assert (person, RDF.type, DBO.Actor) not in g
 
 
 def test_overlap_open_world_and_disjointness():
@@ -111,10 +108,10 @@ def test_overlap_open_world_and_disjointness():
     errors = infer(g)
     assert not errors
     # A person can hold several contributions at once: both Actor and Filmmaker, open-world style.
-    assert (person, RDF.type, EX.Actor) in g
     assert (person, RDF.type, EX.Filmmaker) in g
-    disjoint_sets = [set(g.items(members)) for members in g.objects(None, OWL.members)]
-    assert any({DBO.Film, DBO.Country} <= members for members in disjoint_sets)
-    g.add((URIRef('urn:test:film'), RDF.type, DBO.Film))
-    g.add((URIRef('urn:test:film'), RDF.type, DBO.Country))
-    assert infer(g), 'A film typed as a country must produce an inconsistency diagnostic.'
+    g.add((URIRef('urn:test:film'),DBO.starring,person))
+    assert not infer(g)
+    assert (person,RDF.type,DBO.Actor) in g
+    # Conflicting role values in one functional credit produce a real inconsistency.
+    g.add((actor_c,EX.hasRole,EX.DirectorRole))
+    assert infer(g), 'Different controlled roles cannot collapse through functional hasRole.'

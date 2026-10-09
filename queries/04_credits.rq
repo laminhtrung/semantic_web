@@ -1,7 +1,0 @@
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?personName ?roleName WHERE {
-  ?film ex:title "Inception" ; ex:contributionOf ?contribution .
-  ?contribution ex:contributionBy ?person ; ex:hasRole ?role .
-  ?person rdfs:label ?personName . ?role rdfs:label ?roleName .
-} ORDER BY ?roleName ?personName

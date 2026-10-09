@@ -1,9 +1,0 @@
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-# No reasoner needed: rdfs:subClassOf* is a property path, evaluated directly by the SPARQL engine.
-SELECT DISTINCT ?title WHERE {
-  ?film a dbo:Film ; ex:title ?title ; ex:hasGenre ?genre .
-  ?genre a ?genreClass .
-  ?genreClass rdfs:subClassOf* ex:FictionGenre .
-} ORDER BY ?title

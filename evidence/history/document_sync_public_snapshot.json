@@ -1,0 +1,9 @@
+{
+  "url": "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology.ttl",
+  "http_status": 200,
+  "version": [
+    "2.0.0"
+  ],
+  "named_classes": 42,
+  "purpose": "Verify publication scope stated in revised documentation; read-only check"
+}

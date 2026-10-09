@@ -29,7 +29,8 @@ void:Dataset a owl:Class ;
     rdfs:comment "Reuse VoID dataset, remove ex:Dataset clone."@en .
 
 <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology> a owl:Ontology ;
-    owl:versionInfo "3.0.0-design" .
+    rdfs:label "MovieLOD — DBpedia-based movie ontology"@en ;
+    owl:versionInfo "3.0.0" .
 
 ex:ActingContribution a owl:Class ;
     rdfs:label "ActingContribution"@en ;
@@ -237,7 +238,8 @@ ex:ActionGenre a owl:Class ;
     rdfs:subClassOf dbo:MovieGenre .
 
 ex:ActorRole a owl:NamedIndividual,
-        ex:ContributionRole .
+        ex:ContributionRole ;
+    rdfs:label "Actor"@en .
 
 ex:DirectingContribution a owl:Class ;
     rdfs:label "DirectingContribution"@en ;
@@ -249,7 +251,8 @@ ex:DirectingContribution a owl:Class ;
                         owl:onProperty ex:hasRole ] ) ] .
 
 ex:DirectorRole a owl:NamedIndividual,
-        ex:ContributionRole .
+        ex:ContributionRole ;
+    rdfs:label "Director"@en .
 
 ex:Filmmaker a owl:Class ;
     rdfs:label "Filmmaker"@en ;
@@ -266,7 +269,8 @@ ex:Filmmaker a owl:Class ;
                                     owl:someValuesFrom ex:ProducingContribution ] ) ] ) ] .
 
 ex:ProducerRole a owl:NamedIndividual,
-        ex:ContributionRole .
+        ex:ContributionRole ;
+    rdfs:label "Producer"@en .
 
 ex:ProducingContribution a owl:Class ;
     rdfs:label "ProducingContribution"@en ;
@@ -278,7 +282,8 @@ ex:ProducingContribution a owl:Class ;
                         owl:onProperty ex:hasRole ] ) ] .
 
 ex:WriterRole a owl:NamedIndividual,
-        ex:ContributionRole .
+        ex:ContributionRole ;
+    rdfs:label "Writer"@en .
 
 ex:WritingContribution a owl:Class ;
     rdfs:label "WritingContribution"@en ;
@@ -352,12 +357,12 @@ ex:Contribution a owl:Class ;
     rdfs:label "Contribution"@en ;
     rdfs:comment "A local credit association with one person, film and role; not the person or film itself."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass ex:ContributionRole ;
-            owl:onProperty ex:hasRole ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
             owl:onClass dbo:Person ;
             owl:onProperty ex:contributionBy ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass ex:ContributionRole ;
+            owl:onProperty ex:hasRole ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
             owl:onClass dbo:Film ;
@@ -370,23 +375,23 @@ dbo:Person a owl:Class ;
     rdfs:subClassOf dbo:Agent .
 
 [] a owl:Class ;
+    rdfs:subClassOf dbo:Producer ;
+    owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
+                owl:onProperty ex:hasContribution ;
+                owl:someValuesFrom ex:ProducingContribution ] ) .
+
+[] a owl:Class ;
     rdfs:subClassOf dbo:MovieDirector ;
     owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
                 owl:onProperty ex:hasContribution ;
                 owl:someValuesFrom ex:DirectingContribution ] ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( ex:ActorRole ex:DirectorRole ex:WriterRole ex:ProducerRole ) .
 
 [] a owl:Class ;
     rdfs:subClassOf dbo:ScreenWriter ;
     owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
                 owl:onProperty ex:hasContribution ;
                 owl:someValuesFrom ex:WritingContribution ] ) .
-
-[] a owl:AllDifferent ;
-    owl:distinctMembers ( ex:ActorRole ex:DirectorRole ex:WriterRole ex:ProducerRole ) .
-
-[] a owl:Class ;
-    rdfs:subClassOf dbo:Producer ;
-    owl:intersectionOf ( dbo:Person [ a owl:Restriction ;
-                owl:onProperty ex:hasContribution ;
-                owl:someValuesFrom ex:ProducingContribution ] ) .
 

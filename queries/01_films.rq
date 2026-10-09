@@ -1,7 +1,0 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-SELECT ?film ?title ?year ?runtimeMinutes WHERE {
-  ?film a dbo:Film ; ex:title ?title .
-  OPTIONAL { ?film ex:releaseYear ?year }
-  OPTIONAL { ?film ex:runtimeMinutes ?runtimeMinutes }
-} ORDER BY ?title

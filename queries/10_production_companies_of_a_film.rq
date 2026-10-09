@@ -1,7 +1,0 @@
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-SELECT ?title ?companyName WHERE {
-  ?film ex:title ?title ; ex:hasProductionCompany ?company .
-  ?company rdfs:label ?companyName .
-  FILTER(?title = "Inception")
-} ORDER BY ?companyName

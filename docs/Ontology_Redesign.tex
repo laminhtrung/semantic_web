@@ -83,7 +83,6 @@
 \@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
 \hypersetup{
-  pdftitle={MovieLOD: ontology 2.0 đầy đủ bằng tiếng Việt},
   colorlinks=true,
   linkcolor={teal},
   filecolor={Maroon},
@@ -91,584 +90,2841 @@
   urlcolor={teal},
   pdfcreator={LaTeX via pandoc}}
 
-\title{MovieLOD: ontology 2.0 đầy đủ bằng tiếng Việt}
 \author{}
-\date{MovieLOD 2.0 · Đối chiếu 08/10/2026}
+\date{}
 
 \begin{document}
-\maketitle
 
-\subsection{1. Mô hình hiện tại và cách
-đọc}\label{muxf4-huxecnh-hiux1ec7n-tux1ea1i-vuxe0-cuxe1ch-ux111ux1ecdc}
+\section{\texorpdfstring{D\allowbreak{}Bpedia-\allowbreak{}based Movie
+Ontology: Evidence\allowbreak{}-\allowbreak{}driven
+Design}{ Movie Ontology:  Design}}\label{dbpedia-based-movie-ontology-evidence-driven-design}
 
-Tài liệu này trình bày đầy đủ \textbf{42 lớp}, \textbf{23 object
-property}, \textbf{6 datatype property}, \textbf{14 lớp phân loại} và
-\textbf{24 truy vấn} của ontology 2.0. Tên kỹ thuật giữ nguyên để đối
-chiếu mã nguồn; giải thích bằng tiếng Việt. Các bảng sinh từ
-\texttt{ontology\allowbreak{}/\allowbreak{}movie.\allowbreak{}t\allowbreak{}tl}
-và biên bản đã kiểm tra ngày 08/10/2026.
+This design is grounded in the existing crawled dataset. Domain facts
+are not invented. The native build, application and query modes share
+these version-\allowbreak{}three definitions and canonical exports.
 
-\texttt{dbo:\allowbreak{}} là từ vựng DBpedia; \texttt{ex:\allowbreak{}}
-là namespace ontology của bài. ``Lớp có tên'' nghĩa là IRI được khai báo
-owl:Class trong lược đồ. Có các lớp nền chỉ mô tả cây lớp, không gán
-trực tiếp cho cá thể. ``Phân loại'' nghĩa là kiểu không có sẵn trong
-graph khai báo và được bổ sung ở file
-inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
+\subsection{1. Findings and semantic
+decisions}\label{findings-and-semantic-decisions}
 
-Bản cũ dùng
-Credit/\allowbreak{}p\allowbreak{}articipa\allowbreak{}nt/\allowbreak{}has\allowbreak{}Cr\allowbreak{}edit/\allowbreak{}\allowbreak{}Dir\allowbreak{}ector\allowbreak{}Wri\allowbreak{}ter.\allowbreak{}
-Bản 2.0 dùng
-Contribu\allowbreak{}tion/\allowbreak{}con\allowbreak{}tributio\allowbreak{}n\allowbreak{}By/\allowbreak{}cont\allowbreak{}ribution\allowbreak{}\allowbreak{}To/\allowbreak{}has\allowbreak{}Ro\allowbreak{}le
-và thêm Producer, Award,
-Producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y.\allowbreak{}
-\textbf{Website công khai đã được đồng bộ và kiểm tra graph bản 2.0.}
+\begin{itemize}
+\tightlist
+\item
+  Reuse dbo:Film, Person, Actor, Writer,
+  Movie\allowbreak{}Dir\allowbreak{}ector,
+  Screen\allowbreak{}Wr\allowbreak{}iter, Producer, Company,
+  Organisa\allowbreak{}tion, Award, MovieGenre, Genre, Country,
+  Language, Work, Artist and Agent. Actor follows the original
+  dbo:starring range; no
+  equivale\allowbreak{}nt-\allowbreak{}class\allowbreak{} override of
+  dbo:Actor.
+\item
+  Reuse dbo:\allowbreak{}dire\allowbreak{}ctor, starring, writer,
+  producer, producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y,
+  award, genre, country, language and runtime. Preserve reference
+  domain/\allowbreak{}r\allowbreak{}ange:\allowbreak{} starring ranges
+  over Actor, producer over Agent,
+  producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y over Company.
+\item
+  dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Directo\allowbreak{}r,
+  ScreenWriter and Producer are reused for
+  occupati\allowbreak{}on-\allowbreak{}level\allowbreak{} inferences
+  from the correspo\allowbreak{}nding credits. One-way subclass axioms
+  suffice; their global definitions are not overridden. - dbo:runtime is
+  seconds (xsd:\allowbreak{}dou\allowbreak{}ble); Inception has 8880
+  seconds, converted from the crawled 148 minutes. Titles reuse
+  rdfs:label (annotation property, not a custom datatype property).
+\item
+  P577 has varying precision. Keep a documented local releaseYear
+  summary instead of inventing a full
+  dbo:\allowbreak{}rele\allowbreak{}ase\allowbreak{}Date.\allowbreak{}
+  Budget, gross, IMDb, distributors and ratings are excluded because
+  they are not in the collected field set.
+\item
+  Remove unsupported
+  Document\allowbreak{}ary/\allowbreak{}\allowbreak{}Fict\allowbreak{}ion
+  hierarchy and FeatureFilm assertions: Wikidata Q11424 means film and
+  does not justify feature-film
+  classifi\allowbreak{}cation.\allowbreak{} Award labels alone do not
+  justify treating every unrecognized award as a film award.
+\item
+  ActionGenre and DramaGenre are transparent
+  label-\allowbreak{}no\allowbreak{}rmalizat\allowbreak{}ion buckets,
+  not source-\allowbreak{}p\allowbreak{}rovided OWL classes. The
+  author-\allowbreak{}s\allowbreak{}pecified\allowbreak{}
+  classifi\allowbreak{}cation rule is separate from the crawled facts;
+  fiction/\allowbreak{}non-\allowbreak{}fict\allowbreak{}ion is not
+  guessed.
+\item
+  Contribution and four role individuals represent
+  P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2
+  credits. Each record has exactly one person, film and role. Missing
+  values remain an open-world validation issue, not automatic
+  inconsis\allowbreak{}tency.\allowbreak{}
+\item
+  Multi\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor
+  /
+  Three\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor
+  mean at least two/three distinct credit records. Different roles
+  provide witnesses; these class names do not prove exactly two/three
+  unique roles across an entire career. More precise display names:
+  Multi\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor
+  /
+  Three\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor.\allowbreak{}
+\item
+  Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film,
+  Multi\allowbreak{}Awa\allowbreak{}rd\allowbreak{}Film and
+  Frequent\allowbreak{}\allowbreak{}Producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y
+  are not included as inferred classes: different
+  genre/\allowbreak{}aw\allowbreak{}ard/\allowbreak{}film\allowbreak{}
+  IRIs alone do not establish inequality. COUNT DISTINCT can answer a
+  database\allowbreak{}-\allowbreak{}style question, but cannot be
+  presented as OWL DL entailment.
+\end{itemize}
 
-\subsection{2. Toàn bộ lớp và cây
-cha}\label{touxe0n-bux1ed9-lux1edbp-vuxe0-cuxe2y-cha}
+\subsubsection{Reference scope}\label{reference-scope}
+
+The official 2016-10 reference and official
+extracti\allowbreak{}on-\allowbreak{}frame\allowbreak{}work development
+vocabulary (790 classes) were checked. Semantic alternatives reviewed
+include Actor, Movie\allowbreak{}Dir\allowbreak{}ector,
+Screen\allowbreak{}Wr\allowbreak{}iter, Producer, Writer,
+Artistic\allowbreak{}\allowbreak{}Genre,
+Literary\allowbreak{}\allowbreak{}Genre, MovieGenre;
+dbo:\allowbreak{}occu\allowbreak{}pation ranges over
+Person\allowbreak{}Fu\allowbreak{}nction, while dbo:role and
+artist\allowbreak{}Fu\allowbreak{}nction are strings and cannot replace
+the local credit-\allowbreak{}t\allowbreak{}o-\allowbreak{}role entity
+link. dbo:year (gYear) is generic, whereas
+ex:\allowbreak{}relea\allowbreak{}se\allowbreak{}Year explicitly
+represents an integer
+earliest\allowbreak{}-\allowbreak{}release\allowbreak{} summary; it does
+not claim equivalence to dbo:year or a complete releaseDate. The
+archived reference hash is:
+a0ca30c8\allowbreak{}f25cf2d2\allowbreak{}957639dc\allowbreak{}ad4fd111\allowbreak{}5f37a856\allowbreak{}d6d542fd\allowbreak{}50bba3bf\allowbreak{}9fa6bf9f\allowbreak{}.\allowbreak{}
+The current official runtime, starring and MovieGenre pages were
+cross-\allowbreak{}ch\allowbreak{}ecked.\allowbreak{} Absence in this
+version is not proof that no equivalent vocabulary exists anywhere;
+local
+C\allowbreak{}R\allowbreak{}E\allowbreak{}A\allowbreak{}T\allowbreak{}E/\allowbreak{}\allowbreak{}E\allowbreak{}\allowbreak{}X\allowbreak{}T\allowbreak{}E\allowbreak{}N\allowbreak{}D
+decisions are scoped to the checked DBpedia vocabulary and the stated
+meanings.
+
+\subsubsection{Target size}\label{target-size}
+
+The overview uses 14 main concepts: dbo:Film, Person, Actor, Company,
+Award, MovieGenre, Country, Language;
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution,\allowbreak{}
+Contribu\allowbreak{}tion\allowbreak{}Role\allowbreak{}, Filmmaker,
+ActionFilm,
+Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{} and
+Multi\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor.\allowbreak{}
+Supporting hierarchy, provenance and inferred subsets are listed
+separately. There are 10 domain inferred classes, including seven
+additional classes requested in section 13, plus four supporting credit
+subclasses and the reused Actor inference. This deliberately exceeds the
+approximate 5--8 final target to satisfy the stronger requirement of
+seven additional supported classes; no empty classes were added to reach
+a count.
+
+\subsection{2. TABLE 1 --- Class
+inventory}\label{table-1-class-inventory}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Lớp
+Class / URI
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Lớp cha được khai báo
+DBpedia equivalent
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Cách có kiểu
+Action
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Ý nghĩa
+Parent
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Explicit / Inferred
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Manchester definition
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Source and meaning
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\texttt{dbo:\allowbreak{}\allowbreak{}Coun\allowbreak{}try} & --- & Nền
-/ khai báo & Quốc gia; dùng lớp DBpedia \\
-\texttt{dbo:\allowbreak{}\allowbreak{}Film\allowbreak{}} &
-ex:\allowbreak{}\allowbreak{}Creat\allowbreak{}ive\allowbreak{}Work &
-Nền / khai báo & Phim; dùng lớp DBpedia \\
-\texttt{dbo:\allowbreak{}\allowbreak{}Pers\allowbreak{}on} & ex:Agent &
-Nền / khai báo & Người; dùng lớp DBpedia \\
-\texttt{ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Award}
-& ex:Award & Nền / khai báo & Giải có nhãn
-actor/\allowbreak{}ac\allowbreak{}tress \\
-\texttt{ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution}
-& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & OWL RL & Đóng
-góp diễn xuất \\
-\texttt{ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Film}
-& dbo:Film & OWL RL & Phim có thể loại ActionGenre \\
-\texttt{ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre}
-& ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre &
-Nền / khai báo & Nhãn thể loại chứa action \\
-\texttt{ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}} & dbo:Person &
-OWL RL & Người có đóng góp diễn xuất \\
-\texttt{ex:\allowbreak{}\allowbreak{}Agent\allowbreak{}} & --- & Nền /
-khai báo & Chủ thể có thể đóng góp \\
-\texttt{ex:\allowbreak{}\allowbreak{}Anima\allowbreak{}ted\allowbreak{}Film}
-& dbo:Film & Nền / khai báo & Phim hoạt hình theo P31 \\
-\texttt{ex:\allowbreak{}\allowbreak{}Award\allowbreak{}} & --- & Nền /
-khai báo & Thực thể giải thưởng, không phải một lần trao \\
-\texttt{ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winner}
-& dbo:Person & OWL RL & Người có giải thưởng riêng \\
-\texttt{ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm}
-& dbo:Film & OWL RL & Phim có liên kết tới giải thưởng \\
-\texttt{ex:\allowbreak{}\allowbreak{}Comed\allowbreak{}y\allowbreak{}Film}
-& dbo:Film & OWL RL & Phim có thể loại ComedyGenre \\
-\texttt{ex:\allowbreak{}\allowbreak{}Comed\allowbreak{}y\allowbreak{}Genre}
-& ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre &
-Nền / khai báo & Nhãn thể loại chứa comedy \\
-\texttt{ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution} & --- &
-Nền / khai báo & Một người giữ một vai trò trong một phim \\
-\texttt{ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole}
-& --- & Nền / khai báo & Loại vai trò; có 4 cá thể vai trò \\
-\texttt{ex:\allowbreak{}\allowbreak{}Creat\allowbreak{}ive\allowbreak{}Work}
-& --- & Nền / khai báo & Tác phẩm sáng tạo \\
-\texttt{ex:\allowbreak{}\allowbreak{}Datas\allowbreak{}et} & --- & Nền /
-khai báo & Bộ dữ liệu công bố \\
-\texttt{ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Awar\allowbreak{}d}
-& ex:Award & Nền / khai báo & Giải có nhãn
-director\allowbreak{}/\allowbreak{}directi\allowbreak{}ng \\
-\texttt{ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}}
-& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & OWL RL & Đóng
-góp đạo diễn \\
-\texttt{ex:\allowbreak{}\allowbreak{}Docum\allowbreak{}entary\allowbreak{}Fi\allowbreak{}lm}
-& dbo:Film & Nền / khai báo & Phim có thể loại tài liệu; mẫu hiện không
-có \\
-\texttt{ex:\allowbreak{}\allowbreak{}Docum\allowbreak{}entary\allowbreak{}Ge\allowbreak{}nre}
+dbo:Work & dbo:Work & REUSE & --- & Base / hierarchy & --- & DBpedia
+supertype of supported entities; Reuse DBpedia meaning and its supported
+superclass; no local clone. \\
+dbo:Film & dbo:Film & REUSE & dbo:Work & Base / hierarchy & --- & P31;
+Reuse DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Agent & dbo:Agent & REUSE & --- & Base / hierarchy & --- & DBpedia
+supertype of supported entities; Reuse DBpedia meaning and its supported
+superclass; no local clone. \\
+dbo:Person & dbo:Person & REUSE & dbo:Agent & Base / hierarchy & --- &
+P31=Q5;
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+Reuse DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Artist & dbo:Artist & REUSE & dbo:Person & Base / hierarchy & --- &
+DBpedia supertype of supported entities; Reuse DBpedia meaning and its
+supported superclass; no local clone. \\
+dbo:Actor & dbo:Actor & REUSE & dbo:Artist & Inferred & --- & P161;
+Reuse DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Writer & dbo:Writer & REUSE & dbo:Person & Inferred & --- & P58 via
+Screen\allowbreak{}Wr\allowbreak{}iter; Reuse DBpedia meaning and its
+supported superclass; no local clone. \\
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Directo\allowbreak{}r
 &
-ex:\allowbreak{}\allowbreak{}Non\allowbreak{}Fi\allowbreak{}ction\allowbreak{}Gen\allowbreak{}re
-& Nền / khai báo & Nhãn thể loại chứa documentary \\
-\texttt{ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Film}
-& dbo:Film & OWL RL & Phim có thể loại DramaGenre \\
-\texttt{ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Genre}
-& ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre &
-Nền / khai báo & Nhãn thể loại chứa drama \\
-\texttt{ex:\allowbreak{}\allowbreak{}Featu\allowbreak{}re\allowbreak{}Film}
-& dbo:Film & Nền / khai báo & Nhóm phim dài theo cách ánh xạ P31 của
-bài \\
-\texttt{ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre}
-& ex:Genre & Nền / khai báo & Nhóm thể loại hư cấu \\
-\texttt{ex:\allowbreak{}\allowbreak{}Film\allowbreak{}A\allowbreak{}ward}
-& ex:Award & Nền / khai báo & Nhóm giải mặc định khi chưa khớp nhóm nghề
-nghiệp \\
-\texttt{ex:\allowbreak{}\allowbreak{}Film\allowbreak{}S\allowbreak{}tudio}
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Directo\allowbreak{}r
+& REUSE & dbo:Person & Inferred & --- & P57; Reuse DBpedia meaning and
+its supported superclass; no local clone. \\
+dbo:\allowbreak{}\allowbreak{}Scre\allowbreak{}en\allowbreak{}Writer\allowbreak{}
 &
-ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
-& Đếm IRI & Công ty có ít nhất 3 IRI phim trong mẫu; quy tắc bài \\
-\texttt{ex:\allowbreak{}\allowbreak{}Filmm\allowbreak{}aker} &
-dbo:Person & OWL RL & Người có đóng góp đạo diễn, biên kịch hoặc sản
-xuất \\
-\texttt{ex:\allowbreak{}\allowbreak{}Genre\allowbreak{}} & --- & Nền /
-khai báo & Thể loại \\
-\texttt{ex:\allowbreak{}\allowbreak{}Langu\allowbreak{}age} & --- & Nền
-/ khai báo & Ngôn ngữ \\
-\texttt{ex:\allowbreak{}\allowbreak{}Multi\allowbreak{}\allowbreak{}Genre\allowbreak{}Fil\allowbreak{}m}
-& dbo:Film & Đếm IRI & Phim có từ 2 IRI thể loại; quy tắc đếm bổ sung \\
-\texttt{ex:\allowbreak{}\allowbreak{}Non\allowbreak{}Fi\allowbreak{}ction\allowbreak{}Gen\allowbreak{}re}
-& ex:Genre & Nền / khai báo & Nhóm thể loại phi hư cấu \\
-\texttt{ex:\allowbreak{}\allowbreak{}Organ\allowbreak{}ization} &
-ex:Agent & Nền / khai báo & Tổ chức \\
-\texttt{ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}}
-& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & OWL RL & Đóng
-góp nhà sản xuất \\
-\texttt{ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany}
-& ex:\allowbreak{}\allowbreak{}Organ\allowbreak{}ization & Nền / khai
-báo & Công ty sản xuất lấy từ P272 \\
-\texttt{ex:\allowbreak{}\allowbreak{}Scien\allowbreak{}ce\allowbreak{}Fictio\allowbreak{}n\allowbreak{}Film}
-& dbo:Film & OWL RL & Phim có thể loại
-Science\allowbreak{}F\allowbreak{}iction\allowbreak{}Ge\allowbreak{}nre \\
-\texttt{ex:\allowbreak{}\allowbreak{}Scien\allowbreak{}ce\allowbreak{}Fictio\allowbreak{}n\allowbreak{}Genre}
-& ex:\allowbreak{}\allowbreak{}Ficti\allowbreak{}on\allowbreak{}Genre &
-Nền / khai báo & Nhãn thể loại chứa science fiction \\
-\texttt{ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t}
-& --- & Nền / khai báo & Metadata của phản hồi nguồn \\
-\texttt{ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Award}
-& ex:Award & Nền / khai báo & Giải có nhãn
-screenpl\allowbreak{}ay/\allowbreak{}writi\allowbreak{}ng \\
-\texttt{ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution}
-& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & OWL RL & Đóng
-góp biên kịch \\
+dbo:\allowbreak{}\allowbreak{}Scre\allowbreak{}en\allowbreak{}Writer\allowbreak{}
+& REUSE & dbo:Writer & Inferred & --- & P58; Reuse DBpedia meaning and
+its supported superclass; no local clone. \\
+dbo:Producer & dbo:Producer & REUSE & dbo:Person & Inferred & --- &
+P162; Reuse DBpedia meaning and its supported superclass; no local
+clone. \\
+dbo:\allowbreak{}\allowbreak{}Orga\allowbreak{}nisation\allowbreak{} &
+dbo:\allowbreak{}\allowbreak{}Orga\allowbreak{}nisation\allowbreak{} &
+REUSE & dbo:Agent & Base / hierarchy & --- & DBpedia supertype of
+supported entities; Reuse DBpedia meaning and its supported superclass;
+no local clone. \\
+dbo:Company & dbo:Company & REUSE &
+dbo:\allowbreak{}\allowbreak{}Orga\allowbreak{}nisation\allowbreak{} &
+Base / hierarchy & --- & P272; Reuse DBpedia meaning and its supported
+superclass; no local clone. \\
+dbo:Genre & dbo:Genre & REUSE & --- & Base / hierarchy & --- & P136;
+Reuse DBpedia meaning and its supported superclass; no local clone. \\
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Genre &
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Genre &
+REUSE & dbo:Genre & Base / hierarchy & --- & P136 in film context; Reuse
+DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Award & dbo:Award & REUSE & --- & Base / hierarchy & --- & P166;
+Reuse DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Country & dbo:Country & REUSE & --- & Base / hierarchy & --- & P495;
+Reuse DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Language & dbo:Language & REUSE & --- & Base / hierarchy & --- &
+P364; Reuse DBpedia meaning and its supported superclass; no local
+clone. \\
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & No matching
+meaning in checked reference & CREATE & --- & Base / hierarchy & --- &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+A local credit association with one person, film and role; not the
+person or film itself. \\
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole
+& No matching meaning in checked reference & CREATE & --- & Base /
+hierarchy & --- & The four crawled credit predicates; Local controlled
+role values, not subclasses of Person. \\
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& No matching meaning in checked reference & CREATE & --- & Base /
+hierarchy & --- & snapshot\allowbreak{}s.\allowbreak{}json
+U\allowbreak{}R\allowbreak{}L/\allowbreak{}time\allowbreak{}/\allowbreak{}hash;
+A retrieved response record, not a domain entity. \\
+void:Dataset & void:Dataset & REUSE & --- & Base / hierarchy & --- &
+Published collection of crawled film records; Reuse VoID dataset, remove
+ex:Dataset clone. \\
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre & No
+matching meaning in checked reference & EXTEND &
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Genre &
+Base / hierarchy & --- & P136 target English label; Local normalized
+film-genre bucket selected by matching the crawled English label; no
+DBpedia class of this narrow meaning in reference module. \\
+ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Genre & No
+matching meaning in checked reference & EXTEND &
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Genre &
+Base / hierarchy & --- & P136 target English label; Local normalized
+film-genre bucket selected by matching the crawled English label; no
+DBpedia class of this narrow meaning in reference module. \\
+ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution
+& No matching meaning in checked reference & EXTEND &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & Inferred &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and
+ex:hasRole value
+ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}\allowbreak{}Role) &
+Credit claim correspo\allowbreak{}nding to Actor; Local credit record
+classified by a fixed role; DBpedia Actor describes a person, not this
+record. \\
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+& No matching meaning in checked reference & EXTEND &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & Inferred &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and
+ex:hasRole value
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}tor\allowbreak{}Role)\allowbreak{}
+& Credit claim correspo\allowbreak{}nding to Director; Local credit
+record classified by a fixed role; DBpedia Actor describes a person, not
+this record. \\
+ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
+& No matching meaning in checked reference & EXTEND &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & Inferred &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and
+ex:hasRole value
+ex:\allowbreak{}\allowbreak{}Write\allowbreak{}r\allowbreak{}Role) &
+Credit claim correspo\allowbreak{}nding to Writer; Local credit record
+classified by a fixed role; DBpedia Actor describes a person, not this
+record. \\
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+& No matching meaning in checked reference & EXTEND &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & Inferred &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and
+ex:hasRole value
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cer\allowbreak{}Role)\allowbreak{}
+& Credit claim correspo\allowbreak{}nding to Producer; Local credit
+record classified by a fixed role; DBpedia Actor describes a person, not
+this record. \\
+ex:Filmmaker & No matching meaning in checked reference & EXTEND &
+dbo:Person & Inferred & (dbo:Person and
+(ex:\allowbreak{}has\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion
+some
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+or
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+some
+ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
+or
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+some
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}))
+&
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Film & No
+matching meaning in checked reference & EXTEND & dbo:Film & Inferred &
+(dbo:Film and dbo:genre some
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre) &
+P136/P166; Local dataset-\allowbreak{}specific\allowbreak{} OWL-defined
+subset; not a replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm
+& No matching meaning in checked reference & EXTEND & dbo:Film &
+Inferred & (dbo:Film and dbo:award some dbo:Award) & P136/P166; Local
+dataset-\allowbreak{}specific\allowbreak{} OWL-defined subset; not a
+replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Multi\allowbreak{}\allowbreak{}Credit\allowbreak{}Co\allowbreak{}ntributo\allowbreak{}r
+& No matching meaning in checked reference & EXTEND & dbo:Person &
+Inferred & (dbo:Person and
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+min 2
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution)\allowbreak{} &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; At least two semantically distinct credit
+records. Different roles prove their distinct\allowbreak{}ness; the name
+is shorthand and does not exclude repeated same-role credits. \\
+ex:\allowbreak{}\allowbreak{}Three\allowbreak{}\allowbreak{}Credit\allowbreak{}Co\allowbreak{}ntributo\allowbreak{}r
+& No matching meaning in checked reference & EXTEND & dbo:Person &
+Inferred & (dbo:Person and
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+min 3
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution)\allowbreak{} &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; At least three distinct credit records; three
+different role fillers prove distinct\allowbreak{}ness.\allowbreak{} Not
+exactly three roles or an exhaustive career description. \\
+ex:\allowbreak{}\allowbreak{}Write\allowbreak{}r\allowbreak{}Directo\allowbreak{}r
+& No matching meaning in checked reference & EXTEND & dbo:Person &
+Inferred &
+(dbo:\allowbreak{}\allowbreak{}Mov\allowbreak{}ie\allowbreak{}Direct\allowbreak{}or
+and
+dbo:\allowbreak{}\allowbreak{}Scre\allowbreak{}en\allowbreak{}Writer\allowbreak{})
+&
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; A person with both directing and writing credits
+in this dataset; classifi\allowbreak{}cation is never manually
+asserted. \\
+ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}\allowbreak{}Filmmake\allowbreak{}r
+& No matching meaning in checked reference & EXTEND & dbo:Person &
+Inferred & (dbo:Actor and
+ex:\allowbreak{}\allowbreak{}Filmm\allowbreak{}aker) &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilmmaker\allowbreak{}
+& No matching meaning in checked reference & EXTEND & dbo:Person &
+Inferred & (ex:\allowbreak{}\allowbreak{}Film\allowbreak{}maker and
+dbo:award some dbo:Award) &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}A\allowbreak{}ction\allowbreak{}Fil\allowbreak{}m
+& No matching meaning in checked reference & EXTEND & dbo:Film &
+Inferred &
+(ex:\allowbreak{}\allowbreak{}Acti\allowbreak{}on\allowbreak{}Film and
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm)
+& P136/P166; Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Genre\allowbreak{}\allowbreak{}Crossing\allowbreak{}\allowbreak{}Film
+& No matching meaning in checked reference & EXTEND & dbo:Film &
+Inferred & (dbo:Film and dbo:genre some
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre and
+dbo:genre some
+ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Genre) &
+P136/P166; Film carrying both action and drama genre memberships; this
+is not an unproved
+two-\allowbreak{}dist\allowbreak{}inct-\allowbreak{}gen\allowbreak{}re
+cardinality claim. \\
 \end{longtable}
 }
 
-\subsection{3. Các quan hệ đối
-tượng}\label{cuxe1c-quan-hux1ec7-ux111ux1ed1i-tux1b0ux1ee3ng}
-
-Quan hệ đối tượng nối \textbf{hai thực thể}; inverse là đường đi ngược.
-Functional nghĩa là nhiều nhất một đối tượng trong ngữ nghĩa OWL; không
-tự thay thế kiểm tra số trường trong file. Domain/range hỗ trợ suy ra
-kiểu, không phải cơ chế từ chối nhập liệu.
+\subsection{3. TABLE 2 --- Object
+properties}\label{table-2-object-properties}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Quan hệ
+Property / URI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Reuse / Create
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Domain
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Range
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Inverse / đặc tính
+Inverse
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Subproperty
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Characte\allowbreak{}ristics
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Source / meaning
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\texttt{dbo:\allowbreak{}dire\allowbreak{}ctor} & dbo:Film & dbo:Person
-& ex:directed \\
-\texttt{dbo:\allowbreak{}prod\allowbreak{}ucer} & dbo:Film & dbo:Person
-& ex:produced \\
-\texttt{dbo:\allowbreak{}star\allowbreak{}ring} & dbo:Film & dbo:Person
-& ex:actedIn \\
-\texttt{dbo:\allowbreak{}writ\allowbreak{}er} & dbo:Film & dbo:Person &
-ex:wrote \\
-\texttt{ex:\allowbreak{}acted\allowbreak{}\allowbreak{}In} & dbo:Person
-& dbo:Film & --- \\
-\texttt{ex:\allowbreak{}award\allowbreak{}\allowbreak{}Of} & ex:Award &
-(dbo:Film HOẶC dbo:Person) & ex:hasAward \\
-\texttt{ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}B\allowbreak{}y}
-& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & dbo:Person &
-ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on,
-functional \\
-\texttt{ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}O\allowbreak{}f}
-& dbo:Film & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
-ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}T\allowbreak{}o \\
-\texttt{ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}T\allowbreak{}o}
-& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & dbo:Film &
-functional \\
-\texttt{ex:\allowbreak{}count\allowbreak{}ry} & dbo:Film & dbo:Country &
---- \\
-\texttt{ex:\allowbreak{}direc\allowbreak{}ted} & dbo:Person & dbo:Film &
---- \\
-\texttt{ex:\allowbreak{}genre\allowbreak{}\allowbreak{}Of} & ex:Genre &
-dbo:Film & ex:hasGenre \\
-\texttt{ex:\allowbreak{}has\allowbreak{}Aw\allowbreak{}ard} & (dbo:Film
-HOẶC dbo:Person) & ex:Award & --- \\
-\texttt{ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on}
-& dbo:Person & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
---- \\
-\texttt{ex:\allowbreak{}has\allowbreak{}Ge\allowbreak{}nre} & dbo:Film &
-ex:Genre & --- \\
-\texttt{ex:\allowbreak{}has\allowbreak{}Pr\allowbreak{}oduction\allowbreak{}\allowbreak{}Company}
-& dbo:Film &
-ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
-& --- \\
-\texttt{ex:\allowbreak{}has\allowbreak{}Ro\allowbreak{}le} &
+dbo:director & REUSE & dbo:Film & dbo:Person & --- & --- & No extra
+characte\allowbreak{}ristic & P57 \\
+dbo:starring & REUSE & dbo:Work & dbo:Actor & --- & --- & No extra
+characte\allowbreak{}ristic & P161 \\
+dbo:writer & REUSE & dbo:Work & dbo:Person & --- & --- & No extra
+characte\allowbreak{}ristic & P58 \\
+dbo:producer & REUSE & dbo:Work & dbo:Agent & --- & --- & No extra
+characte\allowbreak{}ristic & P162 \\
+dbo:\allowbreak{}prod\allowbreak{}uction\allowbreak{}Co\allowbreak{}mpany
+& REUSE & dbo:Work & dbo:Company & --- & --- & No extra
+characte\allowbreak{}ristic & P272 \\
+dbo:award & REUSE & --- & dbo:Award & --- & --- & No extra
+characte\allowbreak{}ristic & P166 \\
+dbo:genre & REUSE & --- & dbo:Genre & --- & --- & No extra
+characte\allowbreak{}ristic & P136 \\
+dbo:country & REUSE & --- & dbo:Country & --- & --- & No extra
+characte\allowbreak{}ristic & P495 \\
+dbo:language & REUSE & --- & dbo:Language & --- & --- & No extra
+characte\allowbreak{}ristic & P364 \\
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on &
+CREATE & dbo:Person &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}B\allowbreak{}y &
+--- & No extra characte\allowbreak{}ristic & Derived credit
+association \\
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}B\allowbreak{}y &
+CREATE & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+dbo:Person & --- & --- & Functional &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2 \\
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}T\allowbreak{}o &
+CREATE & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+dbo:Film &
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}O\allowbreak{}f &
+--- & Functional & Containing source film \\
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}O\allowbreak{}f &
+CREATE & dbo:Film &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & --- & --- & No
+extra characte\allowbreak{}ristic & Inverse of
+contribu\allowbreak{}tion\allowbreak{}To \\
+ex:hasRole & CREATE &
 ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
 ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole
-& functional \\
-\texttt{ex:\allowbreak{}langu\allowbreak{}age} & dbo:Film & ex:Language
-& --- \\
-\texttt{ex:\allowbreak{}produ\allowbreak{}ced} & dbo:Person & dbo:Film &
---- \\
-\texttt{ex:\allowbreak{}produ\allowbreak{}ction\allowbreak{}Of} &
-ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
-& dbo:Film &
-ex:\allowbreak{}has\allowbreak{}Pr\allowbreak{}oduction\allowbreak{}\allowbreak{}Company \\
-\texttt{ex:\allowbreak{}role\allowbreak{}O\allowbreak{}f} &
-ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole
-& ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & ex:hasRole \\
-\texttt{ex:\allowbreak{}sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t}
-& --- &
+& --- & --- & Functional & Credit predicate to controlled role \\
+ex:\allowbreak{}contr\allowbreak{}ibuted\allowbreak{}To\allowbreak{} &
+CREATE & dbo:Person & dbo:Film & --- & --- & No extra
+characte\allowbreak{}ristic & OWL property chain \\
+ex:directed & CREATE & dbo:Person & dbo:Film & dbo:director &
+ex:\allowbreak{}contr\allowbreak{}ibuted\allowbreak{}To\allowbreak{} &
+No extra characte\allowbreak{}ristic & Inverse P57 \\
+ex:actedIn & CREATE & dbo:Actor & dbo:Film & dbo:starring &
+ex:\allowbreak{}contr\allowbreak{}ibuted\allowbreak{}To\allowbreak{} &
+No extra characte\allowbreak{}ristic & Inverse P161 \\
+ex:\allowbreak{}produ\allowbreak{}ction\allowbreak{}Of & CREATE &
+dbo:Company & dbo:Work &
+dbo:\allowbreak{}prod\allowbreak{}uction\allowbreak{}Co\allowbreak{}mpany
+& --- & No extra characte\allowbreak{}ristic & Inverse P272 \\
+ex:\allowbreak{}sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t &
+CREATE & --- &
 ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
-& --- \\
-\texttt{ex:\allowbreak{}wrote\allowbreak{}} & dbo:Person & dbo:Film &
---- \\
+& --- & --- & No extra characte\allowbreak{}ristic & Crawled entity
+response provenance \\
 \end{longtable}
 }
 
-\textbf{Luồng chính:} Person → has\allowbreak{}Contr\allowbreak{}ibution
-→ Contribution → contribu\allowbreak{}tion\allowbreak{}To → Film.
-Contribution → hasRole → Role; contribu\allowbreak{}tion\allowbreak{}By
-đi ngược đến Person. Film →
-has\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
-→ Company; Film/Person → hasAward → Award.
-\texttt{dbo:\allowbreak{}dire\allowbreak{}ctor},
-\texttt{dbo:\allowbreak{}writ\allowbreak{}er},
-\texttt{dbo:\allowbreak{}star\allowbreak{}ring},
-\texttt{dbo:\allowbreak{}prod\allowbreak{}ucer} là các quan hệ trực tiếp
-bổ sung để truy vấn thuận tiện.
+No symmetric, transitive or inverse-\allowbreak{}function\allowbreak{}al
+flags are added. contribu\allowbreak{}ted\allowbreak{}To is non-simple
+because it has a property chain; cardinality is placed on the simple
+has\allowbreak{}Contr\allowbreak{}ibution property, not
+contribu\allowbreak{}ted\allowbreak{}To.\allowbreak{} Standard
+owl:sameAs and
+prov:\allowbreak{}was\allowbreak{}\allowbreak{}Derived\allowbreak{}F\allowbreak{}rom
+remain as identity\allowbreak{}/\allowbreak{}provena\allowbreak{}nce
+predicates; they are not custom domain properties.
 
-\subsection{4. Thuộc tính giá
-trị}\label{thuux1ed9c-tuxednh-giuxe1-trux1ecb}
-
-Thuộc tính giá trị nối một thực thể với chuỗi, số hoặc thời điểm.
-Metadata nguồn còn có thuộc tính từ Dublin Core/PROV hoặc từ vựng RDF
-khác, không tính vào 6 datatype property tự khai báo dưới đây.
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}lll@{}}
-\toprule\noalign{}
-Thuộc tính & Domain & Datatype \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\texttt{ex:\allowbreak{}relea\allowbreak{}se\allowbreak{}Year} &
-dbo:Film & xsd:integer \\
-\texttt{ex:\allowbreak{}retri\allowbreak{}eved\allowbreak{}At} &
-ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
-& xsd:dateTime \\
-\texttt{ex:\allowbreak{}runti\allowbreak{}me\allowbreak{}Minute\allowbreak{}s}
-& dbo:Film & xsd:decimal \\
-\texttt{ex:\allowbreak{}sha25\allowbreak{}6} &
-ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
-& xsd:string \\
-\texttt{ex:\allowbreak{}sourc\allowbreak{}e\allowbreak{}Url} &
-ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
-& xsd:anyURI \\
-\texttt{ex:\allowbreak{}title\allowbreak{}} & dbo:Film & xsd:string \\
-\end{longtable}
-}
-
-\subsection{5. Định nghĩa và số liệu 14 lớp phân
-loại}\label{ux111ux1ecbnh-nghux129a-vuxe0-sux1ed1-liux1ec7u-14-lux1edbp-phuxe2n-loux1ea1i}
-
-Các lớp sau có \textbf{0 cá thể gán sẵn} trong graph khai báo. Số bên
-dưới lấy từ
-\texttt{ontology\allowbreak{}\_\allowbreak{}reasoni\allowbreak{}ng.\allowbreak{}json},
-đếm tài nguyên nội bộ, loại alias sameAs. Các truy vấn
-Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker có LIMIT 20 nên
-bảng hiển thị chỉ 20 dòng.
+\subsection{4. TABLE 3 --- Data
+properties}\label{table-3-data-properties}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Lớp
+Property
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Định nghĩa đọc bằng lời
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Số cá thể
+Reuse / Create
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Phương pháp
+Domain
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Datatype
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cardinality
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Crawled source
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\texttt{Acting\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on} &
-(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} VÀ
-ex:hasRole có giá trị
-ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}\allowbreak{}Role) & 855
-& OWL RL \\
-\texttt{Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution} &
-(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} VÀ
-ex:hasRole có giá trị
-ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}tor\allowbreak{}Role)\allowbreak{}
-& 31 & OWL RL \\
-\texttt{Writing\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion} &
-(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} VÀ
-ex:hasRole có giá trị
-ex:\allowbreak{}\allowbreak{}Write\allowbreak{}r\allowbreak{}Role) & 51
-& OWL RL \\
-\texttt{Producin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution} &
-(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} VÀ
-ex:hasRole có giá trị
-ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cer\allowbreak{}Role)\allowbreak{}
-& 73 & OWL RL \\
-\texttt{Actor} & (dbo:Person VÀ
-ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
-tồn tại
-ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution)
-& 769 & OWL RL \\
-\texttt{Filmmake\allowbreak{}r} & (dbo:Person VÀ
-(ex:\allowbreak{}has\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion
-tồn tại
+dbo:runtime & REUSE & dbo:Work & xsd:double & No global max; one
+normalized value in this export & P2047; normalize to seconds &
+Seconds \\
+ex:\allowbreak{}relea\allowbreak{}se\allowbreak{}Year & CREATE &
+dbo:Film & xsd:integer & No global max; one normalized value in this
+export & Earliest Gregorian P577 year, precision \textgreater=9 &
+Earliest Gregorian P577 year, precision \textgreater=9 \\
+ex:sourceUrl & CREATE &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& xsd:anyURI & No global max; one normalized value in this export &
+Snapshot manifest sourceUrl & Snapshot manifest sourceUrl \\
+ex:\allowbreak{}retri\allowbreak{}eved\allowbreak{}At & CREATE &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& xsd:dateTime & No global max; one normalized value in this export &
+Snapshot manifest retrievedAt & Snapshot manifest retrievedAt \\
+ex:sha256 & CREATE &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& xsd:string & No global max; one normalized value in this export &
+Snapshot manifest sha256 & Snapshot manifest sha256 \\
+\end{longtable}
+}
+
+rdfs:label is reused as an annotation property with
+language\allowbreak{}-\allowbreak{}tagged text; it is
+intentio\allowbreak{}nally not declared
+owl:\allowbreak{}\allowbreak{}Data\allowbreak{}type\allowbreak{}Prop\allowbreak{}erty.\allowbreak{}
+There are 19 object + 5 datatype properties in the design, excluding
+built-in and metadata predicates.
+
+\subsection{5. TABLE 4 --- Inferred classes and actual
+results}\label{table-4-inferred-classes-and-actual-results}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Class
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+DBpedia equivalent
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+OWL restriction
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Real example
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Initial facts
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+New knowledge / local count
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+dbo:Actor & dbo:Actor & Range(dbo:starring)=dbo:Actor & Burr Steers
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q101\allowbreak{}6897)
+& Source triples shown below & 0 asserted → 769 newly entailed \\
+dbo:Writer & dbo:Writer & Credit existential / reused superclass
+inference & Philippa Boyens
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q116\allowbreak{}854)
+& Source triples shown below & 0 asserted → 34 newly entailed \\
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Directo\allowbreak{}r
+&
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Directo\allowbreak{}r
+& Credit existential / reused superclass inference & Damien Chazelle
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q183\allowbreak{}50026)
+& Source triples shown below & 0 asserted → 17 newly entailed \\
+dbo:\allowbreak{}\allowbreak{}Scre\allowbreak{}en\allowbreak{}Writer\allowbreak{}
+&
+dbo:\allowbreak{}\allowbreak{}Scre\allowbreak{}en\allowbreak{}Writer\allowbreak{}
+& Credit existential / reused superclass inference & Philippa Boyens
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q116\allowbreak{}854)
+& Source triples shown below & 0 asserted → 34 newly entailed \\
+dbo:Producer & dbo:Producer & Credit existential / reused superclass
+inference & Fran Walsh
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q116\allowbreak{}861)
+& Source triples shown below & 0 asserted → 57 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution
+& No equivalent checked &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and
+ex:hasRole value
+ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}\allowbreak{}Role) &
+Alien --- actor --- Sigourney Weaver
+(res:\allowbreak{}con\allowbreak{}tributio\allowbreak{}n-\allowbreak{}\allowbreak{}Q10356\allowbreak{}9-\allowbreak{}\allowbreak{}Q10212\allowbreak{}4-\allowbreak{}actor)\allowbreak{}
+& Source triples shown below & 0 asserted → 855 newly entailed \\
 ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
-HOẶC
-ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
-tồn tại
+& No equivalent checked &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and
+ex:hasRole value
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}tor\allowbreak{}Role)\allowbreak{}
+& Alien --- director --- Ridley Scott
+(res:\allowbreak{}con\allowbreak{}tributio\allowbreak{}n-\allowbreak{}\allowbreak{}Q10356\allowbreak{}9-\allowbreak{}\allowbreak{}Q56005\allowbreak{}-\allowbreak{}directo\allowbreak{}r)
+& Source triples shown below & 0 asserted → 31 newly entailed \\
 ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
-HOẶC
+& No equivalent checked &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and
+ex:hasRole value
+ex:\allowbreak{}\allowbreak{}Write\allowbreak{}r\allowbreak{}Role) &
+Alien --- writer --- Ronald Shusett
+(res:\allowbreak{}con\allowbreak{}tributio\allowbreak{}n-\allowbreak{}\allowbreak{}Q10356\allowbreak{}9-\allowbreak{}\allowbreak{}Q30560\allowbreak{}94-\allowbreak{}write\allowbreak{}r)
+& Source triples shown below & 0 asserted → 51 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+& No equivalent checked &
+(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and
+ex:hasRole value
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cer\allowbreak{}Role)\allowbreak{}
+& Alien --- producer --- Gordon Carroll
+(res:\allowbreak{}con\allowbreak{}tributio\allowbreak{}n-\allowbreak{}\allowbreak{}Q10356\allowbreak{}9-\allowbreak{}\allowbreak{}Q15379\allowbreak{}83-\allowbreak{}produ\allowbreak{}cer)
+& Source triples shown below & 0 asserted → 73 newly entailed \\
+ex:Filmmaker & No equivalent checked & (dbo:Person and
+(ex:\allowbreak{}has\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion
+some
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+or
 ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
-tồn tại
+some
+ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
+or
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+some
 ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}))
-& 89 & OWL RL \\
-\texttt{Award\allowbreak{}Win\allowbreak{}ner} & (dbo:Person VÀ
-ex:hasAward tồn tại ex:Award) & 290 & OWL RL \\
-\texttt{Action\allowbreak{}Fi\allowbreak{}lm} & (dbo:Film VÀ ex:hasGenre
-tồn tại
-ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre) & 12
-& OWL RL \\
-\texttt{Comedy\allowbreak{}Fi\allowbreak{}lm} & (dbo:Film VÀ ex:hasGenre
-tồn tại
-ex:\allowbreak{}\allowbreak{}Comed\allowbreak{}y\allowbreak{}Genre) & 4
-& OWL RL \\
-\texttt{Drama\allowbreak{}Fil\allowbreak{}m} & (dbo:Film VÀ ex:hasGenre
-tồn tại
-ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Genre) & 25
-& OWL RL \\
-\texttt{Science\allowbreak{}F\allowbreak{}iction\allowbreak{}Fi\allowbreak{}lm}
-& (dbo:Film VÀ ex:hasGenre tồn tại
-ex:\allowbreak{}\allowbreak{}Scien\allowbreak{}ce\allowbreak{}Fictio\allowbreak{}n\allowbreak{}Genre)
-& 6 & OWL RL \\
-\texttt{Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{}}
-& (dbo:Film VÀ ex:hasAward tồn tại ex:Award) & 26 & OWL RL \\
-\texttt{Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film} &
-(dbo:Film VÀ ex:hasGenre ít nhất 2 (ex:Genre)) & 30 & SPARQL đếm IRI \\
-\texttt{Film\allowbreak{}Stud\allowbreak{}io} &
-(ex:\allowbreak{}\allowbreak{}Prod\allowbreak{}uction\allowbreak{}Co\allowbreak{}mpany
-VÀ ex:\allowbreak{}produ\allowbreak{}ction\allowbreak{}Of ít nhất 3
-(dbo:Film)) & 6 & SPARQL đếm IRI \\
+& Philippa Boyens
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q116\allowbreak{}854)
+& Source triples shown below & 0 asserted → 89 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Film & No
+equivalent checked & (dbo:Film and dbo:genre some
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre) &
+Alien
+(res:\allowbreak{}fil\allowbreak{}m-\allowbreak{}\allowbreak{}Q10356\allowbreak{}9)
+& Source triples shown below & 0 asserted → 12 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm
+& No equivalent checked & (dbo:Film and dbo:award some dbo:Award) &
+Alien
+(res:\allowbreak{}fil\allowbreak{}m-\allowbreak{}\allowbreak{}Q10356\allowbreak{}9)
+& Source triples shown below & 0 asserted → 26 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Multi\allowbreak{}\allowbreak{}Credit\allowbreak{}Co\allowbreak{}ntributo\allowbreak{}r
+& No equivalent checked & (dbo:Person and
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+min 2
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution)\allowbreak{} &
+Fran Walsh
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q116\allowbreak{}861)
+& Source triples shown below & 0 asserted → 17 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Three\allowbreak{}\allowbreak{}Credit\allowbreak{}Co\allowbreak{}ntributo\allowbreak{}r
+& No equivalent checked & (dbo:Person and
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+min 3
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution)\allowbreak{} &
+Christopher Nolan
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q251\allowbreak{}91)
+& Source triples shown below & 0 asserted → 7 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Write\allowbreak{}r\allowbreak{}Directo\allowbreak{}r
+& No equivalent checked &
+(dbo:\allowbreak{}\allowbreak{}Mov\allowbreak{}ie\allowbreak{}Direct\allowbreak{}or
+and
+dbo:\allowbreak{}\allowbreak{}Scre\allowbreak{}en\allowbreak{}Writer\allowbreak{})
+& Damien Chazelle
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q183\allowbreak{}50026)
+& Source triples shown below & 0 asserted → 10 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}\allowbreak{}Filmmake\allowbreak{}r
+& No equivalent checked & (dbo:Actor and
+ex:\allowbreak{}\allowbreak{}Filmm\allowbreak{}aker) & Quentin Tarantino
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q377\allowbreak{}2)
+& Source triples shown below & 0 asserted → 7 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilmmaker\allowbreak{}
+& No equivalent checked &
+(ex:\allowbreak{}\allowbreak{}Film\allowbreak{}maker and dbo:award some
+dbo:Award) & Philippa Boyens
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q116\allowbreak{}854)
+& Source triples shown below & 0 asserted → 65 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}A\allowbreak{}ction\allowbreak{}Fil\allowbreak{}m
+& No equivalent checked &
+(ex:\allowbreak{}\allowbreak{}Acti\allowbreak{}on\allowbreak{}Film and
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm)
+& Alien
+(res:\allowbreak{}fil\allowbreak{}m-\allowbreak{}\allowbreak{}Q10356\allowbreak{}9)
+& Source triples shown below & 0 asserted → 10 newly entailed \\
+ex:\allowbreak{}\allowbreak{}Genre\allowbreak{}\allowbreak{}Crossing\allowbreak{}\allowbreak{}Film
+& No equivalent checked & (dbo:Film and dbo:genre some
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre and
+dbo:genre some
+ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Genre) &
+Pulp Fiction
+(res:\allowbreak{}fil\allowbreak{}m-\allowbreak{}\allowbreak{}Q10412\allowbreak{}3)
+& Source triples shown below & 0 asserted → 8 newly entailed \\
 \end{longtable}
 }
 
-\textbf{Giới hạn cần nói đúng:}
-\texttt{Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film} và
-\texttt{Film\allowbreak{}Stud\allowbreak{}io} được
-\texttt{src/\allowbreak{}reas\allowbreak{}on.\allowbreak{}py} thêm kiểu
-bằng COUNT DISTINCT sau khi chạy OWL RL. Ngưỡng 2/3 không được owlrl xử
-lý như yêu cầu của bài. Đếm IRI khác nhau là quy tắc ứng dụng; dưới ngữ
-nghĩa OWL, hai tên khác nhau có thể cùng chỉ một cá thể. Muốn khẳng định
-cardinality theo OWL DL cần căn cứ phân biệt cá thể hoặc kết quả
-reasoner phù hợp. Đã chạy HermiT và Pellet: ontology nhất quán, 12 lớp
-đầu có số lượng khớp OWL RL; hai lớp cardinality có 0 cá thể được suy
-luận DL, còn số 30/6 là quy tắc ứng dụng. Không nói ``HermiT chắc chắn
-suy ra cả hai lớp'' chỉ dựa vào số IRI.
-
-\subsection{6. Chuỗi minh họa để bảo
-vệ}\label{chuux1ed7i-minh-hux1ecda-ux111ux1ec3-bux1ea3o-vux1ec7}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Nolan có Contribution với DirectorRole → định nghĩa hasValue phân loại
-  Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution → Person
-  có đóng góp đó được phân loại Filmmaker.
-\item
-  DiCaprio có Contribution với ActorRole →
-  Acting\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on → Actor.
-\item
-  Inception liên kết tới genre được ánh xạ ActionGenre → ActionFilm. Nếu
-  genre còn thuộc
-  Science\allowbreak{}F\allowbreak{}iction\allowbreak{}Ge\allowbreak{}nre
-  thì phim có thể thuộc hai nhóm.
-\item
-  Phim có hasAward tới Award →
-  Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{};
-  giải của người được xử lý riêng qua AwardWinner.
-\item
-  has\allowbreak{}Produ\allowbreak{}ction\allowbreak{}Com\allowbreak{}pany
-  có inverse producti\allowbreak{}on\allowbreak{}Of; ứng dụng đếm từ 3
-  IRI phim trở lên để gán FilmStudio. Tên lớp này là định nghĩa của bài,
-  không kết luận công ty là studio lớn ngoài đời.
-\end{enumerate}
-
-Các thể loại/giải được ánh xạ nhóm bằng từ khóa nhãn trong build.py; đây
-là bước quy tắc chuyển đổi dữ liệu, không phải suy luận tự khám phá
-nghĩa từ ngôn ngữ tự nhiên.
-
-\subsection{7. 24 câu hỏi SPARQL và kết quả kiểm
-tra}\label{cuxe2u-hux1ecfi-sparql-vuxe0-kux1ebft-quux1ea3-kiux1ec3m-tra}
-
-``Gốc'' chỉ nạp movies.ttl. ``Có phân loại'' nạp movies.ttl +
-ontology\allowbreak{}/\allowbreak{}movie.\allowbreak{}t\allowbreak{}tl +
-inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
-Với câu 14/15, 1 dòng là \textbf{một dòng thống kê}, không phải chỉ có
-một thực thể. Câu 24 dùng không --reasoned để xem kiểu gán gốc; chạy
---reasoned trả thêm kiểu.
+\subsection{6. TABLE 5 --- Multi-step
+chains}\label{table-5-multi-step-chains}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-File
+Initial facts
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Gốc
+Step 1
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Có phân loại
+Step 2
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Ý nghĩa
+Step 3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Final inference
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\texttt{01\_\allowbreak{}films\allowbreak{}.\allowbreak{}rq} & 30 & 30 &
-Danh sách 30 phim \\
-\texttt{02\_\allowbreak{}incep\allowbreak{}tion.\allowbreak{}rq} & 1 & 1
-& Inception: năm, thời lượng, đạo diễn \\
-\texttt{03\_\allowbreak{}nolan\allowbreak{}.\allowbreak{}rq} & 8 & 8 & 8
-phim Nolan trong mẫu \\
-\texttt{04\_\allowbreak{}credi\allowbreak{}ts.\allowbreak{}rq} & 25 & 25
-& Đóng góp Inception (25 bản ghi) \\
-\texttt{05\_\allowbreak{}exter\allowbreak{}nal\_\allowbreak{}link\allowbreak{}s.\allowbreak{}rq}
-& 58 & 58 & Liên kết ngoài theo phim \\
-\texttt{06\_\allowbreak{}genre\allowbreak{}s.\allowbreak{}rq} & 75 & 75
-& Đếm phim theo thể loại \\
-\texttt{07\_\allowbreak{}sourc\allowbreak{}e.\allowbreak{}rq} & 2 & 2 &
-Nguồn và hash Inception \\
-\texttt{08\_\allowbreak{}ask.\allowbreak{}r\allowbreak{}q} & true & true
-& Có liên kết Wikidata Inception? \\
-\texttt{09\_\allowbreak{}actor\allowbreak{}s\_\allowbreak{}of\_\allowbreak{}inc\allowbreak{}eption.\allowbreak{}r\allowbreak{}q}
-& 21 & 21 & 21 diễn viên Inception \\
-\texttt{10\_\allowbreak{}produ\allowbreak{}ction\_\allowbreak{}co\allowbreak{}mpanies\_\allowbreak{}of\_\allowbreak{}a\_\allowbreak{}fil\allowbreak{}m.\allowbreak{}rq}
-& 4 & 4 & 4 công ty Inception \\
-\texttt{11\_\allowbreak{}award\allowbreak{}s\_\allowbreak{}receiv\allowbreak{}ed\_\allowbreak{}by\_\allowbreak{}a\_\allowbreak{}film.\allowbreak{}rq}
-& 7 & 7 & 7 giải The Godfather \\
-\texttt{12\_\allowbreak{}count\allowbreak{}ries\_\allowbreak{}and\allowbreak{}\_\allowbreak{}languag\allowbreak{}es\_\allowbreak{}of\_\allowbreak{}a\_\allowbreak{}film.\allowbreak{}rq}
-& 1 & 1 & Quốc gia/ngôn ngữ Parasite \\
-\texttt{13\_\allowbreak{}ficti\allowbreak{}on\_\allowbreak{}genre\allowbreak{}\_\allowbreak{}films\_\allowbreak{}v\allowbreak{}ia\_\allowbreak{}hiera\allowbreak{}rchy.\allowbreak{}rq}
-& 0 & 29 & Phim qua hierarchy FictionGenre \\
-\texttt{14\_\allowbreak{}all\_\allowbreak{}a\allowbreak{}gents\_\allowbreak{}pe\allowbreak{}ople\_\allowbreak{}and\allowbreak{}\_\allowbreak{}organiz\allowbreak{}ations.\allowbreak{}r\allowbreak{}q}
-& 1 & 1 & Thống kê
-Person/\allowbreak{}\allowbreak{}O\allowbreak{}rganizat\allowbreak{}ion
-qua hierarchy \\
-\texttt{15\_\allowbreak{}featu\allowbreak{}re\_\allowbreak{}vs\_\allowbreak{}an\allowbreak{}imated\_\allowbreak{}f\allowbreak{}ilm\_\allowbreak{}coun\allowbreak{}ts.\allowbreak{}rq}
-& 1 & 1 & Thống kê
-Feature\allowbreak{}F\allowbreak{}ilm/\allowbreak{}\allowbreak{}Anim\allowbreak{}ated\allowbreak{}Film\allowbreak{} \\
-\texttt{16\_\allowbreak{}docum\allowbreak{}entary\_\allowbreak{}f\allowbreak{}ilm\_\allowbreak{}coun\allowbreak{}t\_\allowbreak{}ask.\allowbreak{}rq\allowbreak{}}
-& false & false & Có Document\allowbreak{}ary\allowbreak{}Film trong
-mẫu? \\
-\texttt{17\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}acto\allowbreak{}rs.\allowbreak{}rq}
-& 0 & 20 & Actor được phân loại (LIMIT 20) \\
-\texttt{18\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}film\allowbreak{}makers.\allowbreak{}r\allowbreak{}q}
-& 0 & 20 & Filmmaker được phân loại (LIMIT 20) \\
-\texttt{19\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}acti\allowbreak{}on\_\allowbreak{}films\allowbreak{}.\allowbreak{}rq}
-& 0 & 12 & 12 ActionFilm \\
-\texttt{20\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}mult\allowbreak{}i\_\allowbreak{}genre\_\allowbreak{}films.\allowbreak{}rq\allowbreak{}}
-& 0 & 30 & 30 Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film \\
-\texttt{21\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}awar\allowbreak{}d\_\allowbreak{}winnin\allowbreak{}g\_\allowbreak{}films.\allowbreak{}rq}
-& 0 & 26 & 26
-Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{} \\
-\texttt{22\_\allowbreak{}infer\allowbreak{}red\_\allowbreak{}film\allowbreak{}\_\allowbreak{}studios\allowbreak{}.\allowbreak{}rq}
-& 0 & 6 & 6 FilmStudio theo quy tắc bài \\
-\texttt{23\_\allowbreak{}peopl\allowbreak{}e\_\allowbreak{}with\_\allowbreak{}d\allowbreak{}irecting\allowbreak{}\_\allowbreak{}and\_\allowbreak{}wri\allowbreak{}ting\_\allowbreak{}con\allowbreak{}tributio\allowbreak{}n.\allowbreak{}rq}
-& 0 & 10 & 10 người có đóng góp đạo diễn và biên kịch \\
-\texttt{24\_\allowbreak{}nolan\allowbreak{}\_\allowbreak{}asserte\allowbreak{}d\_\allowbreak{}types\_\allowbreak{}only.\allowbreak{}rq}
-& 1 & 3 & Kiểu Nolan gốc hoặc đã bổ sung tùy chế độ \\
+Film starring Person & dbo:starring range → Actor & Actor ⊑ Artist &
+Artist ⊑ Person & Person ⊑ Agent \\
+Contribution hasRole DirectorRole & hasValue →
+Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution & inverse
+contribu\allowbreak{}tion\allowbreak{}By →
+has\allowbreak{}Contr\allowbreak{}ibution & some
+Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution → Filmmaker
+& Person/Agent hierarchy \\
+Film genre typed ActionGenre & ActionGenre ⊑ MovieGenre & MovieGenre ⊑
+Genre & some ActionGenre → ActionFilm & Parent genre query matches \\
+Person directing + writing credits & Role →
+Directin\allowbreak{}g/\allowbreak{}\allowbreak{}Writin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution
+& Inverse produces has\allowbreak{}Contr\allowbreak{}ibution & Two
+existential restrictions → Writer\allowbreak{}Di\allowbreak{}rector &
+Filmmaker also follows \\
+Person with three credit roles & Different controlled roles & Functional
+hasRole proves records different & min 3 →
+Three\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor
+& min 2 →
+Multi\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor \\
+Film ActionGenre + award & Genre hierarchy and award range & ActionFilm
+/ Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{} &
+Intersection →
+Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Acti\allowbreak{}on\allowbreak{}Film
+& New type absent before \\
+Credit person and film links & Inverse
+has\allowbreak{}Contr\allowbreak{}ibution &
+has\allowbreak{}Contr\allowbreak{}ibution ∘
+contribu\allowbreak{}tion\allowbreak{}To →
+contribu\allowbreak{}ted\allowbreak{}To & dbo:director inverse →
+directed & directed ⊑ contribu\allowbreak{}ted\allowbreak{}To \\
 \end{longtable}
 }
 
-Nhóm trực tiếp: 01--12, 15--16; có schema: 13--14; cần file phân loại:
-17--23; đối chiếu kiểu khai báo: 24. Giao diện có 14 mẫu trực tiếp.
-Terminal hỗ trợ --reasoned cho các nhóm còn lại.
+\subsection{7. TABLE 6 --- Executed SPARQL competency
+questions}\label{table-6-executed-sparql-competency-questions}
 
-\subsection{8. Semantic Web đóng góp
-gì?}\label{semantic-web-ux111uxf3ng-guxf3p-guxec}
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\# / Question
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+SPARQL file
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Direct / Reasoned
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Before → After rows
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Reasoning value
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1. List films &
+queries/\allowbreak{}design/\allowbreak{}0\allowbreak{}1.\allowbreak{}rq
+& A & 30 → 30 & Source facts \\
+2. Inception: year, duration and director &
+queries/\allowbreak{}design/\allowbreak{}0\allowbreak{}2.\allowbreak{}rq
+& A & 1 → 1 & Source facts \\
+3. Directors of Inception &
+queries/\allowbreak{}design/\allowbreak{}0\allowbreak{}3.\allowbreak{}rq
+& A & 1 → 1 & Source facts \\
+4. Inception credits and roles &
+queries/\allowbreak{}design/\allowbreak{}0\allowbreak{}4.\allowbreak{}rq
+& A & 25 → 25 & Source facts \\
+5. Films directed by Nolan &
+queries/\allowbreak{}design/\allowbreak{}0\allowbreak{}5.\allowbreak{}rq
+& A & 8 → 8 & Source facts \\
+6. Companies credited on Inception &
+queries/\allowbreak{}design/\allowbreak{}0\allowbreak{}6.\allowbreak{}rq
+& A & 4 → 4 & Source facts \\
+7. Awards of Inception &
+queries/\allowbreak{}design/\allowbreak{}0\allowbreak{}7.\allowbreak{}rq
+& A & 7 → 7 & Source facts \\
+8. Runtime in seconds &
+queries/\allowbreak{}design/\allowbreak{}0\allowbreak{}8.\allowbreak{}rq
+& A & 1 → 1 & Source facts \\
+9. Film genres through the parent class &
+queries/\allowbreak{}design/\allowbreak{}0\allowbreak{}9.\allowbreak{}rq
+& B & 0 → 75 & Hierarchy closure \\
+10. Persons through Agent hierarchy &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}0.\allowbreak{}rq
+& B & 0 → 851 & Hierarchy closure \\
+11. Production companies &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}1.\allowbreak{}rq
+& B & 45 → 45 & Hierarchy closure \\
+12. Film subclasses &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}2.\allowbreak{}rq
+& B & 0 → 4 & Hierarchy closure \\
+13. Actors through Artist hierarchy &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}3.\allowbreak{}rq
+& B & 0 → 769 & Hierarchy closure \\
+14. Inferred Actors &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}4.\allowbreak{}rq
+& C & 0 → 769 & Shared inferred types / relation\allowbreak{}ships \\
+15. Inferred Filmmakers &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}5.\allowbreak{}rq
+& C & 0 → 89 & Shared inferred types / relation\allowbreak{}ships \\
+16. Inferred Action films &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}6.\allowbreak{}rq
+& C & 0 → 12 & Shared inferred types / relation\allowbreak{}ships \\
+17. Award-\allowbreak{}wi\allowbreak{}nning films &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}7.\allowbreak{}rq
+& C & 0 → 26 & Shared inferred types / relation\allowbreak{}ships \\
+18. People with at least two provably distinct credits &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}8.\allowbreak{}rq
+& C & 0 → 17 & Shared inferred types / relation\allowbreak{}ships \\
+19. People with at least three provably distinct credits &
+queries/\allowbreak{}design/\allowbreak{}1\allowbreak{}9.\allowbreak{}rq
+& C & 0 → 7 & Shared inferred types / relation\allowbreak{}ships \\
+20. Writer-\allowbreak{}d\allowbreak{}irectors\allowbreak{} &
+queries/\allowbreak{}design/\allowbreak{}2\allowbreak{}0.\allowbreak{}rq
+& C & 0 → 10 & Shared inferred types / relation\allowbreak{}ships \\
+21. Actor-\allowbreak{}fi\allowbreak{}lmmakers\allowbreak{} &
+queries/\allowbreak{}design/\allowbreak{}2\allowbreak{}1.\allowbreak{}rq
+& C & 0 → 7 & Shared inferred types / relation\allowbreak{}ships \\
+22. Award-\allowbreak{}wi\allowbreak{}nning filmmakers &
+queries/\allowbreak{}design/\allowbreak{}2\allowbreak{}2.\allowbreak{}rq
+& C & 0 → 65 & Shared inferred types / relation\allowbreak{}ships \\
+23. Award-\allowbreak{}wi\allowbreak{}nning action films &
+queries/\allowbreak{}design/\allowbreak{}2\allowbreak{}3.\allowbreak{}rq
+& C & 0 → 10 & Shared inferred types / relation\allowbreak{}ships \\
+24. Action/drama crossing films &
+queries/\allowbreak{}design/\allowbreak{}2\allowbreak{}4.\allowbreak{}rq
+& C & 0 → 8 & Shared inferred types / relation\allowbreak{}ships \\
+25. Nolan contribu\allowbreak{}tions through property chain &
+queries/\allowbreak{}design/\allowbreak{}2\allowbreak{}5.\allowbreak{}rq
+& C & 0 → 8 & Shared inferred types / relation\allowbreak{}ships \\
+26. Nolan films through inverse director &
+queries/\allowbreak{}design/\allowbreak{}2\allowbreak{}6.\allowbreak{}rq
+& C & 0 → 8 & Shared inferred types / relation\allowbreak{}ships \\
+27. Types present only after reasoning &
+queries/\allowbreak{}design/\allowbreak{}2\allowbreak{}7.\allowbreak{}rq
+& C & 0 → 1261 & Shared inferred types / relation\allowbreak{}ships \\
+\end{longtable}
+}
 
-RDF cung cấp IRI dùng chung để mô tả và nối thực thể qua nhiều nguồn.
-OWL mô tả lớp/quan hệ dưới dạng máy xử lý được; bộ luật có thể bổ sung
-kiểu từ các quan hệ thay vì lưu sẵn nhãn nghề nghiệp. SPARQL hỏi cùng mô
-hình đồ thị, kể cả đường đi qua hierarchy khi schema được nạp.
+Group A queries use asserted\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
+Group B needs schema and hierarchy closure; group C uses inferred.ttl
+together with schema + asserted data. Query 27 uses the named graphs in
+before\_\allowbreak{}a\allowbreak{}fter.\allowbreak{}tri\allowbreak{}g.\allowbreak{}
+Entity-\allowbreak{}r\allowbreak{}esult queries restrict results to
+local resource IRIs and exclude sameAs aliases; the class-count table
+uses the same local identity scope. Query 8 returns a literal and query
+12 returns class URIs, so they use the correspo\allowbreak{}nding
+value/class scope.
 
-CSDL quan hệ vẫn có thể trả các câu hỏi bằng JOIN, view, truy vấn đệ quy
-hoặc quy tắc ứng dụng. Không dùng ``SQL không làm được'' làm lập luận.
-Giá trị chính ở đây là chia sẻ định danh/từ vựng, liên kết dataset,
-nguồn truy lại được và định nghĩa ngữ nghĩa tường minh.
+\subsection{8. TABLE 7 --- Five strongest verified
+demos}\label{table-7-five-strongest-verified-demos}
 
-\subsection{9. Giới hạn và tái
-lập}\label{giux1edbi-hux1ea1n-vuxe0-tuxe1i-lux1eadp}
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Question
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Initial data
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+DBpedia reuse
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Custom rule
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Inferred result
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Why it matters
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Who is an Actor? & Real source triples below & dbo:Film / Person / Actor
+/ genre / award & starring range + hierarchy & 769 newly entailed local
+members & Reusable explicit semantics; before/after verified \\
+Who is a Filmmaker? & Real source triples below & dbo:Film / Person /
+Actor / genre / award & (dbo:Person and
+(ex:\allowbreak{}has\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion
+some
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+or
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+some
+ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
+or
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+some
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}))
+& 89 newly entailed local members & Reusable explicit semantics;
+before/after verified \\
+Which films are ActionFilm? & Real source triples below & dbo:Film /
+Person / Actor / genre / award & (dbo:Film and dbo:genre some
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre) & 12
+newly entailed local members & Reusable explicit semantics; before/after
+verified \\
+Who has three provably distinct credits? & Real source triples below &
+dbo:Film / Person / Actor / genre / award & (dbo:Person and
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+min 3
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution)\allowbreak{} & 7
+newly entailed local members & Reusable explicit semantics; before/after
+verified \\
+Which action films received an award? & Real source triples below &
+dbo:Film / Person / Actor / genre / award &
+(ex:\allowbreak{}\allowbreak{}Acti\allowbreak{}on\allowbreak{}Film and
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm)
+& 10 newly entailed local members & Reusable explicit semantics;
+before/after verified \\
+\end{longtable}
+}
 
-Document\allowbreak{}ary\allowbreak{}Film/\allowbreak{}\allowbreak{}Document\allowbreak{}ary\allowbreak{}Genre\allowbreak{}
-có 0 cá thể; ASK false chỉ nói về dataset.
-Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film hiện bằng 30/30 do
-mẫu đều có nhiều thể loại. Việc phân loại FeatureFilm theo quy tắc P31
-là giản lược; chưa chứng minh mọi phim phát hành rạp đều phù hợp định
-nghĩa học thuật. Không có ngân sách/doanh
-thu/\allowbreak{}stre\allowbreak{}aming.\allowbreak{}
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film was a preferred
+demo, but the real DL run inferred zero members. The fourth demo uses
+genuine min 3 reasoning instead. This meets the cardinality objective
+without inventing genre inequality.
 
-Đã bổ sung đủ 76 phản hồi gốc, kiểm tra toàn bộ hash và chạy lại
-collect/\allowbreak{}build/\allowbreak{}va\allowbreak{}lidate/\allowbreak{}r\allowbreak{}eason.\allowbreak{}
-Có 14 test pass. Không phát hiện lỗi owlrl không đồng nghĩa ontology OWL
-DL đã được chứng minh nhất quán.
+\subsection{\texorpdfstring{9. Five complete Semantic Web
+demonstr\allowbreak{}ations}{9. Five complete Semantic Web }}\label{five-complete-semantic-web-demonstrations}
+
+\subsubsection{Who is an Actor?}\label{who-is-an-actor}
+
+QUESTION: Who is an Actor?
+
+INITIAL TRIPLES:
 
 \begin{verbatim}
-.venv/bin/python src/build.py
-.venv/bin/python src/prepare_web.py
-.venv/bin/python src/reason.py
-.venv/bin/python src/query.py queries/18_inferred_filmmakers.rq --reasoned
-.venv/bin/python -m pytest -q
+res:contribution-Q104123-Q1016897-actor ex:contributionBy res:person-Q1016897 .
+res:contribution-Q104123-Q1016897-actor ex:contributionTo res:film-Q104123 .
+res:contribution-Q104123-Q1016897-actor ex:hasRole ex:ActorRole .
+res:contribution-Q104123-Q1016897-actor http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:film-Q104123 dbo:starring res:person-Q1016897 .
+res:person-Q1016897 ex:hasContribution res:contribution-Q104123-Q1016897-actor .
+res:person-Q1016897 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Person .
 \end{verbatim}
 
-Muốn lấy lại nguồn: dùng sao lưu đúng snapshot; nếu chạy
-collect.py/--refresh để tải mới, giữ mốc
-U\allowbreak{}R\allowbreak{}L/\allowbreak{}hash\allowbreak{}/\allowbreak{}time
-mới và build, kiểm tra lại toàn bộ; không ghi đè lịch sử để giả vờ hash
-cũ đã khớp.
+DBPEDIA VOCABULARY: dbo:Film, dbo:Person, dbo:Actor and the
+source-\allowbreak{}s\allowbreak{}upported\allowbreak{} properties in
+Table 2.
 
-Nguồn: \href{https://www.w3.org/TR/owl2-profiles/}{OWL 2 Profiles},
-\href{https://www.w3.org/TR/owl2-primer/}{OWL 2 Primer},
-\href{https://www.w3.org/TR/sparql11-query/}{SPARQL 1.1}. Các số liệu và
-kết quả truy vấn lấy từ repository.
+ONTOLOGY RULE: dbo:starring rdfs:range dbo:Actor; Actor subclass Artist
+subclass Person subclass Agent.
+
+REASONING: The source relation supplies existential witnesses.
+Supporting credit classes follow role hasValue
+restrict\allowbreak{}ions.\allowbreak{} For min 3, the three role
+individuals are distinct by their controlled meanings; functional
+hasRole forces the correspo\allowbreak{}nding credits to be distinct.
+HermiT classified the complete graph.
+
+INFERRED KNOWLEDGE:
+\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q1016\allowbreak{}897 rdf:\allowbreak{}type dbo\allowbreak{}:\allowbreak{}\allowbreak{}Actor}.
+This type has zero direct assertions in the input graph.
+
+SPARQL:
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Actor . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+RESULT: 769 newly entailed local individuals; example Burr Steers
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q101\allowbreak{}6897).\allowbreak{}
+
+WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
+classifi\allowbreak{}cation and shared vocabulary explicit and reusable
+across consumers. SQL joins, recursive queries and rule systems can
+reproduce many of these answers; the advantage is declared semantics,
+interope\allowbreak{}rable identifiers, open-world entailment and
+consistency checking, not an inability of databases to compute them.
+
+\subsubsection{Who is a Filmmaker?}\label{who-is-a-filmmaker}
+
+QUESTION: Who is a Filmmaker?
+
+INITIAL TRIPLES:
+
+\begin{verbatim}
+res:contribution-Q13417189-Q25191-director ex:contributionBy res:person-Q25191 .
+res:contribution-Q13417189-Q25191-director ex:contributionTo res:film-Q13417189 .
+res:contribution-Q13417189-Q25191-director ex:hasRole ex:DirectorRole .
+res:contribution-Q13417189-Q25191-director http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q13417189-Q25191-producer ex:contributionBy res:person-Q25191 .
+res:contribution-Q13417189-Q25191-producer ex:contributionTo res:film-Q13417189 .
+res:contribution-Q13417189-Q25191-producer ex:hasRole ex:ProducerRole .
+res:contribution-Q13417189-Q25191-producer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q13417189-Q25191-writer ex:contributionBy res:person-Q25191 .
+res:contribution-Q13417189-Q25191-writer ex:contributionTo res:film-Q13417189 .
+res:contribution-Q13417189-Q25191-writer ex:hasRole ex:WriterRole .
+res:contribution-Q13417189-Q25191-writer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:person-Q25191 dbo:award res:award-Q102427 .
+res:person-Q25191 dbo:award res:award-Q103360 .
+res:person-Q25191 dbo:award res:award-Q105447 .
+res:person-Q25191 dbo:award res:award-Q1056240 .
+res:person-Q25191 dbo:award res:award-Q12143912 .
+res:person-Q25191 dbo:award res:award-Q12201477 .
+res:person-Q25191 dbo:award res:award-Q16058279 .
+res:person-Q25191 dbo:award res:award-Q3405197 .
+res:person-Q25191 dbo:award res:award-Q586356 .
+res:person-Q25191 dbo:award res:award-Q787131 .
+res:person-Q25191 dbo:award res:award-Q833154 .
+res:person-Q25191 dbo:award res:award-Q833163 .
+res:person-Q25191 ex:hasContribution res:contribution-Q13417189-Q25191-director .
+res:person-Q25191 ex:hasContribution res:contribution-Q13417189-Q25191-producer .
+res:person-Q25191 ex:hasContribution res:contribution-Q13417189-Q25191-writer .
+res:person-Q25191 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Person .
+\end{verbatim}
+
+DBPEDIA VOCABULARY: dbo:Film, dbo:Person, dbo:Actor and the
+source-\allowbreak{}s\allowbreak{}upported\allowbreak{} properties in
+Table 2.
+
+ONTOLOGY RULE: (dbo:Person and
+(ex:\allowbreak{}has\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion
+some
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+or
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+some
+ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
+or
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+some
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}))
+
+REASONING: The source relation supplies existential witnesses.
+Supporting credit classes follow role hasValue
+restrict\allowbreak{}ions.\allowbreak{} For min 3, the three role
+individuals are distinct by their controlled meanings; functional
+hasRole forces the correspo\allowbreak{}nding credits to be distinct.
+HermiT classified the complete graph.
+
+INFERRED KNOWLEDGE:
+\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q2519\allowbreak{}1 rdf:\allowbreak{}ty\allowbreak{}pe ex:\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker}.
+This type has zero direct assertions in the input graph.
+
+SPARQL:
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:Filmmaker . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+RESULT: 89 newly entailed local individuals; example Christopher Nolan
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q251\allowbreak{}91).\allowbreak{}
+
+WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
+classifi\allowbreak{}cation and shared vocabulary explicit and reusable
+across consumers. SQL joins, recursive queries and rule systems can
+reproduce many of these answers; the advantage is declared semantics,
+interope\allowbreak{}rable identifiers, open-world entailment and
+consistency checking, not an inability of databases to compute them.
+
+\subsubsection{Which films are
+ActionFilm?}\label{which-films-are-actionfilm}
+
+QUESTION: Which films are ActionFilm?
+
+INITIAL TRIPLES:
+
+\begin{verbatim}
+res:film-Q103569 dbo:award res:award-Q1131772 .
+res:film-Q103569 dbo:award res:award-Q1257399 .
+res:film-Q103569 dbo:award res:award-Q1265702 .
+res:film-Q103569 dbo:award res:award-Q3414212 .
+res:film-Q103569 dbo:award res:award-Q393686 .
+res:film-Q103569 dbo:award res:award-Q739633 .
+res:film-Q103569 dbo:genre res:genre-Q102260466 .
+res:film-Q103569 dbo:genre res:genre-Q10663882 .
+res:film-Q103569 dbo:genre res:genre-Q11304653 .
+res:film-Q103569 dbo:genre res:genre-Q1200678 .
+res:film-Q103569 dbo:genre res:genre-Q1342372 .
+res:film-Q103569 dbo:genre res:genre-Q157394 .
+res:film-Q103569 dbo:genre res:genre-Q1776156 .
+res:film-Q103569 dbo:genre res:genre-Q188473 .
+res:film-Q103569 dbo:genre res:genre-Q200092 .
+res:film-Q103569 dbo:genre res:genre-Q20656232 .
+res:film-Q103569 dbo:genre res:genre-Q2484376 .
+res:film-Q103569 dbo:genre res:genre-Q319221 .
+res:film-Q103569 dbo:genre res:genre-Q471839 .
+res:film-Q103569 dbo:starring res:person-Q102124 .
+res:film-Q103569 dbo:starring res:person-Q200405 .
+res:film-Q103569 dbo:starring res:person-Q223091 .
+res:film-Q103569 dbo:starring res:person-Q266270 .
+res:film-Q103569 dbo:starring res:person-Q283872 .
+res:film-Q103569 dbo:starring res:person-Q3047302 .
+res:film-Q103569 dbo:starring res:person-Q314290 .
+res:film-Q103569 dbo:starring res:person-Q320093 .
+res:film-Q103569 dbo:starring res:person-Q323185 .
+res:film-Q103569 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Film .
+res:genre-Q102260466 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q10663882 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q11304653 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1200678 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1342372 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q157394 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1776156 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q200092 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q2484376 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q319221 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q471839 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+\end{verbatim}
+
+DBPEDIA VOCABULARY: dbo:Film, dbo:Person, dbo:Actor and the
+source-\allowbreak{}s\allowbreak{}upported\allowbreak{} properties in
+Table 2.
+
+ONTOLOGY RULE: (dbo:Film and dbo:genre some
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre)
+
+REASONING: The source relation supplies existential witnesses.
+Supporting credit classes follow role hasValue
+restrict\allowbreak{}ions.\allowbreak{} For min 3, the three role
+individuals are distinct by their controlled meanings; functional
+hasRole forces the correspo\allowbreak{}nding credits to be distinct.
+HermiT classified the complete graph.
+
+INFERRED KNOWLEDGE:
+\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{} rdf:\allowbreak{}typ\allowbreak{}e ex:\allowbreak{}\allowbreak{}Act\allowbreak{}ion\allowbreak{}Film}.
+This type has zero direct assertions in the input graph.
+
+SPARQL:
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ActionFilm . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+RESULT: 12 newly entailed local individuals; example Alien
+(res:\allowbreak{}fil\allowbreak{}m-\allowbreak{}\allowbreak{}Q10356\allowbreak{}9).\allowbreak{}
+
+WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
+classifi\allowbreak{}cation and shared vocabulary explicit and reusable
+across consumers. SQL joins, recursive queries and rule systems can
+reproduce many of these answers; the advantage is declared semantics,
+interope\allowbreak{}rable identifiers, open-world entailment and
+consistency checking, not an inability of databases to compute them.
+
+\subsubsection{Who has three provably distinct
+credits?}\label{who-has-three-provably-distinct-credits}
+
+QUESTION: Who has three provably distinct credits?
+
+INITIAL TRIPLES:
+
+\begin{verbatim}
+res:contribution-Q13417189-Q25191-director ex:contributionBy res:person-Q25191 .
+res:contribution-Q13417189-Q25191-director ex:contributionTo res:film-Q13417189 .
+res:contribution-Q13417189-Q25191-director ex:hasRole ex:DirectorRole .
+res:contribution-Q13417189-Q25191-director http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q13417189-Q25191-producer ex:contributionBy res:person-Q25191 .
+res:contribution-Q13417189-Q25191-producer ex:contributionTo res:film-Q13417189 .
+res:contribution-Q13417189-Q25191-producer ex:hasRole ex:ProducerRole .
+res:contribution-Q13417189-Q25191-producer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q13417189-Q25191-writer ex:contributionBy res:person-Q25191 .
+res:contribution-Q13417189-Q25191-writer ex:contributionTo res:film-Q13417189 .
+res:contribution-Q13417189-Q25191-writer ex:hasRole ex:WriterRole .
+res:contribution-Q13417189-Q25191-writer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:person-Q25191 dbo:award res:award-Q102427 .
+res:person-Q25191 dbo:award res:award-Q103360 .
+res:person-Q25191 dbo:award res:award-Q105447 .
+res:person-Q25191 dbo:award res:award-Q1056240 .
+res:person-Q25191 dbo:award res:award-Q12143912 .
+res:person-Q25191 dbo:award res:award-Q12201477 .
+res:person-Q25191 dbo:award res:award-Q16058279 .
+res:person-Q25191 dbo:award res:award-Q3405197 .
+res:person-Q25191 dbo:award res:award-Q586356 .
+res:person-Q25191 dbo:award res:award-Q787131 .
+res:person-Q25191 dbo:award res:award-Q833154 .
+res:person-Q25191 dbo:award res:award-Q833163 .
+res:person-Q25191 ex:hasContribution res:contribution-Q13417189-Q25191-director .
+res:person-Q25191 ex:hasContribution res:contribution-Q13417189-Q25191-producer .
+res:person-Q25191 ex:hasContribution res:contribution-Q13417189-Q25191-writer .
+res:person-Q25191 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Person .
+\end{verbatim}
+
+DBPEDIA VOCABULARY: dbo:Film, dbo:Person, dbo:Actor and the
+source-\allowbreak{}s\allowbreak{}upported\allowbreak{} properties in
+Table 2.
+
+ONTOLOGY RULE: (dbo:Person and
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+min 3
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution)\allowbreak{}
+
+REASONING: The source relation supplies existential witnesses.
+Supporting credit classes follow role hasValue
+restrict\allowbreak{}ions.\allowbreak{} For min 3, the three role
+individuals are distinct by their controlled meanings; functional
+hasRole forces the correspo\allowbreak{}nding credits to be distinct.
+HermiT classified the complete graph.
+
+INFERRED KNOWLEDGE:
+\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q2519\allowbreak{}1 rdf:\allowbreak{}ty\allowbreak{}pe ex:\allowbreak{}\allowbreak{}Th\allowbreak{}ree\allowbreak{}Credi\allowbreak{}t\allowbreak{}Contrib\allowbreak{}utor}.
+This type has zero direct assertions in the input graph.
+
+SPARQL:
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ThreeCreditContributor . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+RESULT: 7 newly entailed local individuals; example Christopher Nolan
+(res:\allowbreak{}per\allowbreak{}son-\allowbreak{}\allowbreak{}Q251\allowbreak{}91).\allowbreak{}
+
+WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
+classifi\allowbreak{}cation and shared vocabulary explicit and reusable
+across consumers. SQL joins, recursive queries and rule systems can
+reproduce many of these answers; the advantage is declared semantics,
+interope\allowbreak{}rable identifiers, open-world entailment and
+consistency checking, not an inability of databases to compute them.
+
+\subsubsection{Which action films received an
+award?}\label{which-action-films-received-an-award}
+
+QUESTION: Which action films received an award?
+
+INITIAL TRIPLES:
+
+\begin{verbatim}
+res:film-Q103569 dbo:award res:award-Q1131772 .
+res:film-Q103569 dbo:award res:award-Q1257399 .
+res:film-Q103569 dbo:award res:award-Q1265702 .
+res:film-Q103569 dbo:award res:award-Q3414212 .
+res:film-Q103569 dbo:award res:award-Q393686 .
+res:film-Q103569 dbo:award res:award-Q739633 .
+res:film-Q103569 dbo:genre res:genre-Q102260466 .
+res:film-Q103569 dbo:genre res:genre-Q10663882 .
+res:film-Q103569 dbo:genre res:genre-Q11304653 .
+res:film-Q103569 dbo:genre res:genre-Q1200678 .
+res:film-Q103569 dbo:genre res:genre-Q1342372 .
+res:film-Q103569 dbo:genre res:genre-Q157394 .
+res:film-Q103569 dbo:genre res:genre-Q1776156 .
+res:film-Q103569 dbo:genre res:genre-Q188473 .
+res:film-Q103569 dbo:genre res:genre-Q200092 .
+res:film-Q103569 dbo:genre res:genre-Q20656232 .
+res:film-Q103569 dbo:genre res:genre-Q2484376 .
+res:film-Q103569 dbo:genre res:genre-Q319221 .
+res:film-Q103569 dbo:genre res:genre-Q471839 .
+res:film-Q103569 dbo:starring res:person-Q102124 .
+res:film-Q103569 dbo:starring res:person-Q200405 .
+res:film-Q103569 dbo:starring res:person-Q223091 .
+res:film-Q103569 dbo:starring res:person-Q266270 .
+res:film-Q103569 dbo:starring res:person-Q283872 .
+res:film-Q103569 dbo:starring res:person-Q3047302 .
+res:film-Q103569 dbo:starring res:person-Q314290 .
+res:film-Q103569 dbo:starring res:person-Q320093 .
+res:film-Q103569 dbo:starring res:person-Q323185 .
+res:film-Q103569 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Film .
+res:genre-Q102260466 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q10663882 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q11304653 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1200678 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1342372 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q157394 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1776156 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q200092 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q2484376 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q319221 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q471839 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+\end{verbatim}
+
+DBPEDIA VOCABULARY: dbo:Film, dbo:Person, dbo:Actor and the
+source-\allowbreak{}s\allowbreak{}upported\allowbreak{} properties in
+Table 2.
+
+ONTOLOGY RULE:
+(ex:\allowbreak{}\allowbreak{}Acti\allowbreak{}on\allowbreak{}Film and
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm)
+
+REASONING: The source relation supplies existential witnesses.
+Supporting credit classes follow role hasValue
+restrict\allowbreak{}ions.\allowbreak{} For min 3, the three role
+individuals are distinct by their controlled meanings; functional
+hasRole forces the correspo\allowbreak{}nding credits to be distinct.
+HermiT classified the complete graph.
+
+INFERRED KNOWLEDGE:
+\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{} rdf:\allowbreak{}typ\allowbreak{}e ex:\allowbreak{}\allowbreak{}Awa\allowbreak{}rd\allowbreak{}Winnin\allowbreak{}g\allowbreak{}Action\allowbreak{}F\allowbreak{}ilm}.
+This type has zero direct assertions in the input graph.
+
+SPARQL:
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:AwardWinningActionFilm . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+RESULT: 10 newly entailed local individuals; example Alien
+(res:\allowbreak{}fil\allowbreak{}m-\allowbreak{}\allowbreak{}Q10356\allowbreak{}9).\allowbreak{}
+
+WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
+classifi\allowbreak{}cation and shared vocabulary explicit and reusable
+across consumers. SQL joins, recursive queries and rule systems can
+reproduce many of these answers; the advantage is declared semantics,
+interope\allowbreak{}rable identifiers, open-world entailment and
+consistency checking, not an inability of databases to compute them.
+
+\subsection{10. Full definitions, source witnesses and OWL
+expressions}\label{full-definitions-source-witnesses-and-owl-expressions}
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution}{}}\label{exactingcontribution}
+
+REUSE/EXTEND rationale: Local credit record classified by a fixed role;
+DBpedia Actor describes a person, not this record.
+
+CRAWLED SUPPORT: Credit claim correspo\allowbreak{}nding to Actor
+
+MANCHESTER:
+\texttt{(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and ex:\allowbreak{}has\allowbreak{}Role \allowbreak{}value ex\allowbreak{}:\allowbreak{}\allowbreak{}Actor\allowbreak{}Ro\allowbreak{}le)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Act\allowbreak{}ing\allowbreak{}Contr\allowbreak{}ibution
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(ex:\allowbreak{}\allowbreak{}Contribu\allowbreak{}tion
+Object\allowbreak{}Ha\allowbreak{}s\allowbreak{}Value(e\allowbreak{}x:\allowbreak{}has\allowbreak{}Rol\allowbreak{}e
+ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}\allowbreak{}Role)))
+
+REAL INDIVIDUAL: Alien --- actor --- Sigourney Weaver
+(\texttt{res:\allowbreak{}cont\allowbreak{}ribution\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}-\allowbreak{}\allowbreak{}Q102124\allowbreak{}-\allowbreak{}actor}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q103569-Q102124-actor ex:hasRole ex:ActorRole .
+res:contribution-Q103569-Q102124-actor http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}cont\allowbreak{}ribution\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}-\allowbreak{}\allowbreak{}Q102124\allowbreak{}-\allowbreak{}actor r\allowbreak{}df:\allowbreak{}type \allowbreak{}ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}}{}}\label{exdirectingcontribution}
+
+REUSE/EXTEND rationale: Local credit record classified by a fixed role;
+DBpedia Actor describes a person, not this record.
+
+CRAWLED SUPPORT: Credit claim correspo\allowbreak{}nding to Director
+
+MANCHESTER:
+\texttt{(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and ex:\allowbreak{}has\allowbreak{}Role \allowbreak{}value ex\allowbreak{}:\allowbreak{}\allowbreak{}Directo\allowbreak{}r\allowbreak{}Role)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Dir\allowbreak{}ecting\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(ex:\allowbreak{}\allowbreak{}Contribu\allowbreak{}tion
+Object\allowbreak{}Ha\allowbreak{}s\allowbreak{}Value(e\allowbreak{}x:\allowbreak{}has\allowbreak{}Rol\allowbreak{}e
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}tor\allowbreak{}Role)\allowbreak{}))
+
+REAL INDIVIDUAL: Alien --- director --- Ridley Scott
+(\texttt{res:\allowbreak{}cont\allowbreak{}ribution\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}-\allowbreak{}\allowbreak{}Q56005-\allowbreak{}director\allowbreak{}}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q103569-Q56005-director ex:hasRole ex:DirectorRole .
+res:contribution-Q103569-Q56005-director http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}cont\allowbreak{}ribution\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}-\allowbreak{}\allowbreak{}Q56005-\allowbreak{}director\allowbreak{} rdf:\allowbreak{}typ\allowbreak{}e ex:\allowbreak{}\allowbreak{}Dir\allowbreak{}ecting\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution}{}}\label{exwritingcontribution}
+
+REUSE/EXTEND rationale: Local credit record classified by a fixed role;
+DBpedia Actor describes a person, not this record.
+
+CRAWLED SUPPORT: Credit claim correspo\allowbreak{}nding to Writer
+
+MANCHESTER:
+\texttt{(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and ex:\allowbreak{}has\allowbreak{}Role \allowbreak{}value ex\allowbreak{}:\allowbreak{}\allowbreak{}Writer\allowbreak{}R\allowbreak{}ole)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Wri\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(ex:\allowbreak{}\allowbreak{}Contribu\allowbreak{}tion
+Object\allowbreak{}Ha\allowbreak{}s\allowbreak{}Value(e\allowbreak{}x:\allowbreak{}has\allowbreak{}Rol\allowbreak{}e
+ex:\allowbreak{}\allowbreak{}Write\allowbreak{}r\allowbreak{}Role)))\allowbreak{}
+
+REAL INDIVIDUAL: Alien --- writer --- Ronald Shusett
+(\texttt{res:\allowbreak{}cont\allowbreak{}ribution\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}-\allowbreak{}\allowbreak{}Q305609\allowbreak{}4-\allowbreak{}writer\allowbreak{}}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q103569-Q3056094-writer ex:hasRole ex:WriterRole .
+res:contribution-Q103569-Q3056094-writer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}cont\allowbreak{}ribution\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}-\allowbreak{}\allowbreak{}Q305609\allowbreak{}4-\allowbreak{}writer\allowbreak{} rdf:\allowbreak{}typ\allowbreak{}e ex:\allowbreak{}\allowbreak{}Wri\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}}{}}\label{exproducingcontribution}
+
+REUSE/EXTEND rationale: Local credit record classified by a fixed role;
+DBpedia Actor describes a person, not this record.
+
+CRAWLED SUPPORT: Credit claim correspo\allowbreak{}nding to Producer
+
+MANCHESTER:
+\texttt{(ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{} and ex:\allowbreak{}has\allowbreak{}Role \allowbreak{}value ex\allowbreak{}:\allowbreak{}\allowbreak{}Produce\allowbreak{}r\allowbreak{}Role)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Pro\allowbreak{}ducing\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(ex:\allowbreak{}\allowbreak{}Contribu\allowbreak{}tion
+Object\allowbreak{}Ha\allowbreak{}s\allowbreak{}Value(e\allowbreak{}x:\allowbreak{}has\allowbreak{}Rol\allowbreak{}e
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cer\allowbreak{}Role)\allowbreak{}))
+
+REAL INDIVIDUAL: Alien --- producer --- Gordon Carroll
+(\texttt{res:\allowbreak{}cont\allowbreak{}ribution\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}-\allowbreak{}\allowbreak{}Q153798\allowbreak{}3-\allowbreak{}produc\allowbreak{}er}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q103569-Q1537983-producer ex:hasRole ex:ProducerRole .
+res:contribution-Q103569-Q1537983-producer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}cont\allowbreak{}ribution\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}-\allowbreak{}\allowbreak{}Q153798\allowbreak{}3-\allowbreak{}produc\allowbreak{}er rdf:\allowbreak{}t\allowbreak{}ype ex:\allowbreak{}\allowbreak{}P\allowbreak{}roducing\allowbreak{}\allowbreak{}Contribu\allowbreak{}tion}.
+
+\subsubsection{ex:Filmmaker}\label{exfilmmaker}
+
+REUSE/EXTEND rationale: Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class.
+
+CRAWLED SUPPORT:
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based
+
+MANCHESTER:
+\texttt{(dbo:\allowbreak{}\allowbreak{}Per\allowbreak{}son and \allowbreak{}(ex:\allowbreak{}has\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion some\allowbreak{} ex:\allowbreak{}\allowbreak{}Dire\allowbreak{}cting\allowbreak{}Con\allowbreak{}tributio\allowbreak{}n or ex:\allowbreak{}has\allowbreak{}Contr\allowbreak{}ibution \allowbreak{}some ex:\allowbreak{}\allowbreak{}Writing\allowbreak{}C\allowbreak{}ontribut\allowbreak{}ion or e\allowbreak{}x:\allowbreak{}has\allowbreak{}Con\allowbreak{}tributio\allowbreak{}n some e\allowbreak{}x:\allowbreak{}\allowbreak{}Produc\allowbreak{}ing\allowbreak{}Contr\allowbreak{}ibution)\allowbreak{})}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Fil\allowbreak{}mmaker
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(dbo\allowbreak{}:\allowbreak{}\allowbreak{}Person
+Object\allowbreak{}Un\allowbreak{}ion\allowbreak{}Of(\allowbreak{}Ob\allowbreak{}ject\allowbreak{}Some\allowbreak{}\allowbreak{}Values\allowbreak{}Fr\allowbreak{}om(ex:\allowbreak{}ha\allowbreak{}s\allowbreak{}Contrib\allowbreak{}ution
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{})
+Object\allowbreak{}So\allowbreak{}me\allowbreak{}Values\allowbreak{}\allowbreak{}From(ex:\allowbreak{}has\allowbreak{}Contr\allowbreak{}ibution
+ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution)
+Object\allowbreak{}So\allowbreak{}me\allowbreak{}Values\allowbreak{}\allowbreak{}From(ex:\allowbreak{}has\allowbreak{}Contr\allowbreak{}ibution
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}))))
+
+REAL INDIVIDUAL: Philippa Boyens
+(\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q1168\allowbreak{}54}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q127367-Q116854-writer ex:contributionTo res:film-Q127367 .
+res:contribution-Q127367-Q116854-writer ex:hasRole ex:WriterRole .
+res:contribution-Q127367-Q116854-writer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:person-Q116854 dbo:award res:award-Q1056240 .
+res:person-Q116854 dbo:award res:award-Q107258 .
+res:person-Q116854 dbo:award res:award-Q1075366 .
+res:person-Q116854 dbo:award res:award-Q23050104 .
+res:person-Q116854 dbo:award res:award-Q3414212 .
+res:person-Q116854 dbo:award res:award-Q430910 .
+res:person-Q116854 dbo:award res:award-Q644077 .
+res:person-Q116854 dbo:award res:award-Q739694 .
+res:person-Q116854 ex:hasContribution res:contribution-Q127367-Q116854-writer .
+res:person-Q116854 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Person .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q1168\allowbreak{}54 rdf:\allowbreak{}t\allowbreak{}ype ex:\allowbreak{}\allowbreak{}F\allowbreak{}ilmmaker\allowbreak{}}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Film}{}}\label{exactionfilm}
+
+REUSE/EXTEND rationale: Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class.
+
+CRAWLED SUPPORT: P136/P166
+
+MANCHESTER:
+\texttt{(dbo:\allowbreak{}\allowbreak{}Fil\allowbreak{}m and db\allowbreak{}o:\allowbreak{}genre \allowbreak{}some ex:\allowbreak{}\allowbreak{}Action\allowbreak{}Ge\allowbreak{}nre)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Act\allowbreak{}ion\allowbreak{}Film
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(dbo\allowbreak{}:\allowbreak{}\allowbreak{}Film
+Object\allowbreak{}So\allowbreak{}me\allowbreak{}Values\allowbreak{}\allowbreak{}From(dbo\allowbreak{}:\allowbreak{}genre
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre))\allowbreak{})
+
+REAL INDIVIDUAL: Alien
+(\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:film-Q103569 dbo:award res:award-Q1131772 .
+res:film-Q103569 dbo:award res:award-Q1257399 .
+res:film-Q103569 dbo:award res:award-Q1265702 .
+res:film-Q103569 dbo:award res:award-Q3414212 .
+res:film-Q103569 dbo:award res:award-Q393686 .
+res:film-Q103569 dbo:award res:award-Q739633 .
+res:film-Q103569 dbo:genre res:genre-Q102260466 .
+res:film-Q103569 dbo:genre res:genre-Q10663882 .
+res:film-Q103569 dbo:genre res:genre-Q11304653 .
+res:film-Q103569 dbo:genre res:genre-Q1200678 .
+res:film-Q103569 dbo:genre res:genre-Q1342372 .
+res:film-Q103569 dbo:genre res:genre-Q157394 .
+res:film-Q103569 dbo:genre res:genre-Q1776156 .
+res:film-Q103569 dbo:genre res:genre-Q188473 .
+res:film-Q103569 dbo:genre res:genre-Q200092 .
+res:film-Q103569 dbo:genre res:genre-Q20656232 .
+res:film-Q103569 dbo:genre res:genre-Q2484376 .
+res:film-Q103569 dbo:genre res:genre-Q319221 .
+res:film-Q103569 dbo:genre res:genre-Q471839 .
+res:film-Q103569 dbo:starring res:person-Q102124 .
+res:film-Q103569 dbo:starring res:person-Q200405 .
+res:film-Q103569 dbo:starring res:person-Q223091 .
+res:film-Q103569 dbo:starring res:person-Q266270 .
+res:film-Q103569 dbo:starring res:person-Q283872 .
+res:film-Q103569 dbo:starring res:person-Q3047302 .
+res:film-Q103569 dbo:starring res:person-Q314290 .
+res:film-Q103569 dbo:starring res:person-Q320093 .
+res:film-Q103569 dbo:starring res:person-Q323185 .
+res:film-Q103569 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Film .
+res:genre-Q102260466 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q10663882 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q11304653 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1200678 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1342372 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q157394 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1776156 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q200092 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q2484376 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q319221 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q471839 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{} rdf:\allowbreak{}typ\allowbreak{}e ex:\allowbreak{}\allowbreak{}Act\allowbreak{}ion\allowbreak{}Film}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm}{}}\label{exawardwinningfilm}
+
+REUSE/EXTEND rationale: Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class.
+
+CRAWLED SUPPORT: P136/P166
+
+MANCHESTER:
+\texttt{(dbo:\allowbreak{}\allowbreak{}Fil\allowbreak{}m and db\allowbreak{}o:\allowbreak{}award \allowbreak{}some dbo\allowbreak{}:\allowbreak{}\allowbreak{}Award)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Awa\allowbreak{}rd\allowbreak{}Winnin\allowbreak{}g\allowbreak{}Film
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(dbo\allowbreak{}:\allowbreak{}\allowbreak{}Film
+Object\allowbreak{}So\allowbreak{}me\allowbreak{}Values\allowbreak{}\allowbreak{}From(dbo\allowbreak{}:\allowbreak{}award
+dbo:Award)))
+
+REAL INDIVIDUAL: Alien
+(\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:film-Q103569 dbo:award res:award-Q1131772 .
+res:film-Q103569 dbo:award res:award-Q1257399 .
+res:film-Q103569 dbo:award res:award-Q1265702 .
+res:film-Q103569 dbo:award res:award-Q3414212 .
+res:film-Q103569 dbo:award res:award-Q393686 .
+res:film-Q103569 dbo:award res:award-Q739633 .
+res:film-Q103569 dbo:genre res:genre-Q102260466 .
+res:film-Q103569 dbo:genre res:genre-Q10663882 .
+res:film-Q103569 dbo:genre res:genre-Q11304653 .
+res:film-Q103569 dbo:genre res:genre-Q1200678 .
+res:film-Q103569 dbo:genre res:genre-Q1342372 .
+res:film-Q103569 dbo:genre res:genre-Q157394 .
+res:film-Q103569 dbo:genre res:genre-Q1776156 .
+res:film-Q103569 dbo:genre res:genre-Q188473 .
+res:film-Q103569 dbo:genre res:genre-Q200092 .
+res:film-Q103569 dbo:genre res:genre-Q20656232 .
+res:film-Q103569 dbo:genre res:genre-Q2484376 .
+res:film-Q103569 dbo:genre res:genre-Q319221 .
+res:film-Q103569 dbo:genre res:genre-Q471839 .
+res:film-Q103569 dbo:starring res:person-Q102124 .
+res:film-Q103569 dbo:starring res:person-Q200405 .
+res:film-Q103569 dbo:starring res:person-Q223091 .
+res:film-Q103569 dbo:starring res:person-Q266270 .
+res:film-Q103569 dbo:starring res:person-Q283872 .
+res:film-Q103569 dbo:starring res:person-Q3047302 .
+res:film-Q103569 dbo:starring res:person-Q314290 .
+res:film-Q103569 dbo:starring res:person-Q320093 .
+res:film-Q103569 dbo:starring res:person-Q323185 .
+res:film-Q103569 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Film .
+res:genre-Q102260466 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q10663882 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q11304653 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1200678 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1342372 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q157394 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1776156 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q200092 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q2484376 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q319221 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q471839 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{} rdf:\allowbreak{}typ\allowbreak{}e ex:\allowbreak{}\allowbreak{}Awa\allowbreak{}rd\allowbreak{}Winnin\allowbreak{}g\allowbreak{}Film}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Multi\allowbreak{}\allowbreak{}Credit\allowbreak{}Co\allowbreak{}ntributo\allowbreak{}r}{}}\label{exmulticreditcontributor}
+
+REUSE/EXTEND rationale: At least two semantically distinct credit
+records. Different roles prove their distinct\allowbreak{}ness; the name
+is shorthand and does not exclude repeated same-role credits.
+
+CRAWLED SUPPORT:
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based
+
+MANCHESTER:
+\texttt{(dbo:\allowbreak{}\allowbreak{}Per\allowbreak{}son and \allowbreak{}ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on min 2\allowbreak{} ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{})}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Mul\allowbreak{}ti\allowbreak{}Credit\allowbreak{}\allowbreak{}Contribu\allowbreak{}tor
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(dbo\allowbreak{}:\allowbreak{}\allowbreak{}Person
+Object\allowbreak{}Mi\allowbreak{}n\allowbreak{}Cardina\allowbreak{}lity(2
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution)\allowbreak{}))
+
+REAL INDIVIDUAL: Fran Walsh
+(\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q1168\allowbreak{}61}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q127367-Q116861-producer ex:contributionTo res:film-Q127367 .
+res:contribution-Q127367-Q116861-producer ex:hasRole ex:ProducerRole .
+res:contribution-Q127367-Q116861-producer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q127367-Q116861-writer ex:contributionTo res:film-Q127367 .
+res:contribution-Q127367-Q116861-writer ex:hasRole ex:WriterRole .
+res:contribution-Q127367-Q116861-writer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:person-Q116861 dbo:award res:award-Q102427 .
+res:person-Q116861 dbo:award res:award-Q1056240 .
+res:person-Q116861 dbo:award res:award-Q107258 .
+res:person-Q116861 dbo:award res:award-Q1075366 .
+res:person-Q116861 dbo:award res:award-Q112243 .
+res:person-Q116861 dbo:award res:award-Q131837474 .
+res:person-Q116861 dbo:award res:award-Q139184 .
+res:person-Q116861 dbo:award res:award-Q1472235 .
+res:person-Q116861 dbo:award res:award-Q23049782 .
+res:person-Q116861 dbo:award res:award-Q23050104 .
+res:person-Q116861 dbo:award res:award-Q3414212 .
+res:person-Q116861 dbo:award res:award-Q428808 .
+res:person-Q116861 dbo:award res:award-Q430910 .
+res:person-Q116861 dbo:award res:award-Q4824149 .
+res:person-Q116861 dbo:award res:award-Q5569374 .
+res:person-Q116861 dbo:award res:award-Q644077 .
+res:person-Q116861 dbo:award res:award-Q739694 .
+res:person-Q116861 ex:hasContribution res:contribution-Q127367-Q116861-producer .
+res:person-Q116861 ex:hasContribution res:contribution-Q127367-Q116861-writer .
+res:person-Q116861 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Person .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q1168\allowbreak{}61 rdf:\allowbreak{}t\allowbreak{}ype ex:\allowbreak{}\allowbreak{}M\allowbreak{}ulti\allowbreak{}Cred\allowbreak{}it\allowbreak{}Contri\allowbreak{}butor}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Three\allowbreak{}\allowbreak{}Credit\allowbreak{}Co\allowbreak{}ntributo\allowbreak{}r}{}}\label{exthreecreditcontributor}
+
+REUSE/EXTEND rationale: At least three distinct credit records; three
+different role fillers prove distinct\allowbreak{}ness.\allowbreak{} Not
+exactly three roles or an exhaustive career description.
+
+CRAWLED SUPPORT:
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based
+
+MANCHESTER:
+\texttt{(dbo:\allowbreak{}\allowbreak{}Per\allowbreak{}son and \allowbreak{}ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on min 3\allowbreak{} ex:\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{})}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Thr\allowbreak{}ee\allowbreak{}Credit\allowbreak{}\allowbreak{}Contribu\allowbreak{}tor
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(dbo\allowbreak{}:\allowbreak{}\allowbreak{}Person
+Object\allowbreak{}Mi\allowbreak{}n\allowbreak{}Cardina\allowbreak{}lity(3
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution)\allowbreak{}))
+
+REAL INDIVIDUAL: Christopher Nolan
+(\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q2519\allowbreak{}1}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q13417189-Q25191-director ex:contributionTo res:film-Q13417189 .
+res:contribution-Q13417189-Q25191-director ex:hasRole ex:DirectorRole .
+res:contribution-Q13417189-Q25191-director http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q13417189-Q25191-producer ex:contributionTo res:film-Q13417189 .
+res:contribution-Q13417189-Q25191-producer ex:hasRole ex:ProducerRole .
+res:contribution-Q13417189-Q25191-producer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q13417189-Q25191-writer ex:contributionTo res:film-Q13417189 .
+res:contribution-Q13417189-Q25191-writer ex:hasRole ex:WriterRole .
+res:contribution-Q13417189-Q25191-writer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:person-Q25191 dbo:award res:award-Q102427 .
+res:person-Q25191 dbo:award res:award-Q103360 .
+res:person-Q25191 dbo:award res:award-Q105447 .
+res:person-Q25191 dbo:award res:award-Q1056240 .
+res:person-Q25191 dbo:award res:award-Q12143912 .
+res:person-Q25191 dbo:award res:award-Q12201477 .
+res:person-Q25191 dbo:award res:award-Q16058279 .
+res:person-Q25191 dbo:award res:award-Q3405197 .
+res:person-Q25191 dbo:award res:award-Q586356 .
+res:person-Q25191 dbo:award res:award-Q787131 .
+res:person-Q25191 dbo:award res:award-Q833154 .
+res:person-Q25191 dbo:award res:award-Q833163 .
+res:person-Q25191 ex:hasContribution res:contribution-Q13417189-Q25191-director .
+res:person-Q25191 ex:hasContribution res:contribution-Q13417189-Q25191-producer .
+res:person-Q25191 ex:hasContribution res:contribution-Q13417189-Q25191-writer .
+res:person-Q25191 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Person .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q2519\allowbreak{}1 rdf:\allowbreak{}ty\allowbreak{}pe ex:\allowbreak{}\allowbreak{}Th\allowbreak{}ree\allowbreak{}Credi\allowbreak{}t\allowbreak{}Contrib\allowbreak{}utor}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Write\allowbreak{}r\allowbreak{}Directo\allowbreak{}r}{}}\label{exwriterdirector}
+
+REUSE/EXTEND rationale: A person with both directing and writing credits
+in this dataset; classifi\allowbreak{}cation is never manually asserted.
+
+CRAWLED SUPPORT:
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based
+
+MANCHESTER:
+\texttt{(dbo:\allowbreak{}\allowbreak{}Mov\allowbreak{}ie\allowbreak{}Direct\allowbreak{}or and d\allowbreak{}bo:\allowbreak{}\allowbreak{}Scree\allowbreak{}n\allowbreak{}Writer)\allowbreak{}}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Wri\allowbreak{}ter\allowbreak{}Direc\allowbreak{}tor
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(dbo\allowbreak{}:\allowbreak{}\allowbreak{}Movie\allowbreak{}Di\allowbreak{}rector
+dbo:\allowbreak{}\allowbreak{}Scre\allowbreak{}en\allowbreak{}Writer\allowbreak{}))
+
+REAL INDIVIDUAL: Damien Chazelle
+(\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q1835\allowbreak{}0026}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q15648198-Q18350026-director ex:contributionTo res:film-Q15648198 .
+res:contribution-Q15648198-Q18350026-director ex:hasRole ex:DirectorRole .
+res:contribution-Q15648198-Q18350026-director http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q15648198-Q18350026-writer ex:contributionTo res:film-Q15648198 .
+res:contribution-Q15648198-Q18350026-writer ex:hasRole ex:WriterRole .
+res:contribution-Q15648198-Q18350026-writer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:person-Q18350026 dbo:award res:award-Q103360 .
+res:person-Q18350026 dbo:award res:award-Q3774974 .
+res:person-Q18350026 dbo:award res:award-Q787131 .
+res:person-Q18350026 ex:hasContribution res:contribution-Q15648198-Q18350026-director .
+res:person-Q18350026 ex:hasContribution res:contribution-Q15648198-Q18350026-writer .
+res:person-Q18350026 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Person .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q1835\allowbreak{}0026 rdf\allowbreak{}:\allowbreak{}type ex\allowbreak{}:\allowbreak{}\allowbreak{}Writer\allowbreak{}D\allowbreak{}irector}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}\allowbreak{}Filmmake\allowbreak{}r}{}}\label{exactorfilmmaker}
+
+REUSE/EXTEND rationale: Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class.
+
+CRAWLED SUPPORT:
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based
+
+MANCHESTER:
+\texttt{(dbo:\allowbreak{}\allowbreak{}Act\allowbreak{}or and e\allowbreak{}x:\allowbreak{}\allowbreak{}Filmma\allowbreak{}ker)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Act\allowbreak{}or\allowbreak{}Filmma\allowbreak{}ker
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(dbo\allowbreak{}:\allowbreak{}\allowbreak{}Actor
+ex:\allowbreak{}\allowbreak{}Filmm\allowbreak{}aker))
+
+REAL INDIVIDUAL: Quentin Tarantino
+(\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q3772\allowbreak{}}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q104123-Q3772-actor ex:contributionTo res:film-Q104123 .
+res:contribution-Q104123-Q3772-actor ex:hasRole ex:ActorRole .
+res:contribution-Q104123-Q3772-actor http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q104123-Q3772-director ex:contributionTo res:film-Q104123 .
+res:contribution-Q104123-Q3772-director ex:hasRole ex:DirectorRole .
+res:contribution-Q104123-Q3772-director http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:contribution-Q104123-Q3772-writer ex:contributionTo res:film-Q104123 .
+res:contribution-Q104123-Q3772-writer ex:hasRole ex:WriterRole .
+res:contribution-Q104123-Q3772-writer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:film-Q104123 dbo:starring res:person-Q3772 .
+res:person-Q3772 dbo:award res:award-Q1011547 .
+res:person-Q3772 dbo:award res:award-Q105447 .
+res:person-Q3772 dbo:award res:award-Q113068 .
+res:person-Q3772 dbo:award res:award-Q13452531 .
+res:person-Q3772 dbo:award res:award-Q1789102 .
+res:person-Q3772 dbo:award res:award-Q179808 .
+res:person-Q3772 dbo:award res:award-Q17985761 .
+res:person-Q3772 dbo:award res:award-Q24051550 .
+res:person-Q3772 dbo:award res:award-Q25405526 .
+res:person-Q3772 dbo:award res:award-Q311836 .
+res:person-Q3772 dbo:award res:award-Q3404975 .
+res:person-Q3772 dbo:award res:award-Q3703457 .
+res:person-Q3772 dbo:award res:award-Q41375 .
+res:person-Q3772 dbo:award res:award-Q41417 .
+res:person-Q3772 dbo:award res:award-Q4743376 .
+res:person-Q3772 dbo:award res:award-Q5211225 .
+res:person-Q3772 dbo:award res:award-Q52382875 .
+res:person-Q3772 dbo:award res:award-Q670282 .
+res:person-Q3772 dbo:award res:award-Q716909 .
+res:person-Q3772 dbo:award res:award-Q727282 .
+res:person-Q3772 dbo:award res:award-Q833154 .
+res:person-Q3772 dbo:award res:award-Q849124 .
+res:person-Q3772 dbo:award res:award-Q849771 .
+res:person-Q3772 ex:hasContribution res:contribution-Q104123-Q3772-actor .
+res:person-Q3772 ex:hasContribution res:contribution-Q104123-Q3772-director .
+res:person-Q3772 ex:hasContribution res:contribution-Q104123-Q3772-writer .
+res:person-Q3772 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Person .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q3772\allowbreak{} rdf:\allowbreak{}typ\allowbreak{}e ex:\allowbreak{}\allowbreak{}Act\allowbreak{}or\allowbreak{}Filmma\allowbreak{}ker}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilmmaker\allowbreak{}}{}}\label{exawardwinningfilmmaker}
+
+REUSE/EXTEND rationale: Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class.
+
+CRAWLED SUPPORT:
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based
+
+MANCHESTER:
+\texttt{(ex:\allowbreak{}\allowbreak{}Film\allowbreak{}maker an\allowbreak{}d dbo:\allowbreak{}aw\allowbreak{}ard some\allowbreak{} dbo:\allowbreak{}\allowbreak{}Awa\allowbreak{}rd)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Awa\allowbreak{}rd\allowbreak{}Winnin\allowbreak{}g\allowbreak{}Filmmak\allowbreak{}er
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(ex:\allowbreak{}\allowbreak{}Filmmake\allowbreak{}r
+Object\allowbreak{}So\allowbreak{}me\allowbreak{}Values\allowbreak{}\allowbreak{}From(dbo\allowbreak{}:\allowbreak{}award
+dbo:Award)))
+
+REAL INDIVIDUAL: Philippa Boyens
+(\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q1168\allowbreak{}54}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:contribution-Q127367-Q116854-writer ex:contributionTo res:film-Q127367 .
+res:contribution-Q127367-Q116854-writer ex:hasRole ex:WriterRole .
+res:contribution-Q127367-Q116854-writer http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:Contribution .
+res:person-Q116854 dbo:award res:award-Q1056240 .
+res:person-Q116854 dbo:award res:award-Q107258 .
+res:person-Q116854 dbo:award res:award-Q1075366 .
+res:person-Q116854 dbo:award res:award-Q23050104 .
+res:person-Q116854 dbo:award res:award-Q3414212 .
+res:person-Q116854 dbo:award res:award-Q430910 .
+res:person-Q116854 dbo:award res:award-Q644077 .
+res:person-Q116854 dbo:award res:award-Q739694 .
+res:person-Q116854 ex:hasContribution res:contribution-Q127367-Q116854-writer .
+res:person-Q116854 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Person .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}pers\allowbreak{}on-\allowbreak{}\allowbreak{}Q1168\allowbreak{}54 rdf:\allowbreak{}t\allowbreak{}ype ex:\allowbreak{}\allowbreak{}A\allowbreak{}ward\allowbreak{}Winn\allowbreak{}ing\allowbreak{}Filmm\allowbreak{}aker}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}A\allowbreak{}ction\allowbreak{}Fil\allowbreak{}m}{}}\label{exawardwinningactionfilm}
+
+REUSE/EXTEND rationale: Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class.
+
+CRAWLED SUPPORT: P136/P166
+
+MANCHESTER:
+\texttt{(ex:\allowbreak{}\allowbreak{}Acti\allowbreak{}on\allowbreak{}Film a\allowbreak{}nd ex:\allowbreak{}\allowbreak{}Aw\allowbreak{}ard\allowbreak{}Winni\allowbreak{}ng\allowbreak{}Film)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Awa\allowbreak{}rd\allowbreak{}Winnin\allowbreak{}g\allowbreak{}Action\allowbreak{}F\allowbreak{}ilm
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(ex:\allowbreak{}\allowbreak{}Action\allowbreak{}Fi\allowbreak{}lm
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm))
+
+REAL INDIVIDUAL: Alien
+(\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{}}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:film-Q103569 dbo:award res:award-Q1131772 .
+res:film-Q103569 dbo:award res:award-Q1257399 .
+res:film-Q103569 dbo:award res:award-Q1265702 .
+res:film-Q103569 dbo:award res:award-Q3414212 .
+res:film-Q103569 dbo:award res:award-Q393686 .
+res:film-Q103569 dbo:award res:award-Q739633 .
+res:film-Q103569 dbo:genre res:genre-Q102260466 .
+res:film-Q103569 dbo:genre res:genre-Q10663882 .
+res:film-Q103569 dbo:genre res:genre-Q11304653 .
+res:film-Q103569 dbo:genre res:genre-Q1200678 .
+res:film-Q103569 dbo:genre res:genre-Q1342372 .
+res:film-Q103569 dbo:genre res:genre-Q157394 .
+res:film-Q103569 dbo:genre res:genre-Q1776156 .
+res:film-Q103569 dbo:genre res:genre-Q188473 .
+res:film-Q103569 dbo:genre res:genre-Q200092 .
+res:film-Q103569 dbo:genre res:genre-Q20656232 .
+res:film-Q103569 dbo:genre res:genre-Q2484376 .
+res:film-Q103569 dbo:genre res:genre-Q319221 .
+res:film-Q103569 dbo:genre res:genre-Q471839 .
+res:film-Q103569 dbo:starring res:person-Q102124 .
+res:film-Q103569 dbo:starring res:person-Q200405 .
+res:film-Q103569 dbo:starring res:person-Q223091 .
+res:film-Q103569 dbo:starring res:person-Q266270 .
+res:film-Q103569 dbo:starring res:person-Q283872 .
+res:film-Q103569 dbo:starring res:person-Q3047302 .
+res:film-Q103569 dbo:starring res:person-Q314290 .
+res:film-Q103569 dbo:starring res:person-Q320093 .
+res:film-Q103569 dbo:starring res:person-Q323185 .
+res:film-Q103569 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Film .
+res:genre-Q102260466 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q10663882 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q11304653 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1200678 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1342372 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q157394 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1776156 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q200092 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q20656232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q2484376 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q319221 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q471839 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q103569\allowbreak{} rdf:\allowbreak{}typ\allowbreak{}e ex:\allowbreak{}\allowbreak{}Awa\allowbreak{}rd\allowbreak{}Winnin\allowbreak{}g\allowbreak{}Action\allowbreak{}F\allowbreak{}ilm}.
+
+\subsubsection{\texorpdfstring{ex:\allowbreak{}\allowbreak{}Genre\allowbreak{}\allowbreak{}Crossing\allowbreak{}\allowbreak{}Film}{}}\label{exgenrecrossingfilm}
+
+REUSE/EXTEND rationale: Film carrying both action and drama genre
+memberships; this is not an unproved
+two-\allowbreak{}dist\allowbreak{}inct-\allowbreak{}gen\allowbreak{}re
+cardinality claim.
+
+CRAWLED SUPPORT: P136/P166
+
+MANCHESTER:
+\texttt{(dbo:\allowbreak{}\allowbreak{}Fil\allowbreak{}m and db\allowbreak{}o:\allowbreak{}genre \allowbreak{}some ex:\allowbreak{}\allowbreak{}Action\allowbreak{}Ge\allowbreak{}nre and \allowbreak{}dbo:\allowbreak{}genr\allowbreak{}e some e\allowbreak{}x:\allowbreak{}\allowbreak{}Drama\allowbreak{}G\allowbreak{}enre)}
+
+OWL EXPRESSION:
+Equivale\allowbreak{}nt\allowbreak{}Classe\allowbreak{}s(ex:\allowbreak{}\allowbreak{}Gen\allowbreak{}re\allowbreak{}Crossi\allowbreak{}ng\allowbreak{}Film
+Object\allowbreak{}In\allowbreak{}tersecti\allowbreak{}on\allowbreak{}Of(dbo\allowbreak{}:\allowbreak{}\allowbreak{}Film
+Object\allowbreak{}So\allowbreak{}me\allowbreak{}Values\allowbreak{}\allowbreak{}From(dbo\allowbreak{}:\allowbreak{}genre
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre)
+Object\allowbreak{}So\allowbreak{}me\allowbreak{}Values\allowbreak{}\allowbreak{}From(dbo\allowbreak{}:\allowbreak{}genre
+ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Genre)))\allowbreak{}
+
+REAL INDIVIDUAL: Pulp Fiction
+(\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q104123\allowbreak{}}).
+
+ASSERTED / INFERRED: No direct assertion of this type; HermiT entails
+membership. The role→credit→person classes need
+approxim\allowbreak{}ately 2--4 explanatory steps; OWL semantics is not
+procedural and does not prescribe evaluation order.
+
+INITIAL FACTS:
+
+\begin{verbatim}
+res:film-Q104123 dbo:award res:award-Q1170507 .
+res:film-Q104123 dbo:award res:award-Q1315008 .
+res:film-Q104123 dbo:award res:award-Q1720784 .
+res:film-Q104123 dbo:award res:award-Q1789102 .
+res:film-Q104123 dbo:award res:award-Q179808 .
+res:film-Q104123 dbo:award res:award-Q1868950 .
+res:film-Q104123 dbo:award res:award-Q1966965 .
+res:film-Q104123 dbo:award res:award-Q2295041 .
+res:film-Q104123 dbo:award res:award-Q2544859 .
+res:film-Q104123 dbo:award res:award-Q3404523 .
+res:film-Q104123 dbo:award res:award-Q3841643 .
+res:film-Q104123 dbo:award res:award-Q41375 .
+res:film-Q104123 dbo:award res:award-Q41417 .
+res:film-Q104123 dbo:award res:award-Q503034 .
+res:film-Q104123 dbo:award res:award-Q505449 .
+res:film-Q104123 dbo:award res:award-Q5211226 .
+res:film-Q104123 dbo:award res:award-Q540977 .
+res:film-Q104123 dbo:award res:award-Q548389 .
+res:film-Q104123 dbo:award res:award-Q696972 .
+res:film-Q104123 dbo:award res:award-Q696998 .
+res:film-Q104123 dbo:award res:award-Q6978541 .
+res:film-Q104123 dbo:award res:award-Q849124 .
+res:film-Q104123 dbo:award res:award-Q952914 .
+res:film-Q104123 dbo:genre res:genre-Q11304653 .
+res:film-Q104123 dbo:genre res:genre-Q113485322 .
+res:film-Q104123 dbo:genre res:genre-Q130232 .
+res:film-Q104123 dbo:genre res:genre-Q157443 .
+res:film-Q104123 dbo:genre res:genre-Q1788980 .
+res:film-Q104123 dbo:genre res:genre-Q188473 .
+res:film-Q104123 dbo:genre res:genre-Q19367312 .
+res:film-Q104123 dbo:genre res:genre-Q2421031 .
+res:film-Q104123 dbo:genre res:genre-Q2484376 .
+res:film-Q104123 dbo:genre res:genre-Q3990883 .
+res:film-Q104123 dbo:genre res:genre-Q459290 .
+res:film-Q104123 dbo:genre res:genre-Q5778924 .
+res:film-Q104123 dbo:genre res:genre-Q7444356 .
+res:film-Q104123 dbo:genre res:genre-Q859369 .
+res:film-Q104123 dbo:genre res:genre-Q959790 .
+res:film-Q104123 dbo:starring res:person-Q1016897 .
+res:film-Q104123 dbo:starring res:person-Q104061 .
+res:film-Q104123 dbo:starring res:person-Q109232 .
+res:film-Q104123 dbo:starring res:person-Q1209753 .
+res:film-Q104123 dbo:starring res:person-Q125017 .
+res:film-Q104123 dbo:starring res:person-Q1368224 .
+res:film-Q104123 dbo:starring res:person-Q1563838 .
+res:film-Q104123 dbo:starring res:person-Q164534 .
+res:film-Q104123 dbo:starring res:person-Q172678 .
+res:film-Q104123 dbo:starring res:person-Q185051 .
+res:film-Q104123 dbo:starring res:person-Q191132 .
+res:film-Q104123 dbo:starring res:person-Q203804 .
+res:film-Q104123 dbo:starring res:person-Q2263306 .
+res:film-Q104123 dbo:starring res:person-Q235115 .
+res:film-Q104123 dbo:starring res:person-Q238483 .
+res:film-Q104123 dbo:starring res:person-Q240774 .
+res:film-Q104123 dbo:starring res:person-Q2434817 .
+res:film-Q104123 dbo:starring res:person-Q254431 .
+res:film-Q104123 dbo:starring res:person-Q270774 .
+res:film-Q104123 dbo:starring res:person-Q2924399 .
+res:film-Q104123 dbo:starring res:person-Q2926038 .
+res:film-Q104123 dbo:starring res:person-Q310315 .
+res:film-Q104123 dbo:starring res:person-Q318267 .
+res:film-Q104123 dbo:starring res:person-Q3193117 .
+res:film-Q104123 dbo:starring res:person-Q3241353 .
+res:film-Q104123 dbo:starring res:person-Q356541 .
+res:film-Q104123 dbo:starring res:person-Q3772 .
+res:film-Q104123 dbo:starring res:person-Q3856171 .
+res:film-Q104123 dbo:starring res:person-Q3973186 .
+res:film-Q104123 dbo:starring res:person-Q432437 .
+res:film-Q104123 dbo:starring res:person-Q453973 .
+res:film-Q104123 dbo:starring res:person-Q514913 .
+res:film-Q104123 dbo:starring res:person-Q7647898 .
+res:film-Q104123 dbo:starring res:person-Q80938 .
+res:film-Q104123 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:Film .
+res:genre-Q11304653 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q113485322 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q113485322 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:DramaGenre .
+res:genre-Q130232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q130232 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:DramaGenre .
+res:genre-Q157443 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q1788980 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q188473 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q19367312 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q2421031 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q2484376 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q3990883 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q3990883 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:ActionGenre .
+res:genre-Q459290 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q5778924 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q7444356 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q859369 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+res:genre-Q859369 http://www.w3.org/1999/02/22-rdf-syntax-ns#type ex:DramaGenre .
+res:genre-Q959790 http://www.w3.org/1999/02/22-rdf-syntax-ns#type dbo:MovieGenre .
+\end{verbatim}
+
+NEW KNOWLEDGE:
+\texttt{res:\allowbreak{}film\allowbreak{}-\allowbreak{}\allowbreak{}Q104123\allowbreak{} rdf:\allowbreak{}typ\allowbreak{}e ex:\allowbreak{}\allowbreak{}Gen\allowbreak{}re\allowbreak{}Crossi\allowbreak{}ng\allowbreak{}Film}.
+
+\subsection{11. Cardinality and validation
+limitations}\label{cardinality-and-validation-limitations}
+
+Exactly 1 constrains each Contribution endpoint and role. It does not
+validate completeness under the open-world assumption: an absent filler
+may exist without an explicit assertion. Structural checks must
+separately enforce that the exported record contains its three fields.
+
+At least 2 / at least 3 are genuine HermiT results on
+has\allowbreak{}Contr\allowbreak{}ibution.\allowbreak{} Example:
+Christopher Nolan has distinct directing, writing and producing credit
+records; those records cannot collapse into one because hasRole is
+functional and Director\allowbreak{}\allowbreak{}Role, WriterRole and
+ProducerRole are distinct. No inequality is fabricated for people,
+genres, awards, companies or films.
+
+The negative Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film test
+separately adds the requested min 2 genre definition and obtains zero DL
+members. A production class is excluded because the dataset cannot prove
+two genre fillers distinct. Future additions require
+source-\allowbreak{}s\allowbreak{}upported\allowbreak{} inequality or a
+justified identity model; a blanket AllDifferent on Wikidata IDs is not
+justified by syntax.
+
+\subsection{12. Checklist and
+reproduction}\label{checklist-and-reproduction}
+
+\begin{itemize}
+\tightlist
+\item[$\boxtimes$]
+  Official DBpedia reference checked and hashed; reused term meanings,
+  domain/range preserved.
+\item[$\boxtimes$]
+  No ex:Film, Person, Actor, Award, Genre, Language, Country, Company or
+  Organisation clones.
+\item[$\boxtimes$]
+  Every extension maps to crawled claims or documented
+  source-\allowbreak{}r\allowbreak{}ecord metadata.
+\item[$\boxtimes$]
+  All demo individuals exist in the crawled dataset.
+\item[$\boxtimes$]
+  All retained defined classes have genuinely inferred members.
+\item[$\boxtimes$]
+  Equivalent classes,
+  existent\allowbreak{}ial/\allowbreak{}valu\allowbreak{}e/\allowbreak{}cardin\allowbreak{}ality
+  restrictions and hierarchy present.
+\item[$\boxtimes$]
+  Inverse, subproperty and chain reasoning present; no gratuitous
+  property characte\allowbreak{}ristics.\allowbreak{}
+\item[$\boxtimes$]
+  Seven explanatory inference chains and 27 executed competency
+  questions.
+\item[$\boxtimes$]
+  Five verified demo cases with no false claim that SQL cannot reproduce
+  them.
+\item[$\boxtimes$]
+  Genuine min 2/min 3 DL results and explicit negative
+  genre-\allowbreak{}ca\allowbreak{}rdinalit\allowbreak{}y test.
+\item[$\boxtimes$]
+  No MP4 videos included; removed at user request.
+\item[$\square$]
+  Zero-result Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film /
+  Multi\allowbreak{}Awa\allowbreak{}rd\allowbreak{}Film /
+  Frequent\allowbreak{}\allowbreak{}Producti\allowbreak{}on\allowbreak{}Compan\allowbreak{}y:\allowbreak{}
+  require additional justified evidence before inclusion.
+\item[$\boxtimes$]
+  Archived official ontology, official development vocabulary and
+  relevant live term meanings checked; equivalence decisions remain
+  scoped to these references.
+\end{itemize}
+
+Run:
+
+\begin{verbatim}
+make build
+make reason JAVA=/path/to/java
+make validate
+make test
+\end{verbatim}
+
+Open
+ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl
+directly in Protégé; it combines the schema and asserted facts without
+pre-\allowbreak{}asse\allowbreak{}rting inferred classes. Start HermiT
+and inspect the example types; inferred.ttl is exported entailment
+evidence, not source assertions.
+before\_\allowbreak{}a\allowbreak{}fter.\allowbreak{}tri\allowbreak{}g
+supports query 27. Temporary RDF/XML reasoner inputs are removed after
+each run, preserving one authorit\allowbreak{}ative full OWL export.
+
+\subsection{\texorpdfstring{Property\allowbreak{}-\allowbreak{}by-\allowbreak{}prop\allowbreak{}erty
+semantic reuse
+audit}{ semantic reuse audit}}\label{property-by-property-semantic-reuse-audit}
+
+The comparison checks the relation meaning, argument direction, entity
+level, range and units; lexical resemblance alone is
+insuffic\allowbreak{}ient.\allowbreak{}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Property
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Decision
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Semantic comparison
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+dbo:director & REUSE & Same relation\allowbreak{}/\allowbreak{}value
+semantics as the checked DBpedia property, with its original domain and
+range. Runtime is converted to the reference unit of seconds. \\
+dbo:starring & REUSE & Same relation\allowbreak{}/\allowbreak{}value
+semantics as the checked DBpedia property, with its original domain and
+range. Runtime is converted to the reference unit of seconds. \\
+dbo:writer & REUSE & Same relation\allowbreak{}/\allowbreak{}value
+semantics as the checked DBpedia property, with its original domain and
+range. Runtime is converted to the reference unit of seconds. \\
+dbo:producer & REUSE & Same relation\allowbreak{}/\allowbreak{}value
+semantics as the checked DBpedia property, with its original domain and
+range. Runtime is converted to the reference unit of seconds. \\
+dbo:\allowbreak{}prod\allowbreak{}uction\allowbreak{}Co\allowbreak{}mpany
+& REUSE & Same relation\allowbreak{}/\allowbreak{}value semantics as the
+checked DBpedia property, with its original domain and range. Runtime is
+converted to the reference unit of seconds. \\
+dbo:award & REUSE & Same relation\allowbreak{}/\allowbreak{}value
+semantics as the checked DBpedia property, with its original domain and
+range. Runtime is converted to the reference unit of seconds. \\
+dbo:genre & REUSE & Same relation\allowbreak{}/\allowbreak{}value
+semantics as the checked DBpedia property, with its original domain and
+range. Runtime is converted to the reference unit of seconds. \\
+dbo:country & REUSE & Same relation\allowbreak{}/\allowbreak{}value
+semantics as the checked DBpedia property, with its original domain and
+range. Runtime is converted to the reference unit of seconds. \\
+dbo:language & REUSE & Same relation\allowbreak{}/\allowbreak{}value
+semantics as the checked DBpedia property, with its original domain and
+range. Runtime is converted to the reference unit of seconds. \\
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on &
+CREATE & dbo:\allowbreak{}occu\allowbreak{}pation links a
+Person\allowbreak{}Fu\allowbreak{}nction, not a film-credit record. The
+local property refers to n-ary source credits. \\
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}B\allowbreak{}y &
+CREATE &
+dbo:\allowbreak{}dire\allowbreak{}ctor/\allowbreak{}wri\allowbreak{}ter/\allowbreak{}star\allowbreak{}ring
+refer from Work/Film to people; this relation originates from a credit
+record, so they are not semantically
+intercha\allowbreak{}ngeable.\allowbreak{} \\
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}T\allowbreak{}o &
+CREATE & The domain is a credit association, not an Agent or Work. This
+is the film endpoint of the n-ary model. \\
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}O\allowbreak{}f &
+CREATE & Inverse of the film endpoint of the local n-ary association;
+not a Film-\allowbreak{}to-\allowbreak{}\allowbreak{}Person relation. \\
+ex:hasRole & CREATE & dbo:role and
+dbo:\allowbreak{}arti\allowbreak{}st\allowbreak{}Functi\allowbreak{}on
+have string ranges; the controll\allowbreak{}ed-\allowbreak{}role entity
+of a functional credit record has distinct object semantics. \\
+ex:\allowbreak{}contr\allowbreak{}ibuted\allowbreak{}To\allowbreak{} &
+CREATE & Covers every collected credit role through a shared chain.
+director\allowbreak{}/\allowbreak{}starrin\allowbreak{}g/\allowbreak{}writer\allowbreak{}/\allowbreak{}produce\allowbreak{}r
+are narrower and
+opposite\allowbreak{}-\allowbreak{}directi\allowbreak{}on properties. \\
+ex:directed & CREATE & Inverse of
+dbo:\allowbreak{}dire\allowbreak{}ctor; cannot reuse that forward
+predicate with its arguments reversed. It is also a subproperty of the
+broader local contribu\allowbreak{}ted\allowbreak{}To.\allowbreak{} \\
+ex:actedIn & CREATE & Inverse of dbo:\allowbreak{}star\allowbreak{}ring;
+forward dbo:starring cannot denote the reversed relation. \\
+ex:\allowbreak{}produ\allowbreak{}ction\allowbreak{}Of & CREATE &
+Inverse of
+dbo:\allowbreak{}prod\allowbreak{}uction\allowbreak{}Co\allowbreak{}mpany;
+preserving direction is necessary for semantic equivalence. \\
+ex:\allowbreak{}sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t &
+CREATE & More specific than
+prov:\allowbreak{}was\allowbreak{}\allowbreak{}Derived\allowbreak{}F\allowbreak{}rom:\allowbreak{}
+points to a locally saved response record with retrieval timestamp and
+content hash, not merely any source entity. \\
+dbo:runtime & REUSE & Same relation\allowbreak{}/\allowbreak{}value
+semantics as the checked DBpedia property, with its original domain and
+range. Runtime is converted to the reference unit of seconds. \\
+ex:\allowbreak{}relea\allowbreak{}se\allowbreak{}Year & CREATE & Derived
+earliest\allowbreak{}-\allowbreak{}release\allowbreak{}-\allowbreak{}year
+integer summary from P577.
+dbo:\allowbreak{}rele\allowbreak{}ase\allowbreak{}Date requires a date;
+dbo:year is a generic gYear and does not express the
+earliest\allowbreak{}-\allowbreak{}release\allowbreak{} summary. No
+equivalence or invented full date is asserted. \\
+ex:sourceUrl & CREATE & Literal lexical request endpoint stored in the
+snapshot manifest. DBpedia has no matching
+request-\allowbreak{}metadata\allowbreak{} datatype property in the
+checked vocabulary;
+prov:\allowbreak{}was\allowbreak{}\allowbreak{}Derived\allowbreak{}F\allowbreak{}rom
+is separately retained as an IRI relation. \\
+ex:\allowbreak{}retri\allowbreak{}eved\allowbreak{}At & CREATE &
+Retrieval instant of a local response snapshot, not a film releaseDate,
+generic date, or creation time of the original remote entity. \\
+ex:sha256 & CREATE & SHA-256 checksum of the exact crawled response
+bytes, not a generic title, name, code or identifier of the represented
+film/person. \\
+\end{longtable}
+}
+
+\subsection{References}\label{references}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://downloads.dbpedia.org/2016-10/dbpedia_2016-10.owl}{Official
+  DBpedia ontology download}
+\item
+  \href{https://dbpedia.org/ontology/starring}{dbo:starring}
+\item
+  \href{https://dbpedia.org/ontology/runtime}{dbo:runtime}
+\item
+  \href{https://dbpedia.org/ontology/MovieGenre}{dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Genre}
+\item
+  \href{https://mappings.dbpedia.org/server/ontology/classes/Actor}{DBpedia
+  Actor meaning}
+\item
+  \href{https://www.w3.org/TR/owl2-syntax/}{W3C OWL 2 Structural
+  Specific\allowbreak{}ation}
+\item
+  \href{https://www.w3.org/TR/owl2-primer/}{W3C OWL 2 Primer}
+\end{itemize}
+
+\subsection{Appendix --- All executable competency
+queries}\label{appendix-all-executable-competency-queries}
+
+Namespace identifiers in the tables expand using these prefixes:
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+\end{verbatim}
+
+\subsubsection{Query 1 --- List films}\label{query-1-list-films}
+
+Before / after rows: 30 / 30
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Film . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 2 --- Inception: year, duration and
+director}\label{query-2-inception-year-duration-and-director}
+
+Before / after rows: 1 / 1
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?title ?year ?runtimeSeconds ?director WHERE { res:film-Q25188 rdfs:label ?title ; ex:releaseYear ?year ; dbo:runtime ?runtimeSeconds ; dbo:director ?person . ?person rdfs:label ?director }
+\end{verbatim}
+
+\subsubsection{Query 3 --- Directors of
+Inception}\label{query-3-directors-of-inception}
+
+Before / after rows: 1 / 1
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { res:film-Q25188 dbo:director ?s . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 4 --- Inception credits and
+roles}\label{query-4-inception-credits-and-roles}
+
+Before / after rows: 25 / 25
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?personName ?roleName WHERE { res:film-Q25188 ex:contributionOf ?credit . ?credit ex:contributionBy ?person ; ex:hasRole ?role . ?person rdfs:label ?personName . ?role rdfs:label ?roleName } ORDER BY ?roleName ?personName
+\end{verbatim}
+
+\subsubsection{Query 5 --- Films directed by
+Nolan}\label{query-5-films-directed-by-nolan}
+
+Before / after rows: 8 / 8
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s dbo:director res:person-Q25191 . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 6 --- Companies credited on
+Inception}\label{query-6-companies-credited-on-inception}
+
+Before / after rows: 4 / 4
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { res:film-Q25188 dbo:productionCompany ?s . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 7 --- Awards of
+Inception}\label{query-7-awards-of-inception}
+
+Before / after rows: 7 / 7
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { res:film-Q25188 dbo:award ?s . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 8 --- Runtime in
+seconds}\label{query-8-runtime-in-seconds}
+
+Before / after rows: 1 / 1
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { res:film-Q25188 dbo:runtime ?s . OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 9 --- Film genres through the parent
+class}\label{query-9-film-genres-through-the-parent-class}
+
+Before / after rows: 0 / 75
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?f a dbo:Film ; dbo:genre ?s . ?s a dbo:Genre . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 10 --- Persons through Agent
+hierarchy}\label{query-10-persons-through-agent-hierarchy}
+
+Before / after rows: 0 / 851
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Agent . FILTER EXISTS { ?s a dbo:Person } FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 11 --- Production
+companies}\label{query-11-production-companies}
+
+Before / after rows: 45 / 45
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Company . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 12 --- Film
+subclasses}\label{query-12-film-subclasses}
+
+Before / after rows: 0 / 4
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s rdfs:subClassOf+ dbo:Film . OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 13 --- Actors through Artist
+hierarchy}\label{query-13-actors-through-artist-hierarchy}
+
+Before / after rows: 0 / 769
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Artist . FILTER EXISTS { ?s a dbo:Actor } FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 14 --- Inferred
+Actors}\label{query-14-inferred-actors}
+
+Before / after rows: 0 / 769
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Actor . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 15 --- Inferred
+Filmmakers}\label{query-15-inferred-filmmakers}
+
+Before / after rows: 0 / 89
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:Filmmaker . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 16 --- Inferred Action
+films}\label{query-16-inferred-action-films}
+
+Before / after rows: 0 / 12
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ActionFilm . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{\texorpdfstring{Query 17 ---
+Award-\allowbreak{}wi\allowbreak{}nning
+films}{Query 17 ---  films}}\label{query-17-award-winning-films}
+
+Before / after rows: 0 / 26
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:AwardWinningFilm . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 18 --- People with at least two provably distinct
+credits}\label{query-18-people-with-at-least-two-provably-distinct-credits}
+
+Before / after rows: 0 / 17
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:MultiCreditContributor . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 19 --- People with at least three provably distinct
+credits}\label{query-19-people-with-at-least-three-provably-distinct-credits}
+
+Before / after rows: 0 / 7
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ThreeCreditContributor . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{\texorpdfstring{Query 20 ---
+Writer-\allowbreak{}d\allowbreak{}irectors\allowbreak{}}{Query 20 --- }}\label{query-20-writer-directors}
+
+Before / after rows: 0 / 10
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:WriterDirector . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{\texorpdfstring{Query 21 ---
+Actor-\allowbreak{}fi\allowbreak{}lmmakers\allowbreak{}}{Query 21 --- }}\label{query-21-actor-filmmakers}
+
+Before / after rows: 0 / 7
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ActorFilmmaker . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{\texorpdfstring{Query 22 ---
+Award-\allowbreak{}wi\allowbreak{}nning
+filmmakers}{Query 22 ---  filmmakers}}\label{query-22-award-winning-filmmakers}
+
+Before / after rows: 0 / 65
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:AwardWinningFilmmaker . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{\texorpdfstring{Query 23 ---
+Award-\allowbreak{}wi\allowbreak{}nning action
+films}{Query 23 ---  action films}}\label{query-23-award-winning-action-films}
+
+Before / after rows: 0 / 10
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:AwardWinningActionFilm . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 24 --- Action/drama crossing
+films}\label{query-24-actiondrama-crossing-films}
+
+Before / after rows: 0 / 8
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:GenreCrossingFilm . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{\texorpdfstring{Query 25 --- Nolan
+contribu\allowbreak{}tions through property
+chain}{Query 25 --- Nolan  through property chain}}\label{query-25-nolan-contributions-through-property-chain}
+
+Before / after rows: 0 / 8
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { res:person-Q25191 ex:contributedTo ?s . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 26 --- Nolan films through inverse
+director}\label{query-26-nolan-films-through-inverse-director}
+
+Before / after rows: 0 / 8
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?label WHERE { res:person-Q25191 ex:directed ?s . FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/")) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s
+\end{verbatim}
+
+\subsubsection{Query 27 --- Types present only after
+reasoning}\label{query-27-types-present-only-after-reasoning}
+
+Before / after rows: 0 / 1261
+
+\begin{verbatim}
+PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?type WHERE {
+ GRAPH <urn:movie:reasoned> { ?s a ?type }
+ FILTER(STRSTARTS(STR(?s), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/") && STRSTARTS(STR(?type), "https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#"))
+ FILTER NOT EXISTS { GRAPH <urn:movie:asserted> { ?s a ?type } }
+} ORDER BY ?type ?s
+\end{verbatim}
 
 \end{document}

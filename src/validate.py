@@ -1,7 +1,7 @@
 import hashlib
 import json
 import re
-from rdflib import Graph, RDF, OWL, URIRef
+from rdflib import Graph, RDF, RDFS, OWL, URIRef, Dataset
 from common import ROOT, EX, DBO, write_json
 
 def check_data(g):
@@ -11,7 +11,7 @@ def check_data(g):
     if not films:
         errors.append('Dataset has no films.')
     for film in films:
-        if len(list(g.objects(film,EX.title)))!=1:
+        if len(list(g.objects(film,RDFS.label)))!=1:
             errors.append(f'{film}: expected one title.')
         if not any(g.objects(film,EX.sourceSnapshot)):
             errors.append(f'{film}: missing source snapshot.')
@@ -50,15 +50,16 @@ def run():
     if inference_path.exists():
         reasoned.parse(inference_path)
     query_results=[]
-    for p in sorted((ROOT/'queries').glob('*.rq')):
-        query_number=int(p.name.split('_',1)[0])
-        needs_schema_or_inference=query_number in [13,14,17,18,19,20,21,22,23]
-        result=(reasoned if needs_schema_or_inference else g).query(p.read_text())
-        if result.type=='SELECT':
-            data=json.loads(result.serialize(format='json'))
-        elif result.type=='ASK':data={'boolean':bool(result.askAnswer)}
-        else:data={'triples':len(result.graph)}
-        query_results.append({'file':p.name,'mode':'schema_and_saved_inference' if needs_schema_or_inference else 'asserted','result':data})
+    questions=json.loads((ROOT/'evidence/ontology_design/query_results.json').read_text())
+    named=Dataset().parse(ROOT/'data/processed/before_after.trig',format='trig')
+    for row in questions:
+        path=ROOT/'queries'/f"{row['number']:02}.rq"
+        mode='dataset' if row['number']==27 else 'asserted' if row['group']=='A' else 'reasoned'
+        result={'asserted':g,'reasoned':reasoned,'dataset':named}[mode].query(path.read_text())
+        data=json.loads(result.serialize(format='json')) if result.type in ['SELECT','ASK'] else {'triples':len(result.graph)}
+        count=len(data.get('results',{}).get('bindings',[])) if result.type=='SELECT' else int(bool(result.askAnswer)) if result.type=='ASK' else len(result.graph)
+        assert count==(row['asserted_rows'] if mode=='asserted' else row['reasoned_rows']),(path.name,count)
+        query_results.append({'file':path.name,'mode':mode,'result':data})
     write_json(ROOT/'evidence/query_results.json',query_results)
     summary={'data_checks_passed':not errors,'data_errors':errors,'source_hashes_match':all(s['matches'] for s in checked),
              'snapshots_checked':len(checked),'query_files_executed':len(query_results),

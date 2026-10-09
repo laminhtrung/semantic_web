@@ -297,15 +297,9 @@ executable competency queries</a></li>
 <h1
 id="dbpedia-based-movie-ontology-evidence-driven-design">DBpedia-based
 Movie Ontology: Evidence-driven Design</h1>
-<p><strong>Final OWL export (version 3.0.0):</strong> <a
-href="../ontology/Movie_Knowledge_Graph.owl">Movie_Knowledge_Graph.owl</a>.
-The canonical local OWL and schema have been updated and checked
-directly with HermiT. The deployed application still uses its previous
-vocabulary snapshot.</p>
 <p>This design is grounded in the existing crawled dataset. Domain facts
-are not invented. The runnable validation is independent of the deployed
-application; adopting it requires vocabulary migration, rather than
-importing this module into the old model.</p>
+are not invented. The native build, application and query modes share
+these version-three definitions and canonical exports.</p>
 <h2 id="findings-and-semantic-decisions">1. Findings and semantic
 decisions</h2>
 <ul>
@@ -1358,10 +1352,10 @@ Executed SPARQL competency questions</h2>
 <td>Source facts</td>
 </tr>
 <tr>
-<td>2. Genres of Inception</td>
+<td>2. Inception: year, duration and director</td>
 <td>queries/design/02.rq</td>
 <td>A</td>
-<td>8 → 8</td>
+<td>1 → 1</td>
 <td>Source facts</td>
 </tr>
 <tr>
@@ -1372,10 +1366,10 @@ Executed SPARQL competency questions</h2>
 <td>Source facts</td>
 </tr>
 <tr>
-<td>4. Cast of Inception</td>
+<td>4. Inception credits and roles</td>
 <td>queries/design/04.rq</td>
 <td>A</td>
-<td>21 → 21</td>
+<td>25 → 25</td>
 <td>Source facts</td>
 </tr>
 <tr>
@@ -1647,7 +1641,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a dbo:Actor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Actor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <p>RESULT: 769 newly entailed local individuals; example Burr Steers
 (res:person-Q1016897).</p>
 <p>WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
@@ -1707,7 +1701,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:Filmmaker . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:Filmmaker . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <p>RESULT: 89 newly entailed local individuals; example Christopher
 Nolan (res:person-Q25191).</p>
 <p>WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
@@ -1780,7 +1774,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:ActionFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ActionFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <p>RESULT: 12 newly entailed local individuals; example Alien
 (res:film-Q103569).</p>
 <p>WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
@@ -1839,7 +1833,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:ThreeCreditContributor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ThreeCreditContributor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <p>RESULT: 7 newly entailed local individuals; example Christopher Nolan
 (res:person-Q25191).</p>
 <p>WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
@@ -1913,7 +1907,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:AwardWinningActionFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:AwardWinningActionFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <p>RESULT: 10 newly entailed local individuals; example Alien
 (res:film-Q103569).</p>
 <p>WHY THIS DEMONSTRATES SEMANTIC WEB: The ontology makes the
@@ -2574,8 +2568,8 @@ inference chains and 27 executed competency questions.</label></li>
 with no false claim that SQL cannot reproduce them.</label></li>
 <li><label><input type="checkbox" checked="" />Genuine min 2/min 3 DL
 results and explicit negative genre-cardinality test.</label></li>
-<li><label><input type="checkbox" checked="" />Video
-untouched.</label></li>
+<li><label><input type="checkbox" checked="" />No MP4 videos included;
+removed at user request.</label></li>
 <li><label><input type="checkbox" />Zero-result MultiGenreFilm /
 MultiAwardFilm / FrequentProductionCompany: require additional justified
 evidence before inclusion.</label></li>
@@ -2586,13 +2580,16 @@ references.</label></li>
 </ul>
 <p>Run:</p>
 <div class="sourceCode" id="cb25"><pre
-class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/bin/python</span> src/ontology_design.py <span class="at">--java</span> /path/to/java</span></code></pre></div>
-<p>Open complete.ttl directly in Protégé; it combines the schema and
-asserted facts without pre-asserting inferred classes. Start HermiT and
-inspect the example types; inferred.ttl is exported entailment evidence,
-not source assertions. before_after.trig supports query 27. Temporary
-RDF/XML reasoner inputs are removed after each run, preserving a single
-authoritative main OWL file until migration.</p>
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> build</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> reason JAVA=/path/to/java</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> validate</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> test</span></code></pre></div>
+<p>Open ontology/Movie_Knowledge_Graph.owl directly in Protégé; it
+combines the schema and asserted facts without pre-asserting inferred
+classes. Start HermiT and inspect the example types; inferred.ttl is
+exported entailment evidence, not source assertions. before_after.trig
+supports query 27. Temporary RDF/XML reasoner inputs are removed after
+each run, preserving one authoritative full OWL export.</p>
 <h2 id="property-by-property-semantic-reuse-audit">Property-by-property
 semantic reuse audit</h2>
 <p>The comparison checks the relation meaning, argument direction,
@@ -2811,15 +2808,16 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a dbo:Film . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
-<h3 id="query-2-genres-of-inception">Query 2 — Genres of Inception</h3>
-<p>Before / after rows: 8 / 8</p>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Film . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
+<h3 id="query-2-inception-year-duration-and-director">Query 2 —
+Inception: year, duration and director</h3>
+<p>Before / after rows: 1 / 1</p>
 <pre class="sparql"><code>PREFIX ex: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#&gt;
 PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { res:film-Q25188 dbo:genre ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT ?title ?year ?runtimeSeconds ?director WHERE { res:film-Q25188 rdfs:label ?title ; ex:releaseYear ?year ; dbo:runtime ?runtimeSeconds ; dbo:director ?person . ?person rdfs:label ?director }</code></pre>
 <h3 id="query-3-directors-of-inception">Query 3 — Directors of
 Inception</h3>
 <p>Before / after rows: 1 / 1</p>
@@ -2828,15 +2826,16 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { res:film-Q25188 dbo:director ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
-<h3 id="query-4-cast-of-inception">Query 4 — Cast of Inception</h3>
-<p>Before / after rows: 21 / 21</p>
+SELECT DISTINCT ?s ?label WHERE { res:film-Q25188 dbo:director ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
+<h3 id="query-4-inception-credits-and-roles">Query 4 — Inception credits
+and roles</h3>
+<p>Before / after rows: 25 / 25</p>
 <pre class="sparql"><code>PREFIX ex: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#&gt;
 PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { res:film-Q25188 dbo:starring ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT ?personName ?roleName WHERE { res:film-Q25188 ex:contributionOf ?credit . ?credit ex:contributionBy ?person ; ex:hasRole ?role . ?person rdfs:label ?personName . ?role rdfs:label ?roleName } ORDER BY ?roleName ?personName</code></pre>
 <h3 id="query-5-films-directed-by-nolan">Query 5 — Films directed by
 Nolan</h3>
 <p>Before / after rows: 8 / 8</p>
@@ -2845,7 +2844,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s dbo:director res:person-Q25191 . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s dbo:director res:person-Q25191 . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-6-companies-credited-on-inception">Query 6 — Companies
 credited on Inception</h3>
 <p>Before / after rows: 4 / 4</p>
@@ -2854,7 +2853,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { res:film-Q25188 dbo:productionCompany ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { res:film-Q25188 dbo:productionCompany ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-7-awards-of-inception">Query 7 — Awards of Inception</h3>
 <p>Before / after rows: 7 / 7</p>
 <pre class="sparql"><code>PREFIX ex: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#&gt;
@@ -2862,7 +2861,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { res:film-Q25188 dbo:award ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { res:film-Q25188 dbo:award ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-8-runtime-in-seconds">Query 8 — Runtime in seconds</h3>
 <p>Before / after rows: 1 / 1</p>
 <pre class="sparql"><code>PREFIX ex: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#&gt;
@@ -2870,7 +2869,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { res:film-Q25188 dbo:runtime ?s . } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { res:film-Q25188 dbo:runtime ?s . OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-9-film-genres-through-the-parent-class">Query 9 — Film
 genres through the parent class</h3>
 <p>Before / after rows: 0 / 75</p>
@@ -2879,7 +2878,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?f a dbo:Film ; dbo:genre ?s . ?s a dbo:Genre . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?f a dbo:Film ; dbo:genre ?s . ?s a dbo:Genre . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-10-persons-through-agent-hierarchy">Query 10 — Persons
 through Agent hierarchy</h3>
 <p>Before / after rows: 0 / 851</p>
@@ -2888,7 +2887,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a dbo:Agent . FILTER EXISTS { ?s a dbo:Person } FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Agent . FILTER EXISTS { ?s a dbo:Person } FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-11-production-companies">Query 11 — Production
 companies</h3>
 <p>Before / after rows: 45 / 45</p>
@@ -2897,7 +2896,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a dbo:Company . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Company . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-12-film-subclasses">Query 12 — Film subclasses</h3>
 <p>Before / after rows: 0 / 4</p>
 <pre class="sparql"><code>PREFIX ex: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#&gt;
@@ -2905,7 +2904,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s rdfs:subClassOf+ dbo:Film . } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s rdfs:subClassOf+ dbo:Film . OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-13-actors-through-artist-hierarchy">Query 13 — Actors
 through Artist hierarchy</h3>
 <p>Before / after rows: 0 / 769</p>
@@ -2914,7 +2913,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a dbo:Artist . FILTER EXISTS { ?s a dbo:Actor } FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Artist . FILTER EXISTS { ?s a dbo:Actor } FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-14-inferred-actors">Query 14 — Inferred Actors</h3>
 <p>Before / after rows: 0 / 769</p>
 <pre class="sparql"><code>PREFIX ex: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#&gt;
@@ -2922,7 +2921,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a dbo:Actor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a dbo:Actor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-15-inferred-filmmakers">Query 15 — Inferred
 Filmmakers</h3>
 <p>Before / after rows: 0 / 89</p>
@@ -2931,7 +2930,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:Filmmaker . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:Filmmaker . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-16-inferred-action-films">Query 16 — Inferred Action
 films</h3>
 <p>Before / after rows: 0 / 12</p>
@@ -2940,7 +2939,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:ActionFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ActionFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-17-award-winning-films">Query 17 — Award-winning
 films</h3>
 <p>Before / after rows: 0 / 26</p>
@@ -2949,7 +2948,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:AwardWinningFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:AwardWinningFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3
 id="query-18-people-with-at-least-two-provably-distinct-credits">Query
 18 — People with at least two provably distinct credits</h3>
@@ -2959,7 +2958,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:MultiCreditContributor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:MultiCreditContributor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3
 id="query-19-people-with-at-least-three-provably-distinct-credits">Query
 19 — People with at least three provably distinct credits</h3>
@@ -2969,7 +2968,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:ThreeCreditContributor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ThreeCreditContributor . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-20-writer-directors">Query 20 — Writer-directors</h3>
 <p>Before / after rows: 0 / 10</p>
 <pre class="sparql"><code>PREFIX ex: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#&gt;
@@ -2977,7 +2976,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:WriterDirector . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:WriterDirector . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-21-actor-filmmakers">Query 21 — Actor-filmmakers</h3>
 <p>Before / after rows: 0 / 7</p>
 <pre class="sparql"><code>PREFIX ex: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#&gt;
@@ -2985,7 +2984,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:ActorFilmmaker . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:ActorFilmmaker . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-22-award-winning-filmmakers">Query 22 — Award-winning
 filmmakers</h3>
 <p>Before / after rows: 0 / 65</p>
@@ -2994,7 +2993,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:AwardWinningFilmmaker . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:AwardWinningFilmmaker . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-23-award-winning-action-films">Query 23 — Award-winning
 action films</h3>
 <p>Before / after rows: 0 / 10</p>
@@ -3003,7 +3002,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:AwardWinningActionFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:AwardWinningActionFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-24-actiondrama-crossing-films">Query 24 — Action/drama
 crossing films</h3>
 <p>Before / after rows: 0 / 8</p>
@@ -3012,7 +3011,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { ?s a ex:GenreCrossingFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { ?s a ex:GenreCrossingFilm . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-25-nolan-contributions-through-property-chain">Query 25 —
 Nolan contributions through property chain</h3>
 <p>Before / after rows: 0 / 8</p>
@@ -3021,7 +3020,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { res:person-Q25191 ex:contributedTo ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { res:person-Q25191 ex:contributedTo ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-26-nolan-films-through-inverse-director">Query 26 — Nolan
 films through inverse director</h3>
 <p>Before / after rows: 0 / 8</p>
@@ -3030,7 +3029,7 @@ PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
 PREFIX res: &lt;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-SELECT DISTINCT ?s WHERE { res:person-Q25191 ex:directed ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) } ORDER BY ?s</code></pre>
+SELECT DISTINCT ?s ?label WHERE { res:person-Q25191 ex:directed ?s . FILTER(STRSTARTS(STR(?s), &quot;https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/&quot;)) OPTIONAL { ?s rdfs:label ?label } } ORDER BY ?s</code></pre>
 <h3 id="query-27-types-present-only-after-reasoning">Query 27 — Types
 present only after reasoning</h3>
 <p>Before / after rows: 0 / 1261</p>

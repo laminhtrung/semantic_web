@@ -41,19 +41,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{longtable,booktabs,array}
-\usepackage{caption}
-\captionsetup[table]{skip=6pt}
-\newcounter{none} % for unnumbered tables
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -83,7 +70,6 @@
 \@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
 \hypersetup{
-  pdftitle={MovieLOD: lời thuyết trình riêng cho 13 slide},
   colorlinks=true,
   linkcolor={teal},
   filecolor={Maroon},
@@ -91,424 +77,172 @@
   urlcolor={teal},
   pdfcreator={LaTeX via pandoc}}
 
-\title{MovieLOD: lời thuyết trình riêng cho 13 slide}
 \author{}
-\date{MovieLOD 2.0 · Đối chiếu ngày 08/10/2026}
+\date{}
 
 \begin{document}
-\maketitle
-
-\subsection{Cách dùng}\label{cuxe1ch-duxf9ng}
-
-Lời nói riêng cho đúng \textbf{13 slide} trong
-\texttt{Slide\_\allowbreak{}ng\allowbreak{}an\_\allowbreak{}13.\allowbreak{}pp\allowbreak{}tx};
-toàn bộ lời cũng nằm trong Speaker Notes. Thời lượng gợi ý
-\textbf{12--14 phút}, khác video demo 4 phút 50 giây. Nói khoảng
-150--175 từ/phút và điều chỉnh theo buổi bảo vệ. Điền tên thành viên/lớp
-trên slide 1; phân công người nói trước khi tập. Các đoạn là mẫu lời đọc
-hoàn chỉnh, có thể rút gọn bằng cách bỏ ví dụ phụ nhưng giữ kết luận và
-giới hạn.
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Slide
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Người nói gợi ý
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Thời lượng
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-01 --- MovieLOD & Thành viên A & 45--70 giây \\
-02 --- Từ câu hỏi điện ảnh đến 5 yêu cầu & Thành viên A & 45--70 giây \\
-03 --- Kiến trúc: nguồn → đồ thị → ứng dụng & Thành viên A & 45--70
-giây \\
-04 --- YC1 · Mô hình điện ảnh với 42 lớp & Thành viên A & 45--70 giây \\
-05 --- YC1 · Ai làm gì trong phim nào? & Thành viên A & 45--70 giây \\
-06 --- YC2 · Thu thập thật, truy lại được nguồn & Thành viên B & 45--70
-giây \\
-07 --- YC3 · Từ dữ liệu nguồn thành RDF & Thành viên B & 45--70 giây \\
-08 --- YC4 · Nối đúng danh tính ra Web dữ liệu & Thành viên B & 45--70
-giây \\
-09 --- YC5 · Truy vấn Inception trên ứng dụng & Thành viên B & 45--70
-giây \\
-10 --- YC5 · Endpoint, terminal và tra cứu IRI & Thành viên C & 45--70
-giây \\
-11 --- Điểm Semantic Web: dữ kiện → kiến thức mới & Thành viên C &
-45--70 giây \\
-12 --- Đối chiếu đề: 10/10 theo thang tự đánh giá & Thành viên C &
-45--70 giây \\
-13 --- Hoàn thiện bản nộp và kết luận & Thành viên C & 45--70 giây \\
-\end{longtable}
-}
-
-\subsection{Slide 01 --- MovieLOD}\label{slide-01-movielod}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-Chào thầy cô và các bạn. Nhóm chúng em trình bày MovieLOD, ứng dụng dữ
-liệu mở có liên kết về điện ảnh. Bài đi qua năm yêu cầu: xây dựng
-ontology, thu thập dữ liệu, chuyển thành RDF, liên kết với dữ liệu bên
-ngoài và cung cấp giao diện SPARQL. Phiên bản cục bộ hiện có ba mươi
-phim, bốn mươi hai lớp và một nghìn bảy trăm hai mươi bảy liên kết
-ngoài. Ví dụ xuyên suốt là Inception và Christopher Nolan. Các số liệu
-trên slide được đối chiếu với dữ liệu hiện tại ngày tám tháng mười năm
-hai nghìn không trăm hai mươi sáu. Tên thành viên và lớp học có thể điền
-ở trang bìa trước khi nộp.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang từ câu hỏi điện ảnh đến
-5 yêu cầu.
-
-\subsection{Slide 02 --- Từ câu hỏi điện ảnh đến 5 yêu
-cầu}\label{slide-02-tux1eeb-cuxe2u-hux1ecfi-ux111iux1ec7n-ux1ea3nh-ux111ux1ebfn-5-yuxeau-cux1ea7u}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-Nhóm chọn điện ảnh vì một phim liên quan đến nhiều người, thể loại, giải
-thưởng và công ty sản xuất. Người dùng muốn hỏi Inception do ai đạo
-diễn, Nolan tham gia phim nào hoặc dữ liệu này được lấy từ đâu. Năm yêu
-cầu của đề tương ứng với năm lớp công việc trên màn hình. Ontology quy
-định ý nghĩa của dữ liệu; chương trình thu thập lấy thông tin thật; bước
-chuyển đổi tạo RDF và định danh; bước liên kết nối với Wikidata và
-DBpedia; SPARQL cho phép đặt câu hỏi trên đồ thị. Đề còn yêu cầu báo cáo
-không quá mười lăm trang và video dài ba đến năm phút. Bộ slide và lời
-nói này dành cho phần thuyết trình, còn kịch bản quay demo được tách
-riêng để giữ đúng thời lượng.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang kiến trúc: nguồn → đồ
-thị → ứng dụng.
-
-\subsection{Slide 03 --- Kiến trúc: nguồn → đồ thị → ứng
-dụng}\label{slide-03-kiux1ebfn-truxfac-nguux1ed3n-ux111ux1ed3-thux1ecb-ux1ee9ng-dux1ee5ng}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-Luồng xử lý bắt đầu bằng danh sách phim trong config. Chương trình thu
-thập lấy phản hồi từ Wikidata và DBpedia, ghi URL, thời điểm và SHA hai
-trăm năm mươi sáu. Chương trình build tạo ontology và dữ liệu RDF từ bản
-chuẩn hóa đã có. Bộ kiểm tra xem tên phim, nguồn và các thành phần đóng
-góp có hợp lệ trong phạm vi ứng dụng hay không. Bước reason tạo các kiểu
-phân loại bổ sung ở một file riêng. Web cục bộ gọi endpoint Flask dùng
-RDFLib; chế độ trình duyệt dùng Comunica để đọc RDF. Terminal có tùy
-chọn reasoned để nạp thêm lược đồ và kết quả phân loại. Vì vậy câu truy
-vấn cần suy luận không nên chạy trực tiếp trên endpoint mặc định rồi kết
-luận dữ liệu bị mất.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · mô hình điện ảnh
-với 42 lớp.
-
-\subsection{Slide 04 --- YC1 · Mô hình điện ảnh với 42
-lớp}\label{slide-04-yc1-muxf4-huxecnh-ux111iux1ec7n-ux1ea3nh-vux1edbi-42-lux1edbp}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-Ontology có bốn mươi hai lớp có tên được khai báo bằng owl Class. Ba lớp
-Film, Person và Country dùng trực tiếp IRI của DBpedia; việc này khác
-với liên kết sameAs giữa các cá thể. CreativeWork là nhánh tác phẩm,
-Agent là nhánh người và tổ chức. Contribution biểu diễn công việc một
-người làm cho một phim. Các nhánh Genre và Award hỗ trợ câu hỏi về thể
-loại và giải thưởng. Trong bốn mươi hai lớp có mười bốn lớp được phân
-loại từ định nghĩa, chẳng hạn Actor, Filmmaker hoặc ActionFilm. Sơ đồ
-trên slide chỉ hiển thị các nhánh chính để dễ đọc; bảng đủ bốn mươi hai
-lớp nằm trong tài liệu ontology. Số lớp là số trong lược đồ, không phải
-số cá thể và cũng không phải số nút mà Protégé hiển thị.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc1 · ai làm gì trong
-phim nào?.
-
-\subsection{Slide 05 --- YC1 · Ai làm gì trong phim
-nào?}\label{slide-05-yc1-ai-luxe0m-guxec-trong-phim-nuxe0o}
-
-\textbf{Chỉ trên màn hình:} sơ đồ Contribution và bốn vai trò.
-
-\textbf{Lời nói:}
-
-Nếu chỉ gắn một nhãn nghề nghiệp cho một người, chúng ta không biết
-người đó giữ vai trò nào trong từng phim. Mô hình Contribution giải
-quyết bằng một bản ghi nối một người, một phim và một vai trò. Nolan có
-thể vừa đạo diễn vừa biên kịch; hai vai trò được ghi thành hai đóng góp
-riêng. Bốn vai trò hiện có là đạo diễn, diễn viên, biên kịch và nhà sản
-xuất. Các quan hệ contribu\allowbreak{}tion\allowbreak{}By,
-contribu\allowbreak{}tion\allowbreak{}To và hasRole có domain, range,
-tính functional và ràng buộc số lượng. Quan hệ ngược cho phép đi từ
-người đến đóng góp và từ phim đến đóng góp. Cardinality của OWL là phát
-biểu ngữ nghĩa trong giả định thế giới mở; nó không tự thay thế kiểm tra
-biểu mẫu. Vì vậy ứng dụng có thêm kiểm tra Python để phát hiện một đóng
-góp thiếu người hoặc có nhiều vai trò.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc2 · thu thập thật,
-truy lại được nguồn.
-
-\subsection{Slide 06 --- YC2 · Thu thập thật, truy lại được
-nguồn}\label{slide-06-yc2-thu-thux1eadp-thux1eadt-truy-lux1ea1i-ux111ux1b0ux1ee3c-nguux1ed3n}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-Danh sách ba mươi phim được chọn có chủ đích cho bài học. Từ các phim
-này, dữ liệu hiện có tám trăm năm mươi mốt người, một nghìn không trăm
-mười đóng góp, bốn mươi lăm công ty sản xuất và sáu trăm bảy mươi hai
-thực thể giải thưởng. Wikidata cung cấp phát biểu về đạo diễn, diễn
-viên, biên kịch, nhà sản xuất, giải thưởng và công ty. Danh tính phim
-được xác định qua sitelink Wikipedia tiếng Anh chính xác. DBpedia chỉ
-được nối khi đúng chủ thể và có kiểu Film. Hiện đủ bảy mươi sáu phản hồi
-gốc và cả bảy mươi sáu đều khớp mã băm. Bốn mươi ba file từng thiếu đã
-được bổ sung. Một phản hồi tải lại có nội dung thay đổi được ghi thời
-điểm và hash mới; danh mục cũ được giữ để đối chiếu. Nhóm đã chạy lại
-thu thập từ cache nguồn đầy đủ, tạo RDF và kiểm tra. SHA chứng minh nội
-dung khớp với mốc lưu, không chứng minh mọi phát biểu ngoài đời đều
-đúng.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc3 · từ dữ liệu nguồn
-thành rdf.
-
-\subsection{Slide 07 --- YC3 · Từ dữ liệu nguồn thành
-RDF}\label{slide-07-yc3-tux1eeb-dux1eef-liux1ec7u-nguux1ed3n-thuxe0nh-rdf}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-RDF biểu diễn dữ liệu bằng các bộ ba. Chủ thể là Inception, quan hệ là
-director và đối tượng là Christopher Nolan. Một bộ ba khác có thể nối
-phim với giá trị năm hai nghìn mười hoặc thời lượng một trăm bốn mươi
-tám phút. Định danh nội bộ dùng QID để giảm nhầm lẫn giữa các tên giống
-nhau. Dữ liệu được xuất thành Turtle và JSON LD; ontology có bản OWL để
-mở bằng Protégé. Bộ dữ liệu hiện có mười chín nghìn ba trăm ba mươi chín
-triple, tách khỏi năm trăm mười tám triple lược đồ. Dữ liệu có giấy phép
-CC BY SA bốn chấm không và định danh HTTP. Điều kiện bốn sao cần dữ liệu
-công khai trên Web, có giấy phép mở và IRI cung cấp thông tin hữu ích.
-Nhóm đã triển khai lại bản hai chấm không và kiểm tra các URL không đăng
-nhập. Graph Turtle, JSON LD, ontology và mô tả Inception đều đẳng cấu
-với bản cục bộ. Đây là bằng chứng công bố của bản hiện tại, khác việc
-chỉ có file RDF trong máy.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc4 · nối đúng danh tính
-ra web dữ liệu.
-
-\subsection{Slide 08 --- YC4 · Nối đúng danh tính ra Web dữ
-liệu}\label{slide-08-yc4-nux1ed1i-ux111uxfang-danh-tuxednh-ra-web-dux1eef-liux1ec7u}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-Một thực thể có thể mang nhiều định danh trong các bộ dữ liệu khác nhau.
-Với Inception, đồ thị nội bộ nối tới Wikidata Q hai năm một tám tám và
-tài nguyên Inception của DBpedia bằng owl sameAs. Bài có một nghìn sáu
-trăm chín mươi chín liên kết Wikidata và hai mươi tám liên kết DBpedia.
-Không phải cả ba mươi phim đều được nối DBpedia, vì kiểm tra danh tính
-không chấp nhận mọi phản hồi. sameAs là khẳng định hai IRI cùng chỉ một
-thực thể, mạnh hơn một liên kết xem thêm.
-source\allowbreak{}Sn\allowbreak{}apshot là quan hệ về xuất xứ, nói dữ
-liệu được lấy ở phản hồi nào. Truy vấn liên kết theo từng phim trả năm
-mươi tám dòng, còn một nghìn bảy trăm hai mươi bảy là tổng trên tất cả
-loại thực thể. Mức năm sao cần cả điều kiện bốn sao và liên kết ngoài;
-số lượng liên kết tự nó không chứng minh công bố. Trong bản hiện tại,
-các kiểm tra HTTP và graph đã xác nhận dữ liệu công khai khớp local.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc5 · truy vấn inception
-trên ứng dụng.
-
-\subsection{Slide 09 --- YC5 · Truy vấn Inception trên ứng
-dụng}\label{slide-09-yc5-truy-vux1ea5n-inception-truxean-ux1ee9ng-dux1ee5ng}
-
-\textbf{Chỉ trên màn hình:} ảnh Inception và bảng kết quả.
-
-\textbf{Lời nói:}
-
-Đây là ảnh giao diện ứng dụng thật được kiểm tra lại. Người dùng chọn
-câu hỏi mẫu hoặc sửa SPARQL trong ô nhập, rồi chạy để xem bảng kết quả.
-Truy vấn Inception trả tên phim, năm hai nghìn mười, một trăm bốn mươi
-tám phút và Christopher Nolan. Câu hỏi các phim Nolan đạo diễn trả tám
-dòng trong bộ dữ liệu này. Câu hỏi đóng góp trả hai mươi lăm dòng và có
-bốn loại vai trò. Giao diện có câu hỏi trực tiếp về diễn viên, công ty,
-giải thưởng và nguồn. Ngoài SELECT trả bảng, ASK trả đúng hoặc sai, còn
-CONSTRUCT tạo một đồ thị RDF. Kết quả được tính từ dữ liệu; danh sách
-phim Nolan không được nhập cứng vào bảng. Khi quay demo, nhóm sẽ chuyển
-qua nhiều câu hỏi và mở trang Inception để chỉ rõ liên kết ngoài và
-thông tin nguồn.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang yc5 · endpoint, terminal
-và tra cứu iri.
-
-\subsection{Slide 10 --- YC5 · Endpoint, terminal và tra cứu
-IRI}\label{slide-10-yc5-endpoint-terminal-vuxe0-tra-cux1ee9u-iri}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-Đề yêu cầu một giao diện qua endpoint hoặc terminal; bài có cả hai và
-thêm Web. Endpoint cục bộ hỗ trợ GET và POST. SELECT và ASK trả JSON
-theo SPARQL Results, CONSTRUCT và DESCRIBE trả Turtle. Terminal đọc câu
-truy vấn từ file và in kết quả, thuận tiện để tái lập. Khi mở IRI
-Inception bằng trình duyệt, người dùng nhận mô tả HTML. Khi gửi Accept
-text turtle tới máy chủ cục bộ, phản hồi chuyển hướng ba trăm linh ba
-đến bản RDF của thực thể. Hai mươi bốn file truy vấn chia thành nhóm
-trực tiếp, theo cây lớp và cần kết quả suy luận. Giao diện mẫu có mười
-bốn câu chạy trên dữ liệu khai báo. Endpoint mặc định không nạp các lớp
-suy luận; phần đó được trình diễn riêng qua terminal với tùy chọn
-reasoned. Bản hosted dùng Comunica trong trình duyệt, nên không gọi nó
-là endpoint Python công khai.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang điểm semantic web: dữ
-kiện → kiến thức mới.
-
-\subsection{Slide 11 --- Điểm Semantic Web: dữ kiện → kiến thức
-mới}\label{slide-11-ux111iux1ec3m-semantic-web-dux1eef-kiux1ec7n-kiux1ebfn-thux1ee9c-mux1edbi}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-Điểm đáng chú ý của Semantic Web là định nghĩa lớp cho phép phân loại từ
-các quan hệ đã có. Dữ liệu gốc chỉ khai báo Nolan thuộc Person. Đóng góp
-có DirectorRole được phân loại
-Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution; người có
-loại đóng góp đó được phân loại Filmmaker. Tương tự, người có đóng góp
-diễn xuất được phân loại Actor. Mười hai lớp được xử lý bằng luật OWL RL
-trong thư viện owlrl. Hai lớp
-Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film và FilmStudio được
-tính bổ sung bằng COUNT DISTINCT vì các ngưỡng hai và ba không được bộ
-luật này xử lý theo cách cần dùng. Đây là quy tắc đếm IRI của ứng dụng,
-chưa phải bằng chứng phân loại OWL DL đầy đủ; IRI khác nhau không tự đảm
-bảo cá thể khác nhau trong OWL. Lệnh reasoned nạp lược đồ và file phân
-loại đã lưu. Kết quả có bảy trăm sáu mươi chín Actor, tám mươi chín
-Filmmaker và mười hai ActionFilm; truy vấn mẫu Actor và Filmmaker chỉ
-hiện hai mươi dòng do LIMIT.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang đối chiếu đề: 10/10 theo
-thang tự đánh giá.
-
-\subsection{Slide 12 --- Đối chiếu đề: 10/10 theo thang tự đánh
-giá}\label{slide-12-ux111ux1ed1i-chiux1ebfu-ux111ux1ec1-1010-theo-thang-tux1ef1-ux111uxe1nh-giuxe1}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-Ảnh đề gốc không quy định trọng số. Nhóm dùng thang tự đánh giá chia đều
-hai điểm cho mỗi yêu cầu và dẫn minh chứng cho từng mục. Sau lần sửa,
-bảy mươi sáu phản hồi gốc đều có và khớp hash; quy trình thu thập từ
-cache, build, validate và suy luận đã chạy lại. Website được xuất bản
-với mô hình hai chấm không; các graph RDF công khai đẳng cấu với bản cục
-bộ. Các liên kết ngoài được kiểm kê và truy vấn. Mười ba test và chín
-kiểm tra trình duyệt đều đạt. Vì vậy cả năm yêu cầu được đề xuất hai
-điểm, tổng mười trên mười theo thang này. Đây là tự đánh giá kỹ thuật
-trong phạm vi đã kiểm tra, không phải điểm chính thức hoặc cam kết của
-giảng viên. Các giới hạn mô hình và phương pháp suy luận vẫn được trình
-bày trung thực.
-
-\textbf{Chuyển trang:} Sau đây nhóm chuyển sang hoàn thiện bản nộp và
-kết luận.
-
-\subsection{Slide 13 --- Hoàn thiện bản nộp và kết
-luận}\label{slide-13-houxe0n-thiux1ec7n-bux1ea3n-nux1ed9p-vuxe0-kux1ebft-luux1eadn}
-
-\textbf{Chỉ trên màn hình:} các thông tin chính theo thứ tự từ trái sang
-phải / trên xuống dưới.
-
-\textbf{Lời nói:}
-
-MovieLOD đã có quy trình từ nguồn thật đến ontology, RDF, liên kết ngoài
-và ba cách truy vấn. Các lỗi làm mất điểm đã được sửa: phản hồi nguồn
-đầy đủ, hash được kiểm tra và bản công khai đồng bộ với dữ liệu nộp.
-Video mới ghi thao tác ứng dụng và các kết quả lệnh thật trên mô hình
-hai chấm không, có lời tiếng Việt tổng hợp; nhóm có thể tự đọc lại theo
-kịch bản. Bộ nộp gồm báo cáo trong giới hạn mười lăm trang, mười ba
-slide, lời thuyết trình riêng, video ba đến năm phút và mã/dữ liệu/biên
-bản. Hạn chế còn lại là mẫu ba mươi phim có chủ đích, một số nhóm được
-ánh xạ theo nhãn và chưa chứng minh tính nhất quán bằng reasoner OWL DL
-đầy đủ. Nhóm xin kết thúc và sẵn sàng nhận câu hỏi.
-
-\textbf{Chuyển trang:} Nhóm xin mời thầy cô đặt câu hỏi.
-
-\subsection{Câu hỏi bảo vệ và lời đáp
-ngắn}\label{cuxe2u-hux1ecfi-bux1ea3o-vux1ec7-vuxe0-lux1eddi-ux111uxe1p-ngux1eafn}
-
-\textbf{Vì sao 42 lớp nhưng slide chỉ có vài nhánh?} Số 42 đếm các IRI
-khai báo owl:Class; slide tóm tắt nhánh chính. Bảng đủ ở
-Ontology\allowbreak{}\_\allowbreak{}\allowbreak{}Redesig\allowbreak{}n.\allowbreak{}md.\allowbreak{}
-
-\textbf{Tái dùng lớp khác gì sameAs?} dbo:Film dùng từ vựng chung;
-sameAs nối cá thể có cùng danh tính.
-
-\textbf{Nolan vừa đạo diễn vừa biên kịch có mâu thuẫn không?} Không. Hai
-vai trò có các Contribution riêng; Actor và Filmmaker không được khai
-báo disjoint.
-
-\textbf{OWL exact cardinality có bảo đảm dữ liệu đủ trường?} Không theo
-cơ chế kiểm tra biểu mẫu. Python kiểm tra trường bắt buộc; OWL dùng ngữ
-nghĩa thế giới mở.
-
-\textbf{COUNT DISTINCT có bằng reasoner DL không?} Không. Đếm IRI là quy
-tắc ứng dụng; OWL không mặc định hai IRI khác nhau là hai cá thể khác
-nhau. Chưa chạy chứng minh DL đầy đủ.
-
-\textbf{Căn cứ đề xuất 10/10 là gì?} Đủ 76 nguồn và hash khớp; graph
-public đẳng cấu local; ontology, liên kết và truy vấn có minh chứng.
-Dùng thang tự chia đều, không phải điểm giảng viên.
-
-\textbf{Rỗng khi hỏi Filmmaker trên endpoint có phải lỗi?} Endpoint chỉ
-nạp graph khai báo; dùng terminal --reasoned để nạp schema và file phân
-loại.
-
-\textbf{CSDL quan hệ có trả các câu hỏi này được không?} Có thể dùng
-JOIN, view hoặc quy tắc ứng dụng. Điểm của RDF/OWL là IRI chung, từ vựng
-tái dùng, liên kết giữa dataset và định nghĩa lớp máy có thể xử lý;
-không nói SQL không làm được.
-
-\textbf{13 test pass có nghĩa toàn bộ nguồn đúng không?} Không. Test
-kiểm tra hành vi cụ thể; hash nguồn kiểm tra toàn vẹn. Cả hai không
-chứng minh mọi phát biểu ngoài đời đúng.
-
-\textbf{Video hiện có có thể nộp không?} Video đã cập nhật bản 2.0, ghi
-thao tác thật và kết quả lệnh, có giọng tổng hợp Linh. Nhóm cần xem lại
-trước khi nộp và có thể đọc lại bằng giọng thành viên.
-
-\subsection{Cập nhật sau lần ghi video và tạo slide
-ngắn}\label{cux1eadp-nhux1eadt-sau-lux1ea7n-ghi-video-vuxe0-tux1ea1o-slide-ngux1eafn}
-
-Bản chính hiện có 24 slide và 14 test pass.
-Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l
-đã đồng bộ timestamp đến mili giây với
-Turtle/\allowbreak{}\allowbreak{}J\allowbreak{}\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D/\allowbreak{}\allowbreak{}W\allowbreak{}eb
-và chạy được
-Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet.\allowbreak{}
-Hai reasoner xác nhận nhất quán; 12 lớp khớp OWL RL;
-Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film/\allowbreak{}\allowbreak{}F\allowbreak{}ilm\allowbreak{}Studi\allowbreak{}o
-có 0 cá thể suy luận DL, khác số đếm ứng dụng 30/6. Các lời mô tả chưa
-chạy reasoner trong bản ngắn là lịch sử; khi trình bày hiện tại dùng
-Script\_\allowbreak{}t\allowbreak{}huyet\_\allowbreak{}tr\allowbreak{}inh.\allowbreak{}pdf
-và
-Ket\_\allowbreak{}qua\_\allowbreak{}reasoner\allowbreak{}.\allowbreak{}pdf.\allowbreak{}
-Video và slide ngắn giữ nguyên.
+
+\section{MovieLOD --- Script cho 13 slide tóm
+tắt}\label{movielod-script-cho-13-slide-tuxf3m-tux1eaft}
+
+Bản 3.0.0; chữ slide/notes tiếng Anh, script này tiếng Việt. Bộ chính
+vẫn 24 slide; bản ngắn chọn nội dung cốt lõi. MP4 đã được loại; dùng
+demo ứng dụng trực tiếp.
+
+\subsection{Slide 1 --- MovieLOD}\label{slide-1-movielod}
+
+Tương ứng slide 1 của bộ chính.
+
+Nhóm trình bày MovieLOD, một knowledge graph về điện ảnh. File OWL cuối
+hiện là bản 3.0.0, có 30 phim, 37 lớp có tên và 1.727 liên kết danh
+tính. Ví dụ xuyên suốt là Inception và Christopher Nolan. Chúng ta cần
+phân biệt ontology mới đã chạy HermiT với ứng dụng web vẫn dùng snapshot
+trước đó. Vì vậy, mỗi kết quả trong bài sẽ được gắn với đúng phiên bản
+và phạm vi kiểm tra.
+
+\subsection{Slide 2 --- Objectives and synchronized
+evidence}\label{slide-2-objectives-and-synchronized-evidence}
+
+Tương ứng slide 2 của bộ chính.
+
+Năm yêu cầu cốt lõi đã dùng chung ontology 3.0.0. Graph nguồn, graph suy
+luận và dataset trước/sau có trên web, endpoint và terminal. Slide, báo
+cáo và kết quả truy vấn khớp cùng model. MP4 đã xóa theo yêu cầu, không
+dựng lại video.
+
+\subsection{Slide 3 --- Architecture and knowledge
+layers}\label{slide-3-architecture-and-knowledge-layers}
+
+Tương ứng slide 3 của bộ chính.
+
+Collect cung cấp corpus đã crawl; build xuất model 3.0.0. HermiT phân
+loại OWL canonical; OWL RL bổ sung inverse, subproperty và chain.
+Validate chạy 27 câu hỏi. Web, endpoint và terminal dùng chung graph
+nguồn, graph suy luận và dataset so sánh.
+
+\subsection{Slide 4 --- Dataset: units and counting
+scope}\label{slide-4-dataset-units-and-counting-scope}
+
+Tương ứng slide 4 của bộ chính.
+
+Mẫu có 30 phim, 851 người, 1.010 credit record, 45 công ty và 672 thực
+thể giải thưởng. OWL đầy đủ chứa 19.025 triple, gồm schema và facts khai
+báo, chưa phải toàn bộ closure suy luận. Cần đọc đúng đơn vị: credit
+không phải số người, award entity không phải số lần trao giải. Các thống
+kê membership chỉ đếm IRI local để tránh tăng số do alias sameAs.
+
+\subsection{Slide 5 --- Ontology inventory: reuse before
+extension}\label{slide-5-ontology-inventory-reuse-before-extension}
+
+Tương ứng slide 5 của bộ chính.
+
+37 lớp gồm 17 lớp DBpedia, một lớp VoID Dataset và 19 lớp riêng. Các lớp
+riêng mô tả credit, nguồn, hai bucket thể loại và những subset suy luận
+có nghĩa rõ. Mười lớp domain có membership suy ra; bốn subclass credit
+hỗ trợ các chain. Nhóm không tạo lại Actor, Genre, Award hoặc Company
+dưới namespace riêng chỉ để tăng số lượng lớp.
+
+\subsection{\texorpdfstring{Slide 6 ---
+Contribu\allowbreak{}tion:\allowbreak{} person, film and
+role}{Slide 6 ---  person, film and role}}\label{slide-6-contribution-person-film-and-role}
+
+Tương ứng slide 9 của bộ chính.
+
+Contribution là record nối một người, một phim và một role. Ba endpoint
+có tính functional và qualified exactly-one
+restrict\allowbreak{}ions.\allowbreak{} Nolan có ba credit riêng trên
+Inception cho directing, writing và producing. Role là individual của
+vocabulary kiểm soát, không phải Person. Các subclass credit được suy ra
+từ hasRole value. Exactly one không tự báo dữ liệu thiếu dưới giả định
+thế giới mở; cần structural validation riêng.
+
+\subsection{Slide 7 --- Properties: reuse, inverse and
+chain}\label{slide-7-properties-reuse-inverse-and-chain}
+
+Tương ứng slide 10 của bộ chính.
+
+Các quan hệ phim phổ biến dùng DBpedia. Inverse của
+contribu\allowbreak{}tion\allowbreak{}By cho đường đi
+has\allowbreak{}Contr\allowbreak{}ibution từ người đến credit. Chain
+has\allowbreak{}Contr\allowbreak{}ibution rồi
+contribu\allowbreak{}tion\allowbreak{}To suy ra
+contribu\allowbreak{}ted\allowbreak{}To từ người đến phim. Directed và
+actedIn là quan hệ cụ thể hơn. Property chain làm
+contribu\allowbreak{}ted\allowbreak{}To trở thành non-simple, nên
+cardinality đặt trên
+has\allowbreak{}Contr\allowbreak{}ibution,\allowbreak{} không đặt trên
+contribu\allowbreak{}ted\allowbreak{}To.\allowbreak{} Kết quả có 965 cặp
+người--phim local.
+
+\subsection{Slide 8 --- Verified domain classes after
+HermiT}\label{slide-8-verified-domain-classes-after-hermit}
+
+Tương ứng slide 12 của bộ chính.
+
+Bảng liệt kê mười subset domain có membership HermiT thật. Trong đó có
+bảy lớp bổ sung ngoài Filmmaker, ActionFilm và
+Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{}.\allowbreak{}
+Actor dùng range chuẩn của DBpedia, còn bốn loại Contribution là bước
+trung gian. Tất cả type subset ở bảng đều có zero assertion trong đầu
+vào. Nhóm không dùng COUNT DISTINCT để gán các class này rồi gọi đó là
+entailment OWL DL.
+
+\subsection{Slide 9 --- Nolan: facts → credit type →
+Filmmaker}\label{slide-9-nolan-facts-credit-type-filmmaker}
+
+Tương ứng slide 13 của bộ chính.
+
+Credit của Nolan có DirectorRole nên thỏa
+Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution.\allowbreak{}
+Inverse tạo has\allowbreak{}Contr\allowbreak{}ibution;\allowbreak{} điều
+kiện SOME và OR của Filmmaker nhận diện Nolan. Credit writing tạo
+Screen\allowbreak{}Wr\allowbreak{}iter, directing tạo
+Movie\allowbreak{}Dir\allowbreak{}ector, rồi giao hai nghề tạo
+Writer\allowbreak{}Di\allowbreak{}rector.\allowbreak{} Các type này
+không được gán thủ công. Đây là chain giải thích nhiều bước dựa trên
+cùng facts; OWL không bắt reasoner chạy theo đúng thứ tự trình bày trên
+sơ đồ.
+
+\subsection{\texorpdfstring{Slide 10 --- Genuine
+minimum-\allowbreak{}cardinal\allowbreak{}ity
+reasoning}{Slide 10 --- Genuine  reasoning}}\label{slide-10-genuine-minimum-cardinality-reasoning}
+
+Tương ứng slide 14 của bộ chính.
+
+Ba credit của Nolan có Director\allowbreak{}\allowbreak{}Role,
+WriterRole và ProducerRole khác nhau. hasRole là functional; các role
+được khai báo AllDifferent theo nghĩa của vocabulary kiểm soát. Nếu hai
+credit đồng nhất, một record phải có hai role khác nhau và gây mâu
+thuẫn. Vì vậy HermiT chứng minh ít nhất ba credit khác nhau. Có 7 người
+đạt min 3 và 17 người đạt min 2. Genre vẫn thiếu bằng chứng inequality.
+
+\subsection{Slide 11 --- Linked data: identity and
+publication}\label{slide-11-linked-data-identity-and-publication}
+
+Tương ứng slide 17 của bộ chính.
+
+Website cung cấp RDF, schema, full OWL và inference 3.0.0. HTTP IRI và
+giấy phép hỗ trợ reuse. Có 1.699 link Wikidata và 28 link DBpedia. Reuse
+dbo:Film, sameAs và provenance có ba ý nghĩa khác nhau.
+
+\subsection{Slide 12 --- Verification of the final
+OWL}\label{slide-12-verification-of-the-final-owl}
+
+Tương ứng slide 22 của bộ chính.
+
+HermiT kiểm tra đúng full OWL: consistent, không có named class bất khả
+thỏa. 27 competency queries chạy theo scope rõ ràng; 965 chain pairs
+được materialize riêng. 15 tests kiểm tra model và endpoint. Browser
+kiểm tra SELECT, ASK, CONSTRUCT, DESCRIBE và phục hồi sau query sai cú
+pháp.
+
+\subsection{Slide 13 --- Evidence capture and submission
+checklist}\label{slide-13-evidence-capture-and-submission-checklist}
+
+Tương ứng slide 24 của bộ chính.
+
+Các ô còn lại yêu cầu screenshot Protégé thật. Script Việt khớp slide
+Anh; báo cáo học thuật giữ 15 trang. Ảnh web hiện tại và log reasoner hỗ
+trợ trình bày. MP4 đã xóa, không chỉnh nội dung hoặc dựng lại video.
 
 \end{document}

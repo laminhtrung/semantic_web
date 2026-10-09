@@ -1,5 +1,5 @@
 """Export the validated DBpedia-based design to the canonical OWL files.
-The application keeps its own current dataset until its vocabulary is migrated.
+Canonical schema, data and query exports now share version 3.0.0.
 """
 import argparse,hashlib,json,re,subprocess
 from rdflib import Graph,RDF,RDFS,OWL,URIRef,Literal
@@ -18,7 +18,7 @@ def main():
     complete=s+d
     path=ROOT/'ontology/Movie_Knowledge_Graph.owl';complete.serialize(path,format='xml')
     s.serialize(ROOT/'ontology/Movie_Ontology.owl',format='xml');s.serialize(ROOT/'ontology/movie.ttl',format='turtle')
-    cp=str(ROOT/'.venv/lib/python3.9/site-packages/owlready2/hermit')+':'+str(ROOT/'.venv/lib/python3.9/site-packages/owlready2/hermit/HermiT.jar')
+    cp=str(__import__('pathlib').Path(__import__('owlready2').__file__).parent/'hermit')+':'+str(__import__('pathlib').Path(__import__('owlready2').__file__).parent/'hermit/HermiT.jar')
     command=[args.java,'-Xmx2048M','-cp',cp,'org.semanticweb.HermiT.cli.CommandLine','-k','-U','-c','-I',str(path)]
     result=subprocess.run(command,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=300)
     (source/'final_owl_hermit.log').write_text(result.stdout)
@@ -33,7 +33,7 @@ def main():
     counts={name:len({a for a in inferred.subjects(RDF.type,URIRef(str(DBO if name.startswith('dbo:') else EX)+name.split(':')[1])) if str(a).startswith(str(RES))}) for name in report['counts'] if name.startswith(('dbo:','ex:'))}
     for name,values in report['counts'].items():
         if name.startswith(('dbo:','ex:')):assert counts[name]==values['reasoned'],(name,counts[name],values['reasoned'])
-    output={'file':str(path.relative_to(ROOT)),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'version':'3.0.0','consistent':True,'unsatisfiable_named_classes':unsat,'reasoner':'HermiT 1.3.8.1099 direct RDF/XML input','class_counts':counts,'source_design_matches_reasoned_membership':True,'video_sha256':hashlib.sha256((ROOT/'docs/Video_demo.mp4').read_bytes()).hexdigest(),'application_migration_status':'Application RDF, queries and deployed snapshot remain on the previous vocabulary; this export updates the canonical ontology files only.'}
+    output={'file':str(path.relative_to(ROOT)),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'version':'3.0.0','consistent':True,'unsatisfiable_named_classes':unsat,'reasoner':'HermiT 1.3.8.1099 direct RDF/XML input','class_counts':counts,'source_design_matches_reasoned_membership':True,'video_status':'Removed by user request','application_migration_status':'Canonical model and application assets are version 3.0.0; see publication evidence for deployed status.'}
     write_json(source/'final_owl_checks.json',output);print(json.dumps(output,ensure_ascii=False,indent=2))
 
 if __name__=='__main__':main()

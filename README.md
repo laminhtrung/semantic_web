@@ -1,102 +1,65 @@
-# MovieLOD — dữ liệu phim liên kết, bản 2.0 đã hoàn tất
+# MovieLOD — Movie ontology and linked data 3.0.0
 
-**5/5 yêu cầu đạt theo phạm vi kiểm tra; tự đề xuất 10/10** trên thang chia đều 2 điểm/yêu cầu. Đây không phải điểm chính thức của giảng viên. Bản cục bộ và [website công khai](https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site) đã đồng bộ ontology 2.0: **42 lớp, 30 phim, 851 người, 1.010 đóng góp, 19.339 triple dữ liệu và 1.727 liên kết ngoài**.
+Ontology, dữ liệu, các giao diện truy vấn và tài liệu cùng sử dụng model **3.0.0**. MP4 đã được xoá theo yêu cầu; không ghi hoặc chỉnh sửa video. Website: https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/.
 
-## Bộ nộp và tài liệu thuyết trình
+File đầy đủ để mở trong Protégé: [Movie_Knowledge_Graph.owl](ontology/Movie_Knowledge_Graph.owl). File [Movie_Ontology.owl](ontology/Movie_Ontology.owl) chỉ chứa schema. HermiT chạy trực tiếp trên full OWL: consistent, không có named class bất khả thỏa. Hash file và kết quả tại [final_owl_checks.json](evidence/ontology_design/final_owl_checks.json).
 
-| File | Nội dung |
-|:--|:--|
-| [Slide.pptx](docs/Slide.pptx) / [PDF](docs/Slide.pdf) | 24 trang, font Be Vietnam Pro, ảnh app thật, sơ đồ; 11 khung ảnh Protégé có hướng dẫn ngay trên slide; chữ/sơ đồ và Speaker Notes chỉnh sửa được |
-| [Script thuyết trình](docs/Script_thuyet_trinh.pdf) / [Markdown](docs/Script_thuyet_trinh.md) | Lời nói riêng cho 24 slide, khoảng 18–22 phút; chia người nói và câu hỏi bảo vệ |
-| [Video demo](docs/Video_demo.mp4) | Bản 2.0 mới, 4 phút 50 giây; ghi tương tác app và kết quả lệnh thật, có giọng tổng hợp tiếng Việt Linh |
-| [Kịch bản demo](docs/Kich_ban_video.pdf) / [Markdown](docs/Kich_ban_video.md) | Timeline, lời đọc khớp video, lệnh và kết quả cần thấy; cách tự quay/ghi lại |
-| [Checklist ảnh Protégé](docs/Checklist_anh_Protege.pdf) | 11 ảnh, tên file, slide tương ứng, thao tác và nội dung cần thấy |
-| [Bảng chấm](CHAM_DIEM.pdf) / [Markdown](CHAM_DIEM.md) | 10/10 tự đề xuất sau sửa; đủ 5 YC, tiêu chí con, minh chứng và giới hạn |
-| [Báo cáo PDF](docs/Bao_cao.pdf) / [Word](docs/Bao_cao.docx) / [Markdown](docs/Bao_cao.md) | Báo cáo tiếng Anh đúng 15 trang; Times New Roman 13, giãn dòng 1,5, căn đều; 10 hình từ Slide_full.pptx.pdf và 1 sơ đồ khái niệm; nội dung học thuật về ontology, liên kết, SPARQL, suy luận và giới hạn nghiên cứu |
-| [A–Z](docs/Huong_dan_A_Z.pdf) / [hướng dẫn chi tiết](docs/Huong_dan_thao_tac_chi_tiet.pdf) | Chạy, đọc từ khóa, lệnh, Protégé, Web/endpoint/terminal và xử lý lỗi |
-| [Mô tả ontology](docs/Mo_ta_ontology.pdf) / [bảng đầy đủ](docs/Ontology_Redesign.pdf) | Giải thích tiếng Việt: 42 lớp/23 quan hệ/6 datatype property/14 lớp phân loại/24 truy vấn |
-| [ZIP tài liệu](docs/Bo_tai_lieu_thuyet_trinh.zip) | Slide, video, báo cáo, scripts và hướng dẫn trong một gói |
+## Tài liệu
 
-**Bản ngắn:** [13 slide](docs/Slide_ngan_13.pptx) và [lời nói riêng](docs/Script_thuyet_trinh_ngan_13.pdf) vẫn được giữ. Video demo 4:50 minh họa app và nhắc bộ ngắn 13 trang; bộ 24 trang phục vụ thuyết trình đầy đủ.
+| Sản phẩm | Nội dung |
+|---|---|
+| [Slide PPTX](docs/Slide.pptx) / [PDF](docs/Slide.pdf) | 24 trang tiếng Anh; 11 khung chờ ảnh Protégé có hướng dẫn tiếng Việt |
+| [Script thuyết trình](docs/Script_thuyet_trinh.pdf) | Lời tiếng Việt khớp từng slide |
+| [Bộ ngắn 13 trang](docs/Slide_ngan_13.pptx) / [PDF](docs/Slide_ngan_13.pdf) | Tóm tắt cùng model; [script riêng](docs/Script_thuyet_trinh_ngan_13.pdf) |
+| [Báo cáo PDF](docs/Bao_cao.pdf) / [Word](docs/Bao_cao.docx) | Tiếng Anh, 15 trang; Times New Roman 13, giãn dòng 1,5; logo HUST, bìa nhóm và mục lục riêng |
+| [Hướng dẫn đọc hiểu](docs/Huong_dan_doc_hieu_project.pdf) / [Word](docs/Huong_dan_doc_hieu_project.docx) | Tiếng Việt; RDF/OWL/SPARQL, sơ đồ, ví dụ và câu hỏi ôn tập |
+| [A–Z](docs/Huong_dan_A_Z.pdf) / [thao tác](docs/Huong_dan_thao_tac_chi_tiet.pdf) | Tái lập, ba query scopes và Protégé |
+| [Mô tả ontology](docs/Mo_ta_ontology.pdf) / [thiết kế chi tiết](docs/DBpedia_OWL_Design.html) | Class/property inventory, Manchester expressions, căn cứ nguồn và 27 queries |
+| [Kết quả reasoner](docs/Ket_qua_reasoner.pdf) | Kết quả trên đúng full OWL và giới hạn diễn giải |
+| [Checklist ảnh](docs/Checklist_anh_Protege.pdf) | Vị trí ảnh Protégé cần bổ sung; không phải ảnh đã chụp |
+| [Demo trực tiếp](docs/Kich_ban_video.pdf) | Kịch bản thao tác; giữ tên file để tương thích liên kết, không chứa video |
+| [Đối chiếu yêu cầu](CHAM_DIEM.pdf) | Minh chứng kỹ thuật và các giới hạn; không phải điểm chính thức |
+| [ZIP tài liệu](docs/Bo_tai_lieu_thuyet_trinh.zip) | Tài liệu, ontology và query; không có MP4 |
 
-**Ngôn ngữ slide chính:** bộ 24 slide và Speaker Notes bằng tiếng Anh; 11 ô chờ ảnh Protégé giữ hướng dẫn tiếng Việt. Script riêng vẫn bằng tiếng Việt để tập nói, với tiêu đề tiếng Anh khớp slide. Nội dung tiếng Anh ở `src/presentation_content_en.py`; phần lời tiếng Việt gốc ở `src/presentation_content.py`. Bản ngắn 13 trang được giữ như tài liệu lịch sử. Video không thay đổi.
+`docs/Slide_full.pptx.pdf` là PDF nguồn nhóm cung cấp, được giữ để truy nguyên ảnh. Deck hiện tại là Slide.pptx/pdf. Sơ đồ tác giả và bảng log không được gọi là screenshot Protégé. Báo cáo giữ trọng tâm học thuật.
 
-**Ảnh Protégé cho báo cáo:** đã trích ảnh gốc từ `docs/Slide_full.pptx.pdf` do nhóm cung cấp; nguồn ảnh được ghi trong `evidence/report_image_sources.json`. Ảnh trích đặt trong `docs/report_images/`. Báo cáo dùng ảnh thật, phân biệt asserted view với log reasoner. Bộ Slide.pptx trước đó vẫn có ô hướng dẫn; file PDF đầy đủ do nhóm cung cấp giữ nguyên.
+## Số liệu và suy luận
 
-**Định dạng báo cáo:** A4, lề trái 3 cm, phải/trên/dưới 2 cm; nội dung căn đều hai bên, Times New Roman 13 pt, giãn dòng 1,5. Dùng `src/make_report.py` để tạo Word/PDF và `src/check_report.py` để kiểm tra. `src/make_docs.py` tự chuyển báo cáo sang trình tạo riêng để không ghi đè bằng định dạng tài liệu hướng dẫn. Bìa có logo chính thức Bách khoa Hà Nội, đủ bốn thành viên/mã học viên và giảng viên hướng dẫn TS. Đỗ Bá Lâm. Mục lục là một trang riêng, dùng dấu chấm dẫn và số trang căn phải, không kẻ bảng. Video giữ nguyên.
+- Full OWL: **19.025 triple**, 37 named classes (17 DBpedia + 1 VoID + 19 lớp riêng), 19 object và 5 datatype property.
+- Facts: 18.595 triple; schema: 442 triple; 12 triple nhãn role có trong cả hai nên tổng là 19.025.
+- 30 phim, 851 người, 1.010 credit, 45 công ty, 75 genre, 672 award entity; 76 phản hồi nguồn có SHA-256.
+- 1.727 sameAs: 1.699 Wikidata và 28 DBpedia; lọc IRI local khi đếm cá thể.
+- HermiT: dbo:Actor 769, Filmmaker 89, WriterDirector 10, MultiCreditContributor 17, ThreeCreditContributor 7.
+- 965 cặp contributedTo được materialize bằng OWL RL; cardinality do HermiT suy ra, không gán bằng COUNT DISTINCT.
 
-**Chạy HermiT trong Protégé:** mở `ontology/Movie_Knowledge_Graph.owl`. File chính đã sửa timestamp đến mili giây và đồng bộ Turtle/JSON-LD/Web; không còn bản OWL tương thích riêng. HermiT và Pellet đã kiểm tra. Xem `docs/Ket_qua_reasoner.pdf` và `evidence/hermit_run.json`. Video giữ nguyên; minh chứng chỉ thay đổi timestamp ở `evidence/video_dataset_compatibility.json`.
+Inception: 2010, dbo:runtime **8.880 giây** (=148 phút), Nolan; 25 credit. Nolan đạo diễn 8 phim trong mẫu. ActionGenre/DramaGenre là bucket nhãn tác giả. Không thêm AllDifferent cho mọi QID; negative MultiGenreFilm có 0 DL members.
 
-Bộ dự án đầy đủ được đóng thành `../movie_lod_complete.zip`, gồm mã, nguồn gốc, RDF/OWL, sản phẩm và evidence. **Điền tên nhóm/thành viên/lớp trên bìa**, xem lại video và tập nói trước khi nộp. Font trên máy khác cần Be Vietnam Pro hoặc dùng PDF. Video dùng giọng tổng hợp, không phải lời ghi của sinh viên; nhóm có thể đọc lại bằng giọng thành viên.
-
-## Các lỗi đã sửa và minh chứng
-
-- **Nguồn:** bổ sung 43 phản hồi thiếu; hiện **76/76 file có và hash khớp**. Một phản hồi tải lại đổi nội dung được lưu hash/time mới; giữ danh mục trước sửa. Đã chạy collect từ cache, build, reason, validate và test.
-- **Public:** triển khai lại site hiện có và giữ audience public. Kiểm tra 8 URL không đăng nhập trả 200; 4 graph RDF kiểm tra (Turtle, JSON-LD, ontology, Inception) đều đẳng cấu local, có giấy phép và mô tả máy đọc được.
-- **Video/tài liệu:** thay video cũ bằng demo tương tác bản 2.0 dài 290,05 giây, đồng bộ slide/scripts/báo cáo/hướng dẫn và chấm lại theo minh chứng.
-- **Tái lập:** bỏ gitignore loại phản hồi nguồn; thu thập giãn lượt tải và tôn trọng 429 Retry-After; validate báo file thiếu rõ ràng và chạy nhóm truy vấn ở chế độ dữ liệu phù hợp; đóng gói kiểm tra nguồn/video/public trước khi tạo ZIP.
-
-**14 test pass, 9/9 browser checks, 24 file truy vấn đã chạy.** Minh chứng mới: [validation](evidence/validation.json), [tests](evidence/tests.txt), [browser](evidence/browser_checks.json), [public HTTP/graph](evidence/publication_checks.json), [source recovery](evidence/source_recovery.json), [video](evidence/video.json), [bộ nộp](evidence/deliverables.json). `review_before_fix.json`, `self_assessment_before_fix.md` và `review_publication_2026-10-08.json` là lịch sử trước sửa.
-
-## Chạy ứng dụng
+## Chạy và tái lập
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python src/server.py
+make setup
+# Cần Java 17; JAVA phải là executable Java thật.
+make all JAVA=/path/to/java
+.venv/bin/python src/server.py --port 8000
 ```
 
-Mở **http://127.0.0.1:8000**, dừng Ctrl+C; macOS có thể dùng start.command. Nếu cổng bận thêm `--port 8001`, đổi URL/curl tương ứng. **Sau build cần khởi động lại server** để endpoint nạp graph mới.
+`make all` chạy collect → build 3.0.0 → HermiT/OWL RL → validate → pytest. Nếu chỉ tái lập từ corpus đang có, dùng `make build`, `make reason JAVA=/path/to/java`, `make validate`, `make test`. Collect có thể cần mạng; không cần thu thập lại để đọc bộ đã bàn giao. Restart server sau khi thay graph.
 
 ```bash
-.venv/bin/python src/query.py queries/02_inception.rq
-.venv/bin/python src/query.py queries/18_inferred_filmmakers.rq --reasoned
-curl -X POST http://127.0.0.1:8000/sparql \
-  -H 'Content-Type: application/sparql-query' \
-  --data-binary @queries/02_inception.rq
-curl -L -H 'Accept: text/turtle' \
-  http://127.0.0.1:8000/resource/film-Q25188
+.venv/bin/python src/query.py queries/02.rq
+.venv/bin/python src/query.py queries/20.rq --mode asserted
+.venv/bin/python src/query.py queries/20.rq --reasoned
+.venv/bin/python src/query.py queries/27.rq --mode dataset
 ```
 
-Inception: 2010/148 phút/Christopher Nolan; phim Nolan: 8 dòng; đóng góp Inception: 25 dòng với 4 vai trò. Web có 14 mẫu trực tiếp, queries có 24 file. Endpoint chỉ graph khai báo; --reasoned nạp schema và file phân loại đã lưu, không tự tính suy luận lúc truy vấn. Hosted dùng Comunica trong trình duyệt, không phải endpoint Flask public.
-
-## Quy trình và giới hạn
-
-```bash
-.venv/bin/python src/collect.py
-.venv/bin/python src/build.py
-.venv/bin/python src/prepare_web.py
-.venv/bin/python src/reason.py
-.venv/bin/python src/validate.py
-.venv/bin/python -m pytest -q
-```
-
-`collect.py --refresh` chủ động tải nguồn mới và có thể đổi dữ liệu; cache đủ/khớp hash không tải lại. Khi thay dữ liệu, cập nhật tài liệu/video, xuất bản lại và chạy check_publication.py. `make all` chạy quy trình từ cache nguồn hiện đã đủ.
-
-Contribution ghi một người, một phim, một vai trò: Director/Actor/Writer/Producer. Dùng dbo:Film/Person/Country là tái sử dụng lớp; owl:sameAs nối cá thể; sourceSnapshot ghi xuất xứ. 12 lớp dùng OWL RL; MultiGenreFilm/FilmStudio dùng SPARQL đếm IRI bổ sung. HermiT/Pellet xác nhận tính nhất quán; hai lớp cardinality vẫn dùng COUNT DISTINCT trong ứng dụng; mẫu 30 phim có chủ đích và một số nhóm genre/award ánh xạ bằng nhãn. Hash kiểm tra toàn vẹn, không bảo đảm mọi phát biểu ngoài đời đúng.
-
-## Tạo lại tài liệu, ảnh và video
-
-Sửa Markdown trong docs/CHAM_DIEM; lời slide ở src/presentation_content.py. PDF cần Pandoc/Tectonic/font Be Vietnam Pro; slide dùng python-pptx/Pillow.
+WriterDirector: 0 trước, 10 sau. Query 01–08 dùng source facts; 09–26 dùng inference; 27 dùng Dataset/TriG. Web tự chọn scope theo mẫu, đổi scope rồi bấm Run để so sánh. Endpoint `/sparql?mode=asserted|reasoned|dataset` đọc cùng exports. Browser Comunica tải các graph đã tính; không chạy reasoner cho từng request.
 
 ```bash
 .venv/bin/python src/make_slides_video.py --slides-only
+.venv/bin/python src/make_short_slides.py
+.venv/bin/python src/make_report.py
 .venv/bin/python src/make_docs.py
-.venv/bin/python src/prepare_web.py
+.venv/bin/python src/sync_document_assets.py
 ```
 
-make_docs render Markdown hiện có, không ghi đè nội dung. Slide có editable text/diagram; PDF slide hiện là bản vector có chữ tìm kiếm được, xuất từ bố cục PPTX. Kiểm tra browser cần Playwright và Chrome/Chromium; `browser_check.py --port 8000` khi server đang chạy.
-
-Ghi lại demo trên macOS cần Playwright, FFmpeg hệ thống và voice Linh. Terminal A chạy `src/demo_server.py --port 8002`; terminal B:
-
-```bash
-.venv/bin/python -m pip install playwright
-.venv/bin/python -m playwright install ffmpeg
-.venv/bin/python src/record_demo.py --port 8002
-```
-
-Các trang xem minh chứng chỉ phục vụ ghi demo cục bộ, không được xuất bản lên sản phẩm. Cảnh kết luận chỉ ghi khi public graph check đã đạt. Kịch bản có hướng dẫn dùng giọng thành viên nếu muốn.
-
-**Đóng gói:** `.venv/bin/python src/package.py` kiểm tra graph, nguồn, video, sản phẩm và public evidence rồi tạo ZIP đầy đủ ở thư mục cha; loại .venv/Git/cache/file dựng video/hosting archive. Dữ liệu CC BY-SA 4.0, mã MIT; giữ giấy phép thư viện.
-
-Tham khảo [Linked Data](https://www.w3.org/DesignIssues/LinkedData.html), [SPARQL](https://www.w3.org/TR/sparql11-query/), [OWL 2 Profiles](https://www.w3.org/TR/owl2-profiles/).
+Các trình tạo tài liệu không cần video. Evidence hiện tại gồm 15 tests, 27 competency queries, browser/query checks và đối chiếu public RDF. Consistency không chứng minh factual accuracy hay completeness; source matching chưa có annotated ground truth. Lịch sử Git không được viết lại khi xoá MP4.

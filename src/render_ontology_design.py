@@ -21,17 +21,17 @@ def main():
     readme=ROOT/'evidence/ontology_design/README.md'
     readme.write_text('''# Cách sử dụng bản thiết kế đã kiểm chứng
 
-Đây là bản đề xuất độc lập từ dữ liệu hiện có, chưa thay ontology/app đang dùng.
+Canonical OWL local đã được xuất thành 3.0.0 và kiểm tra trực tiếp bằng HermiT; ứng dụng và các graph đã đồng bộ 3.0.0.
 
 - Đọc docs/DBpedia_OWL_Design.html để xem đủ 7 bảng, định nghĩa OWL, 5 demo và kết quả truy vấn. Bảng rộng có thể cuộn ngang.
 - schema.ttl chứa các tiên đề; asserted.ttl chỉ chứa dữ liệu đầu vào; inferred.ttl chứa kết quả suy luận.
 - Trong Protégé: mở complete.ttl rồi chọn HermiT → Start reasoner. Đây là đồ thị đầy đủ chứa schema + facts, chưa gán thủ công các lớp suy luận.
 - Có thể tạo tạm một OWL đầy đủ từ `Graph().parse("schema.ttl") + Graph().parse("asserted.ttl")` bằng RDFLib. Tắt normalization của xsd:dateTime hoặc chuyển lexical timestamp về 3 chữ số thập phân trước khi serialize để tương thích HermiT cũ.
 - Query 01–08 chạy với asserted.ttl. Query 09–26 chạy với tổng schema + asserted + inferred. Query 27 chạy trên before_after.trig (hai named graph).
-- reasoning.json ghi số lượng local URI; query_results.json ghi số dòng truy vấn, có thể bao gồm sameAs alias ở một số câu hierarchy.
+- reasoning.json ghi số lượng local URI; query_results.json ghi số dòng truy vấn; các query thực thể giới hạn IRI local để loại alias. Query literal và class URI có scope riêng.
 - hermit.log là log thật; cardinality_negative.log xác nhận MultiGenreFilm không có member suy luận. Không thêm AllDifferent cho genre/film/award để ép điểm.
 - exactly 1 không thay cho kiểm tra dữ liệu thiếu trong mô hình thế giới mở.
-- Không sửa Video_demo.mp4; không tạo bản OWL thứ hai làm file chính.
+- MP4 đã được loại bỏ theo yêu cầu; dùng duy nhất full OWL canonical.
 ''')
     bundle=ROOT/'docs/DBpedia_OWL_Design.zip'
     with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
@@ -43,6 +43,6 @@ def main():
         with zipfile.ZipFile(bundle,'a',zipfile.ZIP_DEFLATED) as z:
             for name in ['Movie_Knowledge_Graph.owl','Movie_Ontology.owl','movie.ttl']:z.write(ROOT/'ontology'/name,'ontology/'+name)
             for name in ['final_owl_checks.json','final_owl_hermit.log']:z.write(ROOT/'evidence/ontology_design'/name,'evidence/'+name)
-    write_json(ROOT/'evidence/ontology_design/deliverables.json',{'artifacts':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [md,md.with_suffix('.html'),md.with_suffix('.docx'),bundle]},'authoritative_owl_unmodified':not (ROOT/'evidence/ontology_design/final_owl_checks.json').exists(),'app_unmodified':True,'video_sha256':hashlib.sha256((ROOT/'docs/Video_demo.mp4').read_bytes()).hexdigest()})
+    write_json(ROOT/'evidence/ontology_design/deliverables.json',{'artifacts':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [md,md.with_suffix('.html'),md.with_suffix('.docx'),bundle]},'authoritative_owl_unmodified':not (ROOT/'evidence/ontology_design/final_owl_checks.json').exists(),'application_version':'3.0.0','mp4_included':False})
     print(bundle)
 if __name__=='__main__':main()

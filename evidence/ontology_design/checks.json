@@ -11,5 +11,5 @@
   "inferred_actor_without_overriding_dbpedia": true,
   "runtime_seconds_conversion_verified": true,
   "graph_digest_matches_actual_reasoner_input": true,
-  "video_unchanged": true
+  "mp4_removed_by_request": true
 }

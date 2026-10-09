@@ -83,7 +83,6 @@
 \@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
 \hypersetup{
-  pdftitle={MovieLOD: tự đánh giá sau khi sửa lỗi},
   colorlinks=true,
   linkcolor={teal},
   filecolor={Maroon},
@@ -91,376 +90,27 @@
   urlcolor={teal},
   pdfcreator={LaTeX via pandoc}}
 
-\title{MovieLOD: tự đánh giá sau khi sửa lỗi}
 \author{}
-\date{Đối chiếu trực tiếp 08/10/2026 · giờ Việt Nam}
+\date{}
 
 \begin{document}
-\maketitle
 
-\subsection{Kết quả hiện tại: 10/10 theo thang tự đề
-xuất}\label{kux1ebft-quux1ea3-hiux1ec7n-tux1ea1i-1010-theo-thang-tux1ef1-ux111ux1ec1-xuux1ea5t}
+\section{MovieLOD --- Đối chiếu yêu cầu
+3.0.0}\label{movielod-ux111ux1ed1i-chiux1ebfu-yuxeau-cux1ea7u-3.0.0}
 
-\textbf{5/5 yêu cầu đạt trong phạm vi đề và các kiểm tra hiện tại.} Đề
-gốc không quy định trọng số; dùng thang chia đều \textbf{2 điểm/yêu
-cầu}, 4 tiêu chí con mỗi yêu cầu, mỗi mục 0,5 điểm. Đây là tự đánh giá
-có minh chứng, \textbf{không phải điểm chính thức của giảng viên}.
-
-Ảnh đề: \href{Screenshot\%202026-10-05\%20at\%2014.39.32.png}{đề gốc}.
-Đề yêu cầu ontology, thu thập, 4 sao, liên kết 5 sao,
-endpoint\allowbreak{}/\allowbreak{}termina\allowbreak{}l; sản phẩm gồm
-slide, báo cáo tối đa 15 trang, video 3--5 phút.
+Năm yêu cầu cốt lõi đều có minh chứng trong cùng model 3.0.0. Đây là đối
+chiếu kỹ thuật, không phải điểm do giảng viên chấm.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-YC
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Yêu cầu
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Điểm / 2
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Minh chứng chính
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-YC1 & Define an ontology for the selected domain & \textbf{2,0} & 42
-lớp; 23 quan hệ; 6 datatype property; OWL và test \\
-YC2 & Collect relevant data in this domain & \textbf{2,0} & 76/76 phản
-hồi gốc có, hash khớp; collect từ cache đã chạy lại \\
-YC3 & Transform collected data into 4* standard & \textbf{2,0} & RDF,
-HTTP IRI, giấy phép; graph public đẳng cấu local \\
-YC4 & Find and establish links to other datasets to obtain 5* standard &
-\textbf{2,0} & 1.727 owl:sameAs; bản công khai hiện tại có đầy đủ liên
-kết \\
-YC5 & Provide an interface via SPARQL
-endpoint\allowbreak{}/\allowbreak{}termina\allowbreak{}l to query data &
-\textbf{2,0} & Web, GET/POST endpoint, terminal, 24 truy vấn và kiểm
-tra \\
-Tổng & & \textbf{10,0/10} & \textbf{Cả 5 yêu cầu có minh chứng đạt} \\
-\end{longtable}
-}
-
-\subsection{Ba phần làm mất điểm đã được
-sửa}\label{ba-phux1ea7n-luxe0m-mux1ea5t-ux111iux1ec3m-ux111uxe3-ux111ux1b0ux1ee3c-sux1eeda}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Trước sửa
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Sau sửa
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Phần được khôi phục
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Thiếu 43/76 file nguồn & Đủ 76 file, 76 hash khớp. Các bản đổi nội dung
-có thời điểm/hash mới và giữ danh mục lịch sử & YC2 +0,5 \\
-Hosted dùng 12.089 triple/9 lớp, khác local & Đã triển khai 2.0; hosted
-19.339 triple/42 lớp; Turtle/JSON-LD/ontology/mô tả Inception đều đẳng
-cấu local & YC3 +0,5 \\
-Liên kết mới chỉ có đầy đủ ở local & Graph công khai đã khớp bản chứa
-1.727 liên kết & YC4 +0,5 \\
-\end{longtable}
-}
-
-Bản tự chấm trước sửa 8,5/10 được giữ ở
-\texttt{evidence\allowbreak{}/\allowbreak{}self\_\allowbreak{}as\allowbreak{}sessment\allowbreak{}\_\allowbreak{}before\_\allowbreak{}fix.\allowbreak{}md}.
-Biên bản thiếu nguồn trước sửa ở
-\texttt{review\_\allowbreak{}b\allowbreak{}efore\_\allowbreak{}fi\allowbreak{}x.\allowbreak{}json};
-kiểm tra HTTP cũ ở
-\texttt{review\_\allowbreak{}p\allowbreak{}ublicati\allowbreak{}on\_\allowbreak{}2026-\allowbreak{}10-\allowbreak{}08.\allowbreak{}js\allowbreak{}on}
-là \textbf{lịch sử}, không dùng thay kết quả mới. Đã tạo video demo 2.0
-để thay video tổng hợp cũ.
-
-\subsection{Các kiểm tra thực
-tế}\label{cuxe1c-kiux1ec3m-tra-thux1ef1c-tux1ebf}
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{src/\allowbreak{}coll\allowbreak{}ect.\allowbreak{}py} chạy
-  lại từ cache nguồn đầy đủ, xác định đủ 30 phim. API Wikidata được giãn
-  lượt tải và tôn trọng Retry-After khi trả 429; cache hợp lệ không bị
-  chờ.
-\item
-  \texttt{src/\allowbreak{}buil\allowbreak{}d.\allowbreak{}py} tạo lại
-  graph: \textbf{19.339 triple dữ liệu}, \textbf{518 triple lược đồ},
-  \textbf{42 lớp có tên}. Có \textbf{30 phim, 851 người, 1.010
-  Contribu\allowbreak{}tion, 45 công ty, 672 thực thể giải}, 75 thể
-  loại, 11 quốc gia, 15 ngôn ngữ.
-\item
-  \texttt{src/\allowbreak{}vali\allowbreak{}date.\allowbreak{}py}:
-  data\_checks\_passed=true, source\_hashes\_match=true,
-  snapshots\_checked=76, missing\_source\_files={[}{]},
-  query\_files\_executed=24. Truy vấn hierarchy/phân loại chạy ở chế độ
-  có schema và kiểu bổ sung phù hợp.
-\item
-  \texttt{src/\allowbreak{}reas\allowbreak{}on.\allowbreak{}py} đã chạy
-  lại;
-  \texttt{ontology\allowbreak{}\_\allowbreak{}reasoni\allowbreak{}ng.\allowbreak{}json}
-  ghi kết quả và không có lỗi được phát hiện trong bộ luật dùng. File
-  phân loại tách riêng khỏi dữ liệu khai báo.
-\item
-  \textbf{14 test pass} (thời gian thực tế ở
-  evidence\allowbreak{}/\allowbreak{}tests.\allowbreak{}t\allowbreak{}xt);
-  \textbf{9/9 kiểm tra trình duyệt pass}. Endpoint
-  S\allowbreak{}E\allowbreak{}L\allowbreak{}E\allowbreak{}C\allowbreak{}T/\allowbreak{}\allowbreak{}A\allowbreak{}\allowbreak{}S\allowbreak{}K/\allowbreak{}\allowbreak{}C\allowbreak{}O\allowbreak{}N\allowbreak{}S\allowbreak{}T\allowbreak{}\allowbreak{}R\allowbreak{}U\allowbreak{}C\allowbreak{}T,
-  nguồn/IRI, dữ liệu Inception và luật phân loại đã được kiểm tra.
-\item
-  \texttt{src/\allowbreak{}chec\allowbreak{}k\_\allowbreak{}public\allowbreak{}ation.\allowbreak{}py\allowbreak{}}
-  dùng HTTP không cookie/đăng nhập: \textbf{8 URL trả 200}, cả \textbf{4
-  graph RDF kiểm tra đẳng cấu local}, có giấy phép mở và mô tả RDF tra
-  cứu qua IRI.
-\item
-  Video mới ghi tương tác trình duyệt và kết quả lệnh thực thi thật,
-  \textbf{290,05 giây}, 1280×720, có giọng tổng hợp tiếng Việt Linh và
-  đủ YC1--YC5.
-\end{itemize}
-
-Các biên bản:
-\texttt{source\_\allowbreak{}r\allowbreak{}ecovery.\allowbreak{}json},
-\texttt{validati\allowbreak{}on.\allowbreak{}json},
-\texttt{ontology\allowbreak{}\_\allowbreak{}reasoni\allowbreak{}ng.\allowbreak{}json},
-\texttt{tests.\allowbreak{}tx\allowbreak{}t},
-\texttt{browser\_\allowbreak{}checks.\allowbreak{}j\allowbreak{}son},
-\texttt{publicat\allowbreak{}ion\_\allowbreak{}chec\allowbreak{}ks.\allowbreak{}json},
-\texttt{video.\allowbreak{}js\allowbreak{}on},
-\texttt{review\_\allowbreak{}2\allowbreak{}026-\allowbreak{}10-\allowbreak{}0\allowbreak{}8.\allowbreak{}json},
-\texttt{delivera\allowbreak{}bles.\allowbreak{}jso\allowbreak{}n}.
-
-\subsection{YC1 --- Ontology: 2,0/2,0}\label{yc1-ontology-2020}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Tiêu chí con
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Điểm
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Minh chứng
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Lớp phù hợp lĩnh vực và cây phân cấp & 0,5 & 42 owl:Class IRI;
-Creative\allowbreak{}\allowbreak{}Work/\allowbreak{}\allowbreak{}Age\allowbreak{}nt/\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution/\allowbreak{}\allowbreak{}Genre/\allowbreak{}\allowbreak{}Aw\allowbreak{}ard;
-dùng
-Film/\allowbreak{}\allowbreak{}Per\allowbreak{}son/\allowbreak{}\allowbreak{}Coun\allowbreak{}try
-trực tiếp từ DBpedia \\
-Quan hệ và datatype property có ý nghĩa & 0,5 & 23 object property, 6
-datatype property; domain/range và mô hình người--phim--vai trò \\
-Có ngữ nghĩa OWL và ràng buộc & 0,5 &
-equivale\allowbreak{}nt\allowbreak{}Class,\allowbreak{} giao/hợp,
-restriction tồn tại/hasValue, inverse, functional, cardinality, disjoint
-khi phù hợp \\
-Ontology đọc được và test minh họa & 0,5 & Hai file OWL, Turtle, kiểm
-tra bản xuất và các luật OWL RL trong tests \\
-\end{longtable}
-}
-
-\textbf{Giới hạn giữ nguyên:} 12 lớp dùng OWL RL;
-Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film/\allowbreak{}\allowbreak{}F\allowbreak{}ilm\allowbreak{}Studi\allowbreak{}o
-dùng COUNT DISTINCT bổ sung. Đếm IRI là quy tắc ứng dụng, không tự chứng
-minh cardinality OWL DL do OWL không mặc định mọi IRI khác nhau đều chỉ
-các cá thể khác nhau. Đã chạy
-Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet và xác
-nhận nhất quán; hai lớp cardinality có 0 cá thể được suy luận DL. Đề
-không bắt buộc reasoner DL hay công cụ cụ thể; không tự cộng/trừ điểm vì
-công cụ ngoài 5 yêu cầu.
-
-\subsection{YC2 --- Thu thập: 2,0/2,0}\label{yc2-thu-thux1eadp-2020}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Tiêu chí con
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Điểm
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Minh chứng
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Dữ liệu thật liên quan đến điện ảnh & 0,5 & 30 phim và các thực thể liên
-quan lấy từ
-Wikidata\allowbreak{}/\allowbreak{}\allowbreak{}D\allowbreak{}Bpedia\allowbreak{} \\
-Có mã thu thập và xác định danh tính & 0,5 & collect.py; sitelink chính
-xác; DBpedia root phải có dbo:Film \\
-Có metadata và quy tắc nguồn & 0,5 &
-U\allowbreak{}R\allowbreak{}L/\allowbreak{}prov\allowbreak{}ider/\allowbreak{}tim\allowbreak{}e/\allowbreak{}status\allowbreak{}/\allowbreak{}hash/\allowbreak{}pa\allowbreak{}th;
-source\allowbreak{}Sn\allowbreak{}apshot; ghi mốc mới khi phản hồi
-đổi \\
-Giữ đủ phản hồi gốc và kiểm tra tái lập & 0,5 & 76/76 file và hash khớp;
-collect/\allowbreak{}build/\allowbreak{}va\allowbreak{}lidate/\allowbreak{}r\allowbreak{}eason
-chạy lại \\
-\end{longtable}
-}
-
-43 phản hồi thiếu đã được bổ sung. Không gán hash cũ cho phản hồi đổi
-nội dung; một phản hồi được lưu hash/thời điểm mới và dựng lại dữ liệu.
-Danh mục trước sửa ở
-\texttt{source\_\allowbreak{}m\allowbreak{}anifest\_\allowbreak{}before\_\allowbreak{}r\allowbreak{}ecovery.\allowbreak{}json}.
-Quy tắc gitignore loại phản hồi nguồn đã được bỏ; ZIP nộp chứa đầy đủ
-phản hồi gốc. Hash kiểm tra toàn vẹn byte, không chứng minh tất cả phát
-biểu ngoài đời đúng. Không trừ vì chỉ 30 phim: đề không đưa số lượng tối
-thiểu.
-
-\subsection{YC3 --- Chuyển đổi 4 sao:
-2,0/2,0}\label{yc3-chuyux1ec3n-ux111ux1ed5i-4-sao-2020}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Tiêu chí con
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Điểm
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Minh chứng
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Chuyển nguồn thành RDF có lớp/quan hệ/giá trị & 0,5 & build.py; 19.339
-triple, datatype năm/thời lượng; test Inception \\
-Định dạng mở và HTTP IRI có thể tra cứu & 0,5 &
-Turtle/\allowbreak{}\allowbreak{}J\allowbreak{}\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D/\allowbreak{}\allowbreak{}O\allowbreak{}\allowbreak{}W\allowbreak{}L;
-trang resource có JSON-LD và liên kết Turtle \\
-Giấy phép mở, ghi công và metadata dataset & 0,5 & CC BY-SA 4.0;
-L\allowbreak{}I\allowbreak{}C\allowbreak{}E\allowbreak{}N\allowbreak{}S\allowbreak{}E-\allowbreak{}\allowbreak{}D\allowbreak{}A\allowbreak{}T\allowbreak{}A.\allowbreak{}txt\allowbreak{};
-Dublin Core/VoID \\
-Công bố bản hiện tại, kiểm tra không đăng nhập & 0,5 & URL public 200;
-Turtle và JSON-LD đẳng cấu local; trạng thái succeeded thật \\
-\end{longtable}
-}
-
-Mức sao cộng dồn theo
-\href{https://www.w3.org/DesignIssues/LinkedData.html}{Linked Data và
-thang sao}. Kết luận dựa trên giấy phép, HTTP IRI, khả năng tra cứu và
-graph công khai đúng phiên bản, không chỉ file RDF cục bộ hoặc giá trị
-audience trong JSON. Content negotiat\allowbreak{}ion/\allowbreak{}303
-được kiểm tra ở Flask local; hosted tĩnh cung cấp HTML/JSON-LD và link
-RDF, không tự khẳng định nó có cùng hành vi 303.
-
-\subsection{YC4 --- Liên kết 5 sao:
-2,0/2,0}\label{yc4-liuxean-kux1ebft-5-sao-2020}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Tiêu chí con
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Điểm
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Minh chứng
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Có liên kết tới dataset ngoài & 0,5 & 1.699 Wikidata + 28 DBpedia =
-1.727 owl:sameAs \\
-Có quy tắc cùng danh tính & 0,5 & QID/sitelink chính xác; chủ thể
-DBpedia khớp và có kiểu Film \\
-Lưu, kiểm kê và truy vấn liên kết & 0,5 &
-link\_\allowbreak{}aud\allowbreak{}it.\allowbreak{}json;\allowbreak{}
-query 05 trả 58 dòng theo phim; query 08 True \\
-Hoàn tất điều kiện 4 sao + liên kết trên bản public & 0,5 & Graph public
-đẳng cấu bản chứa toàn bộ liên kết; IRI RDF tra cứu được \\
-\end{longtable}
-}
-
-Tái dùng lớp DBpedia ở YC1 khác sameAs nối cá thể ở YC4.
-source\allowbreak{}Sn\allowbreak{}apshot ghi xuất xứ, không thay sameAs.
-Tổng liên kết trên mọi nhóm thực thể khác số dòng truy vấn chỉ theo
-phim. Không tự cho điểm thêm vì tăng số lượng liên kết.
-
-\subsection{YC5 --- Truy vấn: 2,0/2,0}\label{yc5-truy-vux1ea5n-2020}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedleft\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Tiêu chí con
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
-Điểm
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Minh chứng
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Web cho người dùng & 0,5 & Query editor, 14 mẫu trực tiếp,
-results/\allowbreak{}export, tìm phim và mở IRI \\
-Endpoint hỗ trợ giao thức truy vấn & 0,5 & GET/POST; JSON SELECT/ASK;
-Turtle
-C\allowbreak{}O\allowbreak{}N\allowbreak{}S\allowbreak{}T\allowbreak{}R\allowbreak{}U\allowbreak{}C\allowbreak{}\allowbreak{}T/\allowbreak{}\allowbreak{}D\allowbreak{}E\allowbreak{}S\allowbreak{}C\allowbreak{}R\allowbreak{}I\allowbreak{}\allowbreak{}B\allowbreak{}E;
-test protocol \\
-Terminal đọc file SPARQL & 0,5 & query.py; 24 file; --reasoned cho
-schema/phân loại \\
-Câu hỏi và kết quả được kiểm tra & 0,5 & Inception
-2010/\allowbreak{}148\allowbreak{}/\allowbreak{}\allowbreak{}Nolan; 8
-phim Nolan; 25 đóng góp; ASK True;
-tests/\allowbreak{}br\allowbreak{}owser \\
-\end{longtable}
-}
-
-Endpoint mặc định đọc graph khai báo. Hosted có Comunica trong trình
-duyệt, không phải endpoint Flask public. Query 17/18 LIMIT 20, không lấy
-20 dòng làm tổng
-Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker.\allowbreak{}
-Không có requirement về
-Update/\allowbreak{}f\allowbreak{}ederated\allowbreak{} SERVICE nên
-không tự trừ vì endpoint chặn chúng.
-
-\subsection{Sản phẩm nộp ngoài thang
-10}\label{sux1ea3n-phux1ea9m-nux1ed9p-ngouxe0i-thang-10}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Sản phẩm
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Kết quả
 \end{minipage} \\
@@ -468,69 +118,48 @@ Kết quả
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Báo cáo ≤15 trang & Bản 2.0 đã cập nhật; số trang thực ở
-document\allowbreak{}\_\allowbreak{}pages.\allowbreak{}j\allowbreak{}son \\
-Slide & 24 trang PPTX/PDF, font Be Vietnam Pro, ảnh app thật, sơ đồ; có
-Speaker Notes và 11 khung Protégé để nhóm bổ sung \\
-Video 3--5 phút & Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4
-mới: 290,05 giây; ghi thao tác app và kết quả lệnh; giọng tổng hợp
-Linh \\
-Script thuyết trình riêng &
-Script\_\allowbreak{}t\allowbreak{}huyet\_\allowbreak{}tr\allowbreak{}inh.\allowbreak{}md/\allowbreak{}p\allowbreak{}df,
-khớp 24 slide và có câu hỏi bảo vệ \\
-Tài liệu đọc hiểu & A--Z, hướng dẫn chi tiết, mô tả ontology và bảng đầy
-đủ tiếng Việt \\
-Mã/dữ liệu/giấy phép/evidence & ZIP mới chứa nguồn, RDF/OWL, truy vấn,
-biên bản và sản phẩm nộp \\
+Ontology & 37 named classes, DBpedia reuse, restrict\allowbreak{}ions,
+inverse/\allowbreak{}chain, HermiT & Đáp ứng về kỹ thuật \\
+Dữ liệu nguồn & 76 phản hồi giữ nguyên byte/hash, 30 phim, provenance &
+Đáp ứng trong mẫu \\
+Công bố RDF & HTTP IRI,
+Turtle/\allowbreak{}\allowbreak{}J\allowbreak{}\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D/\allowbreak{}\allowbreak{}O\allowbreak{}\allowbreak{}W\allowbreak{}L,
+license, public graph equality & Đồng bộ 3.0.0 \\
+Liên kết & 1.727 sameAs,
+Wikidata\allowbreak{}/\allowbreak{}\allowbreak{}D\allowbreak{}Bpedia\allowbreak{};
+scope đếm rõ & Đáp ứng; chưa đo
+precisio\allowbreak{}n/\allowbreak{}recall\allowbreak{} \\
+SPARQL & 27 competency questions, ba graph scopes,
+S\allowbreak{}E\allowbreak{}L\allowbreak{}E\allowbreak{}C\allowbreak{}T/\allowbreak{}\allowbreak{}A\allowbreak{}\allowbreak{}S\allowbreak{}K/\allowbreak{}\allowbreak{}C\allowbreak{}O\allowbreak{}N\allowbreak{}S\allowbreak{}T\allowbreak{}\allowbreak{}R\allowbreak{}U\allowbreak{}C\allowbreak{}T/\allowbreak{}\allowbreak{}D\allowbreak{}E\allowbreak{}S\allowbreak{}\allowbreak{}C\allowbreak{}R\allowbreak{}I\allowbreak{}B\allowbreak{}E
+& Đáp ứng; query không tự chạy DL reasoner \\
 \end{longtable}
 }
 
-Giảng viên có thể dùng trọng số khác hoặc đánh giá chất lượng bảo vệ.
-Nhóm cần điền tên thành viên/lớp trên bìa, xem lại video và tập trình
-bày; không được gọi giọng tổng hợp là lời ghi của sinh viên. Các giới
-hạn về mẫu phim, ánh xạ theo nhãn và cardinality bằng COUNT DISTINCT vẫn
-được giữ.
-Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã xác
-nhận nhất quán; bảng DL nằm trong
-Ket\_\allowbreak{}qua\_\allowbreak{}reasoner\allowbreak{}.\allowbreak{}pdf.\allowbreak{}
+\subsection{Minh chứng suy luận}\label{minh-chux1ee9ng-suy-luux1eadn}
 
-\subsection{Kiểm tra lại khi sửa
-bài}\label{kiux1ec3m-tra-lux1ea1i-khi-sux1eeda-buxe0i}
+Actor 769; Filmmaker 89; Writer\allowbreak{}Di\allowbreak{}rector 10;
+min 2 credit: 17 người; min 3: 7 người; 965 chain pairs. Min cardinality
+dựa controll\allowbreak{}ed-\allowbreak{}role distinctness và hasRole
+functional. Negative
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film = 0 được ghi rõ,
+không thay bằng COUNT DISTINCT.
 
-\begin{verbatim}
-.venv/bin/python src/collect.py
-.venv/bin/python src/build.py
-.venv/bin/python src/prepare_web.py
-.venv/bin/python src/reason.py
-.venv/bin/python src/validate.py
-.venv/bin/python -m pytest -q
-\end{verbatim}
+15 tests kiểm tra model và endpoint. Các file evidence ghi hash của OWL,
+kết quả truy vấn, browser và đồ thị công khai. Kiểm tra trực tiếp bằng
+\texttt{src/\allowbreak{}vali\allowbreak{}date.\allowbreak{}py},
+\texttt{pytest},
+\texttt{src/\allowbreak{}publ\allowbreak{}ic\_\allowbreak{}query\allowbreak{}\_\allowbreak{}check.\allowbreak{}p\allowbreak{}y}
+và
+\texttt{src/\allowbreak{}chec\allowbreak{}k\_\allowbreak{}public\allowbreak{}ation.\allowbreak{}py\allowbreak{}}.
 
-Sau thay đổi dữ liệu, khởi động lại server, kiểm tra browser, cập nhật
-tài liệu và đánh giá lại tính tương thích của video, xuất bản và chạy
-check\_\allowbreak{}pu\allowbreak{}blicatio\allowbreak{}n.\allowbreak{}py.\allowbreak{}
-Chỉ giữ đề xuất 10/10 khi các minh chứng tiếp tục đạt. Không đổi điểm
-hoặc JSON trạng thái để thay cho sửa và kiểm tra thật.
+\subsection{Phần cần bổ sung khi
+nộp}\label{phux1ea7n-cux1ea7n-bux1ed5-sung-khi-nux1ed9p}
 
-\textbf{Ảnh Protégé trong bộ 24 trang:} hiện là khung chờ có hướng dẫn,
-chưa phải ảnh đã chụp.
-Checklis\allowbreak{}t\_\allowbreak{}anh\_\allowbreak{}\allowbreak{}Pr\allowbreak{}otege.\allowbreak{}md\allowbreak{}/\allowbreak{}pdf
-và các Speaker Notes ghi đúng file/view cần dùng. Đây là phần nhóm chủ
-động bổ sung theo yêu cầu, không thay bằng ảnh dựng.
-
-\subsection{Đồng bộ timestamp và
-reasoner}\label{ux111ux1ed3ng-bux1ed9-timestamp-vuxe0-reasoner}
-
-File chính
-Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l,
-Turtle/\allowbreak{}\allowbreak{}J\allowbreak{}\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D
-và Web dùng timestamp đến mili giây.
-Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã xác
-nhận nhất quán và không có lớp không khả thỏa; 12 lớp khớp OWL RL.
-Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film/\allowbreak{}\allowbreak{}F\allowbreak{}ilm\allowbreak{}Studi\allowbreak{}o
-có 0 cá thể suy luận DL; 30/6 là số đếm ứng dụng. Video giữ nguyên theo
-yêu cầu nhóm; không coi hash dữ liệu trong video là hash bản mới.
-video\_\allowbreak{}da\allowbreak{}taset\_\allowbreak{}co\allowbreak{}mpatibil\allowbreak{}ity.\allowbreak{}json\allowbreak{}
-xác minh mọi triple khác retrievedAt và byte MP4 giữ nguyên.
+11 ô ảnh Protégé trong slide cần screenshot thật theo checklist. Các ảnh
+web đã chụp; sơ đồ tác giả không giả làm giao diện Protégé. MP4 đã xoá
+theo yêu cầu; demo bằng thao tác trực tiếp. Nếu rubric riêng bắt buộc
+video hoặc ảnh đã điền, phần đó chưa hoàn tất. Số lớp và số triple không
+tự quyết định điểm. Mẫu có chủ đích, mapping nhãn và identity matching
+chưa có ground truth vẫn là giới hạn học thuật.
 
 \end{document}

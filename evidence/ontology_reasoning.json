@@ -1,59 +1,55 @@
 {
-  "method": "owlrl OWL RL/RDF rule closure for RL_DEFINED; direct SPARQL aggregate materialization for CARDINALITY_DEFINED (N>=2 qualified cardinality is outside the OWL RL profile); not a complete OWL DL consistency proof",
+  "method": "HermiT types and OWL RL relationships; no COUNT classification",
   "rl_defined": [
     "ActingContribution",
     "DirectingContribution",
     "WritingContribution",
     "ProducingContribution",
-    "Actor",
     "Filmmaker",
-    "AwardWinner",
     "ActionFilm",
-    "ComedyFilm",
-    "DramaFilm",
-    "ScienceFictionFilm",
-    "AwardWinningFilm"
+    "AwardWinningFilm",
+    "WriterDirector",
+    "ActorFilmmaker",
+    "AwardWinningFilmmaker",
+    "AwardWinningActionFilm",
+    "GenreCrossingFilm"
   ],
   "cardinality_defined": [
-    "MultiGenreFilm",
-    "FilmStudio"
+    "MultiCreditContributor",
+    "ThreeCreditContributor"
   ],
-  "asserted_counts": {
-    "ActingContribution": 0,
-    "DirectingContribution": 0,
-    "WritingContribution": 0,
-    "ProducingContribution": 0,
-    "Actor": 0,
-    "Filmmaker": 0,
-    "AwardWinner": 0,
-    "ActionFilm": 0,
-    "ComedyFilm": 0,
-    "DramaFilm": 0,
-    "ScienceFictionFilm": 0,
-    "AwardWinningFilm": 0,
-    "MultiGenreFilm": 0,
-    "FilmStudio": 0
-  },
   "inferred_counts": {
     "ActingContribution": 855,
     "DirectingContribution": 31,
     "WritingContribution": 51,
     "ProducingContribution": 73,
-    "Actor": 769,
     "Filmmaker": 89,
-    "AwardWinner": 290,
     "ActionFilm": 12,
-    "ComedyFilm": 4,
-    "DramaFilm": 25,
-    "ScienceFictionFilm": 6,
     "AwardWinningFilm": 26,
-    "MultiGenreFilm": 30,
-    "FilmStudio": 6
+    "WriterDirector": 10,
+    "ActorFilmmaker": 7,
+    "AwardWinningFilmmaker": 65,
+    "AwardWinningActionFilm": 10,
+    "GenreCrossingFilm": 8,
+    "MultiCreditContributor": 17,
+    "ThreeCreditContributor": 7
   },
-  "count_scope": "Local resource IRIs only; external sameAs aliases excluded",
-  "nolan_inferred_classes": [
-    "Filmmaker",
-    "AwardWinner"
-  ],
-  "detected_errors": []
+  "asserted_counts": {
+    "ActingContribution": 0,
+    "DirectingContribution": 0,
+    "WritingContribution": 0,
+    "ProducingContribution": 0,
+    "Filmmaker": 0,
+    "ActionFilm": 0,
+    "AwardWinningFilm": 0,
+    "WriterDirector": 0,
+    "ActorFilmmaker": 0,
+    "AwardWinningFilmmaker": 0,
+    "AwardWinningActionFilm": 0,
+    "GenreCrossingFilm": 0,
+    "MultiCreditContributor": 0,
+    "ThreeCreditContributor": 0
+  },
+  "detected_errors": [],
+  "version": "3.0.0"
 }

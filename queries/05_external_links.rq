@@ -1,6 +1,0 @@
-PREFIX dbo: <http://dbpedia.org/ontology/>
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-SELECT ?title ?externalLink WHERE {
-  ?film a dbo:Film ; ex:title ?title ; owl:sameAs ?externalLink .
-} ORDER BY ?title ?externalLink

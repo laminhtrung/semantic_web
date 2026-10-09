@@ -810,7 +810,7 @@
   ],
   "removed": "FeatureFilm (Q11424 means film, not necessarily feature); unsupported Documentary/FictionGenre; blanket FilmAward fallback; duplicate vocabulary",
   "preserved_entities": 1699,
-  "base_dataset_sha256": "c29cd4d8939d36a800b7e0f367f0c6985e1fb5ee2b298b0cbbb77f76de2c49fd",
+  "base_dataset_sha256": "d25bca8e8ca5b4b20ef2018132d7cfd6f7bceac92a83abf12b439fe3cea6a143",
   "reference_versions": {
     "official_archive_sha256": "a0ca30c8f25cf2d2957639dcad4fd1115f37a856d6d542fd50bba3bf9fa6bf9f",
     "official_development_url": "https://raw.githubusercontent.com/dbpedia/extraction-framework/master/ontology.owl",

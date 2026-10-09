@@ -1,6 +1,0 @@
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-# Requires inference. ex:FilmStudio = ProductionCompany credited on >=3 films in this dataset.
-SELECT ?companyName WHERE {
-  ?company a ex:FilmStudio ; rdfs:label ?companyName .
-} ORDER BY ?companyName

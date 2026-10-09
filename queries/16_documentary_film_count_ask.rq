@@ -1,3 +1,0 @@
-PREFIX ex: <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/ontology#>
-# Honest limitation check: the ontology defines DocumentaryFilm, but this 30-film sample has none.
-ASK { ?f a ex:DocumentaryFilm }

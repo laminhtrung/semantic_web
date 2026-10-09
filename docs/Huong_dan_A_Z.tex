@@ -41,19 +41,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{longtable,booktabs,array}
-\usepackage{caption}
-\captionsetup[table]{skip=6pt}
-\newcounter{none} % for unnumbered tables
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -83,7 +70,6 @@
 \@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
 \hypersetup{
-  pdftitle={MovieLOD: hướng dẫn đọc và chạy từ A đến Z},
   colorlinks=true,
   linkcolor={teal},
   filecolor={Maroon},
@@ -91,172 +77,122 @@
   urlcolor={teal},
   pdfcreator={LaTeX via pandoc}}
 
-\title{MovieLOD: hướng dẫn đọc và chạy từ A đến Z}
 \author{}
-\date{MovieLOD 2.0 · Đối chiếu ngày 08/10/2026}
+\date{}
 
 \begin{document}
-\maketitle
 
-\subsection{Đọc theo thứ tự
-nào?}\label{ux111ux1ecdc-theo-thux1ee9-tux1ef1-nuxe0o}
+\section{MovieLOD --- Hướng dẫn bắt đầu với repo hiện
+tại}\label{movielod-hux1b0ux1edbng-dux1eabn-bux1eaft-ux111ux1ea7u-vux1edbi-repo-hiux1ec7n-tux1ea1i}
+
+\begin{quote}
+\textbf{Phiên bản:} Ontology, dữ liệu, web và truy vấn dùng chung 3.0.0.
+MP4 đã được xoá theo yêu cầu; tài liệu demo dùng cho trình diễn trực
+tiếp.
+\end{quote}
+
+\subsection{Đọc đúng tài
+liệu}\label{ux111ux1ecdc-ux111uxfang-tuxe0i-liux1ec7u}
+
+Bắt đầu bằng \href{Huong_dan_doc_hieu_project.pdf}{hướng dẫn đọc hiểu 25
+trang}. Slide chính là
+Slide.\allowbreak{}pp\allowbreak{}tx/\allowbreak{}pdf, 24 trang tiếng
+Anh; script tập nói bằng tiếng Việt. Báo cáo tiếng Anh đúng 15 trang. Ô
+chờ ảnh Protégé giữ tiếng Việt, yêu cầu ảnh mới của OWL 3.0.0.
+
+\subsection{Chạy ontology mới}\label{chux1ea1y-ontology-mux1edbi}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Đọc tài liệu này để biết chạy ứng dụng và hiểu từ khóa.
+  Mở
+  ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl
+  trong Protégé. Đây là schema + facts đầy đủ.
 \item
-  Mở \texttt{Slide.\allowbreak{}pp\allowbreak{}tx} cùng
-  \texttt{Script\_\allowbreak{}t\allowbreak{}huyet\_\allowbreak{}tr\allowbreak{}inh.\allowbreak{}pdf}
-  để tập nói.
+  Kiểm tra versionInfo 3.0.0. File
+  Movie\_\allowbreak{}\allowbreak{}On\allowbreak{}tology.\allowbreak{}o\allowbreak{}wl
+  chỉ chứa schema.
 \item
-  Đọc
-  \texttt{Kich\_\allowbreak{}ban\allowbreak{}\_\allowbreak{}video.\allowbreak{}p\allowbreak{}df}
-  để quay demo 3--5 phút.
+  Chọn HermiT → Start reasoner, đợi hoàn tất.
 \item
-  Đọc \texttt{Bao\_\allowbreak{}cao.\allowbreak{}pdf} và
-  \texttt{C\allowbreak{}H\allowbreak{}A\allowbreak{}M\_\allowbreak{}\allowbreak{}D\allowbreak{}I\allowbreak{}E\allowbreak{}\allowbreak{}M.\allowbreak{}pdf}
-  để đối chiếu yêu cầu.
-\item
-  Tra
-  \texttt{Huong\_\allowbreak{}da\allowbreak{}n\_\allowbreak{}thao\_\allowbreak{}t\allowbreak{}ac\_\allowbreak{}chi\_\allowbreak{}t\allowbreak{}iet.\allowbreak{}pdf}
-  khi cần lệnh và xử lý lỗi;
-  \texttt{Ontology\allowbreak{}\_\allowbreak{}\allowbreak{}Redesig\allowbreak{}n.\allowbreak{}pdf}
-  khi cần đầy đủ lớp/thuộc tính.
+  Tìm
+  Nolan/\allowbreak{}pe\allowbreak{}rson-\allowbreak{}\allowbreak{}Q25\allowbreak{}191.\allowbreak{}
+  Kiểm tra Filmmaker, Writer\allowbreak{}Di\allowbreak{}rector và
+  Three\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor
+  ở inferred view.
 \end{enumerate}
 
-\subsection{Chạy ứng dụng từ dữ liệu đã
-có}\label{chux1ea1y-ux1ee9ng-dux1ee5ng-tux1eeb-dux1eef-liux1ec7u-ux111uxe3-cuxf3}
+HermiT xác nhận consistent và không có named class bất khả thỏa. Kết quả
+nằm ở
+evidence\allowbreak{}/\allowbreak{}ontolog\allowbreak{}y\_\allowbreak{}design\allowbreak{}/\allowbreak{}final\_\allowbreak{}o\allowbreak{}wl\_\allowbreak{}check\allowbreak{}s.\allowbreak{}json,
+gắn với hash file OWL.
 
-Trong terminal ở thư mục dự án:
+\subsection{Truy vấn graph mới}\label{truy-vux1ea5n-graph-mux1edbi}
 
 \begin{verbatim}
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python src/server.py
+.venv/bin/python src/query_design.py queries/design/20.rq --mode asserted
+.venv/bin/python src/query_design.py queries/design/20.rq --mode reasoned
+.venv/bin/python src/query_design.py queries/design/27.rq --mode dataset
+\end{verbatim}
+
+Hai lệnh đầu trả lần lượt 0 và 10 người
+Writer\allowbreak{}Di\allowbreak{}rector.\allowbreak{} Lệnh cuối so sánh
+type chỉ xuất hiện sau inference bằng hai named graph. SELECT/ASK trả
+JSON; graph query trả Turtle.
+
+\subsection{Chạy ứng dụng hiện
+có}\label{chux1ea1y-ux1ee9ng-dux1ee5ng-hiux1ec7n-cuxf3}
+
+\begin{verbatim}
+.venv/bin/python src/server.py --port 8000
 \end{verbatim}
 
 Mở
-\texttt{http:\allowbreak{}/\allowbreak{}/\allowbreak{}1\allowbreak{}27.\allowbreak{}0.\allowbreak{}0.\allowbreak{}1\allowbreak{}:\allowbreak{}8000}.
-Nếu cổng đang bị dùng, chạy server với
-\texttt{-\allowbreak{}-\allowbreak{}port 8\allowbreak{}001}, mở URL cổng
-8001 và thay cổng trong curl. Sau khi build dữ liệu mới, dừng và chạy
-lại server để endpoint nạp graph mới. Không dừng tiến trình của người
-khác chỉ để lấy lại cổng.
+http:\allowbreak{}/\allowbreak{}/\allowbreak{}1\allowbreak{}27.\allowbreak{}0.\allowbreak{}0.\allowbreak{}1\allowbreak{}:\allowbreak{}8000.\allowbreak{}
+Nếu cổng bận, chọn cổng khác và đổi URL tương ứng. Endpoint đọc exports
+3.0.0: source facts, reasoned graph và named before/after dataset. Mẫu
+query tự chọn scope; đổi scope rồi bấm Run. Không chạy HermiT cho từng
+request.
 
-Chọn Sample queries: Inception; kết quả \textbf{2010, 148, Christopher
-Nolan}. Chọn Films directed by Christopher Nolan: \textbf{8 dòng}. Chọn
-Who contributed to Inception: \textbf{25 dòng} gồm các vai trò Director,
-Actor, Writer, Producer. Tìm Inception ở Find a film, mở trang phim để
-xem nguồn và RDF.
+\subsection{Số liệu cần nhớ}\label{sux1ed1-liux1ec7u-cux1ea7n-nhux1edb}
 
-\subsection{Từ khóa cần hiểu}\label{tux1eeb-khuxf3a-cux1ea7n-hiux1ec3u}
+OWL cuối: 37 lớp có tên, 19 object và 5 datatype property; 19.025 triple
+bao gồm schema và facts. Có 30 phim, 851 người, 1.010 credit, 45 công
+ty, 75 genre và 672 award entity. Inception: 2010, 8.880 giây (=148
+phút); Nolan đạo diễn 8 phim trong mẫu.
 
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Từ
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Nghĩa dễ nhớ
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Ontology & Bản mô tả các khái niệm, quan hệ và quy tắc \\
-Class / individual & Loại đối tượng / một đối tượng cụ thể; Film /
-Inception \\
-RDF triple & Một câu dữ liệu: chủ thể, quan hệ, đối tượng hoặc giá
-trị \\
-IRI / URI & Định danh để phân biệt thực thể; HTTP IRI còn có thể tra
-cứu \\
-SPARQL & Ngôn ngữ đặt câu hỏi trên đồ thị RDF \\
-SELECT / ASK / CONSTRUCT & Lấy bảng / hỏi đúng-sai / tạo đồ thị \\
-owl:sameAs & Hai định danh cùng chỉ một thực thể \\
-Source\allowbreak{}Sn\allowbreak{}apshot & Bản ghi URL, thời điểm, hash
-của phản hồi nguồn \\
-OWL RL & Bộ luật suy luận mà thư viện owlrl đang dùng \\
---reasoned & Nạp thêm schema và kết quả phân loại đã lưu \\
-\end{longtable}
-}
+Actor 769; Filmmaker 89; Writer\allowbreak{}Di\allowbreak{}rector 10;
+Multi\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor
+17;
+Three\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor
+7. Bốn role individual ở namespace ex:, không được bỏ qua chỉ vì thống
+kê local res: hiển thị 0 role.
 
-\subsection{Phân biệt ba việc dễ
-nhầm}\label{phuxe2n-biux1ec7t-ba-viux1ec7c-dux1ec5-nhux1ea7m}
+\subsection{Tái lập dữ liệu và tài
+liệu}\label{tuxe1i-lux1eadp-dux1eef-liux1ec7u-vuxe0-tuxe0i-liux1ec7u}
 
-Dùng \texttt{dbo:\allowbreak{}\allowbreak{}Film\allowbreak{}} là tái sử
-dụng lớp DBpedia. Nối Inception với Wikidata bằng sameAs là nối
-\textbf{cá thể}. Ghi nguồn bằng source\allowbreak{}Sn\allowbreak{}apshot
-là giữ \textbf{xuất xứ}. Ba việc này giải quyết ba câu hỏi khác nhau.
+Trình tạo slide:
+src/\allowbreak{}make\allowbreak{}\_\allowbreak{}slides\_\allowbreak{}video.\allowbreak{}py\allowbreak{}
+--slides-only. Báo cáo:
+src/\allowbreak{}make\allowbreak{}\_\allowbreak{}report.\allowbreak{}py.\allowbreak{}
+Hướng dẫn đọc hiểu:
+src/\allowbreak{}make\allowbreak{}\_\allowbreak{}reading\allowbreak{}\_\allowbreak{}guide.\allowbreak{}p\allowbreak{}y.\allowbreak{}
+Các trình tạo này không cần ghi lại MP4.
 
-Một người có thể giữ nhiều vai trò. Contribution là bản ghi \textbf{một
-người + một phim + một vai trò}. Các vai trò khác nhau có bản ghi riêng.
-Không dùng mô hình
-Credit/\allowbreak{}p\allowbreak{}articipa\allowbreak{}nt/\allowbreak{}has\allowbreak{}Cr\allowbreak{}edit
-của bản cũ.
+\texttt{make bui\allowbreak{}ld} xuất model 3.0.0 từ corpus;
+\texttt{make rea\allowbreak{}son \allowbreak{}J\allowbreak{}A\allowbreak{}V\allowbreak{}A\allowbreak{}=/\allowbreak{}path/\allowbreak{}t\allowbreak{}o/\allowbreak{}java}
+chạy HermiT trực tiếp trên canonical OWL và materialize OWL RL;
+\texttt{make val\allowbreak{}idate} kiểm tra nguồn và 27 queries;
+\texttt{make tes\allowbreak{}t} chạy pytest.
+\texttt{make all\allowbreak{}} thực hiện cả collect trước pipeline này.
+Java 17 và
+requirem\allowbreak{}ents\_\allowbreak{}rea\allowbreak{}soner.\allowbreak{}tx\allowbreak{}t
+cần có để chạy HermiT.
 
-Endpoint truy vấn dữ liệu khai báo. Muốn hỏi các lớp
-Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker được suy ra, dùng
-terminal với --reasoned. File
-inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl
-đã có; chạy reason.py khi cần tính lại sau sửa dữ liệu. Một SELECT trực
-tiếp trả 0 không có nghĩa ontology không có định nghĩa.
-
-\subsection{Số liệu và kết quả hoàn
-tất}\label{sux1ed1-liux1ec7u-vuxe0-kux1ebft-quux1ea3-houxe0n-tux1ea5t}
-
-Bản local: \textbf{42 lớp, 30 phim, 851 người, 1.010 đóng góp, 19.339
-triple, 1.727 liên kết ngoài}. Bản 2.0 đã được xuất bản công khai và
-kiểm tra không đăng nhập: dữ liệu
-Turtle/\allowbreak{}\allowbreak{}J\allowbreak{}\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D,
-ontology và mô tả RDF của Inception đều đẳng cấu với graph cục bộ. Có
-19.339 triple dữ liệu và 42 lớp ontology.
-
-Đã bổ sung 43 phản hồi còn thiếu và chạy lại quy trình: đủ 76/76 file
-nguồn, 76/76 SHA-256 khớp, không có file thiếu. Một phản hồi tải lại có
-nội dung thay đổi được ghi thời điểm/hash mới; danh mục lịch sử được giữ
-ở
-\texttt{evidence\allowbreak{}/\allowbreak{}source\_\allowbreak{}manifest\allowbreak{}\_\allowbreak{}before\_\allowbreak{}recovery\allowbreak{}.\allowbreak{}json}.
-
-Theo thang chia đều 2 điểm/yêu cầu, hiện \textbf{10/10}: cả 5 yêu cầu
-đạt trong phạm vi đề và kiểm tra hiện tại. Đây là tự đánh giá, không
-phải điểm chính thức.
-\texttt{Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4} đã được
-thay bằng demo thao tác bản 2.0, có lời tiếng Việt tổng hợp; nhóm có thể
-tự đọc lại theo kịch bản. Đọc
-\texttt{C\allowbreak{}H\allowbreak{}A\allowbreak{}M\_\allowbreak{}\allowbreak{}D\allowbreak{}I\allowbreak{}E\allowbreak{}\allowbreak{}M.\allowbreak{}md}
-để biết minh chứng và cách hoàn tất.
-
-\subsection{Slide đầy đủ và ảnh
-Protégé}\label{slide-ux111ux1ea7y-ux111ux1ee7-vuxe0-ux1ea3nh-protuxe9guxe9}
-
-Slide.\allowbreak{}pp\allowbreak{}tx/\allowbreak{}pdf hiện có \textbf{24
-trang},
-Script\_\allowbreak{}t\allowbreak{}huyet\_\allowbreak{}tr\allowbreak{}inh.\allowbreak{}md/\allowbreak{}p\allowbreak{}df
-khớp từng trang. Bản ngắn 13 trang vẫn ở
-Slide\_\allowbreak{}ng\allowbreak{}an\_\allowbreak{}13.\allowbreak{}pp\allowbreak{}tx/\allowbreak{}pdf
-cùng lời nói riêng. Có \textbf{11 khung ảnh Protégé} ghi ngay trên
-slide; xem
-Checklis\allowbreak{}t\_\allowbreak{}anh\_\allowbreak{}\allowbreak{}Pr\allowbreak{}otege.\allowbreak{}pd\allowbreak{}f
-để bổ sung. Lần này chưa có ảnh Protégé thật, không dùng khung chờ làm
-minh chứng đã chụp.
-
-\textbf{Cập nhật
-timestam\allowbreak{}p/\allowbreak{}reason\allowbreak{}er:\allowbreak{}}
-dùng duy nhất
-Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l
-cho graph đầy đủ.
-Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã
-chạy; xem
-Ket\_\allowbreak{}qua\_\allowbreak{}reasoner\allowbreak{}.\allowbreak{}pdf.\allowbreak{}
-Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4 giữ nguyên theo
-yêu cầu nhóm; timestamp trong dữ liệu mới giảm đến mili giây, nội dung
-phim/quan hệ giữ nguyên, đã kiểm tra ở
-video\_\allowbreak{}da\allowbreak{}taset\_\allowbreak{}co\allowbreak{}mpatibil\allowbreak{}ity.\allowbreak{}json\allowbreak{}.\allowbreak{}
-Video chưa thể hiện kết quả reasoner mới và vẫn nhắc bộ slide ngắn 13
-trang.
+MP4 đã xoá theo yêu cầu, không có video trong bộ bàn giao. File
+Slide\_\allowbreak{}fu\allowbreak{}ll.\allowbreak{}pptx.\allowbreak{}pdf
+là nguồn ảnh do nhóm cung cấp;
+Slide.\allowbreak{}pp\allowbreak{}tx/\allowbreak{}pdf là deck mới nhất.
 
 \end{document}

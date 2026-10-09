@@ -83,7 +83,6 @@
 \@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
 \hypersetup{
-  pdftitle={MovieLOD: kịch bản quay demo 4 phút 50 giây},
   colorlinks=true,
   linkcolor={teal},
   filecolor={Maroon},
@@ -91,341 +90,104 @@
   urlcolor={teal},
   pdfcreator={LaTeX via pandoc}}
 
-\title{MovieLOD: kịch bản quay demo 4 phút 50 giây}
 \author{}
-\date{MovieLOD 2.0 · Đối chiếu ngày 08/10/2026}
+\date{}
 
 \begin{document}
-\maketitle
 
-\subsection{Mục tiêu và thời
-lượng}\label{mux1ee5c-tiuxeau-vuxe0-thux1eddi-lux1b0ux1ee3ng}
+\section{MovieLOD --- Kịch bản demo trực tiếp
+3.0.0}\label{movielod-kux1ecbch-bux1ea3n-demo-trux1ef1c-tiux1ebfp-3.0.0}
 
-\textbf{Một video thao tác thật 4 phút 50 giây}, có lời đọc tiếng Việt;
-cho thấy đủ YC1--YC5. Video có 10 cảnh tương tác và minh chứng; không
-dùng bộ slide thay cho demo. Có thể dựng cắt cảnh giữa Protégé, trình
-soạn thảo, Web và terminal. Các lệnh được chạy thật; giữ lại đầu vào và
-kết quả trong khung hình.
-Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4 hiện đã được tạo
-từ ghi thao tác app thật và kết quả lệnh thực thi, có giọng tiếng Việt
-tổng hợp Linh; không phải ghi desktop Protégé hay lời của sinh viên.
+MP4 đã được xoá theo yêu cầu. Tài liệu giữ tên
+Kich\_\allowbreak{}ban\allowbreak{}\_\allowbreak{}video để các liên kết
+cũ vẫn đọc được; nội dung dùng cho trình diễn trực tiếp, không tạo video
+mới.
 
-\subsection{Chuẩn bị trước khi bấm
-quay}\label{chuux1ea9n-bux1ecb-trux1b0ux1edbc-khi-bux1ea5m-quay}
+\subsection{Chuẩn bị}\label{chuux1ea9n-bux1ecb}
 
-\begin{itemize}
-\tightlist
-\item
-  Mở
-  \texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}O\allowbreak{}ntology.\allowbreak{}owl}
-  bằng Protégé; tab Classes có
-  Film/\allowbreak{}\allowbreak{}Per\allowbreak{}son/\allowbreak{}\allowbreak{}Cont\allowbreak{}ribution\allowbreak{},
-  tab Object properties có
-  contribu\allowbreak{}tion\allowbreak{}By/\allowbreak{}c\allowbreak{}ontribut\allowbreak{}ion\allowbreak{}To/\allowbreak{}ha\allowbreak{}s\allowbreak{}Role.\allowbreak{}
-\item
-  Mở
-  \texttt{data/\allowbreak{}raw\allowbreak{}/\allowbreak{}snapsho\allowbreak{}ts.\allowbreak{}json},
-  \texttt{src/\allowbreak{}coll\allowbreak{}ect.\allowbreak{}py},
-  \texttt{data/\allowbreak{}pro\allowbreak{}cessed/\allowbreak{}m\allowbreak{}ovies.\allowbreak{}tt\allowbreak{}l},
-  \texttt{L\allowbreak{}I\allowbreak{}C\allowbreak{}E\allowbreak{}N\allowbreak{}S\allowbreak{}E-\allowbreak{}\allowbreak{}D\allowbreak{}A\allowbreak{}T\allowbreak{}A.\allowbreak{}txt\allowbreak{}}
-  trong editor; tăng font khoảng 18--22.
-\item
-  Chạy server ở terminal A, mở
-  \texttt{http:\allowbreak{}/\allowbreak{}/\allowbreak{}1\allowbreak{}27.\allowbreak{}0.\allowbreak{}0.\allowbreak{}1\allowbreak{}:\allowbreak{}8000};
-  nếu dùng cổng khác thay toàn bộ lệnh curl. Chạy lại server sau build
-  để không giữ graph cũ trong RAM.
-\item
-  Terminal B ở thư mục gốc, chuẩn bị lệnh bên dưới.
-  \texttt{inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl}
-  đã có; chạy lại reason.py trước buổi quay nếu cần cập nhật. Không chờ
-  reasoner chạy trong khung 3--5 phút.
-\item
-  Đặt trình duyệt 125--150\% tùy màn hình, quay 1920×1080 hoặc 1280×720,
-  30 fps; bật micro và tắt thông báo. Thử ghi 10 giây để kiểm tra tiếng.
-\item
-  Chọn câu hỏi bằng \textbf{nhãn}, không dựa số thứ tự option. Có 14 mẫu
-  trực tiếp trên Web, 24 file truy vấn tổng cộng.
-\item
-  Nếu không lấy được hình Protégé, chèn sơ đồ slide 4--5 kèm ghi rõ ``sơ
-  đồ mô hình''; vẫn quay màn hình file OWL và các ràng buộc thật.
-\end{itemize}
+Mở full OWL
+\texttt{ontology\allowbreak{}/\allowbreak{}\allowbreak{}Movie\_\allowbreak{}\allowbreak{}K\allowbreak{}nowledge\allowbreak{}\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}o\allowbreak{}wl}
+trong Protégé. Start HermiT trước buổi demo. Chạy
+\texttt{.\allowbreak{}venv/\allowbreak{}bi\allowbreak{}n/\allowbreak{}python\allowbreak{} src/\allowbreak{}ser\allowbreak{}ver.\allowbreak{}py -\allowbreak{}-\allowbreak{}port 80\allowbreak{}00}
+hoặc mở website public. Mở snapshot\allowbreak{}s.\allowbreak{}json,
+movies.ttl,
+final\_\allowbreak{}ow\allowbreak{}l\_\allowbreak{}checks\allowbreak{}.\allowbreak{}json
+và
+query\_\allowbreak{}re\allowbreak{}sults.\allowbreak{}js\allowbreak{}on
+trong editor. Tăng font để người xem đọc được. Không gọi schematic là
+screenshot Protégé.
 
-\newpage
-
-\subsection{Timeline cố định}\label{timeline-cux1ed1-ux111ux1ecbnh}
+\subsection{Luồng demo khoảng 5
+phút}\label{luux1ed3ng-demo-khoux1ea3ng-5-phuxfat}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Thời gian
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Cảnh và thao tác
+Thao tác
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Kết quả phải thấy
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Yêu cầu
+Minh chứng / lời giải thích
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-0:00--0:15 & Trang chủ, rê vào SPARQL và danh sách phim & Tên MovieLOD,
-ô truy vấn, dữ liệu phim & Giới thiệu \\
-0:15--0:50 & Trang ontology / trình xem minh chứng OWL: Film, Person,
-Contribution và ràng buộc & IRI DBpedia, đúng 1 người/phim/vai trò, 4
-vai trò & YC1 \\
-0:50--1:15 & Trình xem
-collect.\allowbreak{}py/\allowbreak{}snaps\allowbreak{}hots.\allowbreak{}jso\allowbreak{}n
-và một phản hồi gốc & Sitelink, URL,
-retrieve\allowbreak{}d\_\allowbreak{}at, SHA-256 & YC2 \\
-1:15--1:45 & Mở movies.ttl, giấy phép; mở IRI Inception và link tải RDF
-& Triple, datatype, HTTP IRI và giấy phép & YC3 \\
-1:45--2:10 & Web: External links for each film và ASK Wikidata &
-Wikidata + DBpedia của Inception, ASK True & YC4 \\
-2:10--2:50 & Web: Inception; phim Nolan; đóng góp Inception &
-2010/\allowbreak{}148\allowbreak{}/\allowbreak{}\allowbreak{}Nolan; 8
-dòng; 25 đóng góp/4 vai trò & YC5 \\
-2:50--3:15 & Web: công ty Inception; giải Godfather; Download results &
-4 công ty; 7 giải; file kết quả được tải & YC2/YC5 \\
-3:15--3:45 & Terminal: curl POST và query.py; Accept Turtle & JSON có
-Nolan; 303 theo bằng -L rồi Turtle & YC3/YC5 \\
-3:45--4:25 & Terminal: kiểu Nolan gốc; cùng câu với --reasoned;
-ActionFilm & 1 kiểu gốc → 3 kiểu khi nạp phân loại; 12 ActionFilm &
-YC1/YC5 \\
-4:25--4:50 & Hiện validation, test, kiểm tra public và kết luận & 76
-hash khớp, 13 test pass, public khớp; 10/10 tự đánh giá & Tổng kết \\
-\end{longtable}
-}
-
-\subsection{Lời đọc từng
-cảnh}\label{lux1eddi-ux111ux1ecdc-tux1eebng-cux1ea3nh}
-
-\subsubsection{0:00--0:15 --- MovieLOD · dữ liệu điện ảnh liên
-kết}\label{movielod-dux1eef-liux1ec7u-ux111iux1ec7n-ux1ea3nh-liuxean-kux1ebft}
-
-Đây là Movie L O D, ứng dụng dữ liệu phim liên kết. Nhóm sẽ minh họa năm
-yêu cầu bằng ontology, dữ liệu thật, R D F, liên kết bên ngoài và các
-truy vấn chạy trực tiếp.
-
-\subsubsection{0:15--0:50 --- YC1 · Ontology và mô hình
-Contribution}\label{yc1-ontology-vuxe0-muxf4-huxecnh-contribution}
-
-Ontology có bốn mươi hai lớp và dùng trực tiếp Film, Person, Country của
-DBpedia. Mô hình Contribution ghi một người giữ một vai trò trong một
-phim. Ba quan hệ contribution By, contribution To và has Role có ràng
-buộc đúng một giá trị. Bốn vai trò là đạo diễn, diễn viên, biên kịch và
-nhà sản xuất. Một người có thể giữ nhiều vai trò bằng các bản ghi riêng.
-Các lớp Actor và Filmmaker được phân loại từ định nghĩa thay vì nhập
-sẵn.
-
-\subsubsection{0:50--1:15 --- YC2 · Phản hồi nguồn thật và
-SHA-256}\label{yc2-phux1ea3n-hux1ed3i-nguux1ed3n-thux1eadt-vuxe0-sha-256}
-
-Mã thu thập lấy Wikidata và DBpedia, xác định phim qua sitelink
-Wikipedia chính xác. Trên màn hình là metadata và một phản hồi nguồn
-thật, có địa chỉ, thời điểm và mã băm. Các phản hồi được giữ để kiểm tra
-và chạy lại. SHA hai trăm năm mươi sáu kiểm tra toàn vẹn nội dung, không
-tự chứng minh mọi phát biểu ngoài đời đều đúng.
-
-\subsubsection{1:15--1:45 --- YC3 · RDF, HTTP IRI và giấy phép
-mở}\label{yc3-rdf-http-iri-vuxe0-giux1ea5y-phuxe9p-mux1edf}
-
-Dữ liệu được chuyển thành các bộ ba: chủ thể, quan hệ và đối tượng hoặc
-giá trị. Inception có đạo diễn Christopher Nolan, năm hai nghìn mười và
-thời lượng một trăm bốn mươi tám phút. Định danh H T T P mở được trang
-mô tả và bản R D F để tải. Dữ liệu có Turtle, JSON L D và giấy phép C C
-BY S A bốn chấm không. Phần công bố được đối chiếu với bản cục bộ trong
-biên bản kiểm tra.
-
-\subsubsection{1:45--2:10 --- YC4 · sameAs đến Wikidata và
-DBpedia}\label{yc4-sameas-ux111ux1ebfn-wikidata-vuxe0-dbpedia}
-
-Inception nối tới Wikidata và DBpedia bằng owl same As. Hai định danh
-này cùng chỉ một thực thể. Tổng dataset có một nghìn bảy trăm hai mươi
-bảy liên kết; bảng theo phim có năm mươi tám dòng. Câu ASK trả True cho
-liên kết Wikidata. Quan hệ nguồn dữ liệu được ghi riêng và không thay
-thế same As.
-
-\subsubsection{2:10--2:50 --- YC5 · Inception, phim Nolan và các vai
-trò}\label{yc5-inception-phim-nolan-vuxe0-cuxe1c-vai-truxf2}
-
-Truy vấn Inception trả năm phát hành, thời lượng và tên đạo diễn. Đổi
-câu hỏi sang phim do Nolan đạo diễn, chúng ta có tám dòng trong bộ dữ
-liệu. Truy vấn đóng góp Inception trả hai mươi lăm bản ghi, có các vai
-trò Actor, Director, Writer và Producer. Nolan xuất hiện ở những công
-việc khác nhau trong cùng phim. Các kết quả được S P A R Q L tính từ đồ
-thị. Người dùng có thể sửa câu hỏi rồi bấm Run query để chạy lại.
-
-\subsubsection{2:50--3:15 --- YC5 · Công ty, giải thưởng và tải kết
-quả}\label{yc5-cuxf4ng-ty-giux1ea3i-thux1b0ux1edfng-vuxe0-tux1ea3i-kux1ebft-quux1ea3}
-
-Ứng dụng còn có câu hỏi về công ty sản xuất, giải thưởng và nguồn.
-Inception có bốn công ty trong dữ liệu. The Godfather có bảy giải được
-ghi nhận. Nút Download results tải kết quả đang hiển thị. Có thể dùng dữ
-liệu này để kiểm tra lại bằng một công cụ khác.
-
-\subsubsection{3:15--3:45 --- YC5 · Kết quả thật từ endpoint và
-terminal}\label{yc5-kux1ebft-quux1ea3-thux1eadt-tux1eeb-endpoint-vuxe0-terminal}
-
-Đây là kết quả các lệnh đã chạy thật. P O S T tới endpoint trả J S O N
-có Inception và Christopher Nolan. Cùng câu hỏi chạy được bằng file S P
-A R Q L ở terminal. Khi gửi Accept text turtle tới định danh phim cục
-bộ, server trả chuyển hướng ba trăm linh ba; curl trừ L theo chuyển
-hướng và nhận mô tả R D F. Giao diện, endpoint và terminal dùng cùng dữ
-liệu khai báo.
-
-\subsubsection{3:45--4:25 --- YC1 + YC5 · Kiểu gốc và kiểu được phân
-loại}\label{yc1-yc5-kiux1ec3u-gux1ed1c-vuxe0-kiux1ec3u-ux111ux1b0ux1ee3c-phuxe2n-loux1ea1i}
-
-Trên dữ liệu gốc, Nolan chỉ được khai báo là Person. Chạy cùng câu với
-reasoned, kết quả bổ sung Filmmaker và AwardWinner từ file phân loại.
-Contribution có DirectorRole được phân loại
-Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution; người có
-đóng góp đó được phân loại Filmmaker. Có mười hai ActionFilm trong mẫu.
-Mười hai lớp dùng luật O W L R L. Hai lớp có ngưỡng số lượng dùng truy
-vấn đếm I R I bổ sung; phần này chưa phải bằng chứng phân loại O W L D L
-đầy đủ.
-
-\subsubsection{4:25--4:50 --- Đối chiếu minh chứng và bộ bài
-nộp}\label{ux111ux1ed1i-chiux1ebfu-minh-chux1ee9ng-vuxe0-bux1ed9-buxe0i-nux1ed9p}
-
-Bài có ontology, dữ liệu thật, R D F, liên kết và ba cách truy vấn. Các
-kiểm tra nguồn, truy vấn, test và bản công khai được lưu trong evidence
-để đối chiếu. Báo cáo, mười ba slide và video này cùng dùng mô hình hai
-chấm không. Bảng tự chấm ghi điểm theo minh chứng, không phải điểm chính
-thức của giảng viên.
-
-\subsection{Lệnh chạy thật trong cảnh
-terminal}\label{lux1ec7nh-chux1ea1y-thux1eadt-trong-cux1ea3nh-terminal}
-
-\textbf{Server ở terminal A:}
-
-\begin{verbatim}
-.venv/bin/python src/server.py
-\end{verbatim}
-
-\textbf{Terminal B --- endpoint và terminal (3:15--3:45):}
-
-\begin{verbatim}
-curl -s -X POST http://127.0.0.1:8000/sparql \
-  -H 'Content-Type: application/sparql-query' \
-  --data-binary @queries/02_inception.rq | .venv/bin/python -m json.tool
-.venv/bin/python src/query.py queries/02_inception.rq
-curl -s -L -H 'Accept: text/turtle' \
-  http://127.0.0.1:8000/resource/film-Q25188
-\end{verbatim}
-
-Muốn hiện rõ 303 trước khi theo redirect: dùng
-\texttt{curl -\allowbreak{}s \allowbreak{}-\allowbreak{}\allowbreak{}D -\allowbreak{} -\allowbreak{}o \allowbreak{}/\allowbreak{}dev/\allowbreak{}nul\allowbreak{}l -\allowbreak{}\allowbreak{}H '\allowbreak{}Ac\allowbreak{}cept:\allowbreak{} te\allowbreak{}xt/\allowbreak{}turtl\allowbreak{}e' http:\allowbreak{}/\allowbreak{}/\allowbreak{}127.\allowbreak{}0.\allowbreak{}0.\allowbreak{}1:\allowbreak{}8000\allowbreak{}/\allowbreak{}resourc\allowbreak{}e/\allowbreak{}film-\allowbreak{}\allowbreak{}Q\allowbreak{}25188}.
-
-\textbf{Kiểu Nolan và phân loại (3:45--4:25):}
-
-\begin{verbatim}
-.venv/bin/python src/query.py queries/24_nolan_asserted_types_only.rq
-.venv/bin/python src/query.py queries/24_nolan_asserted_types_only.rq --reasoned
-.venv/bin/python src/query.py queries/19_inferred_action_films.rq --reasoned
-\end{verbatim}
-
-Câu 24 chỉ là ``kiểu khai báo'' khi chạy không --reasoned: \textbf{1
-kiểu Person}. Với --reasoned, cùng truy vấn hiển thị \textbf{3 kiểu} từ
-dữ liệu đã lưu: Person, Filmmaker, AwardWinner.
-\texttt{query.\allowbreak{}py\allowbreak{}} nạp kết quả phân loại đã có,
-không tính suy luận trong thời gian quay.
-
-\subsection{Đối chiếu để không bỏ sót yêu
-cầu}\label{ux111ux1ed1i-chiux1ebfu-ux111ux1ec3-khuxf4ng-bux1ecf-suxf3t-yuxeau-cux1ea7u}
-
-{\def\LTcaptype{none} % do not increment counter
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-YC
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Phải có hình bằng chứng trong video
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-YC1 & OWL có lớp/ràng buộc và đối chiếu kiểu gốc--phân loại \\
-YC2 & Mã thu thập, danh mục nguồn và một phản hồi gốc còn có \\
-YC3 & Triple RDF, HTTP IRI, giấy phép, tải RDF; minh chứng public khớp
-local \\
-YC4 & sameAs tới
+0:00--0:25 & Trang chủ, statistics và query Inception & 30 phim, 37 lớp;
+2010 / 8880 giây / Nolan. RDF lưu giây, UI có thể hiển thị phút. \\
+0:25--1:15 & Protégé: dbo:Film, Contribu\allowbreak{}tion, hasRole &
+Reuse DBpedia; credit có đúng một người, phim và role; role controlled
+và khác nhau. \\
+1:15--1:45 & snapshot\allowbreak{}s.\allowbreak{}json và phản hồi gốc &
+76 phản hồi có
+U\allowbreak{}R\allowbreak{}L/\allowbreak{}time\allowbreak{}/\allowbreak{}hash;
+SHA kiểm tra byte, không chứng minh mọi claim đúng. \\
+1:45--2:20 & Trang resource Inception, tải
+Turtle/\allowbreak{}\allowbreak{}J\allowbreak{}\allowbreak{}S\allowbreak{}O\allowbreak{}N-\allowbreak{}\allowbreak{}L\allowbreak{}D/\allowbreak{}\allowbreak{}O\allowbreak{}\allowbreak{}W\allowbreak{}L
+và license & HTTP IRI, open RDF, CC BY-SA; public RDF khớp local
+exports. \\
+2:20--2:45 & Resource Inception: owl:sameAs & Hai IRI
 Wikidata\allowbreak{}/\allowbreak{}\allowbreak{}D\allowbreak{}Bpedia\allowbreak{}
-và ASK True \\
-YC5 & Web SELECT, endpoint POST, terminal, file kết quả tải \\
+của Inception; toàn bộ dataset có 1727 sameAs. Phân biệt identity và
+provenance. \\
+2:45--3:25 & Query 04: 25 credit Inception; 05: 8 phim Nolan & Credit
+khác với người; Nolan có
+directin\allowbreak{}g/\allowbreak{}writin\allowbreak{}g/\allowbreak{}produc\allowbreak{}ing
+records riêng. Download kết quả. \\
+3:25--4:10 & Query 20: Source facts rồi Inference, bấm Run mỗi lần &
+Writer\allowbreak{}Di\allowbreak{}rector 0 → 10; query đọc entailments
+đã tính, không chạy HermiT. \\
+4:10--4:35 & Protégé Nolan,
+Three\allowbreak{}Cre\allowbreak{}dit\allowbreak{}Contr\allowbreak{}ibutor;
+query 27 & Ba role khác nhau + hasRole functional chứng minh ba credit
+khác nhau; named graph ghi
+before/\allowbreak{}a\allowbreak{}fter.\allowbreak{} \\
+4:35--5:00 & Evidence: HermiT, tests, public graphs & Consistent, không
+unsatisf\allowbreak{}iable named class, 15 tests; nêu mẫu có chủ đích và
+giới hạn OWA. \\
 \end{longtable}
 }
 
-\subsection{Xử lý khi quay và kiểm tra bản
-xuất}\label{xux1eed-luxfd-khi-quay-vuxe0-kiux1ec3m-tra-bux1ea3n-xuux1ea5t}
-
-Nếu câu hỏi Contribution trả 0, kiểm tra server có còn chạy graph cũ
-trong RAM không; chạy lại server trên cổng trống. Nếu truy vấn
-Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker trên Web trả 0,
-chuyển sang terminal với --reasoned. Nếu trình duyệt đợi engine, dựng
-cắt phần đợi, giữ nguyên thao tác và kết quả. Không dựng kết quả giả.
-Nếu quá 5 phút, giảm thời gian rê chuột và cắt khoảng im lặng, giữ các
-cảnh YC1--YC5. Nếu thiếu hình, ghi chú nơi cần bổ sung và dùng ảnh thật
-trong
-\texttt{evidence\allowbreak{}/\allowbreak{}screens\allowbreak{}hots/\allowbreak{}}.
-
-Xuất MP4 H.264 + AAC; thời lượng 180--300 giây; xem lại một lượt để bảo
-đảm chữ đọc được, lời và thao tác khớp, có đủ 5 YC. Bản hiện có là
-\texttt{Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4}; đã kiểm
-tra thời lượng và khung hình của bản mới.
-
-\subsection{Tạo lại video tự động từ thao tác
-thật}\label{tux1ea1o-lux1ea1i-video-tux1ef1-ux111ux1ed9ng-tux1eeb-thao-tuxe1c-thux1eadt}
-
-Bản đã tạo dùng Chromium ghi thao tác Web và trang xem nguồn/kết quả
-lệnh thực thi thật; không ghi desktop Protégé. Giọng Linh tổng hợp,
-không phải lời sinh viên. Cần macOS, Playwright (kèm FFmpeg của
-Playwright), FFmpeg hệ thống và dữ liệu/evidence đã kiểm tra.
-
-Terminal A:
+\subsection{Các lệnh dự phòng}\label{cuxe1c-lux1ec7nh-dux1ef1-phuxf2ng}
 
 \begin{verbatim}
-.venv/bin/python src/demo_server.py --port 8002
+.venv/bin/python src/query.py queries/02.rq
+.venv/bin/python src/query.py queries/05.rq
+.venv/bin/python src/query.py queries/20.rq --mode asserted
+.venv/bin/python src/query.py queries/20.rq --reasoned
+.venv/bin/python src/query.py queries/27.rq --mode dataset
+curl -G 'http://127.0.0.1:8000/sparql' --data-urlencode mode=reasoned --data-urlencode query@queries/20.rq
 \end{verbatim}
 
-Terminal B:
-
-\begin{verbatim}
-.venv/bin/python -m pip install playwright
-.venv/bin/python -m playwright install ffmpeg
-.venv/bin/python src/record_demo.py --port 8002
-\end{verbatim}
-
-Script chỉ ghi cảnh kết luận khi kiểm tra public đã khớp. Chưa thay
-giọng của thành viên; có thể dùng lời bên trên để ghi giọng riêng.
-
-\textbf{Bộ slide cập nhật:} bản đầy đủ 24 trang có script riêng; video
-hiện có vẫn minh họa app và nhắc bộ ngắn 13 trang được giữ ở
-Slide\_\allowbreak{}ng\allowbreak{}an\_\allowbreak{}13.\allowbreak{}pp\allowbreak{}tx/\allowbreak{}pdf.\allowbreak{}
-Không thay đổi dữ liệu hoặc nội dung demo khi mở rộng slide.
-
-\textbf{Cập nhật
-timestam\allowbreak{}p/\allowbreak{}reason\allowbreak{}er:\allowbreak{}}
-dùng duy nhất
-Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l
-cho graph đầy đủ.
-Hermi\allowbreak{}T/\allowbreak{}\allowbreak{}P\allowbreak{}ellet đã
-chạy; xem
-Ket\_\allowbreak{}qua\_\allowbreak{}reasoner\allowbreak{}.\allowbreak{}pdf.\allowbreak{}
-Video\_\allowbreak{}de\allowbreak{}mo.\allowbreak{}mp4 giữ nguyên theo
-yêu cầu nhóm; timestamp trong dữ liệu mới giảm đến mili giây, nội dung
-phim/quan hệ giữ nguyên, đã kiểm tra ở
-video\_\allowbreak{}da\allowbreak{}taset\_\allowbreak{}co\allowbreak{}mpatibil\allowbreak{}ity.\allowbreak{}json\allowbreak{}.\allowbreak{}
-Video chưa thể hiện kết quả reasoner mới và vẫn nhắc bộ slide ngắn 13
-trang.
+Nếu query mới không có type, kiểm tra scope trước. ASK false trên graph
+nguồn là không thấy assertion, không phải OWL phủ định. Không thêm
+AllDifferent cho mọi QID để ép cardinality. Nếu cần giải thích
+Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film, negative test cho
+0 DL members dù COUNT DISTINCT có thể lớn hơn một. Điểm chính thức do
+giảng viên quyết định.
 
 \end{document}

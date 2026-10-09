@@ -30,8 +30,7 @@ def main():
     assert all(x['new']>0 and x['asserted']==0 for name,x in r['counts'].items() if name.startswith(str('ex:')) and name not in ['ex:ActionGenre','ex:DramaGenre','ex:SourceSnapshot','ex:ContributionRole','ex:Contribution'])
     queries=json.loads((out/'query_results.json').read_text());assert len(queries)>=20
     assert all(q['asserted_rows']==0 and q['reasoned_rows']>0 for q in queries if q['group']=='C')
-    video=hashlib.sha256((ROOT/'docs/Video_demo.mp4').read_bytes()).hexdigest()
-    assert video=='31ba259a7762fbf64cb6a7818842cd1c028039fe03d8c6684d8e93d5acec59fd'
-    result={'passed':True,'source_identity_links_preserved':True,'film_count':30,'actual_property_chain_pairs':len(actual),'queries_executed':len(queries),'new_domain_inferred_classes':7,'min2':r['cardinality']['min2_contributions'],'min3':r['cardinality']['min3_contributions'],'no_unique_name_assumption':True,'inferred_actor_without_overriding_dbpedia':True,'runtime_seconds_conversion_verified':True,'graph_digest_matches_actual_reasoner_input':True,'video_unchanged':True}
+    assert not list(ROOT.glob('docs/*.mp4'))
+    result={'passed':True,'source_identity_links_preserved':True,'film_count':30,'actual_property_chain_pairs':len(actual),'queries_executed':len(queries),'new_domain_inferred_classes':7,'min2':r['cardinality']['min2_contributions'],'min3':r['cardinality']['min3_contributions'],'no_unique_name_assumption':True,'inferred_actor_without_overriding_dbpedia':True,'runtime_seconds_conversion_verified':True,'graph_digest_matches_actual_reasoner_input':True,'mp4_removed_by_request':True}
     write_json(out/'checks.json',result);print(json.dumps(result,indent=2))
 if __name__=='__main__':main()

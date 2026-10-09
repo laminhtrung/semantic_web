@@ -59,8 +59,8 @@ def main():
     report.update(verified=True,actual_pdf_fonts=sorted(fonts),actual_pdf_text_sizes=sorted(sizes),
                   all_visible_word_runs_times_new_roman_13=True,all_visible_body_paragraphs_line_spacing_1_5=True,
                   page_numbers_verified=True,page_titles_match_plan=True,all_figures_have_attributed_sources=True,
-                  figures_from_supplied_pdf=sum(b['path']!='docs/report_images/academic_framework.png' for b in figures),
-                  author_generated_diagrams=1,
+                  figures_from_supplied_pdf=sum(next(x for x in sources['images'] if x['file']==b['path']).get('source_type')!='author_diagram' for b in figures),
+                  author_generated_diagrams=sum(next(x for x in sources['images'] if x['file']==b['path']).get('source_type')=='author_diagram' for b in figures),
                   cover_names_ids_and_supervisor_verified=True,official_logo_on_cover=True,
                   toc_own_page_no_table=True,toc_dotted_leaders=20)
     write_json(ROOT/'evidence/report_format_checks.json',report)

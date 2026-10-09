@@ -1,21 +1,24 @@
 PYTHON := .venv/bin/python
 
-.PHONY: setup collect build validate test serve manual all
+.NOTPARALLEL:
+
+.PHONY: setup collect build reason validate test serve manual all
 setup:
 	python3 -m venv .venv
-	$(PYTHON) -m pip install -r requirements.txt
+	$(PYTHON) -m pip install -r requirements.txt -r requirements_reasoner.txt
 collect:
 	$(PYTHON) src/collect.py
 build:
 	$(PYTHON) src/build.py
-	$(PYTHON) src/prepare_web.py
+reason:
+	$(PYTHON) src/reason.py $(if $(JAVA),--java "$(JAVA)",)
 validate:
 	$(PYTHON) src/validate.py
-	$(PYTHON) src/reason.py
+	$(PYTHON) src/prepare_web.py
 test:
 	$(PYTHON) -m pytest -q
 serve:
 	$(PYTHON) src/server.py
 manual:
-	$(PYTHON) src/make_manual.py
-all: collect build validate test
+	$(PYTHON) src/make_docs.py
+all: collect build reason validate test

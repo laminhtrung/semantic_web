@@ -22,7 +22,7 @@ with sync_playwright() as p:
     assert 'Christopher Nolan' in page.locator('#results').inner_text()
     assert page.locator('html').get_attribute('lang')=='en'
     assert 'Run query' in page.locator('#run').inner_text()
-    assert page.locator('#results th').all_text_contents()==['title','year','runtimeMinutes','director']
+    assert page.locator('#results th').all_text_contents()==['title','year','runtimeSeconds','director']
     page.screenshot(path=str(OUT/'01_app.png'),full_page=False)
     checks.append({'check':'local endpoint UI, Inception','passed':True})
     page.select_option('#sample','3')
@@ -39,7 +39,7 @@ with sync_playwright() as p:
     page.locator('#search').fill('__no_matching_film__')
     assert page.locator('#film-list').inner_text()=='No matching films found.'
     page.locator('#search').fill('')
-    page.select_option('#sample','2')
+    page.select_option('#sample','4')
     page.wait_for_function("!document.querySelector('#run').disabled")
     assert page.locator('#results tbody tr').count()>=5
     page.screenshot(path=str(OUT/'02_nolan.png'),full_page=False)
@@ -54,11 +54,11 @@ with sync_playwright() as p:
     page.wait_for_function("!document.querySelector('#run').disabled",timeout=45000)
     assert 'Christopher Nolan' in page.locator('#results').inner_text(),page.locator('#status').inner_text()
     checks.append({'check':'browser Comunica SELECT','passed':True})
-    page.select_option('#sample','5')
+    page.locator('#query-text').fill('PREFIX dbo: <http://dbpedia.org/ontology/> SELECT (COUNT(?f) AS ?count) WHERE { ?f a dbo:Film }'); page.click('#run')
     page.wait_for_function("!document.querySelector('#run').disabled",timeout=45000)
     assert page.locator('#results tbody tr').count()>0,page.locator('#status').inner_text()
     checks.append({'check':'browser Comunica GROUP BY / COUNT','passed':True})
-    page.select_option('#sample','7')
+    page.locator('#query-text').fill('ASK { <https://movie-lod-semantic-web.laminhtrung2001.chatgpt.site/resource/film-Q25188> a <http://dbpedia.org/ontology/Film> }'); page.click('#run')
     page.wait_for_function("!document.querySelector('#run').disabled",timeout=45000)
     assert 'True' in page.locator('#results').inner_text(),page.locator('#status').inner_text()
     checks.append({'check':'browser Comunica ASK','passed':True})

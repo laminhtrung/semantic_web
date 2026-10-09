@@ -2,7 +2,7 @@
 import json
 from urllib.parse import unquote
 from flask import Flask, Response, request, send_from_directory, redirect
-from rdflib import Graph, URIRef
+from rdflib import Graph, URIRef, Dataset
 from rdflib.plugins.sparql import prepareQuery
 from rdflib.plugins.sparql.parserutils import CompValue
 from common import ROOT, BASE, RES, EX
@@ -11,6 +11,8 @@ app=Flask(__name__,static_folder=None)
 app.config['MAX_CONTENT_LENGTH']=64*1024
 DATA=Graph().parse(ROOT/'data/processed/movies.ttl')
 SCHEMA=Graph().parse(ROOT/'ontology/movie.ttl')
+REASONED=Graph().parse(ROOT/'data/processed/reasoned.ttl') if (ROOT/'data/processed/reasoned.ttl').exists() else DATA+SCHEMA
+NAMED=Dataset().parse(ROOT/'data/processed/before_after.trig',format='trig') if (ROOT/'data/processed/before_after.trig').exists() else Dataset()
 
 def disallow_remote(node):
     if isinstance(node,CompValue):
@@ -41,7 +43,10 @@ def sparql():
     try:
         prepared=prepareQuery(query)
         disallow_remote(prepared.algebra)
-        result=DATA.query(prepared)
+        mode=request.args.get('mode',request.form.get('mode','asserted'))
+        if request.is_json:mode=(request.get_json(silent=True) or {}).get('mode',mode)
+        if mode not in ['asserted','reasoned','dataset']:raise ValueError('Unknown query mode.')
+        result={'asserted':DATA,'reasoned':REASONED,'dataset':NAMED}[mode].query(prepared)
         if result.type in ['SELECT','ASK']:
             return Response(result.serialize(format='json'),content_type='application/sparql-results+json')
         return Response(result.graph.serialize(format='turtle'),content_type='text/turtle; charset=utf-8')
@@ -49,7 +54,7 @@ def sparql():
         return {'error':str(e)},400
 
 @app.get('/health')
-def health():return {'status':'ok','data_triples':len(DATA),'query_engine':'RDFLib'}
+def health():return {'status':'ok','data_triples':len(DATA),'query_engine':'RDFLib','ontology_version':'3.0.0','modes':['asserted','reasoned','dataset']}
 
 @app.get('/resource/<slug>')
 @app.get('/resource/<slug>/')

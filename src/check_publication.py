@@ -13,7 +13,7 @@ def main():
     for t in local.triples((RES['film-Q25188'],None,None)):film.add(t)
     def check(path):
         try:
-            response=requests.get(BASE+path,timeout=40,headers={'User-Agent':'MovieLOD-LOD-Verification/2.0'})
+            response=requests.get(BASE+path,timeout=40,headers={'User-Agent':'MovieLOD-LOD-Verification/3.0'})
             row={'path':path,'url':BASE+path,'http_status':response.status_code,'content_type':response.headers.get('Content-Type'),'sha256':hashlib.sha256(response.content).hexdigest()}
             if response.ok and path.endswith(('.ttl','.jsonld')):
                 graph=Graph().parse(data=response.text,format='json-ld' if path.endswith('.jsonld') else 'turtle');row['triples']=len(graph)

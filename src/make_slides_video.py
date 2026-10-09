@@ -1,4 +1,5 @@
-"""Create the detailed 24-slide editable PPTX and matching PDF. Video recording has its own script."""
+# -*- coding: utf-8 -*-
+"""Create the detailed 24-slide editable PPTX and matching PDF. No video generation."""
 import argparse
 import re
 import math
@@ -13,7 +14,7 @@ from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
 from common import ROOT, write_json
-from presentation_content_en import SLIDES, PROTEGE_SHOTS
+from presentation_content_v3 import SLIDES, PROTEGE_SHOTS
 
 SCALE=120
 INK='152B3A'; TEAL='007F82'; GOLD='E8B65D'; PAPER='F3F6F7'; WHITE='FFFFFF'; MUTED='506776'; LINE='DDE6E9'
@@ -26,11 +27,11 @@ class Canvas:
         self.ps.background.fill.solid();self.ps.background.fill.fore_color.rgb=RGBColor.from_string(bg)
         self.im=Image.new('RGB',(1920,1080),'#'+bg);self.d=ImageDraw.Draw(self.im)
         self.rect(0,0,.13,9,TEAL)
-        self.text(.65,.35,13,.35,'MOVIELOD   /   SEMANTIC WEB   /   ONTOLOGY 2.0',12,GOLD if dark else TEAL,True)
+        self.text(.65,.35,13,.35,'MOVIELOD   /   SEMANTIC WEB   /   ONTOLOGY 3.0.0',12,GOLD if dark else TEAL,True)
         self.text(.65,.95,14.7,.9,title,34,WHITE if dark else INK,True)
         self.text(.67,1.88,14.6,.6,subtitle,17,'B8CDD6' if dark else MUTED)
         self.rect(.65,8.43,14.7,.01,'395361' if dark else LINE)
-        self.text(.65,8.58,13,.22,'Data checked: 08 Oct 2026  •  Sources: project code and evidence/',10,'B8CDD6' if dark else MUTED)
+        self.text(.65,8.58,13,.22,'Data checked: 09 Oct 2026  •  Sources: project code and evidence/',10,'B8CDD6' if dark else MUTED)
         self.text(14.5,8.55,1,.3,f'{i:02d} / {len(SLIDES)}',12,GOLD if dark else TEAL,True)
     def rect(self,x,y,w,h,color,rounded=False):
         shape=self.ps.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE if rounded else MSO_SHAPE.RECTANGLE, Inches(x),Inches(y),Inches(w),Inches(h))
@@ -187,7 +188,7 @@ def technical_notes(s):
                 return 'class expression'
             value=str(term)
             return ('ex:'+value[len(str(EX)):] if value.startswith(str(EX)) else 'dbo:'+value.rsplit('/',1)[-1] if value.startswith('http://dbpedia.org/ontology/') else value.rsplit('/',1)[-1])
-        lines=['Reference: all 23 object properties (not intended to be read aloud in full):','| Property | Domain | Range | Inverse / characteristics |','|:--|:--|:--|:--|']
+        lines=['Reference: all 19 object properties (not intended to be read aloud in full):','| Property | Domain | Range | Inverse / characteristics |','|:--|:--|:--|:--|']
         for prop in sorted(set(schema.subjects(RDF.type,OWL.ObjectProperty)),key=str):
             inverse=schema.value(prop,OWL.inverseOf)
             if inverse is None:inverse=next(schema.subjects(OWL.inverseOf,prop),None)
@@ -195,10 +196,9 @@ def technical_notes(s):
             lines.append('| '+name(prop)+' | '+name(schema.value(prop,RDFS.domain))+' | '+name(schema.value(prop,RDFS.range))+' | '+flags+' |')
         return '\n'.join(lines)
     if s['kind']=='endpoint':
-        report=json.loads((ROOT/'evidence/review_2026-10-08.json').read_text())
-        lines=['Reference: 24 queries; values are result-row counts or ASK booleans:','| File | Asserted | With schema / inference |','|:--|:--|:--|']
-        for row in report['queries']:lines.append('| '+row['file']+' | '+str(row['asserted_result']).lower()+' | '+str(row['with_saved_inference_result']).lower()+' |')
-        lines.append('Queries 14/15 each return one aggregate row. Queries 17/18 have LIMIT 20; full Actor/Filmmaker totals are 769/89. Query 24 returns one asserted type or three with inference.')
+        report=json.loads((ROOT/'evidence/ontology_design/query_results.json').read_text())
+        lines=['Reference: 27 design queries, asserted versus reasoned results:']
+        for row in report:lines.append(str(row['number'])+'. '+row['question']+': '+str(row['asserted_rows'])+' → '+str(row['reasoned_rows']))
         return '\n'.join(lines)
     return ''
 
@@ -208,16 +208,16 @@ def render_slide(c,s):
     if kind=='cover':
         c.text(.85,3,8.5,1.6,'From movie data\nto a knowledge graph',35,WHITE,True)
         c.text(.85,5.08,8,.7,'Ontology · RDF · Linked Open Data · SPARQL',21,'B8CDD6')
-        c.text(.85,6.3,8,.8,'Full 24-slide presentation\nTeam / members / class: [complete before submission]',17,'B8CDD6')
-        for i,(n,label) in enumerate([('30','real films'),('42','named classes'),('1,727','external links')]):
+        c.text(.85,6.1,8,1.3,'La Minh Trung (20251319M)\nNguyen Thu Uyen (20252279M)\nNguyen Thi Nha Linh (20261262M)\nNguyen Khac Thai Binh (20251324M)',14,'B8CDD6')
+        for i,(n,label) in enumerate([('30','real films'),('37','named classes'),('1,727','external links')]):
             c.rect(10.05,2.95+i*1.5,5.15,1.28,'24424F',True);c.text(10.32,3.11+i*1.5,2.2,.65,n,30,GOLD,True);c.text(12.63,3.32+i*1.5,2.3,.4,label,17,WHITE)
     elif kind=='requirements':
         table(c,.8,2.95,[1.05,4.25,9.25],['ID','Requirement','Deliverable / evidence'],s['rows'],size=20,row_min=.85)
-        note(c,'Required: report ≤15 pages · slides · 3–5-minute video. Running examples: Inception and Nolan.')
+        note(c,'Report: 15 pages · main slides: 24 · MP4 excluded by request. Examples: Inception and Nolan.')
     elif kind=='pipeline':
         for i,(n,title,body) in enumerate(s['stages']):c.card(.8+i*3.72,2.95,3.43,3.05,title,body,n)
         c.rect(.8,6.35,14.55,1.22,TEAL,True)
-        c.text(1.05,6.53,14,.92,'APPLICATION: Web / Flask + RDFLib / Comunica / Terminal\nEndpoint: movies.ttl.  --reasoned: adds schema + inferred_classes.ttl.',18,WHITE,True)
+        c.text(1.05,6.53,14,.92,'NEW MODEL: asserted.ttl + schema.ttl + inferred.ttl; query 27 uses before_after.trig.\nAPPLICATION: Flask / RDFLib / Comunica share the canonical version-3 graph exports.',18,WHITE,True)
     elif kind=='metrics':
         for i,(n,label) in enumerate(s['metrics']):
             x=.8+(i%3)*4.96;y=2.96+(i//3)*2.18
@@ -226,7 +226,7 @@ def render_slide(c,s):
     elif kind=='ontology_overview':
         for i,(n,label) in enumerate(s['groups']):
             y=2.88+i*.65;c.rect(.8,y,7.38,.53,WHITE,True);c.text(1,y+.1,1.65,.36,n,17,TEAL,True);c.text(2.6,y+.1,5.3,.4,label,14 if i==5 else 16,INK)
-        c.text(1,7.04,6.95,.73,'3 DBpedia classes + 39 ex: classes\n14 classes receive types; 42 classes explicitly declared.',16,MUTED)
+        c.text(1,7.04,6.95,.73,'37 named classes: 17 dbo: + 1 void: + 19 ex:\n10 inferred subsets + 4 supporting credit types.',16,MUTED)
         proof_photo(c,s['photo'])
     elif kind=='hierarchy':
         tree(c,.8,2.86,7.35,s['tree'],row_height=.4,size=18)
@@ -249,9 +249,9 @@ def render_slide(c,s):
     elif kind=='owl_rules':
         for i,(title,body) in enumerate(s['cards']):small_card(c,.8+(i%2)*7.48,2.95+(i//2)*2.42,7.18,2.13,title,body,18)
     elif kind=='defined_table':
-        reason=json.loads((ROOT/'evidence/ontology_reasoning.json').read_text())
-        meanings={'ActingContribution':'Contribution with ActorRole','DirectingContribution':'Contribution with DirectorRole','WritingContribution':'Contribution with WriterRole','ProducingContribution':'Contribution with ProducerRole','Actor':'Person with acting contributions','Filmmaker':'Person with filmmaking contributions','AwardWinner':'Person who receives an award','ActionFilm':'Film with ActionGenre','ComedyFilm':'Film with ComedyGenre','DramaFilm':'Film with DramaGenre','ScienceFictionFilm':'Film with ScienceFictionGenre','AwardWinningFilm':'Film that receives an award','MultiGenreFilm':'Film with at least 2 Genre IRIs','FilmStudio':'Company with at least 3 Film IRIs'}
-        rows=[[n,meanings[n],reason['inferred_counts'][n],'OWL RL' if n in reason['rl_defined'] else 'IRI counting'] for n in reason['rl_defined']+reason['cardinality_defined']]
+        reason=json.loads((ROOT/'evidence/ontology_design/final_owl_checks.json').read_text())
+        meanings={'Filmmaker':'Directing, writing or producing credit','ActionFilm':'Action genre membership','AwardWinningFilm':'Film with an award','MultiCreditContributor':'At least 2 provably distinct credits','ThreeCreditContributor':'At least 3 provably distinct credits','WriterDirector':'MovieDirector AND ScreenWriter','ActorFilmmaker':'Actor AND Filmmaker','AwardWinningFilmmaker':'Filmmaker with an award','AwardWinningActionFilm':'ActionFilm AND AwardWinningFilm','GenreCrossingFilm':'Action AND drama genre membership'}
+        rows=[[n,meaning,reason['class_counts']['ex:'+n],'HermiT'] for n,meaning in meanings.items()]
         table(c,.8,2.78,[4.15,6.75,1.35,2.3],['Class','Condition in plain language','Count','Method'],rows,size=15,row_min=.323,max_bottom=7.95,compact=True)
         note(c,s['footer'])
     elif kind=='nolan_chain':
@@ -280,7 +280,7 @@ def render_slide(c,s):
         proof_photo(c,s['photo']);note(c,s['footer'])
     elif kind=='query':
         code(c,.8,2.95,6.25,3.3,s['code'],14)
-        small_card(c,.8,6.56,6.25,1.2,'2010 · 148 minutes · Nolan','SELECT chooses columns; WHERE matches; OPTIONAL preserves rows.',15)
+        small_card(c,.8,6.56,6.25,1.2,'2010 · 8,880 seconds · Nolan','SELECT chooses columns; WHERE matches; OPTIONAL preserves rows.',15)
         c.picture(ROOT/s['image'],7.42,2.84,7.93,5.23)
         note(c,s['footer'])
     elif kind=='roles':
@@ -289,28 +289,28 @@ def render_slide(c,s):
     elif kind=='endpoint':
         code(c,.8,2.85,7.35,2.73,s['code'],14)
         table(c,.8,5.94,[2.22,5.13],['Mode','Nolan types returned'],s['rows'],size=16,row_min=.68,max_bottom=7.9)
-        proof_photo(c,s['photo']);note(c,'--reasoned loads schema + saved types. Endpoint: asserted graph by default. SELECT/ASK: JSON; graph queries: Turtle.')
+        proof_photo(c,s['photo']);note(c,'All query interfaces read the same canonical graph exports; inference is computed before serving.')
     elif kind=='validation':
         for i,(n,label) in enumerate(s['checks']):
-            y=2.93+i*1.15;c.rect(.8,y,6.5,.94,WHITE,True);c.text(1.02,y+.16,2.15,.57,n if i<3 else '8 / 4',25,TEAL,True);c.text(3.44,y+.23,3.52,.52,label,17,INK)
+            y=2.93+i*1.15;c.rect(.8,y,6.5,.94,WHITE,True);c.text(1.02,y+.16,2.15,.57,n,25,TEAL,True);c.text(3.44,y+.23,3.52,.52,label,17,INK)
         c.picture(ROOT/s['image'],7.74,2.86,7.55,4.9)
-        note(c,'14 tests / 9 browser checks. HermiT/Pellet verify DL separately; the image shows actual execution logs.')
+        note(c,'Canonical OWL verified by HermiT; browser queries use matching source, reasoned and named graphs.')
     elif kind=='score_limits':
-        table(c,.8,2.95,[1.15,4.9,1.3],['Req.','Evidence','Score'],s['rows'],size=17,row_min=.65,max_bottom=7.6)
-        c.rect(.8,7.18,7.35,.7,TEAL,True);c.text(1.06,7.29,6.8,.45,'Total 10/10 · proposed self-score, not an official grade',17,WHITE,True)
+        table(c,.8,2.95,[1.05,4.4,1.9],['Req.','Evidence','Status'],s['rows'],size=17,row_min=.65,max_bottom=7.6)
+        c.rect(.8,7.18,7.35,.7,TEAL,True);c.text(1.06,7.29,6.8,.45,'Canonical model and application are aligned.',17,WHITE,True)
         for i,(title,body) in enumerate(s['cards']):small_card(c,8.55,2.94+i*1.63,6.65,1.55,title,body,16)
     elif kind=='closing':
         photos=[(key, spec) for key,spec in PROTEGE_SHOTS.items()]
         mapping={item['photo']:item['number'] for item in SLIDES if 'photo' in item}
-        rows=[[key,str(mapping[key]),spec['title_en']] for key,spec in photos]
+        rows=[[key,str(mapping[key]),spec['title_en']] for key,spec in photos if key in mapping]
         table(c,.8,2.86,[1.1,1.1,6.45],['Image','Slide','Evidence to capture'],rows,size=15,row_min=.345,max_bottom=7.75)
-        small_card(c,9.75,2.93,5.43,4.9,'Before submission','1. Complete team / member details.\n\n2. Insert 11 genuine screenshots.\n\n3. Save them in evidence/protege/ for automatic replacement.\n\n4. Rehearse with the speaker script and review the video.',18)
+        small_card(c,9.75,2.93,5.43,4.9,'Before submission','1. Verify ontology version 3.0.0.\n\n2. Insert the requested genuine screenshots.\n\n3. Save them in evidence/protege/ for automatic replacement.\n\n4. Rehearse the script and demonstrate the current query modes.',18)
         note(c,s['footer'])
     else:raise ValueError('Unknown slide kind: '+kind)
 
 
 def create_scripts():
-    lines=['---','title: "MovieLOD: lời thuyết trình cho bộ 24 slide"','date: "Bản đầy đủ · 08/10/2026"','---','','## Cách dùng','','Bộ chính có **24 slide**, thuyết trình đầy đủ khoảng **18–22 phút**. Nội dung slide và Speaker Notes bằng tiếng Anh; script riêng giữ lời tiếng Việt tương ứng để tập nói. Hướng dẫn trong ô chờ ảnh vẫn bằng tiếng Việt. Bản ngắn 13 trang vẫn ở Slide_ngan_13.pptx/pdf và Script_thuyet_trinh_ngan_13.md/pdf. Video demo 4:50 là tài liệu riêng; không đọc toàn bộ lời slide vào video.','','Tập theo 3 phần: thành viên A slide 1–10; B slide 11–18; C slide 19–24. Nếu chỉ có 2 người, chia sau slide 14. Các con số lấy từ dữ liệu và evidence hiện tại. Khung ảnh Protégé chưa có ảnh thực; không đọc ghi chú chờ bổ sung như kết quả đã chứng minh.','','## Luồng rút gọn 12–15 phút','','Ưu tiên slide 1–5, 9–10, 12–13, 15–17, 19–23. Các trang cây lớp, công thức cardinality và tra cứu IRI có thể dùng khi trả lời câu hỏi.','','## Mục lục','','| Slide | Nội dung |','|:--|:--|']
+    lines=['---','title: "MovieLOD: lời thuyết trình cho bộ 24 slide"','date: "Bản đầy đủ · 09/10/2026"','---','','## Cách dùng','','Bộ chính có **24 slide**, thuyết trình đầy đủ khoảng **18–22 phút**. Nội dung slide và Speaker Notes bằng tiếng Anh; script riêng giữ lời tiếng Việt tương ứng để tập nói. Hướng dẫn trong ô chờ ảnh vẫn bằng tiếng Việt. Bản ngắn 13 trang được cập nhật cùng model mới ở Slide_ngan_13.pptx/pdf và Script_thuyet_trinh_ngan_13.md/pdf. MP4 đã được loại theo yêu cầu; trình bày demo trực tiếp trên ứng dụng.','','Tập theo 3 phần: thành viên A slide 1–10; B slide 11–18; C slide 19–24. Nếu chỉ có 2 người, chia sau slide 14. Các con số lấy từ dữ liệu và evidence hiện tại. Khung ảnh Protégé chưa có ảnh thực; không đọc ghi chú chờ bổ sung như kết quả đã chứng minh.','','## Luồng rút gọn 12–15 phút','','Ưu tiên slide 1–5, 9–10, 12–13, 15–17, 19–23. Các trang cây lớp, công thức cardinality và tra cứu IRI có thể dùng khi trả lời câu hỏi.','','## Mục lục','','| Slide | Nội dung |','|:--|:--|']
     for s in SLIDES:lines.append(f"| {s['number']:02d} | {s['title']} |")
     for s in SLIDES:
         lines.extend([f"\n## Slide {s['number']:02d} — {s['title']}\n",'**Lời nói:**\n',s.get('speech_vi',s['speech']),''])
@@ -320,14 +320,14 @@ def create_scripts():
         extra=technical_notes(s)
         if extra:lines.extend(['**Tra cứu khi bảo vệ (không đọc toàn bộ):**\n',extra,''])
         lines.append('**Chuyển trang:** '+('Sau đây nhóm chuyển sang '+SLIDES[s['number']]['title'].lower()+'.' if s['number']<len(SLIDES) else 'Nhóm xin mời thầy cô đặt câu hỏi.'))
-    lines.extend(['\n## Câu hỏi bảo vệ ngắn\n','**42 lớp khác gì 30 phim?** 42 là lớp trong schema; 30 là cá thể Film trong graph dữ liệu. Protégé Metrics có thể tính thêm lớp ngoài được tham chiếu.\n','**Vì sao cần Contribution?** Một người có nhiều vai trò trong nhiều phim; mỗi bộ người–phim–vai trò có bản ghi riêng.\n','**Vì sao exact cardinality chưa thay Python?** OWL dùng thế giới mở; Python kiểm tra trường bắt buộc của ứng dụng.\n','**COUNT DISTINCT có phải suy luận DL không?** Đếm tên IRI là quy tắc ứng dụng; OWL không mặc định tên khác nhau chỉ cá thể khác nhau.\n','**Endpoint không có Filmmaker có phải lỗi?** Endpoint mặc định graph gốc. Dùng --reasoned nạp schema và kết quả phân loại.\n','**sameAs khác nguồn thế nào?** sameAs là cùng danh tính; sourceSnapshot là xuất xứ; dbo:Film là tái dùng từ vựng.\n','**SQL có trả được các câu hỏi không?** Có, bằng JOIN/view/quy tắc. Giá trị của bài là IRI, từ vựng chung, liên kết, nguồn và định nghĩa ngữ nghĩa.\n','**Ảnh Protégé có chứng minh reasoner đã chạy không?** Ảnh cây asserted/định nghĩa chỉ chứng minh khai báo. Muốn dùng ảnh inferred, phải ghi rõ reasoner và trạng thái/kết quả thật.\n'])
+    lines.extend(['\n## Câu hỏi bảo vệ ngắn\n','**37 lớp khác gì 30 phim?** 37 là lớp có tên; 30 là cá thể Film trong mẫu. Protégé Metrics có thể tính thêm lớp ngoài được tham chiếu.\n','**Vì sao cần Contribution?** Một người có nhiều vai trò trong nhiều phim; mỗi bộ người–phim–vai trò có bản ghi riêng.\n','**Vì sao exact cardinality chưa thay Python?** OWL dùng thế giới mở; Python kiểm tra trường bắt buộc của ứng dụng.\n','**COUNT DISTINCT có phải suy luận DL không?** Đếm tên IRI là quy tắc ứng dụng; OWL không mặc định tên khác nhau chỉ cá thể khác nhau.\n','**Endpoint thiếu lớp mới có phải lỗi OWL?** Chọn scope source/inference/named graphs phù hợp; HermiT không chạy lại cho mỗi query.\n','**sameAs khác nguồn thế nào?** sameAs là cùng danh tính; sourceSnapshot là xuất xứ; dbo:Film là tái dùng từ vựng.\n','**SQL có trả được các câu hỏi không?** Có, bằng JOIN/view/quy tắc. Giá trị của bài là IRI, từ vựng chung, liên kết, nguồn và định nghĩa ngữ nghĩa.\n','**Ảnh Protégé có chứng minh reasoner đã chạy không?** Ảnh cây asserted/định nghĩa chỉ chứng minh khai báo. Muốn dùng ảnh inferred, phải ghi rõ reasoner và trạng thái/kết quả thật.\n'])
     (ROOT/'docs/Script_thuyet_trinh.md').write_text('\n'.join(lines),encoding='utf-8')
-    lines=['---','title: "MovieLOD: checklist ảnh minh chứng Protégé"','date: "11 vị trí trong bộ 24 slide · 08/10/2026"','---','','## Cách chèn','','Có 11 khung ảnh ghi rõ mã, tên file và thao tác ngay trên slide. Lần tạo này không có ảnh Protégé thật: macOS chặn quyền điều khiển giao diện; không thay bằng ảnh dựng. Ảnh ứng dụng Web trong slide là ảnh chụp thực.','','Cách 1: chèn ảnh vào PowerPoint và che/xóa khung chờ cùng phần hướng dẫn của khung đó. Cách 2: lưu đúng tên ở `evidence/protege/` (PNG/JPG/JPEG cùng stem), chạy `.venv/bin/python src/make_slides_video.py --slides-only`; khung chờ tự thay bằng ảnh. Speaker Notes giữ quy trình chụp.','','Chụp đúng cửa sổ/view, chữ đủ lớn (gợi ý 1440×900 trở lên); không lấy cả desktop có ứng dụng khác. Giữ tên ontology và IRI/thông tin cần chứng minh. Ảnh cây khai báo không được ghi nhãn inferred.','','## Danh sách ảnh\n']
+    lines=['---','title: "MovieLOD: checklist ảnh minh chứng Protégé"','date: "11 vị trí trong bộ 24 slide · 09/10/2026"','---','','## Cách chèn','','Có 11 khung ảnh ghi rõ mã, tên file và thao tác ngay trên slide. Lần tạo này không có ảnh Protégé thật: chưa có ảnh giao diện đã xác minh cho ontology mới; không dùng ảnh dựng làm screenshot. Ảnh ứng dụng Web trong slide là ảnh chụp thực.','','Cách 1: chèn ảnh vào PowerPoint và che/xóa khung chờ cùng phần hướng dẫn của khung đó. Cách 2: lưu đúng tên ở `evidence/protege/` (PNG/JPG/JPEG cùng stem), chạy `.venv/bin/python src/make_slides_video.py --slides-only`; khung chờ tự thay bằng ảnh. Speaker Notes giữ quy trình chụp.','','Chụp đúng cửa sổ/view, chữ đủ lớn (gợi ý 1440×900 trở lên); không lấy cả desktop có ứng dụng khác. Giữ tên ontology và IRI/thông tin cần chứng minh. Ảnh cây khai báo không được ghi nhãn inferred.','','## Danh sách ảnh\n']
     for s in SLIDES:
         if 'photo' not in s:continue
         key=s['photo'];spec=PROTEGE_SHOTS[key]
         lines.extend([f"### {key} — Slide {s['number']:02d}: {spec['title']}\n",f"**Tên file:** `{spec['file']}`. **Mở:** `ontology/{spec['owl']}`.\n"]+[f'{i}. {step}' for i,step in enumerate(spec['steps'],1)]+['\n**Mục cần thấy:** '+spec['expect'],''])
-    lines.extend(['## Kiểm tra trước khi dùng làm minh chứng','','- Đúng ontology 2.0 của bài, không phải file mở rộng cũ.','- Ảnh cá thể dùng Knowledge Graph; ảnh mô hình dùng schema OWL.','- IRI lớp DBpedia, cardinality và datatype đọc được.','- Không nói HermiT/Pellet đã chứng minh DL nếu chỉ chụp công thức hoặc chọn menu.','- Nếu chạy reasoner, giữ tên và trạng thái; ghi cả lỗi nếu có.','','Nguồn hướng dẫn giao diện: [Protégé Views](https://protegeproject.github.io/protege/views/). Ngữ nghĩa cần nhớ: [OWL 2 Primer](https://www.w3.org/TR/owl2-primer/). Nội dung lớp/thuộc tính/cá thể lấy từ OWL của bài.'])
+    lines.extend(['## Kiểm tra trước khi dùng làm minh chứng','','- Đúng ontology 3.0.0 của bài; không dùng ảnh 2.0 làm minh chứng mô hình mới.','- Ảnh cá thể dùng Knowledge Graph; ảnh mô hình dùng schema OWL.','- IRI lớp DBpedia, cardinality và datatype đọc được.','- Không nói HermiT/Pellet đã chứng minh DL nếu chỉ chụp công thức hoặc chọn menu.','- Nếu chạy reasoner, giữ tên và trạng thái; ghi cả lỗi nếu có.','','Nguồn hướng dẫn giao diện: [Protégé Views](https://protegeproject.github.io/protege/views/). Ngữ nghĩa cần nhớ: [OWL 2 Primer](https://www.w3.org/TR/owl2-primer/). Nội dung lớp/thuộc tính/cá thể lấy từ OWL của bài.'])
     (ROOT/'docs/Checklist_anh_Protege.md').write_text('\n'.join(lines),encoding='utf-8')
     (ROOT/'evidence/protege/README.md').write_text('# Ảnh Protégé\n\nLưu 11 ảnh theo Checklist_anh_Protege.md/pdf. Đặt đúng stem P00_… tới P10_… để trình tạo slide tự thay khung chờ. Hỗ trợ PNG/JPG/JPEG. Hiện chưa có ảnh thật; không dùng ảnh dựng làm minh chứng.\n',encoding='utf-8')
 
@@ -370,7 +370,7 @@ def create_slides():
     for i,im in enumerate(pages):contact.paste(im.resize((480,270)),((i%4)*480,(i//4)*270))
     contact.save(out/'contact_sheet.jpg')
     create_scripts()
-    write_json(ROOT/'evidence/presentation.json',{'review_date':'2026-10-08','slide_count':len(SLIDES),'font':FONT,'slide_language':'English','placeholder_language':'Vietnamese','speaker_notes_language':'English','rehearsal_script_language':'Vietnamese','editable_text_and_diagrams':True,'pdf_export':export,'speaking_time_minutes':'18–22','protege_photos':photos,'protege_images_present':sum(p['image_present'] for p in photos),'protege_placeholders':sum(not p['image_present'] for p in photos),'real_application_screenshots':['05_inception_current.png','06_nolan_roles.png','09_inception_resource.png'],'short_deck_preserved':'docs/Slide_ngan_13.pptx','technical_self_score':10.0})
+    write_json(ROOT/'evidence/presentation.json',{'review_date':'2026-10-09','slide_count':len(SLIDES),'font':FONT,'slide_language':'English','placeholder_language':'Vietnamese','speaker_notes_language':'English','rehearsal_script_language':'Vietnamese','editable_text_and_diagrams':True,'pdf_export':export,'speaking_time_minutes':'18–22','protege_photos':photos,'protege_images_present':sum(p['image_present'] for p in photos),'protege_placeholders':sum(not p['image_present'] for p in photos),'real_application_screenshots':['05_inception_current.png','06_nolan_roles.png','09_inception_resource.png'],'short_deck_updated':'docs/Slide_ngan_13.pptx','application_images_scope':'current version 3.0.0 captures','technical_self_score':None,'ontology_version':'3.0.0','application_snapshot':'3.0.0','mp4_included':False})
     print('Created 24-slide PPTX/PDF, matching speaker script and Protégé checklist.')
 
 if __name__=='__main__':

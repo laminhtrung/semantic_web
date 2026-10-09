@@ -83,7 +83,6 @@
 \@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
 \makeatother
 \hypersetup{
-  pdftitle={MovieLOD: mô tả ontology và câu hỏi bảo vệ},
   colorlinks=true,
   linkcolor={teal},
   filecolor={Maroon},
@@ -91,142 +90,299 @@
   urlcolor={teal},
   pdfcreator={LaTeX via pandoc}}
 
-\title{MovieLOD: mô tả ontology và câu hỏi bảo vệ}
 \author{}
-\date{MovieLOD 2.0 · Đối chiếu 08/10/2026}
+\date{}
 
 \begin{document}
-\maketitle
 
-\subsection{Những ý cần nhớ}\label{nhux1eefng-uxfd-cux1ea7n-nhux1edb}
+\section{MovieLOD --- Mô tả ontology cuối
+3.0.0}\label{movielod-muxf4-tux1ea3-ontology-cuux1ed1i-3.0.0}
 
-Ontology 2.0 có \textbf{42 lớp}: 3 lớp DBpedia dùng trực tiếp
-(\allowbreak{}Film/\allowbreak{}\allowbreak{}Pe\allowbreak{}rson/\allowbreak{}\allowbreak{}Cou\allowbreak{}ntry),
-39 lớp namespace ex:, trong đó 14 lớp có kiểu được bổ sung từ định
-nghĩa/quy tắc. Có 23 object property và 6 datatype property. Bảng toàn
-bộ nằm ở
-\href{Ontology_Redesign.md}{Ontology\allowbreak{}\_\allowbreak{}\allowbreak{}Redesig\allowbreak{}n.\allowbreak{}md}.
+\begin{quote}
+\textbf{Phiên bản:} Ontology, dữ liệu, web và truy vấn dùng chung 3.0.0.
+MP4 đã được xoá theo yêu cầu; tài liệu demo dùng cho trình diễn trực
+tiếp.
+\end{quote}
 
-Contribution nối đúng một \textbf{người, phim và vai trò}. Các quan hệ
-là contribu\allowbreak{}tion\allowbreak{}By,
-contribu\allowbreak{}tion\allowbreak{}To và hasRole. Bốn vai trò:
-Director, Actor, Writer, Producer. Đường đi ngược:
-has\allowbreak{}Contr\allowbreak{}ibution từ người và
-contribu\allowbreak{}tion\allowbreak{}Of từ phim. Dữ liệu hiện có 1.010
-Contribu\allowbreak{}tion.\allowbreak{} Mỗi vai trò trong từng phim có
-bản ghi riêng; một người không bị ép chỉ một nghề.
-
-\subsection{Ví dụ nói trong buổi bảo
-vệ}\label{vuxed-dux1ee5-nuxf3i-trong-buux1ed5i-bux1ea3o-vux1ec7}
-
-Dữ liệu Inception ghi Nolan là Person, có đóng góp với
-Director\allowbreak{}\allowbreak{}Role.\allowbreak{} Từ hasValue suy ra
-Directin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution; Person có
-loại đóng góp này được phân loại Filmmaker. Nolan còn có giải riêng nên
-được phân loại AwardWinner. Các kiểu bổ sung lưu tách ở
-inferred\allowbreak{}\_\allowbreak{}classes\allowbreak{}.\allowbreak{}ttl.\allowbreak{}
-
-\begin{verbatim}
-.venv/bin/python src/query.py queries/24_nolan_asserted_types_only.rq
-.venv/bin/python src/query.py queries/24_nolan_asserted_types_only.rq --reasoned
-\end{verbatim}
-
-Không --reasoned: 1 kiểu Person. Có --reasoned: 3 kiểu Person,
-Filmmaker, AwardWinner. Lệnh chỉ nạp file phân loại đã lưu; cần
-\texttt{src/\allowbreak{}reas\allowbreak{}on.\allowbreak{}py} để tính
-lại sau khi sửa dữ liệu.
-
-\subsection{14 lớp được xử lý như thế
-nào?}\label{lux1edbp-ux111ux1b0ux1ee3c-xux1eed-luxfd-nhux1b0-thux1ebf-nuxe0o}
+\subsection{Lớp và căn cứ}\label{lux1edbp-vuxe0-cux103n-cux1ee9}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
-  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Nhóm
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Lớp
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Cách xử lý
+Hành động
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lớp cha
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Căn cứ / ý nghĩa
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Đóng góp &
-Acting/\allowbreak{}\allowbreak{}D\allowbreak{}irecting\allowbreak{}/\allowbreak{}\allowbreak{}Writing\allowbreak{}/\allowbreak{}\allowbreak{}Produci\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
-& OWL RL, hasValue \\
-Người & Actor, Filmmaker, AwardWinner & OWL RL, tồn tại/giao/hợp \\
-Phim &
-Action/\allowbreak{}\allowbreak{}C\allowbreak{}omedy/\allowbreak{}\allowbreak{}Dr\allowbreak{}ama/\allowbreak{}\allowbreak{}Scie\allowbreak{}nce\allowbreak{}Ficti\allowbreak{}on/\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm
-& OWL RL, thể loại hoặc giải \\
-Đếm theo ngưỡng & Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film,
-FilmStudio & SPARQL COUNT DISTINCT bổ sung \\
+dbo:Work & REUSE & --- & DBpedia supertype of supported entities; Reuse
+DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Film & REUSE & dbo:Work & P31; Reuse DBpedia meaning and its
+supported superclass; no local clone. \\
+dbo:Agent & REUSE & --- & DBpedia supertype of supported entities; Reuse
+DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Person & REUSE & dbo:Agent & P31=Q5;
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+Reuse DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Artist & REUSE & dbo:Person & DBpedia supertype of supported
+entities; Reuse DBpedia meaning and its supported superclass; no local
+clone. \\
+dbo:Actor & REUSE & dbo:Artist & P161; Reuse DBpedia meaning and its
+supported superclass; no local clone. \\
+dbo:Writer & REUSE & dbo:Person & P58 via
+Screen\allowbreak{}Wr\allowbreak{}iter; Reuse DBpedia meaning and its
+supported superclass; no local clone. \\
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Directo\allowbreak{}r
+& REUSE & dbo:Person & P57; Reuse DBpedia meaning and its supported
+superclass; no local clone. \\
+dbo:\allowbreak{}\allowbreak{}Scre\allowbreak{}en\allowbreak{}Writer\allowbreak{}
+& REUSE & dbo:Writer & P58; Reuse DBpedia meaning and its supported
+superclass; no local clone. \\
+dbo:Producer & REUSE & dbo:Person & P162; Reuse DBpedia meaning and its
+supported superclass; no local clone. \\
+dbo:\allowbreak{}\allowbreak{}Orga\allowbreak{}nisation\allowbreak{} &
+REUSE & dbo:Agent & DBpedia supertype of supported entities; Reuse
+DBpedia meaning and its supported superclass; no local clone. \\
+dbo:Company & REUSE &
+dbo:\allowbreak{}\allowbreak{}Orga\allowbreak{}nisation\allowbreak{} &
+P272; Reuse DBpedia meaning and its supported superclass; no local
+clone. \\
+dbo:Genre & REUSE & --- & P136; Reuse DBpedia meaning and its supported
+superclass; no local clone. \\
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Genre &
+REUSE & dbo:Genre & P136 in film context; Reuse DBpedia meaning and its
+supported superclass; no local clone. \\
+dbo:Award & REUSE & --- & P166; Reuse DBpedia meaning and its supported
+superclass; no local clone. \\
+dbo:Country & REUSE & --- & P495; Reuse DBpedia meaning and its
+supported superclass; no local clone. \\
+dbo:Language & REUSE & --- & P364; Reuse DBpedia meaning and its
+supported superclass; no local clone. \\
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & CREATE & --- &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+A local credit association with one person, film and role; not the
+person or film itself. \\
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole
+& CREATE & --- & The four crawled credit predicates; Local controlled
+role values, not subclasses of Person. \\
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& CREATE & --- & snapshot\allowbreak{}s.\allowbreak{}json
+U\allowbreak{}R\allowbreak{}L/\allowbreak{}time\allowbreak{}/\allowbreak{}hash;
+A retrieved response record, not a domain entity. \\
+void:Dataset & REUSE & --- & Published collection of crawled film
+records; Reuse VoID dataset, remove ex:Dataset clone. \\
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Genre &
+EXTEND &
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Genre &
+P136 target English label; Local normalized film-genre bucket selected
+by matching the crawled English label; no DBpedia class of this narrow
+meaning in reference module. \\
+ex:\allowbreak{}\allowbreak{}Drama\allowbreak{}\allowbreak{}Genre &
+EXTEND &
+dbo:\allowbreak{}\allowbreak{}Movi\allowbreak{}e\allowbreak{}Genre &
+P136 target English label; Local normalized film-genre bucket selected
+by matching the crawled English label; no DBpedia class of this narrow
+meaning in reference module. \\
+ex:\allowbreak{}\allowbreak{}Actin\allowbreak{}g\allowbreak{}Contrib\allowbreak{}ution
+& EXTEND & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+Credit claim correspo\allowbreak{}nding to Actor; Local credit record
+classified by a fixed role; DBpedia Actor describes a person, not this
+record. \\
+ex:\allowbreak{}\allowbreak{}Direc\allowbreak{}ting\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+& EXTEND & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+Credit claim correspo\allowbreak{}nding to Director; Local credit record
+classified by a fixed role; DBpedia Actor describes a person, not this
+record. \\
+ex:\allowbreak{}\allowbreak{}Writi\allowbreak{}ng\allowbreak{}Contri\allowbreak{}bution
+& EXTEND & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+Credit claim correspo\allowbreak{}nding to Writer; Local credit record
+classified by a fixed role; DBpedia Actor describes a person, not this
+record. \\
+ex:\allowbreak{}\allowbreak{}Produ\allowbreak{}cing\allowbreak{}Cont\allowbreak{}ribution\allowbreak{}
+& EXTEND & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+Credit claim correspo\allowbreak{}nding to Producer; Local credit record
+classified by a fixed role; DBpedia Actor describes a person, not this
+record. \\
+ex:Filmmaker & EXTEND & dbo:Person &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Actio\allowbreak{}n\allowbreak{}Film &
+EXTEND & dbo:Film & P136/P166; Local
+dataset-\allowbreak{}specific\allowbreak{} OWL-defined subset; not a
+replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilm
+& EXTEND & dbo:Film & P136/P166; Local
+dataset-\allowbreak{}specific\allowbreak{} OWL-defined subset; not a
+replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Multi\allowbreak{}\allowbreak{}Credit\allowbreak{}Co\allowbreak{}ntributo\allowbreak{}r
+& EXTEND & dbo:Person &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; At least two semantically distinct credit
+records. Different roles prove their distinct\allowbreak{}ness; the name
+is shorthand and does not exclude repeated same-role credits. \\
+ex:\allowbreak{}\allowbreak{}Three\allowbreak{}\allowbreak{}Credit\allowbreak{}Co\allowbreak{}ntributo\allowbreak{}r
+& EXTEND & dbo:Person &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; At least three distinct credit records; three
+different role fillers prove distinct\allowbreak{}ness.\allowbreak{} Not
+exactly three roles or an exhaustive career description. \\
+ex:\allowbreak{}\allowbreak{}Write\allowbreak{}r\allowbreak{}Directo\allowbreak{}r
+& EXTEND & dbo:Person &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; A person with both directing and writing credits
+in this dataset; classifi\allowbreak{}cation is never manually
+asserted. \\
+ex:\allowbreak{}\allowbreak{}Actor\allowbreak{}\allowbreak{}Filmmake\allowbreak{}r
+& EXTEND & dbo:Person &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}F\allowbreak{}ilmmaker\allowbreak{}
+& EXTEND & dbo:Person &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2;
+P166 when award-based; Local dataset-\allowbreak{}specific\allowbreak{}
+OWL-defined subset; not a replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Award\allowbreak{}\allowbreak{}Winning\allowbreak{}A\allowbreak{}ction\allowbreak{}Fil\allowbreak{}m
+& EXTEND & dbo:Film & P136/P166; Local
+dataset-\allowbreak{}specific\allowbreak{} OWL-defined subset; not a
+replacement for a DBpedia base class. \\
+ex:\allowbreak{}\allowbreak{}Genre\allowbreak{}\allowbreak{}Crossing\allowbreak{}\allowbreak{}Film
+& EXTEND & dbo:Film & P136/P166; Film carrying both action and drama
+genre memberships; this is not an unproved
+two-\allowbreak{}dist\allowbreak{}inct-\allowbreak{}gen\allowbreak{}re
+cardinality claim. \\
 \end{longtable}
 }
 
-Có 769 Actor, 89 Filmmaker, 12 ActionFilm, 26
-Award\allowbreak{}Win\allowbreak{}ning\allowbreak{}Film\allowbreak{}, 30
-Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film, 6 FilmStudio
-trong kết quả phân loại hiện tại. Phạm vi đếm là IRI tài nguyên nội bộ;
-hai truy vấn người chỉ hiển thị 20 dòng do LIMIT.
+\subsection{Quan hệ và datatype}\label{quan-hux1ec7-vuxe0-datatype}
 
-\subsection{Các câu hỏi dễ
-nhầm}\label{cuxe1c-cuxe2u-hux1ecfi-dux1ec5-nhux1ea7m}
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Property
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Kiểu
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Domain
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Inverse / subproperty
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Căn cứ
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+dbo:director & Object & dbo:Film & dbo:Person & --- / --- & P57 \\
+dbo:starring & Object & dbo:Work & dbo:Actor & --- / --- & P161 \\
+dbo:writer & Object & dbo:Work & dbo:Person & --- / --- & P58 \\
+dbo:producer & Object & dbo:Work & dbo:Agent & --- / --- & P162 \\
+dbo:\allowbreak{}prod\allowbreak{}uction\allowbreak{}Co\allowbreak{}mpany
+& Object & dbo:Work & dbo:Company & --- / --- & P272 \\
+dbo:award & Object & --- & dbo:Award & --- / --- & P166 \\
+dbo:genre & Object & --- & dbo:Genre & --- / --- & P136 \\
+dbo:country & Object & --- & dbo:Country & --- / --- & P495 \\
+dbo:language & Object & --- & dbo:Language & --- / --- & P364 \\
+ex:\allowbreak{}has\allowbreak{}Co\allowbreak{}ntributi\allowbreak{}on &
+Object & dbo:Person &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}B\allowbreak{}y /
+--- & Derived credit association \\
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}B\allowbreak{}y &
+Object & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+dbo:Person & --- / --- &
+P57/\allowbreak{}\allowbreak{}P161\allowbreak{}/\allowbreak{}\allowbreak{}P58/\allowbreak{}\allowbreak{}P16\allowbreak{}2 \\
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}T\allowbreak{}o &
+Object & ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+dbo:Film &
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}O\allowbreak{}f /
+--- & Containing source film \\
+ex:\allowbreak{}contr\allowbreak{}ibution\allowbreak{}O\allowbreak{}f &
+Object & dbo:Film &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution & --- / --- &
+Inverse of contribu\allowbreak{}tion\allowbreak{}To \\
+ex:hasRole & Object &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution &
+ex:\allowbreak{}\allowbreak{}Contr\allowbreak{}ibution\allowbreak{}R\allowbreak{}ole
+& --- / --- & Credit predicate to controlled role \\
+ex:\allowbreak{}contr\allowbreak{}ibuted\allowbreak{}To\allowbreak{} &
+Object & dbo:Person & dbo:Film & --- / --- & OWL property chain \\
+ex:directed & Object & dbo:Person & dbo:Film & dbo:director /
+ex:\allowbreak{}contr\allowbreak{}ibuted\allowbreak{}To\allowbreak{} &
+Inverse P57 \\
+ex:actedIn & Object & dbo:Actor & dbo:Film & dbo:starring /
+ex:\allowbreak{}contr\allowbreak{}ibuted\allowbreak{}To\allowbreak{} &
+Inverse P161 \\
+ex:\allowbreak{}produ\allowbreak{}ction\allowbreak{}Of & Object &
+dbo:Company & dbo:Work &
+dbo:\allowbreak{}prod\allowbreak{}uction\allowbreak{}Co\allowbreak{}mpany
+/ --- & Inverse P272 \\
+ex:\allowbreak{}sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t &
+Object & --- &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& --- / --- & Crawled entity response provenance \\
+dbo:runtime & Data & dbo:Work & xsd:double & --- / --- & P2047;
+normalize to seconds \\
+ex:\allowbreak{}relea\allowbreak{}se\allowbreak{}Year & Data & dbo:Film
+& xsd:integer & --- / --- & Earliest Gregorian P577 year, precision
+\textgreater=9 \\
+ex:sourceUrl & Data &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& xsd:anyURI & --- / --- & Snapshot manifest sourceUrl \\
+ex:\allowbreak{}retri\allowbreak{}eved\allowbreak{}At & Data &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& xsd:dateTime & --- / --- & Snapshot manifest retrievedAt \\
+ex:sha256 & Data &
+ex:\allowbreak{}\allowbreak{}Sourc\allowbreak{}e\allowbreak{}Snapsho\allowbreak{}t
+& xsd:string & --- / --- & Snapshot manifest sha256 \\
+\end{longtable}
+}
 
-\textbf{Cardinality có bắt buộc file phải điền đủ không?} Không như kiểm
-tra form/CSDL. OWL dùng thế giới mở; Python kiểm tra trường bắt buộc
-riêng.
+\subsection{Ngữ nghĩa và kết
+quả}\label{ngux1eef-nghux129a-vuxe0-kux1ebft-quux1ea3}
 
-\textbf{Hai IRI khác nhau có chắc là hai cá thể khác nhau không?} Không
-trong OWL. COUNT DISTINCT là đếm tên trong ứng dụng; cần căn cứ phân
-biệt cá thể khi chứng minh cardinality DL.
+Reuse 17 lớp DBpedia và một lớp VoID; 19 lớp riêng mở rộng theo facts.
+Actor dùng range của starring. Contribution có ba endpoint
+function\allowbreak{}al/\allowbreak{}exact\allowbreak{}ly 1. Chain
+has\allowbreak{}Contr\allowbreak{}ibution rồi
+contribu\allowbreak{}tion\allowbreak{}To tạo
+contribu\allowbreak{}ted\allowbreak{}To; cardinality đặt trên
+has\allowbreak{}Contr\allowbreak{}ibution.\allowbreak{}
 
-\textbf{owlrl đã chứng minh ontology nhất quán chưa?} Chỉ chạy bộ luật
-và kiểm tra lỗi được phát hiện trong phạm vi đó; chưa phải chứng minh
-OWL DL đầy đủ. HermiT và Pellet đã chạy riêng trên file OWL chính và xác
-nhận nhất quán; xem
-Ket\_\allowbreak{}qua\_\allowbreak{}reasoner\allowbreak{}.\allowbreak{}pdf.\allowbreak{}
+Không có
+Feature\allowbreak{}F\allowbreak{}ilm/\allowbreak{}\allowbreak{}Docu\allowbreak{}mentary\allowbreak{}F\allowbreak{}ilm/\allowbreak{}\allowbreak{}Fict\allowbreak{}ion\allowbreak{}Genre\allowbreak{}
+hoặc fallback FilmAward thiếu căn cứ.
+Action\allowbreak{}Ge\allowbreak{}nre/\allowbreak{}\allowbreak{}Dram\allowbreak{}a\allowbreak{}Genre
+là bucket nhãn. Genre\allowbreak{}Cro\allowbreak{}ssing không chứng minh
+hai genre filler khác nhau. HermiT: consistent; 17 người min 2 credit, 7
+người min 3, 10 Writer\allowbreak{}Di\allowbreak{}rector.\allowbreak{}
 
-\textbf{Actor/\allowbreak{}\allowbreak{}Fi\allowbreak{}lmmaker có rời
-nhau không?} Không. Một người có thể diễn xuất và đạo diễn; vai trò
-chồng lấp được mô hình hóa bằng các Contribution riêng.
-
-\textbf{sameAs có phải nguồn không?} sameAs là cùng danh tính;
-source\allowbreak{}Sn\allowbreak{}apshot là xuất xứ. dbo:Film là tái
-dùng từ vựng lớp.
-
-\textbf{Vì sao endpoint không có Filmmaker?} Endpoint mặc định chỉ nạp
-movies.ttl; dùng --reasoned ở terminal để nạp schema và file phân loại.
-
-\textbf{Document\allowbreak{}ary\allowbreak{}Film bằng 0 có phải lỗi?}
-Không nhất thiết: danh sách 30 phim hiện không có phim tài liệu. ASK
-false không nói rằng thế giới không có phim tài liệu.
-
-\textbf{Mẫu có đủ nguồn để tái lập chưa?} Có đủ 76/76 file và hash khớp.
-Đã chạy lại thu thập từ cache nguồn, build, validate, reason và 14 test.
-Giữ cả biên bản nguồn lịch sử và nguồn tải lại.
-
-\textbf{Website đã có 42 lớp chưa?} Có. Bản public đã được triển khai
-lại, ontology 42 lớp và dữ liệu 19.339 triple đều đẳng cấu với local;
-kiểm tra không đăng nhập ở
-publicat\allowbreak{}ion\_\allowbreak{}chec\allowbreak{}ks.\allowbreak{}json.\allowbreak{}
-
-\subsection{Xem trong Protégé}\label{xem-trong-protuxe9guxe9}
-
-Mở
-Movie\_\allowbreak{}\allowbreak{}On\allowbreak{}tology.\allowbreak{}o\allowbreak{}wl
-để xem mô hình; mở
-Movie\_\allowbreak{}\allowbreak{}Kn\allowbreak{}owledge\_\allowbreak{}\allowbreak{}Graph.\allowbreak{}ow\allowbreak{}l
-để xem cả dữ liệu. Xem lớp, IRI, restriction; xem inverse và functional
-ở Object properties. HermiT và Pellet đã xác nhận nhất quán, không có
-lớp không khả thỏa. File OWL chính và các bản RDF đều xuất timestamp đến
-mili giây để tránh lỗi HermiT. Có 769 Actor, 89 Filmmaker và 290
-AwardWinner;
-Multi\allowbreak{}Gen\allowbreak{}re\allowbreak{}Film/\allowbreak{}\allowbreak{}F\allowbreak{}ilm\allowbreak{}Studi\allowbreak{}o
-không có cá thể suy luận DL, khác số đếm ứng dụng 30/6.
+Định nghĩa
+Manchest\allowbreak{}er/\allowbreak{}\allowbreak{}O\allowbreak{}W\allowbreak{}L
+và từng ví dụ thật nằm trong
+D\allowbreak{}Bpedia\_\allowbreak{}\allowbreak{}O\allowbreak{}W\allowbreak{}L\_\allowbreak{}\allowbreak{}Desi\allowbreak{}gn.\allowbreak{}md/\allowbreak{}ht\allowbreak{}ml.\allowbreak{}
+Hướng dẫn học nền và thực hành nằm trong
+Huong\_\allowbreak{}da\allowbreak{}n\_\allowbreak{}doc\_\allowbreak{}hi\allowbreak{}eu\_\allowbreak{}proje\allowbreak{}ct.\allowbreak{}pdf.\allowbreak{}
 
 \end{document}
